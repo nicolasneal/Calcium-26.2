@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "calcium:block/slabs/polished_end_stone_top"
+    },
+    "type=bottom": {
+      "model": "calcium:block/slabs/polished_end_stone_bottom"
+    },
+    "type=double": {
+      "model": "calcium:block/slabs/polished_end_stone_double"
+    }
+  }
+}

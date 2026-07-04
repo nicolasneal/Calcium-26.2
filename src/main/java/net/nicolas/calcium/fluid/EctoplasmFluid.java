@@ -139,7 +139,7 @@ public abstract class EctoplasmFluid extends FlowableFluid {
             return;
         }
 
-        if (random.nextInt(40) == 0) {
+        if (random.nextInt(20) == 0) {
             world.playSound(null, pos, ModSounds.ECTOPLASM_AMBIENT, SoundCategory.BLOCKS, 1.0F + random.nextFloat() * 0.2F, 0.9F + random.nextFloat() * 0.15F);
         }
 

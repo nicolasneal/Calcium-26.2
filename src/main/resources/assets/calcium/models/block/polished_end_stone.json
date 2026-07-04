@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "calcium:block/polished_end_stone",
+    "particle": "calcium:block/polished_end_stone"
+  },
+  "render_type": "solid"
+}

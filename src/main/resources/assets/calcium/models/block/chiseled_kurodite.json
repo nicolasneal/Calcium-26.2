@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "calcium:block/chiseled_kurodite",
+    "particle": "calcium:block/chiseled_kurodite"
+  },
+  "render_type": "solid"
+}

@@ -1,8 +1,0 @@
-{
-	"credit": "Made with Blockbench",
-  	"parent": "minecraft:block/template_copper_bars_post",
-	"textures": {
-		"texture": "block/oxidized_copper_bars",
-		"particle": "block/oxidized_copper"
-	}
-}

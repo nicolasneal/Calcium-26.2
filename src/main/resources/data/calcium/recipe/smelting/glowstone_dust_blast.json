@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.2,
+  "group": "glowstone_dust",
+  "ingredient": "calcium:netherrack_glowstone_ore",
+  "result": {
+    "id": "minecraft:glowstone_dust"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "calcium:shadoline_ingot",
+    "@": "calcium:shadoline_nugget"
+  },
+  "pattern": [
+    "#",
+    "@",
+    "#"
+  ],
+  "result": {
+    "id": "calcium:shadoline_chain",
+    "count": 2
+  }
+}
+

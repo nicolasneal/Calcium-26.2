@@ -3,10 +3,10 @@
   "attributes": {
     "minecraft:visual/sky_color": "#4794D3",
     "minecraft:visual/fog_color": "#8CBDE2",
-    "minecraft:visual/water_fog_color": "#13486A"
+    "minecraft:visual/water_fog_color": "#245075"
   },
   "effects": {
-    "water_color": "#34749B"
+    "water_color": "#3573A9"
   },
   "carvers": [
     "minecraft:cave",

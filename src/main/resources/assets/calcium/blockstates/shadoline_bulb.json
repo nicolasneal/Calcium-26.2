@@ -1,0 +1,17 @@
+{
+  "variants": {
+    "lit=false,powered=false": {
+      "model": "calcium:block/shadoline_bulb"
+    },
+    "lit=false,powered=true": {
+      "model": "calcium:block/shadoline_bulb_powered"
+    },
+    "lit=true,powered=false": {
+      "model": "calcium:block/shadoline_bulb_lit"
+    },
+    "lit=true,powered=true": {
+      "model": "calcium:block/shadoline_bulb_lit_powered"
+    }
+  }
+}
+

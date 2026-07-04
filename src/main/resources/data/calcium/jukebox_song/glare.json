@@ -1,0 +1,8 @@
+{
+  "comparator_output": 15,
+  "description": {
+    "translate": "item.calcium.music_disc_glare.description"
+  },
+  "length_in_seconds": 234.0,
+  "sound_event": "calcium:music.jukebox.glare"
+}

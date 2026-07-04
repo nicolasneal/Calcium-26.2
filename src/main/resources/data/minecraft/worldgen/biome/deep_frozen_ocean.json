@@ -1,12 +1,16 @@
 {
   "downfall": 0.5,
   "attributes": {
+    "minecraft:gameplay/increased_fire_burnout": true,
+    "minecraft:visual/fog_start_distance": -16,
+    "minecraft:visual/fog_end_distance": 384,
     "minecraft:visual/sky_color": "#8EB5DE",
     "minecraft:visual/fog_color": "#B8D0EA",
-    "minecraft:visual/water_fog_color": "#316789"
+    "minecraft:visual/sky_light_color": "#FBFEFF",
+    "minecraft:visual/water_fog_color": "#184163"
   },
   "effects": {
-    "water_color": "#62A4CC",
+    "water_color": "#225B8C",
     "grass_color": "#B5CCC0"
   },
   "carvers": [

@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/walls/wall_cross",
+	"textures": {
+		"wall": "calcium:block/walls/purpur",
+		"particle": "minecraft:block/purpur_block"
+	}
+}

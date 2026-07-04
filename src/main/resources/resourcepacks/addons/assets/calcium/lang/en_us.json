@@ -1,5 +1,7 @@
 {
 
+  // FOOD ICONS
+
   "item.calcium.cheval": "Cheval \uEFF3\uEFF4",
   "item.calcium.cooked_cheval": "Cooked Cheval \uEFF3\uEFF3\uEFF3\uEFF4",
   "item.calcium.bear": "Bear \uEFF3\uEFF4",
@@ -13,6 +15,14 @@
   "item.calcium.tentacles": "Tentacles \uEFF3",
   "item.calcium.cooked_tentacles": "Cooked Tentacles \uEFF3\uEFF3\uEFF4",
   "item.calcium.chocolate": "Chocolate \uEFF3\uEFF3",
+
+  // MUSIC DISC ICONS
+
+  "item.calcium.music_disc_bliss": "§fMusic Disc \uE97C 4:31",
+  "item.calcium.music_disc_decay": "§fMusic Disc \uE97C 1:35",
+  "item.calcium.music_disc_glare": "§fMusic Disc \uE97C 3:54",
+
+  // MISCELLANEOUS
 
   "block.calcium.basalt_stairs": "Basalt Stairs",
   "block.calcium.basalt_slab": "Basalt Slab"

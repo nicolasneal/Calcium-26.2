@@ -1,8 +1,9 @@
 {
-	"credit": "Made with Blockbench",
-  	"parent": "minecraft:block/template_copper_bars_side",
-	"textures": {
-		"texture": "block/weathered_copper_bars",
-		"particle": "block/weathered_copper"
-	}
+  "parent": "minecraft:block/template_bars_side",
+  "textures": {
+    "bars": "minecraft:block/weathered_copper_bars",
+    "edge": "minecraft:block/weathered_copper_bars_edge"
+  }
 }
+
+

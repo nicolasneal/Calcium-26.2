@@ -1,22 +1,179 @@
 {
-    "block.dispenser.dispense":{
-        "sounds":[
-            {
-                "name":"block/crafter/craft",
-                "volume":0.25
-            }
-        ],
-        "replace":true,
-        "subtitle":"subtitles.block.dispenser.dispense"
-    },
-    "block.dispenser.fail":{
-        "sounds":[
-            {
-                "name":"block/crafter/fail",
-                "volume":0.25
-            }
-        ],
-        "replace":true,
-        "subtitle":"subtitles.block.dispenser.fail"
-    }
+  "block.chest.open": {
+    "replace": true,
+    "subtitle": "subtitles.block.chest.open",
+    "sounds": [
+      {
+        "name": "block/chest/open",
+        "volume": 0.6
+      }
+    ]
+  },
+  "block.chest.close": {
+    "replace": true,
+    "subtitle": "subtitles.block.chest.close",
+    "sounds": [
+      {
+        "name": "block/chest/close1",
+        "volume": 0.6
+      },
+      {
+        "name": "block/chest/close2",
+        "volume": 0.6
+      },
+      {
+        "name": "block/chest/close3",
+        "volume": 0.6
+      }
+    ]
+  },
+  "block.copper_chest.close": {
+    "replace": true,
+    "subtitle": "subtitles.block.copper_chest.close",
+    "sounds": [
+      {
+        "name": "block/copper_chest/copper_chest_close1",
+        "volume": 0.6
+      },
+      {
+        "name": "block/copper_chest/copper_chest_close2",
+        "volume": 0.6
+      },
+      {
+        "name": "block/copper_chest/copper_chest_close3",
+        "volume": 0.6
+      }
+    ]
+  },
+  "block.copper_chest.open": {
+    "replace": true,
+    "subtitle": "subtitles.block.copper_chest.open",
+    "sounds": [
+      {
+        "name": "block/copper_chest/copper_chest_open1",
+        "volume": 0.6
+      },
+      {
+        "name": "block/copper_chest/copper_chest_open2",
+        "volume": 0.6
+      },
+      {
+        "name": "block/copper_chest/copper_chest_open3",
+        "volume": 0.6
+      }
+    ]
+  },
+  "block.copper_chest_weathered.close": {
+    "replace": true,
+    "subtitle": "subtitles.block.copper_chest.close",
+    "sounds": [
+      {
+        "name": "block/copper_chest/copper_chest_weathered_close1",
+        "volume": 0.6
+      },
+      {
+        "name": "block/copper_chest/copper_chest_weathered_close2",
+        "volume": 0.6
+      },
+      {
+        "name": "block/copper_chest/copper_chest_weathered_close3",
+        "volume": 0.6
+      }
+    ]
+  },
+  "block.copper_chest_weathered.open": {
+    "replace": true,
+    "subtitle": "subtitles.block.copper_chest.open",
+    "sounds": [
+      {
+        "name": "block/copper_chest/copper_chest_weathered_open1",
+        "volume": 0.6
+      },
+      {
+        "name": "block/copper_chest/copper_chest_weathered_open2",
+        "volume": 0.6
+      },
+      {
+        "name": "block/copper_chest/copper_chest_weathered_open3",
+        "volume": 0.6
+      }
+    ]
+  },
+  "block.copper_chest_oxidized.close": {
+    "replace": true,
+    "subtitle": "subtitles.block.copper_chest.close",
+    "sounds": [
+      {
+        "name": "block/copper_chest/copper_chest_oxidized_close1",
+        "volume": 0.6
+      },
+      {
+        "name": "block/copper_chest/copper_chest_oxidized_close2",
+        "volume": 0.6
+      },
+      {
+        "name": "block/copper_chest/copper_chest_oxidized_close3",
+        "volume": 0.6
+      }
+    ]
+  },
+  "block.copper_chest_oxidized.open": {
+    "replace": true,
+    "subtitle": "subtitles.block.copper_chest.open",
+    "sounds": [
+      {
+        "name": "block/copper_chest/copper_chest_oxidized_open1",
+        "volume": 0.6
+      },
+      {
+        "name": "block/copper_chest/copper_chest_oxidized_open2",
+        "volume": 0.6
+      },
+      {
+        "name": "block/copper_chest/copper_chest_oxidized_open3",
+        "volume": 0.6
+      }
+    ]
+  },
+  "block.ender_chest.open": {
+    "replace": true,
+    "subtitle": "subtitles.block.chest.open",
+    "sounds": [
+      {
+        "name": "block/enderchest/open",
+        "volume": 0.6
+      }
+    ]
+  },
+  "block.ender_chest.close": {
+    "replace": true,
+    "subtitle": "subtitles.block.chest.close",
+    "sounds": [
+      {
+        "name": "block/enderchest/close",
+        "volume": 0.6
+      }
+    ]
+  },
+
+  "block.dispenser.dispense": {
+    "replace": true,
+    "subtitle": "subtitles.block.dispenser.dispense",
+    "sounds": [
+      {
+        "name": "block/crafter/craft",
+        "volume": 0.25
+      }
+    ]
+  },
+  "block.dispenser.fail": {
+    "replace": true,
+    "subtitle": "subtitles.block.dispenser.fail",
+    "sounds": [
+      {
+        "name": "block/crafter/fail",
+        "volume": 0.25
+      }
+    ]
+  }
 }

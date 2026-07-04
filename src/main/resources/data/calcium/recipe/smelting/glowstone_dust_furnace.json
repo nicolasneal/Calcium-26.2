@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.2,
+  "group": "glowstone_dust",
+  "ingredient": "calcium:netherrack_glowstone_ore",
+  "result": {
+    "id": "minecraft:glowstone_dust"
+  }
+}

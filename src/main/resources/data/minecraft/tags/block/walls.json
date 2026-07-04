@@ -39,6 +39,9 @@
     "calcium:quartz_brick_wall",
     "calcium:purpur_wall",
     "calcium:cracked_nether_brick_wall",
-    "calcium:cracked_red_nether_brick_wall"
+    "calcium:cracked_red_nether_brick_wall",
+    "calcium:polished_end_stone_wall",
+    "calcium:kurodite_brick_wall",
+    "calcium:cracked_kurodite_brick_wall"
   ]
 }

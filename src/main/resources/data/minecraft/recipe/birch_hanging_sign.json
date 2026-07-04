@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "#": "minecraft:birch_planks",
-    "@": "minecraft:chain"
+    "@": "minecraft:iron_chain"
   },
   "pattern": [
     "@",

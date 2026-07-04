@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "calcium:block/polished_kurodite",
+    "side": "calcium:block/polished_kurodite",
+    "top": "calcium:block/polished_kurodite"
+  }
+}

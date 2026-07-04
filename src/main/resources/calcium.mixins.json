@@ -3,6 +3,7 @@
   "package": "net.nicolas.calcium.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "AbstractBlockAccessor",
     "BeaconBlockEntityMixin",
     "BucketItemMixin",
     "CampfireBlockMixin",
@@ -50,6 +51,7 @@
   "client": [
     "BlockDustParticleMixin",
     "CampfireBlockEntityRendererMixin",
+    "ClientPlayerEntityMixin",
     "InGameOverlayRendererMixin",
     "MinecraftClientMixin",
     "SignBlockEntityRendererMixin",

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "calcium:shadoline_ingot",
+    "@": "calcium:shadoline_nugget",
+    "$": "#minecraft:coals"
+  },
+  "pattern": [
+    "@",
+    "$",
+    "#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "calcium:shadoline_lantern"
+  }
+}
+

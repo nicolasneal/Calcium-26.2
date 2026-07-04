@@ -1,0 +1,20 @@
+{
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"particle": "#bars"
+	},
+	"elements": [
+		{
+			"from": [7, 0, 7],
+			"to": [9, 16, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, -1]},
+			"faces": {
+				"north": {"uv": [7, 0, 9, 16], "texture": "#edge"},
+				"east": {"uv": [7, 0, 9, 16], "texture": "#edge"},
+				"south": {"uv": [9, 0, 7, 16], "texture": "#edge"},
+				"west": {"uv": [7, 0, 9, 16], "texture": "#edge"}
+			}
+		}
+	]
+}

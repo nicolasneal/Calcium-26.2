@@ -29,11 +29,12 @@
         "probability": 0.00625
       }
     ],
-    "minecraft:visual/fog_color": "#1b4745"
+    "minecraft:visual/fog_color": "#1B4745"
   },
   "carvers": "minecraft:nether_cave",
   "effects": {
-    "water_color": "#3F76E4"
+    "water_color": "#3F76E4",
+    "grass_color": "#B28E88"
   },
   "features": [
     [],

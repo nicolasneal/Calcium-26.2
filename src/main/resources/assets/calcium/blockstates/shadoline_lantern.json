@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "calcium:block/shadoline_lantern"
+    },
+    "hanging=true": {
+      "model": "calcium:block/shadoline_lantern_hanging"
+    }
+  }
+}

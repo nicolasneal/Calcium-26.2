@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "shadoline_ingot",
+  "ingredient": "calcium:end_stone_shadoline_ore",
+  "result": {
+    "id": "calcium:shadoline_ingot"
+  }
+}
+
+
+

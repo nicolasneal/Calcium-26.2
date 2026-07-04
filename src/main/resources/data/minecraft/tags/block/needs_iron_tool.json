@@ -11,6 +11,18 @@
     "calcium:gold_trapdoor",
     "calcium:gold_bars",
     "calcium:gold_chain",
-    "calcium:gold_lantern"
+    "calcium:gold_lantern",
+    "calcium:shadoline_block",
+    "calcium:cut_shadoline",
+    "calcium:cut_shadoline_stairs",
+    "calcium:cut_shadoline_slab",
+    "calcium:chiseled_shadoline",
+    "calcium:shadoline_grate",
+    "calcium:shadoline_bulb",
+    "calcium:shadoline_door",
+    "calcium:shadoline_trapdoor",
+    "calcium:shadoline_bars",
+    "calcium:shadoline_chain",
+    "calcium:shadoline_lantern"
   ]
 }

@@ -43,5 +43,157 @@
       "calcium:block/soulslate/step4",
       "calcium:block/soulslate/step5"
     ]
+  },
+  "block.pallid_magnia.break": {
+    "sounds": [
+      "calcium:block/pallid_magnia/break1",
+      "calcium:block/pallid_magnia/break2",
+      "calcium:block/pallid_magnia/break3",
+      "calcium:block/pallid_magnia/break4"
+    ]
+  },
+  "block.pallid_magnia.place": {
+    "sounds": [
+      "calcium:block/pallid_magnia/place1",
+      "calcium:block/pallid_magnia/place2",
+      "calcium:block/pallid_magnia/place3",
+      "calcium:block/pallid_magnia/place4"
+    ]
+  },
+  "block.pallid_magnia.step": {
+    "sounds": [
+      "calcium:block/pallid_magnia/step1",
+      "calcium:block/pallid_magnia/step2",
+      "calcium:block/pallid_magnia/step3",
+      "calcium:block/pallid_magnia/step4"
+    ]
+  },
+  "block.umbral_magnia.break": {
+    "sounds": [
+      "calcium:block/umbral_magnia/break1",
+      "calcium:block/umbral_magnia/break2",
+      "calcium:block/umbral_magnia/break3",
+      "calcium:block/umbral_magnia/break4"
+    ]
+  },
+  "block.umbral_magnia.place": {
+    "sounds": [
+      "calcium:block/umbral_magnia/place1",
+      "calcium:block/umbral_magnia/place2",
+      "calcium:block/umbral_magnia/place3",
+      "calcium:block/umbral_magnia/place4"
+    ]
+  },
+  "block.umbral_magnia.step": {
+    "sounds": [
+      "calcium:block/umbral_magnia/step1",
+      "calcium:block/umbral_magnia/step2",
+      "calcium:block/umbral_magnia/step3",
+      "calcium:block/umbral_magnia/step4"
+    ]
+  },
+  "block.shadoline.break": {
+    "sounds": [
+      "calcium:block/shadoline/break1",
+      "calcium:block/shadoline/break2",
+      "calcium:block/shadoline/break3",
+      "calcium:block/shadoline/break4"
+    ]
+  },
+  "block.shadoline.place": {
+    "sounds": [
+      "calcium:block/shadoline/place1",
+      "calcium:block/shadoline/place2",
+      "calcium:block/shadoline/place3",
+      "calcium:block/shadoline/place4"
+    ]
+  },
+  "block.shadoline.step": {
+    "sounds": [
+      "calcium:block/shadoline/step1",
+      "calcium:block/shadoline/step2",
+      "calcium:block/shadoline/step3",
+      "calcium:block/shadoline/step4"
+    ]
+  },
+  "block.end_rod.place": {
+    "sounds": [
+      "calcium:block/end_rod/place1",
+      "calcium:block/end_rod/place2",
+      "calcium:block/end_rod/place3",
+      "calcium:block/end_rod/place4"
+    ]
+  },
+  "block.end_stone.break": {
+    "sounds": [
+      "calcium:block/end_stone/break1",
+      "calcium:block/end_stone/break2",
+      "calcium:block/end_stone/break3",
+      "calcium:block/end_stone/break4"
+    ]
+  },
+  "block.end_stone.step": {
+    "sounds": [
+      "calcium:block/end_stone/step1",
+      "calcium:block/end_stone/step2",
+      "calcium:block/end_stone/step3",
+      "calcium:block/end_stone/step4"
+    ]
+  },
+  "block.kurodite.break": {
+    "sounds": [
+      "calcium:block/kurodite/break1",
+      "calcium:block/kurodite/break2",
+      "calcium:block/kurodite/break3",
+      "calcium:block/kurodite/break4"
+    ]
+  },
+  "block.kurodite.step": {
+    "sounds": [
+      "calcium:block/kurodite/step1",
+      "calcium:block/kurodite/step2",
+      "calcium:block/kurodite/step3",
+      "calcium:block/kurodite/step4"
+    ]
+  },
+  "block.kurodite_bricks.break": {
+    "sounds": [
+      "calcium:block/kurodite_bricks/break1",
+      "calcium:block/kurodite_bricks/break2",
+      "calcium:block/kurodite_bricks/break3",
+      "calcium:block/kurodite_bricks/break4"
+    ]
+  },
+  "block.kurodite_bricks.step": {
+    "sounds": [
+      "calcium:block/kurodite_bricks/step1",
+      "calcium:block/kurodite_bricks/step2",
+      "calcium:block/kurodite_bricks/step3",
+      "calcium:block/kurodite_bricks/step4"
+    ]
+  },
+  "music.jukebox.bliss": {
+    "sounds": [
+      {
+        "name": "calcium:music/jukebox/bliss",
+        "stream": true
+      }
+    ]
+  },
+  "music.jukebox.decay": {
+    "sounds": [
+      {
+        "name": "calcium:music/jukebox/decay",
+        "stream": true
+      }
+    ]
+  },
+  "music.jukebox.glare": {
+    "sounds": [
+      {
+        "name": "calcium:music/jukebox/glare",
+        "stream": true
+      }
+    ]
   }
 }

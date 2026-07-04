@@ -1,0 +1,8 @@
+{
+  "comparator_output": 15,
+  "description": {
+    "translate": "item.calcium.music_disc_decay.description"
+  },
+  "length_in_seconds": 95.0,
+  "sound_event": "calcium:music.jukebox.decay"
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/walls/wall_side_tall1",
+	"textures": {
+		"wall": "calcium:block/walls/polished_end_stone",
+		"particle": "calcium:block/polished_end_stone"
+	}
+}

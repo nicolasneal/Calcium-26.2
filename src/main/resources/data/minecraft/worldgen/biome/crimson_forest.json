@@ -32,7 +32,8 @@
     "minecraft:visual/fog_color": "#330303"
   },
   "effects": {
-    "water_color": "#3F76E4"
+    "water_color": "#3F76E4",
+    "grass_color": "#B28E88"
   },
   "carvers": "minecraft:nether_cave",
   "features": [

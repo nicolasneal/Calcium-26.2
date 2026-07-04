@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "calcium:raw_shadoline_block"
+  ],
+  "result": {
+    "count": 4,
+    "id": "calcium:raw_shadoline"
+  }
+}
+

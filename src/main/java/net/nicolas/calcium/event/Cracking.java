@@ -89,6 +89,10 @@ public class Cracking {
         .put(Blocks.RED_NETHER_BRICK_STAIRS, ModBlocks.CRACKED_RED_NETHER_BRICK_STAIRS)
         .put(Blocks.RED_NETHER_BRICK_SLAB, ModBlocks.CRACKED_RED_NETHER_BRICK_SLAB)
         .put(Blocks.RED_NETHER_BRICK_WALL, ModBlocks.CRACKED_RED_NETHER_BRICK_WALL)
+        .put(ModBlocks.KURODITE_BRICKS, ModBlocks.CRACKED_KURODITE_BRICKS)
+        .put(ModBlocks.KURODITE_BRICK_STAIRS, ModBlocks.CRACKED_KURODITE_BRICK_STAIRS)
+        .put(ModBlocks.KURODITE_BRICK_SLAB, ModBlocks.CRACKED_KURODITE_BRICK_SLAB)
+        .put(ModBlocks.KURODITE_BRICK_WALL, ModBlocks.CRACKED_KURODITE_BRICK_WALL)
 
         .build();
 

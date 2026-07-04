@@ -1,0 +1,9 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "calcium:block/cracked_kurodite_bricks",
+    "side": "calcium:block/cracked_kurodite_bricks",
+    "top": "calcium:block/cracked_kurodite_bricks"
+  }
+}
+

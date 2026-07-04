@@ -1,0 +1,9 @@
+{
+    "pack": {
+        "pack_format": 64,
+	"min_format": [1, 0],
+        "max_format": [1000, 0],
+        "supported_formats": [1, 1000],
+        "description": [{"text":"Grass Overlays","color":"#8DBCE3"},{"text":"\n✿ ɴɪᴄᴏʟᴀꜱ ✿","color":"#cca3ff"}]
+    }
+}

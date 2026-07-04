@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "calcium:block/cut_shadoline_slab"
+    },
+    "type=top": {
+      "model": "calcium:block/cut_shadoline_slab_top"
+    },
+    "type=double": {
+      "model": "calcium:block/cut_shadoline"
+    }
+  }
+}

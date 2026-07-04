@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "calcium:block/chiseled_shadoline",
+    "particle": "calcium:block/chiseled_shadoline"
+  },
+  "render_type": "solid"
+}

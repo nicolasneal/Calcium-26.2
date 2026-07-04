@@ -1,8 +1,8 @@
 {
 	"parent": "item/torches/third_person_template",
 	"textures": {
-		"1": "item/copper_torch_hand",
-		"2": "item/copper_torch_gradient_flame",
-		"3": "item/copper_torch_flame"
+		"1": "item/torches/copper_torch_hand",
+		"2": "item/torches/copper_torch_gradient_flame",
+		"3": "item/torches/copper_torch_flame"
 	}
 }

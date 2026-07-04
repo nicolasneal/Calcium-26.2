@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "calcium:block/cut_shadoline",
+    "side": "calcium:block/cut_shadoline",
+    "top": "calcium:block/cut_shadoline"
+  }
+}
+
+

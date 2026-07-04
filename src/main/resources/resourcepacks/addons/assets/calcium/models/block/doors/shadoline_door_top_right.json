@@ -1,0 +1,13 @@
+{
+  "parent": "minecraft:block/doors/door_top_right",
+  "textures": {
+    "texture": "calcium:block/doors/shadoline",
+    "particle": "calcium:block/particles/shadoline_door"
+  }
+}
+
+
+
+
+
+

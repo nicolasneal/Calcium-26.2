@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "calcium:cut_shadoline",
+  "result": {
+    "count": 1,
+    "id": "calcium:chiseled_shadoline"
+  }
+}
+

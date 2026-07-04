@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "calcium:polished_end_stone"
+  },
+  "pattern": [
+    "# ",
+    "##"
+  ],
+  "result": {
+    "id": "calcium:polished_end_stone_stairs",
+    "count": 4
+  }
+}

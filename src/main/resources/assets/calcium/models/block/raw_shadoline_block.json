@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "calcium:block/raw_shadoline_block",
+    "particle": "calcium:block/raw_shadoline_block"
+  },
+  "render_type": "solid"
+}

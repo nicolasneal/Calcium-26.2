@@ -1,0 +1,20 @@
+{
+    "parent": "minecraft:block/stairs/stairs_inner",
+        "textures": {
+            "1": "calcium:block/stairs/polished_end_stone_4",
+	    "2": "calcium:block/stairs/polished_end_stone_3",
+	    "3": "calcium:block/stairs/polished_end_stone_4",
+	    "4": "calcium:block/polished_end_stone",
+	    "particle": "calcium:block/polished_end_stone"
+        }
+}
+
+
+
+
+
+
+
+
+
+

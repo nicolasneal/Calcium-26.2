@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_bars_post_ends",
+  "textures": {
+    "bars": "calcium:block/gold_bars",
+    "edge": "calcium:block/gold_bars_edge"
+  }
+}

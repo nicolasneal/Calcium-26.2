@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.ComposterBlock;
 import net.minecraft.block.LeveledCauldronBlock;
 import net.minecraft.block.cauldron.CauldronBehavior;
@@ -17,11 +18,13 @@ import net.minecraft.registry.Registry;
 import net.minecraft.resource.featuretoggle.FeatureFlags;
 import net.minecraft.resource.featuretoggle.FeatureSet;
 import net.minecraft.screen.ScreenHandlerType;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.event.Cracking;
 import net.nicolas.calcium.fluid.ModFluids;
 import net.nicolas.calcium.item.ModItems;
+import net.nicolas.calcium.mixin.AbstractBlockAccessor;
 import net.nicolas.calcium.recipe.ModRecipes;
 import net.nicolas.calcium.screen.CustomBeaconScreenHandler;
 import net.nicolas.calcium.screen.CustomEnchantingScreenHandler;
@@ -58,6 +61,10 @@ public class Calcium implements ModInitializer {
 
 		FabricLoader.getInstance().getModContainer("calcium").ifPresent(container -> {
 			boolean success = ResourceManagerHelper.registerBuiltinResourcePack(Identifier.of("calcium", "cubic"), container, net.minecraft.text.Text.of("§l3D Sun & Moon"), ResourcePackActivationType.NORMAL);
+		});
+
+		FabricLoader.getInstance().getModContainer("calcium").ifPresent(container -> {
+			boolean success = ResourceManagerHelper.registerBuiltinResourcePack(Identifier.of("calcium", "overlays"), container, net.minecraft.text.Text.of("§lGrass Overlays"), ResourcePackActivationType.NORMAL);
 		});
 
 		FabricLoader.getInstance().getModContainer("calcium").ifPresent(container -> {
@@ -221,6 +228,102 @@ public class Calcium implements ModInitializer {
 			context.modify(Items.WRITTEN_BOOK, builder -> builder.add(DataComponentTypes.MAX_STACK_SIZE, 64));
 			context.modify(Items.ENCHANTED_BOOK, builder -> builder.add(DataComponentTypes.MAX_STACK_SIZE, 64));
 		});
+
+		// Overriding Block Sound Groups
+
+		// Dirt Blocks
+		((AbstractBlockAccessor) Blocks.DIRT).setSoundGroup(BlockSoundGroup.ROOTED_DIRT);
+		((AbstractBlockAccessor) Blocks.COARSE_DIRT).setSoundGroup(BlockSoundGroup.ROOTED_DIRT);
+		((AbstractBlockAccessor) Blocks.PODZOL).setSoundGroup(BlockSoundGroup.ROOTED_DIRT);
+		((AbstractBlockAccessor) Blocks.FARMLAND).setSoundGroup(BlockSoundGroup.ROOTED_DIRT);
+		((AbstractBlockAccessor) Blocks.DIRT_PATH).setSoundGroup(BlockSoundGroup.ROOTED_DIRT);
+		((AbstractBlockAccessor) Blocks.CLAY).setSoundGroup(BlockSoundGroup.ROOTED_DIRT);
+		// Leaves
+		((AbstractBlockAccessor) Blocks.OAK_LEAVES).setSoundGroup(BlockSoundGroup.CHERRY_LEAVES);
+		((AbstractBlockAccessor) Blocks.SPRUCE_LEAVES).setSoundGroup(BlockSoundGroup.CHERRY_LEAVES);
+		((AbstractBlockAccessor) Blocks.BIRCH_LEAVES).setSoundGroup(BlockSoundGroup.CHERRY_LEAVES);
+		((AbstractBlockAccessor) Blocks.JUNGLE_LEAVES).setSoundGroup(BlockSoundGroup.CHERRY_LEAVES);
+		((AbstractBlockAccessor) Blocks.ACACIA_LEAVES).setSoundGroup(BlockSoundGroup.CHERRY_LEAVES);
+		((AbstractBlockAccessor) Blocks.DARK_OAK_LEAVES).setSoundGroup(BlockSoundGroup.CHERRY_LEAVES);
+		((AbstractBlockAccessor) Blocks.MANGROVE_LEAVES).setSoundGroup(BlockSoundGroup.CHERRY_LEAVES);
+		((AbstractBlockAccessor) Blocks.PALE_OAK_LEAVES).setSoundGroup(BlockSoundGroup.CHERRY_LEAVES);
+		// Saplings
+		((AbstractBlockAccessor) Blocks.OAK_SAPLING).setSoundGroup(BlockSoundGroup.CHERRY_SAPLING);
+		((AbstractBlockAccessor) Blocks.SPRUCE_SAPLING).setSoundGroup(BlockSoundGroup.CHERRY_SAPLING);
+		((AbstractBlockAccessor) Blocks.BIRCH_SAPLING).setSoundGroup(BlockSoundGroup.CHERRY_SAPLING);
+		((AbstractBlockAccessor) Blocks.JUNGLE_SAPLING).setSoundGroup(BlockSoundGroup.CHERRY_SAPLING);
+		((AbstractBlockAccessor) Blocks.ACACIA_SAPLING).setSoundGroup(BlockSoundGroup.CHERRY_SAPLING);
+		((AbstractBlockAccessor) Blocks.DARK_OAK_SAPLING).setSoundGroup(BlockSoundGroup.CHERRY_SAPLING);
+		((AbstractBlockAccessor) Blocks.MANGROVE_PROPAGULE).setSoundGroup(BlockSoundGroup.CHERRY_SAPLING);
+		((AbstractBlockAccessor) Blocks.PALE_OAK_SAPLING).setSoundGroup(BlockSoundGroup.CHERRY_SAPLING);
+		// Mushroom Blocks
+		((AbstractBlockAccessor) Blocks.RED_MUSHROOM_BLOCK).setSoundGroup(BlockSoundGroup.WART_BLOCK);
+		((AbstractBlockAccessor) Blocks.BROWN_MUSHROOM_BLOCK).setSoundGroup(BlockSoundGroup.WART_BLOCK);
+		((AbstractBlockAccessor) Blocks.MUSHROOM_STEM).setSoundGroup(BlockSoundGroup.WART_BLOCK);
+		// Raw Ore Blocks
+		((AbstractBlockAccessor) Blocks.RAW_COPPER_BLOCK).setSoundGroup(BlockSoundGroup.STONE);
+		// Plant Blocks
+		((AbstractBlockAccessor) Blocks.SHORT_GRASS).setSoundGroup(BlockSoundGroup.FLOWERBED);
+		((AbstractBlockAccessor) Blocks.TALL_GRASS).setSoundGroup(BlockSoundGroup.FLOWERBED);
+		((AbstractBlockAccessor) Blocks.SHORT_DRY_GRASS).setSoundGroup(BlockSoundGroup.FLOWERBED);
+		((AbstractBlockAccessor) Blocks.TALL_DRY_GRASS).setSoundGroup(BlockSoundGroup.FLOWERBED);
+		((AbstractBlockAccessor) Blocks.FERN).setSoundGroup(BlockSoundGroup.FLOWERBED);
+		((AbstractBlockAccessor) Blocks.LARGE_FERN).setSoundGroup(BlockSoundGroup.FLOWERBED);
+		((AbstractBlockAccessor) Blocks.BUSH).setSoundGroup(BlockSoundGroup.FLOWERBED);
+		((AbstractBlockAccessor) Blocks.DEAD_BUSH).setSoundGroup(BlockSoundGroup.AZALEA);
+		((AbstractBlockAccessor) Blocks.DANDELION).setSoundGroup(BlockSoundGroup.AZALEA);
+		((AbstractBlockAccessor) Blocks.POPPY).setSoundGroup(BlockSoundGroup.AZALEA);
+		((AbstractBlockAccessor) Blocks.BLUE_ORCHID).setSoundGroup(BlockSoundGroup.AZALEA);
+		((AbstractBlockAccessor) Blocks.ALLIUM).setSoundGroup(BlockSoundGroup.AZALEA);
+		((AbstractBlockAccessor) Blocks.AZURE_BLUET).setSoundGroup(BlockSoundGroup.AZALEA);
+		((AbstractBlockAccessor) Blocks.RED_TULIP).setSoundGroup(BlockSoundGroup.AZALEA);
+		((AbstractBlockAccessor) Blocks.ORANGE_TULIP).setSoundGroup(BlockSoundGroup.AZALEA);
+		((AbstractBlockAccessor) Blocks.WHITE_TULIP).setSoundGroup(BlockSoundGroup.AZALEA);
+		((AbstractBlockAccessor) Blocks.ORANGE_TULIP).setSoundGroup(BlockSoundGroup.AZALEA);
+		((AbstractBlockAccessor) Blocks.OXEYE_DAISY).setSoundGroup(BlockSoundGroup.AZALEA);
+		((AbstractBlockAccessor) Blocks.CORNFLOWER).setSoundGroup(BlockSoundGroup.AZALEA);
+		((AbstractBlockAccessor) Blocks.LILY_OF_THE_VALLEY).setSoundGroup(BlockSoundGroup.AZALEA);
+		((AbstractBlockAccessor) Blocks.TORCHFLOWER).setSoundGroup(BlockSoundGroup.AZALEA);
+		((AbstractBlockAccessor) Blocks.CLOSED_EYEBLOSSOM).setSoundGroup(BlockSoundGroup.AZALEA);
+		((AbstractBlockAccessor) Blocks.OPEN_EYEBLOSSOM).setSoundGroup(BlockSoundGroup.AZALEA);
+		((AbstractBlockAccessor) Blocks.WITHER_ROSE).setSoundGroup(BlockSoundGroup.AZALEA);
+		((AbstractBlockAccessor) Blocks.SUGAR_CANE).setSoundGroup(BlockSoundGroup.AZALEA);
+		((AbstractBlockAccessor) Blocks.SUNFLOWER).setSoundGroup(BlockSoundGroup.AZALEA);
+		((AbstractBlockAccessor) Blocks.LILAC).setSoundGroup(BlockSoundGroup.AZALEA);
+		((AbstractBlockAccessor) Blocks.ROSE_BUSH).setSoundGroup(BlockSoundGroup.AZALEA);
+		((AbstractBlockAccessor) Blocks.PEONY).setSoundGroup(BlockSoundGroup.AZALEA);
+		((AbstractBlockAccessor) Blocks.CACTUS).setSoundGroup(BlockSoundGroup.SWEET_BERRY_BUSH);
+		((AbstractBlockAccessor) Blocks.GLOW_LICHEN).setSoundGroup(BlockSoundGroup.VINE);
+		((AbstractBlockAccessor) Blocks.RED_MUSHROOM).setSoundGroup(BlockSoundGroup.FUNGUS);
+		((AbstractBlockAccessor) Blocks.BROWN_MUSHROOM).setSoundGroup(BlockSoundGroup.FUNGUS);
+		// Wooden Furniture
+		((AbstractBlockAccessor) Blocks.CHEST).setSoundGroup(BlockSoundGroup.SHELF);
+		((AbstractBlockAccessor) Blocks.TRAPPED_CHEST).setSoundGroup(BlockSoundGroup.SHELF);
+		((AbstractBlockAccessor) Blocks.BARREL).setSoundGroup(BlockSoundGroup.SHELF);
+		((AbstractBlockAccessor) Blocks.CRAFTING_TABLE).setSoundGroup(BlockSoundGroup.SHELF);
+		((AbstractBlockAccessor) Blocks.CARTOGRAPHY_TABLE).setSoundGroup(BlockSoundGroup.SHELF);
+		((AbstractBlockAccessor) Blocks.FLETCHING_TABLE).setSoundGroup(BlockSoundGroup.SHELF);
+		((AbstractBlockAccessor) Blocks.SMITHING_TABLE).setSoundGroup(BlockSoundGroup.SHELF);
+		((AbstractBlockAccessor) Blocks.LOOM).setSoundGroup(BlockSoundGroup.SHELF);
+		((AbstractBlockAccessor) Blocks.LECTERN).setSoundGroup(BlockSoundGroup.SHELF);
+		((AbstractBlockAccessor) Blocks.COMPOSTER).setSoundGroup(BlockSoundGroup.SHELF);
+		((AbstractBlockAccessor) Blocks.BEE_NEST).setSoundGroup(BlockSoundGroup.SHELF);
+		((AbstractBlockAccessor) Blocks.BEEHIVE).setSoundGroup(BlockSoundGroup.SHELF);
+		((AbstractBlockAccessor) Blocks.BOOKSHELF).setSoundGroup(BlockSoundGroup.SHELF);
+		((AbstractBlockAccessor) Blocks.NOTE_BLOCK).setSoundGroup(BlockSoundGroup.SHELF);
+		((AbstractBlockAccessor) Blocks.JUKEBOX).setSoundGroup(BlockSoundGroup.SHELF);
+		// Bricks
+		((AbstractBlockAccessor) Blocks.BRICKS).setSoundGroup(BlockSoundGroup.NETHER_BRICKS);
+		((AbstractBlockAccessor) Blocks.BRICK_STAIRS).setSoundGroup(BlockSoundGroup.NETHER_BRICKS);
+		((AbstractBlockAccessor) Blocks.BRICK_SLAB).setSoundGroup(BlockSoundGroup.NETHER_BRICKS);
+		((AbstractBlockAccessor) Blocks.BRICK_WALL).setSoundGroup(BlockSoundGroup.NETHER_BRICKS);
+		// Metal Blocks
+		((AbstractBlockAccessor) Blocks.CAULDRON).setSoundGroup(BlockSoundGroup.METAL);
+		((AbstractBlockAccessor) Blocks.COAL_BLOCK).setSoundGroup(BlockSoundGroup.METAL);
+		((AbstractBlockAccessor) Blocks.LAPIS_BLOCK).setSoundGroup(BlockSoundGroup.METAL);
+		// End Blocks
+		((AbstractBlockAccessor) Blocks.END_STONE).setSoundGroup(ModSounds.END_STONE);
+		((AbstractBlockAccessor) Blocks.END_ROD).setSoundGroup(ModSounds.END_ROD);
 
 	}
 

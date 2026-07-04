@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "calcium:block/cracked_kurodite_bricks",
+    "particle": "calcium:block/cracked_kurodite_bricks"
+  },
+  "render_type": "solid"
+}
+

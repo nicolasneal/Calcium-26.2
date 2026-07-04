@@ -1,6 +1,7 @@
 package net.nicolas.calcium.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.block.jukebox.JukeboxSongs;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.ConsumableComponents;
 import net.minecraft.item.Item;
@@ -11,8 +12,10 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import net.nicolas.calcium.fluid.ModFluids;
 import net.nicolas.calcium.item.custom.EctoplasmBucketItem;
+import net.nicolas.calcium.sound.ModSounds;
 
 import java.util.function.Function;
 
@@ -41,8 +44,10 @@ public class ModItems {
     public static final Item COOKIE_DOUGH = register("cookie_dough", Item::new, new Item.Settings().maxCount(64));
     public static final Item CAKE_BATTER = register("cake_batter", Item::new, new Item.Settings().maxCount(64));
     public static final Item PUMPKIN_SLICE = register("pumpkin_slice", Item::new, new Item.Settings().maxCount(64));
+    public static final Item SHADOLINE_NUGGET = register("shadoline_nugget", Item::new, new Item.Settings().maxCount(64));
+    public static final Item SHADOLINE_INGOT = register("shadoline_ingot", Item::new, new Item.Settings().maxCount(64));
 
-    // FOOD AND DRINK (MOB DROPS)
+    // FOOD AND DRINK
 
     public static final Item CHEVAL = register("cheval", Item::new, new Item.Settings().maxCount(64).food(ModFoods.CHEVAL));
     public static final Item COOKED_CHEVAL = register("cooked_cheval", Item::new, new Item.Settings().maxCount(64).food(ModFoods.COOKED_CHEVAL));
@@ -66,6 +71,9 @@ public class ModItems {
     public static final Item GOLD_COIN = register("gold_coin", Item::new, new Item.Settings().maxCount(64));
     public static final Item NETHERITE_COIN = register("netherite_coin", Item::new, new Item.Settings().maxCount(64));
     public static final Item ECTOPLASM_BUCKET = register("ectoplasm_bucket", settings -> new EctoplasmBucketItem(ModFluids.ECTOPLASM_STILL, settings), new Item.Settings().recipeRemainder(Items.BUCKET).maxCount(64));
+    public static final Item MUSIC_DISC_BLISS = register("music_disc_bliss", Item::new, new Item.Settings().jukeboxPlayable(ModSounds.BLISS).maxCount(64));
+    public static final Item MUSIC_DISC_DECAY = register("music_disc_decay", Item::new, new Item.Settings().jukeboxPlayable(ModSounds.DECAY).maxCount(64));
+    public static final Item MUSIC_DISC_GLARE = register("music_disc_glare", Item::new, new Item.Settings().jukeboxPlayable(ModSounds.GLARE).maxCount(64));
 
     private static <T extends Item> T register(String name, Function<Item.Settings, T> constructor, Item.Settings settings) {
         RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MOD_ID, name));
@@ -90,6 +98,8 @@ public class ModItems {
             itemgroup.add(COOKIE_DOUGH);
             itemgroup.add(CAKE_BATTER);
             itemgroup.add(PUMPKIN_SLICE);
+            itemgroup.add(SHADOLINE_NUGGET);
+            itemgroup.add(SHADOLINE_INGOT);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(itemgroup -> {
@@ -115,6 +125,9 @@ public class ModItems {
             itemgroup.add(GOLD_COIN);
             itemgroup.add(NETHERITE_COIN);
             itemgroup.add(ECTOPLASM_BUCKET);
+            itemgroup.add(MUSIC_DISC_BLISS);
+            itemgroup.add(MUSIC_DISC_DECAY);
+            itemgroup.add(MUSIC_DISC_GLARE);
         });
 
     }

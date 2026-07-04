@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_bars_side",
+  "textures": {
+    "bars": "calcium:block/shadoline_bars",
+    "edge": "calcium:block/shadoline_bars"
+  }
+}

@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "#": "minecraft:dark_oak_planks",
-    "@": "minecraft:chain"
+    "@": "minecraft:iron_chain"
   },
   "pattern": [
     "@",

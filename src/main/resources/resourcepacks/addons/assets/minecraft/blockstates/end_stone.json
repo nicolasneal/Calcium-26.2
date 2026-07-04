@@ -1,0 +1,14 @@
+{
+    "variants": {
+        "": [
+            { "model": "block/end_stone", "x": 0, "y": 0 },
+            { "model": "block/end_stone", "x": 0, "y": 90 },
+            { "model": "block/end_stone", "x": 0, "y": 180 },
+            { "model": "block/end_stone", "x": 0, "y": 270 },
+            { "model": "block/end_stone", "x": 90, "y": 0 },
+            { "model": "block/end_stone", "x": 90, "y": 90 },
+            { "model": "block/end_stone", "x": 90, "y": 180 },
+            { "model": "block/end_stone", "x": 90, "y": 270 }
+        ]
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "shadoline_bulb",
+  "key": {
+    "#": "minecraft:redstone_lamp",
+    "@": "calcium:shadoline_ingot"
+  },
+  "pattern": [
+    " @ ",
+    "@#@",
+    " @ "
+  ],
+  "result": {
+    "count": 1,
+    "id": "calcium:shadoline_bulb"
+  }
+}
+
