@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "food",
+  "category": "misc",
   "ingredients": [
     "minecraft:cocoa_beans",
     "minecraft:cocoa_beans",

@@ -1,7 +1,7 @@
 {
 	"credit": "Created by Stridey",
 	"textures": {
-		"minecart": "entity/minecart",
+		"minecart": "block/minecart/minecart",
 		"command_block_back": "block/command_block_back",
 		"command_block_front": "block/command_block_front",
 		"command_block_side": "block/command_block_side"

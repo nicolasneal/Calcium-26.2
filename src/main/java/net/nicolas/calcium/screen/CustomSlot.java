@@ -1,12 +1,12 @@
 package net.nicolas.calcium.screen;
 
-import net.minecraft.inventory.Inventory;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.recipe.RecipeType;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.screen.slot.Slot;
-import net.minecraft.text.Text;
+import net.minecraft.network.chat.Component;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.Container;
+import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeType;
 
 public class CustomSlot extends Slot {
 
@@ -14,9 +14,9 @@ public class CustomSlot extends Slot {
     private final SlotConfig.StackMode stackMode;
     private final Item fixedItem;
     private final TagKey<Item> allowedTag;
-    private final Text tooltip;
+    private final Component tooltip;
 
-    private CustomSlot(Inventory inventory, int index, int x, int y, SlotConfig.ItemMode itemMode, SlotConfig.StackMode stackMode, Item fixedItem, TagKey<Item> allowedTag, RecipeType<?> recipeType, Text tooltip) {
+    private CustomSlot(Container inventory, int index, int x, int y, SlotConfig.ItemMode itemMode, SlotConfig.StackMode stackMode, Item fixedItem, TagKey<Item> allowedTag, RecipeType<?> recipeType, Component tooltip) {
         super(inventory, index, x, y);
         this.itemMode = itemMode;
         this.stackMode = stackMode;
@@ -25,26 +25,26 @@ public class CustomSlot extends Slot {
         this.tooltip = tooltip;
     }
 
-    @Override public boolean canInsert(ItemStack stack) {
+    @Override public boolean mayPlace(ItemStack stack) {
         return switch (itemMode) {
             case ALL -> true;
             case FIXED -> stack.getItem() == fixedItem;
-            case TAG -> stack.isIn(allowedTag);
+            case TAG -> stack.is(allowedTag);
             case RECIPE -> false;
         };
     }
 
-    @Override public int getMaxItemCount(ItemStack stack) {
-        return (stackMode == SlotConfig.StackMode.SINGLE) ? 1 : super.getMaxItemCount(stack);
+    @Override public int getMaxStackSize(ItemStack stack) {
+        return (stackMode == SlotConfig.StackMode.SINGLE) ? 1 : super.getMaxStackSize(stack);
     }
 
-    public Text getTooltip() {
+    public Component getTooltip() {
         return tooltip;
     }
 
     public static class Builder {
 
-        private final Inventory inventory;
+        private final Container inventory;
         private final int index;
         private final int x;
         private final int y;
@@ -54,9 +54,9 @@ public class CustomSlot extends Slot {
         private Item fixedItem = null;
         private TagKey<Item> allowedTag = null;
         private RecipeType<?> recipeType = null;
-        private Text tooltip = null;
+        private Component tooltip = null;
 
-        public Builder(Inventory inventory, int index, int x, int y) {
+        public Builder(Container inventory, int index, int x, int y) {
             this.inventory = inventory;
             this.index = index;
             this.x = x;
@@ -88,7 +88,7 @@ public class CustomSlot extends Slot {
             return this;
         }
 
-        public Builder tooltip(Text tooltip) {
+        public Builder tooltip(Component tooltip) {
             this.tooltip = tooltip;
             return this;
         }

@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "calcium:nether_brick_slab"
+          "name": "minecraft:nether_brick_slab"
         }
       ]
     }

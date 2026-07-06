@@ -1,47 +1,29 @@
-{
-  "type": "minecraft:random_patch",
+﻿{
+  "type": "minecraft:simple_block",
   "config": {
-    "feature": {
-      "feature": {
-        "type": "minecraft:simple_block",
-        "config": {
-          "to_place": {
-            "type": "minecraft:weighted_state_provider",
-            "entries": [
-              {
-                "weight": 85,
-                "data": {
-                  "Name": "calcium:pampas",
-                  "Properties": {
-                    "half": "lower"
-                  }
-                }
-              },
-              {
-                "weight": 15,
-                "data": {
-                  "Name": "minecraft:tall_grass",
-                  "Properties": {
-                    "half": "lower"
-                  }
-                }
-              }
-            ]
-          }
-        }
-      },
-      "placement": [
+    "to_place": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
         {
-          "type": "minecraft:block_predicate_filter",
-          "predicate": {
-            "type": "minecraft:matching_blocks",
-            "blocks": "minecraft:air"
+          "weight": 85,
+          "data": {
+            "Name": "calcium:pampas",
+            "Properties": {
+              "half": "lower"
+            }
+          }
+        },
+        {
+          "weight": 15,
+          "data": {
+            "Name": "minecraft:tall_grass",
+            "Properties": {
+              "half": "lower"
+            }
           }
         }
       ]
-    },
-    "tries": 64,
-    "xz_spread": 7,
-    "y_spread": 3
+    }
   }
 }
+

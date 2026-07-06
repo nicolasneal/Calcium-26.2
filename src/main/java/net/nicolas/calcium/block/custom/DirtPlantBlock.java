@@ -1,36 +1,36 @@
 package net.nicolas.calcium.block.custom;
 
 import com.mojang.serialization.MapCodec;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.ShapeContext;
-import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.WorldView;
+import net.minecraft.core.BlockPos;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class DirtPlantBlock extends GenericPlantBlock {
 
-    public DirtPlantBlock(Settings settings) {
+    public DirtPlantBlock(Properties settings) {
         super(settings);
     }
 
-    public static final MapCodec<DirtPlantBlock> CODEC = createCodec(DirtPlantBlock::new);
-    @Override protected MapCodec<? extends Block> getCodec() {
+    public static final MapCodec<DirtPlantBlock> CODEC = simpleCodec(DirtPlantBlock::new);
+    @Override protected MapCodec<? extends Block> codec() {
         return CODEC;
     }
 
-    private static final VoxelShape SHAPE = Block.createCuboidShape(1.0, 0.0, 1.0, 15.0, 14.0, 15.0);
-    @Override protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return SHAPE.offset(state.getModelOffset(pos));
+    private static final VoxelShape SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 14.0, 15.0);
+    @Override protected VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return SHAPE.move(state.getOffset(pos));
     }
 
-    @Override protected boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        BlockPos floorPos = pos.down();
+    @Override protected boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
+        BlockPos floorPos = pos.below();
         BlockState floor = world.getBlockState(floorPos);
-        return floor.isIn(BlockTags.DIRT) || floor.isOf(Blocks.FARMLAND);
+        return floor.is(BlockTags.DIRT) || floor.is(Blocks.FARMLAND);
     }
 
 }

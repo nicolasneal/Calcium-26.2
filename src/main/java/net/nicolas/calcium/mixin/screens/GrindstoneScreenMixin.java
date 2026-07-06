@@ -1,27 +1,27 @@
 package net.nicolas.calcium.mixin.screens;
 
 import com.mojang.blaze3d.pipeline.RenderPipeline;
-import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.gui.screen.ingame.GrindstoneScreen;
-import net.minecraft.client.gui.screen.ingame.HandledScreen;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.screen.GrindstoneScreenHandler;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.screens.inventory.GrindstoneScreen;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.inventory.GrindstoneMenu;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(GrindstoneScreen.class)
-public abstract class GrindstoneScreenMixin extends HandledScreen<GrindstoneScreenHandler> {
+public abstract class GrindstoneScreenMixin extends AbstractContainerScreen<GrindstoneMenu> {
 
-    public GrindstoneScreenMixin(GrindstoneScreenHandler handler, PlayerInventory inventory, Text title) {
+    public GrindstoneScreenMixin(GrindstoneMenu handler, Inventory inventory, Component title) {
         super(handler, inventory, title);
     }
 
-    @Redirect(method = "drawBackground", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/DrawContext;drawGuiTexture(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/util/Identifier;IIII)V"))
-    private void calcium$redirectErrorTexture(DrawContext instance, RenderPipeline pipeline, Identifier texture, int x, int y, int width, int height) {
-        instance.drawGuiTexture(pipeline, texture, this.x + 70, this.y + 33, width, height);
+    @Redirect(method = "extractBackground", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;blitSprite(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIII)V"))
+    private void calcium$redirectErrorTexture(GuiGraphicsExtractor instance, RenderPipeline pipeline, Identifier texture, int x, int y, int width, int height) {
+        instance.blitSprite(pipeline, texture, this.leftPos + 70, this.topPos + 33, width, height);
     }
 
 }

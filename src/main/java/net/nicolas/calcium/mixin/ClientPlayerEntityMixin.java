@@ -1,10 +1,10 @@
 package net.nicolas.calcium.mixin;
 
-import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.fluid.FluidState;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.level.material.FluidState;
 import net.nicolas.calcium.client.EctoplasmSound;
 import net.nicolas.calcium.fluid.ModFluids;
 import org.spongepowered.asm.mixin.Final;
@@ -15,37 +15,38 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(ClientPlayerEntity.class)
+@Mixin(LocalPlayer.class)
 public abstract class ClientPlayerEntityMixin {
 
-    @Shadow @Final protected net.minecraft.client.MinecraftClient client;
+    @Shadow @Final protected net.minecraft.client.Minecraft minecraft;
 
     @Unique private boolean submergedInEctoplasm;
 
-    @Inject(method = "updateWaterSubmersionState", at = @At("RETURN"))
+    @Inject(method = "updateIsUnderwater", at = @At("RETURN"))
     private void calcium$tickEctoplasmSounds(CallbackInfoReturnable<Boolean> cir) {
 
-        ClientPlayerEntity player = (ClientPlayerEntity) (Object) this;
+        LocalPlayer player = (LocalPlayer) (Object) this;
         boolean wasSubmerged = this.submergedInEctoplasm;
-        FluidState state = player.getEntityWorld().getFluidState(BlockPos.ofFloored(player.getEyePos()));
-        boolean isSubmerged = state.isOf(ModFluids.ECTOPLASM_STILL) || state.isOf(ModFluids.ECTOPLASM_FLOWING);
+        FluidState state = player.level().getFluidState(BlockPos.containing(player.getEyePosition()));
+        boolean isSubmerged = state.is(ModFluids.ECTOPLASM_STILL) || state.is(ModFluids.ECTOPLASM_FLOWING);
         this.submergedInEctoplasm = isSubmerged;
 
         if (!wasSubmerged && isSubmerged) {
-            this.client.getSoundManager().play(new EctoplasmSound(player));
-            player.getEntityWorld().playSoundClient(
+            this.minecraft.getSoundManager().play(new EctoplasmSound(player));
+            player.level().playLocalSound(
                 player.getX(), player.getY(), player.getZ(),
                 SoundEvents.AMBIENT_UNDERWATER_ENTER,
-                SoundCategory.AMBIENT, 1.0F, 1.0F, false
+                SoundSource.AMBIENT, 1.0F, 1.0F, false
             );
         }
         else if (wasSubmerged && !isSubmerged) {
-            player.getEntityWorld().playSoundClient(
+            player.level().playLocalSound(
                 player.getX(), player.getY(), player.getZ(),
                 SoundEvents.AMBIENT_UNDERWATER_EXIT,
-                SoundCategory.AMBIENT, 1.0F, 1.0F, false
+                SoundSource.AMBIENT, 1.0F, 1.0F, false
             );
         }
 
     }
+
 }

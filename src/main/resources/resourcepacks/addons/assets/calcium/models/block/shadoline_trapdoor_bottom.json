@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/trapdoors/template_trapdoor_bottom",
+  "textures": {
+    "texture": "calcium:block/trapdoors/shadoline"
+  }
+}

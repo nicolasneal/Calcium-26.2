@@ -1,7 +1,7 @@
 {
 	"credit": "Created by Stridey",
 	"textures": {
-		"minecart": "entity/minecart",
+		"minecart": "block/minecart/minecart",
 		"furnace_front": "block/furnace_front",
 		"furnace_side": "block/furnace_side",
 		"furnace_top": "block/furnace_top"

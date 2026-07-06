@@ -1,6 +1,6 @@
 {
 	"parent": "item/sign",
 	"textures": {
-		"texture": "entity/signs/spruce"
+		"texture": "block/signs/spruce"
 	}
 }

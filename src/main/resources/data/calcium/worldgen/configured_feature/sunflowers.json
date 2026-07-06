@@ -1,50 +1,32 @@
-{
-  "type": "minecraft:random_patch",
+﻿{
+  "type": "minecraft:simple_block",
   "config": {
-    "feature": {
-      "feature": {
-        "type": "minecraft:simple_block",
-        "config": {
-          "to_place": {
-            "type": "minecraft:weighted_state_provider",
-            "entries": [
-              {
-                "weight": 60,
-                "data": {
-                  "Name": "minecraft:sunflower",
-                  "Properties": {
-                    "half": "lower"
-                  }
-                }
-              },
-              {
-                "weight": 20,
-                "data": {
-                  "Name": "minecraft:dandelion"
-                }
-              },
-              {
-                "weight": 20,
-                "data": {
-                  "Name": "minecraft:short_grass"
-                }
-              }
-            ]
-          }
-        }
-      },
-      "placement": [
+    "to_place": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
         {
-          "type": "minecraft:block_predicate_filter",
-          "predicate": {
-            "type": "minecraft:matching_blocks",
-            "blocks": "minecraft:air"
+          "weight": 60,
+          "data": {
+            "Name": "minecraft:sunflower",
+            "Properties": {
+              "half": "lower"
+            }
+          }
+        },
+        {
+          "weight": 20,
+          "data": {
+            "Name": "minecraft:dandelion"
+          }
+        },
+        {
+          "weight": 20,
+          "data": {
+            "Name": "minecraft:short_grass"
           }
         }
       ]
-    },
-    "tries": 64,
-    "xz_spread": 7,
-    "y_spread": 3
+    }
   }
 }
+

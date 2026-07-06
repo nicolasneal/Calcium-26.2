@@ -1,6 +1,6 @@
 {
 	"parent": "item/hanging_sign",
 	"textures": {
-		"texture": "entity/signs/hanging/pale_oak"
+		"texture": "block/hanging_signs/pale_oak"
 	}
 }

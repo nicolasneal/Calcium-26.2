@@ -1,12 +1,12 @@
 package net.nicolas.calcium.mixin.screens;
 
-import net.minecraft.client.font.TextRenderer;
-import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.gui.screen.ingame.AnvilScreen;
-import net.minecraft.client.gui.screen.ingame.HandledScreen;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.screen.AnvilScreenHandler;
-import net.minecraft.text.Text;
+import net.minecraft.client.gui.Font;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.screens.inventory.AnvilScreen;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.inventory.AnvilMenu;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -14,35 +14,35 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(AnvilScreen.class)
-public abstract class AnvilScreenMixin extends HandledScreen<AnvilScreenHandler> {
+public abstract class AnvilScreenMixin extends AbstractContainerScreen<AnvilMenu> {
 
-    public AnvilScreenMixin(AnvilScreenHandler handler, PlayerInventory inventory, Text title) {
+    public AnvilScreenMixin(AnvilMenu handler, Inventory inventory, Component title) {
         super(handler, inventory, title);
     }
 
-    @ModifyArg(method = "setup", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/widget/TextFieldWidget;<init>(Lnet/minecraft/client/font/TextRenderer;IIIILnet/minecraft/text/Text;)V"), index = 1)
+    @ModifyArg(method = "subInit", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/components/EditBox;<init>(Lnet/minecraft/client/gui/Font;IIIILnet/minecraft/network/chat/Component;)V"), index = 1)
     private int calcium$modifyTextFieldWidgetX(int x) {
-        return this.x + 38;
+        return this.leftPos + 38;
     }
 
-    @ModifyArg(method = "setup", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/widget/TextFieldWidget;<init>(Lnet/minecraft/client/font/TextRenderer;IIIILnet/minecraft/text/Text;)V"), index = 2)
+    @ModifyArg(method = "subInit", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/components/EditBox;<init>(Lnet/minecraft/client/gui/Font;IIIILnet/minecraft/network/chat/Component;)V"), index = 2)
     private int calcium$modifyTextFieldWidgetY(int y) {
-        return this.y + 21;
+        return this.topPos + 21;
     }
 
-    @ModifyArg(method = "drawInvalidRecipeArrow", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/DrawContext;drawGuiTexture(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/util/Identifier;IIII)V"), index = 2)
+    @ModifyArg(method = "extractErrorIcon", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;blitSprite(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIII)V"), index = 2)
     private int calcium$modifyErrorTextureX(int x) {
-        return this.x + 94;
+        return this.leftPos + 94;
     }
 
-    @Redirect(method = "drawForeground", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/DrawContext;fill(IIIII)V"))
-    private void calcium$cancelOriginalBox(DrawContext instance, int x1, int y1, int x2, int y2, int color) {
+    @Redirect(method = "extractLabels", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;fill(IIIII)V"))
+    private void calcium$cancelOriginalBox(GuiGraphicsExtractor instance, int x1, int y1, int x2, int y2, int color) {
     }
 
-    @Redirect(method = "drawForeground", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/DrawContext;drawTextWithShadow(Lnet/minecraft/client/font/TextRenderer;Lnet/minecraft/text/Text;III)V"))
-    private void calcium$drawLeftAlignedCost(DrawContext context, TextRenderer textRenderer, Text text, int x, int y, int color) {
-        context.fill(7, 68, 11 + textRenderer.getWidth(text), 80, 1325400064);
-        context.drawTextWithShadow(textRenderer, text, 9, 70, color);
+    @Redirect(method = "extractLabels", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;text(Lnet/minecraft/client/gui/Font;Lnet/minecraft/network/chat/Component;III)V"))
+    private void calcium$drawLeftAlignedCost(GuiGraphicsExtractor context, Font textRenderer, Component text, int x, int y, int color) {
+        context.fill(7, 68, 11 + textRenderer.width(text), 80, 1325400064);
+        context.text(textRenderer, text, 9, 70, color);
     }
 
 }

@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:item/lantern",
+	"textures": {
+		"texture": "calcium:block/shadoline_lantern"
+	}
+}

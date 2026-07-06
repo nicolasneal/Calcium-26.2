@@ -1,13 +1,12 @@
 package net.nicolas.calcium.recipe;
 
-import net.minecraft.item.ItemStack;
-import net.minecraft.recipe.input.RecipeInput;
-
 import java.util.List;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeInput;
 
 public record EnchantingRecipeInput(ItemStack tablet, List<ItemStack> ingredients) implements RecipeInput {
 
-    @Override public ItemStack getStackInSlot(int slot) {
+    @Override public ItemStack getItem(int slot) {
         if (slot == 0) return tablet;
         if (slot - 1 < ingredients.size()) return ingredients.get(slot - 1);
         return ItemStack.EMPTY;

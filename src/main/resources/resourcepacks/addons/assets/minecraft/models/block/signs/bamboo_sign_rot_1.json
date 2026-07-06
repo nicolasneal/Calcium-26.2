@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/signs/template_sign_rot_1",
+  "textures": {
+    "all": "minecraft:block/signs/bamboo",
+    "particle": "minecraft:block/bamboo_planks"
+  }
+}

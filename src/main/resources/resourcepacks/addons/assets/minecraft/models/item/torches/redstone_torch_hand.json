@@ -105,6 +105,10 @@
 		},
 		"on_shelf": {
 			"translation": [0, 0, -2.45]
+		},
+		"ground": {
+			"translation": [0, 3, 0],
+			"scale": [0.25, 0.25, 0.25]
 		}
 	}
 }

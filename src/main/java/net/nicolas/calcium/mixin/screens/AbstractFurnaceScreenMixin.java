@@ -1,36 +1,36 @@
 package net.nicolas.calcium.mixin.screens;
 
 import com.mojang.blaze3d.pipeline.RenderPipeline;
-import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.gui.screen.ingame.AbstractFurnaceScreen;
-import net.minecraft.client.gui.screen.ingame.RecipeBookScreen;
-import net.minecraft.screen.AbstractFurnaceScreenHandler;
-import net.minecraft.util.Identifier;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.screens.inventory.AbstractFurnaceScreen;
+import net.minecraft.client.gui.screens.inventory.AbstractRecipeBookScreen;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.inventory.AbstractFurnaceMenu;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(AbstractFurnaceScreen.class)
-public abstract class AbstractFurnaceScreenMixin extends RecipeBookScreen<AbstractFurnaceScreenHandler> {
+public abstract class AbstractFurnaceScreenMixin extends AbstractRecipeBookScreen<AbstractFurnaceMenu> {
 
-    public AbstractFurnaceScreenMixin(AbstractFurnaceScreenHandler handler, net.minecraft.client.gui.screen.recipebook.RecipeBookWidget recipeBook, net.minecraft.entity.player.PlayerInventory inventory, net.minecraft.text.Text title) {
+    public AbstractFurnaceScreenMixin(AbstractFurnaceMenu handler, net.minecraft.client.gui.screens.recipebook.RecipeBookComponent recipeBook, net.minecraft.world.entity.player.Inventory inventory, net.minecraft.network.chat.Component title) {
         super(handler, recipeBook, inventory, title);
     }
 
-    @Redirect(method = "drawBackground",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/DrawContext;drawGuiTexture(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/util/Identifier;IIIIIIII)V"))
-    private void calcium$redirectFurnaceOverlays(DrawContext instance, RenderPipeline pipeline, Identifier texture, int textureWidth, int textureHeight, int u, int v, int x, int y, int width, int height) {
+    @Redirect(method = "extractBackground",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;blitSprite(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIIIIIII)V"))
+    private void calcium$redirectFurnaceOverlays(GuiGraphicsExtractor instance, RenderPipeline pipeline, Identifier texture, int textureWidth, int textureHeight, int u, int v, int x, int y, int width, int height) {
 
         if (textureWidth == 14 && textureHeight == 14) {
             int newX = 48;
             int baseNewY = 36;
-            instance.drawGuiTexture(pipeline, texture, textureWidth, textureHeight, u, v, this.x + newX, this.y + baseNewY + (14 - height), width, height);
+            instance.blitSprite(pipeline, texture, textureWidth, textureHeight, u, v, this.leftPos + newX, this.topPos + baseNewY + (14 - height), width, height);
         }
 
         else if (textureWidth == 24 && textureHeight == 16) {
             int newX = 72;
             int newY = 34;
-            instance.drawGuiTexture(pipeline, texture, textureWidth, textureHeight, u, v, this.x + newX, this.y + newY, width, height);
+            instance.blitSprite(pipeline, texture, textureWidth, textureHeight, u, v, this.leftPos + newX, this.topPos + newY, width, height);
         }
 
     }

@@ -115,20 +115,25 @@
       ]
     },
     {
-      "type": "minecraft:item",
-      "functions": [
+      "rolls": 1.0,
+      "entries": [
         {
-          "add": false,
-          "count": {
-            "type": "minecraft:uniform",
-            "min": 2.0,
-            "max": 3.0
-          },
-          "function": "minecraft:set_count"
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 2.0,
+                "max": 3.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "calcium:iron_coin",
+          "weight": 5
         }
-      ],
-      "name": "calcium:iron_coin",
-      "weight": 5
+      ]
     }
   ],
   "random_sequence": "minecraft:chests/trial_chambers/reward_ominous_rare"

@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": "minecraft:cut_iron"
+    "#": "calcium:cut_iron"
   },
   "pattern": [
     "#"
   ],
   "result": {
     "count": 1,
-    "id": "minecraft:chiseled_iron"
+    "id": "calcium:chiseled_iron"
   }
 }

@@ -1,18 +1,18 @@
 package net.nicolas.calcium.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.CampfireBlock;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.CampfireBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -21,34 +21,34 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(CampfireBlock.class)
 public abstract class CampfireBlockMixin {
 
-    @Inject(method = "onUseWithItem", at = @At("HEAD"), cancellable = true) private void onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, CallbackInfoReturnable<ActionResult> cir) {
+    @Inject(method = "useItemOn", at = @At("HEAD"), cancellable = true) private void onUseWithItem(ItemStack stack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, CallbackInfoReturnable<InteractionResult> cir) {
 
-        if (state.get(CampfireBlock.LIT)) return;
-        if (state.get(CampfireBlock.WATERLOGGED)) return;
+        if (state.getValue(CampfireBlock.LIT)) return;
+        if (state.getValue(CampfireBlock.WATERLOGGED)) return;
 
-        ItemStack itemStack = player.getStackInHand(hand);
-        if (itemStack.isOf(Items.STICK)) {
-            world.playSound(null, pos, SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, world.random.nextFloat() * 0.4F + 0.8F);
+        ItemStack itemStack = player.getItemInHand(hand);
+        if (itemStack.is(Items.STICK)) {
+            world.playSound(null, pos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
 
-            if (!world.isClient()) {
-                if (world.random.nextFloat() < 0.30F) {
-                    world.setBlockState(pos, state.with(CampfireBlock.LIT, true));
+            if (!world.isClientSide()) {
+                if (world.getRandom().nextFloat() < 0.30F) {
+                    world.setBlockAndUpdate(pos, state.setValue(CampfireBlock.LIT, true));
                 }
                 if (!player.isCreative()) {
-                    itemStack.decrement(1);
+                    itemStack.shrink(1);
                 }
             }
 
-            cir.setReturnValue(ActionResult.SUCCESS);
+            cir.setReturnValue(InteractionResult.SUCCESS);
             cir.cancel();
 
         }
 
     }
 
-    @ModifyReturnValue(method = "getPlacementState(Lnet/minecraft/item/ItemPlacementContext;)Lnet/minecraft/block/BlockState;", at = @At("RETURN"))
+    @ModifyReturnValue(method = "getStateForPlacement(Lnet/minecraft/world/item/context/BlockPlaceContext;)Lnet/minecraft/world/level/block/state/BlockState;", at = @At("RETURN"))
     private BlockState calcium$unlitCampfirePlacementState(BlockState originalState) {
-        return originalState.with(CampfireBlock.LIT, false);
+        return originalState.setValue(CampfireBlock.LIT, false);
     }
 
 }

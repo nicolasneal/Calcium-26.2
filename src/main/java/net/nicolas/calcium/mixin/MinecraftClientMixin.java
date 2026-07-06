@@ -1,13 +1,12 @@
 package net.nicolas.calcium.mixin;
 
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.screen.ChatScreen;
-import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.client.option.GameOptions;
-import net.minecraft.client.option.InactivityFpsLimiter;
-import net.minecraft.client.option.KeyBinding;
-import net.minecraft.client.util.InputUtil;
-import net.minecraft.network.packet.c2s.play.ClientCommandC2SPacket;
+import com.mojang.blaze3d.platform.FramerateLimitTracker;
+import com.mojang.blaze3d.platform.InputConstants;
+import net.minecraft.client.KeyMapping;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.Options;
+import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.network.protocol.game.ServerboundPlayerCommandPacket;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -19,64 +18,58 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Objects;
 
-@Mixin(MinecraftClient.class)
+@Mixin(Minecraft.class)
 public class MinecraftClientMixin {
 
     // Unlimit FPS on Main Menu
 
-    @Shadow @Final public GameOptions options;
-    @Redirect(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/option/InactivityFpsLimiter;update()I"))
-    private int unlockTitleFps(InactivityFpsLimiter instance) {
-        return this.options.getMaxFps().getValue();
+    @Shadow @Final public Options options;
+    @Redirect(method = "renderFrame", at = @At(value = "INVOKE", target = "Lcom/mojang/blaze3d/platform/FramerateLimitTracker;getFramerateLimit()I"))
+    private int unlockTitleFps(FramerateLimitTracker instance) {
+        return this.options.framerateLimit().get();
     }
 
     // Remove Buttons and Chat While Sleeping
 
-    @Shadow public ClientPlayerEntity player;
-
-    @Inject(method = "setScreen", at = @At("HEAD"), cancellable = true) private void cancelChatScreen(net.minecraft.client.gui.screen.Screen screen, CallbackInfo ci) {
-        if (this.player != null && this.player.isSleeping() && screen instanceof ChatScreen) {
-            ci.cancel();
-        }
-    }
+    @Shadow public LocalPlayer player;
 
     @Inject(method = "tick", at = @At("HEAD")) private void onTick(CallbackInfo ci) {
 
-        MinecraftClient client = (MinecraftClient) (Object) this;
-        ClientPlayerEntity player = client.player;
+        Minecraft client = (Minecraft) (Object) this;
+        LocalPlayer player = client.player;
 
         if (player != null && player.isSleeping()) {
 
-            boolean sneakPressed = InputUtil.isKeyPressed(client.getWindow(), InputUtil.fromTranslationKey(client.options.sneakKey.getBoundKeyTranslationKey()).getCode());
-            boolean perspectivePressed = client.options.togglePerspectiveKey.isPressed();
+            boolean sneakPressed = InputConstants.isKeyDown(client.getWindow(), InputConstants.getKey(client.options.keyShift.saveString()).getValue());
+            boolean perspectivePressed = client.options.keyTogglePerspective.isDown();
 
-            for (KeyBinding key : client.options.allKeys) {
-                key.setPressed(false);
+            for (KeyMapping key : client.options.keyMappings) {
+                key.setDown(false);
             }
             if (sneakPressed) {
-                Objects.requireNonNull(client.getNetworkHandler()).sendPacket(
-                        new ClientCommandC2SPacket(player, ClientCommandC2SPacket.Mode.STOP_SLEEPING)
+                Objects.requireNonNull(client.getConnection()).send(
+                        new ServerboundPlayerCommandPacket(player, ServerboundPlayerCommandPacket.Action.STOP_SLEEPING)
                 );
             }
 
-            client.options.sneakKey.setPressed(sneakPressed);
-            client.options.togglePerspectiveKey.setPressed(perspectivePressed);
-            client.options.attackKey.setPressed(false);
-            client.options.useKey.setPressed(false);
+            client.options.keyShift.setDown(sneakPressed);
+            client.options.keyTogglePerspective.setDown(perspectivePressed);
+            client.options.keyAttack.setDown(false);
+            client.options.keyUse.setDown(false);
 
         }
 
     }
 
-    @Inject(method = "doAttack", at = @At("HEAD"), cancellable = true) private void onDoAttack(CallbackInfoReturnable<Boolean> cir) {
-        MinecraftClient client = (MinecraftClient) (Object) this;
+    @Inject(method = "startAttack", at = @At("HEAD"), cancellable = true) private void onDoAttack(CallbackInfoReturnable<Boolean> cir) {
+        Minecraft client = (Minecraft) (Object) this;
         if (client.player != null && client.player.isSleeping()) {
             cir.setReturnValue(false);
         }
     }
 
-    @Inject(method = "doItemUse", at = @At("HEAD"), cancellable = true) private void onDoItemUse(CallbackInfo ci) {
-        MinecraftClient client = (MinecraftClient) (Object) this;
+    @Inject(method = "startUseItem", at = @At("HEAD"), cancellable = true) private void onDoItemUse(CallbackInfo ci) {
+        Minecraft client = (Minecraft) (Object) this;
         if (client.player != null && client.player.isSleeping()) {
             ci.cancel();
         }

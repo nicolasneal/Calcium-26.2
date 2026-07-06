@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "#": "minecraft:smooth_stone",
-    "@": "#minecraft:stick"
+    "@": "minecraft:stick"
   },
   "pattern": [
     "@#@",

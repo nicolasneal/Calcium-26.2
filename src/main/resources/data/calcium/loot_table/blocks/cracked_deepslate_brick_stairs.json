@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "calcium:deepslate_brick_stairs"
+          "name": "minecraft:deepslate_brick_stairs"
         }
       ]
     }

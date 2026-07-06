@@ -2,7 +2,7 @@
 	"credit": "Created by Stridey",
 	"texture_size": [64, 64],
 	"textures": {
-		"minecart": "entity/minecart",
+		"minecart": "block/minecart/minecart",
 		"chest": "entity/chest/normal"
 	},
 	"elements": [

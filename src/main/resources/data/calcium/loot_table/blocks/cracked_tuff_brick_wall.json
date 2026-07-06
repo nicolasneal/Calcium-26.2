@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "calcium:tuff_brick_wall"
+          "name": "minecraft:tuff_brick_wall"
         }
       ]
     }

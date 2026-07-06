@@ -1,10 +1,10 @@
 package net.nicolas.calcium.tag;
 
-import net.minecraft.item.Item;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 
 public class ModTags {
-    public static final TagKey<Item> ENCHANTABLE = TagKey.of(RegistryKeys.ITEM, Identifier.of("calcium", "enchantable"));
+    public static final TagKey<Item> ENCHANTABLE = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("calcium", "enchantable"));
 }

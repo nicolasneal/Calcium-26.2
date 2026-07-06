@@ -1,27 +1,27 @@
 package net.nicolas.calcium.item.custom;
 
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.fluid.Fluid;
-import net.minecraft.item.BucketItem;
-import net.minecraft.item.Item;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.WorldAccess;
-import net.minecraft.world.event.GameEvent;
+import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.BucketItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.material.Fluid;
 import net.nicolas.calcium.sound.ModSounds;
 import org.jetbrains.annotations.Nullable;
 
 public class EctoplasmBucketItem extends BucketItem {
 
-    public EctoplasmBucketItem(Fluid fluid, Item.Settings settings) {
+    public EctoplasmBucketItem(Fluid fluid, Item.Properties settings) {
         super(fluid, settings);
     }
 
-    @Override protected void playEmptyingSound(@Nullable LivingEntity user, WorldAccess world, BlockPos pos) {
+    @Override protected void playEmptySound(@Nullable LivingEntity user, LevelAccessor world, BlockPos pos) {
         SoundEvent soundEvent = ModSounds.ECTOPLASM_BUCKET_EMPTY;
-        world.playSound(user, pos, soundEvent, SoundCategory.BLOCKS, 1.0F, 1.0F);
-        world.emitGameEvent(user, GameEvent.FLUID_PLACE, pos);
+        world.playSound(user, pos, soundEvent, SoundSource.BLOCKS, 1.0F, 1.0F);
+        world.gameEvent(user, GameEvent.FLUID_PLACE, pos);
     }
 
 }

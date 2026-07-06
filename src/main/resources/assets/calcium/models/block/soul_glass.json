@@ -1,8 +1,10 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "calcium:block/soul_glass",
+    "all": {
+      "force_translucent": true,
+      "sprite": "calcium:block/soul_glass"
+    },
     "particle": "calcium:block/soul_glass"
-  },
-  "render_type": "solid"
+  }
 }

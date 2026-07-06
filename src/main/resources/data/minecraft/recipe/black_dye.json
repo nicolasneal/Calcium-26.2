@@ -4,7 +4,7 @@
   "group": "black_dye",
   "ingredients": [
     [
-      "#minecraft:coals",
+      "minecraft:coal",
       "minecraft:ink_sac",
       "minecraft:wither_rose"
     ]

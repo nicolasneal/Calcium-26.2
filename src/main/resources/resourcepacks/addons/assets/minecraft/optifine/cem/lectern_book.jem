@@ -1,7 +1,6 @@
 {
 	"credit": "Made with Blockbench",
 	"textureSize": [64, 32],
-	"texture": "textures/entity/lectern_book.png",
 	"models": [
 		{
 			"part": "cover_left",

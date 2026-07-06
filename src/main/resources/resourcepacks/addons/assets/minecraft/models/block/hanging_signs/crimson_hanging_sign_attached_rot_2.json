@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/hanging_signs/template_attached_hanging_sign_rot_2",
+  "textures": {
+    "all": "minecraft:block/hanging_signs/crimson",
+    "particle": "minecraft:block/stripped_crimson_stem"
+  }
+}

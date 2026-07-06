@@ -1,9 +1,9 @@
 {
 	"credit": "Created by Stridey",
 	"textures": {
+		"minecart": "block/minecart/minecart",
 		"2": "block/hopper_inside",
 		"3": "block/hopper_top",
-		"minecart": "entity/minecart",
 		"furnace_front": "block/hopper_outside",
 		"particle": "block/hopper_inside"
 	},

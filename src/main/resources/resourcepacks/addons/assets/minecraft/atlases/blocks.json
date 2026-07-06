@@ -25,7 +25,7 @@
         },
         {
             "type": "single",
-            "resource": "entity/enchanting_table_book"
+            "resource": "entity/enchantment/enchanting_table_book"
         },
         {
             "type": "paletted_permutations",

@@ -1,48 +1,48 @@
 package net.nicolas.calcium.block.custom;
 
 import com.mojang.serialization.MapCodec;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.ShapeContext;
-import net.minecraft.entity.ai.pathing.NavigationType;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.WorldView;
-import net.minecraft.world.tick.ScheduledTickView;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.ScheduledTickAccess;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.pathfinder.PathComputationType;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class GenericPlantBlock extends Block {
 
-    public GenericPlantBlock(Settings settings) {
+    public GenericPlantBlock(Properties settings) {
         super(settings);
     }
 
-    public static final MapCodec<GenericPlantBlock> CODEC = createCodec(GenericPlantBlock::new);
-    @Override protected MapCodec<? extends Block> getCodec() {
+    public static final MapCodec<GenericPlantBlock> CODEC = simpleCodec(GenericPlantBlock::new);
+    @Override protected MapCodec<? extends Block> codec() {
         return CODEC;
     }
 
-    private static final VoxelShape SHAPE = Block.createCuboidShape(4.0, 0.0, 4.0, 12.0, 10.0, 12.0);
-    @Override protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return SHAPE.offset(state.getModelOffset(pos));
+    private static final VoxelShape SHAPE = Block.box(4.0, 0.0, 4.0, 12.0, 10.0, 12.0);
+    @Override protected VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return SHAPE.move(state.getOffset(pos));
     }
 
-    @Override protected boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        BlockPos floorPos = pos.down();
-        return world.getBlockState(floorPos).isSideSolidFullSquare(world, floorPos, Direction.UP);
+    @Override protected boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
+        BlockPos floorPos = pos.below();
+        return world.getBlockState(floorPos).isFaceSturdy(world, floorPos, Direction.UP);
     }
 
-    @Override protected BlockState getStateForNeighborUpdate(BlockState state, WorldView world, ScheduledTickView tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, net.minecraft.util.math.random.Random random) {
-        if (direction == Direction.DOWN && !this.canPlaceAt(state, world, pos)) {
-            return Blocks.AIR.getDefaultState();
+    @Override protected BlockState updateShape(BlockState state, LevelReader world, ScheduledTickAccess tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, net.minecraft.util.RandomSource random) {
+        if (direction == Direction.DOWN && !this.canSurvive(state, world, pos)) {
+            return Blocks.AIR.defaultBlockState();
         }
-        return super.getStateForNeighborUpdate(state, world, tickView, pos, direction, neighborPos, neighborState, random);
+        return super.updateShape(state, world, tickView, pos, direction, neighborPos, neighborState, random);
     }
 
-    @Override protected boolean canPathfindThrough(BlockState state, NavigationType type) {
-        return (type == NavigationType.AIR && !this.collidable) || super.canPathfindThrough(state, type);
+    @Override protected boolean isPathfindable(BlockState state, PathComputationType type) {
+        return (type == PathComputationType.AIR && !this.hasCollision) || super.isPathfindable(state, type);
     }
 
 }

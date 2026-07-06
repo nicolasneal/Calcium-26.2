@@ -2,20 +2,20 @@ package net.nicolas.calcium.event;
 
 import com.google.common.collect.ImmutableMap;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.ItemStack;
-import net.minecraft.particle.BlockStateParticleEffect;
-import net.minecraft.particle.ParticleTypes;
-import net.minecraft.registry.tag.ItemTags;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.math.BlockPos;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.BlockParticleOption;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.nicolas.calcium.block.ModBlocks;
 
 import java.util.Map;
@@ -97,19 +97,21 @@ public class Cracking {
         .build();
 
     public static void registerEvents() {
+
         UseBlockCallback.EVENT.register((playerEntity, world, hand, hitResult) -> {
+
             BlockPos blockPos = hitResult.getBlockPos();
             BlockState blockState = world.getBlockState(blockPos);
-            ItemStack itemStack = playerEntity.getStackInHand(hand);
+            ItemStack itemStack = playerEntity.getItemInHand(hand);
 
-            if (itemStack.isIn(ItemTags.PICKAXES)) {
+            if (itemStack.is(ItemTags.PICKAXES)) {
                 Optional<BlockState> crackedState = getCrackedState(blockState);
                 if (crackedState.isPresent()) {
-                    if (!world.isClient()) {
-                        world.setBlockState(blockPos, crackedState.get(), Block.NOTIFY_ALL);
-                        itemStack.damage(1, playerEntity, hand == Hand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
-                        ((ServerWorld) world).spawnParticles(
-                            new BlockStateParticleEffect(ParticleTypes.BLOCK, blockState),
+                    if (!world.isClientSide()) {
+                        world.setBlock(blockPos, crackedState.get(), Block.UPDATE_ALL);
+                        itemStack.hurtAndBreak(1, playerEntity, hand == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
+                        ((ServerLevel) world).sendParticles(
+                            new BlockParticleOption(ParticleTypes.BLOCK, blockState),
                             blockPos.getX() + 0.5,
                             blockPos.getY() + 0.5,
                             blockPos.getZ() + 0.5,
@@ -120,26 +122,28 @@ public class Cracking {
                             0.1
                         );
                     }
-                    world.playSound(null, blockPos, SoundEvents.ENTITY_TURTLE_EGG_CRACK, SoundCategory.BLOCKS, 1.0F, 1.0F);
-                    return ActionResult.SUCCESS;
+                    world.playSound(null, blockPos, SoundEvents.TURTLE_EGG_CRACK, SoundSource.BLOCKS, 1.0F, 1.0F);
+                    return InteractionResult.SUCCESS;
                 }
             }
-            return ActionResult.PASS;
+            return InteractionResult.PASS;
 
         });
+
     }
 
     private static Optional<BlockState> getCrackedState(BlockState originalState) {
+
         Block targetBlock = CRACKED_BLOCKS.get(originalState.getBlock());
 
         if (targetBlock == null) {
             return Optional.empty();
         }
 
-        BlockState newState = targetBlock.getDefaultState();
+        BlockState newState = targetBlock.defaultBlockState();
 
-        for (net.minecraft.state.property.Property<?> property : originalState.getProperties()) {
-            if (newState.contains(property)) {
+        for (net.minecraft.world.level.block.state.properties.Property<?> property : originalState.getProperties()) {
+            if (newState.hasProperty(property)) {
                 newState = copyProperty(originalState, newState, property);
             }
         }
@@ -148,8 +152,8 @@ public class Cracking {
 
     }
 
-    private static <T extends Comparable<T>> BlockState copyProperty(BlockState source, BlockState target, net.minecraft.state.property.Property<T> property) {
-        return target.with(property, source.get(property));
+    private static <T extends Comparable<T>> BlockState copyProperty(BlockState source, BlockState target, net.minecraft.world.level.block.state.properties.Property<T> property) {
+        return target.setValue(property, source.getValue(property));
     }
 
 }

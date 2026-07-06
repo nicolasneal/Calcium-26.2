@@ -6,9 +6,9 @@
     "@": "minecraft:book"
   },
   "pattern": [
-    "S",
+    "#",
     "@",
-    "S"
+    "#"
   ],
   "result": {
     "count": 1,

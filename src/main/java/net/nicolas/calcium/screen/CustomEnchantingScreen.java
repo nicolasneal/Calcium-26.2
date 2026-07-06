@@ -1,42 +1,37 @@
 package net.nicolas.calcium.screen;
 
-import net.minecraft.client.gl.RenderPipelines;
-import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.gui.screen.ingame.HandledScreen;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.screen.slot.Slot;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.renderer.RenderPipelines;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 
-public class CustomEnchantingScreen extends HandledScreen<CustomEnchantingScreenHandler> {
+public class CustomEnchantingScreen extends AbstractContainerScreen<CustomEnchantingScreenHandler> {
 
-    private static final Identifier TEXTURE = Identifier.of("calcium", "textures/gui/container/enchanting_table.png");
-    private static final Identifier ERROR = Identifier.of("calcium", "textures/gui/sprites/container/enchanting_table/error.png");
+    private static final Identifier TEXTURE = Identifier.fromNamespaceAndPath("calcium", "textures/gui/container/enchanting_table.png");
+    private static final Identifier ERROR = Identifier.fromNamespaceAndPath("calcium", "textures/gui/sprites/container/enchanting_table/error.png");
     private static final Identifier[] LEVEL_SPRITES = new Identifier[]{
-            Identifier.of("calcium", "textures/gui/sprites/container/enchanting_table/level_1.png"),
-            Identifier.of("calcium", "textures/gui/sprites/container/enchanting_table/level_2.png"),
-            Identifier.of("calcium", "textures/gui/sprites/container/enchanting_table/level_3.png")
+            Identifier.fromNamespaceAndPath("calcium", "textures/gui/sprites/container/enchanting_table/level_1.png"),
+            Identifier.fromNamespaceAndPath("calcium", "textures/gui/sprites/container/enchanting_table/level_2.png"),
+            Identifier.fromNamespaceAndPath("calcium", "textures/gui/sprites/container/enchanting_table/level_3.png")
     };
 
-    public CustomEnchantingScreen(CustomEnchantingScreenHandler handler, PlayerInventory inventory, Text title) {
-        super(handler, inventory, title);
-        this.backgroundWidth = 176;
-        this.backgroundHeight = 166;
+    public CustomEnchantingScreen(CustomEnchantingScreenHandler handler, Inventory inventory, Component title) {
+        super(handler, inventory, title, 176, 166);
     }
 
-    @Override public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-
-        this.renderBackground(context, mouseX, mouseY, delta);
-        super.render(context, mouseX, mouseY, delta);
-        this.drawMouseoverTooltip(context, mouseX, mouseY);
+    @Override protected void extractTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+        super.extractTooltip(graphics, mouseX, mouseY);
 
         Slot slot = this.getSlotUnderMouse();
         if (slot instanceof CustomSlot customSlot) {
-            Text tooltip = customSlot.getTooltip();
+            Component tooltip = customSlot.getTooltip();
             if (tooltip != null) {
-                context.drawTooltip(this.textRenderer, tooltip, mouseX, mouseY);
+                graphics.setTooltipForNextFrame(this.font, tooltip, mouseX, mouseY);
             }
         }
 
@@ -44,14 +39,14 @@ public class CustomEnchantingScreen extends HandledScreen<CustomEnchantingScreen
 
     private Slot getSlotUnderMouse() {
 
-        double mouseX = this.client.mouse.getX() * this.client.getWindow().getScaledWidth() / this.client.getWindow().getWidth();
-        double mouseY = this.client.mouse.getY() * this.client.getWindow().getScaledHeight() / this.client.getWindow().getHeight();
-        int guiLeft = this.x;
-        int guiTop = this.y;
+        double mouseX = this.minecraft.mouseHandler.xpos() * this.minecraft.getWindow().getGuiScaledWidth() / this.minecraft.getWindow().getScreenWidth();
+        double mouseY = this.minecraft.mouseHandler.ypos() * this.minecraft.getWindow().getGuiScaledHeight() / this.minecraft.getWindow().getScreenHeight();
+        int guiLeft = this.leftPos;
+        int guiTop = this.topPos;
         int relativeX = (int) mouseX - guiLeft;
         int relativeY = (int) mouseY - guiTop;
 
-        for (Slot slot : this.handler.slots) {
+        for (Slot slot : this.menu.slots) {
             int centerX = slot.x + 8;
             int centerY = slot.y + 8;
             if (relativeX >= centerX - 18 / 2 && relativeX < centerX + 18 / 2 &&
@@ -64,17 +59,18 @@ public class CustomEnchantingScreen extends HandledScreen<CustomEnchantingScreen
 
     }
 
-    @Override protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
+    @Override public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float a) {
+        super.extractBackground(graphics, mouseX, mouseY, a);
 
-        int x = (this.width - this.backgroundWidth) / 2;
-        int y = (this.height - this.backgroundHeight) / 2;
-        context.drawTexture(RenderPipelines.GUI_TEXTURED, TEXTURE, x, y, 0, 0, this.backgroundWidth, this.backgroundHeight, 256, 256);
+        int x = (this.width - this.imageWidth) / 2;
+        int y = (this.height - this.imageHeight) / 2;
+        graphics.blit(RenderPipelines.GUI_TEXTURED, TEXTURE, x, y, 0, 0, this.imageWidth, this.imageHeight, 256, 256);
 
-        boolean mainInputOccupied = this.handler.slots.get(37).hasStack();
+        boolean mainInputOccupied = this.menu.slots.get(37).hasItem();
 
         int ingredientCount = 0;
         for (int i = 38; i <= 46; i++) {
-            if (this.handler.slots.get(i).hasStack()) {
+            if (this.menu.slots.get(i).hasItem()) {
                 ingredientCount++;
             }
         }
@@ -82,19 +78,19 @@ public class CustomEnchantingScreen extends HandledScreen<CustomEnchantingScreen
         if (mainInputOccupied && ingredientCount > 0) {
             int spriteIndex = (ingredientCount - 1) / 3;
             Identifier sprite = LEVEL_SPRITES[spriteIndex];
-            context.drawTexture(RenderPipelines.GUI_TEXTURED, sprite, x + 73, y + 65, 0, 0, 12, 10, 12, 10);
+            graphics.blit(RenderPipelines.GUI_TEXTURED, sprite, x + 73, y + 65, 0, 0, 12, 10, 12, 10);
         }
 
-        int cost = this.handler.getLevelCost();
+        int cost = this.menu.getLevelCost();
         if (cost > 0) {
 
-            assert this.client.player != null;
-            boolean enoughLevels = this.client.player.getAbilities().creativeMode || this.client.player.experienceLevel >= cost;
-            ItemStack lapisStack = this.handler.getSlot(36).getStack();
-            boolean enoughLapis = !lapisStack.isEmpty() && lapisStack.isOf(Items.LAPIS_LAZULI) && lapisStack.getCount() >= ingredientCount;
+            assert this.minecraft.player != null;
+            boolean enoughLevels = this.minecraft.player.getAbilities().instabuild || this.minecraft.player.experienceLevel >= cost;
+            ItemStack lapisStack = this.menu.getSlot(36).getItem();
+            boolean enoughLapis = !lapisStack.isEmpty() && lapisStack.is(Items.LAPIS_LAZULI) && lapisStack.getCount() >= ingredientCount;
 
             if (!enoughLevels || !enoughLapis) {
-                context.drawTexture(RenderPipelines.GUI_TEXTURED, ERROR, x + 126, y + 37, 0, 0, 11, 12, 11, 12);
+                graphics.blit(RenderPipelines.GUI_TEXTURED, ERROR, x + 126, y + 37, 0, 0, 11, 12, 11, 12);
             }
 
         }
@@ -103,7 +99,7 @@ public class CustomEnchantingScreen extends HandledScreen<CustomEnchantingScreen
 
     @Override protected void init() {
         super.init();
-        this.titleX = (this.backgroundWidth - textRenderer.getWidth(title)) / 2;
+        this.titleLabelX = (this.imageWidth - font.width(title)) / 2;
     }
 
 }

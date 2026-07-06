@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "calcium:blackstone_brick_stairs"
+          "name": "minecraft:polished_blackstone_brick_stairs"
         }
       ]
     }

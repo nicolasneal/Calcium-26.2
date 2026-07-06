@@ -1,8 +1,8 @@
 package net.nicolas.calcium.mixin;
 
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.fluid.FluidState;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.phys.Vec3;
 import net.nicolas.calcium.fluid.ModFluids;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -16,16 +16,16 @@ public abstract class LivingEntityMixin {
     @Shadow protected boolean jumping;
 
     @Inject(method = "travel", at = @At("HEAD"), cancellable = true)
-    private void calcium$ectoplasmPhysics(Vec3d movementInput, CallbackInfo ci) {
+    private void calcium$ectoplasmPhysics(Vec3 movementInput, CallbackInfo ci) {
 
         LivingEntity entity = (LivingEntity) (Object) this;
-        FluidState fluidState = entity.getEntityWorld().getFluidState(entity.getBlockPos());
+        FluidState fluidState = entity.level().getFluidState(entity.blockPosition());
 
         if (fluidState.isEmpty()) {
-            fluidState = entity.getEntityWorld().getFluidState(entity.getBlockPos().up());
+            fluidState = entity.level().getFluidState(entity.blockPosition().above());
         }
 
-        if (fluidState.getFluid() == ModFluids.ECTOPLASM_STILL || fluidState.getFluid() == ModFluids.ECTOPLASM_FLOWING) {
+        if (fluidState.getType() == ModFluids.ECTOPLASM_STILL || fluidState.getType() == ModFluids.ECTOPLASM_FLOWING) {
 
             entity.fallDistance = 0.0F;
 
@@ -40,37 +40,37 @@ public abstract class LivingEntityMixin {
                 verticalPush = -0.03;
             }
 
-            entity.updateVelocity(speed, movementInput);
+            entity.moveRelative(speed, movementInput);
 
             if (verticalPush != 0.0) {
-                entity.setVelocity(entity.getVelocity().add(0.0, verticalPush, 0.0));
+                entity.setDeltaMovement(entity.getDeltaMovement().add(0.0, verticalPush, 0.0));
             }
 
-            entity.move(net.minecraft.entity.MovementType.SELF, entity.getVelocity());
-            entity.setVelocity(entity.getVelocity().multiply(drag));
+            entity.move(net.minecraft.world.entity.MoverType.SELF, entity.getDeltaMovement());
+            entity.setDeltaMovement(entity.getDeltaMovement().scale(drag));
 
-            if (!entity.hasNoGravity()) {
-                entity.setVelocity(entity.getVelocity().add(0.0, -gravity, 0.0));
+            if (!entity.isNoGravity()) {
+                entity.setDeltaMovement(entity.getDeltaMovement().add(0.0, -gravity, 0.0));
             }
 
-            entity.setSwimming(entity.isSprinting() && !entity.hasVehicle());
+            entity.setSwimming(entity.isSprinting() && !entity.isPassenger());
 
             ci.cancel();
 
         }
     }
 
-    @Inject(method = "jump", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "jumpFromGround", at = @At("HEAD"), cancellable = true)
     private void calcium$preventJumpInEctoplasm(CallbackInfo ci) {
 
         LivingEntity entity = (LivingEntity) (Object) this;
-        FluidState fluidState = entity.getEntityWorld().getFluidState(entity.getBlockPos());
+        FluidState fluidState = entity.level().getFluidState(entity.blockPosition());
 
         if (fluidState.isEmpty()) {
-            fluidState = entity.getEntityWorld().getFluidState(entity.getBlockPos().up());
+            fluidState = entity.level().getFluidState(entity.blockPosition().above());
         }
 
-        if (fluidState.getFluid() == ModFluids.ECTOPLASM_STILL || fluidState.getFluid() == ModFluids.ECTOPLASM_FLOWING) {
+        if (fluidState.getType() == ModFluids.ECTOPLASM_STILL || fluidState.getType() == ModFluids.ECTOPLASM_FLOWING) {
             ci.cancel();
         }
 

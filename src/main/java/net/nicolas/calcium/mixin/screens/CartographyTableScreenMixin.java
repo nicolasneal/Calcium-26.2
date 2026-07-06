@@ -1,71 +1,71 @@
 package net.nicolas.calcium.mixin.screens;
 
 import com.mojang.blaze3d.pipeline.RenderPipeline;
-import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.gui.screen.ingame.CartographyTableScreen;
-import net.minecraft.client.gui.screen.ingame.HandledScreen;
-import net.minecraft.component.type.MapIdComponent;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.item.map.MapState;
-import net.minecraft.screen.CartographyTableScreenHandler;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.screens.inventory.CartographyTableScreen;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.inventory.CartographyTableMenu;
+import net.minecraft.world.level.saveddata.maps.MapId;
+import net.minecraft.world.level.saveddata.maps.MapItemSavedData;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(CartographyTableScreen.class)
-public abstract class CartographyTableScreenMixin extends HandledScreen<CartographyTableScreenHandler> {
+public abstract class CartographyTableScreenMixin extends AbstractContainerScreen<CartographyTableMenu> {
 
-    public CartographyTableScreenMixin(CartographyTableScreenHandler handler, PlayerInventory inventory, Text title) {
+    public CartographyTableScreenMixin(CartographyTableMenu handler, Inventory inventory, Component title) {
         super(handler, inventory, title);
     }
 
-    @Redirect(method = "drawBackground", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/DrawContext;drawGuiTexture(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/util/Identifier;IIII)V"))
-    private void calcium$redirectErrorTexture(DrawContext instance, RenderPipeline pipeline, Identifier texture, int x, int y, int width, int height) {
-        instance.drawGuiTexture(pipeline, texture, this.x + 31, this.y + 32, width, height);
+    @Redirect(method = "extractBackground", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;blitSprite(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIII)V"))
+    private void calcium$redirectErrorTexture(GuiGraphicsExtractor instance, RenderPipeline pipeline, Identifier texture, int x, int y, int width, int height) {
+        instance.blitSprite(pipeline, texture, this.leftPos + 31, this.topPos + 32, width, height);
     }
 
-    @Shadow private void drawMap(DrawContext context, MapIdComponent mapId, MapState mapState, int x, int y, float scale) {}
+    @Shadow private void extractMap(GuiGraphicsExtractor context, MapId mapId, MapItemSavedData mapState, int x, int y, float scale) {}
 
-    @Redirect(method = "drawMap(Lnet/minecraft/client/gui/DrawContext;Lnet/minecraft/component/type/MapIdComponent;Lnet/minecraft/item/map/MapState;ZZZZ)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/DrawContext;drawGuiTexture(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/util/Identifier;IIII)V"))
-    private void calcium$redirectMapOverlays(DrawContext instance, RenderPipeline pipeline, Identifier texture, int x, int y, int width, int height) {
+    @Redirect(method = "extractResultingMap(Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/world/level/saveddata/maps/MapId;Lnet/minecraft/world/level/saveddata/maps/MapItemSavedData;ZZZZ)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;blitSprite(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIII)V"))
+    private void calcium$redirectMapOverlays(GuiGraphicsExtractor instance, RenderPipeline pipeline, Identifier texture, int x, int y, int width, int height) {
         String path = texture.getPath();
 
         if (path.contains("scaled_map")) {
-            instance.drawGuiTexture(pipeline, texture, this.x + 64, this.y + 10, width, height);
+            instance.blitSprite(pipeline, texture, this.leftPos + 64, this.topPos + 10, width, height);
         } else if (path.contains("duplicated_map")) {
-            if (x == this.x + 83) {
-                instance.drawGuiTexture(pipeline, texture, this.x + 80, this.y + 10, width, height);
+            if (x == this.leftPos + 83) {
+                instance.blitSprite(pipeline, texture, this.leftPos + 80, this.topPos + 10, width, height);
             }
             else {
-                instance.drawGuiTexture(pipeline, texture, this.x + 64, this.y + 26, width, height);
+                instance.blitSprite(pipeline, texture, this.leftPos + 64, this.topPos + 26, width, height);
             }
         } else if (path.contains("map")) { // Standard map background
-            instance.drawGuiTexture(pipeline, texture, this.x + 64, this.y + 10, width, height);
+            instance.blitSprite(pipeline, texture, this.leftPos + 64, this.topPos + 10, width, height);
         } else if (path.contains("locked")) { // Lock icon
-            instance.drawGuiTexture(pipeline, texture, this.x + 115, this.y + 57, width, height);
+            instance.blitSprite(pipeline, texture, this.leftPos + 115, this.topPos + 57, width, height);
         } else {
-            instance.drawGuiTexture(pipeline, texture, x, y, width, height);
+            instance.blitSprite(pipeline, texture, x, y, width, height);
         }
     }
 
-    @Redirect(method = "drawMap(Lnet/minecraft/client/gui/DrawContext;Lnet/minecraft/component/type/MapIdComponent;Lnet/minecraft/item/map/MapState;ZZZZ)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screen/ingame/CartographyTableScreen;drawMap(Lnet/minecraft/client/gui/DrawContext;Lnet/minecraft/component/type/MapIdComponent;Lnet/minecraft/item/map/MapState;IIF)V"))
-    private void calcium$redirectMapContent(CartographyTableScreen instance, DrawContext context, MapIdComponent mapId, MapState mapState, int x, int y, float scale) {
+    @Redirect(method = "extractResultingMap(Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/world/level/saveddata/maps/MapId;Lnet/minecraft/world/level/saveddata/maps/MapItemSavedData;ZZZZ)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screens/inventory/CartographyTableScreen;extractMap(Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/world/level/saveddata/maps/MapId;Lnet/minecraft/world/level/saveddata/maps/MapItemSavedData;IIF)V"))
+    private void calcium$redirectMapContent(CartographyTableScreen instance, GuiGraphicsExtractor context, MapId mapId, MapItemSavedData mapState, int x, int y, float scale) {
         if (scale == 0.226F) {
-            this.drawMap(context, mapId, mapState, this.x + 82, this.y + 28, scale);
+            this.extractMap(context, mapId, mapState, this.leftPos + 82, this.topPos + 28, scale);
         }
         else if (scale == 0.34F) {
-            if (y == this.y + 16) {
-                this.drawMap(context, mapId, mapState, this.x + 83, this.y + 13, scale);
+            if (y == this.topPos + 16) {
+                this.extractMap(context, mapId, mapState, this.leftPos + 83, this.topPos + 13, scale);
             }
             else {
-                this.drawMap(context, mapId, mapState, this.x + 67, this.y + 29, scale);
+                this.extractMap(context, mapId, mapState, this.leftPos + 67, this.topPos + 29, scale);
             }
         }
         else {
-            this.drawMap(context, mapId, mapState, this.x + 68, this.y + 14, scale);
+            this.extractMap(context, mapId, mapState, this.leftPos + 68, this.topPos + 14, scale);
         }
     }
 

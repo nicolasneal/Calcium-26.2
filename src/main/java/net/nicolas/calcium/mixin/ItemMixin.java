@@ -1,24 +1,23 @@
 package net.nicolas.calcium.mixin;
 
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUsage;
-import net.minecraft.item.Items;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.tag.FluidTags;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.stat.Stats;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.Rarity;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.hit.HitResult;
-import net.minecraft.world.RaycastContext;
-import net.minecraft.world.World;
-import net.minecraft.world.event.GameEvent;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
+import net.minecraft.tags.FluidTags;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemUtils;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -30,20 +29,20 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class ItemMixin {
 
     @Shadow
-    protected static BlockHitResult raycast(World world, PlayerEntity player, RaycastContext.FluidHandling fluidHandling) {
+    protected static BlockHitResult getPlayerPOVHitResult(Level world, Player player, ClipContext.Fluid fluidHandling) {
         throw new AssertionError();
     }
 
     @Inject(method = "use", at = @At("HEAD"), cancellable = true)
-    private void onUseBowl(World world, PlayerEntity user, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
+    private void onUseBowl(Level world, Player user, InteractionHand hand, CallbackInfoReturnable<InteractionResult> cir) {
 
         if ((Object) this != Items.BOWL) {
             return;
         }
 
-        ItemStack itemStack = user.getStackInHand(hand);
+        ItemStack itemStack = user.getItemInHand(hand);
 
-        BlockHitResult hitResult = raycast(world, user, RaycastContext.FluidHandling.SOURCE_ONLY);
+        BlockHitResult hitResult = getPlayerPOVHitResult(world, user, ClipContext.Fluid.SOURCE_ONLY);
 
         if (hitResult.getType() == HitResult.Type.MISS) {
             return;
@@ -52,16 +51,16 @@ public abstract class ItemMixin {
         if (hitResult.getType() == HitResult.Type.BLOCK) {
 
             var blockPos = hitResult.getBlockPos();
-            if (!world.canEntityModifyAt(user, blockPos)) {
+            if (!world.mayInteract(user, blockPos)) {
                 return;
             }
-            if (world.getFluidState(blockPos).isIn(FluidTags.WATER)) {
-                world.playSound(user, user.getX(), user.getY(), user.getZ(), SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.NEUTRAL, 1.0F, 1.0F);
-                world.emitGameEvent(user, GameEvent.FLUID_PICKUP, blockPos);
-                Item waterBowl = Registries.ITEM.get(Identifier.of("calcium", "water_bowl"));
-                ItemStack filledStack = ItemUsage.exchangeStack(itemStack, user, new ItemStack(waterBowl));
-                user.incrementStat(Stats.USED.getOrCreateStat((Item) (Object) this));
-                cir.setReturnValue(ActionResult.SUCCESS.withNewHandStack(filledStack));
+            if (world.getFluidState(blockPos).is(FluidTags.WATER)) {
+                world.playSound(user, user.getX(), user.getY(), user.getZ(), SoundEvents.BOTTLE_FILL, SoundSource.NEUTRAL, 1.0F, 1.0F);
+                world.gameEvent(user, GameEvent.FLUID_PICKUP, blockPos);
+                Item waterBowl = BuiltInRegistries.ITEM.getValue(Identifier.fromNamespaceAndPath("calcium", "water_bowl"));
+                ItemStack filledStack = ItemUtils.createFilledResult(itemStack, user, new ItemStack(waterBowl));
+                user.awardStat(Stats.ITEM_USED.get((Item) (Object) this));
+                cir.setReturnValue(InteractionResult.SUCCESS.heldItemTransformedTo(filledStack));
             }
 
         }

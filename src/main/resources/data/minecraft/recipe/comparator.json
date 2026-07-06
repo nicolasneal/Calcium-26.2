@@ -7,12 +7,12 @@
     "$": "minecraft:quartz"
   },
   "pattern": [
-    " @",
+    " @ ",
     "@$@",
     "###"
   ],
   "result": {
     "count": 1,
-    "id": "minecraft:repeater"
+    "id": "minecraft:comparator"
   }
 }

@@ -1,14 +1,14 @@
 package net.nicolas.calcium.mixin;
 
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
-@Mixin(AbstractBlock.class)
+@Mixin(BlockBehaviour.class)
 public interface AbstractBlockAccessor {
 
-    @Accessor("soundGroup") @Mutable void setSoundGroup(BlockSoundGroup soundGroup);
+    @Accessor("soundType") @Mutable void setSoundGroup(SoundType soundGroup);
 
 }

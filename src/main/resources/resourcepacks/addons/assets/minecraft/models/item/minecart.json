@@ -1,9 +1,9 @@
 {
+	"format_version": "1.21.11",
 	"credit": "Created by Stridey",
 	"texture_size": [64, 32],
 	"textures": {
-		"0": "entity/minecart",
-		"particle": "entity/minecart"
+		"0": "item/minecart/minecart"
 	},
 	"elements": [
 		{
@@ -77,7 +77,7 @@
 			"scale": [0.4, 0.4, 0.4]
 		},
 		"firstperson_lefthand": {
-			"rotation": [0, 225, 0],
+			"rotation": [0, -135, 0],
 			"translation": [0, 0.5, 0],
 			"scale": [0.4, 0.4, 0.4]
 		},

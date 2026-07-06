@@ -1,34 +1,34 @@
 package net.nicolas.calcium.fluid;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.fluid.FlowableFluid;
-import net.minecraft.fluid.Fluid;
-import net.minecraft.fluid.FluidState;
-import net.minecraft.item.Item;
-import net.minecraft.registry.tag.FluidTags;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.Properties;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
-import net.minecraft.world.WorldView;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.FluidTags;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.material.FlowingFluid;
+import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.material.FluidState;
 import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.item.ModItems;
 import net.nicolas.calcium.sound.ModSounds;
 
 import java.util.Optional;
 
-public abstract class EctoplasmFluid extends FlowableFluid {
+public abstract class EctoplasmFluid extends FlowingFluid {
 
-    @Override public Fluid getStill() {
+    @Override public Fluid getSource() {
         return ModFluids.ECTOPLASM_STILL;
     }
 
@@ -36,74 +36,74 @@ public abstract class EctoplasmFluid extends FlowableFluid {
         return ModFluids.ECTOPLASM_FLOWING;
     }
 
-    @Override public Item getBucketItem() {
+    @Override public Item getBucket() {
         return ModItems.ECTOPLASM_BUCKET;
     }
 
-    @Override protected BlockState toBlockState(FluidState state) {
-        return ModBlocks.ECTOPLASM.getDefaultState().with(Properties.LEVEL_15, getBlockStateLevel(state));
+    @Override protected BlockState createLegacyBlock(FluidState state) {
+        return ModBlocks.ECTOPLASM.defaultBlockState().setValue(BlockStateProperties.LEVEL, getLegacyLevel(state));
     }
 
-    @Override protected void beforeBreakingBlock(WorldAccess world, BlockPos pos, BlockState state) {
+    @Override protected void beforeDestroyingBlock(LevelAccessor world, BlockPos pos, BlockState state) {
         final BlockEntity blockEntity = state.hasBlockEntity() ? world.getBlockEntity(pos) : null;
-        Block.dropStacks(state, world, pos, blockEntity);
+        Block.dropResources(state, world, pos, blockEntity);
     }
 
-    @Override protected int getLevelDecreasePerBlock(WorldView world) {
+    @Override protected int getDropOff(LevelReader world) {
         return 2;
     }
 
-    @Override public boolean matchesType(Fluid fluid) {
-        return fluid == getStill() || fluid == getFlowing();
+    @Override public boolean isSame(Fluid fluid) {
+        return fluid == getSource() || fluid == getFlowing();
     }
 
-    @Override public int getTickRate(WorldView world) {
+    @Override public int getTickDelay(LevelReader world) {
         return 15;
     }
 
-    @Override protected boolean canBeReplacedWith(FluidState state, BlockView world, BlockPos pos, Fluid fluid, Direction direction) {
-        return direction == Direction.DOWN && !this.isStill(state) || fluid.isIn(FluidTags.LAVA);
+    @Override protected boolean canBeReplacedWith(FluidState state, BlockGetter world, BlockPos pos, Fluid fluid, Direction direction) {
+        return direction == Direction.DOWN && !this.isSource(state) || fluid.is(FluidTags.LAVA);
     }
 
-    @Override protected float getBlastResistance() {
+    @Override protected float getExplosionResistance() {
         return 100.0F;
     }
 
-    @Override protected void flow(WorldAccess world, BlockPos pos, BlockState state, Direction direction, FluidState fluidState) {
-        super.flow(world, pos, state, direction, fluidState);
+    @Override protected void spreadTo(LevelAccessor world, BlockPos pos, BlockState state, Direction direction, FluidState fluidState) {
+        super.spreadTo(world, pos, state, direction, fluidState);
         this.interactWithLava(world, pos);
     }
 
-    private void interactWithLava(WorldAccess world, BlockPos pos) {
+    private void interactWithLava(LevelAccessor world, BlockPos pos) {
         for (Direction direction : Direction.values()) {
-            BlockPos blockPos = pos.offset(direction);
-            if (world.getFluidState(blockPos).isIn(FluidTags.LAVA)) {
-                world.setBlockState(blockPos, ModBlocks.SOULSLATE.getDefaultState(), 3);
-                world.syncWorldEvent(1501, pos, 0);
+            BlockPos blockPos = pos.relative(direction);
+            if (world.getFluidState(blockPos).is(FluidTags.LAVA)) {
+                world.setBlock(blockPos, ModBlocks.SOULSLATE.defaultBlockState(), 3);
+                world.levelEvent(1501, pos, 0);
             }
         }
     }
 
     public static class Flowing extends EctoplasmFluid {
 
-        @Override protected void appendProperties(StateManager.Builder<Fluid, FluidState> builder) {
-            super.appendProperties(builder);
+        @Override protected void createFluidStateDefinition(StateDefinition.Builder<Fluid, FluidState> builder) {
+            super.createFluidStateDefinition(builder);
             builder.add(LEVEL);
         }
 
-        @Override protected boolean isInfinite(ServerWorld world) {
+        @Override protected boolean canConvertToSource(ServerLevel world) {
             return false;
         }
 
-        @Override protected int getMaxFlowDistance(WorldView world) {
+        @Override protected int getSlopeFindDistance(LevelReader world) {
             return 0;
         }
 
-        @Override public int getLevel(FluidState state) {
-            return state.get(LEVEL);
+        @Override public int getAmount(FluidState state) {
+            return state.getValue(LEVEL);
         }
 
-        @Override public boolean isStill(FluidState state) {
+        @Override public boolean isSource(FluidState state) {
             return false;
         }
 
@@ -111,36 +111,36 @@ public abstract class EctoplasmFluid extends FlowableFluid {
 
     public static class Still extends EctoplasmFluid {
 
-        @Override protected boolean isInfinite(ServerWorld world) {
+        @Override protected boolean canConvertToSource(ServerLevel world) {
             return false;
         }
 
-        @Override protected int getMaxFlowDistance(WorldView world) {
+        @Override protected int getSlopeFindDistance(LevelReader world) {
             return 0;
         }
 
-        @Override public int getLevel(FluidState state) {
+        @Override public int getAmount(FluidState state) {
             return 8;
         }
 
-        @Override public boolean isStill(FluidState state) {
+        @Override public boolean isSource(FluidState state) {
             return true;
         }
 
     }
 
-    @Override public Optional<SoundEvent> getBucketFillSound() {
+    @Override public Optional<SoundEvent> getPickupSound() {
         return Optional.of(ModSounds.ECTOPLASM_BUCKET_FILL);
     }
 
-    @Override public void randomDisplayTick(World world, BlockPos pos, FluidState state, Random random) {
+    @Override public void animateTick(Level world, BlockPos pos, FluidState state, RandomSource random) {
 
-        if (!world.getBlockState(pos.up()).isAir()) {
+        if (!world.getBlockState(pos.above()).isAir()) {
             return;
         }
 
         if (random.nextInt(20) == 0) {
-            world.playSound(null, pos, ModSounds.ECTOPLASM_AMBIENT, SoundCategory.BLOCKS, 1.0F + random.nextFloat() * 0.2F, 0.9F + random.nextFloat() * 0.15F);
+            world.playSound(null, pos, ModSounds.ECTOPLASM_AMBIENT, SoundSource.BLOCKS, 1.0F + random.nextFloat() * 0.2F, 0.9F + random.nextFloat() * 0.15F);
         }
 
     }

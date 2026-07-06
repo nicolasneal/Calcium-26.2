@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": "calcium:basalt_tile"
+    "#": "calcium:basalt_tiles"
   },
   "pattern": [
     "###",

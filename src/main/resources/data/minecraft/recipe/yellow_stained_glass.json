@@ -1,9 +1,9 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "group": "dyed_stained_glass",
+  "category": "building",
+  "group": "stained_glass",
   "ingredients": [
-    "minecraft:stained_glass",
+    "minecraft:glass",
     "minecraft:yellow_dye"
   ],
   "result": {
