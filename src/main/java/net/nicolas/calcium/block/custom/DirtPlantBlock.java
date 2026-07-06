@@ -6,7 +6,6 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -28,9 +27,13 @@ public class DirtPlantBlock extends GenericPlantBlock {
     }
 
     @Override protected boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
+        // BlockTags.DIRT only covers plain dirt/coarse_dirt/rooted_dirt in this version - grass_block,
+        // podzol, and mycelium live in the separate grass_blocks tag. SUPPORTS_VEGETATION is vanilla's
+        // own comprehensive tag (dirt + grass_blocks + mud + moss_blocks + farmland) and is what these
+        // plants actually need to place on ordinary grass.
         BlockPos floorPos = pos.below();
         BlockState floor = world.getBlockState(floorPos);
-        return floor.is(BlockTags.DIRT) || floor.is(Blocks.FARMLAND);
+        return floor.is(BlockTags.SUPPORTS_VEGETATION);
     }
 
 }

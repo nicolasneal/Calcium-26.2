@@ -1,4 +1,5 @@
 {
+    "ambientocclusion": false,
     "textures": {
         "flowerpot": "block/flower_pot",
         "dirt": "block/dirt_1",

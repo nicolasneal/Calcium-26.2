@@ -13,20 +13,26 @@ import net.nicolas.calcium.mixin.CauldronInteractionsAccessor;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
+import net.minecraft.util.Mth;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.LayeredCauldronBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.event.Cracking;
 import net.nicolas.calcium.fluid.ModFluids;
 import net.nicolas.calcium.item.ModItems;
 import net.nicolas.calcium.mixin.AbstractBlockAccessor;
+import net.nicolas.calcium.mixin.BlockStateBaseAccessor;
 import net.nicolas.calcium.recipe.ModRecipes;
 import net.nicolas.calcium.screen.CustomBeaconScreenHandler;
 import net.nicolas.calcium.screen.CustomEnchantingScreenHandler;
@@ -296,6 +302,23 @@ public class Calcium implements ModInitializer {
 		// End Blocks
 		((AbstractBlockAccessor) Blocks.END_STONE).setSoundGroup(ModSounds.END_STONE);
 		((AbstractBlockAccessor) Blocks.END_ROD).setSoundGroup(ModSounds.END_ROD);
+
+		// Overriding Block Offsets
+
+		// Kelp - same XZ jitter formula vanilla flowers use (BlockBehaviour.Properties#offsetType),
+		// reapplied here since Kelp/KelpPlant are constructed with OffsetType.NONE upstream.
+		// 0.25 matches getMaxHorizontalOffset()'s default, which neither block overrides.
+		BlockBehaviour.OffsetFunction kelpOffset = (state, pos) -> {
+			long seed = Mth.getSeed(pos.getX(), 0, pos.getZ());
+			double x = Mth.clamp(((float) (seed & 15L) / 15.0F - 0.5) * 0.5, -0.25, 0.25);
+			double z = Mth.clamp(((float) (seed >> 8 & 15L) / 15.0F - 0.5) * 0.5, -0.25, 0.25);
+			return new Vec3(x, 0.0, z);
+		};
+		for (Block kelpBlock : new Block[]{Blocks.KELP, Blocks.KELP_PLANT}) {
+			for (BlockState state : kelpBlock.getStateDefinition().getPossibleStates()) {
+				((BlockStateBaseAccessor) state).setOffsetFunction(kelpOffset);
+			}
+		}
 
 	}
 

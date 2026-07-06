@@ -46,7 +46,8 @@ public class CalciumClient implements ClientModInitializer {
             ModBlocks.WILD_POTATO,
             ModBlocks.WILD_BEETROOT,
             ModBlocks.BARLEY,
-            ModBlocks.CLOVERS
+            ModBlocks.CLOVERS,
+            ModBlocks.POTTED_BUSH
         );
 
     }

@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/walls/wall_cross_tall",
+	"textures": {
+		"wall": "calcium:block/walls/polished_kurodite",
+		"particle": "calcium:block/polished_kurodite"
+	}
+}

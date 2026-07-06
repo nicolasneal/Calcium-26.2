@@ -13,6 +13,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -62,7 +63,7 @@ public abstract class EctoplasmFluid extends FlowingFluid {
     }
 
     @Override protected boolean canBeReplacedWith(FluidState state, BlockGetter world, BlockPos pos, Fluid fluid, Direction direction) {
-        return direction == Direction.DOWN && !this.isSource(state) || fluid.is(FluidTags.LAVA);
+        return direction == Direction.DOWN && !this.isSource(state) || fluid.is(FluidTags.LAVA) || fluid.is(FluidTags.WATER);
     }
 
     @Override protected float getExplosionResistance() {
@@ -70,18 +71,18 @@ public abstract class EctoplasmFluid extends FlowingFluid {
     }
 
     @Override protected void spreadTo(LevelAccessor world, BlockPos pos, BlockState state, Direction direction, FluidState fluidState) {
-        super.spreadTo(world, pos, state, direction, fluidState);
-        this.interactWithLava(world, pos);
-    }
-
-    private void interactWithLava(LevelAccessor world, BlockPos pos) {
-        for (Direction direction : Direction.values()) {
-            BlockPos blockPos = pos.relative(direction);
-            if (world.getFluidState(blockPos).is(FluidTags.LAVA)) {
-                world.setBlock(blockPos, ModBlocks.SOULSLATE.defaultBlockState(), 3);
-                world.levelEvent(1501, pos, 0);
-            }
+        // Water's own canBeReplacedWith lets any non-water fluid flow straight down onto it, so
+        // ectoplasm would otherwise silently overwrite the water it lands on before LiquidBlockMixin's
+        // neighbor-sensing reaction ever gets a chance to run on the cell that's about to disappear.
+        // Intercept here first, same as vanilla's own LavaFluid.spreadTo does for its
+        // "falls onto water -> stone" case (a separate mechanic from shouldSpreadLiquid's
+        // obsidian/cobblestone reaction, which LiquidBlockMixin mirrors for every other direction).
+        if (direction == Direction.DOWN && state.getFluidState().is(FluidTags.WATER)) {
+            world.setBlock(pos, Blocks.ICE.defaultBlockState(), 3);
+            world.levelEvent(1501, pos, 0);
+            return;
         }
+        super.spreadTo(world, pos, state, direction, fluidState);
     }
 
     public static class Flowing extends EctoplasmFluid {

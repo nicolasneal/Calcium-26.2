@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/walls/wall_post",
+	"textures": {
+		"wall": "minecraft:block/walls/polished_sulfur",
+		"particle": "minecraft:block/polished_sulfur"
+	}
+}

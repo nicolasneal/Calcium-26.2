@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/walls/wall_side_tall3",
+	"textures": {
+		"wall": "minecraft:block/walls/polished_cinnabar",
+		"particle": "minecraft:block/polished_cinnabar"
+	}
+}
