@@ -2,6 +2,6 @@
 	"parent": "minecraft:block/walls/wall_cross_tall",
 	"textures": {
 		"wall": "calcium:block/walls/purpur",
-		"particle": "calcium:block/purpur"
+		"particle": "minecraft:block/purpur_block"
 	}
 }

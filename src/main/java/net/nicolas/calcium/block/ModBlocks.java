@@ -35,6 +35,7 @@ public class ModBlocks {
     public static final Block SOULSLATE = register("soulslate", Block::new, BlockBehaviour.Properties.of().sound(ModSounds.SOULSLATE).mapColor(MapColor.COLOR_BROWN).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.4F, 0.4F), true);
     public static final Block NETHERRACK_GLOWSTONE_ORE = register("netherrack_glowstone_ore", GlowstoneOreBlock::new, BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(RedStoneOreBlock.LIT) ? 9 : 0).sound(SoundType.NETHER_ORE).mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F), true);
     public static final Block KURODITE = register("kurodite", Block::new, BlockBehaviour.Properties.of().sound(ModSounds.KURODITE).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
+    public static final Block VERADITE = register("veradite", Block::new, BlockBehaviour.Properties.of().sound(ModSounds.VERADITE).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
     public static final Block PALLID_MAGNIA = register("pallid_magnia", Block::new, BlockBehaviour.Properties.of().sound(ModSounds.PALLID_MAGNIA).mapColor(MapColor.WOOL).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F), true);
     public static final Block UMBRAL_MAGNIA = register("umbral_magnia", Block::new, BlockBehaviour.Properties.of().sound(ModSounds.UMBRAL_MAGNIA).mapColor(MapColor.COLOR_GRAY).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F), true);
 
@@ -74,7 +75,7 @@ public class ModBlocks {
     public static final Block POTTED_BUSY_LIZZIE = register("potted_busy_lizzie", settings -> new FlowerPotBlock(BUSY_LIZZIE, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT), false);
 
 
-    // STONE VARIANT BLOCKS (158, [35])
+    // STONE VARIANT BLOCKS (170, [11])
 
     public static final Block POLISHED_STONE = register("polished_stone", Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F), true);
     public static final Block POLISHED_STONE_STAIRS = register("polished_stone_stairs", settings -> new StairBlock(ModBlocks.POLISHED_STONE.defaultBlockState(), settings), BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F), true);
@@ -146,10 +147,10 @@ public class ModBlocks {
     public static final Block CRACKED_SULFUR_BRICK_STAIRS = register("cracked_sulfur_brick_stairs", settings -> new StairBlock(ModBlocks.CRACKED_SULFUR_BRICKS.defaultBlockState(), settings), BlockBehaviour.Properties.of().sound(SoundType.SULFUR).mapColor(MapColor.COLOR_YELLOW).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F), true);
     public static final Block CRACKED_SULFUR_BRICK_SLAB = register("cracked_sulfur_brick_slab", SlabBlock::new, BlockBehaviour.Properties.of().sound(SoundType.SULFUR).mapColor(MapColor.COLOR_YELLOW).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F), true);
     public static final Block CRACKED_SULFUR_BRICK_WALL = register("cracked_sulfur_brick_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(SoundType.SULFUR).mapColor(MapColor.COLOR_YELLOW).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F), true);
-    // Polished Calcite
-    // Polished Calcite Stairs
-    // Polished Calcite Slab
-    // Polished Calcite Wall
+    public static final Block POLISHED_CALCITE = register("polished_calcite", Block::new, BlockBehaviour.Properties.of().sound(SoundType.CALCITE).mapColor(MapColor.TERRACOTTA_WHITE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.75F, 0.75F), true);
+    public static final Block POLISHED_CALCITE_STAIRS = register("polished_calcite_stairs", settings -> new StairBlock(ModBlocks.POLISHED_CALCITE.defaultBlockState(), settings), BlockBehaviour.Properties.of().sound(SoundType.CALCITE).mapColor(MapColor.TERRACOTTA_WHITE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.75F, 0.75F), true);
+    public static final Block POLISHED_CALCITE_SLAB = register("polished_calcite_slab", SlabBlock::new, BlockBehaviour.Properties.of().sound(SoundType.CALCITE).mapColor(MapColor.TERRACOTTA_WHITE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.75F, 0.75F), true);
+    public static final Block POLISHED_CALCITE_WALL = register("polished_calcite_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(SoundType.CALCITE).mapColor(MapColor.TERRACOTTA_WHITE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.75F, 0.75F), true);
     public static final Block CALCITE_BRICKS = register("calcite_bricks", Block::new, BlockBehaviour.Properties.of().sound(SoundType.CALCITE).mapColor(MapColor.TERRACOTTA_WHITE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.75F, 0.75F), true);
     public static final Block CALCITE_BRICK_STAIRS = register("calcite_brick_stairs", settings -> new StairBlock(ModBlocks.CALCITE_BRICKS.defaultBlockState(), settings), BlockBehaviour.Properties.of().sound(SoundType.CALCITE).mapColor(MapColor.TERRACOTTA_WHITE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.75F, 0.75F), true);
     public static final Block CALCITE_BRICK_SLAB = register("calcite_brick_slab", SlabBlock::new, BlockBehaviour.Properties.of().sound(SoundType.CALCITE).mapColor(MapColor.TERRACOTTA_WHITE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.75F, 0.75F), true);
@@ -208,17 +209,6 @@ public class ModBlocks {
     public static final Block CRACKED_QUARTZ_BRICK_STAIRS = register("cracked_quartz_brick_stairs", settings -> new StairBlock(ModBlocks.CRACKED_QUARTZ_BRICKS.defaultBlockState(), settings), BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.QUARTZ).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F, 0.8F), true);
     public static final Block CRACKED_QUARTZ_BRICK_SLAB = register("cracked_quartz_brick_slab", SlabBlock::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.QUARTZ).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F, 0.8F), true);
     public static final Block CRACKED_QUARTZ_BRICK_WALL = register("cracked_quartz_brick_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.QUARTZ).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F, 0.8F), true);
-    // Polished End Stone
-    // Polished End Stone Stairs
-    // Polished End Stone Slab
-    // Polished End Stone Wall
-    public static final Block CRACKED_END_STONE_BRICKS = register("cracked_end_stone_bricks", Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
-    public static final Block CRACKED_END_STONE_BRICK_STAIRS = register("cracked_end_stone_brick_stairs", settings -> new StairBlock(ModBlocks.CRACKED_END_STONE_BRICKS.defaultBlockState(), settings), BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
-    public static final Block CRACKED_END_STONE_BRICK_SLAB = register("cracked_end_stone_brick_slab", SlabBlock::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
-    public static final Block CRACKED_END_STONE_BRICK_WALL = register("cracked_end_stone_brick_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
-    // Chiseled End Stone
-    public static final Block PURPUR_WALL = register("purpur_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F), true);
-    public static final Block CHISELED_PURPUR = register("chiseled_purpur", Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F), true);
     public static final Block CRACKED_BRICKS = register("cracked_bricks", Block::new, BlockBehaviour.Properties.of().sound(SoundType.NETHER_BRICKS).mapColor(MapColor.COLOR_RED).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F), true);
     public static final Block CRACKED_BRICK_STAIRS = register("cracked_brick_stairs", settings -> new StairBlock(ModBlocks.CRACKED_BRICKS.defaultBlockState(), settings), BlockBehaviour.Properties.of().sound(SoundType.NETHER_BRICKS).mapColor(MapColor.COLOR_RED).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F), true);
     public static final Block CRACKED_BRICK_SLAB = register("cracked_brick_slab", SlabBlock::new, BlockBehaviour.Properties.of().sound(SoundType.NETHER_BRICKS).mapColor(MapColor.COLOR_RED).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F), true);
@@ -248,6 +238,11 @@ public class ModBlocks {
     public static final Block POLISHED_END_STONE_STAIRS = register("polished_end_stone_stairs", settings -> new StairBlock(ModBlocks.POLISHED_END_STONE.defaultBlockState(), settings), BlockBehaviour.Properties.of().sound(ModSounds.END_STONE).mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
     public static final Block POLISHED_END_STONE_SLAB = register("polished_end_stone_slab", SlabBlock::new, BlockBehaviour.Properties.of().sound(ModSounds.END_STONE).mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
     public static final Block POLISHED_END_STONE_WALL = register("polished_end_stone_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(ModSounds.END_STONE).mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
+    public static final Block CRACKED_END_STONE_BRICKS = register("cracked_end_stone_bricks", Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
+    public static final Block CRACKED_END_STONE_BRICK_STAIRS = register("cracked_end_stone_brick_stairs", settings -> new StairBlock(ModBlocks.CRACKED_END_STONE_BRICKS.defaultBlockState(), settings), BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
+    public static final Block CRACKED_END_STONE_BRICK_SLAB = register("cracked_end_stone_brick_slab", SlabBlock::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
+    public static final Block CRACKED_END_STONE_BRICK_WALL = register("cracked_end_stone_brick_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
+    // Chiseled End Stone
     public static final Block POLISHED_KURODITE = register("polished_kurodite", Block::new, BlockBehaviour.Properties.of().sound(ModSounds.KURODITE).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
     public static final Block POLISHED_KURODITE_STAIRS = register("polished_kurodite_stairs", settings -> new StairBlock(ModBlocks.POLISHED_KURODITE.defaultBlockState(), settings), BlockBehaviour.Properties.of().sound(ModSounds.KURODITE).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
     public static final Block POLISHED_KURODITE_SLAB = register("polished_kurodite_slab", SlabBlock::new, BlockBehaviour.Properties.of().sound(ModSounds.KURODITE).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
@@ -261,6 +256,21 @@ public class ModBlocks {
     public static final Block CRACKED_KURODITE_BRICK_SLAB = register("cracked_kurodite_brick_slab", SlabBlock::new, BlockBehaviour.Properties.of().sound(ModSounds.KURODITE_BRICKS).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
     public static final Block CRACKED_KURODITE_BRICK_WALL = register("cracked_kurodite_brick_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(ModSounds.KURODITE_BRICKS).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
     public static final Block CHISELED_KURODITE = register("chiseled_kurodite", Block::new, BlockBehaviour.Properties.of().sound(ModSounds.KURODITE).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
+    public static final Block POLISHED_VERADITE = register("polished_veradite", Block::new, BlockBehaviour.Properties.of().sound(ModSounds.VERADITE).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
+    public static final Block POLISHED_VERADITE_STAIRS = register("polished_veradite_stairs", settings -> new StairBlock(ModBlocks.POLISHED_VERADITE.defaultBlockState(), settings), BlockBehaviour.Properties.of().sound(ModSounds.VERADITE).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
+    public static final Block POLISHED_VERADITE_SLAB = register("polished_veradite_slab", SlabBlock::new, BlockBehaviour.Properties.of().sound(ModSounds.VERADITE).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
+    public static final Block POLISHED_VERADITE_WALL = register("polished_veradite_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(ModSounds.VERADITE).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
+    public static final Block VERADITE_BRICKS = register("veradite_bricks", Block::new, BlockBehaviour.Properties.of().sound(ModSounds.VERADITE_BRICKS).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
+    public static final Block VERADITE_BRICK_STAIRS = register("veradite_brick_stairs", settings -> new StairBlock(ModBlocks.VERADITE_BRICKS.defaultBlockState(), settings), BlockBehaviour.Properties.of().sound(ModSounds.VERADITE_BRICKS).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
+    public static final Block VERADITE_BRICK_SLAB = register("veradite_brick_slab", SlabBlock::new, BlockBehaviour.Properties.of().sound(ModSounds.VERADITE_BRICKS).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
+    public static final Block VERADITE_BRICK_WALL = register("veradite_brick_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(ModSounds.VERADITE_BRICKS).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
+    public static final Block CRACKED_VERADITE_BRICKS = register("cracked_veradite_bricks", Block::new, BlockBehaviour.Properties.of().sound(ModSounds.VERADITE_BRICKS).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
+    public static final Block CRACKED_VERADITE_BRICK_STAIRS = register("cracked_veradite_brick_stairs", settings -> new StairBlock(ModBlocks.CRACKED_VERADITE_BRICKS.defaultBlockState(), settings), BlockBehaviour.Properties.of().sound(ModSounds.VERADITE_BRICKS).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
+    public static final Block CRACKED_VERADITE_BRICK_SLAB = register("cracked_veradite_brick_slab", SlabBlock::new, BlockBehaviour.Properties.of().sound(ModSounds.VERADITE_BRICKS).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
+    public static final Block CRACKED_VERADITE_BRICK_WALL = register("cracked_veradite_brick_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(ModSounds.VERADITE_BRICKS).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
+    public static final Block CHISELED_VERADITE = register("chiseled_veradite", Block::new, BlockBehaviour.Properties.of().sound(ModSounds.VERADITE).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
+    public static final Block PURPUR_WALL = register("purpur_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F), true);
+    public static final Block CHISELED_PURPUR = register("chiseled_purpur", Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F), true);
 
     // METAL VARIANT BLOCKS (30)
 
@@ -303,6 +313,8 @@ public class ModBlocks {
     public static void initialize() {
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemgroup) -> {
+            itemgroup.accept(PALLID_MAGNIA);
+            itemgroup.accept(UMBRAL_MAGNIA);
             itemgroup.accept(POLISHED_STONE);
             itemgroup.accept(POLISHED_STONE_STAIRS);
             itemgroup.accept(POLISHED_STONE_SLAB);
@@ -373,6 +385,10 @@ public class ModBlocks {
             itemgroup.accept(CRACKED_SULFUR_BRICK_STAIRS);
             itemgroup.accept(CRACKED_SULFUR_BRICK_SLAB);
             itemgroup.accept(CRACKED_SULFUR_BRICK_WALL);
+            itemgroup.accept(POLISHED_CALCITE);
+            itemgroup.accept(POLISHED_CALCITE_STAIRS);
+            itemgroup.accept(POLISHED_CALCITE_SLAB);
+            itemgroup.accept(POLISHED_CALCITE_WALL);
             itemgroup.accept(CALCITE_BRICKS);
             itemgroup.accept(CALCITE_BRICK_STAIRS);
             itemgroup.accept(CALCITE_BRICK_SLAB);
@@ -430,8 +446,6 @@ public class ModBlocks {
             itemgroup.accept(CRACKED_QUARTZ_BRICK_STAIRS);
             itemgroup.accept(CRACKED_QUARTZ_BRICK_SLAB);
             itemgroup.accept(CRACKED_QUARTZ_BRICK_WALL);
-            itemgroup.accept(PURPUR_WALL);
-            itemgroup.accept(CHISELED_PURPUR);
             itemgroup.accept(CRACKED_BRICKS);
             itemgroup.accept(CRACKED_BRICK_STAIRS);
             itemgroup.accept(CRACKED_BRICK_SLAB);
@@ -469,8 +483,21 @@ public class ModBlocks {
             itemgroup.accept(CRACKED_KURODITE_BRICK_SLAB);
             itemgroup.accept(CRACKED_KURODITE_BRICK_WALL);
             itemgroup.accept(CHISELED_KURODITE);
-            itemgroup.accept(PALLID_MAGNIA);
-            itemgroup.accept(UMBRAL_MAGNIA);
+            itemgroup.accept(POLISHED_VERADITE);
+            itemgroup.accept(POLISHED_VERADITE_STAIRS);
+            itemgroup.accept(POLISHED_VERADITE_SLAB);
+            itemgroup.accept(POLISHED_VERADITE_WALL);
+            itemgroup.accept(VERADITE_BRICKS);
+            itemgroup.accept(VERADITE_BRICK_STAIRS);
+            itemgroup.accept(VERADITE_BRICK_SLAB);
+            itemgroup.accept(VERADITE_BRICK_WALL);
+            itemgroup.accept(CRACKED_VERADITE_BRICKS);
+            itemgroup.accept(CRACKED_VERADITE_BRICK_STAIRS);
+            itemgroup.accept(CRACKED_VERADITE_BRICK_SLAB);
+            itemgroup.accept(CRACKED_VERADITE_BRICK_WALL);
+            itemgroup.accept(CHISELED_VERADITE);
+            itemgroup.accept(PURPUR_WALL);
+            itemgroup.accept(CHISELED_PURPUR);
             itemgroup.accept(CUT_IRON);
             itemgroup.accept(CUT_IRON_STAIRS);
             itemgroup.accept(CUT_IRON_SLAB);
@@ -506,6 +533,9 @@ public class ModBlocks {
             itemgroup.accept(SOULSLATE);
             itemgroup.accept(NETHERRACK_GLOWSTONE_ORE);
             itemgroup.accept(KURODITE);
+            itemgroup.accept(VERADITE);
+            itemgroup.accept(PALLID_MAGNIA);
+            itemgroup.accept(UMBRAL_MAGNIA);
             itemgroup.accept(WILD_WHEAT);
             itemgroup.accept(WILD_CARROT);
             itemgroup.accept(WILD_POTATO);

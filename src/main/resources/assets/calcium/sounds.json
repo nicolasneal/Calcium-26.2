@@ -44,6 +44,94 @@
       "calcium:block/soulslate/step5"
     ]
   },
+  "block.end_rod.place": {
+    "sounds": [
+      "calcium:block/end_rod/place1",
+      "calcium:block/end_rod/place2",
+      "calcium:block/end_rod/place3",
+      "calcium:block/end_rod/place4"
+    ]
+  },
+  "block.end_stone.break": {
+    "sounds": [
+      "calcium:block/end_stone/break1",
+      "calcium:block/end_stone/break2",
+      "calcium:block/end_stone/break3",
+      "calcium:block/end_stone/break4"
+    ]
+  },
+  "block.end_stone.step": {
+    "sounds": [
+      "calcium:block/end_stone/step1",
+      "calcium:block/end_stone/step2",
+      "calcium:block/end_stone/step3",
+      "calcium:block/end_stone/step4"
+    ]
+  },
+  "block.kurodite.break": {
+    "sounds": [
+      "calcium:block/kurodite/break1",
+      "calcium:block/kurodite/break2",
+      "calcium:block/kurodite/break3",
+      "calcium:block/kurodite/break4"
+    ]
+  },
+  "block.kurodite.step": {
+    "sounds": [
+      "calcium:block/kurodite/step1",
+      "calcium:block/kurodite/step2",
+      "calcium:block/kurodite/step3",
+      "calcium:block/kurodite/step4"
+    ]
+  },
+  "block.kurodite_bricks.break": {
+    "sounds": [
+      "calcium:block/kurodite_bricks/break1",
+      "calcium:block/kurodite_bricks/break2",
+      "calcium:block/kurodite_bricks/break3",
+      "calcium:block/kurodite_bricks/break4"
+    ]
+  },
+  "block.kurodite_bricks.step": {
+    "sounds": [
+      "calcium:block/kurodite_bricks/step1",
+      "calcium:block/kurodite_bricks/step2",
+      "calcium:block/kurodite_bricks/step3",
+      "calcium:block/kurodite_bricks/step4"
+    ]
+  },
+  "block.veradite.break": {
+    "sounds": [
+      "calcium:block/veradite/break1",
+      "calcium:block/veradite/break2",
+      "calcium:block/veradite/break3",
+      "calcium:block/veradite/break4"
+    ]
+  },
+  "block.veradite.step": {
+    "sounds": [
+      "calcium:block/veradite/step1",
+      "calcium:block/veradite/step2",
+      "calcium:block/veradite/step3",
+      "calcium:block/veradite/step4"
+    ]
+  },
+  "block.veradite_bricks.break": {
+    "sounds": [
+      "calcium:block/veradite_bricks/break1",
+      "calcium:block/veradite_bricks/break2",
+      "calcium:block/veradite_bricks/break3",
+      "calcium:block/veradite_bricks/break4"
+    ]
+  },
+  "block.veradite_bricks.step": {
+    "sounds": [
+      "calcium:block/veradite_bricks/step1",
+      "calcium:block/veradite_bricks/step2",
+      "calcium:block/veradite_bricks/step3",
+      "calcium:block/veradite_bricks/step4"
+    ]
+  },
   "block.pallid_magnia.break": {
     "sounds": [
       "calcium:block/pallid_magnia/break1",
@@ -114,62 +202,6 @@
       "calcium:block/shadoline/step2",
       "calcium:block/shadoline/step3",
       "calcium:block/shadoline/step4"
-    ]
-  },
-  "block.end_rod.place": {
-    "sounds": [
-      "calcium:block/end_rod/place1",
-      "calcium:block/end_rod/place2",
-      "calcium:block/end_rod/place3",
-      "calcium:block/end_rod/place4"
-    ]
-  },
-  "block.end_stone.break": {
-    "sounds": [
-      "calcium:block/end_stone/break1",
-      "calcium:block/end_stone/break2",
-      "calcium:block/end_stone/break3",
-      "calcium:block/end_stone/break4"
-    ]
-  },
-  "block.end_stone.step": {
-    "sounds": [
-      "calcium:block/end_stone/step1",
-      "calcium:block/end_stone/step2",
-      "calcium:block/end_stone/step3",
-      "calcium:block/end_stone/step4"
-    ]
-  },
-  "block.kurodite.break": {
-    "sounds": [
-      "calcium:block/kurodite/break1",
-      "calcium:block/kurodite/break2",
-      "calcium:block/kurodite/break3",
-      "calcium:block/kurodite/break4"
-    ]
-  },
-  "block.kurodite.step": {
-    "sounds": [
-      "calcium:block/kurodite/step1",
-      "calcium:block/kurodite/step2",
-      "calcium:block/kurodite/step3",
-      "calcium:block/kurodite/step4"
-    ]
-  },
-  "block.kurodite_bricks.break": {
-    "sounds": [
-      "calcium:block/kurodite_bricks/break1",
-      "calcium:block/kurodite_bricks/break2",
-      "calcium:block/kurodite_bricks/break3",
-      "calcium:block/kurodite_bricks/break4"
-    ]
-  },
-  "block.kurodite_bricks.step": {
-    "sounds": [
-      "calcium:block/kurodite_bricks/step1",
-      "calcium:block/kurodite_bricks/step2",
-      "calcium:block/kurodite_bricks/step3",
-      "calcium:block/kurodite_bricks/step4"
     ]
   },
   "music.jukebox.bliss": {

@@ -40,7 +40,7 @@ import net.nicolas.calcium.sound.ModSounds;
 
 public class Calcium implements ModInitializer {
 
-	// Registering Screens
+	// Screen Registration
 
 	public static final MenuType<CustomBeaconScreenHandler> CUSTOM_BEACON_SCREEN_HANDLER =
 		Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath("calcium", "beacon"),
@@ -102,21 +102,19 @@ public class Calcium implements ModInitializer {
 		ComposterBlock.COMPOSTABLES.put(ModItems.COOKIE_DOUGH, 0.85f);
 		ComposterBlock.COMPOSTABLES.put(ModItems.CAKE_BATTER, 1.00f);
 
-		// Registering Fuels
+		// Fuel Registration
 
 		FuelValueEvents.BUILD.register((builder, context) -> {
-			// Vanilla Fuels
 			builder.add(Items.LAVA_BUCKET, 12800);
 			builder.add(Items.COAL_BLOCK, 6400);
 			builder.add(Items.DRIED_KELP_BLOCK, 800);
 			builder.add(Items.DRIED_KELP, 200);
 			builder.add(Items.BLAZE_POWDER, 1200);
-			// Calcium Fuels
 			builder.add(ModItems.WOODEN_ROD, 100);
 			builder.add(ModItems.PIXIE_DUST, 2400);
 		});
 
-		// Overriding Item Stack Sizes
+		// Stack Size Overrides
 
 		DefaultItemComponentEvents.MODIFY.register(context -> {
 			// Standard Signs
@@ -207,7 +205,7 @@ public class Calcium implements ModInitializer {
 			context.modify(Items.ENCHANTED_BOOK, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
 		});
 
-		// Overriding Block Sound Groups
+		// Sound Group Overrides
 
 		// Dirt Blocks
 		((AbstractBlockAccessor) Blocks.DIRT).setSoundGroup(SoundType.ROOTED_DIRT);
@@ -303,20 +301,17 @@ public class Calcium implements ModInitializer {
 		((AbstractBlockAccessor) Blocks.END_STONE).setSoundGroup(ModSounds.END_STONE);
 		((AbstractBlockAccessor) Blocks.END_ROD).setSoundGroup(ModSounds.END_ROD);
 
-		// Overriding Block Offsets
+		// Model Offsets
 
-		// Kelp - same XZ jitter formula vanilla flowers use (BlockBehaviour.Properties#offsetType),
-		// reapplied here since Kelp/KelpPlant are constructed with OffsetType.NONE upstream.
-		// 0.25 matches getMaxHorizontalOffset()'s default, which neither block overrides.
-		BlockBehaviour.OffsetFunction kelpOffset = (state, pos) -> {
+		BlockBehaviour.OffsetFunction xzOffset = (state, pos) -> {
 			long seed = Mth.getSeed(pos.getX(), 0, pos.getZ());
 			double x = Mth.clamp(((float) (seed & 15L) / 15.0F - 0.5) * 0.5, -0.25, 0.25);
 			double z = Mth.clamp(((float) (seed >> 8 & 15L) / 15.0F - 0.5) * 0.5, -0.25, 0.25);
 			return new Vec3(x, 0.0, z);
 		};
-		for (Block kelpBlock : new Block[]{Blocks.KELP, Blocks.KELP_PLANT}) {
-			for (BlockState state : kelpBlock.getStateDefinition().getPossibleStates()) {
-				((BlockStateBaseAccessor) state).setOffsetFunction(kelpOffset);
+		for (Block block : new Block[]{Blocks.KELP, Blocks.KELP_PLANT, Blocks.SEAGRASS}) {
+			for (BlockState state : block.getStateDefinition().getPossibleStates()) {
+				((BlockStateBaseAccessor) state).setOffsetFunction(xzOffset);
 			}
 		}
 

@@ -23,6 +23,7 @@
     "calcium:cracked_dripstone_brick_wall",
     "calcium:cracked_cinnabar_brick_wall",
     "calcium:cracked_sulfur_brick_wall",
+    "calcium:polished_calcite_wall",
     "calcium:calcite_brick_wall",
     "calcium:cracked_calcite_brick_wall",
     "calcium:sandstone_brick_wall",
@@ -49,6 +50,9 @@
     "calcium:polished_end_stone_wall",
     "calcium:polished_kurodite_wall",
     "calcium:kurodite_brick_wall",
-    "calcium:cracked_kurodite_brick_wall"
+    "calcium:cracked_kurodite_brick_wall",
+    "calcium:polished_veradite_wall",
+    "calcium:veradite_brick_wall",
+    "calcium:cracked_veradite_brick_wall"
   ]
 }

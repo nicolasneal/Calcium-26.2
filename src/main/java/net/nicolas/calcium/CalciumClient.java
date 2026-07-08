@@ -22,12 +22,6 @@ public class CalciumClient implements ClientModInitializer {
         MenuScreens.register(Calcium.CUSTOM_BEACON_SCREEN_HANDLER, CustomBeaconScreen::new);
         MenuScreens.register(Calcium.CUSTOM_ENCHANTING_SCREEN_HANDLER, CustomEnchantingScreen::new);
 
-        // Cutout render layers (grates, doors, bars, chains, lanterns, all the plant blocks,
-        // potted variants) are now assigned automatically from each texture's real alpha
-        // channel (ChunkSectionLayer.byTransparency) - no registration needed any more.
-        // Soul Glass's forced translucency now lives in its block model JSON instead
-        // (models/block/soul_glass.json - "force_translucent": true).
-
         FluidRenderingRegistry.register(
             ModFluids.ECTOPLASM_STILL,
             ModFluids.ECTOPLASM_FLOWING,
