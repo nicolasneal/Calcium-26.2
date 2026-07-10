@@ -7,6 +7,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -44,6 +45,10 @@ public class ModItems {
     public static final Item RAW_SHADOLINE = register("raw_shadoline", Item::new, new Item.Properties().stacksTo(64));
     public static final Item SHADOLINE_NUGGET = register("shadoline_nugget", Item::new, new Item.Properties().stacksTo(64));
     public static final Item SHADOLINE_INGOT = register("shadoline_ingot", Item::new, new Item.Properties().stacksTo(64));
+
+    // INGREDIENTS: BANNER PATTERNS (1)
+
+    public static final Item CRESCENT_BANNER_PATTERN = register("crescent_banner_pattern", Item::new, new Item.Properties().stacksTo(64).delayedComponent(DataComponents.PROVIDES_BANNER_PATTERNS, context -> context.getOrThrow(TagKey.create(Registries.BANNER_PATTERN, Identifier.fromNamespaceAndPath(MOD_ID, "pattern_item/crescent")))));
 
     // FOOD AND DRINK (14)
 
@@ -99,6 +104,7 @@ public class ModItems {
             itemgroup.accept(RAW_SHADOLINE);
             itemgroup.accept(SHADOLINE_NUGGET);
             itemgroup.accept(SHADOLINE_INGOT);
+            itemgroup.accept(CRESCENT_BANNER_PATTERN);
             itemgroup.getDisplayStacks().removeIf(stack -> stack.is(Items.RABBIT_HIDE));
             itemgroup.getSearchTabStacks().removeIf(stack -> stack.is(Items.RABBIT_HIDE));
         });

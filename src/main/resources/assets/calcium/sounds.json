@@ -204,6 +204,30 @@
       "calcium:block/shadoline/step4"
     ]
   },
+  "block.shadoline_ore.break": {
+    "sounds": [
+      "calcium:block/shadoline_ore/break1",
+      "calcium:block/shadoline_ore/break2",
+      "calcium:block/shadoline_ore/break3",
+      "calcium:block/shadoline_ore/break4"
+    ]
+  },
+  "block.shadoline_ore.step": {
+    "sounds": [
+      "calcium:block/shadoline_ore/step1",
+      "calcium:block/shadoline_ore/step2",
+      "calcium:block/shadoline_ore/step3",
+      "calcium:block/shadoline_ore/step4"
+    ]
+  },
+  "block.end_growth.break": {
+    "sounds": [
+      "calcium:block/end_growth/break1",
+      "calcium:block/end_growth/break2",
+      "calcium:block/end_growth/break3",
+      "calcium:block/end_growth/break4"
+    ]
+  },
   "music.jukebox.bliss": {
     "sounds": [
       {

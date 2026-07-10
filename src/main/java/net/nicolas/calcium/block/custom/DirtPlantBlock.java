@@ -27,10 +27,6 @@ public class DirtPlantBlock extends GenericPlantBlock {
     }
 
     @Override protected boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
-        // BlockTags.DIRT only covers plain dirt/coarse_dirt/rooted_dirt in this version - grass_block,
-        // podzol, and mycelium live in the separate grass_blocks tag. SUPPORTS_VEGETATION is vanilla's
-        // own comprehensive tag (dirt + grass_blocks + mud + moss_blocks + farmland) and is what these
-        // plants actually need to place on ordinary grass.
         BlockPos floorPos = pos.below();
         BlockState floor = world.getBlockState(floorPos);
         return floor.is(BlockTags.SUPPORTS_VEGETATION);

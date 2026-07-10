@@ -16,7 +16,7 @@ public class FlatPlantBlock extends GenericPlantBlock {
 
     public static final MapCodec<FlatPlantBlock> CODEC = simpleCodec(FlatPlantBlock::new);
     private static final VoxelShape SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 3.0, 15.0);
-    public static final TagKey<Block> VALID_BASES = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("calcium", "ember_sprouts_placement"));
+    public static final TagKey<Block> VALID_BASES = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("calcium", "nether_plant_placement"));
 
     public FlatPlantBlock(Properties settings) {
         super(settings);

@@ -51,6 +51,13 @@ public class ModSounds {
     public static final SoundEvent SHADOLINE_STEP = register("block.shadoline.step");
     public static final SoundType SHADOLINE = new SoundType(1.0F, 1.0F, SHADOLINE_BREAK, SHADOLINE_STEP, SHADOLINE_PLACE, SHADOLINE_STEP, SHADOLINE_STEP);
 
+    public static final SoundEvent SHADOLINE_ORE_BREAK = register("block.shadoline_ore.break");
+    public static final SoundEvent SHADOLINE_ORE_STEP = register("block.shadoline_ore.step");
+    public static final SoundType SHADOLINE_ORE = new SoundType(1.0F, 1.0F, SHADOLINE_ORE_BREAK, SHADOLINE_ORE_STEP, SHADOLINE_ORE_BREAK, SHADOLINE_ORE_STEP, SHADOLINE_ORE_STEP);
+
+    public static final SoundEvent END_GROWTH_BREAK = register("block.end_growth.break");
+    public static final SoundType END_GROWTH = new SoundType(1.0F, 1.0F, END_GROWTH_BREAK, END_GROWTH_BREAK, END_GROWTH_BREAK, END_GROWTH_BREAK, END_GROWTH_BREAK);
+
     public static final SoundEvent END_ROD_PLACE = register("block.end_rod.place");
     public static final SoundType END_ROD = new SoundType(1.0F, 1.0F, END_ROD_PLACE, END_ROD_PLACE, END_ROD_PLACE, END_ROD_PLACE, END_ROD_PLACE);
 
