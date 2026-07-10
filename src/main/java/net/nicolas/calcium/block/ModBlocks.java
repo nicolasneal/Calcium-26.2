@@ -97,7 +97,7 @@ public class ModBlocks {
     public static final Block ANDESITE_BRICK_SLAB = register("andesite_brick_slab", SlabBlock::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F), true);
     public static final Block ANDESITE_BRICK_WALL = register("andesite_brick_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F), true);
     public static final Block CRACKED_ANDESITE_BRICKS = register("cracked_andesite_bricks", Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F), true);
-    public static final Block CRACKED_ANDESITE_BRICK_STAIRS = register("cracked_andesite_brick_stairs", settings -> new StairBlock(ModBlocks.ANDESITE_BRICKS.defaultBlockState(), settings), BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F), true);
+    public static final Block CRACKED_ANDESITE_BRICK_STAIRS = register("cracked_andesite_brick_stairs", settings -> new StairBlock(ModBlocks.CRACKED_ANDESITE_BRICKS.defaultBlockState(), settings), BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F), true);
     public static final Block CRACKED_ANDESITE_BRICK_SLAB = register("cracked_andesite_brick_slab", SlabBlock::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F), true);
     public static final Block CRACKED_ANDESITE_BRICK_WALL = register("cracked_andesite_brick_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F), true);
     public static final Block CHISELED_ANDESITE = register("chiseled_andesite", Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F), true);
@@ -548,11 +548,11 @@ public class ModBlocks {
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register((itemgroup) -> {
             itemgroup.accept(SILT);
             itemgroup.accept(SOULSLATE);
+            itemgroup.accept(NETHERRACK_GLOWSTONE_ORE);
             itemgroup.accept(KURODITE);
             itemgroup.accept(VERADITE);
             itemgroup.accept(PALLID_MAGNIA);
             itemgroup.accept(UMBRAL_MAGNIA);
-            itemgroup.accept(NETHERRACK_GLOWSTONE_ORE);
             itemgroup.accept(END_STONE_SHADOLINE_ORE);
             itemgroup.accept(RAW_SHADOLINE_BLOCK);
             itemgroup.accept(WILD_WHEAT);
@@ -588,7 +588,7 @@ public class ModBlocks {
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.REDSTONE_BLOCKS).register((itemgroup) -> {
             itemgroup.accept(IRON_BULB);
             itemgroup.accept(GOLD_BULB);
-            itemgroup.accept(SHADOLINE_LANTERN);
+            itemgroup.accept(SHADOLINE_BULB);
         });
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COLORED_BLOCKS).register((itemgroup) -> {

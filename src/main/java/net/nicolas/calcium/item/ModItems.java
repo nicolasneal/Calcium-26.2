@@ -34,7 +34,7 @@ public class ModItems {
     public static final Item GHAST_TENTACLE = register("ghast_tentacle", Item::new, new Item.Properties().stacksTo(64));
     public static final Item WARDEN_HEART = register("warden_heart", Item::new, new Item.Properties().stacksTo(64));
 
-    // INGREDIENTS: RESOURCES (10)
+    // INGREDIENTS: RESOURCES (9)
 
     public static final Item WOODEN_ROD = register("wooden_rod", Item::new, new Item.Properties().stacksTo(64));
     public static final Item TABLET = register("tablet", Item::new, new Item.Properties().stacksTo(64));
@@ -50,7 +50,7 @@ public class ModItems {
 
     public static final Item CRESCENT_BANNER_PATTERN = register("crescent_banner_pattern", Item::new, new Item.Properties().stacksTo(64).delayedComponent(DataComponents.PROVIDES_BANNER_PATTERNS, context -> context.getOrThrow(TagKey.create(Registries.BANNER_PATTERN, Identifier.fromNamespaceAndPath(MOD_ID, "pattern_item/crescent")))));
 
-    // FOOD AND DRINK (14)
+    // FOOD AND DRINK (15)
 
     public static final Item CHEVAL = register("cheval", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.CHEVAL));
     public static final Item COOKED_CHEVAL = register("cooked_cheval", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.COOKED_CHEVAL));

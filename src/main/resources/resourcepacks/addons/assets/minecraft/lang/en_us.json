@@ -238,6 +238,10 @@
 
   // COLORED NAMES
 
+  "block.minecraft.beacon": "§fBeacon",
+  "block.minecraft.conduit": "§fConduit",
+  "block.minecraft.dragon_egg": "§fDragon Egg",
+  "block.minecraft.dragon_head": "§fDragon Head",
   "block.minecraft.heavy_core": "§fHeavy Core",
   "block.minecraft.skeleton_skull": "§fSkeleton Skull",
   "block.minecraft.wither_skeleton_skull": "§fWithered Skull",

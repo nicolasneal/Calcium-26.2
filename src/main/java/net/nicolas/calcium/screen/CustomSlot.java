@@ -6,7 +6,6 @@ import net.minecraft.world.Container;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.RecipeType;
 
 public class CustomSlot extends Slot {
 
@@ -16,7 +15,7 @@ public class CustomSlot extends Slot {
     private final TagKey<Item> allowedTag;
     private final Component tooltip;
 
-    private CustomSlot(Container inventory, int index, int x, int y, SlotConfig.ItemMode itemMode, SlotConfig.StackMode stackMode, Item fixedItem, TagKey<Item> allowedTag, RecipeType<?> recipeType, Component tooltip) {
+    private CustomSlot(Container inventory, int index, int x, int y, SlotConfig.ItemMode itemMode, SlotConfig.StackMode stackMode, Item fixedItem, TagKey<Item> allowedTag, Component tooltip) {
         super(inventory, index, x, y);
         this.itemMode = itemMode;
         this.stackMode = stackMode;
@@ -30,7 +29,6 @@ public class CustomSlot extends Slot {
             case ALL -> true;
             case FIXED -> stack.getItem() == fixedItem;
             case TAG -> stack.is(allowedTag);
-            case RECIPE -> false;
         };
     }
 
@@ -53,7 +51,6 @@ public class CustomSlot extends Slot {
         private SlotConfig.StackMode stackMode = SlotConfig.StackMode.STACK;
         private Item fixedItem = null;
         private TagKey<Item> allowedTag = null;
-        private RecipeType<?> recipeType = null;
         private Component tooltip = null;
 
         public Builder(Container inventory, int index, int x, int y) {
@@ -83,18 +80,13 @@ public class CustomSlot extends Slot {
             return this;
         }
 
-        public Builder recipeType(RecipeType<?> recipeType) {
-            this.recipeType = recipeType;
-            return this;
-        }
-
         public Builder tooltip(Component tooltip) {
             this.tooltip = tooltip;
             return this;
         }
 
         public CustomSlot build() {
-            return new CustomSlot(inventory, index, x, y, itemMode, stackMode, fixedItem, allowedTag, recipeType, tooltip);
+            return new CustomSlot(inventory, index, x, y, itemMode, stackMode, fixedItem, allowedTag, tooltip);
         }
 
     }

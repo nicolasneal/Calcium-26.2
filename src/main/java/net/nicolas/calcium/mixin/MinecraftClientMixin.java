@@ -33,7 +33,8 @@ public class MinecraftClientMixin {
 
     @Shadow public LocalPlayer player;
 
-    @Inject(method = "tick", at = @At("HEAD")) private void onTick(CallbackInfo ci) {
+    @Inject(method = "tick", at = @At("HEAD"))
+    private void onTick(CallbackInfo ci) {
 
         Minecraft client = (Minecraft) (Object) this;
         LocalPlayer player = client.player;
@@ -61,14 +62,16 @@ public class MinecraftClientMixin {
 
     }
 
-    @Inject(method = "startAttack", at = @At("HEAD"), cancellable = true) private void onDoAttack(CallbackInfoReturnable<Boolean> cir) {
+    @Inject(method = "startAttack", at = @At("HEAD"), cancellable = true)
+    private void onDoAttack(CallbackInfoReturnable<Boolean> cir) {
         Minecraft client = (Minecraft) (Object) this;
         if (client.player != null && client.player.isSleeping()) {
             cir.setReturnValue(false);
         }
     }
 
-    @Inject(method = "startUseItem", at = @At("HEAD"), cancellable = true) private void onDoItemUse(CallbackInfo ci) {
+    @Inject(method = "startUseItem", at = @At("HEAD"), cancellable = true)
+    private void onDoItemUse(CallbackInfo ci) {
         Minecraft client = (Minecraft) (Object) this;
         if (client.player != null && client.player.isSleeping()) {
             ci.cancel();

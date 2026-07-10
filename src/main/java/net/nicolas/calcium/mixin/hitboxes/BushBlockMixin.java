@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(BushBlock.class)
 public class BushBlockMixin {
 
-    @Unique private static final VoxelShape NEW_SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 14.0, 15.0);;
+    @Unique private static final VoxelShape NEW_SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 14.0, 15.0);
 
     @Inject(method = "getShape", at = @At("HEAD"), cancellable = true)
     private void calcium$changeBushShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context, CallbackInfoReturnable<VoxelShape> cir) {

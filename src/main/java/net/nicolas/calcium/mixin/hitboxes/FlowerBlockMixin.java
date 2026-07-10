@@ -16,10 +16,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(FlowerBlock.class)
 public class FlowerBlockMixin {
 
-    @Unique private static final VoxelShape NEW_SHAPE = Block.box(4.0, 0.0, 4.0, 12.0, 12.0, 12.0);;
+    @Unique private static final VoxelShape NEW_SHAPE = Block.box(4.0, 0.0, 4.0, 12.0, 12.0, 12.0);
 
     @Inject(method = "getShape", at = @At("HEAD"), cancellable = true)
-    private void calcium$changeBushShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context, CallbackInfoReturnable<VoxelShape> cir) {
+    private void calcium$changeFlowerShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context, CallbackInfoReturnable<VoxelShape> cir) {
         cir.setReturnValue(NEW_SHAPE.move(state.getOffset(pos)));
     }
 

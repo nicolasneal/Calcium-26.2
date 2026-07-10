@@ -17,6 +17,8 @@ public abstract class StonecutterScreenMixin extends AbstractContainerScreen<Sto
         super(handler, inventory, title);
     }
 
+    @Unique private int scrollBarY = 16;
+
     @ModifyConstant(method = {"extractBackground", "extractTooltip", "mouseClicked"}, constant = @Constant(intValue = 52))
     private int calcium$modifyRecipeGridX(int constant) {
         return 48;
@@ -32,28 +34,25 @@ public abstract class StonecutterScreenMixin extends AbstractContainerScreen<Sto
         return 116;
     }
 
-    @Unique int ScrollBarY = 16;
-
     @ModifyConstant(method = "extractBackground", constant = @Constant(intValue = 15, ordinal = 0))
     private int calcium$modifyScrollbarVisualY(int constant) {
-        return ScrollBarY;
+        return scrollBarY;
     }
 
     @ModifyConstant(method = "mouseClicked", constant = @Constant(intValue = 9))
     private int calcium$modifyScrollbarClickY(int constant) {
-        return ScrollBarY - 6;
+        return scrollBarY - 6;
     }
 
     @ModifyConstant(method = "mouseDragged", constant = @Constant(intValue = 14))
     private int calcium$modifyScrollbarDragY(int constant) {
-        return ScrollBarY - 1;
+        return scrollBarY - 1;
     }
 
     @ModifyConstant(method = "extractBackground", constant = @Constant(floatValue = 41.0F))
     private float calcium$modifyScrollTravelFloat(float constant) {
         return 39.0F;
     }
-
 
     @ModifyConstant(method = "mouseClicked", constant = @Constant(intValue = 54))
     private int calcium$modifyClickAreaHeight(int constant) {

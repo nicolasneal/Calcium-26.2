@@ -17,8 +17,7 @@ public abstract class AbstractFurnaceScreenMixin extends AbstractRecipeBookScree
         super(handler, recipeBook, inventory, title);
     }
 
-    @Redirect(method = "extractBackground",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;blitSprite(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIIIIIII)V"))
+    @Redirect(method = "extractBackground", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;blitSprite(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIIIIIII)V"))
     private void calcium$redirectFurnaceOverlays(GuiGraphicsExtractor instance, RenderPipeline pipeline, Identifier texture, int textureWidth, int textureHeight, int u, int v, int x, int y, int width, int height) {
 
         if (textureWidth == 14 && textureHeight == 14) {

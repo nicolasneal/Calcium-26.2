@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "calcium:sandstone_bricks"
+          "name": "minecraft:cut_sandstone"
         }
       ]
     }

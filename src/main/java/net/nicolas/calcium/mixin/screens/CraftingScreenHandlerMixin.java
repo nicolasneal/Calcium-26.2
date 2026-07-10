@@ -16,14 +16,12 @@ public abstract class CraftingScreenHandlerMixin extends AbstractCraftingMenu {
         super(type, syncId, width, height);
     }
 
-    @Redirect(method = "<init>(ILnet/minecraft/world/entity/player/Inventory;Lnet/minecraft/world/inventory/ContainerLevelAccess;)V",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/inventory/CraftingMenu;addCraftingGridSlots(II)V"))
+    @Redirect(method = "<init>(ILnet/minecraft/world/entity/player/Inventory;Lnet/minecraft/world/inventory/ContainerLevelAccess;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/inventory/CraftingMenu;addCraftingGridSlots(II)V"))
     private void calcium$redirectAddInputSlots(CraftingMenu instance, int x, int y) {
         super.addCraftingGridSlots(31, 17);
     }
 
-    @Redirect(method = "<init>(ILnet/minecraft/world/entity/player/Inventory;Lnet/minecraft/world/inventory/ContainerLevelAccess;)V",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/inventory/CraftingMenu;addResultSlot(Lnet/minecraft/world/entity/player/Player;II)Lnet/minecraft/world/inventory/Slot;"))
+    @Redirect(method = "<init>(ILnet/minecraft/world/entity/player/Inventory;Lnet/minecraft/world/inventory/ContainerLevelAccess;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/inventory/CraftingMenu;addResultSlot(Lnet/minecraft/world/entity/player/Player;II)Lnet/minecraft/world/inventory/Slot;"))
     private Slot calcium$redirectAddResultSlot(CraftingMenu instance, Player player, int x, int y) {
         return super.addResultSlot(player, 125, 35);
     }
