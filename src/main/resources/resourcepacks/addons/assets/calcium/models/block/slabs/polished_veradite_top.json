@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/slabs/slab_top",
+  "textures": {
+    "end": "calcium:block/polished_veradite",
+    "side": "calcium:block/slabs/polished_veradite"
+  }
+}

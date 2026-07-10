@@ -1,0 +1,20 @@
+{
+    "parent": "minecraft:block/stairs/stairs_straight",
+        "textures": {
+            "1": "minecraft:block/stairs/polished_cinnabar_1",
+	    "2": "minecraft:block/stairs/polished_cinnabar_2",
+	    "3": "minecraft:block/stairs/polished_cinnabar_5",
+	    "4": "minecraft:block/stairs/polished_cinnabar_6",
+	    "5": "minecraft:block/polished_cinnabar",
+	    "particle": "minecraft:block/polished_cinnabar"
+        }
+}
+
+
+
+
+
+
+
+
+

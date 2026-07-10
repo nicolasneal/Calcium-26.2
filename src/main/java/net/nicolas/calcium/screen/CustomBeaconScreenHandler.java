@@ -1,11 +1,11 @@
 package net.nicolas.calcium.screen;
 
 import net.minecraft.core.Holder;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.BeaconMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.SimpleContainerData;
@@ -51,15 +51,11 @@ public class CustomBeaconScreenHandler extends AbstractContainerMenu {
     }
 
     public @Nullable Holder<MobEffect> getPrimaryEffect() {
-        return getStatusEffectForRawId(this.propertyDelegate.get(1));
+        return BeaconMenu.decodeEffect(this.propertyDelegate.get(1));
     }
 
     public @Nullable Holder<MobEffect> getSecondaryEffect() {
-        return getStatusEffectForRawId(this.propertyDelegate.get(2));
-    }
-
-    private static @Nullable Holder<MobEffect> getStatusEffectForRawId(int id) {
-        return id == 0 ? null : BuiltInRegistries.MOB_EFFECT.asHolderIdMap().byId(id - 1);
+        return BeaconMenu.decodeEffect(this.propertyDelegate.get(2));
     }
 
     @Override public ItemStack quickMoveStack(Player player, int slotIndex) {
@@ -100,17 +96,8 @@ public class CustomBeaconScreenHandler extends AbstractContainerMenu {
 
     public void setEffects(java.util.Optional<Holder<MobEffect>> primary, java.util.Optional<Holder<MobEffect>> secondary) {
 
-        if (primary.isPresent()) {
-            this.propertyDelegate.set(1, BuiltInRegistries.MOB_EFFECT.getId(primary.get().value()));
-        } else {
-            this.propertyDelegate.set(1, 0);
-        }
-
-        if (secondary.isPresent()) {
-            this.propertyDelegate.set(2, BuiltInRegistries.MOB_EFFECT.getId(secondary.get().value()));
-        } else {
-            this.propertyDelegate.set(2, 0);
-        }
+        this.propertyDelegate.set(1, BeaconMenu.encodeEffect(primary.orElse(null)));
+        this.propertyDelegate.set(2, BeaconMenu.encodeEffect(secondary.orElse(null)));
 
         this.context.execute(net.minecraft.world.level.Level::blockEntityChanged);
         this.broadcastChanges();

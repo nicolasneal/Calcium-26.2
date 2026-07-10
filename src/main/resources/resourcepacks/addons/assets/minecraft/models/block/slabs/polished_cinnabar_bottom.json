@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/slabs/slab_bottom",
+  "textures": {
+    "end": "minecraft:block/polished_cinnabar",
+    "side": "minecraft:block/slabs/polished_cinnabar"
+  }
+}

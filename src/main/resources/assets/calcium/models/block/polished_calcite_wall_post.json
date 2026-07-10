@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/template_wall_post",
   "textures": {
-    "wall": "calcium:minecraft/polished_calcite"
+    "wall": "calcium:block/polished_calcite"
   }
 }

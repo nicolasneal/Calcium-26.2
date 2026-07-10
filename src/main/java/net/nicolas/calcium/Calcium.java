@@ -64,20 +64,21 @@ public class Calcium implements ModInitializer {
 		// Resource Pack Initialization
 
 		FabricLoader.getInstance().getModContainer("calcium").ifPresent(container -> {
+			boolean success = ResourceManagerHelper.registerBuiltinResourcePack(Identifier.fromNamespaceAndPath("calcium", "cubic"), container, net.minecraft.network.chat.Component.nullToEmpty("§l3D Sun & Moon §r§7[1.0.0]"), ResourcePackActivationType.DEFAULT_ENABLED);
+		});
+
+		FabricLoader.getInstance().getModContainer("calcium").ifPresent(container -> {
+			boolean success = ResourceManagerHelper.registerBuiltinResourcePack(Identifier.fromNamespaceAndPath("calcium", "bushy"), container, net.minecraft.network.chat.Component.nullToEmpty("§lBushy Leaves §r§7[1.0.0]"), ResourcePackActivationType.DEFAULT_ENABLED);
+		});
+
+		FabricLoader.getInstance().getModContainer("calcium").ifPresent(container -> {
+			boolean success = ResourceManagerHelper.registerBuiltinResourcePack(Identifier.fromNamespaceAndPath("calcium", "overlays"), container, net.minecraft.network.chat.Component.nullToEmpty("§lGrass Overlays §r§7[1.0.0]"), ResourcePackActivationType.DEFAULT_ENABLED);
+		});
+
+		FabricLoader.getInstance().getModContainer("calcium").ifPresent(container -> {
 			boolean success = ResourceManagerHelper.registerBuiltinResourcePack(Identifier.fromNamespaceAndPath("calcium", "addons"), container, net.minecraft.network.chat.Component.nullToEmpty("§lNicolas's Add-Ons §r§7[1.1.4]"), ResourcePackActivationType.ALWAYS_ENABLED);
 		});
 
-		FabricLoader.getInstance().getModContainer("calcium").ifPresent(container -> {
-			boolean success = ResourceManagerHelper.registerBuiltinResourcePack(Identifier.fromNamespaceAndPath("calcium", "cubic"), container, net.minecraft.network.chat.Component.nullToEmpty("§l3D Sun & Moon §r§7[1.0.0]"), ResourcePackActivationType.NORMAL);
-		});
-
-		FabricLoader.getInstance().getModContainer("calcium").ifPresent(container -> {
-			boolean success = ResourceManagerHelper.registerBuiltinResourcePack(Identifier.fromNamespaceAndPath("calcium", "overlays"), container, net.minecraft.network.chat.Component.nullToEmpty("§lGrass Overlays §r§7[1.0.0]"), ResourcePackActivationType.NORMAL);
-		});
-
-		FabricLoader.getInstance().getModContainer("calcium").ifPresent(container -> {
-			boolean success = ResourceManagerHelper.registerBuiltinResourcePack(Identifier.fromNamespaceAndPath("calcium", "bushy"), container, net.minecraft.network.chat.Component.nullToEmpty("§lBushy Leaves §r§7[1.0.0]"), ResourcePackActivationType.NORMAL);
-		});
 
 		// Cauldron Behavior
 
@@ -99,8 +100,7 @@ public class Calcium implements ModInitializer {
 		ComposterBlock.COMPOSTABLES.put(ModItems.PUMPKIN_SLICE, 0.50f);
 		ComposterBlock.COMPOSTABLES.put(ModItems.FLOUR, 0.65f);
 		ComposterBlock.COMPOSTABLES.put(ModItems.DOUGH, 0.85f);
-		ComposterBlock.COMPOSTABLES.put(ModItems.COOKIE_DOUGH, 0.85f);
-		ComposterBlock.COMPOSTABLES.put(ModItems.CAKE_BATTER, 1.00f);
+		ComposterBlock.COMPOSTABLES.put(ModItems.BATTER, 1.00f);
 
 		// Fuel Registration
 
@@ -268,10 +268,12 @@ public class Calcium implements ModInitializer {
 		((AbstractBlockAccessor) Blocks.LILAC).setSoundGroup(SoundType.AZALEA);
 		((AbstractBlockAccessor) Blocks.ROSE_BUSH).setSoundGroup(SoundType.AZALEA);
 		((AbstractBlockAccessor) Blocks.PEONY).setSoundGroup(SoundType.AZALEA);
+		((AbstractBlockAccessor) Blocks.GOLDEN_DANDELION).setSoundGroup(SoundType.AZALEA);
 		((AbstractBlockAccessor) Blocks.CACTUS).setSoundGroup(SoundType.SWEET_BERRY_BUSH);
 		((AbstractBlockAccessor) Blocks.GLOW_LICHEN).setSoundGroup(SoundType.VINE);
 		((AbstractBlockAccessor) Blocks.RED_MUSHROOM).setSoundGroup(SoundType.FUNGUS);
 		((AbstractBlockAccessor) Blocks.BROWN_MUSHROOM).setSoundGroup(SoundType.FUNGUS);
+
 		// Wooden Furniture
 		((AbstractBlockAccessor) Blocks.CHEST).setSoundGroup(SoundType.SHELF);
 		((AbstractBlockAccessor) Blocks.TRAPPED_CHEST).setSoundGroup(SoundType.SHELF);

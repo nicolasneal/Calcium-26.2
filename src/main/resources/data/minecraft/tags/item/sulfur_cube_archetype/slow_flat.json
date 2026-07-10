@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "calcium:cut_iron",
+    "calcium:chiseled_iron",
+    "calcium:iron_bulb",
+    "calcium:cut_gold",
+    "calcium:chiseled_gold",
+    "calcium:gold_bulb",
+    "calcium:raw_shadoline_block",
+    "calcium:shadoline_block",
+    "calcium:cut_shadoline",
+    "calcium:chiseled_shadoline",
+    "calcium:shadoline_bulb"
+  ]
+}

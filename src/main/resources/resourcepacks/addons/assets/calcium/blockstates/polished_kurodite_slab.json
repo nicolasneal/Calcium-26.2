@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "calcium:block/slabs/polished_kurodite_top"
+    },
+    "type=bottom": {
+      "model": "calcium:block/slabs/polished_kurodite_bottom"
+    },
+    "type=double": {
+      "model": "calcium:block/slabs/polished_kurodite_double"
+    }
+  }
+}

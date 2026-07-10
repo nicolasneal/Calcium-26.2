@@ -3,7 +3,7 @@
   "category": "food",
   "cookingtime": 200,
   "experience": 0.35,
-  "ingredient": "calcium:cake_batter",
+  "ingredient": "calcium:batter",
   "result": {
     "id": "minecraft:cake"
   }

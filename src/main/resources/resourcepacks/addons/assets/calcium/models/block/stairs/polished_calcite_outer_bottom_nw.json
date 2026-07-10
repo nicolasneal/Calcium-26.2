@@ -1,0 +1,20 @@
+{
+    "parent": "minecraft:block/stairs/stairs_outer",
+        "textures": {
+            "1": "calcium:block/stairs/polished_calcite_1",
+	    "2": "calcium:block/stairs/polished_calcite_2",
+	    "3": "calcium:block/stairs/polished_calcite_2",
+	    "4": "calcium:block/stairs/polished_calcite_5",
+	    "5": "calcium:block/polished_calcite",
+	    "particle": "calcium:block/polished_calcite"
+        }
+}
+
+
+
+
+
+
+
+
+

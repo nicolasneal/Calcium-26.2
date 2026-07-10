@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "calcium:block/slabs/polished_packed_mud_top"
+    },
+    "type=bottom": {
+      "model": "calcium:block/slabs/polished_packed_mud_bottom"
+    },
+    "type=double": {
+      "model": "calcium:block/slabs/polished_packed_mud_double"
+    }
+  }
+}

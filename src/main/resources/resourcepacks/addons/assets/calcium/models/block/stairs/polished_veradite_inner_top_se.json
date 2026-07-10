@@ -1,0 +1,19 @@
+{
+    "parent": "minecraft:block/stairs/stairs_inner",
+        "textures": {
+            "1": "calcium:block/stairs/polished_veradite_4",
+	    "2": "calcium:block/stairs/polished_veradite_3",
+	    "3": "calcium:block/stairs/polished_veradite_4",
+	    "4": "calcium:block/polished_veradite",
+	    "particle": "calcium:block/polished_veradite"
+        }
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "minecraft:block/slabs/polished_cinnabar_top"
+    },
+    "type=bottom": {
+      "model": "minecraft:block/slabs/polished_cinnabar_bottom"
+    },
+    "type=double": {
+      "model": "minecraft:block/slabs/polished_cinnabar_double"
+    }
+  }
+}

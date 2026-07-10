@@ -17,6 +17,7 @@ public class ModFoods {
     public static final FoodProperties TENTACLES = new FoodProperties.Builder().nutrition(2).saturationModifier(0.12f).build();
     public static final FoodProperties COOKED_TENTACLES = new FoodProperties.Builder().nutrition(5).saturationModifier(0.60f).build();
     public static final FoodProperties CHOCOLATE = new FoodProperties.Builder().nutrition(4).saturationModifier(0.75f).build();
+    public static final FoodProperties CHORUS_CAKE_ROLL = new FoodProperties.Builder().nutrition(10).saturationModifier(0.20f).build();
     public static final FoodProperties WATER_BOWL = new FoodProperties.Builder().nutrition(0).saturationModifier(0.00f).alwaysEdible().build();
 
 }

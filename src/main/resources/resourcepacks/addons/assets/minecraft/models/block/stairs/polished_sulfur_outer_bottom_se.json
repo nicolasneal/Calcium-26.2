@@ -1,0 +1,20 @@
+{
+    "parent": "minecraft:block/stairs/stairs_outer",
+        "textures": {
+            "1": "minecraft:block/stairs/polished_sulfur_1",
+	    "2": "minecraft:block/stairs/polished_sulfur_2",
+	    "3": "minecraft:block/stairs/polished_sulfur_3",
+	    "4": "minecraft:block/stairs/polished_sulfur_5",
+	    "5": "minecraft:block/polished_sulfur",
+	    "particle": "minecraft:block/polished_sulfur"
+        }
+}
+
+
+
+
+
+
+
+
+

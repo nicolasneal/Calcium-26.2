@@ -39,8 +39,7 @@ public class ModItems {
     public static final Item TABLET = register("tablet", Item::new, new Item.Properties().stacksTo(64));
     public static final Item FLOUR = register("flour", Item::new, new Item.Properties().stacksTo(64));
     public static final Item DOUGH = register("dough", Item::new, new Item.Properties().stacksTo(64));
-    public static final Item COOKIE_DOUGH = register("cookie_dough", Item::new, new Item.Properties().stacksTo(64));
-    public static final Item CAKE_BATTER = register("cake_batter", Item::new, new Item.Properties().stacksTo(64));
+    public static final Item BATTER = register("batter", Item::new, new Item.Properties().stacksTo(64));
     public static final Item PUMPKIN_SLICE = register("pumpkin_slice", Item::new, new Item.Properties().stacksTo(64));
     public static final Item RAW_SHADOLINE = register("raw_shadoline", Item::new, new Item.Properties().stacksTo(64));
     public static final Item SHADOLINE_NUGGET = register("shadoline_nugget", Item::new, new Item.Properties().stacksTo(64));
@@ -61,6 +60,7 @@ public class ModItems {
     public static final Item TENTACLES = register("tentacles", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.TENTACLES));
     public static final Item COOKED_TENTACLES = register("cooked_tentacles", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.COOKED_TENTACLES));
     public static final Item CHOCOLATE = register("chocolate", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.CHOCOLATE));
+    public static final Item CHORUS_CAKE_ROLL = register("chorus_cake_roll", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.CHORUS_CAKE_ROLL));
     public static final Item WATER_BOWL = register("water_bowl", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.WATER_BOWL).component(DataComponents.CONSUMABLE, Consumables.DEFAULT_DRINK).usingConvertsTo(BOWL).craftRemainder(BOWL));
 
     // TOOLS & UTILITY (8)
@@ -94,8 +94,7 @@ public class ModItems {
             itemgroup.accept(WARDEN_HEART);
             itemgroup.accept(FLOUR);
             itemgroup.accept(DOUGH);
-            itemgroup.accept(COOKIE_DOUGH);
-            itemgroup.accept(CAKE_BATTER);
+            itemgroup.accept(BATTER);
             itemgroup.accept(PUMPKIN_SLICE);
             itemgroup.accept(RAW_SHADOLINE);
             itemgroup.accept(SHADOLINE_NUGGET);
@@ -118,6 +117,7 @@ public class ModItems {
             itemgroup.accept(TENTACLES);
             itemgroup.accept(COOKED_TENTACLES);
             itemgroup.accept(CHOCOLATE);
+            itemgroup.accept(CHORUS_CAKE_ROLL);
             itemgroup.accept(WATER_BOWL);
         });
 

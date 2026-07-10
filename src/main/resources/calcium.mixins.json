@@ -20,6 +20,8 @@
     "ItemStackMixin",
     "LiquidBlockMixin",
     "LivingEntityMixin",
+    "ServerGamePacketListenerImplMixin",
+    "SignItemMixin",
     "WitherSkeletonEntityMixin",
     "hitboxes.AnvilBlockMixin",
     "hitboxes.BushBlockMixin",
@@ -58,6 +60,7 @@
   },
   "refmap": "calcium.refmap.json",
   "client": [
+    "AtmosphericFogEnvironmentMixin",
     "BlockDustParticleMixin",
     "CameraMixin",
     "CampfireBlockEntityRendererMixin",

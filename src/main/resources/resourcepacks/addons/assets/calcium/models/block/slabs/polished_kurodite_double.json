@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "calcium:block/polished_kurodite",
+    "side": "calcium:block/slabs/polished_kurodite"
+  }
+}
