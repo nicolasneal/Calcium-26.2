@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_wall_side",
+  "textures": {
+    "wall": "calcium:block/cracked_packed_mud_bricks"
+  }
+}
+

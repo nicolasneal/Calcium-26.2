@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "calcium:quartz_brick_stairs"
+        }
+      ]
+    }
+  ],
+  "random_sequence": "calcium:blocks/cracked_quartz_brick_stairs"
+}

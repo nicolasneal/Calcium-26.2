@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:ender_pearl",
+    "minecraft:blaze_powder",
+    "minecraft:wind_charge",
+    "minecraft:echo_shard",
+    "minecraft:redstone"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:ender_eye"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "calcium:block/polished_packed_mud",
+    "side": "calcium:block/polished_packed_mud",
+    "top": "calcium:block/polished_packed_mud"
+  }
+}

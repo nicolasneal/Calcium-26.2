@@ -1,0 +1,9 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "bottom": "calcium:block/cracked_packed_mud_bricks",
+    "side": "calcium:block/cracked_packed_mud_bricks",
+    "top": "calcium:block/cracked_packed_mud_bricks"
+  }
+}
+

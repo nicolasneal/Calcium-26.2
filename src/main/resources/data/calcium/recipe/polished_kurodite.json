@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "calcium:kurodite"
+  },
+  "pattern": [
+    "#"
+  ],
+  "result": {
+    "id": "calcium:polished_kurodite",
+    "count": 1
+  }
+}

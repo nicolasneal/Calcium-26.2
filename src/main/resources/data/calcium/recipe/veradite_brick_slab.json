@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "calcium:veradite_bricks"
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "id": "calcium:veradite_brick_slab",
+    "count": 4
+  }
+}

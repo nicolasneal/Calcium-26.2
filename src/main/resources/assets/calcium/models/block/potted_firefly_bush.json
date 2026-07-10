@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/flower_pot_cross_emissive",
+  "textures": {
+    "plant": "calcium:block/potted_firefly_bush",
+    "cross_emissive": "calcium:block/potted_firefly_bush_emissive"
+  }
+}

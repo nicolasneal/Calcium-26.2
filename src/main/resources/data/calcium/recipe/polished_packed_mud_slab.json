@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "calcium:polished_packed_mud"
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "id": "calcium:polished_packed_mud_slab",
+    "count": 4
+  }
+}

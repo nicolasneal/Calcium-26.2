@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "calcium:block/polished_veradite",
+    "particle": "calcium:block/polished_veradite"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "calcium:polished_veradite"
+  },
+  "pattern": [
+    "#"
+  ],
+  "result": {
+    "id": "calcium:chiseled_veradite",
+    "count": 1
+  }
+}

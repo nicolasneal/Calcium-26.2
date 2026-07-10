@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "calcium:block/cracked_sulfur_bricks",
+    "side": "calcium:block/cracked_sulfur_bricks",
+    "top": "calcium:block/cracked_sulfur_bricks"
+  }
+}
