@@ -1,13 +1,17 @@
 package net.nicolas.calcium.screen;
 
 import net.minecraft.network.chat.Component;
+import net.minecraft.recipebook.ServerPlaceRecipe;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.entity.player.StackedItemContents;
 import net.minecraft.world.inventory.DataSlot;
+import net.minecraft.world.inventory.RecipeBookMenu;
+import net.minecraft.world.inventory.RecipeBookType;
 import net.minecraft.world.inventory.ResultContainer;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
@@ -25,7 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class CustomEnchantingScreenHandler extends AbstractContainerMenu {
+public class CustomEnchantingScreenHandler extends RecipeBookMenu {
 
     private final Container inventory;
     private final ResultContainer outputInventory = new ResultContainer();
@@ -143,18 +147,23 @@ public class CustomEnchantingScreenHandler extends AbstractContainerMenu {
         }
     }
 
+    private List<ItemStack> getCurrentIngredients() {
+        List<ItemStack> ingredients = new ArrayList<>();
+        for (int i = 2; i < 11; i++) {
+            ItemStack stack = this.inventory.getItem(i);
+            if (!stack.isEmpty()) {
+                ingredients.add(stack);
+            }
+        }
+        return ingredients;
+    }
+
     private void updateResult(Level world) {
 
         if (!world.isClientSide() && world instanceof net.minecraft.server.level.ServerLevel serverWorld) {
 
             ItemStack tablet = this.inventory.getItem(1);
-            List<ItemStack> ingredients = new ArrayList<>();
-            for (int i = 2; i < 11; i++) {
-                ItemStack stack = this.inventory.getItem(i);
-                if (!stack.isEmpty()) {
-                    ingredients.add(stack);
-                }
-            }
+            List<ItemStack> ingredients = this.getCurrentIngredients();
 
             EnchantingRecipeInput input = new EnchantingRecipeInput(tablet, ingredients);
             assert serverWorld.getServer() != null;
@@ -250,9 +259,60 @@ public class CustomEnchantingScreenHandler extends AbstractContainerMenu {
         return this.levelCost.get();
     }
 
-    // SimpleContainer.setChanged() is a no-op since the 26.1 migration removed its
-    // ContainerListener support; recipe-reactive vanilla containers (e.g.
-    // TransientCraftingContainer) now call their owning menu's slotsChanged directly instead.
+    public List<Slot> getIngredientSlots() {
+        return this.slots.subList(38, 47);
+    }
+
+    public Slot getResultSlot() {
+        return this.slots.get(47);
+    }
+
+    @Override public RecipeBookType getRecipeBookType() {
+        return RecipeBookType.SMOKER;
+    }
+
+    @Override public void fillCraftSlotsStackedContents(StackedItemContents stackedContents) {
+        for (int i = 2; i < 11; i++) {
+            stackedContents.accountSimpleStack(this.inventory.getItem(i));
+        }
+    }
+
+    @Override public RecipeBookMenu.PostPlaceAction handlePlacement(boolean useMaxItems, boolean allowDroppingItemsToClear, RecipeHolder<?> recipe, ServerLevel level, Inventory inventory) {
+
+        RecipeHolder<EnchantingRecipe> enchantingRecipe = (RecipeHolder<EnchantingRecipe>) recipe;
+        List<Slot> ingredientSlots = this.getIngredientSlots();
+
+        return ServerPlaceRecipe.placeRecipe(
+            new ServerPlaceRecipe.CraftingMenuAccess<EnchantingRecipe>() {
+
+                @Override public void fillCraftSlotsStackedContents(StackedItemContents stackedContents) {
+                    CustomEnchantingScreenHandler.this.fillCraftSlotsStackedContents(stackedContents);
+                }
+
+                @Override public void clearCraftingContent() {
+                    for (Slot slot : ingredientSlots) {
+                        slot.set(ItemStack.EMPTY);
+                    }
+                }
+
+                @Override public boolean recipeMatches(RecipeHolder<EnchantingRecipe> recipe) {
+                    ItemStack tablet = CustomEnchantingScreenHandler.this.inventory.getItem(1);
+                    List<ItemStack> currentIngredients = CustomEnchantingScreenHandler.this.getCurrentIngredients();
+                    return recipe.value().matches(new EnchantingRecipeInput(tablet, currentIngredients), level);
+                }
+
+            },
+            ingredientSlots.size(), 1,
+            ingredientSlots,
+            ingredientSlots,
+            inventory,
+            enchantingRecipe,
+            useMaxItems,
+            allowDroppingItemsToClear
+        );
+
+    }
+
     private final class MenuAwareContainer extends SimpleContainer {
         MenuAwareContainer(int size) {
             super(size);

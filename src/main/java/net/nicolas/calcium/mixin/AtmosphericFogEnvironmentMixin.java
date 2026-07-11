@@ -16,7 +16,7 @@ public abstract class AtmosphericFogEnvironmentMixin {
     @Inject(method = "setupFog", at = @At("TAIL"))
     private void calcium$overrideSkyFogEnd(FogData fog, Camera camera, ClientLevel level, float renderDistance, DeltaTracker deltaTracker, CallbackInfo ci) {
         if (fog.skyEnd == renderDistance) {
-            fog.skyEnd = 180.0F;
+            fog.skyEnd = 160.0F;
         }
     }
 

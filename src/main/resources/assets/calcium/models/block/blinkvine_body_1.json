@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "calcium:block/blinkvine_body_1"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "calcium:block/mirestone",
+    "particle": "calcium:block/mirestone"
+  },
+  "render_type": "solid"
+}

@@ -20,6 +20,11 @@ public class ModSounds {
     public static final SoundEvent END_STONE_STEP = register("block.end_stone.step");
     public static final SoundType END_STONE = new SoundType(1.0F, 1.0F, END_STONE_BREAK, END_STONE_STEP, END_STONE_BREAK, END_STONE_STEP, END_STONE_STEP);
 
+    public static final SoundEvent MIRESTONE_BREAK = register("block.mirestone.break");
+    public static final SoundEvent MIRESTONE_PLACE = register("block.mirestone.place");
+    public static final SoundEvent MIRESTONE_STEP = register("block.mirestone.step");
+    public static final SoundType MIRESTONE = new SoundType(1.0F, 1.0F, MIRESTONE_BREAK, MIRESTONE_STEP, MIRESTONE_PLACE, MIRESTONE_STEP, MIRESTONE_STEP);
+
     public static final SoundEvent KURODITE_BREAK = register("block.kurodite.break");
     public static final SoundEvent KURODITE_STEP = register("block.kurodite.step");
     public static final SoundType KURODITE = new SoundType(0.6F, 1.0F, KURODITE_BREAK, KURODITE_STEP, KURODITE_BREAK, KURODITE_STEP, KURODITE_STEP);
@@ -51,12 +56,20 @@ public class ModSounds {
     public static final SoundEvent SHADOLINE_STEP = register("block.shadoline.step");
     public static final SoundType SHADOLINE = new SoundType(1.0F, 1.0F, SHADOLINE_BREAK, SHADOLINE_STEP, SHADOLINE_PLACE, SHADOLINE_STEP, SHADOLINE_STEP);
 
-    public static final SoundEvent SHADOLINE_ORE_BREAK = register("block.shadoline_ore.break");
-    public static final SoundEvent SHADOLINE_ORE_STEP = register("block.shadoline_ore.step");
-    public static final SoundType SHADOLINE_ORE = new SoundType(1.0F, 1.0F, SHADOLINE_ORE_BREAK, SHADOLINE_ORE_STEP, SHADOLINE_ORE_BREAK, SHADOLINE_ORE_STEP, SHADOLINE_ORE_STEP);
+    public static final SoundEvent END_STONE_SHADOLINE_ORE_BREAK = register("block.end_stone_shadoline_ore.break");
+    public static final SoundEvent END_STONE_SHADOLINE_ORE_STEP = register("block.end_stone_shadoline_ore.step");
+    public static final SoundType END_STONE_SHADOLINE_ORE = new SoundType(1.0F, 1.0F, END_STONE_SHADOLINE_ORE_BREAK, END_STONE_SHADOLINE_ORE_STEP, END_STONE_SHADOLINE_ORE_BREAK, END_STONE_SHADOLINE_ORE_STEP, END_STONE_SHADOLINE_ORE_STEP);
+
+    public static final SoundEvent MIRESTONE_SHADOLINE_ORE_BREAK = register("block.mirestone_shadoline_ore.break");
+    public static final SoundEvent MIRESTONE_SHADOLINE_ORE_PLACE = register("block.mirestone_shadoline_ore.place");
+    public static final SoundEvent MIRESTONE_SHADOLINE_ORE_STEP = register("block.mirestone_shadoline_ore.step");
+    public static final SoundType MIRESTONE_SHADOLINE_ORE = new SoundType(1.0F, 1.0F, MIRESTONE_SHADOLINE_ORE_BREAK, MIRESTONE_SHADOLINE_ORE_STEP, MIRESTONE_SHADOLINE_ORE_PLACE, MIRESTONE_SHADOLINE_ORE_STEP, MIRESTONE_SHADOLINE_ORE_STEP);
 
     public static final SoundEvent END_GROWTH_BREAK = register("block.end_growth.break");
     public static final SoundType END_GROWTH = new SoundType(1.0F, 1.0F, END_GROWTH_BREAK, END_GROWTH_BREAK, END_GROWTH_BREAK, END_GROWTH_BREAK, END_GROWTH_BREAK);
+
+    public static final SoundEvent BLINKVINE_PLACE = register("block.blinkvine.place");
+    public static final SoundType BLINKVINE = new SoundType(1.0F, 1.0F, BLINKVINE_PLACE, BLINKVINE_PLACE, BLINKVINE_PLACE, BLINKVINE_PLACE, BLINKVINE_PLACE);
 
     public static final SoundEvent END_ROD_PLACE = register("block.end_rod.place");
     public static final SoundType END_ROD = new SoundType(1.0F, 1.0F, END_ROD_PLACE, END_ROD_PLACE, END_ROD_PLACE, END_ROD_PLACE, END_ROD_PLACE);

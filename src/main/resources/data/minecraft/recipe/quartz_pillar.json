@@ -2,14 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": "minecraft:quartz_block"
+    "#": "minecraft:smooth_quartz"
   },
   "pattern": [
-    "#",
     "#"
   ],
   "result": {
     "id": "minecraft:quartz_pillar",
-    "count": 2
+    "count": 1
   }
 }

@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "": [
+      { "model": "calcium:block/blinkvine_body_1" },
+      { "model": "calcium:block/blinkvine_body_2" },
+      { "model": "calcium:block/blinkvine_body_3" }
+    ]
+  }
+}

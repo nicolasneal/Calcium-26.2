@@ -1,0 +1,105 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "calcium:mirestone_shadoline_ore",
+          "conditions": [
+            {
+              "condition": "minecraft:match_tool",
+              "predicate": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "minecraft:silk_touch",
+                      "levels": { "min": 1 }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "calcium:mirestone",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:match_tool",
+                "predicate": {
+                  "predicates": {
+                    "minecraft:enchantments": [
+                      {
+                        "enchantments": "minecraft:silk_touch",
+                        "levels": { "min": 1 }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:explosion_decay"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "calcium:raw_shadoline",
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:match_tool",
+                "predicate": {
+                  "predicates": {
+                    "minecraft:enchantments": [
+                      {
+                        "enchantments": "minecraft:silk_touch",
+                        "levels": { "min": 1 }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          ],
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 1.0,
+                "max": 2.0
+              }
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:ore_drops"
+            },
+            { "function": "minecraft:explosion_decay" }
+          ]
+        }
+      ]
+    }
+  ],
+  "random_sequence": "calcium:blocks/mirestone_shadoline_ore"
+}

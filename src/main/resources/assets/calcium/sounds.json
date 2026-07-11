@@ -68,6 +68,34 @@
       "calcium:block/end_stone/step4"
     ]
   },
+  "block.mirestone.break": {
+    "sounds": [
+      "calcium:block/mirestone/break1",
+      "calcium:block/mirestone/break2",
+      "calcium:block/mirestone/break3",
+      "calcium:block/mirestone/break4"
+    ]
+  },
+  "block.mirestone.place": {
+    "sounds": [
+      "calcium:block/mirestone/place1",
+      "calcium:block/mirestone/place2",
+      "calcium:block/mirestone/place3",
+      "calcium:block/mirestone/place4",
+      "calcium:block/mirestone/place5",
+      "calcium:block/mirestone/place6"
+    ]
+  },
+  "block.mirestone.step": {
+    "sounds": [
+      "calcium:block/mirestone/step1",
+      "calcium:block/mirestone/step2",
+      "calcium:block/mirestone/step3",
+      "calcium:block/mirestone/step4",
+      "calcium:block/mirestone/step5",
+      "calcium:block/mirestone/step6"
+    ]
+  },
   "block.kurodite.break": {
     "sounds": [
       "calcium:block/kurodite/break1",
@@ -204,20 +232,44 @@
       "calcium:block/shadoline/step4"
     ]
   },
-  "block.shadoline_ore.break": {
+  "block.end_stone_shadoline_ore.break": {
     "sounds": [
-      "calcium:block/shadoline_ore/break1",
-      "calcium:block/shadoline_ore/break2",
-      "calcium:block/shadoline_ore/break3",
-      "calcium:block/shadoline_ore/break4"
+      "calcium:block/end_stone_shadoline_ore/break1",
+      "calcium:block/end_stone_shadoline_ore/break2",
+      "calcium:block/end_stone_shadoline_ore/break3",
+      "calcium:block/end_stone_shadoline_ore/break4"
     ]
   },
-  "block.shadoline_ore.step": {
+  "block.end_stone_shadoline_ore.step": {
     "sounds": [
-      "calcium:block/shadoline_ore/step1",
-      "calcium:block/shadoline_ore/step2",
-      "calcium:block/shadoline_ore/step3",
-      "calcium:block/shadoline_ore/step4"
+      "calcium:block/end_stone_shadoline_ore/step1",
+      "calcium:block/end_stone_shadoline_ore/step2",
+      "calcium:block/end_stone_shadoline_ore/step3",
+      "calcium:block/end_stone_shadoline_ore/step4"
+    ]
+  },
+  "block.mirestone_shadoline_ore.break": {
+    "sounds": [
+      "calcium:block/mirestone_shadoline_ore/break1",
+      "calcium:block/mirestone_shadoline_ore/break2",
+      "calcium:block/mirestone_shadoline_ore/break3",
+      "calcium:block/mirestone_shadoline_ore/break4"
+    ]
+  },
+  "block.mirestone_shadoline_ore.place": {
+    "sounds": [
+      "calcium:block/mirestone_shadoline_ore/place1",
+      "calcium:block/mirestone_shadoline_ore/place2",
+      "calcium:block/mirestone_shadoline_ore/place3",
+      "calcium:block/mirestone_shadoline_ore/place4"
+    ]
+  },
+  "block.mirestone_shadoline_ore.step": {
+    "sounds": [
+      "calcium:block/mirestone_shadoline_ore/step1",
+      "calcium:block/mirestone_shadoline_ore/step2",
+      "calcium:block/mirestone_shadoline_ore/step3",
+      "calcium:block/mirestone_shadoline_ore/step4"
     ]
   },
   "block.end_growth.break": {
@@ -226,6 +278,16 @@
       "calcium:block/end_growth/break2",
       "calcium:block/end_growth/break3",
       "calcium:block/end_growth/break4"
+    ]
+  },
+  "block.blinkvine.place": {
+    "sounds": [
+      "calcium:block/blinkvine/place1",
+      "calcium:block/blinkvine/place2",
+      "calcium:block/blinkvine/place3",
+      "calcium:block/blinkvine/place4",
+      "calcium:block/blinkvine/place5",
+      "calcium:block/blinkvine/place6"
     ]
   },
   "music.jukebox.bliss": {

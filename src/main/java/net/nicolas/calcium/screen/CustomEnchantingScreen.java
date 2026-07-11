@@ -1,7 +1,8 @@
 package net.nicolas.calcium.screen;
 
 import net.minecraft.client.gui.GuiGraphicsExtractor;
-import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.navigation.ScreenPosition;
+import net.minecraft.client.gui.screens.inventory.AbstractRecipeBookScreen;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
@@ -10,25 +11,36 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
-public class CustomEnchantingScreen extends AbstractContainerScreen<CustomEnchantingScreenHandler> {
+public class CustomEnchantingScreen extends AbstractRecipeBookScreen<CustomEnchantingScreenHandler> {
 
     private static final Identifier TEXTURE = Identifier.fromNamespaceAndPath("calcium", "textures/gui/container/enchanting_table.png");
     private static final Identifier ERROR = Identifier.fromNamespaceAndPath("calcium", "textures/gui/sprites/container/enchanting_table/error.png");
     private static final Identifier[] LEVEL_SPRITES = new Identifier[]{
-            Identifier.fromNamespaceAndPath("calcium", "textures/gui/sprites/container/enchanting_table/level_1.png"),
-            Identifier.fromNamespaceAndPath("calcium", "textures/gui/sprites/container/enchanting_table/level_2.png"),
-            Identifier.fromNamespaceAndPath("calcium", "textures/gui/sprites/container/enchanting_table/level_3.png")
+        Identifier.fromNamespaceAndPath("calcium", "textures/gui/sprites/container/enchanting_table/level_1.png"),
+        Identifier.fromNamespaceAndPath("calcium", "textures/gui/sprites/container/enchanting_table/level_2.png"),
+        Identifier.fromNamespaceAndPath("calcium", "textures/gui/sprites/container/enchanting_table/level_3.png")
     };
 
+    private final EnchantingRecipeBookComponent recipeBook;
+
     public CustomEnchantingScreen(CustomEnchantingScreenHandler handler, Inventory inventory, Component title) {
-        super(handler, inventory, title, 176, 166);
+        this(handler, new EnchantingRecipeBookComponent(handler), inventory, title);
+    }
+
+    private CustomEnchantingScreen(CustomEnchantingScreenHandler handler, EnchantingRecipeBookComponent recipeBook, Inventory inventory, Component title) {
+        super(handler, recipeBook, inventory, title);
+        this.recipeBook = recipeBook;
+    }
+
+    @Override protected ScreenPosition getRecipeBookButtonPosition() {
+        return new ScreenPosition(this.leftPos + 5, this.height / 2 - 49);
     }
 
     @Override protected void extractTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
         super.extractTooltip(graphics, mouseX, mouseY);
 
         Slot slot = this.getSlotUnderMouse();
-        if (slot instanceof CustomSlot customSlot) {
+        if (slot instanceof CustomSlot customSlot && !this.recipeBook.hasGhostItem(slot)) {
             Component tooltip = customSlot.getTooltip();
             if (tooltip != null) {
                 graphics.setTooltipForNextFrame(this.font, tooltip, mouseX, mouseY);
@@ -62,7 +74,7 @@ public class CustomEnchantingScreen extends AbstractContainerScreen<CustomEnchan
     @Override public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float a) {
         super.extractBackground(graphics, mouseX, mouseY, a);
 
-        int x = (this.width - this.imageWidth) / 2;
+        int x = this.leftPos;
         int y = (this.height - this.imageHeight) / 2;
         graphics.blit(RenderPipelines.GUI_TEXTURED, TEXTURE, x, y, 0, 0, this.imageWidth, this.imageHeight, 256, 256);
 

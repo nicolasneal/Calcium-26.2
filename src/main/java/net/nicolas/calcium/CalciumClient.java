@@ -1,8 +1,11 @@
 package net.nicolas.calcium;
 
+import com.mojang.blaze3d.platform.InputConstants;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderingRegistry;
+import net.minecraft.client.KeyMapping;
 import net.minecraft.client.color.block.BlockTintSources;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.block.FluidModel;
@@ -17,7 +20,15 @@ import java.util.List;
 
 public class CalciumClient implements ClientModInitializer {
 
+    public static final KeyMapping TOGGLE_RECIPE_BOOK_KEY = new KeyMapping(
+        "key.calcium.toggle_recipe_book",
+        InputConstants.KEY_R,
+        KeyMapping.Category.MISC
+    );
+
     @Override public void onInitializeClient() {
+
+        KeyMappingHelper.registerKeyMapping(TOGGLE_RECIPE_BOOK_KEY);
 
         MenuScreens.register(Calcium.CUSTOM_BEACON_SCREEN_HANDLER, CustomBeaconScreen::new);
         MenuScreens.register(Calcium.CUSTOM_ENCHANTING_SCREEN_HANDLER, CustomEnchantingScreen::new);

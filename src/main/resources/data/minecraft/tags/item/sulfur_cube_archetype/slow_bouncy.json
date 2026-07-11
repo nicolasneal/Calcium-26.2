@@ -2,11 +2,13 @@
   "replace": false,
   "values": [
     "calcium:netherrack_glowstone_ore",
-    "calcium:kurodite",
+    "calcium:mirestone",
     "calcium:veradite",
+    "calcium:kurodite",
     "calcium:pallid_magnia",
     "calcium:umbral_magnia",
     "calcium:end_stone_shadoline_ore",
+    "calcium:mirestone_shadoline_ore",
     "calcium:polished_stone",
     "calcium:andesite_bricks",
     "calcium:cracked_andesite_bricks",
@@ -47,14 +49,14 @@
     "calcium:polished_end_stone",
     "calcium:cracked_end_stone_bricks",
     "calcium:chiseled_end_stone",
-    "calcium:polished_kurodite",
-    "calcium:kurodite_bricks",
-    "calcium:cracked_kurodite_bricks",
-    "calcium:chiseled_kurodite",
     "calcium:polished_veradite",
     "calcium:veradite_bricks",
     "calcium:cracked_veradite_bricks",
     "calcium:chiseled_veradite",
+    "calcium:polished_kurodite",
+    "calcium:kurodite_bricks",
+    "calcium:cracked_kurodite_bricks",
+    "calcium:chiseled_kurodite",
     "calcium:chiseled_purpur"
   ]
 }

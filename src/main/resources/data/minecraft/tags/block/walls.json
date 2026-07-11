@@ -49,12 +49,12 @@
     "calcium:cracked_packed_mud_brick_wall",
     "calcium:polished_end_stone_wall",
     "calcium:cracked_end_stone_brick_wall",
-    "calcium:polished_kurodite_wall",
-    "calcium:kurodite_brick_wall",
-    "calcium:cracked_kurodite_brick_wall",
     "calcium:polished_veradite_wall",
     "calcium:veradite_brick_wall",
     "calcium:cracked_veradite_brick_wall",
+    "calcium:polished_kurodite_wall",
+    "calcium:kurodite_brick_wall",
+    "calcium:cracked_kurodite_brick_wall",
     "calcium:purpur_wall"
   ]
 }

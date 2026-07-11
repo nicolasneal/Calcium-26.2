@@ -4,17 +4,23 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.Holder;
+import net.minecraft.core.HolderSet;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.ItemStackTemplate;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.PlacementInfo;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeBookCategory;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.item.crafting.display.RecipeDisplay;
+import net.minecraft.world.item.crafting.display.SlotDisplay;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
 import net.minecraft.world.level.Level;
@@ -151,7 +157,62 @@ public class EnchantingRecipe implements Recipe<EnchantingRecipeInput> {
     }
 
     @Override public RecipeBookCategory recipeBookCategory() {
-        return null;
+        return ModRecipes.getEnchantingCategory(this.resultEnchantment);
+    }
+
+    @Override public List<RecipeDisplay> display() {
+
+        HolderSet<Item> supportedItems = this.resultEnchantment.value().getSupportedItems();
+
+        SlotDisplay tabletDisplay = this.requiredEnchantment.isPresent()
+            ? buildEnchantedItemCycle(supportedItems, this.requiredEnchantment.get(), this.requiredLevel, false)
+            : buildEnchantedItemCycle(supportedItems, null, 0, true);
+
+        SlotDisplay resultDisplay = buildEnchantedItemCycle(supportedItems, this.resultEnchantment, this.resultLevel, false);
+
+        return List.of(new EnchantingRecipeDisplay(
+            this.ingredients.stream().map(Ingredient::display).toList(),
+            tabletDisplay,
+            resultDisplay,
+            new SlotDisplay.ItemSlotDisplay(Items.ENCHANTING_TABLE)
+        ));
+
+    }
+
+    // Cycles through every item the enchantment supports (per its supported_items tag) plus a
+    // book-form entry, since enchanting - unlike crafting/smelting - can apply the same enchantment
+    // to many unrelated items. When plainBookForm is true, everything (including the book slot) is
+    // shown unenchanted (the "no prerequisite tier" case); otherwise every entry - including the book,
+    // now an Enchanted Book - carries the given enchantment/level.
+    private static SlotDisplay buildEnchantedItemCycle(HolderSet<Item> supportedItems, Holder<Enchantment> enchantment, int level, boolean plainBookForm) {
+
+        List<SlotDisplay> entries = new ArrayList<>();
+        supportedItems.forEach(holder -> entries.add(enchantedItemDisplay(holder.value(), enchantment, level)));
+
+        if (plainBookForm) {
+            entries.add(enchantedItemDisplay(Items.BOOK, null, 0));
+        } else {
+            entries.add(enchantedItemDisplay(Items.ENCHANTED_BOOK, enchantment, level));
+        }
+
+        return new SlotDisplay.Composite(entries);
+
+    }
+
+    private static SlotDisplay enchantedItemDisplay(Item item, Holder<Enchantment> enchantment, int level) {
+
+        if (enchantment == null) {
+            return new SlotDisplay.ItemSlotDisplay(item);
+        }
+
+        ItemStack stack = new ItemStack(item);
+        var componentType = item == Items.ENCHANTED_BOOK ? DataComponents.STORED_ENCHANTMENTS : DataComponents.ENCHANTMENTS;
+        ItemEnchantments.Mutable enchantments = new ItemEnchantments.Mutable(ItemEnchantments.EMPTY);
+        enchantments.set(enchantment, level);
+        stack.set(componentType, enchantments.toImmutable());
+
+        return new SlotDisplay.ItemStackSlotDisplay(ItemStackTemplate.fromStack(stack));
+
     }
 
     @Override public String group() {
