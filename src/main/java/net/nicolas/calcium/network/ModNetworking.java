@@ -11,11 +11,8 @@ import net.nicolas.calcium.player.ExtraSlotsAccess;
 public class ModNetworking {
 
     public static void initialize() {
-
         PayloadTypeRegistry.serverboundPlay().register(RotateExtraSlotsPayload.TYPE, RotateExtraSlotsPayload.STREAM_CODEC);
-
         ServerPlayNetworking.registerGlobalReceiver(RotateExtraSlotsPayload.TYPE, (payload, context) -> rotateExtraSlots(context.player()));
-
     }
 
     private static void rotateExtraSlots(ServerPlayer player) {

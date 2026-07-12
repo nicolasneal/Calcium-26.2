@@ -40,8 +40,7 @@
       "calcium:block/soulslate/step1",
       "calcium:block/soulslate/step2",
       "calcium:block/soulslate/step3",
-      "calcium:block/soulslate/step4",
-      "calcium:block/soulslate/step5"
+      "calcium:block/soulslate/step4"
     ]
   },
   "block.end_rod.place": {
