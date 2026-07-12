@@ -8,8 +8,6 @@ import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.Registry;
 import net.minecraft.core.cauldron.CauldronInteractions;
-import net.nicolas.calcium.mixin.CauldronDispatcherAccessor;
-import net.nicolas.calcium.mixin.CauldronInteractionsAccessor;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
@@ -31,8 +29,11 @@ import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.event.Cracking;
 import net.nicolas.calcium.fluid.ModFluids;
 import net.nicolas.calcium.item.ModItems;
-import net.nicolas.calcium.mixin.AbstractBlockAccessor;
-import net.nicolas.calcium.mixin.BlockStateBaseAccessor;
+import net.nicolas.calcium.mixin.accessors.AbstractBlockAccessor;
+import net.nicolas.calcium.mixin.accessors.BlockStateBaseAccessor;
+import net.nicolas.calcium.mixin.accessors.CauldronDispatcherAccessor;
+import net.nicolas.calcium.mixin.accessors.CauldronInteractionsAccessor;
+import net.nicolas.calcium.network.ModNetworking;
 import net.nicolas.calcium.recipe.ModRecipes;
 import net.nicolas.calcium.screen.CustomBeaconScreenHandler;
 import net.nicolas.calcium.screen.CustomEnchantingScreenHandler;
@@ -59,6 +60,7 @@ public class Calcium implements ModInitializer {
         ModFluids.initialize();
         ModRecipes.initialize();
         ModSounds.initialize();
+        ModNetworking.initialize();
         Cracking.registerEvents();
 
         // Resource Pack Initialization

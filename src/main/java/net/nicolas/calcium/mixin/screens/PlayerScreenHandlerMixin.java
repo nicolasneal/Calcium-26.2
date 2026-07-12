@@ -26,8 +26,9 @@ public abstract class PlayerScreenHandlerMixin extends AbstractContainerMenu {
     @Inject(method = "<init>", at = @At("TAIL"))
     private void calcium$addExtraSlots(Inventory inventory, boolean active, Player owner, CallbackInfo ci) {
         Container extraSlots = ((ExtraSlotsAccess) owner).calcium$getExtraSlots();
+        int x = calcium$extraSlotX();
         for (int i = 0; i < 3; i++) {
-            this.addSlot(new Slot(extraSlots, i, calcium$extraSlotX(), calcium$extraSlotY(i)));
+            this.addSlot(new Slot(extraSlots, i, x, calcium$extraSlotY(i)));
         }
     }
 
@@ -38,7 +39,7 @@ public abstract class PlayerScreenHandlerMixin extends AbstractContainerMenu {
 
     @Unique
     private int calcium$extraSlotY(int index) {
-        return calcium$offhandSlotY() - 18 - index * 18;
+        return calcium$offhandSlotY() - 18 - (2 - index) * 18;
     }
 
     @Unique
