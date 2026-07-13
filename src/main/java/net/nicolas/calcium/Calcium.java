@@ -118,7 +118,9 @@ public class Calcium implements ModInitializer {
         // Stack Size Overrides
 
         DefaultItemComponentEvents.MODIFY.register(context -> {
+
             // Standard Signs
+
             context.modify(Items.OAK_SIGN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.SPRUCE_SIGN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.BIRCH_SIGN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
@@ -131,7 +133,9 @@ public class Calcium implements ModInitializer {
             context.modify(Items.BAMBOO_SIGN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.CRIMSON_SIGN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.WARPED_SIGN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+
             // Hanging Signs
+
             context.modify(Items.OAK_HANGING_SIGN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.SPRUCE_HANGING_SIGN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.BIRCH_HANGING_SIGN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
@@ -144,11 +148,14 @@ public class Calcium implements ModInitializer {
             context.modify(Items.BAMBOO_HANGING_SIGN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.CRIMSON_HANGING_SIGN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.WARPED_HANGING_SIGN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
-            // Beds
+
+            // Beds & Banners
+
             Items.BED.forEach(bed -> context.modify(bed, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64)));
-            // Banners
             Items.BANNER.forEach(banner -> context.modify(banner, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64)));
+
             // Music Discs
+
             context.modify(Items.MUSIC_DISC_13, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.MUSIC_DISC_CAT, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.MUSIC_DISC_BLOCKS, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
@@ -170,7 +177,9 @@ public class Calcium implements ModInitializer {
             context.modify(Items.MUSIC_DISC_TEARS, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.MUSIC_DISC_LAVA_CHICKEN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.MUSIC_DISC_BOUNCE, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+
             // Banner Patterns
+
             context.modify(Items.FIELD_MASONED_BANNER_PATTERN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.BORDURE_INDENTED_BANNER_PATTERN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.FLOWER_BANNER_PATTERN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
@@ -181,13 +190,17 @@ public class Calcium implements ModInitializer {
             context.modify(Items.PIGLIN_BANNER_PATTERN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.FLOW_BANNER_PATTERN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.GUSTER_BANNER_PATTERN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+
             // Throwables
+
             context.modify(Items.ENDER_PEARL, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.SNOWBALL, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.BLUE_EGG, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.EGG, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.BROWN_EGG, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+
             // Miscellaneous
+
             context.modify(Items.BUCKET, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.WATER_BUCKET, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.LAVA_BUCKET, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
@@ -204,6 +217,7 @@ public class Calcium implements ModInitializer {
             context.modify(Items.ARMOR_STAND, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.WRITTEN_BOOK, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.ENCHANTED_BOOK, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+
         });
 
         // Sound Group Overrides
@@ -316,6 +330,17 @@ public class Calcium implements ModInitializer {
             for (BlockState state : block.getStateDefinition().getPossibleStates()) {
                 ((BlockStateBaseAccessor) state).setOffsetFunction(xzOffset);
             }
+        }
+
+        BlockBehaviour.OffsetFunction xyzOffset = (state, pos) -> {
+            long seed = Mth.getSeed(pos.getX(), 0, pos.getZ());
+            double y = ((float) (seed >> 4 & 15L) / 15.0F - 1.0) * 0.2;
+            double x = Mth.clamp(((float) (seed & 15L) / 15.0F - 0.5) * 0.5, -0.25, 0.25);
+            double z = Mth.clamp(((float) (seed >> 8 & 15L) / 15.0F - 0.5) * 0.5, -0.25, 0.25);
+            return new Vec3(x, y, z);
+        };
+        for (BlockState state : Blocks.SHORT_GRASS.getStateDefinition().getPossibleStates()) {
+            ((BlockStateBaseAccessor) state).setOffsetFunction(xyzOffset);
         }
 
     }

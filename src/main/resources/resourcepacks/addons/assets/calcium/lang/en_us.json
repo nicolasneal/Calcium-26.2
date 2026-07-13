@@ -15,7 +15,6 @@
   "item.calcium.tentacles": "Tentacles \uEFF3",
   "item.calcium.cooked_tentacles": "Cooked Tentacles \uEFF3\uEFF3\uEFF4",
   "item.calcium.chocolate": "Chocolate \uEFF3\uEFF3",
-  "item.calcium.chorus_cake_roll": "Chorus Cake Roll \uEFF3\uEFF3\uEFF3\uEFF3\uEFF3",
 
   // MUSIC DISC ICONS
 
@@ -26,6 +25,7 @@
   // MISCELLANEOUS
 
   "block.calcium.basalt_stairs": "Basalt Stairs",
-  "block.calcium.basalt_slab": "Basalt Slab"
+  "block.calcium.basalt_slab": "Basalt Slab",
+  "block.calcium.chorus_cake_roll": "Chorus Cake Roll"
 
 }

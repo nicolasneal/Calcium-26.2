@@ -7,8 +7,10 @@ import net.minecraft.world.entity.player.Inventory;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.ModifyArgs;
+import org.spongepowered.asm.mixin.injection.ModifyConstant;
 import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 
 @Mixin(CreativeModeInventoryScreen.class)
@@ -16,6 +18,13 @@ public abstract class CreativeModeInventoryScreenMixin extends AbstractContainer
 
     public CreativeModeInventoryScreenMixin(CreativeModeInventoryScreen.ItemPickerMenu menu, Inventory inventory, Component title) {
         super(menu, inventory, title);
+    }
+
+    // Shave the leftmost pixel off the Creative screen (195 -> 194 wide). leftPos = (width - imageWidth) / 2
+    // keeps it centered automatically, so the box's right edge stays put and the left edge moves in by 1px.
+    @ModifyConstant(method = "<init>", constant = @Constant(intValue = 195))
+    private static int calcium$shrinkCreativeWidth(int imageWidth) {
+        return imageWidth - 1;
     }
 
     @ModifyArgs(method = "selectTab", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screens/inventory/CreativeModeInventoryScreen$SlotWrapper;-><init>(Lnet/minecraft/world/inventory/Slot;III)V"))
@@ -30,12 +39,15 @@ public abstract class CreativeModeInventoryScreenMixin extends AbstractContainer
         } else if (slotIndex >= 46 && slotIndex <= 48) {
             args.set(2, calcium$secondRowSlotX(slotIndex - 46));
             args.set(3, calcium$secondRowSlotY());
+        } else {
+            // Every other slot follows the screen 1px to the left.
+            args.set(2, (int) args.get(2) - 1);
         }
     }
 
     @Unique
     private int calcium$armorSlotX(int pos) {
-        return 9 + pos * 18;
+        return 8 + pos * 18;
     }
 
     @Unique
@@ -45,7 +57,7 @@ public abstract class CreativeModeInventoryScreenMixin extends AbstractContainer
 
     @Unique
     private int calcium$secondRowSlotX(int pos) {
-        return 9 + pos * 18;
+        return 8 + pos * 18;
     }
 
     @Unique
@@ -55,7 +67,13 @@ public abstract class CreativeModeInventoryScreenMixin extends AbstractContainer
 
     @ModifyArg(method = "selectTab", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/inventory/Slot;-><init>(Lnet/minecraft/world/Container;III)V"), index = 2)
     private int calcium$modifyCreativeTrashSlotX(int x) {
-        return 153;
+        return 152;
+    }
+
+    // The scrollbar (leftPos + 175) follows the interior 1px to the left in both its render and hit-test.
+    @ModifyConstant(method = {"insideScrollbar", "extractBackground"}, constant = @Constant(intValue = 175))
+    private int calcium$shiftScrollbarX(int x) {
+        return x - 1;
     }
 
     @ModifyArg(method = "selectTab", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/inventory/Slot;-><init>(Lnet/minecraft/world/Container;III)V"), index = 3)
@@ -85,7 +103,7 @@ public abstract class CreativeModeInventoryScreenMixin extends AbstractContainer
 
     @Unique
     private int calcium$entityViewportX() {
-        return 85;
+        return 84;
     }
 
     @Unique
@@ -121,6 +139,11 @@ public abstract class CreativeModeInventoryScreenMixin extends AbstractContainer
     @Unique
     private float calcium$entityViewportOffsetY() {
         return 0.05F;
+    }
+
+    @ModifyArg(method = "init", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/components/EditBox;<init>(Lnet/minecraft/client/gui/Font;IIIILnet/minecraft/network/chat/Component;)V"), index = 1)
+    private int calcium$modifySearchBoxX(int x) {
+        return x - 1;
     }
 
 }

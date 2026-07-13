@@ -1,0 +1,18 @@
+{
+	"parent": "minecraft:block/block",
+	"elements": [
+		{
+			"from": [4, 0, 13],
+			"to": [12, 7, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 4, 9]},
+			"faces": {
+				"north": {"uv": [0, 7.5, 4, 11], "texture": "#texture"},
+				"east": {"uv": [15, 0, 14, 3.5], "texture": "#texture"},
+				"south": {"uv": [4, 0, 8, 3.5], "texture": "#texture"},
+				"west": {"uv": [14, 0, 15, 3.5], "texture": "#texture"},
+				"up": {"uv": [6, 3.5, 7, 7.5], "rotation": 90, "texture": "#texture"},
+				"down": {"uv": [14, 3.5, 13, 7.5], "rotation": 90, "texture": "#texture", "cullface": "down"}
+			}
+		}
+	]
+}

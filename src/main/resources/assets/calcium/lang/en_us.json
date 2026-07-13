@@ -283,6 +283,8 @@
 
   "block.calcium.soul_glass": "Soul Glass",
 
+  "block.calcium.chorus_cake_roll": "Chorus Cake Roll",
+
   "item.calcium.flour": "Flour",
   "item.calcium.dough": "Dough",
   "item.calcium.batter": "Batter",
@@ -329,7 +331,6 @@
   "item.calcium.tentacles": "Tentacles",
   "item.calcium.cooked_tentacles": "Cooked Tentacles",
   "item.calcium.chocolate": "Chocolate",
-  "item.calcium.chorus_cake_roll": "Chorus Cake Roll",
   "item.calcium.water_bowl": "Water Bowl",
   
   "item.calcium.copper_coin": "Copper Coin",

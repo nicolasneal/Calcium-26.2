@@ -8,6 +8,8 @@
     "accessors.CauldronDispatcherAccessor",
     "accessors.CauldronInteractionsAccessor",
     "gameplay.BeaconBlockEntityMixin",
+    "gameplay.BlockMixin",
+    "gameplay.BlockStateBaseMixin",
     "gameplay.BucketItemMixin",
     "gameplay.CakeBlockMixin",
     "gameplay.CampfireBlockMixin",
@@ -72,8 +74,10 @@
     "client.GuiMixin",
     "client.HudMixin",
     "client.InGameOverlayRendererMixin",
+    "client.LevelExtractorMixin",
     "client.MinecraftClientMixin",
     "client.SignBlockEntityRendererMixin",
+    "screens.AbstractButtonMixin",
     "screens.AbstractFurnaceScreenMixin",
     "screens.AbstractRecipeBookScreenMixin",
     "screens.AbstractSignEditScreenMixin",
@@ -88,6 +92,7 @@
     "screens.GrindstoneScreenMixin",
     "screens.HangingSignEditScreenMixin",
     "screens.InventoryScreenMixin",
+    "screens.ItemPickerMenuMixin",
     "screens.LoomScreenMixin",
     "screens.MerchantScreenMixin",
     "screens.MountScreenMixin",
@@ -95,6 +100,7 @@
     "screens.RecipeBookComponentMixin",
     "screens.SignEditScreenMixin",
     "screens.SmithingScreenMixin",
-    "screens.StonecutterScreenMixin"
+    "screens.StonecutterScreenMixin",
+    "screens.TradeOfferButtonMixin"
   ]
 }

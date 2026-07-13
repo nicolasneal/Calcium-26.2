@@ -8,10 +8,12 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.Consumables;
+import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.fluid.ModFluids;
 import net.nicolas.calcium.item.custom.EctoplasmBucketItem;
 import net.nicolas.calcium.sound.ModSounds;
@@ -65,7 +67,7 @@ public class ModItems {
     public static final Item TENTACLES = register("tentacles", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.TENTACLES));
     public static final Item COOKED_TENTACLES = register("cooked_tentacles", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.COOKED_TENTACLES));
     public static final Item CHOCOLATE = register("chocolate", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.CHOCOLATE));
-    public static final Item CHORUS_CAKE_ROLL = register("chorus_cake_roll", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.CHORUS_CAKE_ROLL));
+    public static final Item CHORUS_CAKE_ROLL = register("chorus_cake_roll", settings -> new BlockItem(ModBlocks.CHORUS_CAKE_ROLL, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
     public static final Item WATER_BOWL = register("water_bowl", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.WATER_BOWL).component(DataComponents.CONSUMABLE, Consumables.DEFAULT_DRINK).usingConvertsTo(BOWL).craftRemainder(BOWL));
 
     // TOOLS & UTILITY (8)

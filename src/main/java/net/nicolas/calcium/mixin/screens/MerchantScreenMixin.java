@@ -8,18 +8,47 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.MerchantMenu;
+import net.nicolas.calcium.screen.TradeSelectionAccess;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Constant;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(MerchantScreen.class)
-public abstract class MerchantScreenMixin extends AbstractContainerScreen<MerchantMenu> {
+public abstract class MerchantScreenMixin extends AbstractContainerScreen<MerchantMenu> implements TradeSelectionAccess {
+
+    @Shadow private int shopItem;
+    @Shadow private int scrollOff;
+    @Unique private boolean calcium$hasSelectedTrade = false;
 
     public MerchantScreenMixin(MerchantMenu handler, Inventory inventory, Component title) {
         super(handler, inventory, title);
+    }
+
+    @Override
+    public int calcium$getShopItem() {
+        return this.shopItem;
+    }
+
+    @Override
+    public int calcium$getScrollOff() {
+        return this.scrollOff;
+    }
+
+    @Override
+    public boolean calcium$hasSelectedTrade() {
+        return this.calcium$hasSelectedTrade;
+    }
+
+    @Inject(method = "postButtonClick", at = @At("HEAD"))
+    private void calcium$markTradeSelected(CallbackInfo ci) {
+        this.calcium$hasSelectedTrade = true;
     }
 
     @ModifyArg(method = "<init>", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screens/inventory/AbstractContainerScreen;<init>(Lnet/minecraft/world/inventory/AbstractContainerMenu;Lnet/minecraft/world/entity/player/Inventory;Lnet/minecraft/network/chat/Component;II)V"), index = 3)
@@ -80,6 +109,18 @@ public abstract class MerchantScreenMixin extends AbstractContainerScreen<Mercha
         return y - 10;
     }
 
+    // extractAndDecorateCostA reuses this same y for its own internal fakeItem/itemDecorations calls,
+    // so its icon needs its own +1 nudge here rather than shifting the shared baseline above.
+    @ModifyArg(method = "extractAndDecorateCostA", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;fakeItem(Lnet/minecraft/world/item/ItemStack;II)V"), index = 2)
+    private int calcium$modifyFirstBuyIconY(int y) {
+        return y + 1;
+    }
+
+    @ModifyArg(method = "extractAndDecorateCostA", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;blitSprite(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIII)V"), index = 3)
+    private int calcium$modifyDiscountStrikethroughY(int y) {
+        return y + 1;
+    }
+
     @ModifyArg(method = "extractContents", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screens/inventory/MerchantScreen;extractButtonArrows(Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/world/item/trading/MerchantOffer;II)V"), index = 2)
     private int calcium$modifyArrowX(int x) {
         return x + 3;
@@ -87,7 +128,7 @@ public abstract class MerchantScreenMixin extends AbstractContainerScreen<Mercha
 
     @ModifyArg(method = "extractContents", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screens/inventory/MerchantScreen;extractButtonArrows(Lnet/minecraft/client/gui/GuiGraphicsExtractor;Lnet/minecraft/world/item/trading/MerchantOffer;II)V"), index = 3)
     private int calcium$modifyArrowY(int y) {
-        return y - 10;
+        return y - 9;
     }
 
     @ModifyArg(method = "extractContents", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;fakeItem(Lnet/minecraft/world/item/ItemStack;II)V"), index = 1)
@@ -97,7 +138,7 @@ public abstract class MerchantScreenMixin extends AbstractContainerScreen<Mercha
 
     @ModifyArg(method = "extractContents", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;fakeItem(Lnet/minecraft/world/item/ItemStack;II)V"), index = 2)
     private int calcium$modifyDrawItemY(int y) {
-        return y - 10;
+        return y - 9;
     }
 
     @ModifyArg(method = "extractContents", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;itemDecorations(Lnet/minecraft/client/gui/Font;Lnet/minecraft/world/item/ItemStack;II)V"), index = 2)
@@ -107,7 +148,7 @@ public abstract class MerchantScreenMixin extends AbstractContainerScreen<Mercha
 
     @ModifyArg(method = "extractContents", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;itemDecorations(Lnet/minecraft/client/gui/Font;Lnet/minecraft/world/item/ItemStack;II)V"), index = 3)
     private int calcium$modifyDrawOverlayY(int y) {
-        return y - 12;
+        return y - 10;
     }
 
     @ModifyConstant(method = {"extractScroller", "mouseClicked"}, constant = @Constant(intValue = 94))

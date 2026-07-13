@@ -18,7 +18,7 @@ public abstract class TallPlantBlockMixin extends VegetationBlock {
     }
 
     @Override public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return Block.column(12.0, 0.0, 16.0).move(state.getOffset(pos));
+        return Block.column(14.0, 0.0, 16.0).move(state.getOffset(pos));
     }
 
 }
