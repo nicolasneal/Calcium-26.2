@@ -1,6 +1,8 @@
 package net.nicolas.calcium.block;
 
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
+import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -19,6 +21,7 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.nicolas.calcium.block.custom.*;
@@ -85,6 +88,26 @@ public class ModBlocks {
     public static final Block POTTED_BUSH = register("potted_bush", settings -> new FlowerPotBlock(Blocks.BUSH, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT), false);
     public static final Block POTTED_FIREFLY_BUSH = register("potted_firefly_bush", settings -> new FlowerPotBlock(Blocks.FIREFLY_BUSH, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT), false);
     public static final Block POTTED_BUSY_LIZZIE = register("potted_busy_lizzie", settings -> new FlowerPotBlock(BUSY_LIZZIE, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT), false);
+
+    // WOOD BLOCKS (12)
+
+    public static final BlockSetType CHORUS_BLOCK_SET_TYPE = BlockSetTypeBuilder.copyOf(BlockSetType.OAK).soundType(ModSounds.CHORUS_PLANKS).doorOpenSound(ModSounds.CHORUS_FENCE_GATE_OPEN).doorCloseSound(ModSounds.CHORUS_FENCE_GATE_CLOSE).register(Identifier.fromNamespaceAndPath(MOD_ID, "chorus"));
+    public static final WoodType CHORUS_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.OAK).soundType(ModSounds.CHORUS_PLANKS).hangingSignSoundType(ModSounds.CHORUS_HANGING_SIGN).fenceGateOpenSound(ModSounds.CHORUS_FENCE_GATE_OPEN).fenceGateCloseSound(ModSounds.CHORUS_FENCE_GATE_CLOSE).register(Identifier.fromNamespaceAndPath(MOD_ID, "chorus"), CHORUS_BLOCK_SET_TYPE);
+
+    public static final Block CHORUS_BLOCK = register("chorus_block", Block::new, BlockBehaviour.Properties.of().sound(ModSounds.CHORUS_PLANKS).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).strength(2.0F, 2.0F), true);
+    public static final Block STRIPPED_CHORUS_BLOCK = register("stripped_chorus_block", Block::new, BlockBehaviour.Properties.of().sound(ModSounds.CHORUS_PLANKS).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).strength(2.0F, 2.0F), true);
+    public static final Block CHORUS_PLANKS = register("chorus_planks", Block::new, BlockBehaviour.Properties.of().sound(ModSounds.CHORUS_PLANKS).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F), true);
+    public static final Block CHORUS_PLANK_STAIRS = register("chorus_plank_stairs", settings -> new StairBlock(ModBlocks.CHORUS_PLANKS.defaultBlockState(), settings), BlockBehaviour.Properties.of().sound(ModSounds.CHORUS_PLANKS).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F), true);
+    public static final Block CHORUS_PLANK_SLAB = register("chorus_plank_slab", SlabBlock::new, BlockBehaviour.Properties.of().sound(ModSounds.CHORUS_PLANKS).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F), true);
+    public static final Block CHORUS_FENCE = register("chorus_fence", FenceBlock::new, BlockBehaviour.Properties.of().sound(ModSounds.CHORUS_PLANKS).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).noOcclusion(), true);
+    public static final Block CHORUS_FENCE_GATE = register("chorus_fence_gate", settings -> new FenceGateBlock(CHORUS_WOOD_TYPE, settings), BlockBehaviour.Properties.of().sound(ModSounds.CHORUS_PLANKS).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).noOcclusion(), true);
+    public static final Block CHORUS_DOOR = register("chorus_door", settings -> new DoorBlock(CHORUS_BLOCK_SET_TYPE, settings), BlockBehaviour.Properties.of().sound(ModSounds.CHORUS_PLANKS).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).strength(3.0F, 3.0F).noOcclusion(), true);
+    public static final Block CHORUS_TRAPDOOR = register("chorus_trapdoor", settings -> new TrapDoorBlock(CHORUS_BLOCK_SET_TYPE, settings), BlockBehaviour.Properties.of().sound(ModSounds.CHORUS_PLANKS).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).strength(3.0F, 3.0F).noOcclusion(), true);
+    public static final Block CHORUS_SHELF = register("chorus_shelf", ShelfBlock::new, BlockBehaviour.Properties.of().sound(SoundType.SHELF).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).noOcclusion(), true);
+    public static final Block CHORUS_SIGN = register("chorus_sign", settings -> new StandingSignBlock(CHORUS_WOOD_TYPE, settings), BlockBehaviour.Properties.of().sound(ModSounds.CHORUS_PLANKS).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).noCollision().strength(1.0F, 1.0F).pushReaction(PushReaction.DESTROY), false);
+    public static final Block CHORUS_WALL_SIGN = register("chorus_wall_sign", settings -> new WallSignBlock(CHORUS_WOOD_TYPE, settings), BlockBehaviour.Properties.of().sound(ModSounds.CHORUS_PLANKS).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).noCollision().strength(1.0F, 1.0F).pushReaction(PushReaction.DESTROY), false);
+    public static final Block CHORUS_HANGING_SIGN = register("chorus_hanging_sign", settings -> new CeilingHangingSignBlock(CHORUS_WOOD_TYPE, settings), BlockBehaviour.Properties.of().sound(ModSounds.CHORUS_HANGING_SIGN).mapColor(MapColor.COLOR_MAGENTA).noCollision().strength(1.0F, 1.0F).forceSolidOn().pushReaction(PushReaction.DESTROY), false);
+    public static final Block CHORUS_WALL_HANGING_SIGN = register("chorus_wall_hanging_sign", settings -> new WallHangingSignBlock(CHORUS_WOOD_TYPE, settings), BlockBehaviour.Properties.of().sound(ModSounds.CHORUS_HANGING_SIGN).mapColor(MapColor.COLOR_MAGENTA).noCollision().strength(1.0F, 1.0F).forceSolidOn().pushReaction(PushReaction.DESTROY), false);
 
     // STONE VARIANT BLOCKS (195)
 
@@ -324,13 +347,25 @@ public class ModBlocks {
 
     public static final Block SOUL_GLASS = register("soul_glass", TransparentBlock::new, BlockBehaviour.Properties.of().sound(SoundType.GLASS).instrument(NoteBlockInstrument.HAT).strength(0.6F, 0.6F).noOcclusion().isValidSpawn(Blocks::never).isRedstoneConductor(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never), true);
 
-    // FOOD BLOCKS (1)
+    // MISCELLANEOUS (1)
 
     public static final Block CHORUS_CAKE_ROLL = register("chorus_cake_roll", ChorusCakeRollBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_MAGENTA).forceSolidOn().sound(SoundType.WOOL).strength(0.5F).pushReaction(PushReaction.DESTROY).noLootTable(), false);
 
     public static void initialize() {
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemgroup) -> {
+
+            itemgroup.accept(CHORUS_BLOCK);
+            itemgroup.accept(STRIPPED_CHORUS_BLOCK);
+            itemgroup.accept(CHORUS_PLANKS);
+            itemgroup.accept(CHORUS_PLANK_STAIRS);
+            itemgroup.accept(CHORUS_PLANK_SLAB);
+            itemgroup.accept(CHORUS_FENCE);
+            itemgroup.accept(CHORUS_FENCE_GATE);
+            itemgroup.accept(CHORUS_DOOR);
+            itemgroup.accept(CHORUS_TRAPDOOR);
+            itemgroup.accept(CHORUS_SHELF);
+
             itemgroup.accept(POLISHED_STONE);
             itemgroup.accept(POLISHED_STONE_STAIRS);
             itemgroup.accept(POLISHED_STONE_SLAB);
@@ -430,6 +465,20 @@ public class ModBlocks {
             itemgroup.accept(CRACKED_RED_SANDSTONE_BRICK_WALL);
             itemgroup.accept(PRISMARINE_BRICK_WALL);
             itemgroup.accept(DARK_PRISMARINE_WALL);
+            itemgroup.accept(POLISHED_PACKED_MUD);
+            itemgroup.accept(POLISHED_PACKED_MUD_STAIRS);
+            itemgroup.accept(POLISHED_PACKED_MUD_SLAB);
+            itemgroup.accept(POLISHED_PACKED_MUD_WALL);
+            itemgroup.accept(CRACKED_PACKED_MUD_BRICKS);
+            itemgroup.accept(CRACKED_PACKED_MUD_BRICK_STAIRS);
+            itemgroup.accept(CRACKED_PACKED_MUD_BRICK_SLAB);
+            itemgroup.accept(CRACKED_PACKED_MUD_BRICK_WALL);
+            itemgroup.accept(CHISELED_PACKED_MUD);
+            itemgroup.accept(CRACKED_RESIN_BRICKS);
+            itemgroup.accept(CRACKED_RESIN_BRICK_STAIRS);
+            itemgroup.accept(CRACKED_RESIN_BRICK_SLAB);
+            itemgroup.accept(CRACKED_RESIN_BRICK_WALL);
+
             itemgroup.accept(CRACKED_BLACKSTONE_BRICK_STAIRS);
             itemgroup.accept(CRACKED_BLACKSTONE_BRICK_SLAB);
             itemgroup.accept(CRACKED_BLACKSTONE_BRICK_WALL);
@@ -476,19 +525,7 @@ public class ModBlocks {
             itemgroup.accept(CRACKED_RED_NETHER_BRICK_SLAB);
             itemgroup.accept(CRACKED_RED_NETHER_BRICK_WALL);
             itemgroup.accept(CHISELED_RED_NETHER_BRICKS);
-            itemgroup.accept(CRACKED_RESIN_BRICKS);
-            itemgroup.accept(CRACKED_RESIN_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_RESIN_BRICK_SLAB);
-            itemgroup.accept(CRACKED_RESIN_BRICK_WALL);
-            itemgroup.accept(POLISHED_PACKED_MUD);
-            itemgroup.accept(POLISHED_PACKED_MUD_STAIRS);
-            itemgroup.accept(POLISHED_PACKED_MUD_SLAB);
-            itemgroup.accept(POLISHED_PACKED_MUD_WALL);
-            itemgroup.accept(CRACKED_PACKED_MUD_BRICKS);
-            itemgroup.accept(CRACKED_PACKED_MUD_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_PACKED_MUD_BRICK_SLAB);
-            itemgroup.accept(CRACKED_PACKED_MUD_BRICK_WALL);
-            itemgroup.accept(CHISELED_PACKED_MUD);
+
             itemgroup.accept(POLISHED_END_STONE);
             itemgroup.accept(POLISHED_END_STONE_STAIRS);
             itemgroup.accept(POLISHED_END_STONE_SLAB);
@@ -529,6 +566,7 @@ public class ModBlocks {
             itemgroup.accept(CHISELED_KURODITE);
             itemgroup.accept(PURPUR_WALL);
             itemgroup.accept(CHISELED_PURPUR);
+
             itemgroup.accept(CUT_IRON);
             itemgroup.accept(CUT_IRON_STAIRS);
             itemgroup.accept(CUT_IRON_SLAB);
@@ -556,11 +594,14 @@ public class ModBlocks {
             itemgroup.accept(SHADOLINE_TRAPDOOR);
             itemgroup.accept(SHADOLINE_BARS);
             itemgroup.accept(SHADOLINE_CHAIN);
+
             itemgroup.getDisplayStacks().removeIf(stack -> stack.is(Items.CHISELED_QUARTZ_BLOCK));
             itemgroup.getSearchTabStacks().removeIf(stack -> stack.is(Items.CHISELED_QUARTZ_BLOCK));
+
         });
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register((itemgroup) -> {
+
             itemgroup.accept(SILT);
             itemgroup.accept(SOULSLATE);
             itemgroup.accept(NETHERRACK_GLOWSTONE_ORE);
@@ -572,6 +613,7 @@ public class ModBlocks {
             itemgroup.accept(END_STONE_SHADOLINE_ORE);
             itemgroup.accept(MIRESTONE_SHADOLINE_ORE);
             itemgroup.accept(RAW_SHADOLINE_BLOCK);
+
             itemgroup.accept(WILD_WHEAT);
             itemgroup.accept(WILD_CARROT);
             itemgroup.accept(WILD_POTATO);
@@ -593,24 +635,40 @@ public class ModBlocks {
             itemgroup.accept(END_GROWTH);
             itemgroup.accept(SMALL_WISP);
             itemgroup.accept(BLINKVINE);
+
         });
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS).register((itemgroup) -> {
+
+            itemgroup.accept(CHORUS_SIGN);
+            itemgroup.accept(CHORUS_HANGING_SIGN);
+
             itemgroup.accept(IRON_BULB);
             itemgroup.accept(GOLD_BULB);
             itemgroup.accept(SHADOLINE_BULB);
             itemgroup.accept(GOLD_LANTERN);
             itemgroup.accept(SHADOLINE_LANTERN);
+
+            itemgroup.accept(CHORUS_FENCE);
+            itemgroup.accept(CHORUS_FENCE_GATE);
+            itemgroup.accept(CHORUS_DOOR);
+            itemgroup.accept(CHORUS_TRAPDOOR);
+            itemgroup.accept(CHORUS_SHELF);
+
         });
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.REDSTONE_BLOCKS).register((itemgroup) -> {
+
             itemgroup.accept(IRON_BULB);
             itemgroup.accept(GOLD_BULB);
             itemgroup.accept(SHADOLINE_BULB);
+
         });
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COLORED_BLOCKS).register((itemgroup) -> {
+
             itemgroup.accept(SOUL_GLASS);
+
         });
 
     }

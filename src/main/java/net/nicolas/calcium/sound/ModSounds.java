@@ -74,6 +74,19 @@ public class ModSounds {
     public static final SoundEvent END_ROD_PLACE = register("block.end_rod.place");
     public static final SoundType END_ROD = new SoundType(1.0F, 1.0F, END_ROD_PLACE, END_ROD_PLACE, END_ROD_PLACE, END_ROD_PLACE, END_ROD_PLACE);
 
+    public static final SoundEvent CHORUS_PLANKS_BREAK = register("block.chorus_planks.break");
+    public static final SoundEvent CHORUS_PLANKS_PLACE = register("block.chorus_planks.place");
+    public static final SoundEvent CHORUS_PLANKS_STEP = register("block.chorus_planks.step");
+    public static final SoundType CHORUS_PLANKS = new SoundType(1.0F, 1.0F, CHORUS_PLANKS_BREAK, CHORUS_PLANKS_STEP, CHORUS_PLANKS_PLACE, CHORUS_PLANKS_STEP, CHORUS_PLANKS_STEP);
+
+    public static final SoundEvent CHORUS_HANGING_SIGN_BREAK = register("block.chorus_hanging_sign.break");
+    public static final SoundEvent CHORUS_HANGING_SIGN_PLACE = register("block.chorus_hanging_sign.place");
+    public static final SoundEvent CHORUS_HANGING_SIGN_STEP = register("block.chorus_hanging_sign.step");
+    public static final SoundType CHORUS_HANGING_SIGN = new SoundType(1.0F, 1.0F, CHORUS_HANGING_SIGN_BREAK, CHORUS_HANGING_SIGN_STEP, CHORUS_HANGING_SIGN_PLACE, CHORUS_HANGING_SIGN_STEP, CHORUS_HANGING_SIGN_STEP);
+
+    public static final SoundEvent CHORUS_FENCE_GATE_OPEN = register("block.chorus_fence_gate.open");
+    public static final SoundEvent CHORUS_FENCE_GATE_CLOSE = register("block.chorus_fence_gate.close");
+
     // UTILITY
 
     public static final SoundEvent ECTOPLASM_BUCKET_EMPTY = register("item.bucket.empty_ectoplasm");

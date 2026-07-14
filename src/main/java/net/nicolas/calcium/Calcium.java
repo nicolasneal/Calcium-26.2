@@ -2,6 +2,7 @@ package net.nicolas.calcium;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityType;
 import net.fabricmc.fabric.api.registry.FuelValueEvents;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
@@ -22,6 +23,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.LayeredCauldronBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.entity.BlockEntityTypes;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
@@ -30,6 +32,7 @@ import net.nicolas.calcium.event.Cracking;
 import net.nicolas.calcium.fluid.ModFluids;
 import net.nicolas.calcium.item.ModItems;
 import net.nicolas.calcium.mixin.accessors.AbstractBlockAccessor;
+import net.nicolas.calcium.mixin.accessors.AxeItemAccessor;
 import net.nicolas.calcium.mixin.accessors.BlockStateBaseAccessor;
 import net.nicolas.calcium.mixin.accessors.CauldronDispatcherAccessor;
 import net.nicolas.calcium.mixin.accessors.CauldronInteractionsAccessor;
@@ -38,6 +41,9 @@ import net.nicolas.calcium.recipe.ModRecipes;
 import net.nicolas.calcium.screen.CustomBeaconScreenHandler;
 import net.nicolas.calcium.screen.CustomEnchantingScreenHandler;
 import net.nicolas.calcium.sound.ModSounds;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Calcium implements ModInitializer {
 
@@ -222,6 +228,16 @@ public class Calcium implements ModInitializer {
 
         // Sound Group Overrides
 
+        // Stone Blocks
+        ((AbstractBlockAccessor) Blocks.BRICKS).setSoundGroup(SoundType.NETHER_BRICKS);
+        ((AbstractBlockAccessor) Blocks.BRICK_STAIRS).setSoundGroup(SoundType.NETHER_BRICKS);
+        ((AbstractBlockAccessor) Blocks.BRICK_SLAB).setSoundGroup(SoundType.NETHER_BRICKS);
+        ((AbstractBlockAccessor) Blocks.BRICK_WALL).setSoundGroup(SoundType.NETHER_BRICKS);
+        ((AbstractBlockAccessor) Blocks.END_STONE).setSoundGroup(ModSounds.END_STONE);
+        ((AbstractBlockAccessor) Blocks.END_STONE_BRICKS).setSoundGroup(ModSounds.END_STONE);
+        ((AbstractBlockAccessor) Blocks.END_STONE_BRICK_STAIRS).setSoundGroup(ModSounds.END_STONE);
+        ((AbstractBlockAccessor) Blocks.END_STONE_BRICK_SLAB).setSoundGroup(ModSounds.END_STONE);
+        ((AbstractBlockAccessor) Blocks.END_STONE_BRICK_WALL).setSoundGroup(ModSounds.END_STONE);
         // Dirt Blocks
         ((AbstractBlockAccessor) Blocks.DIRT).setSoundGroup(SoundType.ROOTED_DIRT);
         ((AbstractBlockAccessor) Blocks.COARSE_DIRT).setSoundGroup(SoundType.ROOTED_DIRT);
@@ -288,7 +304,6 @@ public class Calcium implements ModInitializer {
         ((AbstractBlockAccessor) Blocks.GLOW_LICHEN).setSoundGroup(SoundType.VINE);
         ((AbstractBlockAccessor) Blocks.RED_MUSHROOM).setSoundGroup(SoundType.FUNGUS);
         ((AbstractBlockAccessor) Blocks.BROWN_MUSHROOM).setSoundGroup(SoundType.FUNGUS);
-
         // Wooden Furniture
         ((AbstractBlockAccessor) Blocks.CHEST).setSoundGroup(SoundType.SHELF);
         ((AbstractBlockAccessor) Blocks.TRAPPED_CHEST).setSoundGroup(SoundType.SHELF);
@@ -305,17 +320,11 @@ public class Calcium implements ModInitializer {
         ((AbstractBlockAccessor) Blocks.BOOKSHELF).setSoundGroup(SoundType.SHELF);
         ((AbstractBlockAccessor) Blocks.NOTE_BLOCK).setSoundGroup(SoundType.SHELF);
         ((AbstractBlockAccessor) Blocks.JUKEBOX).setSoundGroup(SoundType.SHELF);
-        // Bricks
-        ((AbstractBlockAccessor) Blocks.BRICKS).setSoundGroup(SoundType.NETHER_BRICKS);
-        ((AbstractBlockAccessor) Blocks.BRICK_STAIRS).setSoundGroup(SoundType.NETHER_BRICKS);
-        ((AbstractBlockAccessor) Blocks.BRICK_SLAB).setSoundGroup(SoundType.NETHER_BRICKS);
-        ((AbstractBlockAccessor) Blocks.BRICK_WALL).setSoundGroup(SoundType.NETHER_BRICKS);
         // Metal Blocks
         ((AbstractBlockAccessor) Blocks.CAULDRON).setSoundGroup(SoundType.METAL);
         ((AbstractBlockAccessor) Blocks.COAL_BLOCK).setSoundGroup(SoundType.METAL);
         ((AbstractBlockAccessor) Blocks.LAPIS_BLOCK).setSoundGroup(SoundType.METAL);
-        // End Blocks
-        ((AbstractBlockAccessor) Blocks.END_STONE).setSoundGroup(ModSounds.END_STONE);
+        // Miscellaneous
         ((AbstractBlockAccessor) Blocks.END_ROD).setSoundGroup(ModSounds.END_ROD);
 
         // Model Offsets
@@ -342,6 +351,20 @@ public class Calcium implements ModInitializer {
         for (BlockState state : Blocks.SHORT_GRASS.getStateDefinition().getPossibleStates()) {
             ((BlockStateBaseAccessor) state).setOffsetFunction(xyzOffset);
         }
+
+        // Chorus Wood Registration
+
+        Map<Block, Block> strippables = new HashMap<>(AxeItemAccessor.calcium$getStrippables());
+        strippables.put(ModBlocks.CHORUS_BLOCK, ModBlocks.STRIPPED_CHORUS_BLOCK);
+        AxeItemAccessor.calcium$setStrippables(strippables);
+
+        FabricBlockEntityType signType = (FabricBlockEntityType) BlockEntityTypes.SIGN;
+        signType.addValidBlock(ModBlocks.CHORUS_SIGN);
+        signType.addValidBlock(ModBlocks.CHORUS_WALL_SIGN);
+
+        FabricBlockEntityType hangingSignType = (FabricBlockEntityType) BlockEntityTypes.HANGING_SIGN;
+        hangingSignType.addValidBlock(ModBlocks.CHORUS_HANGING_SIGN);
+        hangingSignType.addValidBlock(ModBlocks.CHORUS_WALL_HANGING_SIGN);
 
     }
 

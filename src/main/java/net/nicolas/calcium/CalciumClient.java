@@ -23,21 +23,8 @@ import java.util.List;
 
 public class CalciumClient implements ClientModInitializer {
 
-    public static final KeyMapping TOGGLE_RECIPE_BOOK_KEY = new KeyMapping(
-        "key.calcium.toggle_recipe_book",
-        InputConstants.Type.KEYSYM,
-        InputConstants.KEY_R,
-        KeyMapping.Category.INVENTORY,
-        2
-    );
-
-    public static final KeyMapping ROTATE_EXTRA_SLOTS_KEY = new KeyMapping(
-        "key.calcium.rotate_extra_slots",
-        InputConstants.Type.KEYSYM,
-        InputConstants.KEY_LCONTROL,
-        KeyMapping.Category.INVENTORY,
-        1
-    );
+    public static final KeyMapping ROTATE_EXTRA_SLOTS_KEY = new KeyMapping("key.calcium.rotate_extra_slots", InputConstants.Type.KEYSYM, InputConstants.KEY_LCONTROL, KeyMapping.Category.INVENTORY, 1);
+    public static final KeyMapping TOGGLE_RECIPE_BOOK_KEY = new KeyMapping("key.calcium.toggle_recipe_book", InputConstants.Type.KEYSYM, InputConstants.KEY_R, KeyMapping.Category.INVENTORY, 2);
 
     @Override public void onInitializeClient() {
 
@@ -55,16 +42,7 @@ public class CalciumClient implements ClientModInitializer {
         MenuScreens.register(Calcium.CUSTOM_BEACON_SCREEN_HANDLER, CustomBeaconScreen::new);
         MenuScreens.register(Calcium.CUSTOM_ENCHANTING_SCREEN_HANDLER, CustomEnchantingScreen::new);
 
-        FluidRenderingRegistry.register(
-            ModFluids.ECTOPLASM_STILL,
-            ModFluids.ECTOPLASM_FLOWING,
-            new FluidModel.Unbaked(
-                new Material(Identifier.fromNamespaceAndPath("calcium", "block/ectoplasm_still")),
-                new Material(Identifier.fromNamespaceAndPath("calcium", "block/ectoplasm_flow")),
-                null,
-                null
-            )
-        );
+        FluidRenderingRegistry.register(ModFluids.ECTOPLASM_STILL, ModFluids.ECTOPLASM_FLOWING, new FluidModel.Unbaked(new Material(Identifier.fromNamespaceAndPath("calcium", "block/ectoplasm_still")), new Material(Identifier.fromNamespaceAndPath("calcium", "block/ectoplasm_flow")), null, null));
 
         BlockColorRegistry.register(
             List.of(BlockTintSources.grass()),

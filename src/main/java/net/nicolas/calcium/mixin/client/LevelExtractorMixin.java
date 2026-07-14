@@ -5,9 +5,11 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.extract.LevelExtractor;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.level.block.ChestBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BedPart;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.ChestType;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -43,6 +45,17 @@ public abstract class LevelExtractorMixin {
             Direction facing = state.getValue(BlockStateProperties.HORIZONTAL_FACING);
             Direction towardOtherHalf = state.getValue(BlockStateProperties.BED_PART) == BedPart.FOOT ? facing : facing.getOpposite();
             return pos.relative(towardOtherHalf);
+        }
+        if (state.hasProperty(BlockStateProperties.EXTENDED)) {
+            // Piston base: only has a second part (its head) while extended.
+            return state.getValue(BlockStateProperties.EXTENDED) ? pos.relative(state.getValue(BlockStateProperties.FACING)) : null;
+        }
+        if (state.hasProperty(BlockStateProperties.SHORT)) {
+            // Piston head: always paired with the base behind it.
+            return pos.relative(state.getValue(BlockStateProperties.FACING).getOpposite());
+        }
+        if (state.hasProperty(BlockStateProperties.CHEST_TYPE)) {
+            return state.getValue(BlockStateProperties.CHEST_TYPE) == ChestType.SINGLE ? null : ChestBlock.getConnectedBlockPos(pos, state);
         }
         return null;
     }

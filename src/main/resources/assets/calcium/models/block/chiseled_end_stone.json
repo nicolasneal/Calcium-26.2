@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "calcium:block/chiseled_end_stone",
-    "particle": "calcium:block/chiseled_end_stone"
-  },
-  "render_type": "solid"
-}

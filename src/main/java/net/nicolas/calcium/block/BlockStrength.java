@@ -8,8 +8,7 @@ import java.util.Map;
 
 public final class BlockStrength {
 
-    public record Strength(float hardness, float resistance) {
-    }
+    public record Strength(float hardness, float resistance) {}
 
     private static final Map<Block, Strength> BLOCK_STRENGTH = new IdentityHashMap<>();
 

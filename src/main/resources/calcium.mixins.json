@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "accessors.AbstractBlockAccessor",
+    "accessors.AxeItemAccessor",
     "accessors.BlockStateBaseAccessor",
     "accessors.CauldronDispatcherAccessor",
     "accessors.CauldronInteractionsAccessor",
@@ -38,6 +39,7 @@
     "hitboxes.SeagrassBlockMixin",
     "hitboxes.ShortDryGrassBlockMixin",
     "hitboxes.ShortPlantBlockMixin",
+    "hitboxes.SmallDripleafBlockMixin",
     "hitboxes.SproutsBlockMixin",
     "hitboxes.TallDryGrassBlockMixin",
     "hitboxes.TallPlantBlockMixin",

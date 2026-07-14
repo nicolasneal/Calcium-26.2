@@ -312,5 +312,63 @@
         "stream": true
       }
     ]
+  },
+  "block.chorus_planks.break": {
+    "sounds": [
+      "calcium:block/chorus_wood/break1",
+      "calcium:block/chorus_wood/break2",
+      "calcium:block/chorus_wood/break3",
+      "calcium:block/chorus_wood/break4"
+    ]
+  },
+  "block.chorus_planks.place": {
+    "sounds": [
+      "calcium:block/chorus_wood/place1",
+      "calcium:block/chorus_wood/place2",
+      "calcium:block/chorus_wood/place3",
+      "calcium:block/chorus_wood/place4"
+    ]
+  },
+  "block.chorus_planks.step": {
+    "sounds": [
+      "calcium:block/chorus_wood/step1",
+      "calcium:block/chorus_wood/step2",
+      "calcium:block/chorus_wood/step3",
+      "calcium:block/chorus_wood/step4"
+    ]
+  },
+  "block.chorus_hanging_sign.break": {
+    "sounds": [
+      "calcium:block/chorus_wood/hanging_sign_break1",
+      "calcium:block/chorus_wood/hanging_sign_break2",
+      "calcium:block/chorus_wood/hanging_sign_break3",
+      "calcium:block/chorus_wood/hanging_sign_break4"
+    ]
+  },
+  "block.chorus_hanging_sign.place": {
+    "sounds": [
+      "calcium:block/chorus_wood/hanging_sign_place1",
+      "calcium:block/chorus_wood/hanging_sign_place2",
+      "calcium:block/chorus_wood/hanging_sign_place3",
+      "calcium:block/chorus_wood/hanging_sign_place4"
+    ]
+  },
+  "block.chorus_hanging_sign.step": {
+    "sounds": [
+      "calcium:block/chorus_wood/hanging_sign_step1",
+      "calcium:block/chorus_wood/hanging_sign_step2",
+      "calcium:block/chorus_wood/hanging_sign_step3",
+      "calcium:block/chorus_wood/hanging_sign_step4"
+    ]
+  },
+  "block.chorus_fence_gate.open": {
+    "sounds": [
+      "calcium:block/chorus_wood/fence_gate_open"
+    ]
+  },
+  "block.chorus_fence_gate.close": {
+    "sounds": [
+      "calcium:block/chorus_wood/fence_gate_close"
+    ]
   }
 }

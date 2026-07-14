@@ -10,8 +10,10 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.SignItem;
 import net.minecraft.world.item.component.Consumables;
 import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.fluid.ModFluids;
@@ -25,6 +27,11 @@ import static net.minecraft.world.item.Items.BOWL;
 public class ModItems {
 
     public static final String MOD_ID = "calcium";
+
+    // BLOCKS (2)
+
+    public static final Item CHORUS_SIGN = register("chorus_sign", settings -> new SignItem(ModBlocks.CHORUS_SIGN, ModBlocks.CHORUS_WALL_SIGN, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
+    public static final Item CHORUS_HANGING_SIGN = register("chorus_hanging_sign", settings -> new HangingSignItem(ModBlocks.CHORUS_HANGING_SIGN, ModBlocks.CHORUS_WALL_HANGING_SIGN, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
 
     // INGREDIENTS: MOB DROPS (7)
 
@@ -90,6 +97,7 @@ public class ModItems {
     public static void initialize() {
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register((itemgroup) -> {
+
             itemgroup.accept(WOODEN_ROD);
             itemgroup.accept(TABLET);
             itemgroup.accept(HIDE);
@@ -107,11 +115,14 @@ public class ModItems {
             itemgroup.accept(SHADOLINE_NUGGET);
             itemgroup.accept(SHADOLINE_INGOT);
             itemgroup.accept(CRESCENT_BANNER_PATTERN);
+
             itemgroup.getDisplayStacks().removeIf(stack -> stack.is(Items.RABBIT_HIDE));
             itemgroup.getSearchTabStacks().removeIf(stack -> stack.is(Items.RABBIT_HIDE));
+
         });
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FOOD_AND_DRINKS).register(itemgroup -> {
+
             itemgroup.accept(CHEVAL);
             itemgroup.accept(COOKED_CHEVAL);
             itemgroup.accept(BEAR);
@@ -127,9 +138,18 @@ public class ModItems {
             itemgroup.accept(CHOCOLATE);
             itemgroup.accept(CHORUS_CAKE_ROLL);
             itemgroup.accept(WATER_BOWL);
+
+        });
+
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(itemgroup -> {
+
+            itemgroup.accept(CHORUS_SIGN);
+            itemgroup.accept(CHORUS_HANGING_SIGN);
+
         });
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(itemgroup -> {
+
             itemgroup.accept(COPPER_COIN);
             itemgroup.accept(IRON_COIN);
             itemgroup.accept(GOLD_COIN);
@@ -138,6 +158,7 @@ public class ModItems {
             itemgroup.accept(MUSIC_DISC_BLISS);
             itemgroup.accept(MUSIC_DISC_DECAY);
             itemgroup.accept(MUSIC_DISC_GLARE);
+
         });
 
     }
