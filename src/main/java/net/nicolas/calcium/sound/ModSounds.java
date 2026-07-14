@@ -11,8 +11,8 @@ import net.minecraft.world.level.block.SoundType;
 
 public class ModSounds {
 
-    public static final SoundEvent SOULSLATE_BREAK = register("block.soulslate.break");
     public static final SoundEvent SOULSLATE_PLACE = register("block.soulslate.place");
+    public static final SoundEvent SOULSLATE_BREAK = register("block.soulslate.break");
     public static final SoundEvent SOULSLATE_STEP = register("block.soulslate.step");
     public static final SoundType SOULSLATE = new SoundType(1.0F, 1.0F, SOULSLATE_BREAK, SOULSLATE_STEP, SOULSLATE_PLACE, SOULSLATE_STEP, SOULSLATE_STEP);
 
@@ -20,8 +20,8 @@ public class ModSounds {
     public static final SoundEvent END_STONE_STEP = register("block.end_stone.step");
     public static final SoundType END_STONE = new SoundType(1.0F, 1.0F, END_STONE_BREAK, END_STONE_STEP, END_STONE_BREAK, END_STONE_STEP, END_STONE_STEP);
 
-    public static final SoundEvent MIRESTONE_BREAK = register("block.mirestone.break");
     public static final SoundEvent MIRESTONE_PLACE = register("block.mirestone.place");
+    public static final SoundEvent MIRESTONE_BREAK = register("block.mirestone.break");
     public static final SoundEvent MIRESTONE_STEP = register("block.mirestone.step");
     public static final SoundType MIRESTONE = new SoundType(1.0F, 1.0F, MIRESTONE_BREAK, MIRESTONE_STEP, MIRESTONE_PLACE, MIRESTONE_STEP, MIRESTONE_STEP);
 
@@ -41,13 +41,13 @@ public class ModSounds {
     public static final SoundEvent VERADITE_BRICKS_STEP = register("block.veradite_bricks.step");
     public static final SoundType VERADITE_BRICKS = new SoundType(0.6F, 1.0F, VERADITE_BRICKS_BREAK, VERADITE_BRICKS_STEP, VERADITE_BRICKS_BREAK, VERADITE_BRICKS_STEP, VERADITE_BRICKS_STEP);
 
-    public static final SoundEvent PALLID_MAGNIA_BREAK = register("block.pallid_magnia.break");
     public static final SoundEvent PALLID_MAGNIA_PLACE = register("block.pallid_magnia.place");
+    public static final SoundEvent PALLID_MAGNIA_BREAK = register("block.pallid_magnia.break");
     public static final SoundEvent PALLID_MAGNIA_STEP = register("block.pallid_magnia.step");
     public static final SoundType PALLID_MAGNIA = new SoundType(1.0F, 1.0F, PALLID_MAGNIA_BREAK, PALLID_MAGNIA_STEP, PALLID_MAGNIA_PLACE, PALLID_MAGNIA_STEP, PALLID_MAGNIA_STEP);
 
-    public static final SoundEvent UMBRAL_MAGNIA_BREAK = register("block.umbral_magnia.break");
     public static final SoundEvent UMBRAL_MAGNIA_PLACE = register("block.umbral_magnia.place");
+    public static final SoundEvent UMBRAL_MAGNIA_BREAK = register("block.umbral_magnia.break");
     public static final SoundEvent UMBRAL_MAGNIA_STEP = register("block.umbral_magnia.step");
     public static final SoundType UMBRAL_MAGNIA = new SoundType(1.0F, 1.0F, UMBRAL_MAGNIA_BREAK, UMBRAL_MAGNIA_STEP, UMBRAL_MAGNIA_PLACE, UMBRAL_MAGNIA_STEP, UMBRAL_MAGNIA_STEP);
 
@@ -60,8 +60,8 @@ public class ModSounds {
     public static final SoundEvent END_STONE_SHADOLINE_ORE_STEP = register("block.end_stone_shadoline_ore.step");
     public static final SoundType END_STONE_SHADOLINE_ORE = new SoundType(1.0F, 1.0F, END_STONE_SHADOLINE_ORE_BREAK, END_STONE_SHADOLINE_ORE_STEP, END_STONE_SHADOLINE_ORE_BREAK, END_STONE_SHADOLINE_ORE_STEP, END_STONE_SHADOLINE_ORE_STEP);
 
-    public static final SoundEvent MIRESTONE_SHADOLINE_ORE_BREAK = register("block.mirestone_shadoline_ore.break");
     public static final SoundEvent MIRESTONE_SHADOLINE_ORE_PLACE = register("block.mirestone_shadoline_ore.place");
+    public static final SoundEvent MIRESTONE_SHADOLINE_ORE_BREAK = register("block.mirestone_shadoline_ore.break");
     public static final SoundEvent MIRESTONE_SHADOLINE_ORE_STEP = register("block.mirestone_shadoline_ore.step");
     public static final SoundType MIRESTONE_SHADOLINE_ORE = new SoundType(1.0F, 1.0F, MIRESTONE_SHADOLINE_ORE_BREAK, MIRESTONE_SHADOLINE_ORE_STEP, MIRESTONE_SHADOLINE_ORE_PLACE, MIRESTONE_SHADOLINE_ORE_STEP, MIRESTONE_SHADOLINE_ORE_STEP);
 
@@ -75,17 +75,17 @@ public class ModSounds {
     public static final SoundType END_ROD = new SoundType(1.0F, 1.0F, END_ROD_PLACE, END_ROD_PLACE, END_ROD_PLACE, END_ROD_PLACE, END_ROD_PLACE);
 
     public static final SoundEvent CHORUS_PLANKS_BREAK = register("block.chorus_planks.break");
-    public static final SoundEvent CHORUS_PLANKS_PLACE = register("block.chorus_planks.place");
     public static final SoundEvent CHORUS_PLANKS_STEP = register("block.chorus_planks.step");
-    public static final SoundType CHORUS_PLANKS = new SoundType(1.0F, 1.0F, CHORUS_PLANKS_BREAK, CHORUS_PLANKS_STEP, CHORUS_PLANKS_PLACE, CHORUS_PLANKS_STEP, CHORUS_PLANKS_STEP);
-
-    public static final SoundEvent CHORUS_HANGING_SIGN_BREAK = register("block.chorus_hanging_sign.break");
-    public static final SoundEvent CHORUS_HANGING_SIGN_PLACE = register("block.chorus_hanging_sign.place");
-    public static final SoundEvent CHORUS_HANGING_SIGN_STEP = register("block.chorus_hanging_sign.step");
-    public static final SoundType CHORUS_HANGING_SIGN = new SoundType(1.0F, 1.0F, CHORUS_HANGING_SIGN_BREAK, CHORUS_HANGING_SIGN_STEP, CHORUS_HANGING_SIGN_PLACE, CHORUS_HANGING_SIGN_STEP, CHORUS_HANGING_SIGN_STEP);
+    public static final SoundType CHORUS_PLANKS = new SoundType(1.0F, 1.0F, CHORUS_PLANKS_BREAK, CHORUS_PLANKS_STEP, CHORUS_PLANKS_BREAK, CHORUS_PLANKS_STEP, CHORUS_PLANKS_STEP);
 
     public static final SoundEvent CHORUS_FENCE_GATE_OPEN = register("block.chorus_fence_gate.open");
-    public static final SoundEvent CHORUS_FENCE_GATE_CLOSE = register("block.chorus_fence_gate.close");
+
+    public static final SoundEvent CHORUS_TRAPDOOR_OPEN = register("block.chorus_trapdoor.open");
+    public static final SoundEvent CHORUS_TRAPDOOR_CLOSE = register("block.chorus_trapdoor.close");
+
+    public static final SoundEvent CHORUS_HANGING_SIGN_BREAK = register("block.chorus_hanging_sign.break");
+    public static final SoundEvent CHORUS_HANGING_SIGN_STEP = register("block.chorus_hanging_sign.step");
+    public static final SoundType CHORUS_HANGING_SIGN = new SoundType(1.0F, 1.0F, CHORUS_HANGING_SIGN_BREAK, CHORUS_HANGING_SIGN_STEP, CHORUS_HANGING_SIGN_BREAK, CHORUS_HANGING_SIGN_STEP, CHORUS_HANGING_SIGN_STEP);
 
     // UTILITY
 

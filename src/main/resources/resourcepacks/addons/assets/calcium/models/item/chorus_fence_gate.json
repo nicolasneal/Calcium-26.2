@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_gate",
+  "textures": {
+    "texture": "calcium:block/fence_gates/chorus"
+  }
+}

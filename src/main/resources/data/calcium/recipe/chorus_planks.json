@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "#calcium:chorus_blocks"
+  },
+  "pattern": [
+    "#"
+  ],
+  "result": {
+    "id": "calcium:chorus_planks",
+    "count": 4
+  }
+}

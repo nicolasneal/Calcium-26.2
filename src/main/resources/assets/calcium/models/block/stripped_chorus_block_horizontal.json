@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "side": "calcium:block/stripped_chorus_block_side",
+    "end": "calcium:block/stripped_chorus_block_end"
+  }
+}

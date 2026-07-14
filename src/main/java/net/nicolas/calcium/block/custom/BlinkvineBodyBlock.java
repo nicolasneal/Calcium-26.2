@@ -23,7 +23,7 @@ public class BlinkvineBodyBlock extends GrowingPlantBodyBlock {
     }
 
     @Override protected GrowingPlantHeadBlock getHeadBlock() {
-        return (GrowingPlantHeadBlock) ModBlocks.BLINKVINE;
+        return (GrowingPlantHeadBlock) ModBlocks.BLINKVINE_HEAD;
     }
 
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_shelf_unpowered",
+  "textures": {
+    "all": "calcium:block/chorus_shelf",
+    "particle": "calcium:block/stripped_chorus_block_side"
+  }
+}

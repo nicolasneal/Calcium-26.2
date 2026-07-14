@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "calcium:chorus_planks",
+    "@": "calcium:wooden_rod"
+  },
+  "pattern": [
+    "#@#",
+    "#@#"
+  ],
+  "result": {
+    "id": "calcium:chorus_fence",
+    "count": 2
+  }
+}

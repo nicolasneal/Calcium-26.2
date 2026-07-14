@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_sign_rot_2",
+  "textures": {
+    "all": "calcium:block/chorus_sign",
+    "particle": "calcium:block/chorus_planks"
+  }
+}

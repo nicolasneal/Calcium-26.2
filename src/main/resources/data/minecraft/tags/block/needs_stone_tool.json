@@ -9,6 +9,9 @@
     "calcium:kurodite",
     "calcium:pallid_magnia",
     "calcium:umbral_magnia",
+    "calcium:end_stone_shadoline_ore",
+    "calcium:mirestone_shadoline_ore",
+    "calcium:raw_shadoline_block",
     "calcium:polished_end_stone",
     "calcium:polished_end_stone_stairs",
     "calcium:polished_end_stone_slab",
@@ -49,9 +52,6 @@
     "calcium:cut_iron_slab",
     "calcium:chiseled_iron",
     "calcium:iron_grate",
-    "calcium:iron_bulb",
-    "calcium:end_stone_shadoline_ore",
-    "calcium:mirestone_shadoline_ore",
-    "calcium:raw_shadoline_block"
+    "calcium:iron_bulb"
   ]
 }

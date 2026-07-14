@@ -1,0 +1,7 @@
+{
+  "parent": "block/door_top_right",
+  "textures": {
+    "bottom": "calcium:block/chorus_door_bottom",
+    "top": "calcium:block/chorus_door_top"
+  }
+}

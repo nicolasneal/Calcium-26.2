@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "calcium:item/blinkvine"
+    "model": "calcium:block/chorus_plank_stairs"
   }
 }

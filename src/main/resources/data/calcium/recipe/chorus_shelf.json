@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "calcium:stripped_chorus_block"
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "id": "calcium:chorus_shelf",
+    "count": 1
+  }
+}

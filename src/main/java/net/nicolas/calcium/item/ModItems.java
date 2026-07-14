@@ -45,15 +45,15 @@ public class ModItems {
 
     // INGREDIENTS: RESOURCES (9)
 
+    public static final Item RAW_SHADOLINE = register("raw_shadoline", Item::new, new Item.Properties().stacksTo(64));
+    public static final Item SHADOLINE_NUGGET = register("shadoline_nugget", Item::new, new Item.Properties().stacksTo(64));
+    public static final Item SHADOLINE_INGOT = register("shadoline_ingot", Item::new, new Item.Properties().stacksTo(64));
     public static final Item WOODEN_ROD = register("wooden_rod", Item::new, new Item.Properties().stacksTo(64));
+    public static final Item PUMPKIN_SLICE = register("pumpkin_slice", Item::new, new Item.Properties().stacksTo(64));
     public static final Item TABLET = register("tablet", Item::new, new Item.Properties().stacksTo(64));
     public static final Item FLOUR = register("flour", Item::new, new Item.Properties().stacksTo(64));
     public static final Item DOUGH = register("dough", Item::new, new Item.Properties().stacksTo(64));
     public static final Item BATTER = register("batter", Item::new, new Item.Properties().stacksTo(64));
-    public static final Item PUMPKIN_SLICE = register("pumpkin_slice", Item::new, new Item.Properties().stacksTo(64));
-    public static final Item RAW_SHADOLINE = register("raw_shadoline", Item::new, new Item.Properties().stacksTo(64));
-    public static final Item SHADOLINE_NUGGET = register("shadoline_nugget", Item::new, new Item.Properties().stacksTo(64));
-    public static final Item SHADOLINE_INGOT = register("shadoline_ingot", Item::new, new Item.Properties().stacksTo(64));
 
     // INGREDIENTS: BANNER PATTERNS (1)
 
@@ -98,8 +98,6 @@ public class ModItems {
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register((itemgroup) -> {
 
-            itemgroup.accept(WOODEN_ROD);
-            itemgroup.accept(TABLET);
             itemgroup.accept(HIDE);
             itemgroup.accept(FUR);
             itemgroup.accept(PIXIE_DUST);
@@ -107,13 +105,15 @@ public class ModItems {
             itemgroup.accept(DOLPHIN_FIN);
             itemgroup.accept(GHAST_TENTACLE);
             itemgroup.accept(WARDEN_HEART);
-            itemgroup.accept(FLOUR);
-            itemgroup.accept(DOUGH);
-            itemgroup.accept(BATTER);
-            itemgroup.accept(PUMPKIN_SLICE);
             itemgroup.accept(RAW_SHADOLINE);
             itemgroup.accept(SHADOLINE_NUGGET);
             itemgroup.accept(SHADOLINE_INGOT);
+            itemgroup.accept(WOODEN_ROD);
+            itemgroup.accept(PUMPKIN_SLICE);
+            itemgroup.accept(TABLET);
+            itemgroup.accept(FLOUR);
+            itemgroup.accept(DOUGH);
+            itemgroup.accept(BATTER);
             itemgroup.accept(CRESCENT_BANNER_PATTERN);
 
             itemgroup.getDisplayStacks().removeIf(stack -> stack.is(Items.RABBIT_HIDE));
@@ -138,13 +138,6 @@ public class ModItems {
             itemgroup.accept(CHOCOLATE);
             itemgroup.accept(CHORUS_CAKE_ROLL);
             itemgroup.accept(WATER_BOWL);
-
-        });
-
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(itemgroup -> {
-
-            itemgroup.accept(CHORUS_SIGN);
-            itemgroup.accept(CHORUS_HANGING_SIGN);
 
         });
 

@@ -142,17 +142,7 @@ public class Cracking {
                     if (!world.isClientSide()) {
                         world.setBlock(blockPos, crackedState.get(), Block.UPDATE_ALL);
                         itemStack.hurtAndBreak(1, playerEntity, hand == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
-                        ((ServerLevel) world).sendParticles(
-                            new BlockParticleOption(ParticleTypes.BLOCK, blockState),
-                            blockPos.getX() + 0.5,
-                            blockPos.getY() + 0.5,
-                            blockPos.getZ() + 0.5,
-                            10,
-                            0.25,
-                            0.25,
-                            0.25,
-                            0.1
-                        );
+                        ((ServerLevel) world).sendParticles(new BlockParticleOption(ParticleTypes.BLOCK, blockState), blockPos.getX() + 0.5, blockPos.getY() + 0.5, blockPos.getZ() + 0.5, 32, 0.25, 0.25, 0.25, 0.1);
                     }
                     world.playSound(null, blockPos, SoundEvents.TURTLE_EGG_CRACK, SoundSource.BLOCKS, 1.0F, 1.0F);
                     return InteractionResult.SUCCESS;

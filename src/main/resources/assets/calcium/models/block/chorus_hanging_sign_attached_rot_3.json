@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_attached_hanging_sign_rot_3",
+  "textures": {
+    "all": "calcium:block/chorus_hanging_sign",
+    "particle": "calcium:block/stripped_chorus_block_side"
+  }
+}

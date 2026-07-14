@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "calcium:block/chiseled_end_stone_3",
+    "east": "calcium:block/chiseled_end_stone_4",
+    "north": "calcium:block/chiseled_end_stone_5",
+    "south": "calcium:block/chiseled_end_stone_6",
+    "up": "calcium:block/chiseled_end_stone_1",
+    "west": "calcium:block/chiseled_end_stone_2",
+    "particle": "calcium:block/chiseled_end_stone_3"
+  },
+  "render_type": "solid"
+}

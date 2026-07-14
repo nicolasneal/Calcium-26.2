@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/custom_fence_side_south",
+  "textures": {
+    "texture": "calcium:block/fences/chorus",
+    "particle": "calcium:block/particles/chorus"
+  }
+}

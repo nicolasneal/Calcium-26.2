@@ -315,60 +315,58 @@
   },
   "block.chorus_planks.break": {
     "sounds": [
-      "calcium:block/chorus_wood/break1",
-      "calcium:block/chorus_wood/break2",
-      "calcium:block/chorus_wood/break3",
-      "calcium:block/chorus_wood/break4"
-    ]
-  },
-  "block.chorus_planks.place": {
-    "sounds": [
-      "calcium:block/chorus_wood/place1",
-      "calcium:block/chorus_wood/place2",
-      "calcium:block/chorus_wood/place3",
-      "calcium:block/chorus_wood/place4"
+      "calcium:block/chorus_planks/break1",
+      "calcium:block/chorus_planks/break2",
+      "calcium:block/chorus_planks/break3",
+      "calcium:block/chorus_planks/break4"
     ]
   },
   "block.chorus_planks.step": {
     "sounds": [
-      "calcium:block/chorus_wood/step1",
-      "calcium:block/chorus_wood/step2",
-      "calcium:block/chorus_wood/step3",
-      "calcium:block/chorus_wood/step4"
-    ]
-  },
-  "block.chorus_hanging_sign.break": {
-    "sounds": [
-      "calcium:block/chorus_wood/hanging_sign_break1",
-      "calcium:block/chorus_wood/hanging_sign_break2",
-      "calcium:block/chorus_wood/hanging_sign_break3",
-      "calcium:block/chorus_wood/hanging_sign_break4"
-    ]
-  },
-  "block.chorus_hanging_sign.place": {
-    "sounds": [
-      "calcium:block/chorus_wood/hanging_sign_place1",
-      "calcium:block/chorus_wood/hanging_sign_place2",
-      "calcium:block/chorus_wood/hanging_sign_place3",
-      "calcium:block/chorus_wood/hanging_sign_place4"
-    ]
-  },
-  "block.chorus_hanging_sign.step": {
-    "sounds": [
-      "calcium:block/chorus_wood/hanging_sign_step1",
-      "calcium:block/chorus_wood/hanging_sign_step2",
-      "calcium:block/chorus_wood/hanging_sign_step3",
-      "calcium:block/chorus_wood/hanging_sign_step4"
+      "calcium:block/chorus_planks/step1",
+      "calcium:block/chorus_planks/step2",
+      "calcium:block/chorus_planks/step3",
+      "calcium:block/chorus_planks/step4",
+      "calcium:block/chorus_planks/step5",
+      "calcium:block/chorus_planks/step6"
     ]
   },
   "block.chorus_fence_gate.open": {
     "sounds": [
-      "calcium:block/chorus_wood/fence_gate_open"
+      "calcium:block/chorus_fence_gate/toggle1",
+      "calcium:block/chorus_fence_gate/toggle2",
+      "calcium:block/chorus_fence_gate/toggle3",
+      "calcium:block/chorus_fence_gate/toggle4"
     ]
   },
-  "block.chorus_fence_gate.close": {
+  "block.chorus_hanging_sign.break": {
     "sounds": [
-      "calcium:block/chorus_wood/fence_gate_close"
+      "calcium:block/chorus_hanging_sign/break1",
+      "calcium:block/chorus_hanging_sign/break2",
+      "calcium:block/chorus_hanging_sign/break3",
+      "calcium:block/chorus_hanging_sign/break4"
+    ]
+  },
+  "block.chorus_hanging_sign.step": {
+    "sounds": [
+      "calcium:block/chorus_hanging_sign/step1",
+      "calcium:block/chorus_hanging_sign/step2",
+      "calcium:block/chorus_hanging_sign/step3",
+      "calcium:block/chorus_hanging_sign/step4"
+    ]
+  },
+  "block.chorus_trapdoor.open": {
+    "sounds": [
+      "calcium:block/chorus_trapdoor/open1",
+      "calcium:block/chorus_trapdoor/open2",
+      "calcium:block/chorus_trapdoor/open3"
+    ]
+  },
+  "block.chorus_trapdoor.close": {
+    "sounds": [
+      "calcium:block/chorus_trapdoor/close1",
+      "calcium:block/chorus_trapdoor/close2",
+      "calcium:block/chorus_trapdoor/close3"
     ]
   }
 }

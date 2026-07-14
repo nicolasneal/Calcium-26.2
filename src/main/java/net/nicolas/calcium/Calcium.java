@@ -366,6 +366,8 @@ public class Calcium implements ModInitializer {
         hangingSignType.addValidBlock(ModBlocks.CHORUS_HANGING_SIGN);
         hangingSignType.addValidBlock(ModBlocks.CHORUS_WALL_HANGING_SIGN);
 
+        ((FabricBlockEntityType) BlockEntityTypes.SHELF).addValidBlock(ModBlocks.CHORUS_SHELF);
+
     }
 
 }

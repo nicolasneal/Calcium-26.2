@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "calcium:chorus_planks",
+    "@": "minecraft:iron_chain"
+  },
+  "pattern": [
+    "@",
+    "#"
+  ],
+  "result": {
+    "id": "calcium:chorus_hanging_sign",
+    "count": 1
+  }
+}

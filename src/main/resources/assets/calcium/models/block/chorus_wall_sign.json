@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_wall_sign",
+  "textures": {
+    "all": "calcium:block/chorus_sign",
+    "particle": "calcium:block/chorus_planks"
+  }
+}

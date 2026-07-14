@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "calcium:stripped_chorus_block"
+        }
+      ]
+    }
+  ],
+  "random_sequence": "calcium:blocks/stripped_chorus_block"
+}

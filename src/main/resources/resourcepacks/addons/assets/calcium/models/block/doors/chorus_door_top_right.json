@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/doors/door_top_right",
+  "textures": {
+    "texture": "calcium:block/doors/chorus",
+    "particle": "calcium:block/particles/chorus_door"
+  }
+}
