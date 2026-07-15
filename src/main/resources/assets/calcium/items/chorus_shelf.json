@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "calcium:block/chorus_shelf"
+    "model": "calcium:block/chorus_shelf_inventory"
   }
 }

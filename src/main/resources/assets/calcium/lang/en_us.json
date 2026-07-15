@@ -41,9 +41,13 @@
   "block.calcium.clovers": "Clovers",
   "block.calcium.ember_sprouts": "Ember Sprouts",
   "block.calcium.end_growth": "End Growth",
-  "block.calcium.small_wisp": "Small Wisp",
+  "block.calcium.wisp_sprouts": "Wisp Sprouts",
+  "block.calcium.wisp": "Wisp",
+  "block.calcium.flowering_wisp": "Flowering Wisp",
   "block.calcium.blinkvine_head": "Blinkvine",
-  "block.calcium.blinkvine_plant": "Blinkvine",
+  "block.calcium.blinkvine_body": "Blinkvine",
+  "block.calcium.celestial_vines_head": "Celestial Vines",
+  "block.calcium.celestial_vines_body": "Celestial Vines",
 
   "block.calcium.potted_bush": "Potted Bush",
   "block.calcium.potted_firefly_bush": "Potted Firefly Bush",
@@ -227,7 +231,6 @@
   "block.calcium.cracked_end_stone_brick_slab": "Cracked End Stone Brick Slab",
   "block.calcium.cracked_end_stone_brick_wall": "Cracked End Stone Brick Wall",
   "block.calcium.chiseled_end_stone": "Chiseled End Stone",
-  "block.calcium.end_stone_brick_wall": "End Stone Brick Wall",
   "block.calcium.polished_veradite": "Polished Veradite",
   "block.calcium.polished_veradite_stairs": "Polished Veradite Stairs",
   "block.calcium.polished_veradite_slab": "Polished Veradite Slab",
@@ -301,7 +304,9 @@
   "block.calcium.chorus_trapdoor": "Chorus Trapdoor",
   "block.calcium.chorus_shelf": "Chorus Shelf",
   "block.calcium.chorus_sign": "Chorus Sign",
+  "block.calcium.chorus_wall_sign": "Chorus Wall Sign",
   "block.calcium.chorus_hanging_sign": "Chorus Hanging Sign",
+  "block.calcium.chorus_wall_hanging_sign": "Chorus Wall Hanging Sign",
 
   "block.calcium.soul_glass": "Soul Glass",
 

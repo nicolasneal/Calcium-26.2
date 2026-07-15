@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:match_tool",
+          "predicate": {
+            "items": "minecraft:shears"
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "calcium:flowering_wisp",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "half": "lower"
+          }
+        }
+      ]
+    }
+  ],
+  "random_sequence": "calcium:blocks/flowering_wisp"
+}

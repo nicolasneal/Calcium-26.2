@@ -112,6 +112,7 @@ public class Calcium implements ModInitializer {
         // Fuel Registration
 
         FuelValueEvents.BUILD.register((builder, context) -> {
+
             builder.add(Items.LAVA_BUCKET, 12800);
             builder.add(Items.COAL_BLOCK, 6400);
             builder.add(Items.DRIED_KELP_BLOCK, 800);
@@ -119,6 +120,7 @@ public class Calcium implements ModInitializer {
             builder.add(Items.BLAZE_POWDER, 1200);
             builder.add(ModItems.WOODEN_ROD, 100);
             builder.add(ModItems.PIXIE_DUST, 2400);
+
         });
 
         // Stack Size Overrides
@@ -228,7 +230,6 @@ public class Calcium implements ModInitializer {
 
         // Sound Group Overrides
 
-        // Stone Blocks
         ((AbstractBlockAccessor) Blocks.BRICKS).setSoundGroup(SoundType.NETHER_BRICKS);
         ((AbstractBlockAccessor) Blocks.BRICK_STAIRS).setSoundGroup(SoundType.NETHER_BRICKS);
         ((AbstractBlockAccessor) Blocks.BRICK_SLAB).setSoundGroup(SoundType.NETHER_BRICKS);
@@ -238,14 +239,14 @@ public class Calcium implements ModInitializer {
         ((AbstractBlockAccessor) Blocks.END_STONE_BRICK_STAIRS).setSoundGroup(ModSounds.END_STONE);
         ((AbstractBlockAccessor) Blocks.END_STONE_BRICK_SLAB).setSoundGroup(ModSounds.END_STONE);
         ((AbstractBlockAccessor) Blocks.END_STONE_BRICK_WALL).setSoundGroup(ModSounds.END_STONE);
-        // Dirt Blocks
+
         ((AbstractBlockAccessor) Blocks.DIRT).setSoundGroup(SoundType.ROOTED_DIRT);
         ((AbstractBlockAccessor) Blocks.COARSE_DIRT).setSoundGroup(SoundType.ROOTED_DIRT);
         ((AbstractBlockAccessor) Blocks.PODZOL).setSoundGroup(SoundType.ROOTED_DIRT);
         ((AbstractBlockAccessor) Blocks.FARMLAND).setSoundGroup(SoundType.ROOTED_DIRT);
         ((AbstractBlockAccessor) Blocks.DIRT_PATH).setSoundGroup(SoundType.ROOTED_DIRT);
         ((AbstractBlockAccessor) Blocks.CLAY).setSoundGroup(SoundType.ROOTED_DIRT);
-        // Leaves
+
         ((AbstractBlockAccessor) Blocks.OAK_LEAVES).setSoundGroup(SoundType.CHERRY_LEAVES);
         ((AbstractBlockAccessor) Blocks.SPRUCE_LEAVES).setSoundGroup(SoundType.CHERRY_LEAVES);
         ((AbstractBlockAccessor) Blocks.BIRCH_LEAVES).setSoundGroup(SoundType.CHERRY_LEAVES);
@@ -254,7 +255,7 @@ public class Calcium implements ModInitializer {
         ((AbstractBlockAccessor) Blocks.DARK_OAK_LEAVES).setSoundGroup(SoundType.CHERRY_LEAVES);
         ((AbstractBlockAccessor) Blocks.MANGROVE_LEAVES).setSoundGroup(SoundType.CHERRY_LEAVES);
         ((AbstractBlockAccessor) Blocks.PALE_OAK_LEAVES).setSoundGroup(SoundType.CHERRY_LEAVES);
-        // Saplings
+
         ((AbstractBlockAccessor) Blocks.OAK_SAPLING).setSoundGroup(SoundType.CHERRY_SAPLING);
         ((AbstractBlockAccessor) Blocks.SPRUCE_SAPLING).setSoundGroup(SoundType.CHERRY_SAPLING);
         ((AbstractBlockAccessor) Blocks.BIRCH_SAPLING).setSoundGroup(SoundType.CHERRY_SAPLING);
@@ -263,13 +264,13 @@ public class Calcium implements ModInitializer {
         ((AbstractBlockAccessor) Blocks.DARK_OAK_SAPLING).setSoundGroup(SoundType.CHERRY_SAPLING);
         ((AbstractBlockAccessor) Blocks.MANGROVE_PROPAGULE).setSoundGroup(SoundType.CHERRY_SAPLING);
         ((AbstractBlockAccessor) Blocks.PALE_OAK_SAPLING).setSoundGroup(SoundType.CHERRY_SAPLING);
-        // Mushroom Blocks
+
         ((AbstractBlockAccessor) Blocks.RED_MUSHROOM_BLOCK).setSoundGroup(SoundType.WART_BLOCK);
         ((AbstractBlockAccessor) Blocks.BROWN_MUSHROOM_BLOCK).setSoundGroup(SoundType.WART_BLOCK);
         ((AbstractBlockAccessor) Blocks.MUSHROOM_STEM).setSoundGroup(SoundType.WART_BLOCK);
-        // Raw Ore Blocks
+
         ((AbstractBlockAccessor) Blocks.RAW_COPPER_BLOCK).setSoundGroup(SoundType.STONE);
-        // Plant Blocks
+
         ((AbstractBlockAccessor) Blocks.SHORT_GRASS).setSoundGroup(SoundType.PINK_PETALS);
         ((AbstractBlockAccessor) Blocks.TALL_GRASS).setSoundGroup(SoundType.PINK_PETALS);
         ((AbstractBlockAccessor) Blocks.SHORT_DRY_GRASS).setSoundGroup(SoundType.PINK_PETALS);
@@ -304,7 +305,7 @@ public class Calcium implements ModInitializer {
         ((AbstractBlockAccessor) Blocks.GLOW_LICHEN).setSoundGroup(SoundType.VINE);
         ((AbstractBlockAccessor) Blocks.RED_MUSHROOM).setSoundGroup(SoundType.FUNGUS);
         ((AbstractBlockAccessor) Blocks.BROWN_MUSHROOM).setSoundGroup(SoundType.FUNGUS);
-        // Wooden Furniture
+
         ((AbstractBlockAccessor) Blocks.CHEST).setSoundGroup(SoundType.SHELF);
         ((AbstractBlockAccessor) Blocks.TRAPPED_CHEST).setSoundGroup(SoundType.SHELF);
         ((AbstractBlockAccessor) Blocks.BARREL).setSoundGroup(SoundType.SHELF);
@@ -320,11 +321,18 @@ public class Calcium implements ModInitializer {
         ((AbstractBlockAccessor) Blocks.BOOKSHELF).setSoundGroup(SoundType.SHELF);
         ((AbstractBlockAccessor) Blocks.NOTE_BLOCK).setSoundGroup(SoundType.SHELF);
         ((AbstractBlockAccessor) Blocks.JUKEBOX).setSoundGroup(SoundType.SHELF);
-        // Metal Blocks
+
         ((AbstractBlockAccessor) Blocks.CAULDRON).setSoundGroup(SoundType.METAL);
         ((AbstractBlockAccessor) Blocks.COAL_BLOCK).setSoundGroup(SoundType.METAL);
         ((AbstractBlockAccessor) Blocks.LAPIS_BLOCK).setSoundGroup(SoundType.METAL);
-        // Miscellaneous
+
+        ((AbstractBlockAccessor) Blocks.CHORUS_FLOWER).setSoundGroup(ModSounds.CHORUS_FLOWER);
+        ((AbstractBlockAccessor) Blocks.CHORUS_PLANT).setSoundGroup(ModSounds.CHORUS_STALK);
+        ((AbstractBlockAccessor) Blocks.PURPUR_BLOCK).setSoundGroup(ModSounds.PURPUR);
+        ((AbstractBlockAccessor) Blocks.PURPUR_PILLAR).setSoundGroup(ModSounds.PURPUR);
+        ((AbstractBlockAccessor) Blocks.PURPUR_STAIRS).setSoundGroup(ModSounds.PURPUR);
+        ((AbstractBlockAccessor) Blocks.PURPUR_SLAB).setSoundGroup(ModSounds.PURPUR);
+        ((AbstractBlockAccessor) Blocks.END_GATEWAY).setSoundGroup(ModSounds.END_GATEWAY);
         ((AbstractBlockAccessor) Blocks.END_ROD).setSoundGroup(ModSounds.END_ROD);
 
         // Model Offsets
@@ -358,6 +366,8 @@ public class Calcium implements ModInitializer {
         strippables.put(ModBlocks.CHORUS_BLOCK, ModBlocks.STRIPPED_CHORUS_BLOCK);
         AxeItemAccessor.calcium$setStrippables(strippables);
 
+        ((FabricBlockEntityType) BlockEntityTypes.SHELF).addValidBlock(ModBlocks.CHORUS_SHELF);
+
         FabricBlockEntityType signType = (FabricBlockEntityType) BlockEntityTypes.SIGN;
         signType.addValidBlock(ModBlocks.CHORUS_SIGN);
         signType.addValidBlock(ModBlocks.CHORUS_WALL_SIGN);
@@ -365,8 +375,6 @@ public class Calcium implements ModInitializer {
         FabricBlockEntityType hangingSignType = (FabricBlockEntityType) BlockEntityTypes.HANGING_SIGN;
         hangingSignType.addValidBlock(ModBlocks.CHORUS_HANGING_SIGN);
         hangingSignType.addValidBlock(ModBlocks.CHORUS_WALL_HANGING_SIGN);
-
-        ((FabricBlockEntityType) BlockEntityTypes.SHELF).addValidBlock(ModBlocks.CHORUS_SHELF);
 
     }
 

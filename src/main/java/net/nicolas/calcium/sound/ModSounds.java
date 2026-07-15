@@ -80,12 +80,41 @@ public class ModSounds {
 
     public static final SoundEvent CHORUS_FENCE_GATE_OPEN = register("block.chorus_fence_gate.open");
 
+    public static final SoundEvent CHORUS_DOOR_OPEN = register("block.chorus_door.open");
+    public static final SoundEvent CHORUS_DOOR_CLOSE = register("block.chorus_door.close");
+
     public static final SoundEvent CHORUS_TRAPDOOR_OPEN = register("block.chorus_trapdoor.open");
     public static final SoundEvent CHORUS_TRAPDOOR_CLOSE = register("block.chorus_trapdoor.close");
 
     public static final SoundEvent CHORUS_HANGING_SIGN_BREAK = register("block.chorus_hanging_sign.break");
     public static final SoundEvent CHORUS_HANGING_SIGN_STEP = register("block.chorus_hanging_sign.step");
     public static final SoundType CHORUS_HANGING_SIGN = new SoundType(1.0F, 1.0F, CHORUS_HANGING_SIGN_BREAK, CHORUS_HANGING_SIGN_STEP, CHORUS_HANGING_SIGN_BREAK, CHORUS_HANGING_SIGN_STEP, CHORUS_HANGING_SIGN_STEP);
+
+    public static final SoundEvent CHORUS_CAKE_ROLL_EAT = register("block.chorus_cake_roll.eat");
+    public static final SoundEvent CHORUS_CAKE_ROLL_PLACE = register("block.chorus_cake_roll.place");
+    public static final SoundEvent CHORUS_CAKE_ROLL_STEP = register("block.chorus_cake_roll.step");
+    public static final SoundType CHORUS_CAKE_ROLL = new SoundType(1.0F, 1.0F, CHORUS_CAKE_ROLL_PLACE, CHORUS_CAKE_ROLL_STEP, CHORUS_CAKE_ROLL_PLACE, CHORUS_CAKE_ROLL_STEP, CHORUS_CAKE_ROLL_STEP);
+
+    public static final SoundEvent CHORUS_FLOWER_BREAK = register("block.chorus_flower.break");
+    public static final SoundEvent CHORUS_FLOWER_IDLE = register("block.chorus_flower.idle");
+    public static final SoundType CHORUS_FLOWER = new SoundType(1.0F, 1.0F, CHORUS_FLOWER_BREAK, CHORUS_FLOWER_BREAK, CHORUS_FLOWER_BREAK, CHORUS_FLOWER_BREAK, CHORUS_FLOWER_BREAK);
+
+    public static final SoundEvent CHORUS_STALK_BREAK = register("block.chorus_stalk.break");
+    public static final SoundEvent CHORUS_STALK_STEP = register("block.chorus_stalk.step");
+    public static final SoundType CHORUS_STALK = new SoundType(1.0F, 1.0F, CHORUS_STALK_BREAK, CHORUS_STALK_STEP, CHORUS_STALK_BREAK, CHORUS_STALK_STEP, CHORUS_STALK_STEP);
+
+    public static final SoundEvent PURPUR_BREAK = register("block.purpur.break");
+    public static final SoundEvent PURPUR_STEP = register("block.purpur.step");
+    public static final SoundType PURPUR = new SoundType(1.0F, 1.0F, PURPUR_BREAK, PURPUR_STEP, PURPUR_BREAK, PURPUR_STEP, PURPUR_STEP);
+
+    public static final SoundEvent END_GATEWAY_BREAK = register("block.end_gateway.break");
+    public static final SoundType END_GATEWAY = new SoundType(1.0F, 1.0F, END_GATEWAY_BREAK, END_GATEWAY_BREAK, END_GATEWAY_BREAK, END_GATEWAY_BREAK, END_GATEWAY_BREAK);
+
+    public static final SoundEvent FLOWERING_WISP_BREAK = register("block.flowering_wisp.break");
+    public static final SoundType FLOWERING_WISP = new SoundType(1.0F, 1.0F, FLOWERING_WISP_BREAK, FLOWERING_WISP_BREAK, FLOWERING_WISP_BREAK, FLOWERING_WISP_BREAK, FLOWERING_WISP_BREAK);
+
+    public static final SoundEvent WISP_BREAK = register("block.wisp.break");
+    public static final SoundType WISP = new SoundType(1.0F, 1.0F, WISP_BREAK, WISP_BREAK, WISP_BREAK, WISP_BREAK, WISP_BREAK);
 
     // UTILITY
 

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross_emissive",
+  "textures": {
+    "cross": "calcium:block/flowering_wisp_top",
+    "cross_emissive": "calcium:block/flowering_wisp_top_emissive"
+  }
+}

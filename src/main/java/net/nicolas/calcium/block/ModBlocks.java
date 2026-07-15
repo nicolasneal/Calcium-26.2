@@ -34,10 +34,11 @@ public class ModBlocks {
 
     public static final String MOD_ID = "calcium";
 
-    // BLOCK TYPES
+    // ADJACENT REGISTRATIONS
 
-    public static final BlockSetType CHORUS_BLOCK_SET_TYPE = BlockSetTypeBuilder.copyOf(BlockSetType.OAK).soundType(ModSounds.CHORUS_PLANKS).doorOpenSound(ModSounds.CHORUS_FENCE_GATE_OPEN).doorCloseSound(ModSounds.CHORUS_FENCE_GATE_OPEN).trapdoorOpenSound(ModSounds.CHORUS_TRAPDOOR_OPEN).trapdoorCloseSound(ModSounds.CHORUS_TRAPDOOR_CLOSE).register(Identifier.fromNamespaceAndPath(MOD_ID, "chorus"));
+    public static final BlockSetType CHORUS_BLOCK_SET_TYPE = BlockSetTypeBuilder.copyOf(BlockSetType.OAK).soundType(ModSounds.CHORUS_PLANKS).doorOpenSound(ModSounds.CHORUS_DOOR_OPEN).doorCloseSound(ModSounds.CHORUS_DOOR_CLOSE).trapdoorOpenSound(ModSounds.CHORUS_TRAPDOOR_OPEN).trapdoorCloseSound(ModSounds.CHORUS_TRAPDOOR_CLOSE).register(Identifier.fromNamespaceAndPath(MOD_ID, "chorus"));
     public static final WoodType CHORUS_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.OAK).soundType(ModSounds.CHORUS_PLANKS).hangingSignSoundType(ModSounds.CHORUS_HANGING_SIGN).fenceGateOpenSound(ModSounds.CHORUS_FENCE_GATE_OPEN).fenceGateCloseSound(ModSounds.CHORUS_FENCE_GATE_OPEN).register(Identifier.fromNamespaceAndPath(MOD_ID, "chorus"), CHORUS_BLOCK_SET_TYPE);
+    public static final CauldronInteraction.Dispatcher ECTOPLASM_CAULDRON_BEHAVIOR = new CauldronInteraction.Dispatcher();
 
     // NATURAL BLOCKS (11)
 
@@ -56,10 +57,9 @@ public class ModBlocks {
     // NATURAL FLUIDS (1, 1)
 
     public static final Block ECTOPLASM = register("ectoplasm", settings -> new LiquidBlock(ModFluids.ECTOPLASM_STILL, settings), BlockBehaviour.Properties.of().mapColor(MapColor.DIAMOND).replaceable().noCollision().strength(100.0F).pushReaction(PushReaction.DESTROY).noLootTable().liquid().lightLevel(state -> 6), false);
-    public static final CauldronInteraction.Dispatcher ECTOPLASM_CAULDRON_BEHAVIOR = new CauldronInteraction.Dispatcher();
     public static final Block ECTOPLASM_CAULDRON = register("ectoplasm_cauldron", settings -> new LayeredCauldronBlock(Biome.Precipitation.NONE, ECTOPLASM_CAULDRON_BEHAVIOR, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON).mapColor(MapColor.METAL).lightLevel(state -> 6), false);
 
-    // PLANT BLOCKS (21, 9)
+    // PLANT BLOCKS (29, 14)
 
     public static final Block WILD_WHEAT = register("wild_wheat", DirtPlantBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollision().instabreak().sound(SoundType.CROP).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY), true);
     public static final Block WILD_CARROT = register("wild_carrot", DirtPlantBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollision().instabreak().sound(SoundType.CROP).offsetType(BlockBehaviour.OffsetType.XZ).ignitedByLava().pushReaction(PushReaction.DESTROY), true);
@@ -79,10 +79,20 @@ public class ModBlocks {
     public static final Block TALL_ICY_IRIS = register("tall_icy_iris", TallIcyPlantBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.ICE).replaceable().noCollision().instabreak().sound(SoundType.CROP).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY).ignitedByLava(), true);
     public static final Block CLOVERS = register("clovers", FlowerBedBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollision().instabreak().sound(SoundType.PINK_PETALS).pushReaction(PushReaction.DESTROY).ignitedByLava(), true);
     public static final Block EMBER_SPROUTS = register("ember_sprouts", FlatPlantBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.CRIMSON_HYPHAE).replaceable().noCollision().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY), true);
-    public static final Block END_GROWTH = register("end_growth", EndPlantBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.SAND).replaceable().noCollision().instabreak().sound(ModSounds.END_GROWTH).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY).ignitedByLava(), true);
-    public static final Block SMALL_WISP = register("small_wisp", EndPlantBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.GLOW_LICHEN).replaceable().noCollision().instabreak().sound(ModSounds.END_GROWTH).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY).ignitedByLava(), true);
+    public static final Block END_GROWTH = register("end_growth", EndPlantBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.SAND).replaceable().noCollision().instabreak().sound(ModSounds.END_GROWTH).offsetType(BlockBehaviour.OffsetType.XYZ).pushReaction(PushReaction.DESTROY).ignitedByLava(), true);
+    // Enderweed
+    // Enderwort
+    public static final Block WISP_SPROUTS = register("wisp_sprouts", WispSproutsBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.GLOW_LICHEN).replaceable().noCollision().instabreak().sound(ModSounds.WISP).lightLevel(state -> 2).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY).ignitedByLava(), true);
+    public static final Block WISP = register("wisp", EndPlantBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.GLOW_LICHEN).replaceable().noCollision().instabreak().sound(ModSounds.WISP).lightLevel(state -> 4).offsetType(BlockBehaviour.OffsetType.XYZ).pushReaction(PushReaction.DESTROY).ignitedByLava(), true);
+    public static final Block FLOWERING_WISP = register("flowering_wisp", TallEndPlantBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.GLOW_LICHEN).replaceable().noCollision().instabreak().sound(ModSounds.FLOWERING_WISP).lightLevel(state -> 6).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY).ignitedByLava(), true);
+    // Aberrant Vines (Body)
+    // Aberrant Vines (Head)
+    public static final Block CELESTIAL_VINES_BODY = register("celestial_vines_body", CelestialVinesBodyBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).noCollision().instabreak().sound(SoundType.CAVE_VINES).pushReaction(PushReaction.DESTROY).noLootTable(), false);
+    public static final Block CELESTIAL_VINES_HEAD = register("celestial_vines_head", CelestialVinesHeadBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).randomTicks().noCollision().instabreak().sound(SoundType.CAVE_VINES).pushReaction(PushReaction.DESTROY).noLootTable(), true);
+    public static final Block BLINKVINE_BODY = register("blinkvine_body", BlinkvineBodyBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollision().instabreak().sound(ModSounds.BLINKVINE).pushReaction(PushReaction.DESTROY).noLootTable(), false);
     public static final Block BLINKVINE_HEAD = register("blinkvine_head", BlinkvineHeadBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).randomTicks().noCollision().instabreak().sound(ModSounds.BLINKVINE).pushReaction(PushReaction.DESTROY).noLootTable(), true);
-    public static final Block BLINKVINE_PLANT = register("blinkvine_plant", BlinkvineBodyBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollision().instabreak().sound(ModSounds.BLINKVINE).pushReaction(PushReaction.DESTROY).noLootTable(), false);
+    // Pallid Magnia Sprout
+    // Umbral Magnia Sprout
 
     public static final Block POTTED_PONTEDERIA = register("potted_pontederia", settings -> new FlowerPotBlock(PONTEDERIA, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT), false);
     public static final Block POTTED_HIBISCUS = register("potted_hibiscus", settings -> new FlowerPotBlock(HIBISCUS, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT), false);
@@ -92,6 +102,9 @@ public class ModBlocks {
     public static final Block POTTED_BUSH = register("potted_bush", settings -> new FlowerPotBlock(Blocks.BUSH, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT), false);
     public static final Block POTTED_FIREFLY_BUSH = register("potted_firefly_bush", settings -> new FlowerPotBlock(Blocks.FIREFLY_BUSH, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT), false);
     public static final Block POTTED_BUSY_LIZZIE = register("potted_busy_lizzie", settings -> new FlowerPotBlock(BUSY_LIZZIE, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT), false);
+    // Potted Enderweed
+    // Potted Enderwort
+    // Potted Wisp
 
     // WOOD BLOCKS (12, 2)
 
@@ -318,8 +331,8 @@ public class ModBlocks {
         public static final Block CRACKED_KURODITE_BRICK_WALL = register("cracked_kurodite_brick_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(ModSounds.KURODITE_BRICKS).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
         public static final Block CHISELED_KURODITE = register("chiseled_kurodite", Block::new, BlockBehaviour.Properties.of().sound(ModSounds.KURODITE).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
 
-        public static final Block PURPUR_WALL = register("purpur_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F), true);
-        public static final Block CHISELED_PURPUR = register("chiseled_purpur", Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F), true);
+        public static final Block PURPUR_WALL = register("purpur_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(ModSounds.PURPUR).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F), true);
+        public static final Block CHISELED_PURPUR = register("chiseled_purpur", Block::new, BlockBehaviour.Properties.of().sound(ModSounds.PURPUR).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F), true);
 
     // METAL VARIANT BLOCKS (29)
 
@@ -361,7 +374,7 @@ public class ModBlocks {
 
     // MISCELLANEOUS (1)
 
-    public static final Block CHORUS_CAKE_ROLL = register("chorus_cake_roll", ChorusCakeRollBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_MAGENTA).forceSolidOn().sound(SoundType.WOOL).strength(0.5F).pushReaction(PushReaction.DESTROY).noLootTable(), false);
+    public static final Block CHORUS_CAKE_ROLL = register("chorus_cake_roll", ChorusCakeRollBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_MAGENTA).forceSolidOn().sound(ModSounds.CHORUS_CAKE_ROLL).strength(0.5F).pushReaction(PushReaction.DESTROY).noLootTable(), false);
 
     public static void initialize() {
 
@@ -647,7 +660,10 @@ public class ModBlocks {
             itemgroup.accept(CLOVERS);
             itemgroup.accept(EMBER_SPROUTS);
             itemgroup.accept(END_GROWTH);
-            itemgroup.accept(SMALL_WISP);
+            itemgroup.accept(WISP_SPROUTS);
+            itemgroup.accept(WISP);
+            itemgroup.accept(FLOWERING_WISP);
+            itemgroup.accept(CELESTIAL_VINES_HEAD);
             itemgroup.accept(BLINKVINE_HEAD);
 
         });

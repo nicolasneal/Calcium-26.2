@@ -2,7 +2,6 @@ package net.nicolas.calcium.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
@@ -25,6 +24,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.nicolas.calcium.sound.ModSounds;
 
 import java.util.List;
 import java.util.Map;
@@ -95,9 +95,7 @@ public class CakeRollBlock extends CakeBlock {
         }
         player.getFoodData().eat(2, 0.1F);
         player.spawnItemParticles(new ItemStack(this), 16);
-        // Matches the burp vanilla plays after eating any regular food (FoodProperties.onConsume), which
-        // CakeBlock itself never plays since it bypasses the Consumable system entirely.
-        level.playSound(null, pos, SoundEvents.PLAYER_BURP, SoundSource.PLAYERS, 0.5F, Mth.randomBetween(player.getRandom(), 0.9F, 1.0F));
+        level.playSound(null, pos, ModSounds.CHORUS_CAKE_ROLL_EAT, SoundSource.PLAYERS, 1.0F, Mth.randomBetween(player.getRandom(), 0.9F, 1.1F));
         int bites = state.getValue(BITES);
         level.gameEvent(player, GameEvent.EAT, pos);
         if (bites < MAX_BITES) {

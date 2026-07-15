@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "calcium:block/celestial_vines_body"
+  }
+}

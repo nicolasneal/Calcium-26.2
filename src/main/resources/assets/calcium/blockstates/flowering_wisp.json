@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "calcium:block/flowering_wisp_bottom"
+    },
+    "half=upper": {
+      "model": "calcium:block/flowering_wisp_top"
+    }
+  }
+}
