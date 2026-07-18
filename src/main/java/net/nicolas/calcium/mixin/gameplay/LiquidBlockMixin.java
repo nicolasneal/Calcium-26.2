@@ -10,7 +10,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.FluidState;
 import net.nicolas.calcium.block.ModBlocks;
-import net.nicolas.calcium.fluid.ModFluids;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -26,7 +25,7 @@ public abstract class LiquidBlockMixin {
     @Inject(method = "shouldSpreadLiquid", at = @At("HEAD"), cancellable = true)
     private void calcium$ectoplasmReactsToNeighbors(Level level, BlockPos pos, BlockState state, CallbackInfoReturnable<Boolean> cir) {
 
-        if (this.fluid != ModFluids.ECTOPLASM_STILL && this.fluid != ModFluids.ECTOPLASM_FLOWING) {
+        if (this.fluid != ModBlocks.ECTOPLASM_STILL && this.fluid != ModBlocks.ECTOPLASM_FLOWING) {
             return;
         }
 

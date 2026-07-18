@@ -1,0 +1,11 @@
+{
+  "type": "calcium:cooking",
+  "cookingtime": 150,
+  "experience": 0.35,
+  "ingredients": [
+    "calcium:tentacles"
+  ],
+  "result": {
+    "id": "calcium:cooked_tentacles"
+  }
+}

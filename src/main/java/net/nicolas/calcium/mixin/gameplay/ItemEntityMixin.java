@@ -4,7 +4,7 @@ import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.level.material.FluidState;
-import net.nicolas.calcium.fluid.ModFluids;
+import net.nicolas.calcium.block.ModBlocks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
@@ -18,7 +18,7 @@ public abstract class ItemEntityMixin {
 
         ItemEntity self = (ItemEntity) (Object) this;
         FluidState fluidState = self.level().getFluidState(self.blockPosition());
-        return fluidState.getType() == ModFluids.ECTOPLASM_STILL || fluidState.getType() == ModFluids.ECTOPLASM_FLOWING;
+        return fluidState.getType() == ModBlocks.ECTOPLASM_STILL || fluidState.getType() == ModBlocks.ECTOPLASM_FLOWING;
 
     }
 
@@ -31,7 +31,7 @@ public abstract class ItemEntityMixin {
         BlockPos pos = self.blockPosition();
         FluidState fluidState = self.level().getFluidState(pos);
 
-        if (fluidState.getType() == ModFluids.ECTOPLASM_STILL || fluidState.getType() == ModFluids.ECTOPLASM_FLOWING) {
+        if (fluidState.getType() == ModBlocks.ECTOPLASM_STILL || fluidState.getType() == ModBlocks.ECTOPLASM_FLOWING) {
             double fluidTop = pos.getY() + fluidState.getHeight(self.level(), pos);
             double entityBottom = self.getBoundingBox().minY;
             return fluidTop - entityBottom;

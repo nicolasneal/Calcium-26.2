@@ -1,8 +1,10 @@
 package net.nicolas.calcium.mixin.client;
 
 import com.llamalad7.mixinextras.sugar.Local;
+import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.extract.LevelExtractor;
+import net.minecraft.client.renderer.state.level.LevelRenderState;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.ChestBlock;
@@ -14,11 +16,14 @@ import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.nicolas.calcium.client.ViewfinderController;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LevelExtractor.class)
 public abstract class LevelExtractorMixin {
@@ -26,6 +31,14 @@ public abstract class LevelExtractorMixin {
     // Multi-Part Block Hitbox Unification
 
     @Shadow private ClientLevel level;
+
+    @Inject(method = "extractBlockOutline", at = @At("HEAD"), cancellable = true)
+    private void calcium$hideOutlineInViewfinder(Camera camera, LevelRenderState levelRenderState, CallbackInfo ci) {
+        if (ViewfinderController.isActive()) {
+            levelRenderState.blockOutlineRenderState = null;
+            ci.cancel();
+        }
+    }
 
     @ModifyVariable(method = "extractBlockOutline", at = @At("STORE"), name = "shape")
     private VoxelShape calcium$unifyMultiPartOutline(VoxelShape shape, @Local(name = "pos") BlockPos pos, @Local(name = "state") BlockState state, @Local(name = "context") CollisionContext context) {

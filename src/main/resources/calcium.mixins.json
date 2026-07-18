@@ -8,6 +8,8 @@
     "accessors.BlockStateBaseAccessor",
     "accessors.CauldronDispatcherAccessor",
     "accessors.CauldronInteractionsAccessor",
+    "accessors.MultiNoiseBiomeSourceParameterListAccessor",
+    "accessors.PoiTypesAccessor",
     "gameplay.AxeItemMixin",
     "gameplay.BeaconBlockEntityMixin",
     "gameplay.BlockMixin",
@@ -36,6 +38,7 @@
     "hitboxes.BushBlockMixin",
     "hitboxes.FlowerBlockMixin",
     "hitboxes.GrowingPlantBlockMixin",
+    "hitboxes.LeverBlockMixin",
     "hitboxes.NetherRootsBlockMixin",
     "hitboxes.RedstoneTorchBlockMixin",
     "hitboxes.RootsBlockMixin",
@@ -72,6 +75,7 @@
   },
   "refmap": "calcium.refmap.json",
   "client": [
+    "accessors.ClientInputAccessor",
     "client.AtmosphericFogEnvironmentMixin",
     "client.BlockDustParticleMixin",
     "client.CameraMixin",
@@ -82,6 +86,7 @@
     "client.InGameOverlayRendererMixin",
     "client.LevelExtractorMixin",
     "client.MinecraftClientMixin",
+    "client.MouseHandlerMixin",
     "client.SignBlockEntityRendererMixin",
     "screens.AbstractButtonMixin",
     "screens.AbstractFurnaceScreenMixin",
@@ -107,6 +112,7 @@
     "screens.SignEditScreenMixin",
     "screens.SmithingScreenMixin",
     "screens.StonecutterScreenMixin",
-    "screens.TradeOfferButtonMixin"
+    "screens.TradeOfferButtonMixin",
+    "worldgen.MultiNoiseBiomeSourceParameterListsMixin"
   ]
 }

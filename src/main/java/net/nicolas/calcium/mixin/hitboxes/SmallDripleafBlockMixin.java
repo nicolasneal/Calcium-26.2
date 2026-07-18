@@ -17,8 +17,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(SmallDripleafBlock.class)
 public abstract class SmallDripleafBlockMixin {
 
-    // Vanilla's shape (12, 0, 13) stops 3px short of the block boundary on both halves, leaving a gap
-    // where they meet. Stretch the lower half up to the full height so it connects with the upper half.
     @Inject(method = "getShape", at = @At("HEAD"), cancellable = true)
     private void calcium$extendLowerHalfShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context, CallbackInfoReturnable<VoxelShape> cir) {
         if (state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF) == DoubleBlockHalf.LOWER) {

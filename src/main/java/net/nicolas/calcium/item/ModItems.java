@@ -1,7 +1,8 @@
 package net.nicolas.calcium.item;
 
-import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+import net.minecraft.core.GlobalPos;
 import net.minecraft.core.Registry;
+import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -9,15 +10,14 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.SignItem;
 import net.minecraft.world.item.component.Consumables;
 import net.nicolas.calcium.block.ModBlocks;
-import net.nicolas.calcium.fluid.ModFluids;
 import net.nicolas.calcium.item.custom.EctoplasmBucketItem;
+import net.nicolas.calcium.item.custom.SignalCardItem;
 import net.nicolas.calcium.sound.ModSounds;
 
 import java.util.function.Function;
@@ -74,6 +74,8 @@ public class ModItems {
     public static final Item TENTACLES = register("tentacles", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.TENTACLES));
     public static final Item COOKED_TENTACLES = register("cooked_tentacles", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.COOKED_TENTACLES));
     public static final Item CHOCOLATE = register("chocolate", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.CHOCOLATE));
+    public static final Item CHOCOLATE_CAKE = register("chocolate_cake", settings -> new BlockItem(ModBlocks.CHOCOLATE_CAKE, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
+    public static final Item PUMPKIN_CAKE_ROLL = register("pumpkin_cake_roll", settings -> new BlockItem(ModBlocks.PUMPKIN_CAKE_ROLL, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
     public static final Item CHORUS_CAKE_ROLL = register("chorus_cake_roll", settings -> new BlockItem(ModBlocks.CHORUS_CAKE_ROLL, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
     public static final Item WATER_BOWL = register("water_bowl", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.WATER_BOWL).component(DataComponents.CONSUMABLE, Consumables.DEFAULT_DRINK).usingConvertsTo(BOWL).craftRemainder(BOWL));
 
@@ -83,76 +85,26 @@ public class ModItems {
     public static final Item IRON_COIN = register("iron_coin", Item::new, new Item.Properties().stacksTo(64));
     public static final Item GOLD_COIN = register("gold_coin", Item::new, new Item.Properties().stacksTo(64));
     public static final Item NETHERITE_COIN = register("netherite_coin", Item::new, new Item.Properties().stacksTo(64));
-    public static final Item ECTOPLASM_BUCKET = register("ectoplasm_bucket", settings -> new EctoplasmBucketItem(ModFluids.ECTOPLASM_STILL, settings), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(64));
+    public static final Item ECTOPLASM_BUCKET = register("ectoplasm_bucket", settings -> new EctoplasmBucketItem(ModBlocks.ECTOPLASM_STILL, settings), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(64));
     public static final Item MUSIC_DISC_BLISS = register("music_disc_bliss", Item::new, new Item.Properties().jukeboxPlayable(ModSounds.BLISS).stacksTo(64));
     public static final Item MUSIC_DISC_DECAY = register("music_disc_decay", Item::new, new Item.Properties().jukeboxPlayable(ModSounds.DECAY).stacksTo(64));
     public static final Item MUSIC_DISC_GLARE = register("music_disc_glare", Item::new, new Item.Properties().jukeboxPlayable(ModSounds.GLARE).stacksTo(64));
+    public static final DataComponentType<GlobalPos> LINKED_FEED = Registry.register(BuiltInRegistries.DATA_COMPONENT_TYPE, Identifier.fromNamespaceAndPath(MOD_ID, "linked_feed"), DataComponentType.<GlobalPos>builder().persistent(GlobalPos.CODEC).networkSynchronized(GlobalPos.STREAM_CODEC).build());
+    public static final Item SIGNAL_CARD = register("signal_card", SignalCardItem::new, new Item.Properties().stacksTo(1));
 
     private static <T extends Item> T register(String name, Function<Item.Properties, T> constructor, Item.Properties settings) {
         ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MOD_ID, name));
         T item = constructor.apply(settings.setId(key));
+        if (item instanceof BlockItem blockItem) {
+            blockItem.registerBlocks(Item.BY_BLOCK, item);
+        }
         return Registry.register(BuiltInRegistries.ITEM, key, item);
     }
 
     public static void initialize() {
 
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register((itemgroup) -> {
-
-            itemgroup.accept(HIDE);
-            itemgroup.accept(FUR);
-            itemgroup.accept(PIXIE_DUST);
-            itemgroup.accept(FOUR_LEAF_CLOVER);
-            itemgroup.accept(DOLPHIN_FIN);
-            itemgroup.accept(GHAST_TENTACLE);
-            itemgroup.accept(WARDEN_HEART);
-            itemgroup.accept(RAW_SHADOLINE);
-            itemgroup.accept(SHADOLINE_NUGGET);
-            itemgroup.accept(SHADOLINE_INGOT);
-            itemgroup.accept(WOODEN_ROD);
-            itemgroup.accept(PUMPKIN_SLICE);
-            itemgroup.accept(TABLET);
-            itemgroup.accept(FLOUR);
-            itemgroup.accept(DOUGH);
-            itemgroup.accept(BATTER);
-            itemgroup.accept(CRESCENT_BANNER_PATTERN);
-
-            itemgroup.getDisplayStacks().removeIf(stack -> stack.is(Items.RABBIT_HIDE));
-            itemgroup.getSearchTabStacks().removeIf(stack -> stack.is(Items.RABBIT_HIDE));
-
-        });
-
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FOOD_AND_DRINKS).register(itemgroup -> {
-
-            itemgroup.accept(CHEVAL);
-            itemgroup.accept(COOKED_CHEVAL);
-            itemgroup.accept(BEAR);
-            itemgroup.accept(COOKED_BEAR);
-            itemgroup.accept(CAMEL);
-            itemgroup.accept(COOKED_CAMEL);
-            itemgroup.accept(CHEVON);
-            itemgroup.accept(COOKED_CHEVON);
-            itemgroup.accept(FROG);
-            itemgroup.accept(COOKED_FROG);
-            itemgroup.accept(TENTACLES);
-            itemgroup.accept(COOKED_TENTACLES);
-            itemgroup.accept(CHOCOLATE);
-            itemgroup.accept(CHORUS_CAKE_ROLL);
-            itemgroup.accept(WATER_BOWL);
-
-        });
-
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(itemgroup -> {
-
-            itemgroup.accept(COPPER_COIN);
-            itemgroup.accept(IRON_COIN);
-            itemgroup.accept(GOLD_COIN);
-            itemgroup.accept(NETHERITE_COIN);
-            itemgroup.accept(ECTOPLASM_BUCKET);
-            itemgroup.accept(MUSIC_DISC_BLISS);
-            itemgroup.accept(MUSIC_DISC_DECAY);
-            itemgroup.accept(MUSIC_DISC_GLARE);
-
-        });
+        BuiltInRegistries.DATA_COMPONENT_INITIALIZERS.add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("minecraft", "bread")), (builder, context, key) -> builder.set(DataComponents.FOOD, ModFoods.BREAD));
+        BuiltInRegistries.DATA_COMPONENT_INITIALIZERS.add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("minecraft", "cookie")), (builder, context, key) -> builder.set(DataComponents.FOOD, ModFoods.COOKIE));
 
     }
 }

@@ -5,6 +5,7 @@ import net.minecraft.client.gui.screens.recipebook.RecipeCollection;
 import net.minecraft.world.item.crafting.ExtendedRecipeBookCategory;
 import net.nicolas.calcium.recipe.ModRecipes;
 import net.nicolas.calcium.screen.EnchantingSearchCategory;
+import net.nicolas.calcium.screen.OvenSearchCategory;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
@@ -26,6 +27,12 @@ public abstract class ClientRecipeBookMixin {
             .flatMap(category -> byCategory.getOrDefault(category, List.of()).stream())
             .toList();
         byCategory.put(EnchantingSearchCategory.ALL, merged);
+
+        List<RecipeCollection> mergedOven = Stream.of(ModRecipes.COOKING_SIMPLE, ModRecipes.COOKING_COMPLEX)
+            .flatMap(category -> byCategory.getOrDefault(category, List.of()).stream())
+            .toList();
+        byCategory.put(OvenSearchCategory.ALL, mergedOven);
+
         return byCategory;
     }
 

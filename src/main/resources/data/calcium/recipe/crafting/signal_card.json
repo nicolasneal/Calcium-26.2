@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "ingredients": [
+    "minecraft:iron_ingot",
+    "minecraft:amethyst_shard"
+  ],
+  "result": {
+    "id": "calcium:signal_card",
+    "count": 1
+  }
+}

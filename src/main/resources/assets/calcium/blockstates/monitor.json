@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north,powered=false,connected=false": { "model": "calcium:block/monitor_unpowered" },
+    "facing=north,powered=false,connected=true": { "model": "calcium:block/monitor_unpowered" },
+    "facing=south,powered=false,connected=false": { "model": "calcium:block/monitor_unpowered", "y": 180 },
+    "facing=south,powered=false,connected=true": { "model": "calcium:block/monitor_unpowered", "y": 180 },
+    "facing=west,powered=false,connected=false": { "model": "calcium:block/monitor_unpowered", "y": 270 },
+    "facing=west,powered=false,connected=true": { "model": "calcium:block/monitor_unpowered", "y": 270 },
+    "facing=east,powered=false,connected=false": { "model": "calcium:block/monitor_unpowered", "y": 90 },
+    "facing=east,powered=false,connected=true": { "model": "calcium:block/monitor_unpowered", "y": 90 },
+    "facing=north,powered=true,connected=false": { "model": "calcium:block/monitor_powered" },
+    "facing=north,powered=true,connected=true": { "model": "calcium:block/monitor_connected" },
+    "facing=south,powered=true,connected=false": { "model": "calcium:block/monitor_powered", "y": 180 },
+    "facing=south,powered=true,connected=true": { "model": "calcium:block/monitor_connected", "y": 180 },
+    "facing=west,powered=true,connected=false": { "model": "calcium:block/monitor_powered", "y": 270 },
+    "facing=west,powered=true,connected=true": { "model": "calcium:block/monitor_connected", "y": 270 },
+    "facing=east,powered=true,connected=false": { "model": "calcium:block/monitor_powered", "y": 90 },
+    "facing=east,powered=true,connected=true": { "model": "calcium:block/monitor_connected", "y": 90 }
+  }
+}

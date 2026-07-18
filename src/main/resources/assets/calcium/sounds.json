@@ -23,6 +23,21 @@
       "calcium:block/soulslate/step4"
     ]
   },
+  "block.monitor.static": {
+    "sounds": [
+      "calcium:block/monitor/static"
+    ]
+  },
+  "item.signal_card.insert": {
+    "sounds": [
+      "calcium:item/signal_card/insert"
+    ]
+  },
+  "item.signal_card.eject": {
+    "sounds": [
+      "calcium:item/signal_card/eject"
+    ]
+  },
   "block.ectoplasm.whispering": {
     "sounds": [
       "calcium:block/ectoplasm/whispering1",
@@ -383,27 +398,27 @@
       "calcium:block/chorus_trapdoor/close3"
     ]
   },
-  "block.chorus_cake_roll.eat": {
+  "block.cake_roll.eat": {
     "sounds": [
-      "calcium:block/chorus_cake_roll/eat1",
-      "calcium:block/chorus_cake_roll/eat2",
-      "calcium:block/chorus_cake_roll/eat3"
+      "calcium:block/cake_roll/eat1",
+      "calcium:block/cake_roll/eat2",
+      "calcium:block/cake_roll/eat3"
     ]
   },
-  "block.chorus_cake_roll.place": {
+  "block.cake_roll.place": {
     "sounds": [
-      "calcium:block/chorus_cake_roll/place1",
-      "calcium:block/chorus_cake_roll/place2",
-      "calcium:block/chorus_cake_roll/place3",
-      "calcium:block/chorus_cake_roll/place4"
+      "calcium:block/cake_roll/place1",
+      "calcium:block/cake_roll/place2",
+      "calcium:block/cake_roll/place3",
+      "calcium:block/cake_roll/place4"
     ]
   },
-  "block.chorus_cake_roll.step": {
+  "block.cake_roll.step": {
     "sounds": [
-      "calcium:block/chorus_cake_roll/step1",
-      "calcium:block/chorus_cake_roll/step2",
-      "calcium:block/chorus_cake_roll/step3",
-      "calcium:block/chorus_cake_roll/step4"
+      "calcium:block/cake_roll/step1",
+      "calcium:block/cake_roll/step2",
+      "calcium:block/cake_roll/step3",
+      "calcium:block/cake_roll/step4"
     ]
   },
   "block.chorus_flower.break": {

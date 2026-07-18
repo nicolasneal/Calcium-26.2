@@ -10,7 +10,6 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.LavaFluid;
 import net.minecraft.world.level.material.WaterFluid;
 import net.nicolas.calcium.block.ModBlocks;
-import net.nicolas.calcium.fluid.ModFluids;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -32,7 +31,7 @@ public abstract class FlowableFluidMixin {
 
         FluidState currentFluidState = state.getFluidState();
 
-        if (currentFluidState.getType() == ModFluids.ECTOPLASM_STILL || currentFluidState.getType() == ModFluids.ECTOPLASM_FLOWING) {
+        if (currentFluidState.getType() == ModBlocks.ECTOPLASM_STILL || currentFluidState.getType() == ModBlocks.ECTOPLASM_FLOWING) {
 
             world.setBlock(pos, (isLava ? ModBlocks.SOULSLATE : Blocks.ICE).defaultBlockState(), 3);
             this.playExtinguishEvent(world, pos);

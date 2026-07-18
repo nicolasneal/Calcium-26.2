@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:orange_candle"
+        }
+      ]
+    }
+  ],
+  "random_sequence": "calcium:blocks/orange_candle_chocolate_cake"
+}

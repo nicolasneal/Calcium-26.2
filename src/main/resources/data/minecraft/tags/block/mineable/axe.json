@@ -4,8 +4,8 @@
     "calcium:chorus_block",
     "calcium:stripped_chorus_block",
     "calcium:chorus_planks",
-    "calcium:chorus_plank_stairs",
-    "calcium:chorus_plank_slab",
+    "calcium:chorus_stairs",
+    "calcium:chorus_slab",
     "calcium:chorus_fence",
     "calcium:chorus_fence_gate",
     "calcium:chorus_door",
@@ -14,6 +14,7 @@
     "calcium:chorus_sign",
     "calcium:chorus_wall_sign",
     "calcium:chorus_hanging_sign",
-    "calcium:chorus_wall_hanging_sign"
+    "calcium:chorus_wall_hanging_sign",
+    "calcium:monitor"
   ]
 }

@@ -1,0 +1,14 @@
+{
+  "type": "calcium:cooking",
+  "cookingtime": 150,
+  "experience": 0.35,
+  "ingredients": [
+    "calcium:batter",
+    "calcium:chocolate",
+    "calcium:chocolate",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "calcium:chocolate_cake"
+  }
+}

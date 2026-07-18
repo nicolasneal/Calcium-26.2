@@ -1,0 +1,14 @@
+{
+  "type": "calcium:cooking",
+  "cookingtime": 150,
+  "experience": 0.35,
+  "ingredients": [
+    "calcium:batter",
+    "calcium:pumpkin_slice",
+    "calcium:pumpkin_slice",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "calcium:pumpkin_cake_roll"
+  }
+}

@@ -10,7 +10,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.ARGB;
 import net.minecraft.world.level.material.FluidState;
-import net.nicolas.calcium.fluid.ModFluids;
+import net.nicolas.calcium.block.ModBlocks;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -35,7 +35,7 @@ public abstract class InGameOverlayRendererMixin {
         BlockPos pos = this.minecraft.gameRenderer.mainCamera().blockPosition();
         FluidState fluidState = this.minecraft.player.level().getFluidState(pos);
 
-        if (fluidState.getType() == ModFluids.ECTOPLASM_STILL || fluidState.getType() == ModFluids.ECTOPLASM_FLOWING) {
+        if (fluidState.getType() == ModBlocks.ECTOPLASM_STILL || fluidState.getType() == ModBlocks.ECTOPLASM_FLOWING) {
             PoseStack matrices = new PoseStack();
             calcium$submitOverlay(this.minecraft, matrices, submitNodeCollector, pos);
         }

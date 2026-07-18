@@ -6,7 +6,7 @@ import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.resources.sounds.AbstractTickableSoundInstance;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.nicolas.calcium.fluid.ModFluids;
+import net.nicolas.calcium.block.ModBlocks;
 
 @Environment(EnvType.CLIENT)
 public class EctoplasmSound extends AbstractTickableSoundInstance {
@@ -24,7 +24,7 @@ public class EctoplasmSound extends AbstractTickableSoundInstance {
 
     @Override public void tick() {
         net.minecraft.world.level.material.FluidState state = this.player.level().getFluidState(net.minecraft.core.BlockPos.containing(this.player.getEyePosition()));
-        if (this.player.isRemoved() || (!state.is(ModFluids.ECTOPLASM_STILL) && !state.is(ModFluids.ECTOPLASM_FLOWING))) {
+        if (this.player.isRemoved() || (!state.is(ModBlocks.ECTOPLASM_STILL) && !state.is(ModBlocks.ECTOPLASM_FLOWING))) {
             this.stop();
             return;
         }

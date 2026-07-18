@@ -1,0 +1,7 @@
+{
+  "parent": "calcium:block/cake_rolls/template_cake_roll_slices_7",
+  "textures": {
+    "texture": "calcium:block/pumpkin_cake_roll",
+    "particle": "calcium:block/particles/pumpkin_cake_roll"
+  }
+}

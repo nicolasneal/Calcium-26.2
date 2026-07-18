@@ -10,7 +10,7 @@ import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.phys.BlockHitResult;
-import net.nicolas.calcium.fluid.ModFluids;
+import net.nicolas.calcium.block.ModBlocks;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -26,7 +26,7 @@ public abstract class BucketItemMixin {
     @Inject(method = "emptyContents", at = @At("HEAD"), cancellable = true)
     private void calcium$evaporateEctoplasm(LivingEntity user, Level world, BlockPos pos, BlockHitResult hitResult, CallbackInfoReturnable<Boolean> cir) {
 
-        if (this.content == ModFluids.ECTOPLASM_STILL) {
+        if (this.content == ModBlocks.ECTOPLASM_STILL) {
 
             boolean isOverworld = world.dimension() == Level.OVERWORLD;
             boolean isTheEnd = world.dimension() == Level.END;

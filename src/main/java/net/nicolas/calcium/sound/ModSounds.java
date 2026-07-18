@@ -90,10 +90,10 @@ public class ModSounds {
     public static final SoundEvent CHORUS_HANGING_SIGN_STEP = register("block.chorus_hanging_sign.step");
     public static final SoundType CHORUS_HANGING_SIGN = new SoundType(1.0F, 1.0F, CHORUS_HANGING_SIGN_BREAK, CHORUS_HANGING_SIGN_STEP, CHORUS_HANGING_SIGN_BREAK, CHORUS_HANGING_SIGN_STEP, CHORUS_HANGING_SIGN_STEP);
 
-    public static final SoundEvent CHORUS_CAKE_ROLL_EAT = register("block.chorus_cake_roll.eat");
-    public static final SoundEvent CHORUS_CAKE_ROLL_PLACE = register("block.chorus_cake_roll.place");
-    public static final SoundEvent CHORUS_CAKE_ROLL_STEP = register("block.chorus_cake_roll.step");
-    public static final SoundType CHORUS_CAKE_ROLL = new SoundType(1.0F, 1.0F, CHORUS_CAKE_ROLL_PLACE, CHORUS_CAKE_ROLL_STEP, CHORUS_CAKE_ROLL_PLACE, CHORUS_CAKE_ROLL_STEP, CHORUS_CAKE_ROLL_STEP);
+    public static final SoundEvent CAKE_ROLL_EAT = register("block.cake_roll.eat");
+    public static final SoundEvent CAKE_ROLL_PLACE = register("block.cake_roll.place");
+    public static final SoundEvent CAKE_ROLL_STEP = register("block.cake_roll.step");
+    public static final SoundType CAKE_ROLL = new SoundType(1.0F, 1.0F, CAKE_ROLL_PLACE, CAKE_ROLL_STEP, CAKE_ROLL_PLACE, CAKE_ROLL_STEP, CAKE_ROLL_STEP);
 
     public static final SoundEvent CHORUS_FLOWER_BREAK = register("block.chorus_flower.break");
     public static final SoundEvent CHORUS_FLOWER_IDLE = register("block.chorus_flower.idle");
@@ -121,6 +121,10 @@ public class ModSounds {
     public static final SoundEvent ECTOPLASM_BUCKET_EMPTY = register("item.bucket.empty_ectoplasm");
     public static final SoundEvent ECTOPLASM_BUCKET_FILL = register("item.bucket.fill_ectoplasm");
     public static final SoundEvent ECTOPLASM_AMBIENT = register("block.ectoplasm.whispering");
+
+    public static final SoundEvent MONITOR_STATIC = register("block.monitor.static");
+    public static final SoundEvent SIGNAL_CARD_INSERT = register("item.signal_card.insert");
+    public static final SoundEvent SIGNAL_CARD_EJECT = register("item.signal_card.eject");
 
     // MUSIC DISCS
 

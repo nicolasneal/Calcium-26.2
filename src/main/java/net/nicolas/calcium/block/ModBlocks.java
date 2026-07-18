@@ -1,6 +1,6 @@
 package net.nicolas.calcium.block;
 
-import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
 import net.minecraft.core.Registry;
@@ -13,19 +13,20 @@ import net.minecraft.util.ColorRGBA;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.nicolas.calcium.block.custom.*;
-import net.nicolas.calcium.fluid.ModFluids;
 import net.nicolas.calcium.sound.ModSounds;
 
 import java.util.function.Function;
@@ -40,7 +41,7 @@ public class ModBlocks {
     public static final WoodType CHORUS_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.OAK).soundType(ModSounds.CHORUS_PLANKS).hangingSignSoundType(ModSounds.CHORUS_HANGING_SIGN).fenceGateOpenSound(ModSounds.CHORUS_FENCE_GATE_OPEN).fenceGateCloseSound(ModSounds.CHORUS_FENCE_GATE_OPEN).register(Identifier.fromNamespaceAndPath(MOD_ID, "chorus"), CHORUS_BLOCK_SET_TYPE);
     public static final CauldronInteraction.Dispatcher ECTOPLASM_CAULDRON_BEHAVIOR = new CauldronInteraction.Dispatcher();
 
-    // NATURAL BLOCKS (11)
+    // NATURAL BLOCKS (13, 1)
 
     public static final Block SILT = register("silt", settings -> new SandBlock(new ColorRGBA(0x766551), settings), BlockBehaviour.Properties.ofFullCopy(Blocks.SAND), true);
     public static final Block SOULSLATE = register("soulslate", Block::new, BlockBehaviour.Properties.of().sound(ModSounds.SOULSLATE).mapColor(MapColor.COLOR_BROWN).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.4F, 0.4F), true);
@@ -53,10 +54,9 @@ public class ModBlocks {
     public static final Block END_STONE_SHADOLINE_ORE = register("end_stone_shadoline_ore", settings -> new DropExperienceBlock(ConstantInt.of(0), settings), BlockBehaviour.Properties.of().sound(ModSounds.END_STONE_SHADOLINE_ORE).mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
     public static final Block MIRESTONE_SHADOLINE_ORE = register("mirestone_shadoline_ore", settings -> new DropExperienceBlock(ConstantInt.of(0), settings), BlockBehaviour.Properties.of().sound(ModSounds.MIRESTONE_SHADOLINE_ORE).mapColor(MapColor.GLOW_LICHEN).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
     public static final Block RAW_SHADOLINE_BLOCK = register("raw_shadoline_block", Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.WARPED_NYLIUM).requiresCorrectToolForDrops().strength(5.0F, 6.0F), true);
-
-    // NATURAL FLUIDS (1, 1)
-
-    public static final Block ECTOPLASM = register("ectoplasm", settings -> new LiquidBlock(ModFluids.ECTOPLASM_STILL, settings), BlockBehaviour.Properties.of().mapColor(MapColor.DIAMOND).replaceable().noCollision().strength(100.0F).pushReaction(PushReaction.DESTROY).noLootTable().liquid().lightLevel(state -> 6), false);
+    public static final FlowingFluid ECTOPLASM_STILL = registerFluid("ectoplasm_still", new EctoplasmFluid.Still());
+    public static final FlowingFluid ECTOPLASM_FLOWING = registerFluid("ectoplasm_flowing", new EctoplasmFluid.Flowing());
+    public static final Block ECTOPLASM = register("ectoplasm", settings -> new LiquidBlock(ECTOPLASM_STILL, settings), BlockBehaviour.Properties.of().mapColor(MapColor.DIAMOND).replaceable().noCollision().strength(100.0F).pushReaction(PushReaction.DESTROY).noLootTable().liquid().lightLevel(state -> 6), false);
     public static final Block ECTOPLASM_CAULDRON = register("ectoplasm_cauldron", settings -> new LayeredCauldronBlock(Biome.Precipitation.NONE, ECTOPLASM_CAULDRON_BEHAVIOR, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON).mapColor(MapColor.METAL).lightLevel(state -> 6), false);
 
     // PLANT BLOCKS (29, 14)
@@ -111,8 +111,8 @@ public class ModBlocks {
     public static final Block CHORUS_BLOCK = register("chorus_block", RotatedPillarBlock::new, BlockBehaviour.Properties.of().sound(ModSounds.CHORUS_PLANKS).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).strength(2.0F, 2.0F), true);
     public static final Block STRIPPED_CHORUS_BLOCK = register("stripped_chorus_block", RotatedPillarBlock::new, BlockBehaviour.Properties.of().sound(ModSounds.CHORUS_PLANKS).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).strength(2.0F, 2.0F), true);
     public static final Block CHORUS_PLANKS = register("chorus_planks", Block::new, BlockBehaviour.Properties.of().sound(ModSounds.CHORUS_PLANKS).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F), true);
-    public static final Block CHORUS_PLANK_STAIRS = register("chorus_plank_stairs", settings -> new StairBlock(ModBlocks.CHORUS_PLANKS.defaultBlockState(), settings), BlockBehaviour.Properties.of().sound(ModSounds.CHORUS_PLANKS).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F), true);
-    public static final Block CHORUS_PLANK_SLAB = register("chorus_plank_slab", SlabBlock::new, BlockBehaviour.Properties.of().sound(ModSounds.CHORUS_PLANKS).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F), true);
+    public static final Block CHORUS_STAIRS = register("chorus_stairs", settings -> new StairBlock(ModBlocks.CHORUS_PLANKS.defaultBlockState(), settings), BlockBehaviour.Properties.of().sound(ModSounds.CHORUS_PLANKS).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F), true);
+    public static final Block CHORUS_SLAB = register("chorus_slab", SlabBlock::new, BlockBehaviour.Properties.of().sound(ModSounds.CHORUS_PLANKS).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F), true);
     public static final Block CHORUS_FENCE = register("chorus_fence", FenceBlock::new, BlockBehaviour.Properties.of().sound(ModSounds.CHORUS_PLANKS).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).noOcclusion(), true);
     public static final Block CHORUS_FENCE_GATE = register("chorus_fence_gate", settings -> new FenceGateBlock(CHORUS_WOOD_TYPE, settings), BlockBehaviour.Properties.of().sound(ModSounds.CHORUS_PLANKS).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).noOcclusion(), true);
     public static final Block CHORUS_DOOR = register("chorus_door", settings -> new DoorBlock(CHORUS_BLOCK_SET_TYPE, settings), BlockBehaviour.Properties.of().sound(ModSounds.CHORUS_PLANKS).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).strength(3.0F, 3.0F).noOcclusion(), true);
@@ -372,333 +372,37 @@ public class ModBlocks {
 
     public static final Block SOUL_GLASS = register("soul_glass", TransparentBlock::new, BlockBehaviour.Properties.of().sound(SoundType.GLASS).instrument(NoteBlockInstrument.HAT).strength(0.6F, 0.6F).noOcclusion().isValidSpawn(Blocks::never).isRedstoneConductor(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never), true);
 
-    // MISCELLANEOUS (1)
+    // FUNCTIONAL BLOCKS (6, 17)
 
-    public static final Block CHORUS_CAKE_ROLL = register("chorus_cake_roll", ChorusCakeRollBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_MAGENTA).forceSolidOn().sound(ModSounds.CHORUS_CAKE_ROLL).strength(0.5F).pushReaction(PushReaction.DESTROY).noLootTable(), false);
+    public static final Block OVEN = register("oven", OvenBlock::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.5F, 6.0F), true);
+    public static final BlockEntityType<OvenBlockEntity> OVEN_BLOCK_ENTITY = Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, Identifier.fromNamespaceAndPath(MOD_ID, "oven"), FabricBlockEntityTypeBuilder.create(OvenBlockEntity::new, OVEN).build());
+    public static final Block MONITOR = register("monitor", MonitorBlock::new, BlockBehaviour.Properties.of().sound(SoundType.CHISELED_BOOKSHELF).mapColor(MapColor.COLOR_BROWN).instrument(NoteBlockInstrument.BASS).strength(2.5F, 2.5F).lightLevel(state -> state.getValue(BlockStateProperties.POWERED) ? 7 : 0), true);
+    public static final BlockEntityType<MonitorBlockEntity> MONITOR_BLOCK_ENTITY = Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, Identifier.fromNamespaceAndPath(MOD_ID, "monitor"), FabricBlockEntityTypeBuilder.create(MonitorBlockEntity::new, MONITOR).build());
+    public static final Block VIEWFINDER = register("viewfinder", ViewfinderBlock::new, BlockBehaviour.Properties.of().sound(SoundType.METAL).mapColor(MapColor.COLOR_LIGHT_GRAY).instrument(NoteBlockInstrument.IRON_XYLOPHONE).strength(3.5F, 3.5F).noOcclusion(), true);
+    public static final BlockEntityType<ViewfinderBlockEntity> VIEWFINDER_BLOCK_ENTITY = Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, Identifier.fromNamespaceAndPath(MOD_ID, "viewfinder"), FabricBlockEntityTypeBuilder.create(ViewfinderBlockEntity::new, VIEWFINDER).build());
 
-    public static void initialize() {
+    public static final Block CHOCOLATE_CAKE = register("chocolate_cake", CakeBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), false);
+    public static final Block CANDLE_CHOCOLATE_CAKE = register("candle_chocolate_cake", p -> new CandleChocolateCakeBlock(Blocks.CANDLE, p), BlockBehaviour.Properties.ofLegacyCopy(CHOCOLATE_CAKE).lightLevel(state -> state.getValue(BlockStateProperties.LIT) ? 3 : 0), false);
+    public static final Block WHITE_CANDLE_CHOCOLATE_CAKE = register("white_candle_chocolate_cake", p -> new CandleChocolateCakeBlock(Blocks.DYED_CANDLE.pick(DyeColor.WHITE), p), BlockBehaviour.Properties.ofLegacyCopy(CANDLE_CHOCOLATE_CAKE), false);
+    public static final Block ORANGE_CANDLE_CHOCOLATE_CAKE = register("orange_candle_chocolate_cake", p -> new CandleChocolateCakeBlock(Blocks.DYED_CANDLE.pick(DyeColor.ORANGE), p), BlockBehaviour.Properties.ofLegacyCopy(CANDLE_CHOCOLATE_CAKE), false);
+    public static final Block MAGENTA_CANDLE_CHOCOLATE_CAKE = register("magenta_candle_chocolate_cake", p -> new CandleChocolateCakeBlock(Blocks.DYED_CANDLE.pick(DyeColor.MAGENTA), p), BlockBehaviour.Properties.ofLegacyCopy(CANDLE_CHOCOLATE_CAKE), false);
+    public static final Block LIGHT_BLUE_CANDLE_CHOCOLATE_CAKE = register("light_blue_candle_chocolate_cake", p -> new CandleChocolateCakeBlock(Blocks.DYED_CANDLE.pick(DyeColor.LIGHT_BLUE), p), BlockBehaviour.Properties.ofLegacyCopy(CANDLE_CHOCOLATE_CAKE), false);
+    public static final Block YELLOW_CANDLE_CHOCOLATE_CAKE = register("yellow_candle_chocolate_cake", p -> new CandleChocolateCakeBlock(Blocks.DYED_CANDLE.pick(DyeColor.YELLOW), p), BlockBehaviour.Properties.ofLegacyCopy(CANDLE_CHOCOLATE_CAKE), false);
+    public static final Block LIME_CANDLE_CHOCOLATE_CAKE = register("lime_candle_chocolate_cake", p -> new CandleChocolateCakeBlock(Blocks.DYED_CANDLE.pick(DyeColor.LIME), p), BlockBehaviour.Properties.ofLegacyCopy(CANDLE_CHOCOLATE_CAKE), false);
+    public static final Block PINK_CANDLE_CHOCOLATE_CAKE = register("pink_candle_chocolate_cake", p -> new CandleChocolateCakeBlock(Blocks.DYED_CANDLE.pick(DyeColor.PINK), p), BlockBehaviour.Properties.ofLegacyCopy(CANDLE_CHOCOLATE_CAKE), false);
+    public static final Block GRAY_CANDLE_CHOCOLATE_CAKE = register("gray_candle_chocolate_cake", p -> new CandleChocolateCakeBlock(Blocks.DYED_CANDLE.pick(DyeColor.GRAY), p), BlockBehaviour.Properties.ofLegacyCopy(CANDLE_CHOCOLATE_CAKE), false);
+    public static final Block LIGHT_GRAY_CANDLE_CHOCOLATE_CAKE = register("light_gray_candle_chocolate_cake", p -> new CandleChocolateCakeBlock(Blocks.DYED_CANDLE.pick(DyeColor.LIGHT_GRAY), p), BlockBehaviour.Properties.ofLegacyCopy(CANDLE_CHOCOLATE_CAKE), false);
+    public static final Block CYAN_CANDLE_CHOCOLATE_CAKE = register("cyan_candle_chocolate_cake", p -> new CandleChocolateCakeBlock(Blocks.DYED_CANDLE.pick(DyeColor.CYAN), p), BlockBehaviour.Properties.ofLegacyCopy(CANDLE_CHOCOLATE_CAKE), false);
+    public static final Block PURPLE_CANDLE_CHOCOLATE_CAKE = register("purple_candle_chocolate_cake", p -> new CandleChocolateCakeBlock(Blocks.DYED_CANDLE.pick(DyeColor.PURPLE), p), BlockBehaviour.Properties.ofLegacyCopy(CANDLE_CHOCOLATE_CAKE), false);
+    public static final Block BLUE_CANDLE_CHOCOLATE_CAKE = register("blue_candle_chocolate_cake", p -> new CandleChocolateCakeBlock(Blocks.DYED_CANDLE.pick(DyeColor.BLUE), p), BlockBehaviour.Properties.ofLegacyCopy(CANDLE_CHOCOLATE_CAKE), false);
+    public static final Block BROWN_CANDLE_CHOCOLATE_CAKE = register("brown_candle_chocolate_cake", p -> new CandleChocolateCakeBlock(Blocks.DYED_CANDLE.pick(DyeColor.BROWN), p), BlockBehaviour.Properties.ofLegacyCopy(CANDLE_CHOCOLATE_CAKE), false);
+    public static final Block GREEN_CANDLE_CHOCOLATE_CAKE = register("green_candle_chocolate_cake", p -> new CandleChocolateCakeBlock(Blocks.DYED_CANDLE.pick(DyeColor.GREEN), p), BlockBehaviour.Properties.ofLegacyCopy(CANDLE_CHOCOLATE_CAKE), false);
+    public static final Block RED_CANDLE_CHOCOLATE_CAKE = register("red_candle_chocolate_cake", p -> new CandleChocolateCakeBlock(Blocks.DYED_CANDLE.pick(DyeColor.RED), p), BlockBehaviour.Properties.ofLegacyCopy(CANDLE_CHOCOLATE_CAKE), false);
+    public static final Block BLACK_CANDLE_CHOCOLATE_CAKE = register("black_candle_chocolate_cake", p -> new CandleChocolateCakeBlock(Blocks.DYED_CANDLE.pick(DyeColor.BLACK), p), BlockBehaviour.Properties.ofLegacyCopy(CANDLE_CHOCOLATE_CAKE), false);
+    public static final Block PUMPKIN_CAKE_ROLL = register("pumpkin_cake_roll", CakeRollBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).forceSolidOn().sound(ModSounds.CAKE_ROLL).strength(0.5F).pushReaction(PushReaction.DESTROY).noLootTable(), false);
+    public static final Block CHORUS_CAKE_ROLL = register("chorus_cake_roll", ChorusCakeRollBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_MAGENTA).forceSolidOn().sound(ModSounds.CAKE_ROLL).strength(0.5F).pushReaction(PushReaction.DESTROY).noLootTable(), false);
 
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemgroup) -> {
-
-            itemgroup.accept(CHORUS_BLOCK);
-            itemgroup.accept(STRIPPED_CHORUS_BLOCK);
-            itemgroup.accept(CHORUS_PLANKS);
-            itemgroup.accept(CHORUS_PLANK_STAIRS);
-            itemgroup.accept(CHORUS_PLANK_SLAB);
-            itemgroup.accept(CHORUS_FENCE);
-            itemgroup.accept(CHORUS_FENCE_GATE);
-            itemgroup.accept(CHORUS_DOOR);
-            itemgroup.accept(CHORUS_TRAPDOOR);
-
-            itemgroup.accept(POLISHED_STONE);
-            itemgroup.accept(POLISHED_STONE_STAIRS);
-            itemgroup.accept(POLISHED_STONE_SLAB);
-            itemgroup.accept(POLISHED_STONE_WALL);
-            itemgroup.accept(CRACKED_STONE_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_STONE_BRICK_SLAB);
-            itemgroup.accept(CRACKED_STONE_BRICK_WALL);
-            itemgroup.accept(SMOOTH_STONE_STAIRS);
-            itemgroup.accept(SMOOTH_STONE_WALL);
-            itemgroup.accept(POLISHED_ANDESITE_WALL);
-            itemgroup.accept(ANDESITE_BRICKS);
-            itemgroup.accept(ANDESITE_BRICK_STAIRS);
-            itemgroup.accept(ANDESITE_BRICK_SLAB);
-            itemgroup.accept(ANDESITE_BRICK_WALL);
-            itemgroup.accept(CRACKED_ANDESITE_BRICKS);
-            itemgroup.accept(CRACKED_ANDESITE_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_ANDESITE_BRICK_SLAB);
-            itemgroup.accept(CRACKED_ANDESITE_BRICK_WALL);
-            itemgroup.accept(CHISELED_ANDESITE);
-            itemgroup.accept(POLISHED_DIORITE_WALL);
-            itemgroup.accept(DIORITE_BRICKS);
-            itemgroup.accept(DIORITE_BRICK_STAIRS);
-            itemgroup.accept(DIORITE_BRICK_SLAB);
-            itemgroup.accept(DIORITE_BRICK_WALL);
-            itemgroup.accept(CRACKED_DIORITE_BRICKS);
-            itemgroup.accept(CRACKED_DIORITE_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_DIORITE_BRICK_SLAB);
-            itemgroup.accept(CRACKED_DIORITE_BRICK_WALL);
-            itemgroup.accept(CHISELED_DIORITE);
-            itemgroup.accept(POLISHED_GRANITE_WALL);
-            itemgroup.accept(GRANITE_BRICKS);
-            itemgroup.accept(GRANITE_BRICK_STAIRS);
-            itemgroup.accept(GRANITE_BRICK_SLAB);
-            itemgroup.accept(GRANITE_BRICK_WALL);
-            itemgroup.accept(CRACKED_GRANITE_BRICKS);
-            itemgroup.accept(CRACKED_GRANITE_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_GRANITE_BRICK_SLAB);
-            itemgroup.accept(CRACKED_GRANITE_BRICK_WALL);
-            itemgroup.accept(CHISELED_GRANITE);
-            itemgroup.accept(CRACKED_DEEPSLATE_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_DEEPSLATE_BRICK_SLAB);
-            itemgroup.accept(CRACKED_DEEPSLATE_BRICK_WALL);
-            itemgroup.accept(CRACKED_DEEPSLATE_TILE_STAIRS);
-            itemgroup.accept(CRACKED_DEEPSLATE_TILE_SLAB);
-            itemgroup.accept(CRACKED_DEEPSLATE_TILE_WALL);
-            itemgroup.accept(CRACKED_TUFF_BRICKS);
-            itemgroup.accept(CRACKED_TUFF_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_TUFF_BRICK_SLAB);
-            itemgroup.accept(CRACKED_TUFF_BRICK_WALL);
-            itemgroup.accept(POLISHED_DRIPSTONE);
-            itemgroup.accept(POLISHED_DRIPSTONE_STAIRS);
-            itemgroup.accept(POLISHED_DRIPSTONE_SLAB);
-            itemgroup.accept(POLISHED_DRIPSTONE_WALL);
-            itemgroup.accept(DRIPSTONE_BRICKS);
-            itemgroup.accept(DRIPSTONE_BRICK_STAIRS);
-            itemgroup.accept(DRIPSTONE_BRICK_SLAB);
-            itemgroup.accept(DRIPSTONE_BRICK_WALL);
-            itemgroup.accept(CRACKED_DRIPSTONE_BRICKS);
-            itemgroup.accept(CRACKED_DRIPSTONE_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_DRIPSTONE_BRICK_SLAB);
-            itemgroup.accept(CRACKED_DRIPSTONE_BRICK_WALL);
-            itemgroup.accept(CHISELED_DRIPSTONE);
-            itemgroup.accept(POLISHED_CALCITE);
-            itemgroup.accept(POLISHED_CALCITE_STAIRS);
-            itemgroup.accept(POLISHED_CALCITE_SLAB);
-            itemgroup.accept(POLISHED_CALCITE_WALL);
-            itemgroup.accept(CALCITE_BRICKS);
-            itemgroup.accept(CALCITE_BRICK_STAIRS);
-            itemgroup.accept(CALCITE_BRICK_SLAB);
-            itemgroup.accept(CALCITE_BRICK_WALL);
-            itemgroup.accept(CRACKED_CALCITE_BRICKS);
-            itemgroup.accept(CRACKED_CALCITE_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_CALCITE_BRICK_SLAB);
-            itemgroup.accept(CRACKED_CALCITE_BRICK_WALL);
-            itemgroup.accept(CHISELED_CALCITE);
-            itemgroup.accept(CRACKED_CINNABAR_BRICKS);
-            itemgroup.accept(CRACKED_CINNABAR_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_CINNABAR_BRICK_SLAB);
-            itemgroup.accept(CRACKED_CINNABAR_BRICK_WALL);
-            itemgroup.accept(CRACKED_SULFUR_BRICKS);
-            itemgroup.accept(CRACKED_SULFUR_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_SULFUR_BRICK_SLAB);
-            itemgroup.accept(CRACKED_SULFUR_BRICK_WALL);
-
-            itemgroup.accept(POLISHED_PACKED_MUD);
-            itemgroup.accept(POLISHED_PACKED_MUD_STAIRS);
-            itemgroup.accept(POLISHED_PACKED_MUD_SLAB);
-            itemgroup.accept(POLISHED_PACKED_MUD_WALL);
-            itemgroup.accept(CRACKED_PACKED_MUD_BRICKS);
-            itemgroup.accept(CRACKED_PACKED_MUD_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_PACKED_MUD_BRICK_SLAB);
-            itemgroup.accept(CRACKED_PACKED_MUD_BRICK_WALL);
-            itemgroup.accept(CHISELED_PACKED_MUD);
-            itemgroup.accept(POLISHED_SANDSTONE_WALL);
-            itemgroup.accept(SANDSTONE_BRICK_STAIRS);
-            itemgroup.accept(SANDSTONE_BRICK_WALL);
-            itemgroup.accept(CRACKED_SANDSTONE_BRICKS);
-            itemgroup.accept(CRACKED_SANDSTONE_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_SANDSTONE_BRICK_SLAB);
-            itemgroup.accept(CRACKED_SANDSTONE_BRICK_WALL);
-            itemgroup.accept(POLISHED_RED_SANDSTONE_WALL);
-            itemgroup.accept(RED_SANDSTONE_BRICK_STAIRS);
-            itemgroup.accept(RED_SANDSTONE_BRICK_WALL);
-            itemgroup.accept(CRACKED_RED_SANDSTONE_BRICKS);
-            itemgroup.accept(CRACKED_RED_SANDSTONE_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_RED_SANDSTONE_BRICK_SLAB);
-            itemgroup.accept(CRACKED_RED_SANDSTONE_BRICK_WALL);
-            itemgroup.accept(PRISMARINE_BRICK_WALL);
-            itemgroup.accept(DARK_PRISMARINE_WALL);
-
-            itemgroup.accept(CRACKED_BRICKS);
-            itemgroup.accept(CRACKED_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_BRICK_SLAB);
-            itemgroup.accept(CRACKED_BRICK_WALL);
-            itemgroup.accept(CHISELED_BRICKS);
-            itemgroup.accept(CRACKED_RESIN_BRICKS);
-            itemgroup.accept(CRACKED_RESIN_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_RESIN_BRICK_SLAB);
-            itemgroup.accept(CRACKED_RESIN_BRICK_WALL);
-
-            itemgroup.accept(CRACKED_BLACKSTONE_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_BLACKSTONE_BRICK_SLAB);
-            itemgroup.accept(CRACKED_BLACKSTONE_BRICK_WALL);
-            itemgroup.accept(POLISHED_BASALT);
-            itemgroup.accept(POLISHED_BASALT_STAIRS);
-            itemgroup.accept(POLISHED_BASALT_SLAB);
-            itemgroup.accept(POLISHED_BASALT_WALL);
-            itemgroup.accept(BASALT_BRICKS);
-            itemgroup.accept(BASALT_BRICK_STAIRS);
-            itemgroup.accept(BASALT_BRICK_SLAB);
-            itemgroup.accept(BASALT_BRICK_WALL);
-            itemgroup.accept(CRACKED_BASALT_BRICKS);
-            itemgroup.accept(CRACKED_BASALT_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_BASALT_BRICK_SLAB);
-            itemgroup.accept(CRACKED_BASALT_BRICK_WALL);
-            itemgroup.accept(BASALT_TILES);
-            itemgroup.accept(BASALT_TILE_STAIRS);
-            itemgroup.accept(BASALT_TILE_SLAB);
-            itemgroup.accept(BASALT_TILE_WALL);
-            itemgroup.accept(CRACKED_BASALT_TILES);
-            itemgroup.accept(CRACKED_BASALT_TILE_STAIRS);
-            itemgroup.accept(CRACKED_BASALT_TILE_SLAB);
-            itemgroup.accept(CRACKED_BASALT_TILE_WALL);
-            itemgroup.accept(CHISELED_BASALT);
-            itemgroup.accept(ENGRAVED_BASALT);
-            itemgroup.accept(POLISHED_QUARTZ_WALL);
-            itemgroup.accept(QUARTZ_BRICK_STAIRS);
-            itemgroup.accept(QUARTZ_BRICK_SLAB);
-            itemgroup.accept(QUARTZ_BRICK_WALL);
-            itemgroup.accept(CRACKED_QUARTZ_BRICKS);
-            itemgroup.accept(CRACKED_QUARTZ_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_QUARTZ_BRICK_SLAB);
-            itemgroup.accept(CRACKED_QUARTZ_BRICK_WALL);
-
-            itemgroup.accept(CRACKED_RED_NETHER_BRICKS);
-            itemgroup.accept(CRACKED_NETHER_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_NETHER_BRICK_SLAB);
-            itemgroup.accept(CRACKED_NETHER_BRICK_WALL);
-            itemgroup.accept(CRACKED_RED_NETHER_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_RED_NETHER_BRICK_SLAB);
-            itemgroup.accept(CRACKED_RED_NETHER_BRICK_WALL);
-            itemgroup.accept(CHISELED_RED_NETHER_BRICKS);
-
-            itemgroup.accept(POLISHED_END_STONE);
-            itemgroup.accept(POLISHED_END_STONE_STAIRS);
-            itemgroup.accept(POLISHED_END_STONE_SLAB);
-            itemgroup.accept(POLISHED_END_STONE_WALL);
-            itemgroup.accept(CRACKED_END_STONE_BRICKS);
-            itemgroup.accept(CRACKED_END_STONE_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_END_STONE_BRICK_SLAB);
-            itemgroup.accept(CRACKED_END_STONE_BRICK_WALL);
-            itemgroup.accept(CHISELED_END_STONE);
-            itemgroup.accept(MIRESTONE);
-            itemgroup.accept(VERADITE);
-            itemgroup.accept(POLISHED_VERADITE);
-            itemgroup.accept(POLISHED_VERADITE_STAIRS);
-            itemgroup.accept(POLISHED_VERADITE_SLAB);
-            itemgroup.accept(POLISHED_VERADITE_WALL);
-            itemgroup.accept(VERADITE_BRICKS);
-            itemgroup.accept(VERADITE_BRICK_STAIRS);
-            itemgroup.accept(VERADITE_BRICK_SLAB);
-            itemgroup.accept(VERADITE_BRICK_WALL);
-            itemgroup.accept(CRACKED_VERADITE_BRICKS);
-            itemgroup.accept(CRACKED_VERADITE_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_VERADITE_BRICK_SLAB);
-            itemgroup.accept(CRACKED_VERADITE_BRICK_WALL);
-            itemgroup.accept(CHISELED_VERADITE);
-            itemgroup.accept(KURODITE);
-            itemgroup.accept(POLISHED_KURODITE);
-            itemgroup.accept(POLISHED_KURODITE_STAIRS);
-            itemgroup.accept(POLISHED_KURODITE_SLAB);
-            itemgroup.accept(POLISHED_KURODITE_WALL);
-            itemgroup.accept(KURODITE_BRICKS);
-            itemgroup.accept(KURODITE_BRICK_STAIRS);
-            itemgroup.accept(KURODITE_BRICK_SLAB);
-            itemgroup.accept(KURODITE_BRICK_WALL);
-            itemgroup.accept(CRACKED_KURODITE_BRICKS);
-            itemgroup.accept(CRACKED_KURODITE_BRICK_STAIRS);
-            itemgroup.accept(CRACKED_KURODITE_BRICK_SLAB);
-            itemgroup.accept(CRACKED_KURODITE_BRICK_WALL);
-            itemgroup.accept(CHISELED_KURODITE);
-
-            itemgroup.accept(PURPUR_WALL);
-            itemgroup.accept(CHISELED_PURPUR);
-
-            itemgroup.accept(CUT_IRON);
-            itemgroup.accept(CUT_IRON_STAIRS);
-            itemgroup.accept(CUT_IRON_SLAB);
-            itemgroup.accept(CHISELED_IRON);
-            itemgroup.accept(IRON_GRATE);
-            itemgroup.accept(IRON_BULB);
-
-            itemgroup.accept(CUT_GOLD);
-            itemgroup.accept(CUT_GOLD_STAIRS);
-            itemgroup.accept(CUT_GOLD_SLAB);
-            itemgroup.accept(CHISELED_GOLD);
-            itemgroup.accept(GOLD_GRATE);
-            itemgroup.accept(GOLD_BULB);
-            itemgroup.accept(GOLD_DOOR);
-            itemgroup.accept(GOLD_TRAPDOOR);
-            itemgroup.accept(GOLD_BARS);
-            itemgroup.accept(GOLD_CHAIN);
-
-            itemgroup.accept(SHADOLINE_BLOCK);
-            itemgroup.accept(CUT_SHADOLINE);
-            itemgroup.accept(CUT_SHADOLINE_STAIRS);
-            itemgroup.accept(CUT_SHADOLINE_SLAB);
-            itemgroup.accept(CHISELED_SHADOLINE);
-            itemgroup.accept(SHADOLINE_GRATE);
-            itemgroup.accept(SHADOLINE_BULB);
-            itemgroup.accept(SHADOLINE_DOOR);
-            itemgroup.accept(SHADOLINE_TRAPDOOR);
-            itemgroup.accept(SHADOLINE_BARS);
-            itemgroup.accept(SHADOLINE_CHAIN);
-
-        });
-
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register((itemgroup) -> {
-
-            itemgroup.accept(SILT);
-            itemgroup.accept(SOULSLATE);
-            itemgroup.accept(NETHERRACK_GLOWSTONE_ORE);
-            itemgroup.accept(MIRESTONE);
-            itemgroup.accept(VERADITE);
-            itemgroup.accept(KURODITE);
-            itemgroup.accept(PALLID_MAGNIA);
-            itemgroup.accept(UMBRAL_MAGNIA);
-            itemgroup.accept(END_STONE_SHADOLINE_ORE);
-            itemgroup.accept(MIRESTONE_SHADOLINE_ORE);
-            itemgroup.accept(RAW_SHADOLINE_BLOCK);
-
-            itemgroup.accept(WILD_WHEAT);
-            itemgroup.accept(WILD_CARROT);
-            itemgroup.accept(WILD_POTATO);
-            itemgroup.accept(WILD_BEETROOT);
-            itemgroup.accept(BLACK_STINKHORN);
-            itemgroup.accept(WHITE_STINKHORN);
-            itemgroup.accept(PONTEDERIA);
-            itemgroup.accept(HIBISCUS);
-            itemgroup.accept(POKER);
-            itemgroup.accept(BUSY_LIZZIE);
-            itemgroup.accept(GOLDENROD);
-            itemgroup.accept(BARLEY);
-            itemgroup.accept(SEA_OATS);
-            itemgroup.accept(PAMPAS);
-            itemgroup.accept(SHORT_ICY_IRIS);
-            itemgroup.accept(TALL_ICY_IRIS);
-            itemgroup.accept(CLOVERS);
-            itemgroup.accept(EMBER_SPROUTS);
-            itemgroup.accept(END_GROWTH);
-            itemgroup.accept(WISP_SPROUTS);
-            itemgroup.accept(WISP);
-            itemgroup.accept(FLOWERING_WISP);
-            itemgroup.accept(CELESTIAL_VINES_HEAD);
-            itemgroup.accept(BLINKVINE_HEAD);
-
-        });
-
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS).register((itemgroup) -> {
-
-            itemgroup.accept(CHORUS_SHELF);
-            itemgroup.accept(CHORUS_SIGN);
-            itemgroup.accept(CHORUS_HANGING_SIGN);
-
-            itemgroup.accept(IRON_BULB);
-            itemgroup.accept(GOLD_BULB);
-            itemgroup.accept(GOLD_CHAIN);
-            itemgroup.accept(GOLD_LANTERN);
-            itemgroup.accept(SHADOLINE_BULB);
-            itemgroup.accept(SHADOLINE_CHAIN);
-            itemgroup.accept(SHADOLINE_LANTERN);
-
-        });
-
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.REDSTONE_BLOCKS).register((itemgroup) -> {
-
-            itemgroup.accept(IRON_BULB);
-            itemgroup.accept(GOLD_BULB);
-            itemgroup.accept(SHADOLINE_BULB);
-
-        });
-
-        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COLORED_BLOCKS).register((itemgroup) -> {
-
-            itemgroup.accept(SOUL_GLASS);
-
-        });
-
-    }
+    public static void initialize() {}
 
     private static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean registerItem) {
 
@@ -710,6 +414,10 @@ public class ModBlocks {
 
         return Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
 
+    }
+
+    private static FlowingFluid registerFluid(String name, FlowingFluid fluid) {
+        return Registry.register(BuiltInRegistries.FLUID, Identifier.fromNamespaceAndPath(MOD_ID, name), fluid);
     }
 
     private static ResourceKey<Block> keyOfBlock(String name) {

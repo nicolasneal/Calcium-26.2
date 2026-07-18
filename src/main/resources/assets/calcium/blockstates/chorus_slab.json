@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "calcium:block/chorus_slab"
+    },
+    "type=double": {
+      "model": "calcium:block/chorus_planks"
+    },
+    "type=top": {
+      "model": "calcium:block/chorus_slab_top"
+    }
+  }
+}

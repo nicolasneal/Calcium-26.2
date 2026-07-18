@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "calcium:block/monitor/default_front",
+    "down": "calcium:block/monitor/default_end",
+    "up": "calcium:block/monitor/default_end",
+    "north": "calcium:block/monitor/default_front",
+    "south": "calcium:block/monitor/default_back",
+    "east": "calcium:block/monitor/default_side",
+    "west": "calcium:block/monitor/default_side"
+  }
+}

@@ -101,7 +101,7 @@
 
   // BLOCK NAMES
 
-  "block.minecraft.amethyst_block": "Amethyst Block",
+  "block.minecraft.amethyst_block": "Amethyst",
   "block.minecraft.bamboo_block": "Bamboo Block",
   "block.minecraft.chiseled_polished_blackstone": "Chiseled Blackstone",
   "block.minecraft.chiseled_stone_bricks": "Chiseled Stone",
@@ -315,8 +315,8 @@
   "item.minecraft.baked_potato": "Baked Potato \uEff3\uEff3\uEff4",
   "item.minecraft.beetroot": "Beetroot \uEff4",
   "item.minecraft.beetroot_soup": "Beetroot Soup \uEff3\uEff3\uEff3",
-  "item.minecraft.bread": "Bread \uEff3\uEff3\uEff4",
-  "block.minecraft.cake": "Cake \uEff3\uEff3\uEff3\uEff3\uEff3\uEff3\uEff3",
+  "item.minecraft.bread": "Bread \uEff3\uEff3\uEff3",
+  "block.minecraft.cake": "Sweet Berry Cake",
   "item.minecraft.carrot": "Carrot \uEff3\uEff4",
   "item.minecraft.chorus_fruit": "Chorus Fruit \uEff3\uEff3",
   "item.minecraft.cod": "Cod \uEff3",
@@ -327,7 +327,7 @@
   "item.minecraft.cooked_porkchop": "Cooked Pork \uEff3\uEff3\uEff3\uEff3",
   "item.minecraft.cooked_rabbit": "Cooked Rabbit \uEff3\uEff3\uEff4",
   "item.minecraft.cooked_salmon": "Cooked Salmon \uEff3\uEff3\uEff3",
-  "item.minecraft.cookie": "Cookie \uEff3",
+  "item.minecraft.cookie": "Cookie \uEff3\uEff3\uEff3",
   "item.minecraft.dried_kelp": "Dried Kelp \uEff4",
   "item.minecraft.enchanted_golden_apple": "§fEnchanted Golden Apple \uEff3\uEff3",
   "item.minecraft.glow_berries": "Glow Berries \uEff3",
@@ -338,7 +338,7 @@
   "item.minecraft.poisonous_potato": "Poisonous Potato \uEff4",
   "item.minecraft.potato": "Potato \uEff4",
   "item.minecraft.pufferfish": "Pufferfish \uEff4",
-  "item.minecraft.pumpkin_pie": "Pumpkin Pie \uEff3\uEff3\uEff3\uEff3",
+  "item.minecraft.pumpkin_pie": "Apple Pie \uEff3\uEff3\uEff3\uEff3",
   "item.minecraft.rabbit_stew": "Rabbit Stew \uEff3\uEff3\uEff3\uEff3\uEff3",
   "item.minecraft.beef": "Beef \uEff3\uEff4",
   "item.minecraft.chicken": "Chicken \uEff3",

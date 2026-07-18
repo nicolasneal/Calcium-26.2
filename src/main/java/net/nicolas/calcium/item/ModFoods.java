@@ -4,6 +4,13 @@ import net.minecraft.world.food.FoodProperties;
 
 public class ModFoods {
 
+    // Vanilla Food Overwrites
+
+    public static final FoodProperties BREAD = new FoodProperties.Builder().nutrition(6).saturationModifier(0.5f).build();
+    public static final FoodProperties COOKIE = new FoodProperties.Builder().nutrition(6).saturationModifier(0.6f).build();
+
+    // Mod Foods
+
     public static final FoodProperties CHEVAL = new FoodProperties.Builder().nutrition(3).saturationModifier(0.25f).build();
     public static final FoodProperties COOKED_CHEVAL = new FoodProperties.Builder().nutrition(7).saturationModifier(0.75f).build();
     public static final FoodProperties BEAR = new FoodProperties.Builder().nutrition(3).saturationModifier(0.25f).build();
@@ -17,6 +24,6 @@ public class ModFoods {
     public static final FoodProperties TENTACLES = new FoodProperties.Builder().nutrition(2).saturationModifier(0.12f).build();
     public static final FoodProperties COOKED_TENTACLES = new FoodProperties.Builder().nutrition(5).saturationModifier(0.60f).build();
     public static final FoodProperties CHOCOLATE = new FoodProperties.Builder().nutrition(4).saturationModifier(0.75f).build();
-    public static final FoodProperties WATER_BOWL = new FoodProperties.Builder().nutrition(0).saturationModifier(0.00f).alwaysEdible().build();
+    public static final FoodProperties WATER_BOWL = new FoodProperties.Builder().nutrition(0).alwaysEdible().build();
 
 }

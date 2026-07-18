@@ -1,0 +1,11 @@
+{
+  "type": "calcium:cooking",
+  "cookingtime": 150,
+  "experience": 0.35,
+  "ingredients": [
+    "minecraft:mutton"
+  ],
+  "result": {
+    "id": "minecraft:cooked_mutton"
+  }
+}

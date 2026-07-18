@@ -30,6 +30,17 @@ public class ModRecipes {
     public static final RecipeBookCategory ENCHANTING_PARAGON = Registry.register(BuiltInRegistries.RECIPE_BOOK_CATEGORY, Identifier.fromNamespaceAndPath("calcium", "enchanting_paragon"), new RecipeBookCategory());
     public static final RecipeDisplay.Type<EnchantingRecipeDisplay> ENCHANTING_DISPLAY_TYPE = Registry.register(BuiltInRegistries.RECIPE_DISPLAY, Identifier.fromNamespaceAndPath("calcium", "enchanting"), EnchantingRecipeDisplay.TYPE);
 
+    public static final RecipeType<OvenRecipe> COOKING_TYPE = Registry.register(
+        BuiltInRegistries.RECIPE_TYPE, Identifier.fromNamespaceAndPath("calcium", "cooking"), new RecipeType<OvenRecipe>() {
+            @Override public String toString() { return "calcium:cooking"; }
+        }
+    );
+
+    public static final RecipeSerializer<OvenRecipe> COOKING_SERIALIZER = Registry.register(BuiltInRegistries.RECIPE_SERIALIZER, Identifier.fromNamespaceAndPath("calcium", "cooking"), OvenRecipe.Serializer.INSTANCE);
+    public static final RecipeBookCategory COOKING_SIMPLE = Registry.register(BuiltInRegistries.RECIPE_BOOK_CATEGORY, Identifier.fromNamespaceAndPath("calcium", "cooking_simple"), new RecipeBookCategory());
+    public static final RecipeBookCategory COOKING_COMPLEX = Registry.register(BuiltInRegistries.RECIPE_BOOK_CATEGORY, Identifier.fromNamespaceAndPath("calcium", "cooking_complex"), new RecipeBookCategory());
+    public static final RecipeDisplay.Type<OvenRecipeDisplay> COOKING_DISPLAY_TYPE = Registry.register(BuiltInRegistries.RECIPE_DISPLAY, Identifier.fromNamespaceAndPath("calcium", "cooking"), OvenRecipeDisplay.TYPE);
+
     private static final Map<String, RecipeBookCategory> ENCHANTMENT_TIERS = buildEnchantmentTiers();
 
     private static Map<String, RecipeBookCategory> buildEnchantmentTiers() {

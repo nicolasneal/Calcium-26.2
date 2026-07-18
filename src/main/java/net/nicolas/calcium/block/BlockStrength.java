@@ -16,6 +16,12 @@ public final class BlockStrength {
 
         // Corrections
 
+        BLOCK_STRENGTH.put(Blocks.GRASS_BLOCK, new Strength(0.5F, 0.5F));
+        BLOCK_STRENGTH.put(Blocks.PODZOL, new Strength(0.5F, 0.5F));
+        BLOCK_STRENGTH.put(Blocks.MYCELIUM, new Strength(0.5F, 0.5F));
+        BLOCK_STRENGTH.put(Blocks.DIRT_PATH, new Strength(0.5F, 0.5F));
+        BLOCK_STRENGTH.put(Blocks.FARMLAND, new Strength(0.5F, 0.5F));
+
         BLOCK_STRENGTH.put(Blocks.COBBLESTONE, new Strength(1.5F, 6.0F));
         BLOCK_STRENGTH.put(Blocks.COBBLESTONE_STAIRS, new Strength(1.5F, 6.0F));
         BLOCK_STRENGTH.put(Blocks.COBBLESTONE_SLAB, new Strength(1.5F, 6.0F));

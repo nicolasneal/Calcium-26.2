@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "lit=false": { "model": "calcium:block/cyan_candle_chocolate_cake" },
+    "lit=true": { "model": "calcium:block/cyan_candle_chocolate_cake_lit" }
+  }
+}

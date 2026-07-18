@@ -3,7 +3,7 @@ package net.nicolas.calcium.mixin.gameplay;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.Vec3;
-import net.nicolas.calcium.fluid.ModFluids;
+import net.nicolas.calcium.block.ModBlocks;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -25,7 +25,7 @@ public abstract class LivingEntityMixin {
             fluidState = entity.level().getFluidState(entity.blockPosition().above());
         }
 
-        if (fluidState.getType() == ModFluids.ECTOPLASM_STILL || fluidState.getType() == ModFluids.ECTOPLASM_FLOWING) {
+        if (fluidState.getType() == ModBlocks.ECTOPLASM_STILL || fluidState.getType() == ModBlocks.ECTOPLASM_FLOWING) {
 
             entity.fallDistance = 0.0F;
 
@@ -70,7 +70,7 @@ public abstract class LivingEntityMixin {
             fluidState = entity.level().getFluidState(entity.blockPosition().above());
         }
 
-        if (fluidState.getType() == ModFluids.ECTOPLASM_STILL || fluidState.getType() == ModFluids.ECTOPLASM_FLOWING) {
+        if (fluidState.getType() == ModBlocks.ECTOPLASM_STILL || fluidState.getType() == ModBlocks.ECTOPLASM_FLOWING) {
             ci.cancel();
         }
 

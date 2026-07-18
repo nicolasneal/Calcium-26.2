@@ -1,0 +1,6 @@
+{
+  "parent": "calcium:block/template_chocolate_cake_with_candle",
+  "textures": {
+    "candle": "minecraft:block/blue_candle"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "calcium:block/oven_front_on",
+    "north": "calcium:block/oven_front_on",
+    "south": "calcium:block/oven_side",
+    "east": "calcium:block/oven_side",
+    "west": "calcium:block/oven_side",
+    "up": "calcium:block/oven_top_on",
+    "down": "calcium:block/oven_bottom"
+  }
+}

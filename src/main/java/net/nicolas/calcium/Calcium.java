@@ -7,12 +7,15 @@ import net.fabricmc.fabric.api.registry.FuelValueEvents;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.cauldron.CauldronInteractions;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
+import net.minecraft.world.entity.ai.village.poi.PoiType;
+import net.minecraft.world.entity.ai.village.poi.PoiTypes;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.inventory.MenuType;
@@ -29,18 +32,21 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.event.Cracking;
-import net.nicolas.calcium.fluid.ModFluids;
+import net.nicolas.calcium.item.CreativeInventoryOrder;
 import net.nicolas.calcium.item.ModItems;
 import net.nicolas.calcium.mixin.accessors.AbstractBlockAccessor;
 import net.nicolas.calcium.mixin.accessors.AxeItemAccessor;
 import net.nicolas.calcium.mixin.accessors.BlockStateBaseAccessor;
 import net.nicolas.calcium.mixin.accessors.CauldronDispatcherAccessor;
 import net.nicolas.calcium.mixin.accessors.CauldronInteractionsAccessor;
+import net.nicolas.calcium.mixin.accessors.PoiTypesAccessor;
 import net.nicolas.calcium.network.ModNetworking;
 import net.nicolas.calcium.recipe.ModRecipes;
 import net.nicolas.calcium.screen.CustomBeaconScreenHandler;
 import net.nicolas.calcium.screen.CustomEnchantingScreenHandler;
+import net.nicolas.calcium.screen.OvenMenu;
 import net.nicolas.calcium.sound.ModSounds;
+import net.nicolas.calcium.worldgen.ZPositionDensityFunction;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -57,17 +63,32 @@ public class Calcium implements ModInitializer {
         Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath("calcium", "enchanting_screen"),
             new MenuType<>(CustomEnchantingScreenHandler::new, FeatureFlagSet.of(FeatureFlags.VANILLA)));
 
+    public static final MenuType<OvenMenu> OVEN_MENU =
+        Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath("calcium", "oven"),
+            new MenuType<>(OvenMenu::new, FeatureFlagSet.of(FeatureFlags.VANILLA)));
+
     @Override public void onInitialize() {
 
         // Class Initialization
 
         ModItems.initialize();
         ModBlocks.initialize();
-        ModFluids.initialize();
         ModRecipes.initialize();
         ModSounds.initialize();
         ModNetworking.initialize();
+        CreativeInventoryOrder.initialize();
         Cracking.registerEvents();
+
+        // Butcher Villagers Use the Oven Instead of the Smoker
+
+        Holder<PoiType> butcherPoiType = BuiltInRegistries.POINT_OF_INTEREST_TYPE.getOrThrow(PoiTypes.BUTCHER);
+        Map<BlockState, Holder<PoiType>> poiTypeByState = PoiTypesAccessor.calcium$getTypeByState();
+        Blocks.SMOKER.getStateDefinition().getPossibleStates().forEach(poiTypeByState::remove);
+        ModBlocks.OVEN.getStateDefinition().getPossibleStates().forEach(state -> poiTypeByState.put(state, butcherPoiType));
+
+        // World Generation Density Function Types
+
+        Registry.register(BuiltInRegistries.DENSITY_FUNCTION_TYPE, Identifier.fromNamespaceAndPath("calcium", "z_position"), ZPositionDensityFunction.CODEC.codec());
 
         // Resource Pack Initialization
 
@@ -213,6 +234,7 @@ public class Calcium implements ModInitializer {
             context.modify(Items.WATER_BUCKET, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.LAVA_BUCKET, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.POWDER_SNOW_BUCKET, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.MILK_BUCKET, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.POTION, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.SPLASH_POTION, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.LINGERING_POTION, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
@@ -322,6 +344,9 @@ public class Calcium implements ModInitializer {
         ((AbstractBlockAccessor) Blocks.NOTE_BLOCK).setSoundGroup(SoundType.SHELF);
         ((AbstractBlockAccessor) Blocks.JUKEBOX).setSoundGroup(SoundType.SHELF);
 
+        ((AbstractBlockAccessor) Blocks.ANVIL).setSoundGroup(SoundType.METAL);
+        ((AbstractBlockAccessor) Blocks.CHIPPED_ANVIL).setSoundGroup(SoundType.METAL);
+        ((AbstractBlockAccessor) Blocks.DAMAGED_ANVIL).setSoundGroup(SoundType.METAL);
         ((AbstractBlockAccessor) Blocks.CAULDRON).setSoundGroup(SoundType.METAL);
         ((AbstractBlockAccessor) Blocks.COAL_BLOCK).setSoundGroup(SoundType.METAL);
         ((AbstractBlockAccessor) Blocks.LAPIS_BLOCK).setSoundGroup(SoundType.METAL);

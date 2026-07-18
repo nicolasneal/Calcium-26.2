@@ -1,0 +1,14 @@
+{
+  "type": "calcium:cooking",
+  "cookingtime": 150,
+  "experience": 0.35,
+  "ingredients": [
+    "calcium:water_bowl",
+    "minecraft:rabbit",
+    "minecraft:carrot",
+    "minecraft:brown_mushroom"
+  ],
+  "result": {
+    "id": "minecraft:rabbit_stew"
+  }
+}

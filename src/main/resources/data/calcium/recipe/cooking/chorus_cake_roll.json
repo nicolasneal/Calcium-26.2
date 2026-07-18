@@ -1,0 +1,14 @@
+{
+  "type": "calcium:cooking",
+  "cookingtime": 150,
+  "experience": 0.35,
+  "ingredients": [
+    "calcium:batter",
+    "minecraft:chorus_fruit",
+    "minecraft:chorus_fruit",
+    "minecraft:sugar"
+  ],
+  "result": {
+    "id": "calcium:chorus_cake_roll"
+  }
+}
