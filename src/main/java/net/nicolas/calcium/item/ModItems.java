@@ -1,7 +1,9 @@
 package net.nicolas.calcium.item;
 
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+import net.minecraft.core.GlobalPos;
 import net.minecraft.core.Registry;
+import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -18,6 +20,7 @@ import net.minecraft.world.item.component.Consumables;
 import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.fluid.ModFluids;
 import net.nicolas.calcium.item.custom.EctoplasmBucketItem;
+import net.nicolas.calcium.item.custom.SignalCardItem;
 import net.nicolas.calcium.sound.ModSounds;
 
 import java.util.function.Function;
@@ -87,6 +90,8 @@ public class ModItems {
     public static final Item MUSIC_DISC_BLISS = register("music_disc_bliss", Item::new, new Item.Properties().jukeboxPlayable(ModSounds.BLISS).stacksTo(64));
     public static final Item MUSIC_DISC_DECAY = register("music_disc_decay", Item::new, new Item.Properties().jukeboxPlayable(ModSounds.DECAY).stacksTo(64));
     public static final Item MUSIC_DISC_GLARE = register("music_disc_glare", Item::new, new Item.Properties().jukeboxPlayable(ModSounds.GLARE).stacksTo(64));
+    public static final DataComponentType<GlobalPos> LINKED_FEED = Registry.register(BuiltInRegistries.DATA_COMPONENT_TYPE, Identifier.fromNamespaceAndPath(MOD_ID, "linked_feed"), DataComponentType.<GlobalPos>builder().persistent(GlobalPos.CODEC).networkSynchronized(GlobalPos.STREAM_CODEC).build());
+    public static final Item SIGNAL_CARD = register("signal_card", SignalCardItem::new, new Item.Properties().stacksTo(1));
 
     private static <T extends Item> T register(String name, Function<Item.Properties, T> constructor, Item.Properties settings) {
         ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MOD_ID, name));
@@ -95,6 +100,15 @@ public class ModItems {
     }
 
     public static void initialize() {
+
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemgroup) -> {
+
+            itemgroup.getDisplayStacks().removeIf(stack -> stack.is(Items.POLISHED_BLACKSTONE_PRESSURE_PLATE));
+            itemgroup.getSearchTabStacks().removeIf(stack -> stack.is(Items.POLISHED_BLACKSTONE_PRESSURE_PLATE));
+            itemgroup.getDisplayStacks().removeIf(stack -> stack.is(Items.POLISHED_BLACKSTONE_BUTTON));
+            itemgroup.getSearchTabStacks().removeIf(stack -> stack.is(Items.POLISHED_BLACKSTONE_BUTTON));
+
+        });
 
         CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register((itemgroup) -> {
 
@@ -151,6 +165,12 @@ public class ModItems {
             itemgroup.accept(MUSIC_DISC_BLISS);
             itemgroup.accept(MUSIC_DISC_DECAY);
             itemgroup.accept(MUSIC_DISC_GLARE);
+
+        });
+
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.REDSTONE_BLOCKS).register(itemgroup -> {
+
+            itemgroup.accept(SIGNAL_CARD);
 
         });
 

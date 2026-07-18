@@ -122,6 +122,10 @@ public class ModSounds {
     public static final SoundEvent ECTOPLASM_BUCKET_FILL = register("item.bucket.fill_ectoplasm");
     public static final SoundEvent ECTOPLASM_AMBIENT = register("block.ectoplasm.whispering");
 
+    public static final SoundEvent MONITOR_STATIC = register("block.monitor.static");
+    public static final SoundEvent SIGNAL_CARD_INSERT = register("item.signal_card.insert");
+    public static final SoundEvent SIGNAL_CARD_EJECT = register("item.signal_card.eject");
+
     // MUSIC DISCS
 
     public static final SoundEvent MUSIC_DISC_BLISS = register("music.jukebox.bliss");

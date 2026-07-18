@@ -1,6 +1,7 @@
 package net.nicolas.calcium.block;
 
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
 import net.minecraft.core.Registry;
@@ -18,8 +19,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
@@ -372,8 +375,12 @@ public class ModBlocks {
 
     public static final Block SOUL_GLASS = register("soul_glass", TransparentBlock::new, BlockBehaviour.Properties.of().sound(SoundType.GLASS).instrument(NoteBlockInstrument.HAT).strength(0.6F, 0.6F).noOcclusion().isValidSpawn(Blocks::never).isRedstoneConductor(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never), true);
 
-    // MISCELLANEOUS (1)
+    // FUNCTIONAL BLOCKS (3)
 
+    public static final Block MONITOR = register("monitor", MonitorBlock::new, BlockBehaviour.Properties.of().sound(SoundType.CHISELED_BOOKSHELF).mapColor(MapColor.COLOR_BROWN).instrument(NoteBlockInstrument.BASS).strength(2.5F, 2.5F).lightLevel(state -> state.getValue(BlockStateProperties.POWERED) ? 7 : 0), true);
+    public static final BlockEntityType<MonitorBlockEntity> MONITOR_BLOCK_ENTITY = Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, Identifier.fromNamespaceAndPath(MOD_ID, "monitor"), FabricBlockEntityTypeBuilder.create(MonitorBlockEntity::new, MONITOR).build());
+    public static final Block VIEWFINDER = register("viewfinder", ViewfinderBlock::new, BlockBehaviour.Properties.of().sound(SoundType.METAL).mapColor(MapColor.COLOR_LIGHT_GRAY).instrument(NoteBlockInstrument.IRON_XYLOPHONE).strength(3.5F, 3.5F).noOcclusion(), true);
+    public static final BlockEntityType<ViewfinderBlockEntity> VIEWFINDER_BLOCK_ENTITY = Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, Identifier.fromNamespaceAndPath(MOD_ID, "viewfinder"), FabricBlockEntityTypeBuilder.create(ViewfinderBlockEntity::new, VIEWFINDER).build());
     public static final Block CHORUS_CAKE_ROLL = register("chorus_cake_roll", ChorusCakeRollBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_MAGENTA).forceSolidOn().sound(ModSounds.CHORUS_CAKE_ROLL).strength(0.5F).pushReaction(PushReaction.DESTROY).noLootTable(), false);
 
     public static void initialize() {
@@ -689,6 +696,8 @@ public class ModBlocks {
             itemgroup.accept(IRON_BULB);
             itemgroup.accept(GOLD_BULB);
             itemgroup.accept(SHADOLINE_BULB);
+            itemgroup.accept(MONITOR);
+            itemgroup.accept(VIEWFINDER);
 
         });
 

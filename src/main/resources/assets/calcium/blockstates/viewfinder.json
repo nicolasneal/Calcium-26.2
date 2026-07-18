@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=north": { "model": "calcium:block/viewfinder" },
+    "facing=south": { "model": "calcium:block/viewfinder" },
+    "facing=west": { "model": "calcium:block/viewfinder" },
+    "facing=east": { "model": "calcium:block/viewfinder" },
+    "facing=up": { "model": "calcium:block/viewfinder" },
+    "facing=down": { "model": "calcium:block/viewfinder" }
+  }
+}

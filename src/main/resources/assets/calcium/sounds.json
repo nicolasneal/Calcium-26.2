@@ -23,6 +23,21 @@
       "calcium:block/soulslate/step4"
     ]
   },
+  "block.monitor.static": {
+    "sounds": [
+      "calcium:block/monitor/static"
+    ]
+  },
+  "item.signal_card.insert": {
+    "sounds": [
+      "calcium:item/signal_card/insert"
+    ]
+  },
+  "item.signal_card.eject": {
+    "sounds": [
+      "calcium:item/signal_card/eject"
+    ]
+  },
   "block.ectoplasm.whispering": {
     "sounds": [
       "calcium:block/ectoplasm/whispering1",

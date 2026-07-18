@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": "#minecraft:planks",
+    "@": "minecraft:tinted_glass",
+    "$": "minecraft:diamond",
+    "%": "minecraft:redstone"
+  },
+  "pattern": [
+    "###",
+    "@$%",
+    "###"
+  ],
+  "result": {
+    "id": "calcium:monitor",
+    "count": 1
+  }
+}

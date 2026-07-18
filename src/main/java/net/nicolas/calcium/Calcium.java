@@ -41,6 +41,7 @@ import net.nicolas.calcium.recipe.ModRecipes;
 import net.nicolas.calcium.screen.CustomBeaconScreenHandler;
 import net.nicolas.calcium.screen.CustomEnchantingScreenHandler;
 import net.nicolas.calcium.sound.ModSounds;
+import net.nicolas.calcium.worldgen.ZPositionDensityFunction;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -68,6 +69,10 @@ public class Calcium implements ModInitializer {
         ModSounds.initialize();
         ModNetworking.initialize();
         Cracking.registerEvents();
+
+        // World Generation Density Function Types
+
+        Registry.register(BuiltInRegistries.DENSITY_FUNCTION_TYPE, Identifier.fromNamespaceAndPath("calcium", "z_position"), ZPositionDensityFunction.CODEC.codec());
 
         // Resource Pack Initialization
 
