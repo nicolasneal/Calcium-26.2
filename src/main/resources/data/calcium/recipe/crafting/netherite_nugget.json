@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": { "#": "minecraft:netherite_ingot" },
+  "pattern": ["#"],
+  "result": { "id": "calcium:netherite_nugget", "count": 4 }
+}
