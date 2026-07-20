@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/trapdoors/template_trapdoor_top",
+  "textures": {
+    "texture": "calcium:block/trapdoors/chorus",
+    "particle": "calcium:block/particles/chorus_door"
+  }
+}

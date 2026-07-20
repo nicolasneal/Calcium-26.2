@@ -33,7 +33,17 @@ public class ModItems {
     public static final Item CHORUS_SIGN = register("chorus_sign", settings -> new SignItem(ModBlocks.CHORUS_SIGN, ModBlocks.CHORUS_WALL_SIGN, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
     public static final Item CHORUS_HANGING_SIGN = register("chorus_hanging_sign", settings -> new HangingSignItem(ModBlocks.CHORUS_HANGING_SIGN, ModBlocks.CHORUS_WALL_HANGING_SIGN, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
 
-    // INGREDIENTS: MOB DROPS (7)
+    // INGREDIENTS (18)
+
+    public static final Item RAW_SHADOLINE = register("raw_shadoline", Item::new, new Item.Properties().stacksTo(64));
+    public static final Item NETHERITE_NUGGET = register("netherite_nugget", Item::new, new Item.Properties().stacksTo(64));
+    public static final Item SHADOLINE_NUGGET = register("shadoline_nugget", Item::new, new Item.Properties().stacksTo(64));
+    public static final Item SHADOLINE_INGOT = register("shadoline_ingot", Item::new, new Item.Properties().stacksTo(64));
+    public static final Item WOODEN_ROD = register("wooden_rod", Item::new, new Item.Properties().stacksTo(64));
+    public static final Item PUMPKIN_SLICE = register("pumpkin_slice", Item::new, new Item.Properties().stacksTo(64));
+    public static final Item FLOUR = register("flour", Item::new, new Item.Properties().stacksTo(64));
+    public static final Item DOUGH = register("dough", Item::new, new Item.Properties().stacksTo(64));
+    public static final Item BATTER = register("batter", Item::new, new Item.Properties().stacksTo(64));
 
     public static final Item HIDE = register("hide", Item::new, new Item.Properties().stacksTo(64));
     public static final Item FUR = register("fur", Item::new, new Item.Properties().stacksTo(64));
@@ -43,23 +53,11 @@ public class ModItems {
     public static final Item GHAST_TENTACLE = register("ghast_tentacle", Item::new, new Item.Properties().stacksTo(64));
     public static final Item WARDEN_HEART = register("warden_heart", Item::new, new Item.Properties().stacksTo(64));
 
-    // INGREDIENTS: RESOURCES (9)
-
-    public static final Item RAW_SHADOLINE = register("raw_shadoline", Item::new, new Item.Properties().stacksTo(64));
-    public static final Item SHADOLINE_NUGGET = register("shadoline_nugget", Item::new, new Item.Properties().stacksTo(64));
-    public static final Item SHADOLINE_INGOT = register("shadoline_ingot", Item::new, new Item.Properties().stacksTo(64));
-    public static final Item WOODEN_ROD = register("wooden_rod", Item::new, new Item.Properties().stacksTo(64));
-    public static final Item PUMPKIN_SLICE = register("pumpkin_slice", Item::new, new Item.Properties().stacksTo(64));
-    public static final Item TABLET = register("tablet", Item::new, new Item.Properties().stacksTo(64));
-    public static final Item FLOUR = register("flour", Item::new, new Item.Properties().stacksTo(64));
-    public static final Item DOUGH = register("dough", Item::new, new Item.Properties().stacksTo(64));
-    public static final Item BATTER = register("batter", Item::new, new Item.Properties().stacksTo(64));
-
-    // INGREDIENTS: BANNER PATTERNS (1)
+    public static final Item WATER_BOWL = register("water_bowl", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.WATER_BOWL).component(DataComponents.CONSUMABLE, Consumables.DEFAULT_DRINK).usingConvertsTo(BOWL).craftRemainder(BOWL));
 
     public static final Item CRESCENT_BANNER_PATTERN = register("crescent_banner_pattern", Item::new, new Item.Properties().stacksTo(64).delayedComponent(DataComponents.PROVIDES_BANNER_PATTERNS, context -> context.getOrThrow(TagKey.create(Registries.BANNER_PATTERN, Identifier.fromNamespaceAndPath(MOD_ID, "pattern_item/crescent")))));
 
-    // FOOD AND DRINK (15)
+    // FOOD AND DRINK (16)
 
     public static final Item CHEVAL = register("cheval", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.CHEVAL));
     public static final Item COOKED_CHEVAL = register("cooked_cheval", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.COOKED_CHEVAL));
@@ -77,9 +75,8 @@ public class ModItems {
     public static final Item CHOCOLATE_CAKE = register("chocolate_cake", settings -> new BlockItem(ModBlocks.CHOCOLATE_CAKE, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
     public static final Item PUMPKIN_CAKE_ROLL = register("pumpkin_cake_roll", settings -> new BlockItem(ModBlocks.PUMPKIN_CAKE_ROLL, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
     public static final Item CHORUS_CAKE_ROLL = register("chorus_cake_roll", settings -> new BlockItem(ModBlocks.CHORUS_CAKE_ROLL, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
-    public static final Item WATER_BOWL = register("water_bowl", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.WATER_BOWL).component(DataComponents.CONSUMABLE, Consumables.DEFAULT_DRINK).usingConvertsTo(BOWL).craftRemainder(BOWL));
 
-    // TOOLS & UTILITY (8)
+    // TOOLS & UTILITY (9)
 
     public static final Item COPPER_COIN = register("copper_coin", Item::new, new Item.Properties().stacksTo(64));
     public static final Item IRON_COIN = register("iron_coin", Item::new, new Item.Properties().stacksTo(64));
@@ -89,8 +86,8 @@ public class ModItems {
     public static final Item MUSIC_DISC_BLISS = register("music_disc_bliss", Item::new, new Item.Properties().jukeboxPlayable(ModSounds.BLISS).stacksTo(64));
     public static final Item MUSIC_DISC_DECAY = register("music_disc_decay", Item::new, new Item.Properties().jukeboxPlayable(ModSounds.DECAY).stacksTo(64));
     public static final Item MUSIC_DISC_GLARE = register("music_disc_glare", Item::new, new Item.Properties().jukeboxPlayable(ModSounds.GLARE).stacksTo(64));
-    public static final DataComponentType<GlobalPos> LINKED_FEED = Registry.register(BuiltInRegistries.DATA_COMPONENT_TYPE, Identifier.fromNamespaceAndPath(MOD_ID, "linked_feed"), DataComponentType.<GlobalPos>builder().persistent(GlobalPos.CODEC).networkSynchronized(GlobalPos.STREAM_CODEC).build());
     public static final Item SIGNAL_CARD = register("signal_card", SignalCardItem::new, new Item.Properties().stacksTo(1));
+    public static final DataComponentType<GlobalPos> LINKED_FEED = Registry.register(BuiltInRegistries.DATA_COMPONENT_TYPE, Identifier.fromNamespaceAndPath(MOD_ID, "linked_feed"), DataComponentType.<GlobalPos>builder().persistent(GlobalPos.CODEC).networkSynchronized(GlobalPos.STREAM_CODEC).build());
 
     private static <T extends Item> T register(String name, Function<Item.Properties, T> constructor, Item.Properties settings) {
         ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MOD_ID, name));
@@ -107,4 +104,5 @@ public class ModItems {
         BuiltInRegistries.DATA_COMPONENT_INITIALIZERS.add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("minecraft", "cookie")), (builder, context, key) -> builder.set(DataComponents.FOOD, ModFoods.COOKIE));
 
     }
+
 }

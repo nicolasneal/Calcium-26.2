@@ -497,5 +497,126 @@
       "calcium:block/wisp/break3",
       "calcium:block/wisp/break4"
     ]
+  },
+  "block.blackstone.break": {
+    "sounds": [
+      "calcium:block/blackstone/break1",
+      "calcium:block/blackstone/break2",
+      "calcium:block/blackstone/break3",
+      "calcium:block/blackstone/break4"
+    ]
+  },
+  "block.blackstone.step": {
+    "sounds": [
+      "calcium:block/blackstone/step1",
+      "calcium:block/blackstone/step2",
+      "calcium:block/blackstone/step3",
+      "calcium:block/blackstone/step4",
+      "calcium:block/blackstone/step5"
+    ]
+  },
+  "block.glowstone.break": {
+    "sounds": [
+      "calcium:block/glowstone/break1",
+      "calcium:block/glowstone/break2",
+      "calcium:block/glowstone/break3"
+    ]
+  },
+  "block.glowstone.place": {
+    "sounds": [
+      "calcium:block/glowstone/place1",
+      "calcium:block/glowstone/place2",
+      "calcium:block/glowstone/place3",
+      "calcium:block/glowstone/place4"
+    ]
+  },
+  "block.magma.break": {
+    "sounds": [
+      "calcium:block/magma/break1",
+      "calcium:block/magma/break2",
+      "calcium:block/magma/break3",
+      "calcium:block/magma/break4",
+      "calcium:block/magma/break5"
+    ]
+  },
+  "block.magma.step": {
+    "sounds": [
+      "calcium:block/magma/step1",
+      "calcium:block/magma/step2",
+      "calcium:block/magma/step3",
+      "calcium:block/magma/step4"
+    ]
+  },
+  "block.obsidian.break": {
+    "sounds": [
+      "calcium:block/obsidian/break1",
+      "calcium:block/obsidian/break2",
+      "calcium:block/obsidian/break3"
+    ]
+  },
+  "block.obsidian.place": {
+    "sounds": [
+      "calcium:block/obsidian/place1",
+      "calcium:block/obsidian/place2",
+      "calcium:block/obsidian/place3",
+      "calcium:block/obsidian/place4"
+    ]
+  },
+  "block.obsidian.step": {
+    "sounds": [
+      "calcium:block/obsidian/step1",
+      "calcium:block/obsidian/step2",
+      "calcium:block/obsidian/step3",
+      "calcium:block/obsidian/step4",
+      "calcium:block/obsidian/step5",
+      "calcium:block/obsidian/step6"
+    ]
+  },
+  "block.quartz.break": {
+    "sounds": [
+      "calcium:block/quartz/break1",
+      "calcium:block/quartz/break2",
+      "calcium:block/quartz/break3"
+    ]
+  },
+  "block.quartz.place": {
+    "sounds": [
+      "calcium:block/quartz/place1",
+      "calcium:block/quartz/place2",
+      "calcium:block/quartz/place3",
+      "calcium:block/quartz/place4"
+    ]
+  },
+  "block.gold_chain.break": {
+    "sounds": [
+      "calcium:block/gold_chain/break1",
+      "calcium:block/gold_chain/break2",
+      "calcium:block/gold_chain/break3",
+      "calcium:block/gold_chain/break4"
+    ]
+  },
+  "block.gold_chain.step": {
+    "sounds": [
+      "calcium:block/gold_chain/step1",
+      "calcium:block/gold_chain/step2",
+      "calcium:block/gold_chain/step3",
+      "calcium:block/gold_chain/step4"
+    ]
+  },
+  "block.shadoline_chain.break": {
+    "sounds": [
+      "calcium:block/shadoline_chain/break1",
+      "calcium:block/shadoline_chain/break2",
+      "calcium:block/shadoline_chain/break3",
+      "calcium:block/shadoline_chain/break4"
+    ]
+  },
+  "block.shadoline_chain.step": {
+    "sounds": [
+      "calcium:block/shadoline_chain/step1",
+      "calcium:block/shadoline_chain/step2",
+      "calcium:block/shadoline_chain/step3",
+      "calcium:block/shadoline_chain/step4"
+    ]
   }
 }

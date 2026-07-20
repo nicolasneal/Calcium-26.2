@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/hanging_signs/template_wall_hanging_sign",
+  "textures": {
+    "all": "calcium:block/hanging_signs/chorus",
+    "particle": "calcium:block/stripped_chorus_block_side"
+  }
+}

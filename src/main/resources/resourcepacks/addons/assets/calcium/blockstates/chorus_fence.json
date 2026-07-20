@@ -1,0 +1,9 @@
+{
+  "multipart": [
+    { "apply": { "model": "calcium:block/fences/chorus_fence_post" } },
+    { "apply": { "model": "calcium:block/fences/chorus_fence_north" }, "when": { "north": "true" } },
+    { "apply": { "model": "calcium:block/fences/chorus_fence_east" }, "when": { "east": "true" } },
+    { "apply": { "model": "calcium:block/fences/chorus_fence_south" }, "when": { "south": "true" } },
+    { "apply": { "model": "calcium:block/fences/chorus_fence_west" }, "when": { "west": "true" } }
+  ]
+}

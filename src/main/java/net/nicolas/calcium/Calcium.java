@@ -256,11 +256,17 @@ public class Calcium implements ModInitializer {
         ((AbstractBlockAccessor) Blocks.BRICK_STAIRS).setSoundGroup(SoundType.NETHER_BRICKS);
         ((AbstractBlockAccessor) Blocks.BRICK_SLAB).setSoundGroup(SoundType.NETHER_BRICKS);
         ((AbstractBlockAccessor) Blocks.BRICK_WALL).setSoundGroup(SoundType.NETHER_BRICKS);
+
         ((AbstractBlockAccessor) Blocks.END_STONE).setSoundGroup(ModSounds.END_STONE);
         ((AbstractBlockAccessor) Blocks.END_STONE_BRICKS).setSoundGroup(ModSounds.END_STONE);
         ((AbstractBlockAccessor) Blocks.END_STONE_BRICK_STAIRS).setSoundGroup(ModSounds.END_STONE);
         ((AbstractBlockAccessor) Blocks.END_STONE_BRICK_SLAB).setSoundGroup(ModSounds.END_STONE);
         ((AbstractBlockAccessor) Blocks.END_STONE_BRICK_WALL).setSoundGroup(ModSounds.END_STONE);
+
+        ((AbstractBlockAccessor) Blocks.PURPUR_BLOCK).setSoundGroup(ModSounds.PURPUR);
+        ((AbstractBlockAccessor) Blocks.PURPUR_STAIRS).setSoundGroup(ModSounds.PURPUR);
+        ((AbstractBlockAccessor) Blocks.PURPUR_SLAB).setSoundGroup(ModSounds.PURPUR);
+        ((AbstractBlockAccessor) Blocks.PURPUR_PILLAR).setSoundGroup(ModSounds.PURPUR);
 
         ((AbstractBlockAccessor) Blocks.DIRT).setSoundGroup(SoundType.ROOTED_DIRT);
         ((AbstractBlockAccessor) Blocks.COARSE_DIRT).setSoundGroup(SoundType.ROOTED_DIRT);
@@ -353,12 +359,36 @@ public class Calcium implements ModInitializer {
 
         ((AbstractBlockAccessor) Blocks.CHORUS_FLOWER).setSoundGroup(ModSounds.CHORUS_FLOWER);
         ((AbstractBlockAccessor) Blocks.CHORUS_PLANT).setSoundGroup(ModSounds.CHORUS_STALK);
-        ((AbstractBlockAccessor) Blocks.PURPUR_BLOCK).setSoundGroup(ModSounds.PURPUR);
-        ((AbstractBlockAccessor) Blocks.PURPUR_PILLAR).setSoundGroup(ModSounds.PURPUR);
-        ((AbstractBlockAccessor) Blocks.PURPUR_STAIRS).setSoundGroup(ModSounds.PURPUR);
-        ((AbstractBlockAccessor) Blocks.PURPUR_SLAB).setSoundGroup(ModSounds.PURPUR);
+
         ((AbstractBlockAccessor) Blocks.END_GATEWAY).setSoundGroup(ModSounds.END_GATEWAY);
         ((AbstractBlockAccessor) Blocks.END_ROD).setSoundGroup(ModSounds.END_ROD);
+
+        ((AbstractBlockAccessor) Blocks.BLACKSTONE).setSoundGroup(ModSounds.BLACKSTONE);
+        ((AbstractBlockAccessor) Blocks.BLACKSTONE_STAIRS).setSoundGroup(ModSounds.BLACKSTONE);
+        ((AbstractBlockAccessor) Blocks.BLACKSTONE_SLAB).setSoundGroup(ModSounds.BLACKSTONE);
+        ((AbstractBlockAccessor) Blocks.BLACKSTONE_WALL).setSoundGroup(ModSounds.BLACKSTONE);
+        ((AbstractBlockAccessor) Blocks.CHISELED_POLISHED_BLACKSTONE).setSoundGroup(ModSounds.BLACKSTONE);
+        ((AbstractBlockAccessor) Blocks.POLISHED_BLACKSTONE).setSoundGroup(ModSounds.BLACKSTONE);
+        ((AbstractBlockAccessor) Blocks.POLISHED_BLACKSTONE_STAIRS).setSoundGroup(ModSounds.BLACKSTONE);
+        ((AbstractBlockAccessor) Blocks.POLISHED_BLACKSTONE_SLAB).setSoundGroup(ModSounds.BLACKSTONE);
+        ((AbstractBlockAccessor) Blocks.POLISHED_BLACKSTONE_WALL).setSoundGroup(ModSounds.BLACKSTONE);
+        ((AbstractBlockAccessor) Blocks.POLISHED_BLACKSTONE_BRICKS).setSoundGroup(ModSounds.BLACKSTONE);
+        ((AbstractBlockAccessor) Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS).setSoundGroup(ModSounds.BLACKSTONE);
+        ((AbstractBlockAccessor) Blocks.POLISHED_BLACKSTONE_BRICK_SLAB).setSoundGroup(ModSounds.BLACKSTONE);
+        ((AbstractBlockAccessor) Blocks.POLISHED_BLACKSTONE_BRICK_WALL).setSoundGroup(ModSounds.BLACKSTONE);
+        ((AbstractBlockAccessor) Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS).setSoundGroup(ModSounds.BLACKSTONE);
+        ((AbstractBlockAccessor) Blocks.QUARTZ_BLOCK).setSoundGroup(ModSounds.QUARTZ);
+        ((AbstractBlockAccessor) Blocks.SMOOTH_QUARTZ).setSoundGroup(ModSounds.QUARTZ);
+        ((AbstractBlockAccessor) Blocks.SMOOTH_QUARTZ_STAIRS).setSoundGroup(ModSounds.QUARTZ);
+        ((AbstractBlockAccessor) Blocks.SMOOTH_QUARTZ_SLAB).setSoundGroup(ModSounds.QUARTZ);
+        ((AbstractBlockAccessor) Blocks.QUARTZ_BRICKS).setSoundGroup(ModSounds.QUARTZ);
+        ((AbstractBlockAccessor) Blocks.CHISELED_QUARTZ_BLOCK).setSoundGroup(ModSounds.QUARTZ);
+        ((AbstractBlockAccessor) Blocks.QUARTZ_PILLAR).setSoundGroup(ModSounds.QUARTZ);
+
+        ((AbstractBlockAccessor) Blocks.OBSIDIAN).setSoundGroup(ModSounds.OBSIDIAN);
+        ((AbstractBlockAccessor) Blocks.CRYING_OBSIDIAN).setSoundGroup(ModSounds.OBSIDIAN);
+        ((AbstractBlockAccessor) Blocks.MAGMA_BLOCK).setSoundGroup(ModSounds.MAGMA);
+        ((AbstractBlockAccessor) Blocks.GLOWSTONE).setSoundGroup(ModSounds.GLOWSTONE);
 
         // Model Offsets
 

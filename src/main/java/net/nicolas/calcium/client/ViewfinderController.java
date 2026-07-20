@@ -16,7 +16,8 @@ public class ViewfinderController {
 
     private static final float MIN_ZOOM = 1.0F;
     private static final float MAX_ZOOM = 10.0F;
-    private static final float ZOOM_STEP = 0.1F;
+    private static final float ZOOM_STEP_FACTOR = 1.1F;
+    private static final float ZOOM_SMOOTHING = 0.3F;
     private static final int SYNC_INTERVAL_TICKS = 4;
 
     private static @Nullable BlockPos activePos;
@@ -26,6 +27,8 @@ public class ViewfinderController {
     private static float panYaw;
     private static float panPitch;
     private static float zoom = MIN_ZOOM;
+    private static float prevDisplayZoom = MIN_ZOOM;
+    private static float displayZoom = MIN_ZOOM;
     private static int ticksSinceLastSync;
 
     public static void startLooking(ViewfinderBlockEntity viewfinder) {
@@ -42,6 +45,8 @@ public class ViewfinderController {
         panYaw = viewfinder.getViewYaw();
         panPitch = viewfinder.getViewPitch();
         zoom = viewfinder.getZoom();
+        prevDisplayZoom = zoom;
+        displayZoom = zoom;
         ticksSinceLastSync = 0;
         previousCameraType = Minecraft.getInstance().options.getCameraType();
         Minecraft.getInstance().options.setCameraType(CameraType.THIRD_PERSON_BACK);
@@ -51,6 +56,8 @@ public class ViewfinderController {
         if (!isActive()) {
             return;
         }
+        prevDisplayZoom = displayZoom;
+        displayZoom = Mth.lerp(ZOOM_SMOOTHING, displayZoom, zoom);
         ticksSinceLastSync++;
         if (ticksSinceLastSync >= SYNC_INTERVAL_TICKS) {
             ticksSinceLastSync = 0;
@@ -72,7 +79,8 @@ public class ViewfinderController {
     }
 
     public static void addZoom(double delta) {
-        zoom = Mth.clamp(zoom + (float) Math.signum(delta) * ZOOM_STEP, MIN_ZOOM, MAX_ZOOM);
+        float factor = (float) Math.pow(ZOOM_STEP_FACTOR, Math.signum(delta));
+        zoom = Mth.clamp(zoom * factor, MIN_ZOOM, MAX_ZOOM);
     }
 
     public static float getPanYaw() {
@@ -85,6 +93,10 @@ public class ViewfinderController {
 
     public static float getZoom() {
         return zoom;
+    }
+
+    public static float getRenderZoom(float partialTicks) {
+        return Mth.lerp(partialTicks, prevDisplayZoom, displayZoom);
     }
 
     public static void stopLooking() {

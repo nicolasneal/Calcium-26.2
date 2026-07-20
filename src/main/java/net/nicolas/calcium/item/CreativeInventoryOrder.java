@@ -1136,8 +1136,7 @@ public class CreativeInventoryOrder {
             Items.DRAGON_HEAD,
             Items.PLAYER_HEAD,
             Items.DRAGON_EGG,
-            copperStatesOf(Items.COPPER_GOLEM_STATUE.weathering()),
-            copperStatesOf(Items.COPPER_GOLEM_STATUE.waxed())
+            copperStatesOf(Items.COPPER_GOLEM_STATUE.weathering())
 
         )),
 
@@ -1514,12 +1513,13 @@ public class CreativeInventoryOrder {
             Items.COPPER_NUGGET,
             Items.IRON_NUGGET,
             Items.GOLD_NUGGET,
+            ModItems.NETHERITE_NUGGET,
             ModItems.SHADOLINE_NUGGET,
             Items.COPPER_INGOT,
             Items.IRON_INGOT,
             Items.GOLD_INGOT,
-            Items.NETHERITE_SCRAP,
             Items.NETHERITE_INGOT,
+            Items.NETHERITE_SCRAP,
             ModItems.SHADOLINE_INGOT,
             Items.REDSTONE,
             Items.GLOWSTONE_DUST,

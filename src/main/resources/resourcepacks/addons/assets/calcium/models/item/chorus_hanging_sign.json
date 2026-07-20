@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:item/hanging_sign",
+	"textures": {
+		"texture": "calcium:block/hanging_signs/chorus"
+	}
+}

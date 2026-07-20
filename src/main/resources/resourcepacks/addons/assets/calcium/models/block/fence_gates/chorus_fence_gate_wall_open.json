@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_custom_fence_gate_wall_open",
+  "textures": {
+    "texture": "calcium:block/fence_gates/chorus",
+    "particle": "calcium:block/particles/chorus"
+  }
+}

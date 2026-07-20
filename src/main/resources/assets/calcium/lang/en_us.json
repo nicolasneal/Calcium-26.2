@@ -5,7 +5,6 @@
 
   "tooltip.calcium.enchanting_table_item": "Add Enchantable Item",
   "tooltip.calcium.enchanting_table_fuel": "Add Lapis Lazuli",
-  "item.calcium.tablet": "Tablet",
 
   "block.calcium.ectoplasm": "Ectoplasm",
   "block.calcium.ectoplasm_cauldron": "Ectoplasm Cauldron",
@@ -342,6 +341,7 @@
   "item.calcium.hide": "Hide",
   "item.calcium.pixie_dust": "Pixie Dust",
   "item.calcium.raw_shadoline": "Raw Shadoline",
+  "item.calcium.netherite_nugget": "Netherite Nugget",
   "item.calcium.shadoline_nugget": "Shadoline Nugget",
   "item.calcium.shadoline_ingot": "Shadoline",
   "item.calcium.crescent_banner_pattern": "Crescent Banner Pattern",

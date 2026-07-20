@@ -72,7 +72,7 @@ public abstract class CameraMixin {
     @Inject(method = "calculateFov", at = @At("RETURN"), cancellable = true)
     private void calcium$applyViewfinderZoom(float partialTicks, CallbackInfoReturnable<Float> cir) {
         if (ViewfinderController.isActive()) {
-            cir.setReturnValue(cir.getReturnValue() / ViewfinderController.getZoom());
+            cir.setReturnValue(cir.getReturnValue() / ViewfinderController.getRenderZoom(partialTicks));
         }
     }
 

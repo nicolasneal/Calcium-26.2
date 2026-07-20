@@ -116,6 +116,35 @@ public class ModSounds {
     public static final SoundEvent WISP_BREAK = register("block.wisp.break");
     public static final SoundType WISP = new SoundType(1.0F, 1.0F, WISP_BREAK, WISP_BREAK, WISP_BREAK, WISP_BREAK, WISP_BREAK);
 
+    public static final SoundEvent BLACKSTONE_BREAK = register("block.blackstone.break");
+    public static final SoundEvent BLACKSTONE_STEP = register("block.blackstone.step");
+    public static final SoundType BLACKSTONE = new SoundType(0.8F, 1.0F, BLACKSTONE_BREAK, BLACKSTONE_STEP, BLACKSTONE_BREAK, BLACKSTONE_STEP, BLACKSTONE_STEP);
+
+    public static final SoundEvent GLOWSTONE_BREAK = register("block.glowstone.break");
+    public static final SoundEvent GLOWSTONE_PLACE = register("block.glowstone.place");
+    public static final SoundType GLOWSTONE = new SoundType(1.0F, 1.0F, GLOWSTONE_BREAK, GLOWSTONE_PLACE, GLOWSTONE_PLACE, GLOWSTONE_PLACE, GLOWSTONE_PLACE);
+
+    public static final SoundEvent MAGMA_BREAK = register("block.magma.break");
+    public static final SoundEvent MAGMA_STEP = register("block.magma.step");
+    public static final SoundType MAGMA = new SoundType(1.0F, 1.0F, MAGMA_BREAK, MAGMA_STEP, MAGMA_BREAK, MAGMA_STEP, MAGMA_STEP);
+
+    public static final SoundEvent OBSIDIAN_BREAK = register("block.obsidian.break");
+    public static final SoundEvent OBSIDIAN_PLACE = register("block.obsidian.place");
+    public static final SoundEvent OBSIDIAN_STEP = register("block.obsidian.step");
+    public static final SoundType OBSIDIAN = new SoundType(1.0F, 1.0F, OBSIDIAN_BREAK, OBSIDIAN_STEP, OBSIDIAN_PLACE, OBSIDIAN_STEP, OBSIDIAN_STEP);
+
+    public static final SoundEvent QUARTZ_BREAK = register("block.quartz.break");
+    public static final SoundEvent QUARTZ_PLACE = register("block.quartz.place");
+    public static final SoundType QUARTZ = new SoundType(1.0F, 1.0F, QUARTZ_BREAK, QUARTZ_PLACE, QUARTZ_PLACE, QUARTZ_PLACE, QUARTZ_BREAK);
+
+    public static final SoundEvent GOLD_CHAIN_BREAK = register("block.gold_chain.break");
+    public static final SoundEvent GOLD_CHAIN_STEP = register("block.gold_chain.step");
+    public static final SoundType GOLD_CHAIN = new SoundType(1.0F, 1.0F, GOLD_CHAIN_BREAK, GOLD_CHAIN_STEP, GOLD_CHAIN_BREAK, GOLD_CHAIN_STEP, GOLD_CHAIN_STEP);
+
+    public static final SoundEvent SHADOLINE_CHAIN_BREAK = register("block.shadoline_chain.break");
+    public static final SoundEvent SHADOLINE_CHAIN_STEP = register("block.shadoline_chain.step");
+    public static final SoundType SHADOLINE_CHAIN = new SoundType(0.8F, 1.0F, SHADOLINE_CHAIN_BREAK, SHADOLINE_CHAIN_STEP, SHADOLINE_CHAIN_BREAK, SHADOLINE_CHAIN_STEP, SHADOLINE_CHAIN_STEP);
+
     // UTILITY
 
     public static final SoundEvent ECTOPLASM_BUCKET_EMPTY = register("item.bucket.empty_ectoplasm");

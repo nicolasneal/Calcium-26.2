@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=east": { "model": "calcium:block/hanging_signs/chorus_wall_hanging_sign", "y": 270 },
+    "facing=north": { "model": "calcium:block/hanging_signs/chorus_wall_hanging_sign", "y": 180 },
+    "facing=south": { "model": "calcium:block/hanging_signs/chorus_wall_hanging_sign" },
+    "facing=west": { "model": "calcium:block/hanging_signs/chorus_wall_hanging_sign", "y": 90 }
+  }
+}
