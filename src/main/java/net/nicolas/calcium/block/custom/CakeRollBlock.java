@@ -24,7 +24,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.nicolas.calcium.sound.ModSounds;
+import net.nicolas.calcium.sound.ModSoundGroups;
 
 import java.util.List;
 import java.util.Map;
@@ -95,7 +95,7 @@ public class CakeRollBlock extends CakeBlock {
         }
         player.getFoodData().eat(2, 0.1F);
         player.spawnItemParticles(new ItemStack(this), 16);
-        level.playSound(null, pos, ModSounds.CAKE_ROLL_EAT, SoundSource.PLAYERS, 1.0F, Mth.randomBetween(player.getRandom(), 0.9F, 1.1F));
+        level.playSound(null, pos, ModSoundGroups.CAKE_ROLL_EAT, SoundSource.PLAYERS, 1.0F, Mth.randomBetween(player.getRandom(), 0.9F, 1.1F));
         int bites = state.getValue(BITES);
         level.gameEvent(player, GameEvent.EAT, pos);
         if (bites < MAX_BITES) {

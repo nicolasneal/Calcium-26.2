@@ -1,13 +1,13 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
+  "type": "calcium:cooking",
+  "cookingtime": 150,
+  "experience": 0.35,
   "ingredients": [
     "calcium:water_bowl",
     "#calcium:mushroom",
     "#calcium:mushroom"
   ],
   "result": {
-    "count": 1,
     "id": "minecraft:mushroom_stew"
   }
 }

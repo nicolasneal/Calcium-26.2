@@ -9,16 +9,12 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.HangingSignItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.SignItem;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.Consumables;
 import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.item.custom.EctoplasmBucketItem;
 import net.nicolas.calcium.item.custom.SignalCardItem;
-import net.nicolas.calcium.sound.ModSounds;
+import net.nicolas.calcium.sound.ModSoundGroups;
 
 import java.util.function.Function;
 
@@ -83,9 +79,9 @@ public class ModItems {
     public static final Item GOLD_COIN = register("gold_coin", Item::new, new Item.Properties().stacksTo(64));
     public static final Item NETHERITE_COIN = register("netherite_coin", Item::new, new Item.Properties().stacksTo(64));
     public static final Item ECTOPLASM_BUCKET = register("ectoplasm_bucket", settings -> new EctoplasmBucketItem(ModBlocks.ECTOPLASM_STILL, settings), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(64));
-    public static final Item MUSIC_DISC_BLISS = register("music_disc_bliss", Item::new, new Item.Properties().jukeboxPlayable(ModSounds.BLISS).stacksTo(64));
-    public static final Item MUSIC_DISC_DECAY = register("music_disc_decay", Item::new, new Item.Properties().jukeboxPlayable(ModSounds.DECAY).stacksTo(64));
-    public static final Item MUSIC_DISC_GLARE = register("music_disc_glare", Item::new, new Item.Properties().jukeboxPlayable(ModSounds.GLARE).stacksTo(64));
+    public static final Item MUSIC_DISC_BLISS = register("music_disc_bliss", Item::new, new Item.Properties().jukeboxPlayable(ModSoundGroups.BLISS).stacksTo(64));
+    public static final Item MUSIC_DISC_DECAY = register("music_disc_decay", Item::new, new Item.Properties().jukeboxPlayable(ModSoundGroups.DECAY).stacksTo(64));
+    public static final Item MUSIC_DISC_GLARE = register("music_disc_glare", Item::new, new Item.Properties().jukeboxPlayable(ModSoundGroups.GLARE).stacksTo(64));
     public static final Item SIGNAL_CARD = register("signal_card", SignalCardItem::new, new Item.Properties().stacksTo(1));
     public static final DataComponentType<GlobalPos> LINKED_FEED = Registry.register(BuiltInRegistries.DATA_COMPONENT_TYPE, Identifier.fromNamespaceAndPath(MOD_ID, "linked_feed"), DataComponentType.<GlobalPos>builder().persistent(GlobalPos.CODEC).networkSynchronized(GlobalPos.STREAM_CODEC).build());
 
@@ -96,13 +92,6 @@ public class ModItems {
             blockItem.registerBlocks(Item.BY_BLOCK, item);
         }
         return Registry.register(BuiltInRegistries.ITEM, key, item);
-    }
-
-    public static void initialize() {
-
-        BuiltInRegistries.DATA_COMPONENT_INITIALIZERS.add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("minecraft", "bread")), (builder, context, key) -> builder.set(DataComponents.FOOD, ModFoods.BREAD));
-        BuiltInRegistries.DATA_COMPONENT_INITIALIZERS.add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("minecraft", "cookie")), (builder, context, key) -> builder.set(DataComponents.FOOD, ModFoods.COOKIE));
-
     }
 
 }

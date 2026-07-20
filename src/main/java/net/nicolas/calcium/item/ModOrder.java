@@ -19,7 +19,7 @@ import java.util.Map;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-public class CreativeInventoryOrder {
+public class ModOrder {
 
     private static final Identifier FINAL_PHASE = Identifier.fromNamespaceAndPath("calcium", "creative_inventory_order");
 
@@ -934,6 +934,7 @@ public class CreativeInventoryOrder {
             ModBlocks.WISP_SPROUTS,
             ModBlocks.WISP,
             ModBlocks.FLOWERING_WISP,
+
             ModBlocks.CELESTIAL_VINES_HEAD,
             ModBlocks.BLINKVINE_HEAD,
             Items.CHORUS_FLOWER,
@@ -944,7 +945,8 @@ public class CreativeInventoryOrder {
             Items.MEDIUM_AMETHYST_BUD,
             Items.LARGE_AMETHYST_BUD,
             Items.AMETHYST_CLUSTER,
-            Items.COBWEB,
+            ModBlocks.PALLID_MAGNIA_SPROUT,
+            ModBlocks.UMBRAL_MAGNIA_SPROUT,
 
             Items.TUBE_CORAL_BLOCK,
             Items.BRAIN_CORAL_BLOCK,
@@ -985,6 +987,7 @@ public class CreativeInventoryOrder {
             Items.CARVED_PUMPKIN,
             Items.JACK_O_LANTERN,
 
+            Items.COBWEB,
             Items.FROGSPAWN,
             Items.TURTLE_EGG,
             Items.SNIFFER_EGG,

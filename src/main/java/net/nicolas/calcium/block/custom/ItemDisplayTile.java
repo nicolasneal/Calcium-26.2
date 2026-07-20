@@ -1,4 +1,4 @@
-package net.nicolas.calcium.moonlight;
+package net.nicolas.calcium.block.custom;
 
 import net.minecraft.advancements.triggers.CriteriaTriggers;
 import net.minecraft.core.BlockPos;

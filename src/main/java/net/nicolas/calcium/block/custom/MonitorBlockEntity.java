@@ -10,8 +10,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.client.MonitorStaticSoundHandler;
 import net.nicolas.calcium.item.ModItems;
-import net.nicolas.calcium.moonlight.ItemDisplayTile;
-import net.nicolas.calcium.sound.ModSounds;
+import net.nicolas.calcium.sound.ModSoundGroups;
 import org.jspecify.annotations.Nullable;
 
 public class MonitorBlockEntity extends ItemDisplayTile {
@@ -25,11 +24,11 @@ public class MonitorBlockEntity extends ItemDisplayTile {
     }
 
     @Override public SoundEvent getAddItemSound() {
-        return ModSounds.SIGNAL_CARD_INSERT;
+        return ModSoundGroups.SIGNAL_CARD_INSERT;
     }
 
     @Override public @Nullable SoundEvent getRemoveItemSound() {
-        return ModSounds.SIGNAL_CARD_EJECT;
+        return ModSoundGroups.SIGNAL_CARD_EJECT;
     }
 
     @Nullable public GlobalPos getLinkedPos() {

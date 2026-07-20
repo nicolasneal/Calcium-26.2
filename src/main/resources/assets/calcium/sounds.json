@@ -576,15 +576,8 @@
     "sounds": [
       "calcium:block/quartz/break1",
       "calcium:block/quartz/break2",
-      "calcium:block/quartz/break3"
-    ]
-  },
-  "block.quartz.place": {
-    "sounds": [
-      "calcium:block/quartz/place1",
-      "calcium:block/quartz/place2",
-      "calcium:block/quartz/place3",
-      "calcium:block/quartz/place4"
+      "calcium:block/quartz/break3",
+      "calcium:block/quartz/break4"
     ]
   },
   "block.gold_chain.break": {
@@ -617,6 +610,11 @@
       "calcium:block/shadoline_chain/step2",
       "calcium:block/shadoline_chain/step3",
       "calcium:block/shadoline_chain/step4"
+    ]
+  },
+  "entity.shulker_bullet.loop": {
+    "sounds": [
+      "calcium:entity/shulker_bullet/loop"
     ]
   }
 }

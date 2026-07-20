@@ -6,7 +6,7 @@ import net.minecraft.world.level.block.Blocks;
 import java.util.IdentityHashMap;
 import java.util.Map;
 
-public final class BlockStrength {
+public final class ModStrengths {
 
     public record Strength(float hardness, float resistance) {}
 
@@ -85,7 +85,7 @@ public final class BlockStrength {
 
     }
 
-    private BlockStrength() {}
+    private ModStrengths() {}
 
     public static Strength of(Block block) {
         return BLOCK_STRENGTH.get(block);

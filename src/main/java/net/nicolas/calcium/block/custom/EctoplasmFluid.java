@@ -23,7 +23,7 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.item.ModItems;
-import net.nicolas.calcium.sound.ModSounds;
+import net.nicolas.calcium.sound.ModSoundGroups;
 
 import java.util.Optional;
 
@@ -131,7 +131,7 @@ public abstract class EctoplasmFluid extends FlowingFluid {
     }
 
     @Override public Optional<SoundEvent> getPickupSound() {
-        return Optional.of(ModSounds.ECTOPLASM_BUCKET_FILL);
+        return Optional.of(ModSoundGroups.ECTOPLASM_BUCKET_FILL);
     }
 
     @Override public void animateTick(Level world, BlockPos pos, FluidState state, RandomSource random) {
@@ -141,7 +141,7 @@ public abstract class EctoplasmFluid extends FlowingFluid {
         }
 
         if (random.nextInt(20) == 0) {
-            world.playSound(null, pos, ModSounds.ECTOPLASM_AMBIENT, SoundSource.BLOCKS, 1.0F + random.nextFloat() * 0.2F, 0.9F + random.nextFloat() * 0.15F);
+            world.playSound(null, pos, ModSoundGroups.ECTOPLASM_AMBIENT, SoundSource.BLOCKS, 1.0F + random.nextFloat() * 0.2F, 0.9F + random.nextFloat() * 0.15F);
         }
 
     }

@@ -1,4 +1,4 @@
-package net.nicolas.calcium.player;
+package net.nicolas.calcium.screen;
 
 import net.minecraft.world.SimpleContainer;
 

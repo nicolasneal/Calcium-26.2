@@ -10,7 +10,12 @@ public class HopperScreenHandlerMixin {
 
     @ModifyArg(method = "<init>(ILnet/minecraft/world/entity/player/Inventory;Lnet/minecraft/world/Container;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/inventory/Slot;<init>(Lnet/minecraft/world/Container;III)V"), index = 3)
     private int calcium$modifyHopperSlotY(int y) {
-        return 19;
+        return 35;
+    }
+
+    @ModifyArg(method = "<init>(ILnet/minecraft/world/entity/player/Inventory;Lnet/minecraft/world/Container;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/inventory/HopperMenu;addStandardInventorySlots(Lnet/minecraft/world/Container;II)V"), index = 2)
+    private int calcium$modifyPlayerInventoryY(int top) {
+        return 84;
     }
 
 }

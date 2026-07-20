@@ -9,7 +9,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluid;
-import net.nicolas.calcium.sound.ModSounds;
+import net.nicolas.calcium.sound.ModSoundGroups;
 import org.jetbrains.annotations.Nullable;
 
 public class EctoplasmBucketItem extends BucketItem {
@@ -19,7 +19,7 @@ public class EctoplasmBucketItem extends BucketItem {
     }
 
     @Override protected void playEmptySound(@Nullable LivingEntity user, LevelAccessor world, BlockPos pos) {
-        SoundEvent soundEvent = ModSounds.ECTOPLASM_BUCKET_EMPTY;
+        SoundEvent soundEvent = ModSoundGroups.ECTOPLASM_BUCKET_EMPTY;
         world.playSound(user, pos, soundEvent, SoundSource.BLOCKS, 1.0F, 1.0F);
         world.gameEvent(user, GameEvent.FLUID_PLACE, pos);
     }

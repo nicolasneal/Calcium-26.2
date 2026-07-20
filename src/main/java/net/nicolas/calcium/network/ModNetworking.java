@@ -10,7 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.Vec3;
 import net.nicolas.calcium.block.custom.MonitorBlockEntity;
-import net.nicolas.calcium.player.ExtraSlotsAccess;
+import net.nicolas.calcium.screen.ExtraSlotsAccess;
 import net.nicolas.calcium.block.custom.ViewfinderBlockEntity;
 
 public class ModNetworking {

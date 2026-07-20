@@ -13,7 +13,7 @@ public class MonitorStaticSound extends AbstractTickableSoundInstance {
     private final BlockPos pos;
 
     public MonitorStaticSound(BlockPos pos) {
-        super(net.nicolas.calcium.sound.ModSounds.MONITOR_STATIC, SoundSource.BLOCKS, SoundInstance.createUnseededRandom());
+        super(net.nicolas.calcium.sound.ModSoundGroups.MONITOR_STATIC, SoundSource.BLOCKS, SoundInstance.createUnseededRandom());
         this.pos = pos;
         this.x = pos.getX() + 0.5;
         this.y = pos.getY() + 0.5;

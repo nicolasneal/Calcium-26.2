@@ -1,10 +1,24 @@
 package net.nicolas.calcium.item;
 
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.food.FoodProperties;
 
 public class ModFoods {
 
-    // Vanilla Food Overwrites
+    public static void initialize() {
+
+        BuiltInRegistries.DATA_COMPONENT_INITIALIZERS.add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("minecraft", "bread")), (builder, context, key) -> builder.set(DataComponents.FOOD, ModFoods.BREAD));
+        BuiltInRegistries.DATA_COMPONENT_INITIALIZERS.add(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("minecraft", "cookie")), (builder, context, key) -> builder.set(DataComponents.FOOD, ModFoods.COOKIE));
+
+    }
+
+    // Unorganized...
+
+    // Vanilla Food Overrides
 
     public static final FoodProperties BREAD = new FoodProperties.Builder().nutrition(6).saturationModifier(0.5f).build();
     public static final FoodProperties COOKIE = new FoodProperties.Builder().nutrition(6).saturationModifier(0.6f).build();

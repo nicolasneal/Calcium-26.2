@@ -47,6 +47,8 @@
   "block.calcium.blinkvine_body": "Blinkvine",
   "block.calcium.celestial_vines_head": "Celestial Vines",
   "block.calcium.celestial_vines_body": "Celestial Vines",
+  "block.calcium.pallid_magnia_sprout": "Pallid Magnia Sprout",
+  "block.calcium.umbral_magnia_sprout": "Umbral Magnia Sprout",
 
   "block.calcium.potted_bush": "Potted Bush",
   "block.calcium.potted_firefly_bush": "Potted Firefly Bush",
@@ -56,6 +58,8 @@
   "block.calcium.potted_poker": "Potted Poker",
   "block.calcium.potted_black_stinkhorn": "Potted Black Stinkhorn",
   "block.calcium.potted_white_stinkhorn": "Potted White Stinkhorn",
+  "block.calcium.potted_pallid_magnia_sprout": "Potted Pallid Magnia Sprout",
+  "block.calcium.potted_umbral_magnia_sprout": "Potted Umbral Magnia Sprout",
 
   "block.calcium.polished_stone": "Polished Stone",
   "block.calcium.polished_stone_stairs": "Polished Stone Stairs",

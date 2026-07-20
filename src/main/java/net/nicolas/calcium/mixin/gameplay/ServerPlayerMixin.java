@@ -3,7 +3,7 @@ package net.nicolas.calcium.mixin.gameplay;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.level.gamerules.GameRules;
-import net.nicolas.calcium.player.ExtraSlotsAccess;
+import net.nicolas.calcium.screen.ExtraSlotsAccess;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
