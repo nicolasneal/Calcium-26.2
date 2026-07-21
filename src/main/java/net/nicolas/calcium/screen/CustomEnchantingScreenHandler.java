@@ -19,11 +19,11 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
-import net.nicolas.calcium.Calcium;
-import net.nicolas.calcium.recipe.EnchantingRecipe;
-import net.nicolas.calcium.recipe.EnchantingRecipeInput;
-import net.nicolas.calcium.recipe.ModRecipes;
-import net.nicolas.calcium.tag.ModTags;
+import net.nicolas.calcium.core.Calcium;
+import net.nicolas.calcium.core.recipe.EnchantingRecipe;
+import net.nicolas.calcium.core.recipe.EnchantingRecipeInput;
+import net.nicolas.calcium.core.recipe.ModRecipes;
+import net.nicolas.calcium.item.tag.ModTags;
 
 import java.util.ArrayList;
 import java.util.List;

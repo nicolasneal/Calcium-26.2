@@ -18,6 +18,16 @@ public class AbstractFurnaceScreenHandlerMixin {
         return 48;
     }
 
+    @ModifyArg(method = "<init>(Lnet/minecraft/world/inventory/MenuType;Lnet/minecraft/resources/ResourceKey;Lnet/minecraft/world/inventory/RecipeBookType;ILnet/minecraft/world/entity/player/Inventory;Lnet/minecraft/world/Container;Lnet/minecraft/world/inventory/ContainerData;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/inventory/Slot;<init>(Lnet/minecraft/world/Container;III)V"), index = 3)
+    private int calcium$modifyInputSlotY(int y) {
+        return y - 2;
+    }
+
+    @ModifyArg(method = "<init>(Lnet/minecraft/world/inventory/MenuType;Lnet/minecraft/resources/ResourceKey;Lnet/minecraft/world/inventory/RecipeBookType;ILnet/minecraft/world/entity/player/Inventory;Lnet/minecraft/world/Container;Lnet/minecraft/world/inventory/ContainerData;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/inventory/FurnaceFuelSlot;<init>(Lnet/minecraft/world/inventory/AbstractFurnaceMenu;Lnet/minecraft/world/Container;III)V"), index = 4)
+    private int calcium$modifyFuelSlotY(int y) {
+        return y + 2;
+    }
+
     @ModifyArg(method = "<init>(Lnet/minecraft/world/inventory/MenuType;Lnet/minecraft/resources/ResourceKey;Lnet/minecraft/world/inventory/RecipeBookType;ILnet/minecraft/world/entity/player/Inventory;Lnet/minecraft/world/Container;Lnet/minecraft/world/inventory/ContainerData;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/inventory/FurnaceResultSlot;<init>(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/Container;III)V"), index = 3)
     private int calcium$modifyOutputSlotX(int x) {
         return 109;

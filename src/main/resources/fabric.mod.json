@@ -19,10 +19,10 @@
 	],
 	"entrypoints": {
 		"main": [
-			"net.nicolas.calcium.Calcium"
+			"net.nicolas.calcium.core.Calcium"
 		],
 		"client": [
-			"net.nicolas.calcium.CalciumClient"
+			"net.nicolas.calcium.core.CalciumClient"
 		]
 	},
 	"depends": {

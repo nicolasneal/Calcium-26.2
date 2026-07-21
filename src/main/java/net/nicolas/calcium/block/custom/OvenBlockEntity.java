@@ -37,9 +37,9 @@ import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.phys.Vec3;
 import net.nicolas.calcium.block.ModBlocks;
-import net.nicolas.calcium.recipe.ModRecipes;
-import net.nicolas.calcium.recipe.OvenRecipe;
-import net.nicolas.calcium.recipe.OvenRecipeInput;
+import net.nicolas.calcium.core.recipe.ModRecipes;
+import net.nicolas.calcium.core.recipe.OvenRecipe;
+import net.nicolas.calcium.core.recipe.OvenRecipeInput;
 import net.nicolas.calcium.screen.OvenMenu;
 import org.jspecify.annotations.Nullable;
 

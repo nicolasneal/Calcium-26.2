@@ -1,0 +1,23 @@
+{
+  "type": "calcium:cooking",
+  "cookingtime": 150,
+  "experience": 0.35,
+  "ingredients": [
+    "calcium:water_bowl",
+    "#calcium:mushroom",
+    "#calcium:mushroom",
+    "minecraft:allium"
+  ],
+  "result": {
+    "components": {
+      "minecraft:suspicious_stew_effects": [
+        {
+          "duration": 120,
+          "id": "minecraft:fire_resistance"
+        }
+      ]
+    },
+    "count": 1,
+    "id": "minecraft:suspicious_stew"
+  }
+}

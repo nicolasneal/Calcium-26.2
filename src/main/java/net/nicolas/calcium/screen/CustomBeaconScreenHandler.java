@@ -11,7 +11,7 @@ import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.inventory.SimpleContainerData;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
-import net.nicolas.calcium.Calcium;
+import net.nicolas.calcium.core.Calcium;
 import org.jspecify.annotations.Nullable;
 
 public class CustomBeaconScreenHandler extends AbstractContainerMenu {

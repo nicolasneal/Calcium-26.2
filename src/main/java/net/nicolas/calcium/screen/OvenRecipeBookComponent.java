@@ -14,8 +14,8 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.display.RecipeDisplay;
 import net.minecraft.world.item.crafting.display.SlotDisplay;
 import net.nicolas.calcium.mixin.screens.GhostSlotsAccessor;
-import net.nicolas.calcium.recipe.ModRecipes;
-import net.nicolas.calcium.recipe.OvenRecipeDisplay;
+import net.nicolas.calcium.core.recipe.ModRecipes;
+import net.nicolas.calcium.core.recipe.OvenRecipeDisplay;
 
 import java.util.List;
 import java.util.Optional;
@@ -34,7 +34,8 @@ public class OvenRecipeBookComponent extends RecipeBookComponent<OvenMenu> {
     private static final List<TabInfo> TABS = List.of(
         new TabInfo(new ItemStack(Items.COMPASS), Optional.empty(), OvenSearchCategory.ALL),
         new TabInfo(Items.COOKED_BEEF, ModRecipes.COOKING_SIMPLE),
-        new TabInfo(Items.CAKE, ModRecipes.COOKING_COMPLEX)
+        new TabInfo(Items.CAKE, ModRecipes.COOKING_COMPLEX),
+        new TabInfo(Items.SUSPICIOUS_STEW, ModRecipes.COOKING_SUSPICIOUS_STEW)
     );
 
     public OvenRecipeBookComponent(OvenMenu menu) {

@@ -2,7 +2,7 @@ package net.nicolas.calcium.mixin.client;
 
 import net.minecraft.client.MouseHandler;
 import net.minecraft.client.player.LocalPlayer;
-import net.nicolas.calcium.client.ViewfinderController;
+import net.nicolas.calcium.core.client.ViewfinderController;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

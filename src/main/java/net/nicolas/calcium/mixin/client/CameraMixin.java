@@ -11,7 +11,7 @@ import net.minecraft.world.level.material.FogType;
 import net.minecraft.world.phys.Vec3;
 import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.block.custom.ViewfinderBlockEntity;
-import net.nicolas.calcium.client.ViewfinderController;
+import net.nicolas.calcium.core.client.ViewfinderController;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;

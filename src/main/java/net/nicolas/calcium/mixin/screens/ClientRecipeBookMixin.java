@@ -3,7 +3,7 @@ package net.nicolas.calcium.mixin.screens;
 import net.minecraft.client.ClientRecipeBook;
 import net.minecraft.client.gui.screens.recipebook.RecipeCollection;
 import net.minecraft.world.item.crafting.ExtendedRecipeBookCategory;
-import net.nicolas.calcium.recipe.ModRecipes;
+import net.nicolas.calcium.core.recipe.ModRecipes;
 import net.nicolas.calcium.screen.EnchantingSearchCategory;
 import net.nicolas.calcium.screen.OvenSearchCategory;
 import org.spongepowered.asm.mixin.Mixin;
@@ -28,7 +28,7 @@ public abstract class ClientRecipeBookMixin {
             .toList();
         byCategory.put(EnchantingSearchCategory.ALL, merged);
 
-        List<RecipeCollection> mergedOven = Stream.of(ModRecipes.COOKING_SIMPLE, ModRecipes.COOKING_COMPLEX)
+        List<RecipeCollection> mergedOven = Stream.of(ModRecipes.COOKING_SIMPLE, ModRecipes.COOKING_COMPLEX, ModRecipes.COOKING_SUSPICIOUS_STEW)
             .flatMap(category -> byCategory.getOrDefault(category, List.of()).stream())
             .toList();
         byCategory.put(OvenSearchCategory.ALL, mergedOven);

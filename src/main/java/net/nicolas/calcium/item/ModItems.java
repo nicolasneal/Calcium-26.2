@@ -85,6 +85,8 @@ public class ModItems {
     public static final Item SIGNAL_CARD = register("signal_card", SignalCardItem::new, new Item.Properties().stacksTo(1));
     public static final DataComponentType<GlobalPos> LINKED_FEED = Registry.register(BuiltInRegistries.DATA_COMPONENT_TYPE, Identifier.fromNamespaceAndPath(MOD_ID, "linked_feed"), DataComponentType.<GlobalPos>builder().persistent(GlobalPos.CODEC).networkSynchronized(GlobalPos.STREAM_CODEC).build());
 
+    public static void initialize() {}
+
     private static <T extends Item> T register(String name, Function<Item.Properties, T> constructor, Item.Properties settings) {
         ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(MOD_ID, name));
         T item = constructor.apply(settings.setId(key));

@@ -14,8 +14,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.display.RecipeDisplay;
 import net.minecraft.world.item.crafting.display.SlotDisplay;
 import net.nicolas.calcium.mixin.screens.GhostSlotsAccessor;
-import net.nicolas.calcium.recipe.EnchantingRecipeDisplay;
-import net.nicolas.calcium.recipe.ModRecipes;
+import net.nicolas.calcium.core.recipe.EnchantingRecipeDisplay;
+import net.nicolas.calcium.core.recipe.ModRecipes;
 
 import java.util.List;
 import java.util.Optional;

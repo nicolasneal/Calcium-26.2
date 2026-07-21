@@ -1,0 +1,23 @@
+{
+	"credit": "Made with Blockbench",
+	"textureSize": [8, 8],
+	"models": [
+		{
+			"part": "bullet",
+			"id": "bullet",
+			"invertAxis": "xy",
+			"translate": [0, -4, 0],
+			"boxes": [
+				{
+					"coordinates": [-4, 0, -4, 8, 8, 8],
+					"uvNorth": [0, 0, 8, 8],
+					"uvEast": [0, 0, 8, 8],
+					"uvSouth": [0, 0, 8, 8],
+					"uvWest": [0, 0, 8, 8],
+					"uvUp": [8, 8, 0, 0],
+					"uvDown": [8, 0, 0, 8]
+				}
+			]
+		}
+	]
+}

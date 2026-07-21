@@ -20,10 +20,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
-import net.nicolas.calcium.Calcium;
+import net.nicolas.calcium.core.Calcium;
 import net.nicolas.calcium.block.custom.OvenBlockEntity;
-import net.nicolas.calcium.recipe.OvenRecipe;
-import net.nicolas.calcium.recipe.OvenRecipeInput;
+import net.nicolas.calcium.core.recipe.OvenRecipe;
+import net.nicolas.calcium.core.recipe.OvenRecipeInput;
 
 import java.util.List;
 import java.util.stream.Stream;

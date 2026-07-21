@@ -8,7 +8,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.nicolas.calcium.block.ModBlocks;
-import net.nicolas.calcium.client.MonitorStaticSoundHandler;
+import net.nicolas.calcium.core.client.MonitorStaticSoundHandler;
 import net.nicolas.calcium.item.ModItems;
 import net.nicolas.calcium.sound.ModSoundGroups;
 import org.jspecify.annotations.Nullable;

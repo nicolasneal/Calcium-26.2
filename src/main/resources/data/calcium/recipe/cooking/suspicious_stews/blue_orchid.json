@@ -1,0 +1,23 @@
+{
+  "type": "calcium:cooking",
+  "cookingtime": 150,
+  "experience": 0.35,
+  "ingredients": [
+    "calcium:water_bowl",
+    "#calcium:mushroom",
+    "#calcium:mushroom",
+    "minecraft:blue_orchid"
+  ],
+  "result": {
+    "components": {
+      "minecraft:suspicious_stew_effects": [
+        {
+          "duration": 160,
+          "id": "minecraft:night_vision"
+        }
+      ]
+    },
+    "count": 1,
+    "id": "minecraft:suspicious_stew"
+  }
+}

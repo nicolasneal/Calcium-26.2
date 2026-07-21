@@ -2,7 +2,7 @@ package net.nicolas.calcium.mixin.client;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.projectile.ShulkerBullet;
-import net.nicolas.calcium.client.ShulkerBulletLoopSound;
+import net.nicolas.calcium.core.client.ShulkerBulletLoopSound;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;

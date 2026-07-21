@@ -24,16 +24,16 @@ public class MountScreenMixin {
         return y - 1;
     }
 
-    // Moves Nautilus Entity Overlay
+    // Moves Entity Viewport (Nautilus needs an extra offset on top of the universal one)
 
     @ModifyArg(method = "extractBackground", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screens/inventory/InventoryScreen;extractEntityInInventoryFollowsMouse(Lnet/minecraft/client/gui/GuiGraphicsExtractor;IIIIIFFFLnet/minecraft/world/entity/LivingEntity;)V"), index = 2)
-    private int calcium$modifyNautilusTopY(int y) {
-        return ((Object) this instanceof NautilusInventoryScreen) ? y - 4 : y;
+    private int calcium$modifyEntityViewportTopY(int y) {
+        return ((Object) this instanceof NautilusInventoryScreen) ? y - 5 : y - 1;
     }
 
     @ModifyArg(method = "extractBackground", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screens/inventory/InventoryScreen;extractEntityInInventoryFollowsMouse(Lnet/minecraft/client/gui/GuiGraphicsExtractor;IIIIIFFFLnet/minecraft/world/entity/LivingEntity;)V"), index = 4)
-    private int calcium$modifyNautilusBottomY(int y) {
-        return ((Object) this instanceof NautilusInventoryScreen) ? y - 4 : y;
+    private int calcium$modifyEntityViewportBottomY(int y) {
+        return ((Object) this instanceof NautilusInventoryScreen) ? y - 5 : y - 1;
     }
 
 }
