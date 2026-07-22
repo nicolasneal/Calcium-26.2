@@ -41,8 +41,8 @@ import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.Vec3;
 import net.nicolas.calcium.mixin.accessors.SnifferAccessor;
 import net.nicolas.calcium.core.network.OpenSnifferInventoryPayload;
-import net.nicolas.calcium.screen.SnifferChestAccess;
-import net.nicolas.calcium.screen.SnifferInventoryMenu;
+import net.nicolas.calcium.screen.sniffer.SnifferChestAccess;
+import net.nicolas.calcium.screen.sniffer.SnifferInventoryScreenHandler;
 import org.jspecify.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -91,7 +91,7 @@ public abstract class SnifferMixin extends Animal implements HasCustomInventoryS
 
     @Unique private void calcium$createInventory() {
         SimpleContainer old = this.calcium$inventory;
-        this.calcium$inventory = new SimpleContainer(this.calcium$hasChest() ? SnifferInventoryMenu.CHEST_COLUMNS * SnifferInventoryMenu.CHEST_ROWS : 0);
+        this.calcium$inventory = new SimpleContainer(this.calcium$hasChest() ? SnifferInventoryScreenHandler.CHEST_COLUMNS * SnifferInventoryScreenHandler.CHEST_ROWS : 0);
         if (old != null) {
             int max = Math.min(old.getContainerSize(), this.calcium$inventory.getContainerSize());
             for (int slot = 0; slot < max; slot++) {
@@ -156,7 +156,7 @@ public abstract class SnifferMixin extends Animal implements HasCustomInventoryS
             return;
         }
         Sniffer self = (Sniffer) (Object) this;
-        serverPlayer.openMenu(new SimpleMenuProvider((containerId, inventory, openingPlayer) -> new SnifferInventoryMenu(containerId, inventory, self), self.getDisplayName())).ifPresent(containerId -> ServerPlayNetworking.send(serverPlayer, new OpenSnifferInventoryPayload(containerId, self.getId())));
+        serverPlayer.openMenu(new SimpleMenuProvider((containerId, inventory, openingPlayer) -> new SnifferInventoryScreenHandler(containerId, inventory, self), self.getDisplayName())).ifPresent(containerId -> ServerPlayNetworking.send(serverPlayer, new OpenSnifferInventoryPayload(containerId, self.getId())));
     }
 
     @Inject(method = "mobInteract", at = @At("HEAD"), cancellable = true)

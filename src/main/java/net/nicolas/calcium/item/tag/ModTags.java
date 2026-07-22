@@ -8,5 +8,6 @@ import net.minecraft.world.item.Item;
 public class ModTags {
 
     public static final TagKey<Item> ENCHANTABLE = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("calcium", "enchantable"));
+    public static final TagKey<Item> UNDERWATER_PLANTABLE = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("calcium", "underwater_plantable"));
 
 }

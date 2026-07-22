@@ -2,8 +2,8 @@ package net.nicolas.calcium.mixin.client;
 
 import net.minecraft.client.renderer.entity.state.SnifferRenderState;
 import net.minecraft.world.item.ItemStack;
-import net.nicolas.calcium.core.client.SnifferChestRenderAccess;
-import net.nicolas.calcium.core.client.SnifferSaddleAccess;
+import net.nicolas.calcium.core.client.sniffer.SnifferChestRenderAccess;
+import net.nicolas.calcium.core.client.sniffer.SnifferSaddleAccess;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 

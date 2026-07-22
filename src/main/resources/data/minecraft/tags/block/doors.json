@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "calcium:chorus_door",
     "calcium:gold_door",
     "calcium:shadoline_door"
   ]

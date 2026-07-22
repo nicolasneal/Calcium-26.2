@@ -1,333 +1,4 @@
 {
-  "block.soulslate.break": {
-    "sounds": [
-      "calcium:block/soulslate/break1",
-      "calcium:block/soulslate/break2",
-      "calcium:block/soulslate/break3",
-      "calcium:block/soulslate/break4"
-    ]
-  },
-  "block.soulslate.place": {
-    "sounds": [
-      "calcium:block/soulslate/place1",
-      "calcium:block/soulslate/place2",
-      "calcium:block/soulslate/place3",
-      "calcium:block/soulslate/place4"
-    ]
-  },
-  "block.soulslate.step": {
-    "sounds": [
-      "calcium:block/soulslate/step1",
-      "calcium:block/soulslate/step2",
-      "calcium:block/soulslate/step3",
-      "calcium:block/soulslate/step4"
-    ]
-  },
-  "block.monitor.static": {
-    "sounds": [
-      "calcium:block/monitor/static"
-    ]
-  },
-  "item.signal_card.insert": {
-    "sounds": [
-      "calcium:item/signal_card/insert"
-    ]
-  },
-  "item.signal_card.eject": {
-    "sounds": [
-      "calcium:item/signal_card/eject"
-    ]
-  },
-  "block.ectoplasm.whispering": {
-    "sounds": [
-      "calcium:block/ectoplasm/whispering1",
-      "calcium:block/ectoplasm/whispering2",
-      "calcium:block/ectoplasm/whispering3",
-      "calcium:block/ectoplasm/whispering4"
-    ]
-  },
-  "item.bucket.empty_ectoplasm": {
-    "sounds": [
-      "calcium:block/ectoplasm/empty1",
-      "calcium:block/ectoplasm/empty2"
-    ]
-  },
-  "item.bucket.fill_ectoplasm": {
-    "sounds": [
-      "calcium:block/ectoplasm/fill1",
-      "calcium:block/ectoplasm/fill2"
-    ]
-  },
-  "block.blinkvine.place": {
-    "sounds": [
-      "calcium:block/blinkvine/place1",
-      "calcium:block/blinkvine/place2",
-      "calcium:block/blinkvine/place3",
-      "calcium:block/blinkvine/place4",
-      "calcium:block/blinkvine/place5",
-      "calcium:block/blinkvine/place6"
-    ]
-  },
-  "block.end_stone.break": {
-    "sounds": [
-      "calcium:block/end_stone/break1",
-      "calcium:block/end_stone/break2",
-      "calcium:block/end_stone/break3",
-      "calcium:block/end_stone/break4"
-    ]
-  },
-  "block.end_stone.step": {
-    "sounds": [
-      "calcium:block/end_stone/step1",
-      "calcium:block/end_stone/step2",
-      "calcium:block/end_stone/step3",
-      "calcium:block/end_stone/step4"
-    ]
-  },
-  "block.mirestone.break": {
-    "sounds": [
-      "calcium:block/mirestone/break1",
-      "calcium:block/mirestone/break2",
-      "calcium:block/mirestone/break3",
-      "calcium:block/mirestone/break4"
-    ]
-  },
-  "block.mirestone.place": {
-    "sounds": [
-      "calcium:block/mirestone/place1",
-      "calcium:block/mirestone/place2",
-      "calcium:block/mirestone/place3",
-      "calcium:block/mirestone/place4",
-      "calcium:block/mirestone/place5",
-      "calcium:block/mirestone/place6"
-    ]
-  },
-  "block.mirestone.step": {
-    "sounds": [
-      "calcium:block/mirestone/step1",
-      "calcium:block/mirestone/step2",
-      "calcium:block/mirestone/step3",
-      "calcium:block/mirestone/step4",
-      "calcium:block/mirestone/step5",
-      "calcium:block/mirestone/step6"
-    ]
-  },
-  "block.kurodite.break": {
-    "sounds": [
-      "calcium:block/kurodite/break1",
-      "calcium:block/kurodite/break2",
-      "calcium:block/kurodite/break3",
-      "calcium:block/kurodite/break4"
-    ]
-  },
-  "block.kurodite.step": {
-    "sounds": [
-      "calcium:block/kurodite/step1",
-      "calcium:block/kurodite/step2",
-      "calcium:block/kurodite/step3",
-      "calcium:block/kurodite/step4"
-    ]
-  },
-  "block.kurodite_bricks.break": {
-    "sounds": [
-      "calcium:block/kurodite_bricks/break1",
-      "calcium:block/kurodite_bricks/break2",
-      "calcium:block/kurodite_bricks/break3",
-      "calcium:block/kurodite_bricks/break4"
-    ]
-  },
-  "block.kurodite_bricks.step": {
-    "sounds": [
-      "calcium:block/kurodite_bricks/step1",
-      "calcium:block/kurodite_bricks/step2",
-      "calcium:block/kurodite_bricks/step3",
-      "calcium:block/kurodite_bricks/step4"
-    ]
-  },
-  "block.veradite.break": {
-    "sounds": [
-      "calcium:block/veradite/break1",
-      "calcium:block/veradite/break2",
-      "calcium:block/veradite/break3",
-      "calcium:block/veradite/break4"
-    ]
-  },
-  "block.veradite.step": {
-    "sounds": [
-      "calcium:block/veradite/step1",
-      "calcium:block/veradite/step2",
-      "calcium:block/veradite/step3",
-      "calcium:block/veradite/step4"
-    ]
-  },
-  "block.veradite_bricks.break": {
-    "sounds": [
-      "calcium:block/veradite_bricks/break1",
-      "calcium:block/veradite_bricks/break2",
-      "calcium:block/veradite_bricks/break3",
-      "calcium:block/veradite_bricks/break4"
-    ]
-  },
-  "block.veradite_bricks.step": {
-    "sounds": [
-      "calcium:block/veradite_bricks/step1",
-      "calcium:block/veradite_bricks/step2",
-      "calcium:block/veradite_bricks/step3",
-      "calcium:block/veradite_bricks/step4"
-    ]
-  },
-  "block.pallid_magnia.break": {
-    "sounds": [
-      "calcium:block/pallid_magnia/break1",
-      "calcium:block/pallid_magnia/break2",
-      "calcium:block/pallid_magnia/break3",
-      "calcium:block/pallid_magnia/break4"
-    ]
-  },
-  "block.pallid_magnia.place": {
-    "sounds": [
-      "calcium:block/pallid_magnia/place1",
-      "calcium:block/pallid_magnia/place2",
-      "calcium:block/pallid_magnia/place3",
-      "calcium:block/pallid_magnia/place4"
-    ]
-  },
-  "block.pallid_magnia.step": {
-    "sounds": [
-      "calcium:block/pallid_magnia/step1",
-      "calcium:block/pallid_magnia/step2",
-      "calcium:block/pallid_magnia/step3",
-      "calcium:block/pallid_magnia/step4"
-    ]
-  },
-  "block.umbral_magnia.break": {
-    "sounds": [
-      "calcium:block/umbral_magnia/break1",
-      "calcium:block/umbral_magnia/break2",
-      "calcium:block/umbral_magnia/break3",
-      "calcium:block/umbral_magnia/break4"
-    ]
-  },
-  "block.umbral_magnia.place": {
-    "sounds": [
-      "calcium:block/umbral_magnia/place1",
-      "calcium:block/umbral_magnia/place2",
-      "calcium:block/umbral_magnia/place3",
-      "calcium:block/umbral_magnia/place4"
-    ]
-  },
-  "block.umbral_magnia.step": {
-    "sounds": [
-      "calcium:block/umbral_magnia/step1",
-      "calcium:block/umbral_magnia/step2",
-      "calcium:block/umbral_magnia/step3",
-      "calcium:block/umbral_magnia/step4"
-    ]
-  },
-  "block.shadoline.break": {
-    "sounds": [
-      "calcium:block/shadoline/break1",
-      "calcium:block/shadoline/break2",
-      "calcium:block/shadoline/break3",
-      "calcium:block/shadoline/break4"
-    ]
-  },
-  "block.shadoline.place": {
-    "sounds": [
-      "calcium:block/shadoline/place1",
-      "calcium:block/shadoline/place2",
-      "calcium:block/shadoline/place3",
-      "calcium:block/shadoline/place4"
-    ]
-  },
-  "block.shadoline.step": {
-    "sounds": [
-      "calcium:block/shadoline/step1",
-      "calcium:block/shadoline/step2",
-      "calcium:block/shadoline/step3",
-      "calcium:block/shadoline/step4"
-    ]
-  },
-  "block.end_stone_shadoline_ore.break": {
-    "sounds": [
-      "calcium:block/end_stone_shadoline_ore/break1",
-      "calcium:block/end_stone_shadoline_ore/break2",
-      "calcium:block/end_stone_shadoline_ore/break3",
-      "calcium:block/end_stone_shadoline_ore/break4"
-    ]
-  },
-  "block.end_stone_shadoline_ore.step": {
-    "sounds": [
-      "calcium:block/end_stone_shadoline_ore/step1",
-      "calcium:block/end_stone_shadoline_ore/step2",
-      "calcium:block/end_stone_shadoline_ore/step3",
-      "calcium:block/end_stone_shadoline_ore/step4"
-    ]
-  },
-  "block.mirestone_shadoline_ore.break": {
-    "sounds": [
-      "calcium:block/mirestone_shadoline_ore/break1",
-      "calcium:block/mirestone_shadoline_ore/break2",
-      "calcium:block/mirestone_shadoline_ore/break3",
-      "calcium:block/mirestone_shadoline_ore/break4"
-    ]
-  },
-  "block.mirestone_shadoline_ore.place": {
-    "sounds": [
-      "calcium:block/mirestone_shadoline_ore/place1",
-      "calcium:block/mirestone_shadoline_ore/place2",
-      "calcium:block/mirestone_shadoline_ore/place3",
-      "calcium:block/mirestone_shadoline_ore/place4"
-    ]
-  },
-  "block.mirestone_shadoline_ore.step": {
-    "sounds": [
-      "calcium:block/mirestone_shadoline_ore/step1",
-      "calcium:block/mirestone_shadoline_ore/step2",
-      "calcium:block/mirestone_shadoline_ore/step3",
-      "calcium:block/mirestone_shadoline_ore/step4"
-    ]
-  },
-  "block.end_growth.break": {
-    "sounds": [
-      "calcium:block/end_growth/break1",
-      "calcium:block/end_growth/break2",
-      "calcium:block/end_growth/break3",
-      "calcium:block/end_growth/break4"
-    ]
-  },
-  "block.end_rod.place": {
-    "sounds": [
-      "calcium:block/end_rod/place1",
-      "calcium:block/end_rod/place2",
-      "calcium:block/end_rod/place3",
-      "calcium:block/end_rod/place4"
-    ]
-  },
-  "music.jukebox.bliss": {
-    "sounds": [
-      {
-        "name": "calcium:music/jukebox/bliss",
-        "stream": true
-      }
-    ]
-  },
-  "music.jukebox.decay": {
-    "sounds": [
-      {
-        "name": "calcium:music/jukebox/decay",
-        "stream": true
-      }
-    ]
-  },
-  "music.jukebox.glare": {
-    "sounds": [
-      {
-        "name": "calcium:music/jukebox/glare",
-        "stream": true
-      }
-    ]
-  },
   "block.chorus_planks.break": {
     "sounds": [
       "calcium:block/chorus_planks/break1",
@@ -368,22 +39,6 @@
       "calcium:block/chorus_door/close3"
     ]
   },
-  "block.chorus_hanging_sign.break": {
-    "sounds": [
-      "calcium:block/chorus_hanging_sign/break1",
-      "calcium:block/chorus_hanging_sign/break2",
-      "calcium:block/chorus_hanging_sign/break3",
-      "calcium:block/chorus_hanging_sign/break4"
-    ]
-  },
-  "block.chorus_hanging_sign.step": {
-    "sounds": [
-      "calcium:block/chorus_hanging_sign/step1",
-      "calcium:block/chorus_hanging_sign/step2",
-      "calcium:block/chorus_hanging_sign/step3",
-      "calcium:block/chorus_hanging_sign/step4"
-    ]
-  },
   "block.chorus_trapdoor.open": {
     "sounds": [
       "calcium:block/chorus_trapdoor/open1",
@@ -398,27 +53,414 @@
       "calcium:block/chorus_trapdoor/close3"
     ]
   },
-  "block.cake_roll.eat": {
+  "block.blackstone.break": {
     "sounds": [
-      "calcium:block/cake_roll/eat1",
-      "calcium:block/cake_roll/eat2",
-      "calcium:block/cake_roll/eat3"
+      "calcium:block/blackstone/break1",
+      "calcium:block/blackstone/break2",
+      "calcium:block/blackstone/break3",
+      "calcium:block/blackstone/break4"
     ]
   },
-  "block.cake_roll.place": {
+  "block.blackstone.step": {
     "sounds": [
-      "calcium:block/cake_roll/place1",
-      "calcium:block/cake_roll/place2",
-      "calcium:block/cake_roll/place3",
-      "calcium:block/cake_roll/place4"
+      "calcium:block/blackstone/step1",
+      "calcium:block/blackstone/step2",
+      "calcium:block/blackstone/step3",
+      "calcium:block/blackstone/step4",
+      "calcium:block/blackstone/step5"
     ]
   },
-  "block.cake_roll.step": {
+  "block.quartz.break": {
     "sounds": [
-      "calcium:block/cake_roll/step1",
-      "calcium:block/cake_roll/step2",
-      "calcium:block/cake_roll/step3",
-      "calcium:block/cake_roll/step4"
+      "calcium:block/quartz/break1",
+      "calcium:block/quartz/break2",
+      "calcium:block/quartz/break3",
+      "calcium:block/quartz/break4"
+    ]
+  },
+  "block.end_stone.break": {
+    "sounds": [
+      "calcium:block/end_stone/break1",
+      "calcium:block/end_stone/break2",
+      "calcium:block/end_stone/break3",
+      "calcium:block/end_stone/break4"
+    ]
+  },
+  "block.end_stone.step": {
+    "sounds": [
+      "calcium:block/end_stone/step1",
+      "calcium:block/end_stone/step2",
+      "calcium:block/end_stone/step3",
+      "calcium:block/end_stone/step4"
+    ]
+  },
+  "block.mirestone.place": {
+    "sounds": [
+      "calcium:block/mirestone/place1",
+      "calcium:block/mirestone/place2",
+      "calcium:block/mirestone/place3",
+      "calcium:block/mirestone/place4",
+      "calcium:block/mirestone/place5",
+      "calcium:block/mirestone/place6"
+    ]
+  },
+  "block.mirestone.break": {
+    "sounds": [
+      "calcium:block/mirestone/break1",
+      "calcium:block/mirestone/break2",
+      "calcium:block/mirestone/break3",
+      "calcium:block/mirestone/break4"
+    ]
+  },
+  "block.mirestone.step": {
+    "sounds": [
+      "calcium:block/mirestone/step1",
+      "calcium:block/mirestone/step2",
+      "calcium:block/mirestone/step3",
+      "calcium:block/mirestone/step4",
+      "calcium:block/mirestone/step5",
+      "calcium:block/mirestone/step6"
+    ]
+  },
+  "block.veradite.break": {
+    "sounds": [
+      "calcium:block/veradite/break1",
+      "calcium:block/veradite/break2",
+      "calcium:block/veradite/break3",
+      "calcium:block/veradite/break4"
+    ]
+  },
+  "block.veradite.step": {
+    "sounds": [
+      "calcium:block/veradite/step1",
+      "calcium:block/veradite/step2",
+      "calcium:block/veradite/step3",
+      "calcium:block/veradite/step4"
+    ]
+  },
+  "block.veradite_bricks.break": {
+    "sounds": [
+      "calcium:block/veradite_bricks/break1",
+      "calcium:block/veradite_bricks/break2",
+      "calcium:block/veradite_bricks/break3",
+      "calcium:block/veradite_bricks/break4"
+    ]
+  },
+  "block.veradite_bricks.step": {
+    "sounds": [
+      "calcium:block/veradite_bricks/step1",
+      "calcium:block/veradite_bricks/step2",
+      "calcium:block/veradite_bricks/step3",
+      "calcium:block/veradite_bricks/step4"
+    ]
+  },
+  "block.kurodite.break": {
+    "sounds": [
+      "calcium:block/kurodite/break1",
+      "calcium:block/kurodite/break2",
+      "calcium:block/kurodite/break3",
+      "calcium:block/kurodite/break4"
+    ]
+  },
+  "block.kurodite.step": {
+    "sounds": [
+      "calcium:block/kurodite/step1",
+      "calcium:block/kurodite/step2",
+      "calcium:block/kurodite/step3",
+      "calcium:block/kurodite/step4"
+    ]
+  },
+  "block.kurodite_bricks.break": {
+    "sounds": [
+      "calcium:block/kurodite_bricks/break1",
+      "calcium:block/kurodite_bricks/break2",
+      "calcium:block/kurodite_bricks/break3",
+      "calcium:block/kurodite_bricks/break4"
+    ]
+  },
+  "block.kurodite_bricks.step": {
+    "sounds": [
+      "calcium:block/kurodite_bricks/step1",
+      "calcium:block/kurodite_bricks/step2",
+      "calcium:block/kurodite_bricks/step3",
+      "calcium:block/kurodite_bricks/step4"
+    ]
+  },
+  "block.purpur.break": {
+    "sounds": [
+      "calcium:block/purpur/break1",
+      "calcium:block/purpur/break2",
+      "calcium:block/purpur/break3",
+      "calcium:block/purpur/break4"
+    ]
+  },
+  "block.purpur.step": {
+    "sounds": [
+      "calcium:block/purpur/step1",
+      "calcium:block/purpur/step2",
+      "calcium:block/purpur/step3",
+      "calcium:block/purpur/step4",
+      "calcium:block/purpur/step5",
+      "calcium:block/purpur/step6"
+    ]
+  },
+  "block.gold_chain.break": {
+    "sounds": [
+      "calcium:block/gold_chain/break1",
+      "calcium:block/gold_chain/break2",
+      "calcium:block/gold_chain/break3",
+      "calcium:block/gold_chain/break4"
+    ]
+  },
+  "block.gold_chain.step": {
+    "sounds": [
+      "calcium:block/gold_chain/step1",
+      "calcium:block/gold_chain/step2",
+      "calcium:block/gold_chain/step3",
+      "calcium:block/gold_chain/step4"
+    ]
+  },
+  "block.shadoline.break": {
+    "sounds": [
+      "calcium:block/shadoline/break1",
+      "calcium:block/shadoline/break2",
+      "calcium:block/shadoline/break3",
+      "calcium:block/shadoline/break4"
+    ]
+  },
+  "block.shadoline.place": {
+    "sounds": [
+      "calcium:block/shadoline/place1",
+      "calcium:block/shadoline/place2",
+      "calcium:block/shadoline/place3",
+      "calcium:block/shadoline/place4"
+    ]
+  },
+  "block.shadoline.step": {
+    "sounds": [
+      "calcium:block/shadoline/step1",
+      "calcium:block/shadoline/step2",
+      "calcium:block/shadoline/step3",
+      "calcium:block/shadoline/step4"
+    ]
+  },
+  "block.shadoline_chain.break": {
+    "sounds": [
+      "calcium:block/shadoline_chain/break1",
+      "calcium:block/shadoline_chain/break2",
+      "calcium:block/shadoline_chain/break3",
+      "calcium:block/shadoline_chain/break4"
+    ]
+  },
+  "block.shadoline_chain.step": {
+    "sounds": [
+      "calcium:block/shadoline_chain/step1",
+      "calcium:block/shadoline_chain/step2",
+      "calcium:block/shadoline_chain/step3",
+      "calcium:block/shadoline_chain/step4"
+    ]
+  },
+  "block.obsidian.break": {
+    "sounds": [
+      "calcium:block/obsidian/break1",
+      "calcium:block/obsidian/break2",
+      "calcium:block/obsidian/break3"
+    ]
+  },
+  "block.obsidian.place": {
+    "sounds": [
+      "calcium:block/obsidian/place1",
+      "calcium:block/obsidian/place2",
+      "calcium:block/obsidian/place3",
+      "calcium:block/obsidian/place4"
+    ]
+  },
+  "block.obsidian.step": {
+    "sounds": [
+      "calcium:block/obsidian/step1",
+      "calcium:block/obsidian/step2",
+      "calcium:block/obsidian/step3",
+      "calcium:block/obsidian/step4",
+      "calcium:block/obsidian/step5",
+      "calcium:block/obsidian/step6"
+    ]
+  },
+  "block.magma.break": {
+    "sounds": [
+      "calcium:block/magma/break1",
+      "calcium:block/magma/break2",
+      "calcium:block/magma/break3",
+      "calcium:block/magma/break4",
+      "calcium:block/magma/break5"
+    ]
+  },
+  "block.magma.step": {
+    "sounds": [
+      "calcium:block/magma/step1",
+      "calcium:block/magma/step2",
+      "calcium:block/magma/step3",
+      "calcium:block/magma/step4"
+    ]
+  },
+  "block.soulslate.place": {
+    "sounds": [
+      "calcium:block/soulslate/place1",
+      "calcium:block/soulslate/place2",
+      "calcium:block/soulslate/place3",
+      "calcium:block/soulslate/place4"
+    ]
+  },
+  "block.soulslate.break": {
+    "sounds": [
+      "calcium:block/soulslate/break1",
+      "calcium:block/soulslate/break2",
+      "calcium:block/soulslate/break3",
+      "calcium:block/soulslate/break4"
+    ]
+  },
+  "block.soulslate.step": {
+    "sounds": [
+      "calcium:block/soulslate/step1",
+      "calcium:block/soulslate/step2",
+      "calcium:block/soulslate/step3",
+      "calcium:block/soulslate/step4"
+    ]
+  },
+  "block.glowstone.break": {
+    "sounds": [
+      "calcium:block/glowstone/break1",
+      "calcium:block/glowstone/break2",
+      "calcium:block/glowstone/break3"
+    ]
+  },
+  "block.glowstone.place": {
+    "sounds": [
+      "calcium:block/glowstone/place1",
+      "calcium:block/glowstone/place2",
+      "calcium:block/glowstone/place3",
+      "calcium:block/glowstone/place4"
+    ]
+  },
+  "block.end_stone_shadoline_ore.break": {
+    "sounds": [
+      "calcium:block/end_stone_shadoline_ore/break1",
+      "calcium:block/end_stone_shadoline_ore/break2",
+      "calcium:block/end_stone_shadoline_ore/break3",
+      "calcium:block/end_stone_shadoline_ore/break4"
+    ]
+  },
+  "block.end_stone_shadoline_ore.step": {
+    "sounds": [
+      "calcium:block/end_stone_shadoline_ore/step1",
+      "calcium:block/end_stone_shadoline_ore/step2",
+      "calcium:block/end_stone_shadoline_ore/step3",
+      "calcium:block/end_stone_shadoline_ore/step4"
+    ]
+  },
+  "block.mirestone_shadoline_ore.place": {
+    "sounds": [
+      "calcium:block/mirestone_shadoline_ore/place1",
+      "calcium:block/mirestone_shadoline_ore/place2",
+      "calcium:block/mirestone_shadoline_ore/place3",
+      "calcium:block/mirestone_shadoline_ore/place4"
+    ]
+  },
+  "block.mirestone_shadoline_ore.break": {
+    "sounds": [
+      "calcium:block/mirestone_shadoline_ore/break1",
+      "calcium:block/mirestone_shadoline_ore/break2",
+      "calcium:block/mirestone_shadoline_ore/break3",
+      "calcium:block/mirestone_shadoline_ore/break4"
+    ]
+  },
+  "block.mirestone_shadoline_ore.step": {
+    "sounds": [
+      "calcium:block/mirestone_shadoline_ore/step1",
+      "calcium:block/mirestone_shadoline_ore/step2",
+      "calcium:block/mirestone_shadoline_ore/step3",
+      "calcium:block/mirestone_shadoline_ore/step4"
+    ]
+  },
+  "block.pallid_magnia.place": {
+    "sounds": [
+      "calcium:block/pallid_magnia/place1",
+      "calcium:block/pallid_magnia/place2",
+      "calcium:block/pallid_magnia/place3",
+      "calcium:block/pallid_magnia/place4"
+    ]
+  },
+  "block.pallid_magnia.break": {
+    "sounds": [
+      "calcium:block/pallid_magnia/break1",
+      "calcium:block/pallid_magnia/break2",
+      "calcium:block/pallid_magnia/break3",
+      "calcium:block/pallid_magnia/break4"
+    ]
+  },
+  "block.pallid_magnia.step": {
+    "sounds": [
+      "calcium:block/pallid_magnia/step1",
+      "calcium:block/pallid_magnia/step2",
+      "calcium:block/pallid_magnia/step3",
+      "calcium:block/pallid_magnia/step4"
+    ]
+  },
+  "block.umbral_magnia.place": {
+    "sounds": [
+      "calcium:block/umbral_magnia/place1",
+      "calcium:block/umbral_magnia/place2",
+      "calcium:block/umbral_magnia/place3",
+      "calcium:block/umbral_magnia/place4"
+    ]
+  },
+  "block.umbral_magnia.break": {
+    "sounds": [
+      "calcium:block/umbral_magnia/break1",
+      "calcium:block/umbral_magnia/break2",
+      "calcium:block/umbral_magnia/break3",
+      "calcium:block/umbral_magnia/break4"
+    ]
+  },
+  "block.umbral_magnia.step": {
+    "sounds": [
+      "calcium:block/umbral_magnia/step1",
+      "calcium:block/umbral_magnia/step2",
+      "calcium:block/umbral_magnia/step3",
+      "calcium:block/umbral_magnia/step4"
+    ]
+  },
+  "block.end_growth.break": {
+    "sounds": [
+      "calcium:block/end_growth/break1",
+      "calcium:block/end_growth/break2",
+      "calcium:block/end_growth/break3",
+      "calcium:block/end_growth/break4"
+    ]
+  },
+  "block.wisp.break": {
+    "sounds": [
+      "calcium:block/wisp/break1",
+      "calcium:block/wisp/break2",
+      "calcium:block/wisp/break3",
+      "calcium:block/wisp/break4"
+    ]
+  },
+  "block.flowering_wisp.break": {
+    "sounds": [
+      "calcium:block/flowering_wisp/break1",
+      "calcium:block/flowering_wisp/break2",
+      "calcium:block/flowering_wisp/break3",
+      "calcium:block/flowering_wisp/break4"
+    ]
+  },
+  "block.blinkvine.place": {
+    "sounds": [
+      "calcium:block/blinkvine/place1",
+      "calcium:block/blinkvine/place2",
+      "calcium:block/blinkvine/place3",
+      "calcium:block/blinkvine/place4",
+      "calcium:block/blinkvine/place5",
+      "calcium:block/blinkvine/place6"
     ]
   },
   "block.chorus_flower.break": {
@@ -457,22 +499,12 @@
       "calcium:block/chorus_stalk/step6"
     ]
   },
-  "block.purpur.break": {
+  "block.end_rod.place": {
     "sounds": [
-      "calcium:block/purpur/break1",
-      "calcium:block/purpur/break2",
-      "calcium:block/purpur/break3",
-      "calcium:block/purpur/break4"
-    ]
-  },
-  "block.purpur.step": {
-    "sounds": [
-      "calcium:block/purpur/step1",
-      "calcium:block/purpur/step2",
-      "calcium:block/purpur/step3",
-      "calcium:block/purpur/step4",
-      "calcium:block/purpur/step5",
-      "calcium:block/purpur/step6"
+      "calcium:block/end_rod/place1",
+      "calcium:block/end_rod/place2",
+      "calcium:block/end_rod/place3",
+      "calcium:block/end_rod/place4"
     ]
   },
   "block.end_gateway.break": {
@@ -482,139 +514,107 @@
       "calcium:block/end_gateway/portal_break3"
     ]
   },
-  "block.flowering_wisp.break": {
+  "block.chorus_hanging_sign.break": {
     "sounds": [
-      "calcium:block/flowering_wisp/break1",
-      "calcium:block/flowering_wisp/break2",
-      "calcium:block/flowering_wisp/break3",
-      "calcium:block/flowering_wisp/break4"
+      "calcium:block/chorus_hanging_sign/break1",
+      "calcium:block/chorus_hanging_sign/break2",
+      "calcium:block/chorus_hanging_sign/break3",
+      "calcium:block/chorus_hanging_sign/break4"
     ]
   },
-  "block.wisp.break": {
+  "block.chorus_hanging_sign.step": {
     "sounds": [
-      "calcium:block/wisp/break1",
-      "calcium:block/wisp/break2",
-      "calcium:block/wisp/break3",
-      "calcium:block/wisp/break4"
+      "calcium:block/chorus_hanging_sign/step1",
+      "calcium:block/chorus_hanging_sign/step2",
+      "calcium:block/chorus_hanging_sign/step3",
+      "calcium:block/chorus_hanging_sign/step4"
     ]
   },
-  "block.blackstone.break": {
+  "block.cake_roll.eat": {
     "sounds": [
-      "calcium:block/blackstone/break1",
-      "calcium:block/blackstone/break2",
-      "calcium:block/blackstone/break3",
-      "calcium:block/blackstone/break4"
+      "calcium:block/cake_roll/eat1",
+      "calcium:block/cake_roll/eat2",
+      "calcium:block/cake_roll/eat3"
     ]
   },
-  "block.blackstone.step": {
+  "block.cake_roll.place": {
     "sounds": [
-      "calcium:block/blackstone/step1",
-      "calcium:block/blackstone/step2",
-      "calcium:block/blackstone/step3",
-      "calcium:block/blackstone/step4",
-      "calcium:block/blackstone/step5"
+      "calcium:block/cake_roll/place1",
+      "calcium:block/cake_roll/place2",
+      "calcium:block/cake_roll/place3",
+      "calcium:block/cake_roll/place4"
     ]
   },
-  "block.glowstone.break": {
+  "block.cake_roll.step": {
     "sounds": [
-      "calcium:block/glowstone/break1",
-      "calcium:block/glowstone/break2",
-      "calcium:block/glowstone/break3"
+      "calcium:block/cake_roll/step1",
+      "calcium:block/cake_roll/step2",
+      "calcium:block/cake_roll/step3",
+      "calcium:block/cake_roll/step4"
     ]
   },
-  "block.glowstone.place": {
+  "item.bucket.empty_ectoplasm": {
     "sounds": [
-      "calcium:block/glowstone/place1",
-      "calcium:block/glowstone/place2",
-      "calcium:block/glowstone/place3",
-      "calcium:block/glowstone/place4"
+      "calcium:block/ectoplasm/empty1",
+      "calcium:block/ectoplasm/empty2"
     ]
   },
-  "block.magma.break": {
+  "item.bucket.fill_ectoplasm": {
     "sounds": [
-      "calcium:block/magma/break1",
-      "calcium:block/magma/break2",
-      "calcium:block/magma/break3",
-      "calcium:block/magma/break4",
-      "calcium:block/magma/break5"
+      "calcium:block/ectoplasm/fill1",
+      "calcium:block/ectoplasm/fill2"
     ]
   },
-  "block.magma.step": {
+  "block.ectoplasm.whispering": {
     "sounds": [
-      "calcium:block/magma/step1",
-      "calcium:block/magma/step2",
-      "calcium:block/magma/step3",
-      "calcium:block/magma/step4"
+      "calcium:block/ectoplasm/whispering1",
+      "calcium:block/ectoplasm/whispering2",
+      "calcium:block/ectoplasm/whispering3",
+      "calcium:block/ectoplasm/whispering4"
     ]
   },
-  "block.obsidian.break": {
+  "block.monitor.static": {
     "sounds": [
-      "calcium:block/obsidian/break1",
-      "calcium:block/obsidian/break2",
-      "calcium:block/obsidian/break3"
+      "calcium:block/monitor/static"
     ]
   },
-  "block.obsidian.place": {
+  "item.signal_card.insert": {
     "sounds": [
-      "calcium:block/obsidian/place1",
-      "calcium:block/obsidian/place2",
-      "calcium:block/obsidian/place3",
-      "calcium:block/obsidian/place4"
+      "calcium:item/signal_card/insert"
     ]
   },
-  "block.obsidian.step": {
+  "item.signal_card.eject": {
     "sounds": [
-      "calcium:block/obsidian/step1",
-      "calcium:block/obsidian/step2",
-      "calcium:block/obsidian/step3",
-      "calcium:block/obsidian/step4",
-      "calcium:block/obsidian/step5",
-      "calcium:block/obsidian/step6"
-    ]
-  },
-  "block.quartz.break": {
-    "sounds": [
-      "calcium:block/quartz/break1",
-      "calcium:block/quartz/break2",
-      "calcium:block/quartz/break3",
-      "calcium:block/quartz/break4"
-    ]
-  },
-  "block.gold_chain.break": {
-    "sounds": [
-      "calcium:block/gold_chain/break1",
-      "calcium:block/gold_chain/break2",
-      "calcium:block/gold_chain/break3",
-      "calcium:block/gold_chain/break4"
-    ]
-  },
-  "block.gold_chain.step": {
-    "sounds": [
-      "calcium:block/gold_chain/step1",
-      "calcium:block/gold_chain/step2",
-      "calcium:block/gold_chain/step3",
-      "calcium:block/gold_chain/step4"
-    ]
-  },
-  "block.shadoline_chain.break": {
-    "sounds": [
-      "calcium:block/shadoline_chain/break1",
-      "calcium:block/shadoline_chain/break2",
-      "calcium:block/shadoline_chain/break3",
-      "calcium:block/shadoline_chain/break4"
-    ]
-  },
-  "block.shadoline_chain.step": {
-    "sounds": [
-      "calcium:block/shadoline_chain/step1",
-      "calcium:block/shadoline_chain/step2",
-      "calcium:block/shadoline_chain/step3",
-      "calcium:block/shadoline_chain/step4"
+      "calcium:item/signal_card/eject"
     ]
   },
   "entity.shulker_bullet.loop": {
     "sounds": [
       "calcium:entity/shulker_bullet/loop"
+    ]
+  },
+  "music.jukebox.bliss": {
+    "sounds": [
+      {
+        "name": "calcium:music/jukebox/bliss",
+        "stream": true
+      }
+    ]
+  },
+  "music.jukebox.decay": {
+    "sounds": [
+      {
+        "name": "calcium:music/jukebox/decay",
+        "stream": true
+      }
+    ]
+  },
+  "music.jukebox.glare": {
+    "sounds": [
+      {
+        "name": "calcium:music/jukebox/glare",
+        "stream": true
+      }
     ]
   }
 }

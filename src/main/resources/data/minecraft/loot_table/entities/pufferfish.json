@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:pufferfish",
+          "name": "calcium:fish",
           "functions": [
             {
               "function": "minecraft:set_count",

@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "type=single,tip=true": {
+      "model": "calcium:block/large_single_sea_pickle"
+    },
+    "type=single,tip=false": {
+      "model": "calcium:block/large_dead_single_sea_pickle"
+    },
+    "type=double,tip=true": {
+      "model": "calcium:block/large_double_sea_pickle"
+    },
+    "type=double,tip=false": {
+      "model": "calcium:block/large_dead_double_sea_pickle"
+    },
+    "type=bottom,tip=false": {
+      "model": "calcium:block/large_bottom_sea_pickle"
+    },
+    "type=bottom,tip=true": {
+      "model": "calcium:block/large_bottom_sea_pickle"
+    }
+  }
+}

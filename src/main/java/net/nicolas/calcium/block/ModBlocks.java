@@ -27,6 +27,11 @@ import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.nicolas.calcium.block.custom.*;
+import net.nicolas.calcium.block.entity.ItemDisplayBlockEntity;
+import net.nicolas.calcium.block.entity.MonitorBlockEntity;
+import net.nicolas.calcium.block.entity.OvenBlockEntity;
+import net.nicolas.calcium.block.entity.ViewfinderBlockEntity;
+import net.nicolas.calcium.block.fluid.EctoplasmFluid;
 import net.nicolas.calcium.sound.ModSoundGroups;
 
 import java.util.function.Function;
@@ -78,6 +83,7 @@ public class ModBlocks {
     public static final Block SHORT_ICY_IRIS = register("short_icy_iris", IcyPlantBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.ICE).replaceable().noCollision().instabreak().sound(SoundType.CROP).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY).ignitedByLava(), true);
     public static final Block TALL_ICY_IRIS = register("tall_icy_iris", TallIcyPlantBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.ICE).replaceable().noCollision().instabreak().sound(SoundType.CROP).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY).ignitedByLava(), true);
     public static final Block CLOVERS = register("clovers", FlowerBedBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollision().instabreak().sound(SoundType.PINK_PETALS).pushReaction(PushReaction.DESTROY).ignitedByLava(), true);
+    public static final Block LARGE_SEA_PICKLE = register("large_sea_pickle", LargeSeaPickleBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).sound(SoundType.SLIME_BLOCK).pushReaction(PushReaction.DESTROY).lightLevel(state -> state.getValue(LargeSeaPickleBlock.TIP) ? 15 : 0).strength(0.5F), true);
     public static final Block EMBER_SPROUTS = register("ember_sprouts", FlatPlantBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.CRIMSON_HYPHAE).replaceable().noCollision().instabreak().sound(SoundType.NETHER_SPROUTS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY), true);
     public static final Block END_GROWTH = register("end_growth", EndPlantBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.SAND).replaceable().noCollision().instabreak().sound(ModSoundGroups.END_GROWTH).offsetType(BlockBehaviour.OffsetType.XYZ).pushReaction(PushReaction.DESTROY).ignitedByLava(), true);
     // Enderweed

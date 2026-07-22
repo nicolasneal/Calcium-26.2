@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "calcium:chorus_stairs",
     "calcium:polished_stone_stairs",
     "calcium:cracked_stone_brick_stairs",
     "calcium:smooth_stone_stairs",

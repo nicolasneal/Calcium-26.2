@@ -12,9 +12,9 @@
     "calcium:chorus_trapdoor",
     "calcium:chorus_shelf",
     "calcium:chorus_sign",
-    "calcium:chorus_wall_sign",
     "calcium:chorus_hanging_sign",
-    "calcium:chorus_wall_hanging_sign",
-    "calcium:monitor"
+    "calcium:monitor",
+    "calcium:chorus_wall_sign",
+    "calcium:chorus_wall_hanging_sign"
   ]
 }

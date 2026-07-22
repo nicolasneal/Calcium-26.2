@@ -9,6 +9,10 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.display.RecipeDisplay;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.nicolas.calcium.core.recipe.enchanting.EnchantingRecipe;
+import net.nicolas.calcium.core.recipe.enchanting.EnchantingRecipeDisplay;
+import net.nicolas.calcium.core.recipe.oven.OvenRecipe;
+import net.nicolas.calcium.core.recipe.oven.OvenRecipeDisplay;
 
 import java.util.HashMap;
 import java.util.List;

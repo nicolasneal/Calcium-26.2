@@ -1,9 +1,9 @@
 {
   "replace": false,
   "values": [
-    "calcium:celestial_vines_body",
     "calcium:celestial_vines_head",
-    "calcium:blinkvine_body",
-    "calcium:blinkvine_head"
+    "calcium:blinkvine_head",
+    "calcium:celestial_vines_body",
+    "calcium:blinkvine_body"
   ]
 }

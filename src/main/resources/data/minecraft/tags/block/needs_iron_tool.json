@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "calcium:raw_shadoline_block",
     "calcium:cut_gold",
     "calcium:cut_gold_stairs",
     "calcium:cut_gold_slab",
@@ -11,7 +12,6 @@
     "calcium:gold_trapdoor",
     "calcium:gold_bars",
     "calcium:gold_chain",
-    "calcium:gold_lantern",
     "calcium:shadoline_block",
     "calcium:cut_shadoline",
     "calcium:cut_shadoline_stairs",
@@ -23,6 +23,7 @@
     "calcium:shadoline_trapdoor",
     "calcium:shadoline_bars",
     "calcium:shadoline_chain",
+    "calcium:gold_lantern",
     "calcium:shadoline_lantern"
   ]
 }

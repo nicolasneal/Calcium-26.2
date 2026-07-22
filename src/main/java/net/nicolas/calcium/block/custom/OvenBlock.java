@@ -29,6 +29,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.nicolas.calcium.block.ModBlocks;
+import net.nicolas.calcium.block.entity.OvenBlockEntity;
 import org.jspecify.annotations.Nullable;
 
 public class OvenBlock extends BaseEntityBlock implements EntityBlock {

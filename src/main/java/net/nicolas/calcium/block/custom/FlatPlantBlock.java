@@ -2,21 +2,18 @@ package net.nicolas.calcium.block.custom;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.Identifier;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.nicolas.calcium.block.tag.ModBlockTags;
 
 public class FlatPlantBlock extends GenericPlantBlock {
 
     public static final MapCodec<FlatPlantBlock> CODEC = simpleCodec(FlatPlantBlock::new);
     private static final VoxelShape SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 3.0, 15.0);
-    public static final TagKey<Block> VALID_BASES = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("calcium", "nether_plant_placement"));
 
     public FlatPlantBlock(Properties settings) {
         super(settings);
@@ -33,7 +30,7 @@ public class FlatPlantBlock extends GenericPlantBlock {
     @Override protected boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
         BlockPos floorPos = pos.below();
         BlockState floorState = world.getBlockState(floorPos);
-        return floorState.is(VALID_BASES);
+        return floorState.is(ModBlockTags.NETHER_PLANT_PLACEMENT);
     }
 
 }

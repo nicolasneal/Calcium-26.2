@@ -12,19 +12,22 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
+import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.nicolas.calcium.util.WaterloggingHelper;
 import org.jspecify.annotations.Nullable;
 
 import java.util.EnumMap;
 import java.util.Map;
 
-public class MagniaSproutBlock extends Block {
+public class MagniaSproutBlock extends Block implements SimpleWaterloggedBlock {
 
     public static final MapCodec<MagniaSproutBlock> CODEC = simpleCodec(MagniaSproutBlock::new);
     public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
@@ -41,7 +44,7 @@ public class MagniaSproutBlock extends Block {
 
     public MagniaSproutBlock(Properties settings) {
         super(settings);
-        this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.UP));
+        this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.UP).setValue(BlockStateProperties.WATERLOGGED, false));
     }
 
     @Override protected MapCodec<? extends Block> codec() {
@@ -59,6 +62,7 @@ public class MagniaSproutBlock extends Block {
     }
 
     @Override protected BlockState updateShape(BlockState state, LevelReader world, ScheduledTickAccess tickView, BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, RandomSource random) {
+        WaterloggingHelper.scheduleWaterTick(tickView, world, pos, state);
         if (direction == state.getValue(FACING).getOpposite() && !this.canSurvive(state, world, pos)) {
             return Blocks.AIR.defaultBlockState();
         }
@@ -66,7 +70,7 @@ public class MagniaSproutBlock extends Block {
     }
 
     @Override public @Nullable BlockState getStateForPlacement(BlockPlaceContext context) {
-        return this.defaultBlockState().setValue(FACING, context.getClickedFace());
+        return WaterloggingHelper.withWaterlogged(this.defaultBlockState().setValue(FACING, context.getClickedFace()), context.getLevel(), context.getClickedPos());
     }
 
     @Override protected BlockState rotate(BlockState state, Rotation rotation) {
@@ -78,11 +82,15 @@ public class MagniaSproutBlock extends Block {
     }
 
     @Override protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
+        builder.add(FACING, BlockStateProperties.WATERLOGGED);
     }
 
     @Override protected boolean isPathfindable(BlockState state, PathComputationType type) {
         return (type == PathComputationType.AIR && !this.hasCollision) || super.isPathfindable(state, type);
+    }
+
+    @Override protected FluidState getFluidState(BlockState state) {
+        return WaterloggingHelper.fluidState(state, super.getFluidState(state));
     }
 
 }

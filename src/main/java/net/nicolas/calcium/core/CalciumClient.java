@@ -22,21 +22,21 @@ import net.minecraft.client.model.animal.sniffer.SnifferModel;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.nicolas.calcium.block.ModBlocks;
-import net.nicolas.calcium.block.custom.MonitorBlockEntity;
-import net.nicolas.calcium.block.custom.ViewfinderBlockEntity;
-import net.nicolas.calcium.core.client.SnifferChestModel;
-import net.nicolas.calcium.core.client.SnifferSaddleLayer;
-import net.nicolas.calcium.core.client.ViewfinderBlockEntityRenderer;
-import net.nicolas.calcium.core.client.ViewfinderController;
-import net.nicolas.calcium.core.client.ViewfinderModel;
+import net.nicolas.calcium.block.entity.MonitorBlockEntity;
+import net.nicolas.calcium.block.entity.ViewfinderBlockEntity;
+import net.nicolas.calcium.core.client.sniffer.SnifferChestModel;
+import net.nicolas.calcium.core.client.sniffer.SnifferSaddleLayer;
+import net.nicolas.calcium.core.client.viewfinder.ViewfinderBlockEntityRenderer;
+import net.nicolas.calcium.core.client.viewfinder.ViewfinderController;
+import net.nicolas.calcium.core.client.viewfinder.ViewfinderModel;
 import net.minecraft.world.entity.animal.sniffer.Sniffer;
 import net.nicolas.calcium.core.network.OpenSnifferInventoryPayload;
 import net.nicolas.calcium.core.network.RotateExtraSlotsPayload;
-import net.nicolas.calcium.screen.CustomBeaconScreen;
-import net.nicolas.calcium.screen.CustomEnchantingScreen;
-import net.nicolas.calcium.screen.OvenScreen;
-import net.nicolas.calcium.screen.SnifferInventoryMenu;
-import net.nicolas.calcium.screen.SnifferInventoryScreen;
+import net.nicolas.calcium.screen.beacon.CustomBeaconScreen;
+import net.nicolas.calcium.screen.enchanting.CustomEnchantingScreen;
+import net.nicolas.calcium.screen.oven.OvenScreen;
+import net.nicolas.calcium.screen.sniffer.SnifferInventoryScreenHandler;
+import net.nicolas.calcium.screen.sniffer.SnifferInventoryScreen;
 
 import java.util.List;
 
@@ -65,7 +65,7 @@ public class CalciumClient implements ClientModInitializer {
         MenuScreens.register(Calcium.SNIFFER_INVENTORY_MENU_CHESTED, SnifferInventoryScreen::new);
 
         ClientPlayNetworking.registerGlobalReceiver(OpenSnifferInventoryPayload.TYPE, (payload, context) -> {
-            if (context.player().containerMenu instanceof SnifferInventoryMenu menu && menu.containerId == payload.containerId() && context.player().level().getEntity(payload.entityId()) instanceof Sniffer sniffer) {
+            if (context.player().containerMenu instanceof SnifferInventoryScreenHandler menu && menu.containerId == payload.containerId() && context.player().level().getEntity(payload.entityId()) instanceof Sniffer sniffer) {
                 menu.setClientSniffer(sniffer);
             }
         });

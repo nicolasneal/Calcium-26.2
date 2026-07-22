@@ -53,8 +53,10 @@ public class ModItems {
 
     public static final Item CRESCENT_BANNER_PATTERN = register("crescent_banner_pattern", Item::new, new Item.Properties().stacksTo(64).delayedComponent(DataComponents.PROVIDES_BANNER_PATTERNS, context -> context.getOrThrow(TagKey.create(Registries.BANNER_PATTERN, Identifier.fromNamespaceAndPath(MOD_ID, "pattern_item/crescent")))));
 
-    // FOOD AND DRINK (16)
+    // FOOD AND DRINK (18)
 
+    public static final Item FISH = register("fish", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.FISH));
+    public static final Item COOKED_FISH = register("cooked_fish", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.COOKED_FISH));
     public static final Item CHEVAL = register("cheval", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.CHEVAL));
     public static final Item COOKED_CHEVAL = register("cooked_cheval", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.COOKED_CHEVAL));
     public static final Item BEAR = register("bear", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.BEAR));

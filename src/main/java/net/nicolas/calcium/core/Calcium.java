@@ -40,10 +40,10 @@ import net.nicolas.calcium.mixin.accessors.CauldronInteractionsAccessor;
 import net.nicolas.calcium.mixin.accessors.PoiTypesAccessor;
 import net.nicolas.calcium.core.network.ModNetworking;
 import net.nicolas.calcium.core.recipe.ModRecipes;
-import net.nicolas.calcium.screen.CustomBeaconScreenHandler;
-import net.nicolas.calcium.screen.CustomEnchantingScreenHandler;
-import net.nicolas.calcium.screen.OvenMenu;
-import net.nicolas.calcium.screen.SnifferInventoryMenu;
+import net.nicolas.calcium.screen.beacon.CustomBeaconScreenHandler;
+import net.nicolas.calcium.screen.enchanting.CustomEnchantingScreenHandler;
+import net.nicolas.calcium.screen.oven.OvenScreenHandler;
+import net.nicolas.calcium.screen.sniffer.SnifferInventoryScreenHandler;
 import net.nicolas.calcium.sound.ModSoundGroups;
 import net.nicolas.calcium.sound.ModSounds;
 import net.nicolas.calcium.worldgen.ZPositionDensityFunction;
@@ -57,9 +57,9 @@ public class Calcium implements ModInitializer {
 
     public static final MenuType<CustomBeaconScreenHandler> CUSTOM_BEACON_SCREEN_HANDLER = Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath("calcium", "beacon"), new MenuType<>(CustomBeaconScreenHandler::new, FeatureFlagSet.of(FeatureFlags.VANILLA)));
     public static final MenuType<CustomEnchantingScreenHandler> CUSTOM_ENCHANTING_SCREEN_HANDLER = Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath("calcium", "enchanting_screen"), new MenuType<>(CustomEnchantingScreenHandler::new, FeatureFlagSet.of(FeatureFlags.VANILLA)));
-    public static final MenuType<OvenMenu> OVEN_MENU = Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath("calcium", "oven"), new MenuType<>(OvenMenu::new, FeatureFlagSet.of(FeatureFlags.VANILLA)));
-    public static final MenuType<SnifferInventoryMenu> SNIFFER_INVENTORY_MENU = Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath("calcium", "sniffer_inventory"), new MenuType<>((containerId, inventory) -> new SnifferInventoryMenu(containerId, inventory, false), FeatureFlagSet.of(FeatureFlags.VANILLA)));
-    public static final MenuType<SnifferInventoryMenu> SNIFFER_INVENTORY_MENU_CHESTED = Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath("calcium", "sniffer_inventory_chested"), new MenuType<>((containerId, inventory) -> new SnifferInventoryMenu(containerId, inventory, true), FeatureFlagSet.of(FeatureFlags.VANILLA)));
+    public static final MenuType<OvenScreenHandler> OVEN_MENU = Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath("calcium", "oven"), new MenuType<>(OvenScreenHandler::new, FeatureFlagSet.of(FeatureFlags.VANILLA)));
+    public static final MenuType<SnifferInventoryScreenHandler> SNIFFER_INVENTORY_MENU = Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath("calcium", "sniffer_inventory"), new MenuType<>((containerId, inventory) -> new SnifferInventoryScreenHandler(containerId, inventory, false), FeatureFlagSet.of(FeatureFlags.VANILLA)));
+    public static final MenuType<SnifferInventoryScreenHandler> SNIFFER_INVENTORY_MENU_CHESTED = Registry.register(BuiltInRegistries.MENU, Identifier.fromNamespaceAndPath("calcium", "sniffer_inventory_chested"), new MenuType<>((containerId, inventory) -> new SnifferInventoryScreenHandler(containerId, inventory, true), FeatureFlagSet.of(FeatureFlags.VANILLA)));
 
     @Override public void onInitialize() {
 

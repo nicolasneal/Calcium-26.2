@@ -7,7 +7,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.nicolas.calcium.block.custom.ViewfinderBlockEntity;
+import net.nicolas.calcium.block.entity.ViewfinderBlockEntity;
 import net.nicolas.calcium.item.ModItems;
 
 public class SignalCardItem extends Item {

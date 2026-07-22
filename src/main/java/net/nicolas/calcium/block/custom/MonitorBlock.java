@@ -22,6 +22,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.nicolas.calcium.block.ModBlocks;
+import net.nicolas.calcium.block.entity.MonitorBlockEntity;
 import org.jspecify.annotations.Nullable;
 
 public class MonitorBlock extends HorizontalDirectionalBlock implements EntityBlock {

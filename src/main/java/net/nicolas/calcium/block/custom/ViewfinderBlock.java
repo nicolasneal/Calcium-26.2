@@ -28,6 +28,7 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.nicolas.calcium.block.ModBlocks;
+import net.nicolas.calcium.block.entity.ViewfinderBlockEntity;
 import org.jspecify.annotations.Nullable;
 
 public class ViewfinderBlock extends DirectionalBlock implements EntityBlock, SimpleWaterloggedBlock {

@@ -1,16 +1,18 @@
 {
   "replace": false,
   "values": [
-    "calcium:soulslate",
     "calcium:netherrack_glowstone_ore",
+    "calcium:soulslate",
+    "calcium:end_stone_shadoline_ore",
     "calcium:mirestone",
+    "calcium:mirestone_shadoline_ore",
     "calcium:veradite",
     "calcium:kurodite",
     "calcium:pallid_magnia",
     "calcium:umbral_magnia",
-    "calcium:end_stone_shadoline_ore",
-    "calcium:mirestone_shadoline_ore",
     "calcium:raw_shadoline_block",
+    "calcium:pallid_magnia_sprout",
+    "calcium:umbral_magnia_sprout",
     "calcium:polished_stone",
     "calcium:polished_stone_stairs",
     "calcium:polished_stone_slab",
@@ -222,7 +224,6 @@
     "calcium:gold_trapdoor",
     "calcium:gold_bars",
     "calcium:gold_chain",
-    "calcium:gold_lantern",
     "calcium:shadoline_block",
     "calcium:cut_shadoline",
     "calcium:cut_shadoline_stairs",
@@ -234,9 +235,8 @@
     "calcium:shadoline_trapdoor",
     "calcium:shadoline_bars",
     "calcium:shadoline_chain",
+    "calcium:gold_lantern",
     "calcium:shadoline_lantern",
-    "calcium:viewfinder",
-    "calcium:pallid_magnia_sprout",
-    "calcium:umbral_magnia_sprout"
+    "calcium:viewfinder"
   ]
 }

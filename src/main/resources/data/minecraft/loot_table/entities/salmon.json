@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:salmon",
+          "name": "calcium:fish",
           "functions": [
             {
               "function": "minecraft:set_count",
