@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "calcium:algal_sand",
+    "#minecraft:sand",
+    "minecraft:gravel",
+    "#minecraft:coral_blocks"
+  ]
+}

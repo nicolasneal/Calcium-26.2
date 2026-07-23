@@ -1,4 +1,4 @@
-package net.nicolas.calcium.util;
+package net.nicolas.calcium.core.util;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelReader;

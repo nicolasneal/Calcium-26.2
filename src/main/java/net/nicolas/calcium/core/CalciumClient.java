@@ -27,6 +27,8 @@ import net.nicolas.calcium.block.entity.MonitorBlockEntity;
 import net.nicolas.calcium.block.entity.ViewfinderBlockEntity;
 import net.nicolas.calcium.core.client.giantclam.GiantClamModel;
 import net.nicolas.calcium.core.client.giantclam.GiantClamRenderer;
+import net.nicolas.calcium.core.client.seacow.SeaCowModel;
+import net.nicolas.calcium.core.client.seacow.SeaCowRenderer;
 import net.nicolas.calcium.core.client.sniffer.SnifferChestModel;
 import net.nicolas.calcium.core.client.sniffer.SnifferSaddleLayer;
 import net.nicolas.calcium.entity.ModEntityTypes;
@@ -84,6 +86,10 @@ public class CalciumClient implements ClientModInitializer {
 
         ModelLayerRegistry.registerModelLayer(GiantClamRenderer.LAYER, GiantClamModel::createBodyLayer);
         EntityRendererRegistry.register(ModEntityTypes.GIANT_CLAM, GiantClamRenderer::new);
+
+        ModelLayerRegistry.registerModelLayer(SeaCowRenderer.LAYER, SeaCowModel::createBodyLayer);
+        ModelLayerRegistry.registerModelLayer(SeaCowRenderer.BABY_LAYER, SeaCowModel::createBabyBodyLayer);
+        EntityRendererRegistry.register(ModEntityTypes.SEA_COW, SeaCowRenderer::new);
 
         UseBlockCallback.EVENT.register((player, level, hand, hitResult) -> {
             if (!level.isClientSide() || hand != InteractionHand.MAIN_HAND || !player.getMainHandItem().isEmpty()) {

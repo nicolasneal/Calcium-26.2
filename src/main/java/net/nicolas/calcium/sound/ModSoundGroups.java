@@ -170,6 +170,21 @@ public class ModSoundGroups {
     public static final SoundEvent GIANT_CLAM_DEATH_LAND = register("entity.giant_clam.death_land");
     public static final SoundEvent GIANT_CLAM_BUBBLES = register("entity.giant_clam.bubbles");
 
+    public static final SoundEvent SEA_COW_AMBIENT = register("entity.sea_cow.ambient");
+    public static final SoundEvent SEA_COW_AMBIENT_LAND = register("entity.sea_cow.ambient_land");
+    public static final SoundEvent SEA_COW_BABY_AMBIENT = register("entity.sea_cow.baby_ambient");
+    public static final SoundEvent SEA_COW_BABY_AMBIENT_LAND = register("entity.sea_cow.baby_ambient_land");
+    public static final SoundEvent SEA_COW_HURT = register("entity.sea_cow.hurt");
+    public static final SoundEvent SEA_COW_HURT_LAND = register("entity.sea_cow.hurt_land");
+    public static final SoundEvent SEA_COW_BABY_HURT = register("entity.sea_cow.baby_hurt");
+    public static final SoundEvent SEA_COW_BABY_HURT_LAND = register("entity.sea_cow.baby_hurt_land");
+    public static final SoundEvent SEA_COW_DEATH = register("entity.sea_cow.death");
+    public static final SoundEvent SEA_COW_DEATH_LAND = register("entity.sea_cow.death_land");
+    public static final SoundEvent SEA_COW_BABY_DEATH = register("entity.sea_cow.baby_death");
+    public static final SoundEvent SEA_COW_BABY_DEATH_LAND = register("entity.sea_cow.baby_death_land");
+    public static final SoundEvent SEA_COW_STEP = register("entity.sea_cow.step");
+    public static final SoundEvent SEA_COW_MILK = register("entity.sea_cow.milk");
+
     // MUSIC DISCS
 
     public static final SoundEvent MUSIC_DISC_BLISS = register("music.jukebox.bliss");

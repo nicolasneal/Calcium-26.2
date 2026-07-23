@@ -1,0 +1,9 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "top": "calcium:block/algal_sand_top",
+    "side": "calcium:block/algal_sand_side",
+    "bottom": "minecraft:block/sand"
+  },
+  "render_type": "solid"
+}

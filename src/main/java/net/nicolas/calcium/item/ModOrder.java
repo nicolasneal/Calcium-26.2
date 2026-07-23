@@ -1693,6 +1693,7 @@ public class ModOrder {
             Items.TROPICAL_FISH_SPAWN_EGG,
             Items.PUFFERFISH_SPAWN_EGG,
             Items.DOLPHIN_SPAWN_EGG,
+            ModItems.SEA_COW_SPAWN_EGG,
             Items.SQUID_SPAWN_EGG,
             Items.GLOW_SQUID_SPAWN_EGG,
             Items.NAUTILUS_SPAWN_EGG,

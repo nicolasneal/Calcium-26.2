@@ -1,4 +1,4 @@
-package net.nicolas.calcium.state;
+package net.nicolas.calcium.core.state;
 
 public final class CakeEatingState {
 

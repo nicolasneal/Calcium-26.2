@@ -90,8 +90,9 @@ public class ModItems {
     public static final Item SIGNAL_CARD = register("signal_card", SignalCardItem::new, new Item.Properties().stacksTo(64));
     public static final DataComponentType<GlobalPos> LINKED_FEED = Registry.register(BuiltInRegistries.DATA_COMPONENT_TYPE, Identifier.fromNamespaceAndPath(MOD_ID, "linked_feed"), DataComponentType.<GlobalPos>builder().persistent(GlobalPos.CODEC).networkSynchronized(GlobalPos.STREAM_CODEC).build());
 
-    // SPAWN EGGS (1)
+    // SPAWN EGGS (2)
 
+    public static final Item SEA_COW_SPAWN_EGG = register("sea_cow_spawn_egg", SpawnEggItem::new, new Item.Properties().component(DataComponents.ENTITY_DATA, TypedEntityData.of(ModEntityTypes.SEA_COW, new CompoundTag())).stacksTo(64));
     public static final Item GIANT_CLAM_SPAWN_EGG = register("giant_clam_spawn_egg", SpawnEggItem::new, new Item.Properties().component(DataComponents.ENTITY_DATA, TypedEntityData.of(ModEntityTypes.GIANT_CLAM, new CompoundTag())).stacksTo(64));
 
     public static void initialize() {}

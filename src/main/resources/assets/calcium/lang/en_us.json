@@ -17,6 +17,8 @@
   "entity.calcium.giant_clam.pattern.tiled": "Tiled",
   "entity.calcium.giant_clam.pattern.ridged": "Ridged",
 
+  "entity.calcium.sea_cow": "Sea Cow",
+
   "block.calcium.ectoplasm": "Ectoplasm",
   "block.calcium.ectoplasm_cauldron": "Ectoplasm Cauldron",
 
@@ -415,6 +417,7 @@
   "block.calcium.banner.crescent.red": "Red Crescent",
   "block.calcium.banner.crescent.black": "Black Crescent",
 
-  "item.calcium.giant_clam_spawn_egg": "Giant Clam Spawn Egg"
+  "item.calcium.giant_clam_spawn_egg": "Giant Clam Spawn Egg",
+  "item.calcium.sea_cow_spawn_egg": "Sea Cow Spawn Egg"
 
 }

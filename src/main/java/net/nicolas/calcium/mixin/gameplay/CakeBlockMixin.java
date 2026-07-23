@@ -17,7 +17,7 @@ import net.minecraft.world.level.block.CandleBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
-import net.nicolas.calcium.state.CakeEatingState;
+import net.nicolas.calcium.core.state.CakeEatingState;
 import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.block.custom.CandleChocolateCakeBlock;
 import net.nicolas.calcium.item.ModFoods;

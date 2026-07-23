@@ -21,7 +21,7 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.nicolas.calcium.util.WaterloggingHelper;
+import net.nicolas.calcium.core.util.WaterloggingHelper;
 import org.jspecify.annotations.Nullable;
 
 import java.util.EnumMap;

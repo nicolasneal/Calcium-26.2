@@ -640,6 +640,109 @@
       "calcium:entity/clam/big/bubbles3"
     ]
   },
+  "entity.sea_cow.ambient": {
+    "sounds": [
+      "calcium:entity/sea_cow/idle1",
+      "calcium:entity/sea_cow/idle2",
+      "calcium:entity/sea_cow/idle3",
+      "calcium:entity/sea_cow/idle4"
+    ]
+  },
+  "entity.sea_cow.ambient_land": {
+    "sounds": [
+      "calcium:entity/sea_cow/land/idle1",
+      "calcium:entity/sea_cow/land/idle2",
+      "calcium:entity/sea_cow/land/idle3",
+      "calcium:entity/sea_cow/land/idle4"
+    ]
+  },
+  "entity.sea_cow.baby_ambient": {
+    "sounds": [
+      "calcium:entity/sea_cow/baby/idle1",
+      "calcium:entity/sea_cow/baby/idle2",
+      "calcium:entity/sea_cow/baby/idle3",
+      "calcium:entity/sea_cow/baby/idle4"
+    ]
+  },
+  "entity.sea_cow.baby_ambient_land": {
+    "sounds": [
+      "calcium:entity/sea_cow/baby/land/idle1",
+      "calcium:entity/sea_cow/baby/land/idle2",
+      "calcium:entity/sea_cow/baby/land/idle3",
+      "calcium:entity/sea_cow/baby/land/idle4"
+    ]
+  },
+  "entity.sea_cow.hurt": {
+    "sounds": [
+      "calcium:entity/sea_cow/hurt1",
+      "calcium:entity/sea_cow/hurt2",
+      "calcium:entity/sea_cow/hurt3"
+    ]
+  },
+  "entity.sea_cow.hurt_land": {
+    "sounds": [
+      "calcium:entity/sea_cow/land/hurt1",
+      "calcium:entity/sea_cow/land/hurt2",
+      "calcium:entity/sea_cow/land/hurt3"
+    ]
+  },
+  "entity.sea_cow.baby_hurt": {
+    "sounds": [
+      "calcium:entity/sea_cow/baby/hurt1",
+      "calcium:entity/sea_cow/baby/hurt2",
+      "calcium:entity/sea_cow/baby/hurt3"
+    ]
+  },
+  "entity.sea_cow.baby_hurt_land": {
+    "sounds": [
+      "calcium:entity/sea_cow/baby/land/hurt1",
+      "calcium:entity/sea_cow/baby/land/hurt2",
+      "calcium:entity/sea_cow/baby/land/hurt3"
+    ]
+  },
+  "entity.sea_cow.death": {
+    "sounds": [
+      "calcium:entity/sea_cow/hurt1",
+      "calcium:entity/sea_cow/hurt2",
+      "calcium:entity/sea_cow/hurt3"
+    ]
+  },
+  "entity.sea_cow.death_land": {
+    "sounds": [
+      "calcium:entity/sea_cow/land/hurt1",
+      "calcium:entity/sea_cow/land/hurt2",
+      "calcium:entity/sea_cow/land/hurt3"
+    ]
+  },
+  "entity.sea_cow.baby_death": {
+    "sounds": [
+      "calcium:entity/sea_cow/baby/hurt1",
+      "calcium:entity/sea_cow/baby/hurt2",
+      "calcium:entity/sea_cow/baby/hurt3"
+    ]
+  },
+  "entity.sea_cow.baby_death_land": {
+    "sounds": [
+      "calcium:entity/sea_cow/baby/land/hurt1",
+      "calcium:entity/sea_cow/baby/land/hurt2",
+      "calcium:entity/sea_cow/baby/land/hurt3"
+    ]
+  },
+  "entity.sea_cow.step": {
+    "sounds": [
+      "calcium:entity/sea_cow/step1",
+      "calcium:entity/sea_cow/step2",
+      "calcium:entity/sea_cow/step3",
+      "calcium:entity/sea_cow/step4"
+    ]
+  },
+  "entity.sea_cow.milk": {
+    "sounds": [
+      "calcium:entity/sea_cow/milk1",
+      "calcium:entity/sea_cow/milk2",
+      "calcium:entity/sea_cow/milk3"
+    ]
+  },
   "music.jukebox.bliss": {
     "sounds": [
       {

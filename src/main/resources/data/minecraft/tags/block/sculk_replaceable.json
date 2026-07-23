@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "calcium:algal_sand",
+    "calcium:silt",
+    "calcium:soulslate",
+    "calcium:mirestone",
+    "calcium:veradite",
+    "calcium:kurodite",
+    "calcium:pallid_magnia",
+    "calcium:umbral_magnia"
+  ]
+}
