@@ -6,9 +6,21 @@
   "tooltip.calcium.enchanting_table_item": "Add Enchantable Item",
   "tooltip.calcium.enchanting_table_fuel": "Add Lapis Lazuli",
 
+  "entity.calcium.giant_clam": "Giant Clam",
+  "entity.calcium.giant_clam.color.cyan": "Cyan",
+  "entity.calcium.giant_clam.color.green": "Green",
+  "entity.calcium.giant_clam.color.orange": "Orange",
+  "entity.calcium.giant_clam.color.purple": "Purple",
+  "entity.calcium.giant_clam.pattern.no_pattern": "No Pattern",
+  "entity.calcium.giant_clam.pattern.striped": "Striped",
+  "entity.calcium.giant_clam.pattern.dotted": "Dotted",
+  "entity.calcium.giant_clam.pattern.tiled": "Tiled",
+  "entity.calcium.giant_clam.pattern.ridged": "Ridged",
+
   "block.calcium.ectoplasm": "Ectoplasm",
   "block.calcium.ectoplasm_cauldron": "Ectoplasm Cauldron",
 
+  "block.calcium.algal_sand": "Algal Sand",
   "block.calcium.silt": "Silt",
   "block.calcium.soulslate": "Soulslate",
   "block.calcium.netherrack_glowstone_ore": "Netherrack Glowstone Ore",
@@ -315,7 +327,6 @@
   "block.calcium.soul_glass": "Soul Glass",
 
   "block.calcium.oven": "Oven",
-  "block.calcium.oven": "Oven",
   "block.calcium.chocolate_cake": "Chocolate Cake",
   "block.calcium.candle_chocolate_cake": "Chocolate Cake with Candle",
   "block.calcium.white_candle_chocolate_cake": "Chocolate Cake with White Candle",
@@ -402,6 +413,8 @@
   "block.calcium.banner.crescent.brown": "Brown Crescent",
   "block.calcium.banner.crescent.green": "Green Crescent",
   "block.calcium.banner.crescent.red": "Red Crescent",
-  "block.calcium.banner.crescent.black": "Black Crescent"
+  "block.calcium.banner.crescent.black": "Black Crescent",
+
+  "item.calcium.giant_clam_spawn_egg": "Giant Clam Spawn Egg"
 
 }

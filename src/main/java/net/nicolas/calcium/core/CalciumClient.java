@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ModelLayerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderingRegistry;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
@@ -24,8 +25,11 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.block.entity.MonitorBlockEntity;
 import net.nicolas.calcium.block.entity.ViewfinderBlockEntity;
+import net.nicolas.calcium.core.client.giantclam.GiantClamModel;
+import net.nicolas.calcium.core.client.giantclam.GiantClamRenderer;
 import net.nicolas.calcium.core.client.sniffer.SnifferChestModel;
 import net.nicolas.calcium.core.client.sniffer.SnifferSaddleLayer;
+import net.nicolas.calcium.entity.ModEntityTypes;
 import net.nicolas.calcium.core.client.viewfinder.ViewfinderBlockEntityRenderer;
 import net.nicolas.calcium.core.client.viewfinder.ViewfinderController;
 import net.nicolas.calcium.core.client.viewfinder.ViewfinderModel;
@@ -77,6 +81,9 @@ public class CalciumClient implements ClientModInitializer {
 
         ModelLayerRegistry.registerModelLayer(SnifferSaddleLayer.LAYER, SnifferModel::createBodyLayer);
         ModelLayerRegistry.registerModelLayer(SnifferChestModel.LAYER, SnifferChestModel::createChestLayer);
+
+        ModelLayerRegistry.registerModelLayer(GiantClamRenderer.LAYER, GiantClamModel::createBodyLayer);
+        EntityRendererRegistry.register(ModEntityTypes.GIANT_CLAM, GiantClamRenderer::new);
 
         UseBlockCallback.EVENT.register((player, level, hand, hitResult) -> {
             if (!level.isClientSide() || hand != InteractionHand.MAIN_HAND || !player.getMainHandItem().isEmpty()) {

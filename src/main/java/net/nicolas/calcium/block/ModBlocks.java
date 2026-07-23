@@ -46,10 +46,11 @@ public class ModBlocks {
     public static final WoodType CHORUS_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.OAK).soundType(ModSoundGroups.CHORUS_PLANKS).hangingSignSoundType(ModSoundGroups.CHORUS_HANGING_SIGN).fenceGateOpenSound(ModSoundGroups.CHORUS_FENCE_GATE_OPEN).fenceGateCloseSound(ModSoundGroups.CHORUS_FENCE_GATE_OPEN).register(Identifier.fromNamespaceAndPath(MOD_ID, "chorus"), CHORUS_BLOCK_SET_TYPE);
     public static final CauldronInteraction.Dispatcher ECTOPLASM_CAULDRON_BEHAVIOR = new CauldronInteraction.Dispatcher();
 
-    // NATURAL BLOCKS (13, 1)
+    // NATURAL BLOCKS (12, 4)
 
+    public static final Block ALGAL_SAND = register("algal_sand", AlgalSandBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).instrument(NoteBlockInstrument.SNARE).sound(ModSoundGroups.ALGAL_SAND).strength(0.5F, 0.5f).randomTicks(), true);
     public static final Block SILT = register("silt", settings -> new SandBlock(new ColorRGBA(0x766551), settings), BlockBehaviour.Properties.ofFullCopy(Blocks.SAND), true);
-    public static final Block SOULSLATE = register("soulslate", Block::new, BlockBehaviour.Properties.of().sound(ModSoundGroups.SOULSLATE).mapColor(MapColor.COLOR_BROWN).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.4F, 0.4F), true);
+    public static final Block SOULSLATE = register("soulslate", Block::new, BlockBehaviour.Properties.of().sound(ModSoundGroups.SOULSLATE).mapColor(MapColor.COLOR_BROWN).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.5F, 0.5F), true);
     public static final Block NETHERRACK_GLOWSTONE_ORE = register("netherrack_glowstone_ore", GlowstoneOreBlock::new, BlockBehaviour.Properties.of().lightLevel(state -> state.getValue(RedStoneOreBlock.LIT) ? 9 : 0).sound(SoundType.NETHER_ORE).mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.4F, 0.4F), true);
     public static final Block MIRESTONE = register("mirestone", Block::new, BlockBehaviour.Properties.of().sound(ModSoundGroups.MIRESTONE).mapColor(MapColor.GLOW_LICHEN).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
     public static final Block VERADITE = register("veradite", Block::new, BlockBehaviour.Properties.of().sound(ModSoundGroups.VERADITE).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
@@ -59,6 +60,7 @@ public class ModBlocks {
     public static final Block END_STONE_SHADOLINE_ORE = register("end_stone_shadoline_ore", settings -> new DropExperienceBlock(ConstantInt.of(0), settings), BlockBehaviour.Properties.of().sound(ModSoundGroups.END_STONE_SHADOLINE_ORE).mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
     public static final Block MIRESTONE_SHADOLINE_ORE = register("mirestone_shadoline_ore", settings -> new DropExperienceBlock(ConstantInt.of(0), settings), BlockBehaviour.Properties.of().sound(ModSoundGroups.MIRESTONE_SHADOLINE_ORE).mapColor(MapColor.GLOW_LICHEN).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
     public static final Block RAW_SHADOLINE_BLOCK = register("raw_shadoline_block", Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.WARPED_NYLIUM).requiresCorrectToolForDrops().strength(5.0F, 6.0F), true);
+
     public static final FlowingFluid ECTOPLASM_STILL = registerFluid("ectoplasm_still", new EctoplasmFluid.Still());
     public static final FlowingFluid ECTOPLASM_FLOWING = registerFluid("ectoplasm_flowing", new EctoplasmFluid.Flowing());
     public static final Block ECTOPLASM = register("ectoplasm", settings -> new LiquidBlock(ECTOPLASM_STILL, settings), BlockBehaviour.Properties.of().mapColor(MapColor.DIAMOND).replaceable().noCollision().strength(100.0F).pushReaction(PushReaction.DESTROY).noLootTable().liquid().lightLevel(state -> 6), false);

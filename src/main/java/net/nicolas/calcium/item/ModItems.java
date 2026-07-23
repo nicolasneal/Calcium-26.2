@@ -6,12 +6,15 @@ import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.Consumables;
+import net.minecraft.world.item.component.TypedEntityData;
 import net.nicolas.calcium.block.ModBlocks;
+import net.nicolas.calcium.entity.ModEntityTypes;
 import net.nicolas.calcium.item.custom.EctoplasmBucketItem;
 import net.nicolas.calcium.item.custom.SignalCardItem;
 import net.nicolas.calcium.sound.ModSoundGroups;
@@ -84,8 +87,12 @@ public class ModItems {
     public static final Item MUSIC_DISC_BLISS = register("music_disc_bliss", Item::new, new Item.Properties().jukeboxPlayable(ModSoundGroups.BLISS).stacksTo(64));
     public static final Item MUSIC_DISC_DECAY = register("music_disc_decay", Item::new, new Item.Properties().jukeboxPlayable(ModSoundGroups.DECAY).stacksTo(64));
     public static final Item MUSIC_DISC_GLARE = register("music_disc_glare", Item::new, new Item.Properties().jukeboxPlayable(ModSoundGroups.GLARE).stacksTo(64));
-    public static final Item SIGNAL_CARD = register("signal_card", SignalCardItem::new, new Item.Properties().stacksTo(1));
+    public static final Item SIGNAL_CARD = register("signal_card", SignalCardItem::new, new Item.Properties().stacksTo(64));
     public static final DataComponentType<GlobalPos> LINKED_FEED = Registry.register(BuiltInRegistries.DATA_COMPONENT_TYPE, Identifier.fromNamespaceAndPath(MOD_ID, "linked_feed"), DataComponentType.<GlobalPos>builder().persistent(GlobalPos.CODEC).networkSynchronized(GlobalPos.STREAM_CODEC).build());
+
+    // SPAWN EGGS (1)
+
+    public static final Item GIANT_CLAM_SPAWN_EGG = register("giant_clam_spawn_egg", SpawnEggItem::new, new Item.Properties().component(DataComponents.ENTITY_DATA, TypedEntityData.of(ModEntityTypes.GIANT_CLAM, new CompoundTag())).stacksTo(64));
 
     public static void initialize() {}
 

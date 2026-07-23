@@ -3,8 +3,8 @@
     "minecraft:netherrack",
     "minecraft:nether_gold_ore",
     "minecraft:nether_quartz_ore",
+    "calcium:netherrack_glowstone_ore",
     "minecraft:crimson_nylium",
-    "minecraft:warped_nylium",
-    "calcium:netherrack_glowstone_ore"
+    "minecraft:warped_nylium"
   ]
 }

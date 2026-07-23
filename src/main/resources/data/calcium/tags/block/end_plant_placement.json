@@ -1,12 +1,12 @@
 {
   "values": [
     "minecraft:end_stone",
+    "calcium:end_stone_shadoline_ore",
     "calcium:mirestone",
+    "calcium:mirestone_shadoline_ore",
     "calcium:veradite",
     "calcium:kurodite",
     "calcium:pallid_magnia",
-    "calcium:umbral_magnia",
-    "calcium:end_stone_shadoline_ore",
-    "calcium:mirestone_shadoline_ore"
+    "calcium:umbral_magnia"
   ]
 }

@@ -27,6 +27,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.entity.ModAttributes;
+import net.nicolas.calcium.entity.ModEntityTypes;
 import net.nicolas.calcium.event.Cracking;
 import net.nicolas.calcium.item.ModCompostables;
 import net.nicolas.calcium.item.ModFuels;
@@ -74,6 +75,7 @@ public class Calcium implements ModInitializer {
         ModSoundGroups.initialize();
         ModSounds.initialize();
         ModAttributes.initialize();
+        ModEntityTypes.initialize();
         ModNetworking.initialize();
         ModOrder.initialize();
         Cracking.registerEvents();
@@ -93,7 +95,7 @@ public class Calcium implements ModInitializer {
         });
 
         FabricLoader.getInstance().getModContainer("calcium").ifPresent(container -> {
-            ResourceManagerHelper.registerBuiltinResourcePack(Identifier.fromNamespaceAndPath("calcium", "overlays"), container, net.minecraft.network.chat.Component.nullToEmpty("§lGrass Overlays §r§7[1.0.0]"), ResourcePackActivationType.DEFAULT_ENABLED);
+            ResourceManagerHelper.registerBuiltinResourcePack(Identifier.fromNamespaceAndPath("calcium", "overlays"), container, net.minecraft.network.chat.Component.nullToEmpty("§lGrass Overlays §r§7[1.0.1]"), ResourcePackActivationType.DEFAULT_ENABLED);
         });
 
         FabricLoader.getInstance().getModContainer("calcium").ifPresent(container -> {

@@ -112,6 +112,22 @@
       "calcium:block/mirestone/break4"
     ]
   },
+  "block.algal_sand.break": {
+    "sounds": [
+      "calcium:block/algal_sand/breakl1",
+      "calcium:block/algal_sand/break2",
+      "calcium:block/algal_sand/break3",
+      "calcium:block/algal_sand/break4"
+    ]
+  },
+  "block.algal_sand.place": {
+    "sounds": [
+      "calcium:block/algal_sand/place1",
+      "calcium:block/algal_sand/place2",
+      "calcium:block/algal_sand/place3",
+      "calcium:block/algal_sand/place4"
+    ]
+  },
   "block.mirestone.step": {
     "sounds": [
       "calcium:block/mirestone/step1",
@@ -591,6 +607,37 @@
   "entity.shulker_bullet.loop": {
     "sounds": [
       "calcium:entity/shulker_bullet/loop"
+    ]
+  },
+  "entity.giant_clam.hurt": {
+    "sounds": [
+      "calcium:entity/clam/big/hurt1",
+      "calcium:entity/clam/big/hurt2"
+    ]
+  },
+  "entity.giant_clam.hurt_land": {
+    "sounds": [
+      "calcium:entity/clam/big/hurt_land1",
+      "calcium:entity/clam/big/hurt_land2"
+    ]
+  },
+  "entity.giant_clam.death": {
+    "sounds": [
+      "calcium:entity/clam/big/death1",
+      "calcium:entity/clam/big/death2"
+    ]
+  },
+  "entity.giant_clam.death_land": {
+    "sounds": [
+      "calcium:entity/clam/big/death_land1",
+      "calcium:entity/clam/big/death_land2"
+    ]
+  },
+  "entity.giant_clam.bubbles": {
+    "sounds": [
+      "calcium:entity/clam/big/bubbles1",
+      "calcium:entity/clam/big/bubbles2",
+      "calcium:entity/clam/big/bubbles3"
     ]
   },
   "music.jukebox.bliss": {

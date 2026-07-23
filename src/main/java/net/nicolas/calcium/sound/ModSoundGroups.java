@@ -41,6 +41,10 @@ public class ModSoundGroups {
     public static final SoundEvent MIRESTONE_STEP = register("block.mirestone.step");
     public static final SoundType MIRESTONE = new SoundType(1.0F, 1.0F, MIRESTONE_BREAK, MIRESTONE_STEP, MIRESTONE_PLACE, MIRESTONE_STEP, MIRESTONE_STEP);
 
+    public static final SoundEvent ALGAL_SAND_BREAK = register("block.algal_sand.break");
+    public static final SoundEvent ALGAL_SAND_PLACE = register("block.algal_sand.place");
+    public static final SoundType ALGAL_SAND = new SoundType(1.0F, 1.0F, ALGAL_SAND_BREAK, ALGAL_SAND_PLACE, ALGAL_SAND_PLACE, ALGAL_SAND_BREAK, ALGAL_SAND_BREAK);
+
     public static final SoundEvent VERADITE_BREAK = register("block.veradite.break");
     public static final SoundEvent VERADITE_STEP = register("block.veradite.step");
     public static final SoundType VERADITE = new SoundType(0.6F, 1.0F, VERADITE_BREAK, VERADITE_STEP, VERADITE_BREAK, VERADITE_STEP, VERADITE_STEP);
@@ -156,7 +160,15 @@ public class ModSoundGroups {
     public static final SoundEvent SIGNAL_CARD_INSERT = register("item.signal_card.insert");
     public static final SoundEvent SIGNAL_CARD_EJECT = register("item.signal_card.eject");
 
+    // ENTITIES
+
     public static final SoundEvent SHULKER_BULLET_LOOP = register("entity.shulker_bullet.loop");
+
+    public static final SoundEvent GIANT_CLAM_HURT = register("entity.giant_clam.hurt");
+    public static final SoundEvent GIANT_CLAM_HURT_LAND = register("entity.giant_clam.hurt_land");
+    public static final SoundEvent GIANT_CLAM_DEATH = register("entity.giant_clam.death");
+    public static final SoundEvent GIANT_CLAM_DEATH_LAND = register("entity.giant_clam.death_land");
+    public static final SoundEvent GIANT_CLAM_BUBBLES = register("entity.giant_clam.bubbles");
 
     // MUSIC DISCS
 
