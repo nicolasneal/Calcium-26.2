@@ -70,6 +70,7 @@
     "gameplay.waterlogging.SnifferEggBlockMixin",
     "gameplay.waterlogging.SpawnerBlockMixin",
     "gameplay.waterlogging.StonecutterBlockMixin",
+    "gameplay.waterlogging.TransparentBlockMixin",
     "gameplay.waterlogging.TrialSpawnerBlockMixin",
     "gameplay.waterlogging.TurtleEggBlockMixin",
     "gameplay.waterlogging.VaultBlockMixin",
@@ -93,6 +94,7 @@
     "hitboxes.TallDryGrassBlockMixin",
     "hitboxes.TallPlantBlockMixin",
     "hitboxes.TallSeagrassBlockMixin",
+    "hitboxes.TallSeagrassOffsetMixin",
     "hitboxes.TorchBlockMixin",
     "hitboxes.WallBannerBlockMixin",
     "hitboxes.WallHangingSignBlockMixin",
@@ -119,10 +121,12 @@
   "refmap": "calcium.refmap.json",
   "client": [
     "accessors.ClientInputAccessor",
+    "accessors.SingleQuadParticleAccessor",
     "client.AtmosphericFogEnvironmentMixin",
     "client.BlockDustParticleMixin",
     "client.CakeBurpSoundMixin",
     "client.CameraMixin",
+    "client.FogRendererMixin",
     "client.CampfireBlockEntityRendererMixin",
     "client.ClientPlayerEntityMixin",
     "client.GuiMixin",
@@ -134,8 +138,12 @@
     "client.MouseHandlerMixin",
     "client.ShulkerBulletMixin",
     "client.SignBlockEntityRendererMixin",
+    "client.SkyRendererMixin",
     "client.SnifferRenderStateMixin",
     "client.SnifferRendererMixin",
+    "client.SuspendedParticleMixin",
+    "client.UnderwaterParticleMixin",
+    "client.WaterFogEnvironmentMixin",
     "screens.AbstractButtonMixin",
     "screens.AbstractFurnaceScreenMixin",
     "screens.AbstractRecipeBookScreenMixin",
@@ -162,6 +170,6 @@
     "screens.SmithingScreenMixin",
     "screens.StonecutterScreenMixin",
     "screens.TradeOfferButtonMixin",
-    "worldgen.MultiNoiseBiomeSourceParameterListsMixin"
+    "worldgen.MappedRegistryMixin"
   ]
 }

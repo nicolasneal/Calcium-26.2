@@ -9,10 +9,12 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.item.component.TypedEntityData;
+import net.minecraft.world.level.material.Fluids;
 import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.entity.ModEntityTypes;
 import net.nicolas.calcium.item.custom.EctoplasmBucketItem;
@@ -72,6 +74,7 @@ public class ModItems {
     public static final Item COOKED_FROG = register("cooked_frog", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.COOKED_FROG));
     public static final Item TENTACLES = register("tentacles", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.TENTACLES));
     public static final Item COOKED_TENTACLES = register("cooked_tentacles", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.COOKED_TENTACLES));
+    public static final Item COOKED_EGG = register("cooked_egg", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.COOKED_EGG));
     public static final Item CHOCOLATE = register("chocolate", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.CHOCOLATE));
     public static final Item CHOCOLATE_CAKE = register("chocolate_cake", settings -> new BlockItem(ModBlocks.CHOCOLATE_CAKE, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
     public static final Item PUMPKIN_CAKE_ROLL = register("pumpkin_cake_roll", settings -> new BlockItem(ModBlocks.PUMPKIN_CAKE_ROLL, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
@@ -90,10 +93,15 @@ public class ModItems {
     public static final Item SIGNAL_CARD = register("signal_card", SignalCardItem::new, new Item.Properties().stacksTo(64));
     public static final DataComponentType<GlobalPos> LINKED_FEED = Registry.register(BuiltInRegistries.DATA_COMPONENT_TYPE, Identifier.fromNamespaceAndPath(MOD_ID, "linked_feed"), DataComponentType.<GlobalPos>builder().persistent(GlobalPos.CODEC).networkSynchronized(GlobalPos.STREAM_CODEC).build());
 
-    // SPAWN EGGS (2)
+    // SPAWN EGGS (3)
 
     public static final Item SEA_COW_SPAWN_EGG = register("sea_cow_spawn_egg", SpawnEggItem::new, new Item.Properties().component(DataComponents.ENTITY_DATA, TypedEntityData.of(ModEntityTypes.SEA_COW, new CompoundTag())).stacksTo(64));
     public static final Item GIANT_CLAM_SPAWN_EGG = register("giant_clam_spawn_egg", SpawnEggItem::new, new Item.Properties().component(DataComponents.ENTITY_DATA, TypedEntityData.of(ModEntityTypes.GIANT_CLAM, new CompoundTag())).stacksTo(64));
+    public static final Item SUNFISH_SPAWN_EGG = register("sunfish_spawn_egg", SpawnEggItem::new, new Item.Properties().component(DataComponents.ENTITY_DATA, TypedEntityData.of(ModEntityTypes.SUNFISH, new CompoundTag())).stacksTo(64));
+
+    // MOB BUCKETS (1)
+
+    public static final Item BABY_SUNFISH_BUCKET = register("baby_sunfish_bucket", settings -> new MobBucketItem(ModEntityTypes.SUNFISH, Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, settings), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(64));
 
     public static void initialize() {}
 

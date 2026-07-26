@@ -145,7 +145,7 @@ public final class CalciumOverworldBiomeBuilder {
       this.addHighSlice(biomes, Climate.Parameter.span(-0.56666666F, -0.4F));
       this.addMidSlice(biomes, Climate.Parameter.span(-0.4F, -0.26666668F));
       this.addLowSlice(biomes, Climate.Parameter.span(-0.26666668F, -0.05F));
-      this.addValleys(biomes, Climate.Parameter.span(-0.05F, 0.05F));
+      this.addLowSlice(biomes, Climate.Parameter.span(-0.05F, 0.05F));
       this.addLowSlice(biomes, Climate.Parameter.span(0.05F, 0.26666668F));
       this.addMidSlice(biomes, Climate.Parameter.span(0.26666668F, 0.4F));
       this.addHighSlice(biomes, Climate.Parameter.span(0.4F, 0.56666666F));
@@ -324,38 +324,6 @@ public final class CalciumOverworldBiomeBuilder {
             if (temperatureIndex == 0) {
                this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, middleBiome);
             }
-
-         }
-
-      }
-
-   }
-
-   private void addValleys(final Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> biomes, final Climate.Parameter weirdness) {
-
-      this.addSurfaceBiome(biomes, this.FROZEN_RANGE, this.FULL_RANGE, this.coastContinentalness, Climate.Parameter.span(this.erosions[0], this.erosions[1]), weirdness, 0.0F, weirdness.max() < 0L ? Biomes.STONY_SHORE : Biomes.FROZEN_RIVER);
-      this.addSurfaceBiome(biomes, this.UNFROZEN_RANGE, this.FULL_RANGE, this.coastContinentalness, Climate.Parameter.span(this.erosions[0], this.erosions[1]), weirdness, 0.0F, weirdness.max() < 0L ? Biomes.STONY_SHORE : Biomes.RIVER);
-      this.addSurfaceBiome(biomes, this.FROZEN_RANGE, this.FULL_RANGE, this.nearInlandContinentalness, Climate.Parameter.span(this.erosions[0], this.erosions[1]), weirdness, 0.0F, Biomes.FROZEN_RIVER);
-      this.addSurfaceBiome(biomes, this.UNFROZEN_RANGE, this.FULL_RANGE, this.nearInlandContinentalness, Climate.Parameter.span(this.erosions[0], this.erosions[1]), weirdness, 0.0F, Biomes.RIVER);
-      this.addSurfaceBiome(biomes, this.FROZEN_RANGE, this.FULL_RANGE, Climate.Parameter.span(this.coastContinentalness, this.farInlandContinentalness), Climate.Parameter.span(this.erosions[2], this.erosions[5]), weirdness, 0.0F, Biomes.FROZEN_RIVER);
-      this.addSurfaceBiome(biomes, this.UNFROZEN_RANGE, this.FULL_RANGE, Climate.Parameter.span(this.coastContinentalness, this.farInlandContinentalness), Climate.Parameter.span(this.erosions[2], this.erosions[5]), weirdness, 0.0F, Biomes.RIVER);
-      this.addSurfaceBiome(biomes, this.FROZEN_RANGE, this.FULL_RANGE, this.coastContinentalness, this.erosions[6], weirdness, 0.0F, Biomes.FROZEN_RIVER);
-      this.addSurfaceBiome(biomes, this.UNFROZEN_RANGE, this.FULL_RANGE, this.coastContinentalness, this.erosions[6], weirdness, 0.0F, Biomes.RIVER);
-      this.addSurfaceBiome(biomes, Climate.Parameter.span(this.temperatures[1], this.temperatures[2]), this.FULL_RANGE, Climate.Parameter.span(this.inlandContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, Biomes.SWAMP);
-      this.addSurfaceBiome(biomes, Climate.Parameter.span(this.temperatures[3], this.temperatures[4]), this.FULL_RANGE, Climate.Parameter.span(this.inlandContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, Biomes.MANGROVE_SWAMP);
-      this.addSurfaceBiome(biomes, this.FROZEN_RANGE, this.FULL_RANGE, Climate.Parameter.span(this.inlandContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, Biomes.FROZEN_RIVER);
-
-      for (int temperatureIndex = 0; temperatureIndex < this.temperatures.length; temperatureIndex++) {
-
-         Climate.Parameter temperature = this.temperatures[temperatureIndex];
-
-         for (int humidityIndex = 0; humidityIndex < this.humidities.length; humidityIndex++) {
-
-            Climate.Parameter humidity = this.humidities[humidityIndex];
-
-            ResourceKey<Biome> middleBiomeOrBadlandsIfHot = this.pickMiddleBiomeOrBadlandsIfHot(temperatureIndex, humidityIndex, weirdness);
-
-            this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.midInlandContinentalness, this.farInlandContinentalness), Climate.Parameter.span(this.erosions[0], this.erosions[1]), weirdness, 0.0F, middleBiomeOrBadlandsIfHot);
 
          }
 
@@ -600,4 +568,5 @@ public final class CalciumOverworldBiomeBuilder {
    @VisibleForDebug public Climate.Parameter[] getWeirdnessThresholds() {
       return new Climate.Parameter[]{Climate.Parameter.span(-2.0F, 0.0F), Climate.Parameter.span(0.0F, 2.0F)};
    }
+
 }

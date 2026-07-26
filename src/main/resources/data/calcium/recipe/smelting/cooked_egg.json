@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.35,
+  "ingredient": "#minecraft:eggs",
+  "result": {
+    "id": "calcium:cooked_egg"
+  }
+}

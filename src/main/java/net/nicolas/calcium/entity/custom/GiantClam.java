@@ -7,8 +7,6 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Util;
 import net.minecraft.world.DifficultyInstance;
@@ -20,7 +18,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
@@ -242,19 +239,5 @@ public class GiantClam extends Mob {
     }
 
     @Override protected void playStepSound(BlockPos pos, BlockState state) {}
-
-    public static boolean checkSpawnRules(EntityType<GiantClam> entityType, ServerLevelAccessor level, EntitySpawnReason spawnReason, BlockPos pos, RandomSource random) {
-        int seaLevel = level.getSeaLevel();
-        int minY = level.getMinY();
-        boolean inRangeUnderwater = pos.getY() >= minY && pos.getY() < seaLevel;
-        boolean waterSpawn = inRangeUnderwater
-            && level.getFluidState(pos).is(FluidTags.WATER)
-            && level.getBlockState(pos.below()).is(ModBlockTags.GIANT_CLAM_ANCHOR);
-        boolean justAboveSea = pos.getY() >= seaLevel && pos.getY() <= seaLevel + 5;
-        boolean beachSpawn = justAboveSea
-            && level.getBlockState(pos).isAir()
-            && (level.getBlockState(pos.below()).is(BlockTags.SAND) || level.getBlockState(pos.below()).is(Blocks.GRAVEL));
-        return beachSpawn || waterSpawn;
-    }
 
 }

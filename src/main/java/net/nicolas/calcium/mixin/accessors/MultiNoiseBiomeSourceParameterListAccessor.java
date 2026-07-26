@@ -14,4 +14,7 @@ public interface MultiNoiseBiomeSourceParameterListAccessor {
     @Accessor("parameters") @Mutable
     void calcium$setParameters(Climate.ParameterList<Holder<Biome>> parameters);
 
+    @Accessor("parameters")
+    Climate.ParameterList<Holder<Biome>> calcium$getParameters();
+
 }

@@ -1,4 +1,4 @@
-﻿{
+{
   "parent": "minecraft:block/custom_fence_post",
   "textures": {
     "texture": "minecraft:block/fences/cherry",

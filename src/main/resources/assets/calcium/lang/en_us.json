@@ -18,6 +18,7 @@
   "entity.calcium.giant_clam.pattern.ridged": "Ridged",
 
   "entity.calcium.sea_cow": "Sea Cow",
+  "entity.calcium.sunfish": "Sunfish",
 
   "block.calcium.ectoplasm": "Ectoplasm",
   "block.calcium.ectoplasm_cauldron": "Ectoplasm Cauldron",
@@ -382,6 +383,7 @@
   "item.calcium.cooked_tentacles": "Cooked Tentacles",
   "item.calcium.fish": "Fish",
   "item.calcium.cooked_fish": "Cooked Fish",
+  "item.calcium.cooked_egg": "Cooked Egg",
   "item.calcium.chocolate": "Chocolate",
   "block.calcium.pumpkin_cake_roll": "Pumpkin Cake Roll",
   "block.calcium.chorus_cake_roll": "Chorus Cake Roll",
@@ -418,6 +420,10 @@
   "block.calcium.banner.crescent.black": "Black Crescent",
 
   "item.calcium.giant_clam_spawn_egg": "Giant Clam Spawn Egg",
-  "item.calcium.sea_cow_spawn_egg": "Sea Cow Spawn Egg"
+  "item.calcium.sea_cow_spawn_egg": "Sea Cow Spawn Egg",
+  "item.calcium.sunfish_spawn_egg": "Sunfish Spawn Egg",
+  "item.calcium.baby_sunfish_bucket": "Bucket of Sunfish",
+
+  "generator.calcium.continental": "Continental"
 
 }

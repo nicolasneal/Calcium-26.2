@@ -29,6 +29,8 @@ import net.nicolas.calcium.core.client.giantclam.GiantClamModel;
 import net.nicolas.calcium.core.client.giantclam.GiantClamRenderer;
 import net.nicolas.calcium.core.client.seacow.SeaCowModel;
 import net.nicolas.calcium.core.client.seacow.SeaCowRenderer;
+import net.nicolas.calcium.core.client.sunfish.SunfishModel;
+import net.nicolas.calcium.core.client.sunfish.SunfishRenderer;
 import net.nicolas.calcium.core.client.sniffer.SnifferChestModel;
 import net.nicolas.calcium.core.client.sniffer.SnifferSaddleLayer;
 import net.nicolas.calcium.entity.ModEntityTypes;
@@ -90,6 +92,11 @@ public class CalciumClient implements ClientModInitializer {
         ModelLayerRegistry.registerModelLayer(SeaCowRenderer.LAYER, SeaCowModel::createBodyLayer);
         ModelLayerRegistry.registerModelLayer(SeaCowRenderer.BABY_LAYER, SeaCowModel::createBabyBodyLayer);
         EntityRendererRegistry.register(ModEntityTypes.SEA_COW, SeaCowRenderer::new);
+
+        ModelLayerRegistry.registerModelLayer(SunfishRenderer.LAYER, SunfishModel::createBodyLayer);
+        ModelLayerRegistry.registerModelLayer(SunfishRenderer.BABY_LAYER, SunfishModel::createBabyBodyLayer);
+        ModelLayerRegistry.registerModelLayer(SunfishRenderer.NEWBORN_LAYER, SunfishModel::createNewbornBodyLayer);
+        EntityRendererRegistry.register(ModEntityTypes.SUNFISH, SunfishRenderer::new);
 
         UseBlockCallback.EVENT.register((player, level, hand, hitResult) -> {
             if (!level.isClientSide() || hand != InteractionHand.MAIN_HAND || !player.getMainHandItem().isEmpty()) {
