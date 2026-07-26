@@ -36,7 +36,7 @@ public class ModItems {
     public static final Item CHORUS_SIGN = register("chorus_sign", settings -> new SignItem(ModBlocks.CHORUS_SIGN, ModBlocks.CHORUS_WALL_SIGN, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
     public static final Item CHORUS_HANGING_SIGN = register("chorus_hanging_sign", settings -> new HangingSignItem(ModBlocks.CHORUS_HANGING_SIGN, ModBlocks.CHORUS_WALL_HANGING_SIGN, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
 
-    // INGREDIENTS (18)
+    // INGREDIENTS (19)
 
     public static final Item RAW_SHADOLINE = register("raw_shadoline", Item::new, new Item.Properties().stacksTo(64));
     public static final Item NETHERITE_NUGGET = register("netherite_nugget", Item::new, new Item.Properties().stacksTo(64));
@@ -53,6 +53,7 @@ public class ModItems {
     public static final Item PIXIE_DUST = register("pixie_dust", Item::new, new Item.Properties().stacksTo(64));
     public static final Item FOUR_LEAF_CLOVER = register("four_leaf_clover", Item::new, new Item.Properties().stacksTo(64));
     public static final Item DOLPHIN_FIN = register("dolphin_fin", Item::new, new Item.Properties().stacksTo(64));
+    public static final Item PEARL = register("pearl", Item::new, new Item.Properties().stacksTo(64));
     public static final Item GHAST_TENTACLE = register("ghast_tentacle", Item::new, new Item.Properties().stacksTo(64));
     public static final Item WARDEN_HEART = register("warden_heart", Item::new, new Item.Properties().stacksTo(64));
 

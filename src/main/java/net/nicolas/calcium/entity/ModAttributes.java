@@ -61,7 +61,7 @@ public class ModAttributes {
         setHealth(EntityTypes.MANNEQUIN, 20.0);
         setHealth(EntityTypes.MOOSHROOM, 16.0);
         setHealth(EntityTypes.MULE, 53.0);
-        setHealth(EntityTypes.NAUTILUS, 15.0);
+        setHealth(EntityTypes.NAUTILUS, 16.0);
         setHealth(EntityTypes.OCELOT, 8.0);
         setHealth(EntityTypes.PANDA, 20.0);
         setHealth(EntityTypes.PARCHED, 20.0);

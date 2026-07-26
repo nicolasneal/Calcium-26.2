@@ -6,6 +6,8 @@
   "tooltip.calcium.enchanting_table_item": "Add Enchantable Item",
   "tooltip.calcium.enchanting_table_fuel": "Add Lapis Lazuli",
 
+  "enchantment.calcium.anchoring": "Anchoring",
+
   "entity.calcium.giant_clam": "Giant Clam",
   "entity.calcium.giant_clam.color.cyan": "Cyan",
   "entity.calcium.giant_clam.color.green": "Green",
@@ -366,6 +368,7 @@
   "item.calcium.crescent_banner_pattern": "Crescent Banner Pattern",
   "item.calcium.four_leaf_clover": "Four-Leaf Clover",
   "item.calcium.dolphin_fin": "Dolphin Fin",
+  "item.calcium.pearl": "Pearl",
   "item.calcium.ghast_tentacle": "Ghast Tentacle",
   "item.calcium.warden_heart": "Warden Heart",
 

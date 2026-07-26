@@ -9,6 +9,7 @@ import net.minecraft.world.level.block.EnchantingTableBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.EnchantingTableBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.nicolas.calcium.core.state.EnchantingTableLapisStorage;
 import net.nicolas.calcium.screen.enchanting.CustomEnchantingScreenHandler;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -24,7 +25,7 @@ public class EnchantingTableBlockMixin {
 
         if (blockEntity instanceof EnchantingTableBlockEntity tableEntity) {
             Component displayName = tableEntity.getDisplayName();
-            MenuProvider factory = new SimpleMenuProvider((syncId, inv, player) -> new CustomEnchantingScreenHandler(syncId, inv), displayName);
+            MenuProvider factory = new SimpleMenuProvider((syncId, inv, player) -> new CustomEnchantingScreenHandler(syncId, inv, (EnchantingTableLapisStorage) tableEntity), displayName);
             cir.setReturnValue(factory);
         }
 

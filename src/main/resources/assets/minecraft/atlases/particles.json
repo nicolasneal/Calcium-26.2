@@ -1,0 +1,14 @@
+{
+  "sources": [
+    {
+      "type": "minecraft:directory",
+      "prefix": "",
+      "source": "particle"
+    },
+    {
+      "type": "minecraft:directory",
+      "prefix": "particles/",
+      "source": "particles"
+    }
+  ]
+}

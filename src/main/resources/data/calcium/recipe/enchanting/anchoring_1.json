@@ -1,0 +1,13 @@
+{
+  "type": "calcium:enchanting",
+  "ingredients": [
+    "calcium:pearl",
+    "calcium:pearl",
+    "calcium:pearl",
+    "calcium:pearl",
+    "minecraft:nautilus_shell",
+    "minecraft:nautilus_shell"
+  ],
+  "result_enchantment": "calcium:anchoring",
+  "result_level": 1
+}

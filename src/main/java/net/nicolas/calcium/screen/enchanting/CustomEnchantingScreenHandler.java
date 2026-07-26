@@ -23,6 +23,7 @@ import net.nicolas.calcium.core.Calcium;
 import net.nicolas.calcium.core.recipe.enchanting.EnchantingRecipe;
 import net.nicolas.calcium.core.recipe.enchanting.EnchantingRecipeInput;
 import net.nicolas.calcium.core.recipe.ModRecipes;
+import net.nicolas.calcium.core.state.EnchantingTableLapisStorage;
 import net.nicolas.calcium.item.ModTags;
 import net.nicolas.calcium.screen.CustomSlot;
 import net.nicolas.calcium.screen.SlotConfig;
@@ -36,16 +37,26 @@ public class CustomEnchantingScreenHandler extends RecipeBookMenu {
     private final Container inventory;
     private final ResultContainer outputInventory = new ResultContainer();
     private final Player player;
+    private final EnchantingTableLapisStorage lapisStorage;
     public final DataSlot levelCost = DataSlot.standalone();
 
     public CustomEnchantingScreenHandler(int syncId, Inventory playerInventory) {
+        this(syncId, playerInventory, null);
+    }
+
+    public CustomEnchantingScreenHandler(int syncId, Inventory playerInventory, EnchantingTableLapisStorage lapisStorage) {
 
         super(Calcium.CUSTOM_ENCHANTING_SCREEN_HANDLER, syncId);
         this.inventory = new MenuAwareContainer(11);
         checkContainerSize(this.inventory, 11);
         this.player = playerInventory.player;
+        this.lapisStorage = lapisStorage;
         this.inventory.startOpen(playerInventory.player);
         this.addDataSlot(this.levelCost);
+
+        if (lapisStorage != null) {
+            this.inventory.setItem(0, lapisStorage.calcium$getLapis().copy());
+        }
 
         for (int i = 0; i < 3; ++i) {
             for (int j = 0; j < 9; ++j) {
@@ -254,6 +265,10 @@ public class CustomEnchantingScreenHandler extends RecipeBookMenu {
     @Override public void removed(Player player) {
         super.removed(player);
         this.outputInventory.removeItemNoUpdate(0);
+        if (this.lapisStorage != null) {
+            this.lapisStorage.calcium$setLapis(this.inventory.getItem(0));
+            this.inventory.setItem(0, ItemStack.EMPTY);
+        }
         this.clearContainer(player, this.inventory);
     }
 

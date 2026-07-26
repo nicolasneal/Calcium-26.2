@@ -11,13 +11,27 @@ import net.nicolas.calcium.core.client.environment.HighAltitude;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyConstant;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(SkyRenderer.class)
 public abstract class SkyRendererMixin {
 
     @Unique private static final float MIN_SKY_COLOR_MULTIPLIER = 0.0F;
+    @Unique private static final float STAR_SIZE_MIN = 0.06F;
+    @Unique private static final float STAR_SIZE_RANGE = 0.08F;
+
+    @ModifyConstant(method = "buildStars", constant = @Constant(floatValue = 0.15F))
+    private float calcium$narrowStarSizeMin(float original) {
+        return STAR_SIZE_MIN;
+    }
+
+    @ModifyConstant(method = "buildStars", constant = @Constant(floatValue = 0.1F))
+    private float calcium$narrowStarSizeRange(float original) {
+        return STAR_SIZE_RANGE;
+    }
 
     @Inject(method = "extractRenderState", at = @At("TAIL"))
     private void calcium$applyHighAltitudeSkyEffects(ClientLevel level, float partialTicks, Camera camera, SkyRenderState state, CallbackInfo ci) {

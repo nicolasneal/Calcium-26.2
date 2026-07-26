@@ -66,7 +66,7 @@ public class ModRecipes {
 
         // Paragon Enchantments
 
-        for (String id : List.of("channeling", "infinity", "mending", "riptide", "soul_speed", "swift_sneak", "wind_burst")) {
+        for (String id : List.of("anchoring", "channeling", "infinity", "mending", "riptide", "soul_speed", "swift_sneak", "wind_burst")) {
             tiers.put(id, ENCHANTING_PARAGON);
         }
 
