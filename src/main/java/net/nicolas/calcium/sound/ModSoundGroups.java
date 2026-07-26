@@ -9,6 +9,8 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.JukeboxSong;
 import net.minecraft.world.level.block.SoundType;
 
+    // This class stores the mod's sound event and sound group registrations.
+
 public class ModSoundGroups {
 
     // BLOCKS

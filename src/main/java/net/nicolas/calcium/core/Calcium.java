@@ -27,7 +27,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.entity.ModAttributes;
-import net.nicolas.calcium.entity.ModEntityTypes;
+import net.nicolas.calcium.entity.ModEntities;
 import net.nicolas.calcium.event.Cracking;
 import net.nicolas.calcium.item.ModCompostables;
 import net.nicolas.calcium.item.ModFuels;
@@ -52,6 +52,10 @@ import net.nicolas.calcium.worldgen.ZPositionDensityFunction;
 import java.util.HashMap;
 import java.util.Map;
 
+    // This class, as I understand it, it the mod's main class that initializes all other classes. It's content can be
+    // relocated to another class, as long as that class is initialized here. Many miscellaneous functions are kept
+    // here instead of being stored elsewhere. I suspect that it is the server counterpart to CalciumClient.
+
 public class Calcium implements ModInitializer {
 
     // Screen Registration
@@ -75,7 +79,7 @@ public class Calcium implements ModInitializer {
         ModSoundGroups.initialize();
         ModSounds.initialize();
         ModAttributes.initialize();
-        ModEntityTypes.initialize();
+        ModEntities.initialize();
         ModNetworking.initialize();
         ModOrder.initialize();
         Cracking.registerEvents();

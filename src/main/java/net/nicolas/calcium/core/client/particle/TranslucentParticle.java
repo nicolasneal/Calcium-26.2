@@ -1,4 +1,4 @@
-package net.nicolas.calcium.client;
+package net.nicolas.calcium.core.client.particle;
 
 public interface TranslucentParticle {
 

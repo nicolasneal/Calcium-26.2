@@ -7,7 +7,7 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.fog.FogData;
 import net.minecraft.util.ARGB;
 import net.minecraft.util.Mth;
-import net.nicolas.calcium.client.HighAltitude;
+import net.nicolas.calcium.core.client.environment.HighAltitude;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;

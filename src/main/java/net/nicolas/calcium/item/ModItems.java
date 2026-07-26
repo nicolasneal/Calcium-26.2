@@ -16,7 +16,7 @@ import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.item.component.TypedEntityData;
 import net.minecraft.world.level.material.Fluids;
 import net.nicolas.calcium.block.ModBlocks;
-import net.nicolas.calcium.entity.ModEntityTypes;
+import net.nicolas.calcium.entity.ModEntities;
 import net.nicolas.calcium.item.custom.EctoplasmBucketItem;
 import net.nicolas.calcium.item.custom.SignalCardItem;
 import net.nicolas.calcium.sound.ModSoundGroups;
@@ -24,6 +24,8 @@ import net.nicolas.calcium.sound.ModSoundGroups;
 import java.util.function.Function;
 
 import static net.minecraft.world.item.Items.BOWL;
+
+    // This class stores the mod's item registrations.
 
 public class ModItems {
 
@@ -95,13 +97,13 @@ public class ModItems {
 
     // SPAWN EGGS (3)
 
-    public static final Item SEA_COW_SPAWN_EGG = register("sea_cow_spawn_egg", SpawnEggItem::new, new Item.Properties().component(DataComponents.ENTITY_DATA, TypedEntityData.of(ModEntityTypes.SEA_COW, new CompoundTag())).stacksTo(64));
-    public static final Item GIANT_CLAM_SPAWN_EGG = register("giant_clam_spawn_egg", SpawnEggItem::new, new Item.Properties().component(DataComponents.ENTITY_DATA, TypedEntityData.of(ModEntityTypes.GIANT_CLAM, new CompoundTag())).stacksTo(64));
-    public static final Item SUNFISH_SPAWN_EGG = register("sunfish_spawn_egg", SpawnEggItem::new, new Item.Properties().component(DataComponents.ENTITY_DATA, TypedEntityData.of(ModEntityTypes.SUNFISH, new CompoundTag())).stacksTo(64));
+    public static final Item SEA_COW_SPAWN_EGG = register("sea_cow_spawn_egg", SpawnEggItem::new, new Item.Properties().component(DataComponents.ENTITY_DATA, TypedEntityData.of(ModEntities.SEA_COW, new CompoundTag())).stacksTo(64));
+    public static final Item GIANT_CLAM_SPAWN_EGG = register("giant_clam_spawn_egg", SpawnEggItem::new, new Item.Properties().component(DataComponents.ENTITY_DATA, TypedEntityData.of(ModEntities.GIANT_CLAM, new CompoundTag())).stacksTo(64));
+    public static final Item SUNFISH_SPAWN_EGG = register("sunfish_spawn_egg", SpawnEggItem::new, new Item.Properties().component(DataComponents.ENTITY_DATA, TypedEntityData.of(ModEntities.SUNFISH, new CompoundTag())).stacksTo(64));
 
     // MOB BUCKETS (1)
 
-    public static final Item BABY_SUNFISH_BUCKET = register("baby_sunfish_bucket", settings -> new MobBucketItem(ModEntityTypes.SUNFISH, Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, settings), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(64));
+    public static final Item BABY_SUNFISH_BUCKET = register("baby_sunfish_bucket", settings -> new MobBucketItem(ModEntities.SUNFISH, Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, settings), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(64));
 
     public static void initialize() {}
 

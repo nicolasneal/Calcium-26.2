@@ -21,6 +21,9 @@ import net.nicolas.calcium.block.ModBlocks;
 import java.util.Map;
 import java.util.Optional;
 
+    // This class encodes Cracking, the feature where right-clicking a crackable block with a pickaxe converts it to
+    // its cracked variant. It also lists all the blocks that are crackable, along with their cracked variants.
+
 public class Cracking {
 
     private static final Map<Block, Block> CRACKED_BLOCKS = new ImmutableMap.Builder<Block, Block>()

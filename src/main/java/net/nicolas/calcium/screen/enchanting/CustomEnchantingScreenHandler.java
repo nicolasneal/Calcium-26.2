@@ -23,7 +23,7 @@ import net.nicolas.calcium.core.Calcium;
 import net.nicolas.calcium.core.recipe.enchanting.EnchantingRecipe;
 import net.nicolas.calcium.core.recipe.enchanting.EnchantingRecipeInput;
 import net.nicolas.calcium.core.recipe.ModRecipes;
-import net.nicolas.calcium.item.tag.ModTags;
+import net.nicolas.calcium.item.ModTags;
 import net.nicolas.calcium.screen.CustomSlot;
 import net.nicolas.calcium.screen.SlotConfig;
 

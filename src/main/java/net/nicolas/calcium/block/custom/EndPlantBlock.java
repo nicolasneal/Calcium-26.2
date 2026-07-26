@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.nicolas.calcium.block.tag.ModBlockTags;
+import net.nicolas.calcium.item.ModTags;
 
 public class EndPlantBlock extends GenericPlantBlock {
 
@@ -31,7 +31,7 @@ public class EndPlantBlock extends GenericPlantBlock {
     @Override protected boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
         BlockPos floorPos = pos.below();
         BlockState floorState = world.getBlockState(floorPos);
-        return floorState.is(BlockTags.SUPPORTS_VEGETATION) || floorState.is(ModBlockTags.END_PLANT_PLACEMENT);
+        return floorState.is(BlockTags.SUPPORTS_VEGETATION) || floorState.is(ModTags.END_PLANT_PLACEMENT);
     }
 
 }

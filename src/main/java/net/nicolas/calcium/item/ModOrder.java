@@ -19,6 +19,9 @@ import java.util.Map;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
+    // This class defines the order of the items in the Creative inventory screen. This list overrides the Vanilla
+    // list, meaning that a removal of a Vanilla item from here removes it in game.
+
 public class ModOrder {
 
     private static final Identifier FINAL_PHASE = Identifier.fromNamespaceAndPath("calcium", "creative_inventory_order");

@@ -10,6 +10,8 @@ import net.minecraft.world.entity.ai.attributes.DefaultAttributes;
 import net.nicolas.calcium.mixin.accessors.AttributeInstanceAccessor;
 import net.nicolas.calcium.mixin.accessors.AttributeSupplierInvoker;
 
+    // This class stores overrides for Vanilla mob health values.
+
 public class ModAttributes {
 
     public static void initialize() {

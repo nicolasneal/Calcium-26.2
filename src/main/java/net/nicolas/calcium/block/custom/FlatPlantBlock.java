@@ -8,7 +8,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.nicolas.calcium.block.tag.ModBlockTags;
+import net.nicolas.calcium.item.ModTags;
 
 public class FlatPlantBlock extends GenericPlantBlock {
 
@@ -30,7 +30,7 @@ public class FlatPlantBlock extends GenericPlantBlock {
     @Override protected boolean canSurvive(BlockState state, LevelReader world, BlockPos pos) {
         BlockPos floorPos = pos.below();
         BlockState floorState = world.getBlockState(floorPos);
-        return floorState.is(ModBlockTags.NETHER_PLANT_PLACEMENT);
+        return floorState.is(ModTags.NETHER_PLANT_PLACEMENT);
     }
 
 }

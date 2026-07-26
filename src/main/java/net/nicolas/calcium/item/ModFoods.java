@@ -7,6 +7,9 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.food.FoodProperties;
 
+    // This class stores the mod's food property values and overrides for Vanilla food property values. This list does
+    // not replace vanilla values entirely, so removing a Vanilla item would not remove its status as food.
+
 public class ModFoods {
 
     public static void initialize() {

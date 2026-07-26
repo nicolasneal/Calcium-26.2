@@ -5,6 +5,9 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.nicolas.calcium.block.ModBlocks;
 
+    // This class stores the mod's fuel efficiency values and overrides for Vanilla fuel efficiency values. This list
+    // does not replace vanilla values entirely, so removing a Vanilla item would not remove its status as a fuel.
+
 public class ModFuels {
 
     public static void initialize() {

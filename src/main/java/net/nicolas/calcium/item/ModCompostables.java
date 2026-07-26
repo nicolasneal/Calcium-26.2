@@ -3,6 +3,8 @@ package net.nicolas.calcium.item;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.nicolas.calcium.block.ModBlocks;
 
+    // This class stores the mod's composting efficiency values.
+
 public class ModCompostables {
 
     public static void initialize() {

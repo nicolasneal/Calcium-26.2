@@ -36,6 +36,8 @@ import net.nicolas.calcium.sound.ModSoundGroups;
 
 import java.util.function.Function;
 
+    // This class stores the mod's block registrations.
+
 public class ModBlocks {
 
     public static final String MOD_ID = "calcium";

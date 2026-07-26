@@ -12,20 +12,22 @@ import net.nicolas.calcium.entity.custom.GiantClam;
 import net.nicolas.calcium.entity.custom.SeaCow;
 import net.nicolas.calcium.entity.custom.Sunfish;
 
-public class ModEntityTypes {
+    // This class stores the mod's entity registrations.
+
+public class ModEntities {
 
     public static final String MOD_ID = "calcium";
 
-    public static final EntityType<GiantClam> GIANT_CLAM = register("giant_clam", EntityType.Builder.of(GiantClam::new, MobCategory.WATER_AMBIENT).sized(1.0F, 0.875F).eyeHeight(0.4375F).clientTrackingRange(10));
-    public static final EntityType<SeaCow> SEA_COW = register("sea_cow", EntityType.Builder.of(SeaCow::new, MobCategory.WATER_AMBIENT).sized(1.6F, 1.05F).eyeHeight(0.65F).clientTrackingRange(10));
+    // Entities
+
+    public static final EntityType<GiantClam> GIANT_CLAM = register("giant_clam", EntityType.Builder.of(GiantClam::new, MobCategory.WATER_CREATURE).sized(1.0F, 0.875F).eyeHeight(0.4375F).clientTrackingRange(10));
+    public static final EntityType<SeaCow> SEA_COW = register("sea_cow", EntityType.Builder.of(SeaCow::new, MobCategory.WATER_CREATURE).sized(1.6F, 1.05F).eyeHeight(0.65F).clientTrackingRange(10));
     public static final EntityType<Sunfish> SUNFISH = register("sunfish", EntityType.Builder.of(Sunfish::new, MobCategory.WATER_CREATURE).sized(0.3F, 0.3F).clientTrackingRange(10));
 
     public static void initialize() {
 
         FabricDefaultAttributeRegistry.register(GIANT_CLAM, GiantClam.createAttributes());
-
         FabricDefaultAttributeRegistry.register(SEA_COW, SeaCow.createAttributes());
-
         FabricDefaultAttributeRegistry.register(SUNFISH, Sunfish.createAttributes());
 
     }

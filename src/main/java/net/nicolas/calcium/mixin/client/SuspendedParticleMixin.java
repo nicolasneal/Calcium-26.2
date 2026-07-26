@@ -3,7 +3,7 @@ package net.nicolas.calcium.mixin.client;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.client.particle.SingleQuadParticle;
 import net.minecraft.client.particle.SuspendedParticle;
-import net.nicolas.calcium.client.TranslucentParticle;
+import net.nicolas.calcium.core.client.particle.TranslucentParticle;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;

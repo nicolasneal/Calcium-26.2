@@ -6,7 +6,7 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.fog.FogData;
 import net.minecraft.client.renderer.fog.environment.WaterFogEnvironment;
 import net.minecraft.util.Mth;
-import net.nicolas.calcium.client.UnderwaterDepth;
+import net.nicolas.calcium.core.client.environment.UnderwaterDepth;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;

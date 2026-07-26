@@ -45,8 +45,8 @@ import net.minecraft.world.level.pathfinder.PathType;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
-import net.nicolas.calcium.entity.ModEntityTypes;
-import net.nicolas.calcium.item.tag.ModTags;
+import net.nicolas.calcium.entity.ModEntities;
+import net.nicolas.calcium.item.ModTags;
 import net.nicolas.calcium.sound.ModSoundGroups;
 import org.jspecify.annotations.Nullable;
 
@@ -114,7 +114,7 @@ public class SeaCow extends Animal {
     }
 
     @Override public @Nullable SeaCow getBreedOffspring(ServerLevel level, AgeableMob partner) {
-        SeaCow baby = ModEntityTypes.SEA_COW.create(level, EntitySpawnReason.BREEDING);
+        SeaCow baby = ModEntities.SEA_COW.create(level, EntitySpawnReason.BREEDING);
         if (baby != null && partner instanceof SeaCow partnerCow) {
             baby.setVariant(this.random.nextBoolean() ? this.getVariant() : partnerCow.getVariant());
         }

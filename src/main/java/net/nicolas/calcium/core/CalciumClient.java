@@ -33,7 +33,7 @@ import net.nicolas.calcium.core.client.sunfish.SunfishModel;
 import net.nicolas.calcium.core.client.sunfish.SunfishRenderer;
 import net.nicolas.calcium.core.client.sniffer.SnifferChestModel;
 import net.nicolas.calcium.core.client.sniffer.SnifferSaddleLayer;
-import net.nicolas.calcium.entity.ModEntityTypes;
+import net.nicolas.calcium.entity.ModEntities;
 import net.nicolas.calcium.core.client.viewfinder.ViewfinderBlockEntityRenderer;
 import net.nicolas.calcium.core.client.viewfinder.ViewfinderController;
 import net.nicolas.calcium.core.client.viewfinder.ViewfinderModel;
@@ -47,6 +47,8 @@ import net.nicolas.calcium.screen.sniffer.SnifferInventoryScreenHandler;
 import net.nicolas.calcium.screen.sniffer.SnifferInventoryScreen;
 
 import java.util.List;
+
+    // This class stores miscellaneous client-side functions.
 
 public class CalciumClient implements ClientModInitializer {
 
@@ -87,16 +89,16 @@ public class CalciumClient implements ClientModInitializer {
         ModelLayerRegistry.registerModelLayer(SnifferChestModel.LAYER, SnifferChestModel::createChestLayer);
 
         ModelLayerRegistry.registerModelLayer(GiantClamRenderer.LAYER, GiantClamModel::createBodyLayer);
-        EntityRendererRegistry.register(ModEntityTypes.GIANT_CLAM, GiantClamRenderer::new);
+        EntityRendererRegistry.register(ModEntities.GIANT_CLAM, GiantClamRenderer::new);
 
         ModelLayerRegistry.registerModelLayer(SeaCowRenderer.LAYER, SeaCowModel::createBodyLayer);
         ModelLayerRegistry.registerModelLayer(SeaCowRenderer.BABY_LAYER, SeaCowModel::createBabyBodyLayer);
-        EntityRendererRegistry.register(ModEntityTypes.SEA_COW, SeaCowRenderer::new);
+        EntityRendererRegistry.register(ModEntities.SEA_COW, SeaCowRenderer::new);
 
         ModelLayerRegistry.registerModelLayer(SunfishRenderer.LAYER, SunfishModel::createBodyLayer);
         ModelLayerRegistry.registerModelLayer(SunfishRenderer.BABY_LAYER, SunfishModel::createBabyBodyLayer);
         ModelLayerRegistry.registerModelLayer(SunfishRenderer.NEWBORN_LAYER, SunfishModel::createNewbornBodyLayer);
-        EntityRendererRegistry.register(ModEntityTypes.SUNFISH, SunfishRenderer::new);
+        EntityRendererRegistry.register(ModEntities.SUNFISH, SunfishRenderer::new);
 
         UseBlockCallback.EVENT.register((player, level, hand, hitResult) -> {
             if (!level.isClientSide() || hand != InteractionHand.MAIN_HAND || !player.getMainHandItem().isEmpty()) {

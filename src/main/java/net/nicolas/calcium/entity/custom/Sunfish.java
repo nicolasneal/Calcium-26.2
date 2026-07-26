@@ -54,9 +54,9 @@ import net.minecraft.world.level.pathfinder.PathType;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.phys.Vec3;
-import net.nicolas.calcium.entity.ModEntityTypes;
+import net.nicolas.calcium.entity.ModEntities;
 import net.nicolas.calcium.item.ModItems;
-import net.nicolas.calcium.item.tag.ModTags;
+import net.nicolas.calcium.item.ModTags;
 import org.jspecify.annotations.Nullable;
 
 import java.util.EnumSet;
@@ -120,7 +120,7 @@ public class Sunfish extends PathfinderMob implements Bucketable {
             if (!player.getAbilities().instabuild) {
                 itemStack.shrink(1);
             }
-            Sunfish baby = ModEntityTypes.SUNFISH.create(serverLevel, EntitySpawnReason.SPAWN_ITEM_USE);
+            Sunfish baby = ModEntities.SUNFISH.create(serverLevel, EntitySpawnReason.SPAWN_ITEM_USE);
             if (baby != null) {
                 baby.setAge(-48000);
                 baby.setVariant(this.getVariant());
@@ -164,7 +164,7 @@ public class Sunfish extends PathfinderMob implements Bucketable {
     }
 
     public void spawnChildFromBreeding(ServerLevel level, Sunfish partner) {
-        Sunfish baby = ModEntityTypes.SUNFISH.create(level, EntitySpawnReason.BREEDING);
+        Sunfish baby = ModEntities.SUNFISH.create(level, EntitySpawnReason.BREEDING);
         if (baby != null) {
             ServerPlayer breeder = this.getLoveCause();
             if (breeder == null && partner.getLoveCause() != null) {

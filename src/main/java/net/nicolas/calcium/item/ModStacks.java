@@ -4,6 +4,8 @@ import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.Items;
 
+    // This class stores overrides for Vanilla stack size values.
+
 public class ModStacks {
 
     public static void initialize() {

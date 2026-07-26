@@ -23,7 +23,7 @@ import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.nicolas.calcium.block.tag.ModBlockTags;
+import net.nicolas.calcium.item.ModTags;
 import net.nicolas.calcium.sound.ModSoundGroups;
 import org.jspecify.annotations.Nullable;
 
@@ -78,7 +78,7 @@ public class GiantClam extends Mob {
         }
 
         BlockPos below = this.blockPosition().below();
-        if (this.level().getBlockState(below).is(ModBlockTags.GIANT_CLAM_ANCHOR)) {
+        if (this.level().getBlockState(below).is(ModTags.GIANT_CLAM_ANCHOR)) {
             if (!this.isAnchored()) {
                 this.setAnchored(true);
                 this.anchoringAnimationState.start(this.tickCount);

@@ -6,6 +6,8 @@ import net.minecraft.world.level.block.Blocks;
 import java.util.IdentityHashMap;
 import java.util.Map;
 
+    // This class stores overrides for Vanilla block strength values.
+
 public final class ModStrengths {
 
     public record Strength(float hardness, float resistance) {}

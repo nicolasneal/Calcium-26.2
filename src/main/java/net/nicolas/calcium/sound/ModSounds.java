@@ -4,6 +4,8 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.nicolas.calcium.mixin.accessors.AbstractBlockAccessor;
 
+    // This class stores overrides for Vanilla sound group assignments.
+
 public class ModSounds {
 
     public static void initialize() {
