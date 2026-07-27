@@ -22,18 +22,18 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class CampfireBlockMixin {
 
     @Inject(method = "useItemOn", at = @At("HEAD"), cancellable = true)
-    private void onUseWithItem(ItemStack stack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, CallbackInfoReturnable<InteractionResult> cir) {
+    private void onUseWithItem(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult, CallbackInfoReturnable<InteractionResult> cir) {
 
         if (state.getValue(CampfireBlock.LIT)) return;
         if (state.getValue(CampfireBlock.WATERLOGGED)) return;
 
         ItemStack itemStack = player.getItemInHand(hand);
         if (itemStack.is(Items.STICK)) {
-            world.playSound(null, pos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 1.0F, world.getRandom().nextFloat() * 0.4F + 0.8F);
+            level.playSound(null, pos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.4F + 0.8F);
 
-            if (!world.isClientSide()) {
-                if (world.getRandom().nextFloat() < 0.30F) {
-                    world.setBlockAndUpdate(pos, state.setValue(CampfireBlock.LIT, true));
+            if (!level.isClientSide()) {
+                if (level.getRandom().nextFloat() < 0.30F) {
+                    level.setBlockAndUpdate(pos, state.setValue(CampfireBlock.LIT, true));
                 }
                 if (!player.isCreative()) {
                     itemStack.shrink(1);

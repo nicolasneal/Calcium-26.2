@@ -16,7 +16,7 @@ public final class ModStrengths {
 
     static {
 
-        // Corrections
+        // CORRECTIONS
 
         BLOCK_STRENGTH.put(Blocks.GRASS_BLOCK, new Strength(0.5F, 0.5F));
         BLOCK_STRENGTH.put(Blocks.PODZOL, new Strength(0.5F, 0.5F));
@@ -64,7 +64,7 @@ public final class ModStrengths {
         BLOCK_STRENGTH.put(Blocks.SMOOTH_QUARTZ_STAIRS, new Strength(0.8F, 0.8F));
         BLOCK_STRENGTH.put(Blocks.SMOOTH_QUARTZ_SLAB, new Strength(0.8F, 0.8F));
 
-        // Ores
+        // ORES
 
         BLOCK_STRENGTH.put(Blocks.COAL_ORE, new Strength(1.5F, 6.0F));
         BLOCK_STRENGTH.put(Blocks.IRON_ORE, new Strength(1.5F, 6.0F));

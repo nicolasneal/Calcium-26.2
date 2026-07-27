@@ -9,6 +9,8 @@ public class ModCompostables {
 
     public static void initialize() {
 
+        // PLANT BLOCKS
+
         ComposterBlock.COMPOSTABLES.put(ModBlocks.BARLEY.asItem(), 0.50f);
         ComposterBlock.COMPOSTABLES.put(ModBlocks.SEA_OATS.asItem(), 0.50f);
         ComposterBlock.COMPOSTABLES.put(ModBlocks.SHORT_ICY_IRIS.asItem(), 0.30f);
@@ -31,10 +33,14 @@ public class ModCompostables {
         ComposterBlock.COMPOSTABLES.put(ModBlocks.FLOWERING_WISP.asItem(), 0.50f);
         ComposterBlock.COMPOSTABLES.put(ModBlocks.CELESTIAL_VINES_HEAD.asItem(), 0.50f);
 
+        // RESOURCES
+
         ComposterBlock.COMPOSTABLES.put(ModItems.PUMPKIN_SLICE, 0.50f);
         ComposterBlock.COMPOSTABLES.put(ModItems.FLOUR, 0.65f);
         ComposterBlock.COMPOSTABLES.put(ModItems.DOUGH, 0.85f);
         ComposterBlock.COMPOSTABLES.put(ModItems.BATTER, 1.00f);
+
+        // FOODS
 
         ComposterBlock.COMPOSTABLES.put(ModItems.CHOCOLATE_CAKE, 1.00f);
         ComposterBlock.COMPOSTABLES.put(ModItems.PUMPKIN_CAKE_ROLL, 1.00f);

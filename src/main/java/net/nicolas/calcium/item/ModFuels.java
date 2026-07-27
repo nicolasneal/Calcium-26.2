@@ -14,7 +14,7 @@ public class ModFuels {
 
         FuelValueEvents.BUILD.register((builder, context) -> {
 
-            // Vanilla Overrides
+            // VANILLA OVERRIDES
 
             builder.add(ItemTags.LOGS, 800);
             builder.add(ItemTags.PLANKS, 200);
@@ -82,7 +82,7 @@ public class ModFuels {
             builder.add(Items.LAVA_BUCKET, 12800);
             builder.remove(ItemTags.NON_FLAMMABLE_WOOD);
 
-            // Mod Fuels
+            // MOD FUELS
 
             builder.add(ModItems.WOODEN_ROD, 100);
             builder.add(ModItems.PIXIE_DUST, 2400);

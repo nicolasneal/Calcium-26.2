@@ -152,19 +152,18 @@ public class ModSoundGroups {
     public static final SoundEvent CAKE_ROLL_STEP = register("block.cake_roll.step");
     public static final SoundType CAKE_ROLL = new SoundType(1.0F, 1.0F, CAKE_ROLL_PLACE, CAKE_ROLL_STEP, CAKE_ROLL_PLACE, CAKE_ROLL_STEP, CAKE_ROLL_STEP);
 
-    // UTILITY
+    public static final SoundEvent MONITOR_STATIC = register("block.monitor.static");
+
+    // ITEMS
 
     public static final SoundEvent ECTOPLASM_BUCKET_EMPTY = register("item.bucket.empty_ectoplasm");
     public static final SoundEvent ECTOPLASM_BUCKET_FILL = register("item.bucket.fill_ectoplasm");
     public static final SoundEvent ECTOPLASM_AMBIENT = register("block.ectoplasm.whispering");
 
-    public static final SoundEvent MONITOR_STATIC = register("block.monitor.static");
     public static final SoundEvent SIGNAL_CARD_INSERT = register("item.signal_card.insert");
     public static final SoundEvent SIGNAL_CARD_EJECT = register("item.signal_card.eject");
 
     // ENTITIES
-
-    public static final SoundEvent SHULKER_BULLET_LOOP = register("entity.shulker_bullet.loop");
 
     public static final SoundEvent GIANT_CLAM_HURT = register("entity.giant_clam.hurt");
     public static final SoundEvent GIANT_CLAM_HURT_LAND = register("entity.giant_clam.hurt_land");
@@ -186,6 +185,8 @@ public class ModSoundGroups {
     public static final SoundEvent SEA_COW_BABY_DEATH_LAND = register("entity.sea_cow.baby_death_land");
     public static final SoundEvent SEA_COW_STEP = register("entity.sea_cow.step");
     public static final SoundEvent SEA_COW_MILK = register("entity.sea_cow.milk");
+
+    public static final SoundEvent SHULKER_BULLET_LOOP = register("entity.shulker_bullet.loop");
 
     // MUSIC DISCS
 

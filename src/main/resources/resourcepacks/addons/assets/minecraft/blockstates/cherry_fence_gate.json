@@ -1,4 +1,4 @@
-{
+﻿{
   "variants": {
     "facing=east,in_wall=false,open=false": {
       "model": "minecraft:block/fence_gates/cherry_fence_gate",

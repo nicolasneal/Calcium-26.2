@@ -20,8 +20,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class EnchantingTableBlockMixin {
 
     @Inject(method = "getMenuProvider", at = @At("HEAD"), cancellable = true)
-    private void openCustomScreen(BlockState state, Level world, BlockPos pos, CallbackInfoReturnable<MenuProvider> cir) {
-        BlockEntity blockEntity = world.getBlockEntity(pos);
+    private void openCustomScreen(BlockState state, Level level, BlockPos pos, CallbackInfoReturnable<MenuProvider> cir) {
+        BlockEntity blockEntity = level.getBlockEntity(pos);
 
         if (blockEntity instanceof EnchantingTableBlockEntity tableEntity) {
             Component displayName = tableEntity.getDisplayName();

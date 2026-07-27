@@ -52,10 +52,6 @@ public abstract class ServerGamePacketListenerImplMixin extends ServerCommonPack
 
     }
 
-    // Vanilla hardcodes the creative "give yourself an item" slot bound to 45 (its own highest
-    // InventoryMenu slot index). Our 3 extra slots live at 46-48, so without this the packet is
-    // silently discarded server-side while the client optimistically renders the placed item,
-    // and the next real sync snaps it back to the stale (unplaced) state.
     @ModifyConstant(method = "handleSetCreativeModeSlot", constant = @Constant(intValue = 45))
     private int calcium$expandCreativeSlotBounds(int original) {
         return this.player.inventoryMenu.slots.size() - 1;

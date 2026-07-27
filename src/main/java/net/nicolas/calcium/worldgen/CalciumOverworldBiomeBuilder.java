@@ -57,8 +57,7 @@ public final class CalciumOverworldBiomeBuilder {
    private final Climate.Parameter FROZEN_RANGE = this.temperatures[0];
    private final Climate.Parameter UNFROZEN_RANGE = Climate.Parameter.span(this.temperatures[1], this.temperatures[4]);
 
-   private final Climate.Parameter mushroomFieldsContinentalness = Climate.Parameter.span(-1.2F, -1.05F);
-   private final Climate.Parameter deepOceanContinentalness = Climate.Parameter.span(-1.05F, -0.455F);
+   private final Climate.Parameter deepOceanContinentalness = Climate.Parameter.span(-1.2F, -0.455F);
    private final Climate.Parameter oceanContinentalness = Climate.Parameter.span(-0.455F, -0.19F);
    private final Climate.Parameter coastContinentalness = Climate.Parameter.span(-0.19F, -0.11F);
    private final Climate.Parameter inlandContinentalness = Climate.Parameter.span(-0.11F, 0.55F);
@@ -125,8 +124,6 @@ public final class CalciumOverworldBiomeBuilder {
    }
 
    private void addOffCoastBiomes(final Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> biomes) {
-
-      this.addSurfaceBiome(biomes, this.FULL_RANGE, this.FULL_RANGE, this.mushroomFieldsContinentalness, this.FULL_RANGE, this.FULL_RANGE, 0.0F, Biomes.MUSHROOM_FIELDS);
 
       for (int temperatureIndex = 0; temperatureIndex < this.temperatures.length; temperatureIndex++) {
          Climate.Parameter temperature = this.temperatures[temperatureIndex];
@@ -485,10 +482,7 @@ public final class CalciumOverworldBiomeBuilder {
 
       double continentalnessQuantized = Climate.quantizeCoord((float)continentalness);
 
-      if (continentalnessQuantized < this.mushroomFieldsContinentalness.max()) {
-         return "Mushroom fields";
-      }
-      else if (continentalnessQuantized < this.deepOceanContinentalness.max()) {
+      if (continentalnessQuantized < this.deepOceanContinentalness.max()) {
          return "Deep ocean";
       }
       else if (continentalnessQuantized < this.oceanContinentalness.max()) {
@@ -543,7 +537,6 @@ public final class CalciumOverworldBiomeBuilder {
    @VisibleForDebug public Climate.Parameter[] getContinentalnessThresholds() {
 
       return new Climate.Parameter[] {
-         this.mushroomFieldsContinentalness,
          this.deepOceanContinentalness,
          this.oceanContinentalness,
          this.coastContinentalness,

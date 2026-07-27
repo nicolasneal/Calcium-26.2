@@ -10,14 +10,14 @@ import net.minecraft.world.level.block.Block;
 
 public class ModTags {
 
-    // Item Tags
+    // ITEM TAGS
 
     public static final TagKey<Item> ENCHANTABLE = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("calcium", "enchantable"));
     public static final TagKey<Item> UNDERWATER_PLANTABLE = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("calcium", "underwater_plantable"));
     public static final TagKey<Item> SEA_COW_FEEDS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("calcium", "sea_cow_feeds"));
     public static final TagKey<Item> SUNFISH_FEEDS = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath("calcium", "sunfish_feeds"));
 
-    // Block Tags
+    // BLOCK TAGS
 
     public static final TagKey<Block> END_PLANT_PLACEMENT = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("calcium", "end_plant_placement"));
     public static final TagKey<Block> NETHER_PLANT_PLACEMENT = TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("calcium", "nether_plant_placement"));

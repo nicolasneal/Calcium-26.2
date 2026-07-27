@@ -21,7 +21,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(BucketItem.class)
 public abstract class BucketItemMixin {
 
-    @Shadow @Final private Fluid content;
+    @Shadow @Final protected Fluid content;
 
     @Inject(method = "emptyContents", at = @At("HEAD"), cancellable = true)
     private void calcium$evaporateEctoplasm(LivingEntity user, Level world, BlockPos pos, BlockHitResult hitResult, CallbackInfoReturnable<Boolean> cir) {

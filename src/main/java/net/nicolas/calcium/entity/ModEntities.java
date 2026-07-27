@@ -18,7 +18,7 @@ public class ModEntities {
 
     public static final String MOD_ID = "calcium";
 
-    // Entities
+    // ENTITIES
 
     public static final EntityType<GiantClam> GIANT_CLAM = register("giant_clam", EntityType.Builder.of(GiantClam::new, MobCategory.WATER_CREATURE).sized(1.0F, 0.875F).eyeHeight(0.4375F).clientTrackingRange(10));
     public static final EntityType<SeaCow> SEA_COW = register("sea_cow", EntityType.Builder.of(SeaCow::new, MobCategory.WATER_CREATURE).sized(1.6F, 1.05F).eyeHeight(0.65F).clientTrackingRange(10));

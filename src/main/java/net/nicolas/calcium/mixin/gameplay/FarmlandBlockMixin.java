@@ -25,18 +25,18 @@ public abstract class FarmlandBlockMixin {
     }
 
     @Inject(method = "randomTick", at = @At("HEAD"), cancellable = true)
-    private void onRandomTick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random, CallbackInfo ci) {
+    private void onRandomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random, CallbackInfo ci) {
 
         int i = state.getValue(FarmlandBlock.MOISTURE);
 
-        if (!invokeIsWaterNearby(world, pos) && !world.isRainingAt(pos.above())) {
+        if (!invokeIsWaterNearby(level, pos) && !level.isRainingAt(pos.above())) {
             if (i > 0) {
-                world.setBlock(pos, state.setValue(FarmlandBlock.MOISTURE, i - 1), 2);
-            } else if (!invokeHasCrop(world, pos)) {
-                FarmlandBlock.turnToDirt(null, state, world, pos);
+                level.setBlock(pos, state.setValue(FarmlandBlock.MOISTURE, i - 1), 2);
+            } else if (!invokeHasCrop(level, pos)) {
+                FarmlandBlock.turnToDirt(null, state, level, pos);
             }
         } else if (i < 7) {
-            world.setBlock(pos, state.setValue(FarmlandBlock.MOISTURE, i + 1), 2);
+            level.setBlock(pos, state.setValue(FarmlandBlock.MOISTURE, i + 1), 2);
         }
 
         ci.cancel();

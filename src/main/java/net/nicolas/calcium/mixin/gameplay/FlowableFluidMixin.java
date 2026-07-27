@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class FlowableFluidMixin {
 
     @Inject(method = "spreadTo", at = @At("HEAD"), cancellable = true)
-    private void calcium$interactWithEctoplasm(LevelAccessor world, BlockPos pos, BlockState state, Direction direction, FluidState newFluidState, CallbackInfo ci) {
+    private void calcium$interactWithEctoplasm(LevelAccessor level, BlockPos pos, BlockState state, Direction direction, FluidState target, CallbackInfo ci) {
 
         boolean isLava = (Object) this instanceof LavaFluid;
         boolean isWater = (Object) this instanceof WaterFluid;
@@ -33,8 +33,8 @@ public abstract class FlowableFluidMixin {
 
         if (currentFluidState.getType() == ModBlocks.ECTOPLASM_STILL || currentFluidState.getType() == ModBlocks.ECTOPLASM_FLOWING) {
 
-            world.setBlock(pos, (isLava ? ModBlocks.SOULSLATE : Blocks.ICE).defaultBlockState(), 3);
-            this.playExtinguishEvent(world, pos);
+            level.setBlock(pos, (isLava ? ModBlocks.SOULSLATE : Blocks.ICE).defaultBlockState(), 3);
+            this.playExtinguishEvent(level, pos);
 
             ci.cancel();
 

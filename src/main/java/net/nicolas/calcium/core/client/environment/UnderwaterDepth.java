@@ -11,27 +11,27 @@ public final class UnderwaterDepth {
     private static final int DARKENING_START_DEPTH = 15;
 
     private static BlockPos cachedPos = null;
-    private static float cachedFactor = 0.0F;
+    private static int cachedSurfaceY = 0;
 
     private UnderwaterDepth() {
     }
 
     public static float computeFactor(Camera camera, ClientLevel level) {
         BlockPos pos = camera.blockPosition();
-        if (pos.equals(cachedPos)) {
-            return cachedFactor;
+        if (!pos.equals(cachedPos)) {
+            BlockPos.MutableBlockPos scanPos = pos.mutable();
+            int depth = 0;
+            while (depth < MAX_SCAN_DEPTH && !level.getBlockState(scanPos).isAir()) {
+                depth++;
+                scanPos.move(0, 1, 0);
+            }
+            cachedSurfaceY = pos.getY() + depth;
+            cachedPos = pos.immutable();
         }
 
-        BlockPos.MutableBlockPos scanPos = pos.mutable();
-        int depth = 0;
-        while (depth < MAX_SCAN_DEPTH && !level.getBlockState(scanPos).isAir()) {
-            depth++;
-            scanPos.move(0, 1, 0);
-        }
-        float progress = (depth - DARKENING_START_DEPTH) / (float) (MAX_SCAN_DEPTH - DARKENING_START_DEPTH);
-        cachedFactor = Mth.clamp(progress, 0.0F, 1.0F);
-        cachedPos = pos.immutable();
-        return cachedFactor;
+        float continuousDepth = (float) (cachedSurfaceY - camera.position().y);
+        float progress = (continuousDepth - DARKENING_START_DEPTH) / (float) (MAX_SCAN_DEPTH - DARKENING_START_DEPTH);
+        return Mth.clamp(progress, 0.0F, 1.0F);
     }
 
 }

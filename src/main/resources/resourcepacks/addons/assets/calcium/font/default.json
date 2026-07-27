@@ -1,6 +1,0 @@
-{
-	"providers": [
-		{ "type": "bitmap", "ascent": 8, "height": 16, "chars": ["\uEff3"], "file": "gui/icons/hunger_full.png" },
-		{ "type": "bitmap", "ascent": 8, "height": 16, "chars": ["\uEff4"], "file": "gui/icons/hunger_half.png" }
-	]
-}

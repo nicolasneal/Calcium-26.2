@@ -52,7 +52,8 @@
 		{ "type": "bitmap", "ascent": 8, "height": 10, "chars": ["\uE890"], "file": "gui/enchant/breach.png" },
 		{ "type": "bitmap", "ascent": 8, "height": 10, "chars": ["\uE891"], "file": "gui/enchant/density.png" },
 		{ "type": "bitmap", "ascent": 8, "height": 10, "chars": ["\uE892"], "file": "gui/enchant/wind_burst.png" },
-		{ "type": "bitmap", "ascent": 8, "height": 10, "chars": ["\uE893"], "file": "gui/enchant/lunge.png" }
+		{ "type": "bitmap", "ascent": 8, "height": 10, "chars": ["\uE893"], "file": "gui/enchant/lunge.png" },
+		{ "type": "bitmap", "ascent": 8, "height": 10, "chars": ["\uE894"], "file": "gui/enchant/anchoring.png" }
 
 	]
 }

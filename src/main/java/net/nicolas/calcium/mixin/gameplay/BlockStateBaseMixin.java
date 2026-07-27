@@ -10,7 +10,6 @@ import org.spongepowered.asm.mixin.injection.At;
 @Mixin(BlockBehaviour.BlockStateBase.class)
 public abstract class BlockStateBaseMixin {
 
-    // Give vanilla ores the hardness (mining time) of the block they're embedded in (e.g. deepslate ores -> deepslate).
     @ModifyReturnValue(method = "getDestroySpeed", at = @At("RETURN"))
     private float calcium$matchOreHardness(float original) {
         ModStrengths.Strength strength = ModStrengths.of(((BlockState) (Object) this).getBlock());

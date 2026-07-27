@@ -57,7 +57,7 @@ public class ModFoods {
 
     }
 
-    // Vanilla Overrides
+    // VANILLA OVERRIDES
 
     public static final FoodProperties APPLE = new FoodProperties.Builder().nutrition(4).saturationModifier(0.3f).build();
     public static final FoodProperties BAKED_POTATO = new FoodProperties.Builder().nutrition(5).saturationModifier(0.6f).build();
@@ -102,7 +102,7 @@ public class ModFoods {
     public static final int CAKE_SLICE_NUTRITION = 4;
     public static final float CAKE_SLICE_SATURATION = 0.5f;
 
-    // Mod Foods
+    // MOD FOODS
 
     public static final FoodProperties FISH = new FoodProperties.Builder().nutrition(2).saturationModifier(0.1f).build();
     public static final FoodProperties COOKED_FISH = new FoodProperties.Builder().nutrition(6).saturationModifier(0.8f).build();

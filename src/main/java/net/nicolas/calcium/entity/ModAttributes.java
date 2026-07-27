@@ -16,6 +16,8 @@ public class ModAttributes {
 
     public static void initialize() {
 
+        // HITPOINTS
+
         setHealth(EntityTypes.ALLAY, 10.0);
         setHealth(EntityTypes.ARMADILLO, 12.0);
         setHealth(EntityTypes.ARMOR_STAND, 20.0);
@@ -110,8 +112,13 @@ public class ModAttributes {
         setHealth(EntityTypes.ZOMBIE_VILLAGER, 20.0);
         setHealth(EntityTypes.ZOMBIFIED_PIGLIN, 20.0);
 
+        // ATTACK DAMAGE
+
         setAttribute(EntityTypes.CREAKING, Attributes.ATTACK_DAMAGE, 6.0);
-        setAttribute(EntityTypes.HUSK, Attributes.SCALE, 0.938967);
+
+        // MODEL SCALE
+
+        setAttribute(EntityTypes.HUSK, Attributes.SCALE, 0.9390);
 
     }
 

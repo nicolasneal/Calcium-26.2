@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.nicolas.calcium.block.ModBlocks;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -38,7 +39,7 @@ public abstract class BoneMealItemMixin {
         cir.setReturnValue(InteractionResult.SUCCESS);
     }
 
-    private static boolean hasAdjacentAlgalSand(Level level, BlockPos pos) {
+    @Unique private static boolean hasAdjacentAlgalSand(Level level, BlockPos pos) {
         for (int x = -1; x <= 1; x++) {
             for (int z = -1; z <= 1; z++) {
                 if ((x != 0 || z != 0) && level.getBlockState(pos.offset(x, 0, z)).is(ModBlocks.ALGAL_SAND)) {

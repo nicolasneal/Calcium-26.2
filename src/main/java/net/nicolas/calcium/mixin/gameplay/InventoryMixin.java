@@ -1,7 +1,6 @@
 package net.nicolas.calcium.mixin.gameplay;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
-import java.util.function.Predicate;
 import net.minecraft.world.Container;
 import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.entity.player.Inventory;
@@ -13,6 +12,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 
+import java.util.function.Predicate;
+
 @Mixin(Inventory.class)
 public abstract class InventoryMixin {
 
@@ -23,8 +24,6 @@ public abstract class InventoryMixin {
         boolean countingOnly = amountToRemove == 0;
         Container extraSlots = ((ExtraSlotsAccess) this.player).calcium$getExtraSlots();
         int cleared = ContainerHelper.clearOrCountMatchingItems(extraSlots, predicate, amountToRemove - original, countingOnly);
-        // Only needed when a different menu (e.g. the Creative "Survival Inventory" tab) is open;
-        // vanilla already broadcasts player.inventoryMenu itself when it's the one currently active.
         if (cleared > 0 && !countingOnly && this.player.containerMenu != this.player.inventoryMenu) {
             this.player.inventoryMenu.broadcastChanges();
         }

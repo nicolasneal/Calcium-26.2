@@ -14,6 +14,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(SplashParticle.class)
 public abstract class SplashParticleMixin extends WaterDropParticle {
 
+    private static final float SPLASH_PARTICLE_ALPHA = 0.4F;
+
     protected SplashParticleMixin(ClientLevel level, double x, double y, double z, TextureAtlasSprite sprite) {
         super(level, x, y, z, sprite);
     }
@@ -24,6 +26,7 @@ public abstract class SplashParticleMixin extends WaterDropParticle {
         this.rCol = ((color >> 16) & 0xFF) / 255.0F;
         this.gCol = ((color >> 8) & 0xFF) / 255.0F;
         this.bCol = (color & 0xFF) / 255.0F;
+        this.setAlpha(SPLASH_PARTICLE_ALPHA);
     }
 
 }

@@ -23,7 +23,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class InGameOverlayRendererMixin {
 
     @Shadow @Final private Minecraft minecraft;
-    @Unique private static final Identifier ECTOPLASM_TEXTURE = Identifier.fromNamespaceAndPath("calcium", "textures/block/ectoplasm_overlay.png");
+    @Unique private static final Identifier ECTOPLASM_TEXTURE = Identifier.fromNamespaceAndPath("calcium", "textures/misc/ectoplasm_overlay.png");
 
     @Inject(method = "submit", at = @At("HEAD"))
     private void calcium$renderEctoplasmOverlay(boolean isFirstPerson, boolean isSleeping, float partialTicks, SubmitNodeCollector submitNodeCollector, boolean hideGui, CallbackInfo ci) {

@@ -18,14 +18,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(Block.class)
 public abstract class BlockMixin {
 
-    // Give vanilla ores the blast resistance of the block they're embedded in (e.g. deepslate ores -> deepslate).
     @ModifyReturnValue(method = "getExplosionResistance", at = @At("RETURN"))
     private float calcium$matchOreBlastResistance(float original) {
         ModStrengths.Strength strength = ModStrengths.of((Block) (Object) this);
         return strength != null ? strength.resistance() : original;
     }
 
-    // Vanilla Chorus Flower has no ambient sound; mirrors EctoplasmFluid's occasional whisper pattern.
     @Inject(method = "animateTick", at = @At("HEAD"))
     private void calcium$chorusFlowerIdleSound(BlockState state, Level level, BlockPos pos, RandomSource random, CallbackInfo ci) {
         if ((Object) this instanceof ChorusFlowerBlock && random.nextInt(20) == 0) {
