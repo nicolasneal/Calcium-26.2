@@ -25,8 +25,8 @@ import java.util.Map;
 public abstract class MappedRegistryMixin<T> {
 
     @Inject(method = "register", at = @At("HEAD"))
-    private void calcium$patchContinentalBiomeTable(ResourceKey<T> key, T value, RegistrationInfo registrationInfo, CallbackInfoReturnable<Holder.Reference<T>> cir) {
-        if (value instanceof MultiNoiseBiomeSourceParameterList list && key.identifier().equals(Identifier.fromNamespaceAndPath("calcium", "continental"))) {
+    private void calcium$patchOverworldBiomeTable(ResourceKey<T> key, T value, RegistrationInfo registrationInfo, CallbackInfoReturnable<Holder.Reference<T>> cir) {
+        if (value instanceof MultiNoiseBiomeSourceParameterList list && key.identifier().equals(Identifier.withDefaultNamespace("overworld"))) {
             MultiNoiseBiomeSourceParameterListAccessor accessor = (MultiNoiseBiomeSourceParameterListAccessor) list;
             Map<ResourceKey<Biome>, Holder<Biome>> biomeLookup = new HashMap<>();
             for (Pair<Climate.ParameterPoint, Holder<Biome>> pair : accessor.calcium$getParameters().values()) {

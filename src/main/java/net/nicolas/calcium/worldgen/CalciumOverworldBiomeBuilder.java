@@ -15,7 +15,6 @@ import java.util.function.Consumer;
 
 public final class CalciumOverworldBiomeBuilder {
 
-   private static final float VALLEY_SIZE = 0.05F;
    private static final float LOW_START = 0.26666668F;
    public static final float HIGH_START = 0.4F;
    private static final float HIGH_END = 0.93333334F;

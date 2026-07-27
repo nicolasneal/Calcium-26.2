@@ -425,8 +425,6 @@
   "item.calcium.giant_clam_spawn_egg": "Giant Clam Spawn Egg",
   "item.calcium.sea_cow_spawn_egg": "Sea Cow Spawn Egg",
   "item.calcium.sunfish_spawn_egg": "Sunfish Spawn Egg",
-  "item.calcium.baby_sunfish_bucket": "Bucket of Sunfish",
-
-  "generator.calcium.continental": "Continental"
+  "item.calcium.baby_sunfish_bucket": "Baby Sunfish Bucket"
 
 }
