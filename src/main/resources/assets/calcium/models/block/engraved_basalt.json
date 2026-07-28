@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "side": "calcium:block/engraved_basalt_side",
-    "end": "calcium:block/engraved_basalt_end"
-  }
-}

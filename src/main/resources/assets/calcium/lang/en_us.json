@@ -214,16 +214,7 @@
   "block.calcium.cracked_basalt_brick_stairs": "Cracked Basalt Brick Stairs",
   "block.calcium.cracked_basalt_brick_slab": "Cracked Basalt Brick Slab",
   "block.calcium.cracked_basalt_brick_wall": "Cracked Basalt Brick Wall",
-  "block.calcium.basalt_tiles": "Basalt Tiles",
-  "block.calcium.basalt_tile_stairs": "Basalt Tile Stairs",
-  "block.calcium.basalt_tile_slab": "Basalt Tile Slab",
-  "block.calcium.basalt_tile_wall": "Basalt Tile Wall",
-  "block.calcium.cracked_basalt_tiles": "Cracked Basalt Tiles",
-  "block.calcium.cracked_basalt_tile_stairs": "Cracked Basalt Tile Stairs",
-  "block.calcium.cracked_basalt_tile_slab": "Cracked Basalt Tile Slab",
-  "block.calcium.cracked_basalt_tile_wall": "Cracked Basalt Tile Wall",
   "block.calcium.chiseled_basalt": "Chiseled Basalt",
-  "block.calcium.engraved_basalt": "Engraved Basalt",
 
   "block.calcium.polished_quartz_wall": "Polished Quartz Wall",
   "block.calcium.quartz_brick_stairs": "Quartz Brick Stairs",
@@ -280,6 +271,10 @@
   "block.calcium.chiseled_kurodite": "Chiseled Kurodite",
 
   "block.calcium.purpur_wall": "Purpur Wall",
+  "block.calcium.cracked_purpur": "Cracked Purpur",
+  "block.calcium.cracked_purpur_stairs": "Cracked Purpur Stairs",
+  "block.calcium.cracked_purpur_slab": "Cracked Purpur Slab",
+  "block.calcium.cracked_purpur_wall": "Cracked Purpur Wall",
   "block.calcium.chiseled_purpur": "Chiseled Purpur",
 
   "block.calcium.cut_iron": "Cut Iron",

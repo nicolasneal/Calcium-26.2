@@ -1,5 +1,6 @@
 package net.nicolas.calcium.sound;
 
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.nicolas.calcium.mixin.accessors.AbstractBlockAccessor;
@@ -107,6 +108,7 @@ public class ModSounds {
         ((AbstractBlockAccessor) Blocks.BOOKSHELF).setSoundGroup(SoundType.SHELF);
         ((AbstractBlockAccessor) Blocks.NOTE_BLOCK).setSoundGroup(SoundType.SHELF);
         ((AbstractBlockAccessor) Blocks.JUKEBOX).setSoundGroup(SoundType.SHELF);
+        Blocks.BED.forEach(bed -> ((AbstractBlockAccessor) bed).setSoundGroup(SoundType.SHELF));
 
         ((AbstractBlockAccessor) Blocks.ANVIL).setSoundGroup(SoundType.METAL);
         ((AbstractBlockAccessor) Blocks.CHIPPED_ANVIL).setSoundGroup(SoundType.METAL);
@@ -147,6 +149,9 @@ public class ModSounds {
         ((AbstractBlockAccessor) Blocks.CRYING_OBSIDIAN).setSoundGroup(ModSoundGroups.OBSIDIAN);
         ((AbstractBlockAccessor) Blocks.MAGMA_BLOCK).setSoundGroup(ModSoundGroups.MAGMA);
         ((AbstractBlockAccessor) Blocks.GLOWSTONE).setSoundGroup(ModSoundGroups.GLOWSTONE);
+
+        ((AbstractBlockAccessor) Blocks.TNT).setSoundGroup(ModSoundGroups.TNT);
+        ((AbstractBlockAccessor) Blocks.TRIPWIRE).setSoundGroup(SoundType.WOOL);
 
     }
 

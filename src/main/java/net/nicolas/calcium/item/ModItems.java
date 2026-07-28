@@ -83,13 +83,14 @@ public class ModItems {
     public static final Item PUMPKIN_CAKE_ROLL = register("pumpkin_cake_roll", settings -> new BlockItem(ModBlocks.PUMPKIN_CAKE_ROLL, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
     public static final Item CHORUS_CAKE_ROLL = register("chorus_cake_roll", settings -> new BlockItem(ModBlocks.CHORUS_CAKE_ROLL, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
 
-    // TOOLS & UTILITY (9)
+    // TOOLS & UTILITY (10)
 
     public static final Item COPPER_COIN = register("copper_coin", Item::new, new Item.Properties().stacksTo(64));
     public static final Item IRON_COIN = register("iron_coin", Item::new, new Item.Properties().stacksTo(64));
     public static final Item GOLD_COIN = register("gold_coin", Item::new, new Item.Properties().stacksTo(64));
     public static final Item NETHERITE_COIN = register("netherite_coin", Item::new, new Item.Properties().stacksTo(64));
     public static final Item ECTOPLASM_BUCKET = register("ectoplasm_bucket", settings -> new EctoplasmBucketItem(ModBlocks.ECTOPLASM_STILL, settings), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(64));
+    public static final Item BABY_SUNFISH_BUCKET = register("baby_sunfish_bucket", settings -> new MobBucketItem(ModEntities.SUNFISH, Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, settings), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(64));
     public static final Item MUSIC_DISC_BLISS = register("music_disc_bliss", Item::new, new Item.Properties().jukeboxPlayable(ModSoundGroups.BLISS).stacksTo(64));
     public static final Item MUSIC_DISC_DECAY = register("music_disc_decay", Item::new, new Item.Properties().jukeboxPlayable(ModSoundGroups.DECAY).stacksTo(64));
     public static final Item MUSIC_DISC_GLARE = register("music_disc_glare", Item::new, new Item.Properties().jukeboxPlayable(ModSoundGroups.GLARE).stacksTo(64));
@@ -101,10 +102,6 @@ public class ModItems {
     public static final Item SEA_COW_SPAWN_EGG = register("sea_cow_spawn_egg", SpawnEggItem::new, new Item.Properties().component(DataComponents.ENTITY_DATA, TypedEntityData.of(ModEntities.SEA_COW, new CompoundTag())).stacksTo(64));
     public static final Item GIANT_CLAM_SPAWN_EGG = register("giant_clam_spawn_egg", SpawnEggItem::new, new Item.Properties().component(DataComponents.ENTITY_DATA, TypedEntityData.of(ModEntities.GIANT_CLAM, new CompoundTag())).stacksTo(64));
     public static final Item SUNFISH_SPAWN_EGG = register("sunfish_spawn_egg", SpawnEggItem::new, new Item.Properties().component(DataComponents.ENTITY_DATA, TypedEntityData.of(ModEntities.SUNFISH, new CompoundTag())).stacksTo(64));
-
-    // MOB BUCKETS (1)
-
-    public static final Item BABY_SUNFISH_BUCKET = register("baby_sunfish_bucket", settings -> new MobBucketItem(ModEntities.SUNFISH, Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, settings), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(64));
 
     public static void initialize() {}
 

@@ -23,10 +23,10 @@ import java.util.Optional;
 public class EnchantingRecipeBookComponent extends RecipeBookComponent<CustomEnchantingScreenHandler> {
 
     private static final WidgetSprites FILTER_BUTTON_SPRITES = new WidgetSprites(
-        Identifier.withDefaultNamespace("recipe_book/filter_enabled"),
-        Identifier.withDefaultNamespace("recipe_book/filter_disabled"),
-        Identifier.withDefaultNamespace("recipe_book/filter_enabled_highlighted"),
-        Identifier.withDefaultNamespace("recipe_book/filter_disabled_highlighted")
+        Identifier.fromNamespaceAndPath("calcium", "recipe_book/enchanting_table/filter_enabled"),
+        Identifier.fromNamespaceAndPath("calcium", "recipe_book/enchanting_table/filter_disabled"),
+        Identifier.fromNamespaceAndPath("calcium", "recipe_book/enchanting_table/filter_enabled_highlighted"),
+        Identifier.fromNamespaceAndPath("calcium", "recipe_book/enchanting_table/filter_disabled_highlighted")
     );
 
     private static final Component ONLY_CRAFTABLES_TOOLTIP = Component.translatable("gui.recipebook.toggleRecipes.craftable");

@@ -15,6 +15,8 @@
     "calcium:chorus_hanging_sign",
     "calcium:monitor",
     "calcium:chorus_wall_sign",
-    "calcium:chorus_wall_hanging_sign"
+    "calcium:chorus_wall_hanging_sign",
+    "minecraft:tnt",
+    "#minecraft:beds"
   ]
 }

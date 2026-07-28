@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "calcium:large_sea_pickle"
+    "calcium:large_sea_pickle",
+    "minecraft:slime_block",
+    "minecraft:honey_block"
   ]
 }

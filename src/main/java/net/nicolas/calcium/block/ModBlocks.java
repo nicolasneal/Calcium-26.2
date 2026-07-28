@@ -135,7 +135,7 @@ public class ModBlocks {
     public static final Block CHORUS_HANGING_SIGN = register("chorus_hanging_sign", settings -> new CeilingHangingSignBlock(CHORUS_WOOD_TYPE, settings), BlockBehaviour.Properties.of().sound(ModSoundGroups.CHORUS_HANGING_SIGN).mapColor(MapColor.COLOR_MAGENTA).noCollision().strength(1.0F, 1.0F).forceSolidOn().pushReaction(PushReaction.DESTROY), false);
     public static final Block CHORUS_WALL_HANGING_SIGN = register("chorus_wall_hanging_sign", settings -> new WallHangingSignBlock(CHORUS_WOOD_TYPE, settings), BlockBehaviour.Properties.of().sound(ModSoundGroups.CHORUS_HANGING_SIGN).mapColor(MapColor.COLOR_MAGENTA).noCollision().strength(1.0F, 1.0F).forceSolidOn().pushReaction(PushReaction.DESTROY), false);
 
-    // STONE VARIANT BLOCKS (194)
+    // STONE VARIANT BLOCKS (190)
 
         // Overworld Blocks
 
@@ -276,16 +276,20 @@ public class ModBlocks {
         public static final Block CRACKED_BASALT_BRICK_STAIRS = register("cracked_basalt_brick_stairs", settings -> new StairBlock(ModBlocks.CRACKED_BASALT_BRICKS.defaultBlockState(), settings), BlockBehaviour.Properties.of().sound(SoundType.BASALT).mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.25F, 4.2F), true);
         public static final Block CRACKED_BASALT_BRICK_SLAB = register("cracked_basalt_brick_slab", SlabBlock::new, BlockBehaviour.Properties.of().sound(SoundType.BASALT).mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.25F, 4.2F), true);
         public static final Block CRACKED_BASALT_BRICK_WALL = register("cracked_basalt_brick_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(SoundType.BASALT).mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.25F, 4.2F), true);
-        public static final Block BASALT_TILES = register("basalt_tiles", Block::new, BlockBehaviour.Properties.of().sound(SoundType.BASALT).mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.25F, 4.2F), true);
-        public static final Block BASALT_TILE_STAIRS = register("basalt_tile_stairs", settings -> new StairBlock(ModBlocks.BASALT_TILES.defaultBlockState(), settings), BlockBehaviour.Properties.of().sound(SoundType.BASALT).mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.25F, 4.2F), true);
-        public static final Block BASALT_TILE_SLAB = register("basalt_tile_slab", SlabBlock::new, BlockBehaviour.Properties.of().sound(SoundType.BASALT).mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.25F, 4.2F), true);
-        public static final Block BASALT_TILE_WALL = register("basalt_tile_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(SoundType.BASALT).mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.25F, 4.2F), true);
-        public static final Block CRACKED_BASALT_TILES = register("cracked_basalt_tiles", Block::new, BlockBehaviour.Properties.of().sound(SoundType.BASALT).mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.25F, 4.2F), true);
-        public static final Block CRACKED_BASALT_TILE_STAIRS = register("cracked_basalt_tile_stairs", settings -> new StairBlock(ModBlocks.CRACKED_BASALT_TILES.defaultBlockState(), settings), BlockBehaviour.Properties.of().sound(SoundType.BASALT).mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.25F, 4.2F), true);
-        public static final Block CRACKED_BASALT_TILE_SLAB = register("cracked_basalt_tile_slab", SlabBlock::new, BlockBehaviour.Properties.of().sound(SoundType.BASALT).mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.25F, 4.2F), true);
-        public static final Block CRACKED_BASALT_TILE_WALL = register("cracked_basalt_tile_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(SoundType.BASALT).mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.25F, 4.2F), true);
         public static final Block CHISELED_BASALT = register("chiseled_basalt", Block::new, BlockBehaviour.Properties.of().sound(SoundType.BASALT).mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.25F, 4.2F), true);
-        public static final Block ENGRAVED_BASALT = register("engraved_basalt", Block::new, BlockBehaviour.Properties.of().sound(SoundType.BASALT).mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.25F, 4.2F), true);
+        // Polished Soulslate
+        // Polished Soulslate Stairs
+        // Polished Soulslate Slab
+        // Polished Soulslate Wall
+        // Soulslate Bricks
+        // Soulslate Brick Stairs
+        // Soulslate Brick Slab
+        // Soulslate Brick Wall
+        // Cracked Soulslate Bricks
+        // Cracked Soulslate Brick Stairs
+        // Cracked Soulslate Brick Slab
+        // Cracked Soulslate Brick Wall
+        // Chiseled Soulslate
 
         public static final Block POLISHED_QUARTZ_WALL = register("polished_quartz_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(ModSoundGroups.QUARTZ).mapColor(MapColor.QUARTZ).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F, 0.8F), true);
         public static final Block QUARTZ_BRICK_STAIRS = register("quartz_brick_stairs", settings -> new StairBlock(Blocks.QUARTZ_BRICKS.defaultBlockState(), settings), BlockBehaviour.Properties.of().sound(ModSoundGroups.QUARTZ).mapColor(MapColor.QUARTZ).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F, 0.8F), true);
@@ -343,8 +347,12 @@ public class ModBlocks {
         public static final Block CRACKED_KURODITE_BRICK_WALL = register("cracked_kurodite_brick_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(ModSoundGroups.KURODITE_BRICKS).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
         public static final Block CHISELED_KURODITE = register("chiseled_kurodite", Block::new, BlockBehaviour.Properties.of().sound(ModSoundGroups.KURODITE).mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
 
-        public static final Block PURPUR_WALL = register("purpur_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(ModSoundGroups.PURPUR).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F), true);
-        public static final Block CHISELED_PURPUR = register("chiseled_purpur", Block::new, BlockBehaviour.Properties.of().sound(ModSoundGroups.PURPUR).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F), true);
+        public static final Block PURPUR_WALL = register("purpur_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(ModSoundGroups.PURPUR).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F), true);
+        public static final Block CRACKED_PURPUR = register("cracked_purpur", Block::new, BlockBehaviour.Properties.of().sound(ModSoundGroups.PURPUR).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F), true);
+        public static final Block CRACKED_PURPUR_STAIRS = register("cracked_purpur_stairs", settings -> new StairBlock(ModBlocks.CRACKED_PURPUR.defaultBlockState(), settings), BlockBehaviour.Properties.of().sound(ModSoundGroups.PURPUR).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F), true);
+        public static final Block CRACKED_PURPUR_SLAB = register("cracked_purpur_slab", SlabBlock::new, BlockBehaviour.Properties.of().sound(ModSoundGroups.PURPUR).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F), true);
+        public static final Block CRACKED_PURPUR_WALL = register("cracked_purpur_wall", WallBlock::new, BlockBehaviour.Properties.of().sound(ModSoundGroups.PURPUR).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F), true);
+        public static final Block CHISELED_PURPUR = register("chiseled_purpur", Block::new, BlockBehaviour.Properties.of().sound(ModSoundGroups.PURPUR).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F), true);
 
     // METAL VARIANT BLOCKS (29)
 
@@ -384,7 +392,7 @@ public class ModBlocks {
 
     public static final Block SOUL_GLASS = register("soul_glass", TransparentBlock::new, BlockBehaviour.Properties.of().sound(SoundType.GLASS).instrument(NoteBlockInstrument.HAT).strength(0.6F, 0.6F).noOcclusion().isValidSpawn(Blocks::never).isRedstoneConductor(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never), true);
 
-    // FUNCTIONAL BLOCKS (6, 17)
+    // FUNCTIONAL BLOCKS (3, 20)
 
     public static final Block OVEN = register("oven", OvenBlock::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.5F, 6.0F), true);
     public static final BlockEntityType<OvenBlockEntity> OVEN_BLOCK_ENTITY = Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, Identifier.fromNamespaceAndPath(MOD_ID, "oven"), FabricBlockEntityTypeBuilder.create(OvenBlockEntity::new, OVEN).build());

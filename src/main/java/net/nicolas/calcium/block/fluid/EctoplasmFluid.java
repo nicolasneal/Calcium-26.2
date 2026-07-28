@@ -7,6 +7,9 @@ import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.InsideBlockEffectApplier;
+import net.minecraft.world.entity.InsideBlockEffectType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -68,6 +71,10 @@ public abstract class EctoplasmFluid extends FlowingFluid {
 
     @Override protected float getExplosionResistance() {
         return 100.0F;
+    }
+
+    @Override protected void entityInside(Level level, BlockPos pos, Entity entity, InsideBlockEffectApplier effectApplier) {
+        effectApplier.apply(InsideBlockEffectType.FREEZE);
     }
 
     @Override protected void spreadTo(LevelAccessor world, BlockPos pos, BlockState state, Direction direction, FluidState fluidState) {

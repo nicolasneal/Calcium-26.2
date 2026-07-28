@@ -23,10 +23,10 @@ import java.util.Optional;
 public class OvenRecipeBookComponent extends RecipeBookComponent<OvenScreenHandler> {
 
     private static final WidgetSprites FILTER_BUTTON_SPRITES = new WidgetSprites(
-        Identifier.withDefaultNamespace("recipe_book/furnace_filter_enabled"),
-        Identifier.withDefaultNamespace("recipe_book/furnace_filter_disabled"),
-        Identifier.withDefaultNamespace("recipe_book/furnace_filter_enabled_highlighted"),
-        Identifier.withDefaultNamespace("recipe_book/furnace_filter_disabled_highlighted")
+        Identifier.fromNamespaceAndPath("calcium", "recipe_book/oven/filter_enabled"),
+        Identifier.fromNamespaceAndPath("calcium", "recipe_book/oven/filter_disabled"),
+        Identifier.fromNamespaceAndPath("calcium", "recipe_book/oven/filter_enabled_highlighted"),
+        Identifier.fromNamespaceAndPath("calcium", "recipe_book/oven/filter_disabled_highlighted")
     );
 
     private static final Component ONLY_CRAFTABLES_TOOLTIP = Component.translatable("gui.recipebook.toggleRecipes.craftable");

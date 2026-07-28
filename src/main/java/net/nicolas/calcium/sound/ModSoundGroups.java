@@ -19,17 +19,26 @@ public class ModSoundGroups {
     public static final SoundEvent CHORUS_PLANKS_STEP = register("block.chorus_planks.step");
     public static final SoundType CHORUS_PLANKS = new SoundType(1.0F, 1.0F, CHORUS_PLANKS_BREAK, CHORUS_PLANKS_STEP, CHORUS_PLANKS_BREAK, CHORUS_PLANKS_STEP, CHORUS_PLANKS_STEP);
 
-    public static final SoundEvent CHORUS_FENCE_GATE_OPEN = register("block.chorus_fence_gate.open");
-
     public static final SoundEvent CHORUS_DOOR_OPEN = register("block.chorus_door.open");
     public static final SoundEvent CHORUS_DOOR_CLOSE = register("block.chorus_door.close");
 
     public static final SoundEvent CHORUS_TRAPDOOR_OPEN = register("block.chorus_trapdoor.open");
     public static final SoundEvent CHORUS_TRAPDOOR_CLOSE = register("block.chorus_trapdoor.close");
 
+    public static final SoundEvent CHORUS_FENCE_GATE_OPEN = register("block.chorus_fence_gate.open");
+
+    public static final SoundEvent ALGAL_SAND_BREAK = register("block.algal_sand.break");
+    public static final SoundEvent ALGAL_SAND_PLACE = register("block.algal_sand.place");
+    public static final SoundType ALGAL_SAND = new SoundType(1.0F, 1.0F, ALGAL_SAND_BREAK, ALGAL_SAND_PLACE, ALGAL_SAND_PLACE, ALGAL_SAND_BREAK, ALGAL_SAND_BREAK);
+
     public static final SoundEvent BLACKSTONE_BREAK = register("block.blackstone.break");
     public static final SoundEvent BLACKSTONE_STEP = register("block.blackstone.step");
     public static final SoundType BLACKSTONE = new SoundType(0.8F, 1.0F, BLACKSTONE_BREAK, BLACKSTONE_STEP, BLACKSTONE_BREAK, BLACKSTONE_STEP, BLACKSTONE_STEP);
+
+    public static final SoundEvent SOULSLATE_PLACE = register("block.soulslate.place");
+    public static final SoundEvent SOULSLATE_BREAK = register("block.soulslate.break");
+    public static final SoundEvent SOULSLATE_STEP = register("block.soulslate.step");
+    public static final SoundType SOULSLATE = new SoundType(1.0F, 1.0F, SOULSLATE_BREAK, SOULSLATE_STEP, SOULSLATE_PLACE, SOULSLATE_STEP, SOULSLATE_STEP);
 
     public static final SoundEvent QUARTZ_BREAK = register("block.quartz.break");
     public static final SoundType QUARTZ = new SoundType(1.0F, 1.0F, QUARTZ_BREAK, QUARTZ_BREAK, QUARTZ_BREAK, QUARTZ_BREAK, QUARTZ_BREAK);
@@ -42,10 +51,6 @@ public class ModSoundGroups {
     public static final SoundEvent MIRESTONE_BREAK = register("block.mirestone.break");
     public static final SoundEvent MIRESTONE_STEP = register("block.mirestone.step");
     public static final SoundType MIRESTONE = new SoundType(1.0F, 1.0F, MIRESTONE_BREAK, MIRESTONE_STEP, MIRESTONE_PLACE, MIRESTONE_STEP, MIRESTONE_STEP);
-
-    public static final SoundEvent ALGAL_SAND_BREAK = register("block.algal_sand.break");
-    public static final SoundEvent ALGAL_SAND_PLACE = register("block.algal_sand.place");
-    public static final SoundType ALGAL_SAND = new SoundType(1.0F, 1.0F, ALGAL_SAND_BREAK, ALGAL_SAND_PLACE, ALGAL_SAND_PLACE, ALGAL_SAND_BREAK, ALGAL_SAND_BREAK);
 
     public static final SoundEvent VERADITE_BREAK = register("block.veradite.break");
     public static final SoundEvent VERADITE_STEP = register("block.veradite.step");
@@ -88,11 +93,6 @@ public class ModSoundGroups {
     public static final SoundEvent MAGMA_BREAK = register("block.magma.break");
     public static final SoundEvent MAGMA_STEP = register("block.magma.step");
     public static final SoundType MAGMA = new SoundType(1.0F, 1.0F, MAGMA_BREAK, MAGMA_STEP, MAGMA_BREAK, MAGMA_STEP, MAGMA_STEP);
-
-    public static final SoundEvent SOULSLATE_PLACE = register("block.soulslate.place");
-    public static final SoundEvent SOULSLATE_BREAK = register("block.soulslate.break");
-    public static final SoundEvent SOULSLATE_STEP = register("block.soulslate.step");
-    public static final SoundType SOULSLATE = new SoundType(1.0F, 1.0F, SOULSLATE_BREAK, SOULSLATE_STEP, SOULSLATE_PLACE, SOULSLATE_STEP, SOULSLATE_STEP);
 
     public static final SoundEvent GLOWSTONE_BREAK = register("block.glowstone.break");
     public static final SoundEvent GLOWSTONE_PLACE = register("block.glowstone.place");
@@ -154,6 +154,10 @@ public class ModSoundGroups {
 
     public static final SoundEvent MONITOR_STATIC = register("block.monitor.static");
 
+    public static final SoundEvent TNT_BREAK = register("block.tnt.break");
+    public static final SoundEvent TNT_STEP = register("block.tnt.step");
+    public static final SoundType TNT = new SoundType(1.0F, 1.0F, TNT_BREAK, TNT_STEP, TNT_BREAK, TNT_STEP, TNT_STEP);
+
     // ITEMS
 
     public static final SoundEvent ECTOPLASM_BUCKET_EMPTY = register("item.bucket.empty_ectoplasm");
@@ -164,12 +168,6 @@ public class ModSoundGroups {
     public static final SoundEvent SIGNAL_CARD_EJECT = register("item.signal_card.eject");
 
     // ENTITIES
-
-    public static final SoundEvent GIANT_CLAM_HURT = register("entity.giant_clam.hurt");
-    public static final SoundEvent GIANT_CLAM_HURT_LAND = register("entity.giant_clam.hurt_land");
-    public static final SoundEvent GIANT_CLAM_DEATH = register("entity.giant_clam.death");
-    public static final SoundEvent GIANT_CLAM_DEATH_LAND = register("entity.giant_clam.death_land");
-    public static final SoundEvent GIANT_CLAM_BUBBLES = register("entity.giant_clam.bubbles");
 
     public static final SoundEvent SEA_COW_AMBIENT = register("entity.sea_cow.ambient");
     public static final SoundEvent SEA_COW_AMBIENT_LAND = register("entity.sea_cow.ambient_land");
@@ -185,6 +183,12 @@ public class ModSoundGroups {
     public static final SoundEvent SEA_COW_BABY_DEATH_LAND = register("entity.sea_cow.baby_death_land");
     public static final SoundEvent SEA_COW_STEP = register("entity.sea_cow.step");
     public static final SoundEvent SEA_COW_MILK = register("entity.sea_cow.milk");
+
+    public static final SoundEvent GIANT_CLAM_HURT = register("entity.giant_clam.hurt");
+    public static final SoundEvent GIANT_CLAM_HURT_LAND = register("entity.giant_clam.hurt_land");
+    public static final SoundEvent GIANT_CLAM_DEATH = register("entity.giant_clam.death");
+    public static final SoundEvent GIANT_CLAM_DEATH_LAND = register("entity.giant_clam.death_land");
+    public static final SoundEvent GIANT_CLAM_BUBBLES = register("entity.giant_clam.bubbles");
 
     public static final SoundEvent SHULKER_BULLET_LOOP = register("entity.shulker_bullet.loop");
 

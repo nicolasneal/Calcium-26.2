@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.Shadow;
 public abstract class TradeOfferButtonMixin implements TradeButtonAccess {
 
     @Shadow @Final MerchantScreen this$0;
-    @Shadow private int index;
+    @Shadow @Final private int index;
 
     @Override public boolean calcium$isSelected() {
         TradeSelectionAccess selection = (TradeSelectionAccess) this.this$0;

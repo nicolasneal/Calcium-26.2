@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "calcium:block/basalt_tiles",
-    "particle": "calcium:block/basalt_tiles"
-  },
-  "render_type": "solid"
-}

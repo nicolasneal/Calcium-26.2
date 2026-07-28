@@ -29,9 +29,7 @@ public abstract class SignEditScreenMixin extends AbstractSignEditScreen {
         graphics.pose().scale(6.0f, 6.0f);
         graphics.blit(RenderPipelines.GUI_TEXTURED, this.texture, 0, 0, 0.0f, 0.0f, 16, 8, 16, 8);
         graphics.pose().popMatrix();
-
         ci.cancel();
-
     }
 
 }

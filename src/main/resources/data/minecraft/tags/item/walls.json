@@ -42,8 +42,6 @@
     "calcium:polished_basalt_wall",
     "calcium:basalt_brick_wall",
     "calcium:cracked_basalt_brick_wall",
-    "calcium:basalt_tile_wall",
-    "calcium:cracked_basalt_tile_wall",
     "calcium:polished_quartz_wall",
     "calcium:quartz_brick_wall",
     "calcium:cracked_quartz_brick_wall",
@@ -55,6 +53,7 @@
     "calcium:polished_kurodite_wall",
     "calcium:kurodite_brick_wall",
     "calcium:cracked_kurodite_brick_wall",
-    "calcium:purpur_wall"
+    "calcium:purpur_wall",
+    "calcium:cracked_purpur_wall"
   ]
 }

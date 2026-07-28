@@ -153,16 +153,7 @@
     "calcium:cracked_basalt_brick_stairs",
     "calcium:cracked_basalt_brick_slab",
     "calcium:cracked_basalt_brick_wall",
-    "calcium:basalt_tiles",
-    "calcium:basalt_tile_stairs",
-    "calcium:basalt_tile_slab",
-    "calcium:basalt_tile_wall",
-    "calcium:cracked_basalt_tiles",
-    "calcium:cracked_basalt_tile_stairs",
-    "calcium:cracked_basalt_tile_slab",
-    "calcium:cracked_basalt_tile_wall",
     "calcium:chiseled_basalt",
-    "calcium:engraved_basalt",
     "calcium:polished_quartz_wall",
     "calcium:quartz_brick_stairs",
     "calcium:quartz_brick_slab",
@@ -207,6 +198,10 @@
     "calcium:cracked_kurodite_brick_wall",
     "calcium:chiseled_kurodite",
     "calcium:purpur_wall",
+    "calcium:cracked_purpur",
+    "calcium:cracked_purpur_stairs",
+    "calcium:cracked_purpur_slab",
+    "calcium:cracked_purpur_wall",
     "calcium:chiseled_purpur",
     "calcium:cut_iron",
     "calcium:cut_iron_stairs",
@@ -237,6 +232,9 @@
     "calcium:shadoline_chain",
     "calcium:gold_lantern",
     "calcium:shadoline_lantern",
-    "calcium:viewfinder"
+    "calcium:viewfinder",
+    "minecraft:reinforced_deepslate",
+    "minecraft:trial_spawner",
+    "minecraft:vault"
   ]
 }

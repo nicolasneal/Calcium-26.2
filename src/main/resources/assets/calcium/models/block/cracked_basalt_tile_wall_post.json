@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/template_wall_post",
-  "textures": {
-    "wall": "calcium:block/cracked_basalt_tiles"
-  }
-}

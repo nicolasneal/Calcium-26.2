@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "calcium:block/cracked_purpur",
+    "side": "calcium:block/cracked_purpur",
+    "top": "calcium:block/cracked_purpur"
+  }
+}

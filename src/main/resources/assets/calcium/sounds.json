@@ -1,4 +1,20 @@
 {
+  "block.tnt.break": {
+    "sounds": [
+      "calcium:block/tnt/break1",
+      "calcium:block/tnt/break2",
+      "calcium:block/tnt/break3",
+      "calcium:block/tnt/break4"
+    ]
+  },
+  "block.tnt.step": {
+    "sounds": [
+      "calcium:block/tnt/step1",
+      "calcium:block/tnt/step2",
+      "calcium:block/tnt/step3",
+      "calcium:block/tnt/step4"
+    ]
+  },
   "block.chorus_planks.break": {
     "sounds": [
       "calcium:block/chorus_planks/break1",
@@ -67,7 +83,8 @@
       "calcium:block/blackstone/step2",
       "calcium:block/blackstone/step3",
       "calcium:block/blackstone/step4",
-      "calcium:block/blackstone/step5"
+      "calcium:block/blackstone/step5",
+      "calcium:block/blackstone/step6"
     ]
   },
   "block.quartz.break": {

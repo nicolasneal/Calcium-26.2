@@ -1,0 +1,16 @@
+{
+  "entity.ender_pearl.throw": {
+    "replace": true,
+    "sounds": [
+      "calcium:item/ender_pearl/throw1",
+      "calcium:item/ender_pearl/throw2"
+    ]
+  },
+  "entity.player.teleport": {
+    "replace": true,
+    "sounds": [
+      "calcium:item/ender_pearl/teleport1",
+      "calcium:item/ender_pearl/teleport2"
+    ]
+  }
+}

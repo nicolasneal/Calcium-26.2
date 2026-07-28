@@ -152,6 +152,7 @@
     "client.UnderwaterParticleMixin",
     "client.WaterDropParticleMixin",
     "client.WaterFogEnvironmentMixin",
+    "gameplay.AbstractContainerScreenMixin",
     "screens.AbstractButtonMixin",
     "screens.AbstractFurnaceScreenMixin",
     "screens.AbstractRecipeBookScreenMixin",
