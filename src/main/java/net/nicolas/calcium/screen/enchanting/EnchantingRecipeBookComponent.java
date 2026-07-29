@@ -13,7 +13,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.display.RecipeDisplay;
 import net.minecraft.world.item.crafting.display.SlotDisplay;
-import net.nicolas.calcium.mixin.screens.GhostSlotsAccessor;
+import net.nicolas.calcium.mixin.screens.guis.GhostSlotsAccessor;
 import net.nicolas.calcium.core.recipe.enchanting.EnchantingRecipeDisplay;
 import net.nicolas.calcium.core.recipe.ModRecipes;
 

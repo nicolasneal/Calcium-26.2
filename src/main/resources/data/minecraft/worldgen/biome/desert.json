@@ -77,7 +77,8 @@
       "minecraft:patch_dry_grass_desert",
       "minecraft:patch_dead_bush_2",
       "minecraft:patch_sugar_cane_desert",
-      "minecraft:patch_cactus_desert"
+      "minecraft:patch_cactus_desert",
+      "minecraft:seagrass_river"
     ],
     [
       "minecraft:freeze_top_layer"

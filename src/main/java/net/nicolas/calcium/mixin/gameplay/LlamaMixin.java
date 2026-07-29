@@ -6,6 +6,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+    // This mixin makes all Llamas have 9 inventory slots instead of having 3, 6, or 9, assigned randomly.
+
 @Mixin(Llama.class)
 public abstract class LlamaMixin {
 

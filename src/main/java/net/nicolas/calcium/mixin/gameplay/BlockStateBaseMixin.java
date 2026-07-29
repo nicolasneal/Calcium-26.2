@@ -1,6 +1,7 @@
 package net.nicolas.calcium.mixin.gameplay;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
+import net.minecraft.world.level.block.MagmaBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.nicolas.calcium.block.ModStrengths;
@@ -14,6 +15,11 @@ public abstract class BlockStateBaseMixin {
     private float calcium$matchOreHardness(float original) {
         ModStrengths.Strength strength = ModStrengths.of(((BlockState) (Object) this).getBlock());
         return strength != null ? strength.hardness() : original;
+    }
+
+    @ModifyReturnValue(method = "getLightEmission", at = @At("RETURN"))
+    private int calcium$brightenMagma(int original) {
+        return ((BlockState) (Object) this).getBlock() instanceof MagmaBlock ? 6 : original;
     }
 
 }

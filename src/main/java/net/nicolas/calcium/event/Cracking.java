@@ -9,6 +9,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -16,8 +18,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
 import net.nicolas.calcium.block.ModBlocks;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -25,6 +29,8 @@ import java.util.Optional;
     // its cracked variant. It also lists all the blocks that are crackable, along with their cracked variants.
 
 public class Cracking {
+
+    private static final int CRACK_PARTICLE_COUNT = 32;
 
     private static final Map<Block, Block> CRACKED_BLOCKS = new ImmutableMap.Builder<Block, Block>()
 
@@ -145,7 +151,7 @@ public class Cracking {
                     if (!world.isClientSide()) {
                         world.setBlock(blockPos, crackedState.get(), Block.UPDATE_ALL);
                         itemStack.hurtAndBreak(1, playerEntity, hand == InteractionHand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND);
-                        ((ServerLevel) world).sendParticles(new BlockParticleOption(ParticleTypes.BLOCK, blockState), blockPos.getX() + 0.5, blockPos.getY() + 0.5, blockPos.getZ() + 0.5, 32, 0.25, 0.25, 0.25, 0.1);
+                        spawnCrackParticles((ServerLevel) world, blockPos, blockState);
                     }
                     world.playSound(null, blockPos, SoundEvents.TURTLE_EGG_CRACK, SoundSource.BLOCKS, 1.0F, 1.0F);
                     return InteractionResult.SUCCESS;
@@ -154,6 +160,47 @@ public class Cracking {
             return InteractionResult.PASS;
 
         });
+
+    }
+
+    private static void spawnCrackParticles(ServerLevel level, BlockPos pos, BlockState state) {
+
+        List<AABB> boxes = state.getShape(level, pos).toAabbs();
+        if (boxes.isEmpty()) {
+            boxes = List.of(new AABB(0.0, 0.0, 0.0, 1.0, 1.0, 1.0));
+        }
+
+        BlockParticleOption particle = new BlockParticleOption(ParticleTypes.BLOCK, state);
+        for (int i = 0; i < CRACK_PARTICLE_COUNT; i++) {
+            AABB box = pickWeightedBox(boxes, level.getRandom());
+            double x = pos.getX() + Mth.lerp(level.getRandom().nextDouble(), box.minX, box.maxX);
+            double y = pos.getY() + Mth.lerp(level.getRandom().nextDouble(), box.minY, box.maxY);
+            double z = pos.getZ() + Mth.lerp(level.getRandom().nextDouble(), box.minZ, box.maxZ);
+            level.sendParticles(particle, x, y, z, 1, 0.0, 0.0, 0.0, 0.1);
+        }
+
+    }
+
+    private static AABB pickWeightedBox(List<AABB> boxes, RandomSource random) {
+
+        if (boxes.size() == 1) {
+            return boxes.getFirst();
+        }
+
+        double totalVolume = 0.0;
+        for (AABB box : boxes) {
+            totalVolume += box.getXsize() * box.getYsize() * box.getZsize();
+        }
+
+        double roll = random.nextDouble() * totalVolume;
+        for (AABB box : boxes) {
+            roll -= box.getXsize() * box.getYsize() * box.getZsize();
+            if (roll <= 0.0) {
+                return box;
+            }
+        }
+
+        return boxes.getLast();
 
     }
 

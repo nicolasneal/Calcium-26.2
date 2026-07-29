@@ -25,6 +25,7 @@ import net.nicolas.calcium.core.recipe.enchanting.EnchantingRecipeInput;
 import net.nicolas.calcium.core.recipe.ModRecipes;
 import net.nicolas.calcium.core.state.EnchantingTableLapisStorage;
 import net.nicolas.calcium.item.ModTags;
+import net.nicolas.calcium.screen.BigResultSlot;
 import net.nicolas.calcium.screen.CustomSlot;
 import net.nicolas.calcium.screen.SlotConfig;
 
@@ -76,74 +77,7 @@ public class CustomEnchantingScreenHandler extends RecipeBookMenu {
             this.addSlot(new CustomSlot.Builder(this.inventory, i + 2, slotPositions[i][0], slotPositions[i][1]).itemMode(SlotConfig.ItemMode.ALL).stackMode(SlotConfig.StackMode.SINGLE).build());
         }
 
-        this.addSlot(new Slot(this.outputInventory, 0, 144, 35) {
-
-            @Override public boolean mayPlace(ItemStack stack) {
-                return false;
-            }
-
-            @Override public boolean mayPickup(Player player) {
-
-                if (player.getAbilities().instabuild) return true;
-
-                int ingredientCount = 0;
-                for (int i = 2; i < 11; i++) {
-                    if (!CustomEnchantingScreenHandler.this.inventory.getItem(i).isEmpty()) {
-                        ingredientCount++;
-                    }
-                }
-
-                int xpCost = CustomEnchantingScreenHandler.this.getXpCost(ingredientCount);
-                int lapisCost = ingredientCount;
-                ItemStack lapis = CustomEnchantingScreenHandler.this.inventory.getItem(0);
-                return player.experienceLevel >= xpCost && !lapis.isEmpty() && lapis.getCount() >= lapisCost;
-
-            }
-
-            @Override public void onTake(Player player, ItemStack stack) {
-
-                player.level().playSound(null, player.blockPosition(), net.minecraft.sounds.SoundEvents.ENCHANTMENT_TABLE_USE, net.minecraft.sounds.SoundSource.BLOCKS, 1.0F, player.level().getRandom().nextFloat() * 0.1F + 0.9F);
-
-                int ingredientCount = 0;
-                for (int i = 2; i < 11; i++) {
-                    if (!CustomEnchantingScreenHandler.this.inventory.getItem(i).isEmpty()) {
-                        ingredientCount++;
-                    }
-                }
-
-                int xpCost = CustomEnchantingScreenHandler.this.getXpCost(ingredientCount);
-                int lapisCost = ingredientCount;
-
-                if (!player.getAbilities().instabuild) {
-                    player.giveExperienceLevels(-xpCost);
-                }
-
-                CustomEnchantingScreenHandler.this.inventory.removeItem(0, lapisCost);
-                CustomEnchantingScreenHandler.this.inventory.setItem(1, ItemStack.EMPTY);
-
-                for (int i = 2; i < 11; ++i) {
-                    ItemStack ingredientStack = CustomEnchantingScreenHandler.this.inventory.getItem(i);
-                    if (!ingredientStack.isEmpty()) {
-                        net.minecraft.world.item.ItemStackTemplate remainderTemplate = ingredientStack.getItem().getCraftingRemainder();
-                        ItemStack remainder = remainderTemplate != null ? remainderTemplate.create() : ItemStack.EMPTY;
-
-                        ingredientStack.shrink(1);
-
-                        if (!remainder.isEmpty()) {
-                            if (ingredientStack.isEmpty()) {
-                                CustomEnchantingScreenHandler.this.inventory.setItem(i, remainder);
-                            } else {
-                                if (!player.getInventory().add(remainder)) {
-                                    player.drop(remainder, false);
-                                }
-                            }
-                        }
-                    }
-                }
-
-            }
-
-        });
+        this.addSlot(new EnchantingOutputSlot(this.outputInventory, 0, 144, 35));
 
     }
 
@@ -340,6 +274,79 @@ public class CustomEnchantingScreenHandler extends RecipeBookMenu {
             super.setChanged();
             CustomEnchantingScreenHandler.this.slotsChanged(this);
         }
+    }
+
+    private final class EnchantingOutputSlot extends Slot implements BigResultSlot {
+
+        EnchantingOutputSlot(Container container, int slot, int x, int y) {
+            super(container, slot, x, y);
+        }
+
+        @Override public boolean mayPlace(ItemStack stack) {
+            return false;
+        }
+
+        @Override public boolean mayPickup(Player player) {
+
+            if (player.getAbilities().instabuild) return true;
+
+            int ingredientCount = 0;
+            for (int i = 2; i < 11; i++) {
+                if (!CustomEnchantingScreenHandler.this.inventory.getItem(i).isEmpty()) {
+                    ingredientCount++;
+                }
+            }
+
+            int xpCost = CustomEnchantingScreenHandler.this.getXpCost(ingredientCount);
+            int lapisCost = ingredientCount;
+            ItemStack lapis = CustomEnchantingScreenHandler.this.inventory.getItem(0);
+            return player.experienceLevel >= xpCost && !lapis.isEmpty() && lapis.getCount() >= lapisCost;
+
+        }
+
+        @Override public void onTake(Player player, ItemStack stack) {
+
+            player.level().playSound(null, player.blockPosition(), net.minecraft.sounds.SoundEvents.ENCHANTMENT_TABLE_USE, net.minecraft.sounds.SoundSource.BLOCKS, 1.0F, player.level().getRandom().nextFloat() * 0.1F + 0.9F);
+
+            int ingredientCount = 0;
+            for (int i = 2; i < 11; i++) {
+                if (!CustomEnchantingScreenHandler.this.inventory.getItem(i).isEmpty()) {
+                    ingredientCount++;
+                }
+            }
+
+            int xpCost = CustomEnchantingScreenHandler.this.getXpCost(ingredientCount);
+            int lapisCost = ingredientCount;
+
+            if (!player.getAbilities().instabuild) {
+                player.giveExperienceLevels(-xpCost);
+            }
+
+            CustomEnchantingScreenHandler.this.inventory.removeItem(0, lapisCost);
+            CustomEnchantingScreenHandler.this.inventory.setItem(1, ItemStack.EMPTY);
+
+            for (int i = 2; i < 11; ++i) {
+                ItemStack ingredientStack = CustomEnchantingScreenHandler.this.inventory.getItem(i);
+                if (!ingredientStack.isEmpty()) {
+                    net.minecraft.world.item.ItemStackTemplate remainderTemplate = ingredientStack.getItem().getCraftingRemainder();
+                    ItemStack remainder = remainderTemplate != null ? remainderTemplate.create() : ItemStack.EMPTY;
+
+                    ingredientStack.shrink(1);
+
+                    if (!remainder.isEmpty()) {
+                        if (ingredientStack.isEmpty()) {
+                            CustomEnchantingScreenHandler.this.inventory.setItem(i, remainder);
+                        } else {
+                            if (!player.getInventory().add(remainder)) {
+                                player.drop(remainder, false);
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
     }
 
 }

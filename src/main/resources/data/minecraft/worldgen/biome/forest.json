@@ -80,7 +80,8 @@
       "minecraft:forest_flowers",
       "minecraft:trees_birch_and_oak_leaf_litter",
       "minecraft:patch_firefly_bush_near_water",
-      "calcium:pumpkins_scarce"
+      "calcium:pumpkins_scarce",
+      "minecraft:seagrass_river"
     ],
     [
       "minecraft:freeze_top_layer"

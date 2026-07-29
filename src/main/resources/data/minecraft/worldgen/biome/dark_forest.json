@@ -77,7 +77,8 @@
       "minecraft:forest_flowers",
       "minecraft:patch_leaf_litter",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_firefly_bush_near_water"
+      "minecraft:patch_firefly_bush_near_water",
+      "minecraft:seagrass_river"
     ],
     [
       "minecraft:freeze_top_layer"

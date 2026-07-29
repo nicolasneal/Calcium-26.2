@@ -25,6 +25,7 @@ import net.nicolas.calcium.core.Calcium;
 import net.nicolas.calcium.block.entity.OvenBlockEntity;
 import net.nicolas.calcium.core.recipe.oven.OvenRecipe;
 import net.nicolas.calcium.core.recipe.oven.OvenRecipeInput;
+import net.nicolas.calcium.screen.BigResultSlot;
 import net.nicolas.calcium.screen.TooltipSlot;
 
 import java.util.List;
@@ -225,7 +226,7 @@ public class OvenScreenHandler extends RecipeBookMenu {
 
     }
 
-    private static class OvenResultSlot extends Slot {
+    private static class OvenResultSlot extends Slot implements BigResultSlot {
 
         private final Player player;
         private int removeCount;
