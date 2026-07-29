@@ -197,10 +197,12 @@ public class ModSoundGroups {
     public static final SoundEvent MUSIC_DISC_BLISS = register("music.jukebox.bliss");
     public static final SoundEvent MUSIC_DISC_DECAY = register("music.jukebox.decay");
     public static final SoundEvent MUSIC_DISC_GLARE = register("music.jukebox.glare");
+    public static final SoundEvent MUSIC_DISC_EPILOGUE = register("music.jukebox.epilogue");
 
     public static final ResourceKey<JukeboxSong> BLISS = ResourceKey.create(Registries.JUKEBOX_SONG, Identifier.fromNamespaceAndPath("calcium", "bliss"));
     public static final ResourceKey<JukeboxSong> DECAY = ResourceKey.create(Registries.JUKEBOX_SONG, Identifier.fromNamespaceAndPath("calcium", "decay"));
     public static final ResourceKey<JukeboxSong> GLARE = ResourceKey.create(Registries.JUKEBOX_SONG, Identifier.fromNamespaceAndPath("calcium", "glare"));
+    public static final ResourceKey<JukeboxSong> EPILOGUE = ResourceKey.create(Registries.JUKEBOX_SONG, Identifier.fromNamespaceAndPath("calcium", "epilogue"));
 
     private static SoundEvent register(String name) {
         Identifier id = Identifier.fromNamespaceAndPath("calcium", name);

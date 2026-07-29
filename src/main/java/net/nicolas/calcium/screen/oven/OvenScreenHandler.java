@@ -1,5 +1,6 @@
 package net.nicolas.calcium.screen.oven;
 
+import net.minecraft.network.chat.Component;
 import net.minecraft.recipebook.ServerPlaceRecipe;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
@@ -24,6 +25,7 @@ import net.nicolas.calcium.core.Calcium;
 import net.nicolas.calcium.block.entity.OvenBlockEntity;
 import net.nicolas.calcium.core.recipe.oven.OvenRecipe;
 import net.nicolas.calcium.core.recipe.oven.OvenRecipeInput;
+import net.nicolas.calcium.screen.TooltipSlot;
 
 import java.util.List;
 import java.util.stream.Stream;
@@ -204,7 +206,7 @@ public class OvenScreenHandler extends RecipeBookMenu {
 
     }
 
-    private static class OvenFuelSlot extends Slot {
+    private static class OvenFuelSlot extends Slot implements TooltipSlot {
 
         private final OvenScreenHandler menu;
 
@@ -215,6 +217,10 @@ public class OvenScreenHandler extends RecipeBookMenu {
 
         @Override public boolean mayPlace(ItemStack itemStack) {
             return this.menu.isFuel(itemStack);
+        }
+
+        @Override public Component getTooltip() {
+            return Component.translatable("tooltip.calcium.fuel");
         }
 
     }

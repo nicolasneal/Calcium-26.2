@@ -6,6 +6,7 @@ import net.minecraft.client.gui.screens.inventory.AbstractFurnaceScreen;
 import net.minecraft.client.gui.screens.inventory.AbstractRecipeBookScreen;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.inventory.AbstractFurnaceMenu;
+import net.nicolas.calcium.screen.TooltipSlot;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -17,19 +18,24 @@ public abstract class AbstractFurnaceScreenMixin extends AbstractRecipeBookScree
         super(handler, recipeBook, inventory, title);
     }
 
-    @Redirect(method = "extractBackground", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;blitSprite(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIIIIIII)V"))
-    private void calcium$redirectFurnaceOverlays(GuiGraphicsExtractor instance, RenderPipeline pipeline, Identifier texture, int textureWidth, int textureHeight, int u, int v, int x, int y, int width, int height) {
+    @Override protected void extractTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+        super.extractTooltip(graphics, mouseX, mouseY);
+        TooltipSlot.extractTooltip(this.hoveredSlot, graphics, this.font, mouseX, mouseY);
+    }
 
-        if (textureWidth == 14 && textureHeight == 14) {
+    @Redirect(method = "extractBackground", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;blitSprite(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIIIIIII)V"))
+    private void calcium$redirectFurnaceOverlays(GuiGraphicsExtractor instance, RenderPipeline renderPipeline, Identifier location, int spriteWidth, int spriteHeight, int u, int v, int x, int y, int width, int height) {
+
+        if (spriteWidth == 14 && spriteHeight == 14) {
             int newX = 48;
             int baseNewY = 36;
-            instance.blitSprite(pipeline, texture, textureWidth, textureHeight, u, v, this.leftPos + newX, this.topPos + baseNewY + (14 - height), width, height);
+            instance.blitSprite(renderPipeline, location, spriteWidth, spriteHeight, u, v, this.leftPos + newX, this.topPos + baseNewY + (14 - height), width, height);
         }
 
-        else if (textureWidth == 24 && textureHeight == 16) {
+        else if (spriteWidth == 24 && spriteHeight == 16) {
             int newX = 72;
             int newY = 34;
-            instance.blitSprite(pipeline, texture, textureWidth, textureHeight, u, v, this.leftPos + newX, this.topPos + newY, width, height);
+            instance.blitSprite(renderPipeline, location, spriteWidth, spriteHeight, u, v, this.leftPos + newX, this.topPos + newY, width, height);
         }
 
     }

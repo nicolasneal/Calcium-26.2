@@ -35,30 +35,27 @@ public abstract class AbstractContainerScreenMixin {
 
     @Shadow @Final protected Set<Slot> quickCraftSlots;
 
-    @Unique private final Set<Slot> calcium$bundleDragSlots = new HashSet<>();
-
-    @Unique private final Set<Slot> calcium$extraSlotDragSlots = new HashSet<>();
+    @Unique private final Set<Slot> calcium$dragSlots = new HashSet<>();
 
     @Inject(method = "mouseClicked", at = @At("HEAD"))
     private void calcium$resetDragSlots(MouseButtonEvent event, boolean doubleClick, CallbackInfoReturnable<Boolean> cir) {
-        this.calcium$bundleDragSlots.clear();
-        this.calcium$extraSlotDragSlots.clear();
+        this.calcium$dragSlots.clear();
     }
 
     @Inject(method = "mouseDragged", at = @At("HEAD"))
-    private void calcium$dragInsert(MouseButtonEvent event, double dx, double dy, CallbackInfoReturnable<Boolean> cir) {
+    private void calcium$dragInteract(MouseButtonEvent event, double dx, double dy, CallbackInfoReturnable<Boolean> cir) {
         ItemStack carried = this.menu.getCarried();
         Slot slot = this.getHoveredSlot(event.x(), event.y());
         if (slot == null || carried.isEmpty()) {
             return;
         }
-        if (event.button() == 0 && carried.getItem() instanceof BundleItem && slot.hasItem()
-            && !ItemStack.isSameItemSameComponents(slot.getItem(), carried) && this.calcium$bundleDragSlots.add(slot)) {
+        boolean isBundle = carried.getItem() instanceof BundleItem;
+        if (event.button() == 0 && isBundle && slot.hasItem()
+            && !ItemStack.isSameItemSameComponents(slot.getItem(), carried) && this.calcium$dragSlots.add(slot)) {
             this.slotClicked(slot, slot.index, 0, ContainerInput.PICKUP);
-        } else if (event.button() == 1 && !slot.hasItem()) {
+        } else if (event.button() == 1 && !slot.hasItem() && !isBundle && this.calcium$dragSlots.add(slot)) {
             Player player = Minecraft.getInstance().player;
-            if (player != null && slot.container == ((ExtraSlotsAccess) player).calcium$getExtraSlots()
-                && this.calcium$extraSlotDragSlots.add(slot)) {
+            if (player != null && slot.container == ((ExtraSlotsAccess) player).calcium$getExtraSlots()) {
                 this.slotClicked(slot, slot.index, 1, ContainerInput.PICKUP);
             }
         }
@@ -66,15 +63,15 @@ public abstract class AbstractContainerScreenMixin {
 
     @Inject(method = "mouseDragged", at = @At("TAIL"))
     private void calcium$suppressBundleQuickCraft(MouseButtonEvent event, double dx, double dy, CallbackInfoReturnable<Boolean> cir) {
-        if (this.menu.getCarried().getItem() instanceof BundleItem) {
+        if (event.button() == 0 && this.menu.getCarried().getItem() instanceof BundleItem) {
             this.quickCraftSlots.clear();
         }
     }
 
     @ModifyExpressionValue(method = "mouseReleased", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;isEmpty()Z", ordinal = 1))
     private boolean calcium$keepBundleGrabbedAfterDrag(boolean isEmpty) {
-        if (!isEmpty && !this.calcium$bundleDragSlots.isEmpty()) {
-            this.calcium$bundleDragSlots.clear();
+        if (!isEmpty && this.menu.getCarried().getItem() instanceof BundleItem && !this.calcium$dragSlots.isEmpty()) {
+            this.calcium$dragSlots.clear();
             return true;
         }
         return isEmpty;

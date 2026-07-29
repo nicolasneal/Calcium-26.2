@@ -91,6 +91,7 @@ public class ModItems {
     public static final Item NETHERITE_COIN = register("netherite_coin", Item::new, new Item.Properties().stacksTo(64));
     public static final Item ECTOPLASM_BUCKET = register("ectoplasm_bucket", settings -> new EctoplasmBucketItem(ModBlocks.ECTOPLASM_STILL, settings), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(64));
     public static final Item BABY_SUNFISH_BUCKET = register("baby_sunfish_bucket", settings -> new MobBucketItem(ModEntities.SUNFISH, Fluids.WATER, SoundEvents.BUCKET_EMPTY_FISH, settings), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(64));
+    public static final Item MUSIC_DISC_EPILOGUE = register("music_disc_epilogue", Item::new, new Item.Properties().jukeboxPlayable(ModSoundGroups.EPILOGUE).stacksTo(64));
     public static final Item MUSIC_DISC_BLISS = register("music_disc_bliss", Item::new, new Item.Properties().jukeboxPlayable(ModSoundGroups.BLISS).stacksTo(64));
     public static final Item MUSIC_DISC_DECAY = register("music_disc_decay", Item::new, new Item.Properties().jukeboxPlayable(ModSoundGroups.DECAY).stacksTo(64));
     public static final Item MUSIC_DISC_GLARE = register("music_disc_glare", Item::new, new Item.Properties().jukeboxPlayable(ModSoundGroups.GLARE).stacksTo(64));

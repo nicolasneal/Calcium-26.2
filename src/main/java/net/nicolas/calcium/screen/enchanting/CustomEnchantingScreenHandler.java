@@ -67,7 +67,7 @@ public class CustomEnchantingScreenHandler extends RecipeBookMenu {
             this.addSlot(new CustomSlot.Builder(playerInventory, i, 8 + i * 18, 142).build());
         }
 
-        this.addSlot(new CustomSlot.Builder(this.inventory, 0, 12, 35).itemMode(SlotConfig.ItemMode.FIXED).fixedItem(Items.LAPIS_LAZULI).stackMode(SlotConfig.StackMode.STACK).tooltip(Component.translatable("tooltip.calcium.enchanting_table_fuel")).build());
+        this.addSlot(new CustomSlot.Builder(this.inventory, 0, 12, 35).itemMode(SlotConfig.ItemMode.FIXED).fixedItem(Items.LAPIS_LAZULI).stackMode(SlotConfig.StackMode.STACK).tooltip(Component.translatable("tooltip.calcium.specific_fuel", Component.translatable(Items.LAPIS_LAZULI.getDescriptionId()))).build());
 
         this.addSlot(new CustomSlot.Builder(this.inventory, 1, 71, 44).itemMode(SlotConfig.ItemMode.TAG).allowedTag(ModTags.ENCHANTABLE).stackMode(SlotConfig.StackMode.SINGLE).tooltip(Component.translatable("tooltip.calcium.enchanting_table_item")).build());
 

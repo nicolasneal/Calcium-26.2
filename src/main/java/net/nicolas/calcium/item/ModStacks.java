@@ -4,13 +4,15 @@ import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.Items;
 
-    // This class stores overrides for Vanilla stack size values.
+    // This class stores overrides for Vanilla item components, including maximum stack sizes and enchantment glint.
 
 public class ModStacks {
 
     public static void initialize() {
 
         DefaultItemComponentEvents.MODIFY.register(context -> {
+
+            // Maximum Stack Size
 
             context.modify(Items.OAK_SIGN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.SPRUCE_SIGN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
@@ -97,6 +99,10 @@ public class ModStacks {
             context.modify(Items.ARMOR_STAND, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.WRITTEN_BOOK, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.ENCHANTED_BOOK, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+
+            // Enchantment Glint
+
+            context.modify(Items.NETHER_STAR, builder -> builder.set(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, false));
 
         });
 

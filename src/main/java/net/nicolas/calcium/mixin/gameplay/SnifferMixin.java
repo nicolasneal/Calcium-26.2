@@ -39,8 +39,8 @@ import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.Vec3;
-import net.nicolas.calcium.mixin.accessors.SnifferAccessor;
 import net.nicolas.calcium.core.network.OpenSnifferInventoryPayload;
+import net.nicolas.calcium.mixin.accessors.SnifferAccessor;
 import net.nicolas.calcium.screen.sniffer.SnifferChestAccess;
 import net.nicolas.calcium.screen.sniffer.SnifferInventoryScreenHandler;
 import org.jspecify.annotations.Nullable;
@@ -48,8 +48,11 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import java.util.function.BiConsumer;
 
 @Mixin(Sniffer.class)
 public abstract class SnifferMixin extends Animal implements HasCustomInventoryScreen, SnifferChestAccess {
@@ -135,6 +138,36 @@ public abstract class SnifferMixin extends Animal implements HasCustomInventoryS
                 }
             }
         }
+    }
+
+    @ModifyArg(method = "dropSeed", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/animal/sniffer/Sniffer;dropFromGiftLootTable(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/resources/ResourceKey;Ljava/util/function/BiConsumer;)Z"), index = 2)
+    private BiConsumer<ServerLevel, ItemStack> calcium$collectSeedInChest(BiConsumer<ServerLevel, ItemStack> original) {
+        return (level, itemStack) -> {
+            ItemStack remainder = this.calcium$hasChest() ? calcium$insertItem(this.calcium$getInventory(), itemStack) : itemStack;
+            if (!remainder.isEmpty()) {
+                original.accept(level, remainder);
+            }
+        };
+    }
+
+    @Unique private static ItemStack calcium$insertItem(Container inventory, ItemStack stack) {
+        ItemStack remaining = stack.copy();
+        for (int i = 0; i < inventory.getContainerSize() && !remaining.isEmpty(); i++) {
+            ItemStack slotStack = inventory.getItem(i);
+            if (slotStack.isEmpty()) {
+                inventory.setItem(i, remaining);
+                return ItemStack.EMPTY;
+            }
+            if (ItemStack.isSameItemSameComponents(slotStack, remaining)) {
+                int space = slotStack.getMaxStackSize() - slotStack.getCount();
+                if (space > 0) {
+                    int moved = Math.min(space, remaining.getCount());
+                    slotStack.grow(moved);
+                    remaining.shrink(moved);
+                }
+            }
+        }
+        return remaining;
     }
 
     @Override protected void dropEquipment(ServerLevel level) {

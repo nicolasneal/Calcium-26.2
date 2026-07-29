@@ -3,8 +3,15 @@
   "key.calcium.rotate_extra_slots": "Rotate Offhand Slots",
   "key.calcium.toggle_recipe_book": "Toggle Recipe Book",
 
+  "tooltip.calcium.fuel": "Add Fuel",
+  "tooltip.calcium.specific_fuel": "Add %s",
   "tooltip.calcium.enchanting_table_item": "Add Enchantable Item",
-  "tooltip.calcium.enchanting_table_fuel": "Add Lapis Lazuli",
+  "tooltip.calcium.brewing_stand_reagent": "Add Reagent",
+  "tooltip.calcium.smithing_table_gear": "Add Gear",
+  "tooltip.calcium.smithing_table_material": "Add Material",
+  "tooltip.calcium.loom_banner": "Add Banner",
+  "tooltip.calcium.loom_dye": "Add Dye",
+  "tooltip.calcium.loom_pattern": "Add Banner Pattern",
 
   "enchantment.calcium.anchoring": "Anchoring",
 
@@ -393,6 +400,8 @@
   "item.calcium.netherite_coin": "Netherite Coin",
   "item.calcium.ectoplasm_bucket": "Ectoplasm Bucket",
   "item.calcium.signal_card": "Signal Card",
+  "item.calcium.music_disc_epilogue": "Music Disc",
+  "item.calcium.music_disc_epilogue.description": "RENREN - Epilogue",
   "item.calcium.music_disc_bliss": "Music Disc",
   "item.calcium.music_disc_bliss.description": "lunarbunten - bliss",
   "item.calcium.music_disc_decay": "Music Disc",

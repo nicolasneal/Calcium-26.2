@@ -1,4 +1,5 @@
 {
+
   "block.tnt.break": {
     "sounds": [
       "calcium:block/tnt/break1",
@@ -611,6 +612,7 @@
       "calcium:block/monitor/static"
     ]
   },
+
   "item.signal_card.insert": {
     "sounds": [
       "calcium:item/signal_card/insert"
@@ -621,40 +623,10 @@
       "calcium:item/signal_card/eject"
     ]
   },
+
   "entity.shulker_bullet.loop": {
     "sounds": [
       "calcium:entity/shulker_bullet/loop"
-    ]
-  },
-  "entity.giant_clam.hurt": {
-    "sounds": [
-      "calcium:entity/clam/big/hurt1",
-      "calcium:entity/clam/big/hurt2"
-    ]
-  },
-  "entity.giant_clam.hurt_land": {
-    "sounds": [
-      "calcium:entity/clam/big/hurt_land1",
-      "calcium:entity/clam/big/hurt_land2"
-    ]
-  },
-  "entity.giant_clam.death": {
-    "sounds": [
-      "calcium:entity/clam/big/death1",
-      "calcium:entity/clam/big/death2"
-    ]
-  },
-  "entity.giant_clam.death_land": {
-    "sounds": [
-      "calcium:entity/clam/big/death_land1",
-      "calcium:entity/clam/big/death_land2"
-    ]
-  },
-  "entity.giant_clam.bubbles": {
-    "sounds": [
-      "calcium:entity/clam/big/bubbles1",
-      "calcium:entity/clam/big/bubbles2",
-      "calcium:entity/clam/big/bubbles3"
     ]
   },
   "entity.sea_cow.ambient": {
@@ -760,6 +732,38 @@
       "calcium:entity/sea_cow/milk3"
     ]
   },
+  "entity.giant_clam.hurt": {
+    "sounds": [
+      "calcium:entity/clam/big/hurt1",
+      "calcium:entity/clam/big/hurt2"
+    ]
+  },
+  "entity.giant_clam.hurt_land": {
+    "sounds": [
+      "calcium:entity/clam/big/hurt_land1",
+      "calcium:entity/clam/big/hurt_land2"
+    ]
+  },
+  "entity.giant_clam.death": {
+    "sounds": [
+      "calcium:entity/clam/big/death1",
+      "calcium:entity/clam/big/death2"
+    ]
+  },
+  "entity.giant_clam.death_land": {
+    "sounds": [
+      "calcium:entity/clam/big/death_land1",
+      "calcium:entity/clam/big/death_land2"
+    ]
+  },
+  "entity.giant_clam.bubbles": {
+    "sounds": [
+      "calcium:entity/clam/big/bubbles1",
+      "calcium:entity/clam/big/bubbles2",
+      "calcium:entity/clam/big/bubbles3"
+    ]
+  },
+
   "music.jukebox.bliss": {
     "sounds": [
       {
@@ -783,5 +787,14 @@
         "stream": true
       }
     ]
+  },
+  "music.jukebox.epilogue": {
+    "sounds": [
+      {
+        "name": "calcium:music/jukebox/epilogue",
+        "stream": true
+      }
+    ]
   }
+
 }

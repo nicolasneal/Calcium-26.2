@@ -11,12 +11,9 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(AnvilBlock.class)
-public class AnvilBlockMixin {
+public abstract class AnvilBlockMixin extends Block {
 
     @Unique private static final VoxelShape FACE_X = Block.box(0.0, 9.0, 2.0, 16.0, 16.0, 14.0);
     @Unique private static final VoxelShape WAIST_X = Block.box(4.0, 5.0, 5.0, 12.0, 9.0, 11.0);
@@ -30,17 +27,12 @@ public class AnvilBlockMixin {
     @Unique private static final VoxelShape BASE_Z = Block.box(2.0, 0.0, 1.0, 14.0, 4.0, 15.0);
     @Unique private static final VoxelShape SHAPE_Z = Shapes.or(FACE_Z, WAIST_Z, LIP_Z, BASE_Z);
 
-    @Inject(method = "getShape", at = @At("HEAD"), cancellable = true)
-    private void injectCustomAnvilShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context, CallbackInfoReturnable<VoxelShape> cir) {
+    public AnvilBlockMixin(Properties settings) {
+        super(settings);
+    }
 
-        Direction.Axis axis = state.getValue(AnvilBlock.FACING).getAxis();
-
-        if (axis == Direction.Axis.X) {
-            cir.setReturnValue(SHAPE_X);
-        } else {
-            cir.setReturnValue(SHAPE_Z);
-        }
-
+    @Override public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+        return state.getValue(AnvilBlock.FACING).getAxis() == Direction.Axis.X ? SHAPE_X : SHAPE_Z;
     }
 
 }

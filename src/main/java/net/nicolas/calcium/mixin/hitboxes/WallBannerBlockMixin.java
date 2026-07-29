@@ -11,20 +11,20 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Map;
 
 @Mixin(WallBannerBlock.class)
-public class WallBannerBlockMixin {
+public abstract class WallBannerBlockMixin extends Block {
 
     @Unique private static final Map<Direction, VoxelShape> NEW_SHAPES = Shapes.rotateHorizontal(Block.boxZ(16.0, 0.0, 16.0, 13.0, 16.0));
 
-    @Inject(method = "getShape", at = @At("HEAD"), cancellable = true)
-    private void calcium$changeWallBannerShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context, CallbackInfoReturnable<VoxelShape> cir) {
-        cir.setReturnValue(NEW_SHAPES.get(state.getValue(WallBannerBlock.FACING)));
+    public WallBannerBlockMixin(Properties settings) {
+        super(settings);
+    }
+
+    @Override public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return NEW_SHAPES.get(state.getValue(WallBannerBlock.FACING));
     }
 
 }

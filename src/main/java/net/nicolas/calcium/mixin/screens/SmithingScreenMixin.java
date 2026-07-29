@@ -1,5 +1,6 @@
 package net.nicolas.calcium.mixin.screens;
 
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.inventory.ItemCombinerScreen;
 import net.minecraft.client.gui.screens.inventory.SmithingScreen;
 import net.minecraft.network.chat.Component;
@@ -17,6 +18,21 @@ public abstract class SmithingScreenMixin extends ItemCombinerScreen<SmithingMen
 
     public SmithingScreenMixin(SmithingMenu handler, Inventory inventory, Component title, Identifier texture) {
         super(handler, inventory, title, texture);
+    }
+
+    @Override protected void extractTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+        super.extractTooltip(graphics, mouseX, mouseY);
+        if (this.hoveredSlot != null && !this.hoveredSlot.hasItem()) {
+            Component tooltip = null;
+            if (this.hoveredSlot.index == SmithingMenu.BASE_SLOT) {
+                tooltip = Component.translatable("tooltip.calcium.smithing_table_gear");
+            } else if (this.hoveredSlot.index == SmithingMenu.ADDITIONAL_SLOT) {
+                tooltip = Component.translatable("tooltip.calcium.smithing_table_material");
+            }
+            if (tooltip != null) {
+                graphics.setTooltipForNextFrame(this.font, tooltip, mouseX, mouseY);
+            }
+        }
     }
 
     @ModifyArg(method = "extractErrorIcon", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;blitSprite(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIII)V"), index = 2)
@@ -41,10 +57,10 @@ public abstract class SmithingScreenMixin extends ItemCombinerScreen<SmithingMen
 
     @ModifyArgs(method = "extractBackground", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;entity(Lnet/minecraft/client/renderer/entity/state/EntityRenderState;FLorg/joml/Vector3fc;Lorg/joml/Quaternionfc;Lorg/joml/Quaternionfc;IIII)V"))
     private void calcium$modifyArmorStandPosition(Args args) {
-        args.set(5, this.leftPos + 125);
-        args.set(6, this.topPos + 9);
-        args.set(7, this.leftPos + 165);
-        args.set(8, this.topPos + 69);
+        args.set(5, this.leftPos + 128);
+        args.set(6, this.topPos + 10);
+        args.set(7, this.leftPos + 168);
+        args.set(8, this.topPos + 70);
     }
 
 }

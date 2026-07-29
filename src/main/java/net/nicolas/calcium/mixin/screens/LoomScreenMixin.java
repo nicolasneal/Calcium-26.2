@@ -1,10 +1,12 @@
 package net.nicolas.calcium.mixin.screens;
 
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.gui.screens.inventory.LoomScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.LoomMenu;
+import net.nicolas.calcium.screen.TooltipSlot;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
@@ -14,6 +16,11 @@ public abstract class LoomScreenMixin extends AbstractContainerScreen<LoomMenu> 
 
     public LoomScreenMixin(LoomMenu handler, Inventory inventory, Component title) {
         super(handler, inventory, title);
+    }
+
+    @Override protected void extractTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+        super.extractTooltip(graphics, mouseX, mouseY);
+        TooltipSlot.extractTooltip(this.hoveredSlot, graphics, this.font, mouseX, mouseY);
     }
 
     @ModifyConstant(method = {"extractBackground", "mouseClicked"}, constant = @Constant(intValue = 60))

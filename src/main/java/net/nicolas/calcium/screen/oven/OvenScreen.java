@@ -8,6 +8,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
+import net.nicolas.calcium.screen.TooltipSlot;
 
 public class OvenScreen extends AbstractRecipeBookScreen<OvenScreenHandler> {
 
@@ -25,6 +26,11 @@ public class OvenScreen extends AbstractRecipeBookScreen<OvenScreenHandler> {
 
     @Override protected ScreenPosition getRecipeBookButtonPosition() {
         return new ScreenPosition(this.leftPos + 20, this.height / 2 - 49);
+    }
+
+    @Override protected void extractTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+        super.extractTooltip(graphics, mouseX, mouseY);
+        TooltipSlot.extractTooltip(this.hoveredSlot, graphics, this.font, mouseX, mouseY);
     }
 
     @Override public void extractBackground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float a) {

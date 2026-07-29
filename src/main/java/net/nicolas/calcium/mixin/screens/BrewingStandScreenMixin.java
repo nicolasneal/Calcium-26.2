@@ -8,6 +8,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.BrewingStandMenu;
+import net.nicolas.calcium.screen.TooltipSlot;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -17,6 +18,11 @@ public abstract class BrewingStandScreenMixin extends AbstractContainerScreen<Br
 
     public BrewingStandScreenMixin(BrewingStandMenu handler, Inventory inventory, Component title) {
         super(handler, inventory, title);
+    }
+
+    @Override protected void extractTooltip(GuiGraphicsExtractor graphics, int mouseX, int mouseY) {
+        super.extractTooltip(graphics, mouseX, mouseY);
+        TooltipSlot.extractTooltip(this.hoveredSlot, graphics, this.font, mouseX, mouseY);
     }
 
     @Redirect(method = "extractBackground", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;blitSprite(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIIIIIII)V"))

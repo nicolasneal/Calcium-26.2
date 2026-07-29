@@ -1,0 +1,8 @@
+{
+  "comparator_output": 7,
+  "description": {
+    "translate": "item.calcium.music_disc_epilogue.description"
+  },
+  "length_in_seconds": 271.0,
+  "sound_event": "calcium:music.jukebox.epilogue"
+}

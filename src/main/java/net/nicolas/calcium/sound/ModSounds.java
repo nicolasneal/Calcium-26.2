@@ -110,9 +110,6 @@ public class ModSounds {
         ((AbstractBlockAccessor) Blocks.JUKEBOX).setSoundGroup(SoundType.SHELF);
         Blocks.BED.forEach(bed -> ((AbstractBlockAccessor) bed).setSoundGroup(SoundType.SHELF));
 
-        ((AbstractBlockAccessor) Blocks.ANVIL).setSoundGroup(SoundType.METAL);
-        ((AbstractBlockAccessor) Blocks.CHIPPED_ANVIL).setSoundGroup(SoundType.METAL);
-        ((AbstractBlockAccessor) Blocks.DAMAGED_ANVIL).setSoundGroup(SoundType.METAL);
         ((AbstractBlockAccessor) Blocks.CAULDRON).setSoundGroup(SoundType.METAL);
         ((AbstractBlockAccessor) Blocks.COAL_BLOCK).setSoundGroup(SoundType.METAL);
         ((AbstractBlockAccessor) Blocks.LAPIS_BLOCK).setSoundGroup(SoundType.METAL);
