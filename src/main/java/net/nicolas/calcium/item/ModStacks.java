@@ -99,6 +99,7 @@ public class ModStacks {
             context.modify(Items.ARMOR_STAND, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.WRITTEN_BOOK, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.ENCHANTED_BOOK, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.GOAT_HORN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
 
             // Enchantment Glint
 

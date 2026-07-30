@@ -28,6 +28,7 @@ import net.minecraft.world.phys.Vec3;
 import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.entity.ModAttributes;
 import net.nicolas.calcium.entity.ModEntities;
+import net.nicolas.calcium.core.particle.ModParticleTypes;
 import net.nicolas.calcium.event.Cracking;
 import net.nicolas.calcium.item.ModCompostables;
 import net.nicolas.calcium.item.ModFuels;
@@ -79,6 +80,7 @@ public class Calcium implements ModInitializer {
         ModSoundGroups.initialize();
         ModSounds.initialize();
         ModAttributes.initialize();
+        ModParticleTypes.initialize();
         ModEntities.initialize();
         ModNetworking.initialize();
         ModOrder.initialize();

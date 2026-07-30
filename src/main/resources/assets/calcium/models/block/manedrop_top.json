@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "minecraft:block/pitcher_plant_top"
+    "cross": "calcium:block/manedrop_top"
   }
 }

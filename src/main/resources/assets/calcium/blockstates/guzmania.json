@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "calcium:block/guzmania_bottom"
+    },
+    "half=upper": {
+      "model": "calcium:block/guzmania_top"
+    }
+  }
+}

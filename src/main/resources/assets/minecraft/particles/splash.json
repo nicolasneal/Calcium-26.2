@@ -1,8 +1,8 @@
 {
   "textures": [
-    "calcium:particles/splash_0",
-    "calcium:particles/splash_1",
-    "calcium:particles/splash_2",
-    "calcium:particles/splash_3"
+    "calcium:splash_0",
+    "calcium:splash_1",
+    "calcium:splash_2",
+    "calcium:splash_3"
   ]
 }

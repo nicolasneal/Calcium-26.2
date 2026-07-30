@@ -883,6 +883,8 @@ public class ModOrder {
             Items.SUNFLOWER,
             ModBlocks.GOLDENROD,
             Items.PITCHER_PLANT,
+            ModBlocks.GUZMANIA,
+            ModBlocks.MANEDROP,
             Items.BIG_DRIPLEAF,
             Items.SMALL_DRIPLEAF,
 
@@ -1408,6 +1410,15 @@ public class ModOrder {
 
         Map.entry(CreativeModeTabs.FOOD_AND_DRINKS, items(
 
+            Items.WHEAT_SEEDS,
+            Items.BEETROOT_SEEDS,
+            Items.PUMPKIN_SEEDS,
+            Items.MELON_SEEDS,
+            Items.TORCHFLOWER_SEEDS,
+            Items.PITCHER_POD,
+            ModItems.GUZMANIA_SEEDS,
+            ModItems.MANEDROP_SEEDS,
+
             Items.APPLE,
             Items.GOLDEN_APPLE,
             Items.ENCHANTED_GOLDEN_APPLE,
@@ -1468,14 +1479,7 @@ public class ModOrder {
             variantsOf(Items.OMINOUS_BOTTLE),
             variantsOf(Items.POTION),
             variantsOf(Items.SPLASH_POTION),
-            variantsOf(Items.LINGERING_POTION),
-
-            Items.WHEAT_SEEDS,
-            Items.BEETROOT_SEEDS,
-            Items.PUMPKIN_SEEDS,
-            Items.MELON_SEEDS,
-            Items.TORCHFLOWER_SEEDS,
-            Items.PITCHER_POD
+            variantsOf(Items.LINGERING_POTION)
 
         )),
 

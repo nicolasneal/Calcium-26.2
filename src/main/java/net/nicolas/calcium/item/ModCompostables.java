@@ -21,6 +21,8 @@ public class ModCompostables {
         ComposterBlock.COMPOSTABLES.put(ModBlocks.HIBISCUS.asItem(), 0.65f);
         ComposterBlock.COMPOSTABLES.put(ModBlocks.POKER.asItem(), 0.65f);
         ComposterBlock.COMPOSTABLES.put(ModBlocks.GOLDENROD.asItem(), 0.65f);
+        ComposterBlock.COMPOSTABLES.put(ModBlocks.MANEDROP.asItem(), 0.85f);
+        ComposterBlock.COMPOSTABLES.put(ModBlocks.GUZMANIA.asItem(), 0.85f);
         ComposterBlock.COMPOSTABLES.put(ModBlocks.CLOVERS.asItem(), 0.30f);
         ComposterBlock.COMPOSTABLES.put(ModBlocks.BLACK_STINKHORN.asItem(), 0.65f);
         ComposterBlock.COMPOSTABLES.put(ModBlocks.WHITE_STINKHORN.asItem(), 0.65f);
@@ -45,6 +47,12 @@ public class ModCompostables {
         ComposterBlock.COMPOSTABLES.put(ModItems.CHOCOLATE_CAKE, 1.00f);
         ComposterBlock.COMPOSTABLES.put(ModItems.PUMPKIN_CAKE_ROLL, 1.00f);
         ComposterBlock.COMPOSTABLES.put(ModItems.CHORUS_CAKE_ROLL, 1.00f);
+
+        // SEEDS
+
+        ComposterBlock.COMPOSTABLES.put(ModItems.MANEDROP_SEEDS, 0.30f);
+        ComposterBlock.COMPOSTABLES.put(ModItems.GUZMANIA_SEEDS, 0.30f);
+
 
     }
 

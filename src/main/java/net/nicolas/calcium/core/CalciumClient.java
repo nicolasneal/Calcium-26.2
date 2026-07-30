@@ -10,6 +10,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ModelLayerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderingRegistry;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.color.block.BlockTintSources;
@@ -31,6 +32,9 @@ import net.nicolas.calcium.core.client.seacow.SeaCowModel;
 import net.nicolas.calcium.core.client.seacow.SeaCowRenderer;
 import net.nicolas.calcium.core.client.sunfish.SunfishModel;
 import net.nicolas.calcium.core.client.sunfish.SunfishRenderer;
+import net.nicolas.calcium.core.client.particle.EctoplasmRayParticle;
+import net.nicolas.calcium.core.particle.ModParticleTypes;
+import net.minecraft.client.particle.SplashParticle;
 import net.nicolas.calcium.core.client.sniffer.SnifferChestModel;
 import net.nicolas.calcium.core.client.sniffer.SnifferSaddleLayer;
 import net.nicolas.calcium.entity.ModEntities;
@@ -99,6 +103,9 @@ public class CalciumClient implements ClientModInitializer {
         ModelLayerRegistry.registerModelLayer(SunfishRenderer.BABY_LAYER, SunfishModel::createBabyBodyLayer);
         ModelLayerRegistry.registerModelLayer(SunfishRenderer.NEWBORN_LAYER, SunfishModel::createNewbornBodyLayer);
         EntityRendererRegistry.register(ModEntities.SUNFISH, SunfishRenderer::new);
+
+        ParticleProviderRegistry.getInstance().register(ModParticleTypes.ECTOPLASM_RAYS, EctoplasmRayParticle.Provider::new);
+        ParticleProviderRegistry.getInstance().register(ModParticleTypes.ECTOPLASM_SPLASH, SplashParticle.Provider::new);
 
         UseBlockCallback.EVENT.register((player, level, hand, hitResult) -> {
             if (!level.isClientSide() || hand != InteractionHand.MAIN_HAND || !player.getMainHandItem().isEmpty()) {

@@ -18,6 +18,14 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:melon_seeds"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "calcium:manedrop_seeds"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "calcium:guzmania_seeds"
         }
       ],
       "rolls": 1.0

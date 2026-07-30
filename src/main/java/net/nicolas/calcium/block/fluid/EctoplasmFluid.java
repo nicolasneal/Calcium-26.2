@@ -25,6 +25,7 @@ import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.nicolas.calcium.block.ModBlocks;
+import net.nicolas.calcium.core.particle.ModParticleTypes;
 import net.nicolas.calcium.item.ModItems;
 import net.nicolas.calcium.sound.ModSoundGroups;
 
@@ -75,6 +76,7 @@ public abstract class EctoplasmFluid extends FlowingFluid {
 
     @Override protected void entityInside(Level level, BlockPos pos, Entity entity, InsideBlockEffectApplier effectApplier) {
         effectApplier.apply(InsideBlockEffectType.FREEZE);
+        effectApplier.apply(InsideBlockEffectType.EXTINGUISH);
     }
 
     @Override protected void spreadTo(LevelAccessor world, BlockPos pos, BlockState state, Direction direction, FluidState fluidState) {
@@ -136,15 +138,22 @@ public abstract class EctoplasmFluid extends FlowingFluid {
     }
 
     @Override public void animateTick(Level world, BlockPos pos, FluidState state, RandomSource random) {
-
-        if (!world.getBlockState(pos.above()).isAir()) {
-            return;
+        if (random.nextInt(600) == 0) {
+            world.playSound(null, pos, ModSoundGroups.ECTOPLASM_AMBIENT, SoundSource.BLOCKS, 0.3F, 1.0F);
         }
 
-        if (random.nextInt(20) == 0) {
-            world.playSound(null, pos, ModSoundGroups.ECTOPLASM_AMBIENT, SoundSource.BLOCKS, 1.0F + random.nextFloat() * 0.2F, 0.9F + random.nextFloat() * 0.15F);
+        BlockPos abovePos = pos.above();
+        double x = pos.getX() + random.nextDouble();
+        double y = pos.getY() + 1.0;
+        double z = pos.getZ() + random.nextDouble();
+
+        if (state.isSource() && !world.getBlockState(abovePos).isSolidRender() && random.nextInt(55) == 0) {
+            world.addParticle(ModParticleTypes.ECTOPLASM_RAYS, x, y, z, 0.0, 0.0, 0.0);
         }
 
+        if (random.nextInt(28) == 0) {
+            world.addParticle(ModParticleTypes.ECTOPLASM_SPLASH, x, y, z, 0.0, 0.0, 0.0);
+        }
     }
 
 }
