@@ -27,7 +27,6 @@ import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.nicolas.calcium.block.custom.*;
-import net.nicolas.calcium.block.entity.ItemDisplayBlockEntity;
 import net.nicolas.calcium.block.entity.MonitorBlockEntity;
 import net.nicolas.calcium.block.entity.OvenBlockEntity;
 import net.nicolas.calcium.block.entity.ViewfinderBlockEntity;
@@ -36,7 +35,7 @@ import net.nicolas.calcium.sound.ModSoundGroups;
 
 import java.util.function.Function;
 
-    // This class stores the mod's block registrations.
+// This class stores the mod's block registrations.
 
 public class ModBlocks {
 
