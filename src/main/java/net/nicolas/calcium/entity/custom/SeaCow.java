@@ -45,6 +45,7 @@ import net.minecraft.world.level.pathfinder.PathType;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
+import net.nicolas.calcium.core.util.MilkingHelper;
 import net.nicolas.calcium.entity.ModEntities;
 import net.nicolas.calcium.item.ModTags;
 import net.nicolas.calcium.sound.ModSoundGroups;
@@ -58,6 +59,8 @@ public class SeaCow extends Animal {
     private static final EntityDataAccessor<Integer> DATA_MOISTNESS = SynchedEntityData.defineId(SeaCow.class, EntityDataSerializers.INT);
     private static final EntityDimensions BABY_DIMENSIONS = EntityDimensions.scalable(0.8F, 0.6F);
     private static final int TOTAL_MOISTNESS_LEVEL = 2400;
+
+    private int milkCooldown;
 
     public SeaCow(EntityType<? extends Animal> entityType, Level level) {
         super(entityType, level);
@@ -93,10 +96,14 @@ public class SeaCow extends Animal {
     @Override public InteractionResult mobInteract(Player player, InteractionHand hand) {
         ItemStack itemStack = player.getItemInHand(hand);
         if (!this.isBaby() && itemStack.is(Items.BUCKET) && this.isInWater()) {
+            if (this.milkCooldown > 0) {
+                return InteractionResult.PASS;
+            }
             player.playSound(ModSoundGroups.SEA_COW_MILK, 1.0F, 1.0F);
             ItemStack milkBucket = ItemUtils.createFilledResult(itemStack, player, Items.MILK_BUCKET.getDefaultInstance());
             player.setItemInHand(hand, milkBucket);
             this.setPersistenceRequired();
+            this.milkCooldown = MilkingHelper.MILK_COOLDOWN_TICKS;
             return InteractionResult.SUCCESS;
         }
 
@@ -143,12 +150,14 @@ public class SeaCow extends Animal {
         super.addAdditionalSaveData(output);
         output.putString("variant", this.getVariant().variantName());
         output.putInt("Moistness", this.getMoistnessLevel());
+        output.putInt("MilkCooldown", this.milkCooldown);
     }
 
     @Override protected void readAdditionalSaveData(ValueInput input) {
         super.readAdditionalSaveData(input);
         this.setVariant(SeaCowVariant.byName(input.getStringOr("variant", SeaCowVariant.TEMPERATE.variantName())));
         this.setMoistnessLevel(input.getIntOr("Moistness", TOTAL_MOISTNESS_LEVEL));
+        this.milkCooldown = input.getIntOr("MilkCooldown", 0);
     }
 
     @Override public boolean canBeLeashed() {
@@ -165,6 +174,9 @@ public class SeaCow extends Animal {
 
     @Override public void tick() {
         super.tick();
+        if (this.milkCooldown > 0) {
+            this.milkCooldown--;
+        }
         if (this.isInWaterOrRain()) {
             this.setMoistnessLevel(TOTAL_MOISTNESS_LEVEL);
         } else {

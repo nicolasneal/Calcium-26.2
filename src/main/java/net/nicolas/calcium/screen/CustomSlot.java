@@ -14,14 +14,16 @@ public class CustomSlot extends Slot {
     private final Item fixedItem;
     private final TagKey<Item> allowedTag;
     private final Component tooltip;
+    private final boolean showGhostQuantity;
 
-    private CustomSlot(Container inventory, int index, int x, int y, SlotConfig.ItemMode itemMode, SlotConfig.StackMode stackMode, Item fixedItem, TagKey<Item> allowedTag, Component tooltip) {
+    private CustomSlot(Container inventory, int index, int x, int y, SlotConfig.ItemMode itemMode, SlotConfig.StackMode stackMode, Item fixedItem, TagKey<Item> allowedTag, Component tooltip, boolean showGhostQuantity) {
         super(inventory, index, x, y);
         this.itemMode = itemMode;
         this.stackMode = stackMode;
         this.fixedItem = fixedItem;
         this.allowedTag = allowedTag;
         this.tooltip = tooltip;
+        this.showGhostQuantity = showGhostQuantity;
     }
 
     @Override public boolean mayPlace(ItemStack stack) {
@@ -40,6 +42,10 @@ public class CustomSlot extends Slot {
         return tooltip;
     }
 
+    public boolean showsGhostQuantity() {
+        return showGhostQuantity;
+    }
+
     public static class Builder {
 
         private final Container inventory;
@@ -52,6 +58,7 @@ public class CustomSlot extends Slot {
         private Item fixedItem = null;
         private TagKey<Item> allowedTag = null;
         private Component tooltip = null;
+        private boolean showGhostQuantity = false;
 
         public Builder(Container inventory, int index, int x, int y) {
             this.inventory = inventory;
@@ -85,8 +92,13 @@ public class CustomSlot extends Slot {
             return this;
         }
 
+        public Builder showGhostQuantity(boolean showGhostQuantity) {
+            this.showGhostQuantity = showGhostQuantity;
+            return this;
+        }
+
         public CustomSlot build() {
-            return new CustomSlot(inventory, index, x, y, itemMode, stackMode, fixedItem, allowedTag, tooltip);
+            return new CustomSlot(inventory, index, x, y, itemMode, stackMode, fixedItem, allowedTag, tooltip, showGhostQuantity);
         }
 
     }

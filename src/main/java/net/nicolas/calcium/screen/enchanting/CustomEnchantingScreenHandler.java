@@ -1,5 +1,6 @@
 package net.nicolas.calcium.screen.enchanting;
 
+import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.recipebook.ServerPlaceRecipe;
 import net.minecraft.resources.ResourceKey;
@@ -68,7 +69,7 @@ public class CustomEnchantingScreenHandler extends RecipeBookMenu {
             this.addSlot(new CustomSlot.Builder(playerInventory, i, 8 + i * 18, 142).build());
         }
 
-        this.addSlot(new CustomSlot.Builder(this.inventory, 0, 12, 35).itemMode(SlotConfig.ItemMode.FIXED).fixedItem(Items.LAPIS_LAZULI).stackMode(SlotConfig.StackMode.STACK).tooltip(Component.translatable("tooltip.calcium.specific_fuel", Component.translatable(Items.LAPIS_LAZULI.getDescriptionId()))).build());
+        this.addSlot(new CustomSlot.Builder(this.inventory, 0, 12, 35).itemMode(SlotConfig.ItemMode.FIXED).fixedItem(Items.LAPIS_LAZULI).stackMode(SlotConfig.StackMode.STACK).tooltip(Component.translatable("tooltip.calcium.specific_fuel", Component.translatable(Items.LAPIS_LAZULI.getDescriptionId()))).showGhostQuantity(true).build());
 
         this.addSlot(new CustomSlot.Builder(this.inventory, 1, 71, 44).itemMode(SlotConfig.ItemMode.TAG).allowedTag(ModTags.ENCHANTABLE).stackMode(SlotConfig.StackMode.SINGLE).tooltip(Component.translatable("tooltip.calcium.enchanting_table_item")).build());
 
@@ -233,7 +234,7 @@ public class CustomEnchantingScreenHandler extends RecipeBookMenu {
         RecipeHolder<EnchantingRecipe> enchantingRecipe = (RecipeHolder<EnchantingRecipe>) recipe;
         List<Slot> ingredientSlots = this.getIngredientSlots();
 
-        return ServerPlaceRecipe.placeRecipe(
+        RecipeBookMenu.PostPlaceAction result = ServerPlaceRecipe.placeRecipe(
             new ServerPlaceRecipe.CraftingMenuAccess<EnchantingRecipe>() {
 
                 @Override public void fillCraftSlotsStackedContents(StackedItemContents stackedContents) {
@@ -261,6 +262,52 @@ public class CustomEnchantingScreenHandler extends RecipeBookMenu {
             useMaxItems,
             allowDroppingItemsToClear
         );
+
+        if (result == RecipeBookMenu.PostPlaceAction.NOTHING) {
+            this.autoFillTabletAndLapis(enchantingRecipe.value(), inventory, level);
+        }
+
+        return result;
+
+    }
+
+    // ServerPlaceRecipe only knows about the recipe's declared "ingredients" (the 9 material
+    // slots) - it has no concept of the tablet or lapis slots, so once those ingredients are
+    // successfully auto-placed we separately look for a matching enchantable item and enough
+    // lapis in the player's inventory and fill those slots too.
+    private void autoFillTabletAndLapis(EnchantingRecipe recipe, Inventory inventory, ServerLevel level) {
+
+        List<ItemStack> currentIngredients = this.getCurrentIngredients();
+        NonNullList<ItemStack> playerItems = inventory.getNonEquipmentItems();
+
+        if (this.inventory.getItem(1).isEmpty()) {
+            for (int i = 0; i < playerItems.size(); i++) {
+                ItemStack candidate = playerItems.get(i);
+                if (!candidate.isEmpty() && recipe.matches(new EnchantingRecipeInput(candidate, currentIngredients), level)) {
+                    this.inventory.setItem(1, inventory.removeItem(i, 1));
+                    break;
+                }
+            }
+        }
+
+        ItemStack existingLapis = this.inventory.getItem(0);
+        int lapisNeeded = currentIngredients.size() - (existingLapis.is(Items.LAPIS_LAZULI) ? existingLapis.getCount() : 0);
+
+        for (int i = 0; i < playerItems.size() && lapisNeeded > 0; i++) {
+            ItemStack candidate = playerItems.get(i);
+            if (candidate.isEmpty() || !candidate.is(Items.LAPIS_LAZULI)) continue;
+
+            ItemStack taken = inventory.removeItem(i, Math.min(lapisNeeded, candidate.getCount()));
+            ItemStack lapisSlotStack = this.inventory.getItem(0);
+            if (lapisSlotStack.isEmpty()) {
+                this.inventory.setItem(0, taken);
+            } else {
+                lapisSlotStack.grow(taken.getCount());
+            }
+            lapisNeeded -= taken.getCount();
+        }
+
+        this.inventory.setChanged();
 
     }
 

@@ -1,8 +1,8 @@
 package net.nicolas.calcium.mixin.gameplay.lavalogging;
 
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CrossCollisionBlock;
-import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
@@ -22,7 +22,7 @@ public abstract class CrossCollisionBlockMixin extends Block {
 
     @Inject(method = "getFluidState", at = @At("RETURN"), cancellable = true)
     private void calcium$lavaFluidState(BlockState state, CallbackInfoReturnable<FluidState> cir) {
-        if ((Object) this instanceof IronBarsBlock && state.getValue(LavaloggingHelper.LAVALOGGED)) {
+        if ((Object) this == Blocks.IRON_BARS && state.getValue(LavaloggingHelper.LAVALOGGED)) {
             cir.setReturnValue(Fluids.LAVA.getSource(false));
         }
     }

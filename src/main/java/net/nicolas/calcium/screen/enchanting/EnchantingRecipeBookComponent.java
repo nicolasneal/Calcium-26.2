@@ -11,6 +11,7 @@ import net.minecraft.world.entity.player.StackedItemContents;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.crafting.display.RecipeDisplay;
 import net.minecraft.world.item.crafting.display.SlotDisplay;
 import net.nicolas.calcium.mixin.screens.guis.GhostSlotsAccessor;
@@ -65,7 +66,8 @@ public class EnchantingRecipeBookComponent extends RecipeBookComponent<CustomEnc
 
             Slot lapisSlot = this.menu.slots.get(36);
             if (lapisSlot.getItem().isEmpty()) {
-                ((GhostSlotsAccessor) ghostSlots).calcium$setInput(lapisSlot, context, new SlotDisplay.ItemSlotDisplay(Items.LAPIS_LAZULI));
+                ItemStack lapisPreview = new ItemStack(Items.LAPIS_LAZULI, ingredients.size());
+                ((GhostSlotsAccessor) ghostSlots).calcium$setInput(lapisSlot, context, new SlotDisplay.ItemStackSlotDisplay(ItemStackTemplate.fromStack(lapisPreview)));
             }
 
             Slot tabletSlot = this.menu.slots.get(37);

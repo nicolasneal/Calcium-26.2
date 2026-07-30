@@ -13,6 +13,7 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(AbstractContainerScreen.class)
 public abstract class BigResultSlotScreenMixin {
@@ -30,10 +31,12 @@ public abstract class BigResultSlotScreenMixin {
         throw new AssertionError();
     }
 
-    @Unique public boolean isHovering(Slot slot, double xm, double ym) {
-        int size = slot instanceof BigResultSlot ? RESULT_SLOT_SIZE : SLOT_SIZE;
-        int inset = (size - SLOT_SIZE) / 2;
-        return this.isHovering(slot.x - inset, slot.y - inset, size, size, xm, ym);
+    @Inject(method = "isHovering(Lnet/minecraft/world/inventory/Slot;DD)Z", at = @At("HEAD"), cancellable = true)
+    private void calcium$largeSlotHovering(Slot slot, double xm, double ym, CallbackInfoReturnable<Boolean> cir) {
+        if (slot instanceof BigResultSlot) {
+            int inset = (RESULT_SLOT_SIZE - SLOT_SIZE) / 2;
+            cir.setReturnValue(this.isHovering(slot.x - inset, slot.y - inset, RESULT_SLOT_SIZE, RESULT_SLOT_SIZE, xm, ym));
+        }
     }
 
     @Inject(method = "extractSlotHighlightBack", at = @At("HEAD"), cancellable = true)
