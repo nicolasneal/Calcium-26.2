@@ -44,6 +44,7 @@ public class ModCompostables {
 
         // FOODS
 
+        ComposterBlock.COMPOSTABLES.put(ModItems.AZUREBERRIES, 0.30f);
         ComposterBlock.COMPOSTABLES.put(ModItems.CHOCOLATE_CAKE, 1.00f);
         ComposterBlock.COMPOSTABLES.put(ModItems.PUMPKIN_CAKE_ROLL, 1.00f);
         ComposterBlock.COMPOSTABLES.put(ModItems.CHORUS_CAKE_ROLL, 1.00f);
@@ -52,6 +53,7 @@ public class ModCompostables {
 
         ComposterBlock.COMPOSTABLES.put(ModItems.MANEDROP_SEEDS, 0.30f);
         ComposterBlock.COMPOSTABLES.put(ModItems.GUZMANIA_SEEDS, 0.30f);
+        ComposterBlock.COMPOSTABLES.put(ModItems.AZUREBERRY_SEEDS, 0.30f);
 
 
     }

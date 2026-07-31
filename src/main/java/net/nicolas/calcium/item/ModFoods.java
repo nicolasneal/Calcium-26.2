@@ -120,6 +120,7 @@ public class ModFoods {
     public static final FoodProperties COOKED_TENTACLES = new FoodProperties.Builder().nutrition(5).saturationModifier(0.6f).build();
     public static final FoodProperties COOKED_EGG = new FoodProperties.Builder().nutrition(4).saturationModifier(0.3f).build();
     public static final FoodProperties CHOCOLATE = new FoodProperties.Builder().nutrition(4).saturationModifier(0.75f).build();
+    public static final FoodProperties AZUREBERRIES = new FoodProperties.Builder().nutrition(2).saturationModifier(0.1f).build();
     public static final FoodProperties WATER_BOWL = new FoodProperties.Builder().nutrition(0).alwaysEdible().build();
 
 }

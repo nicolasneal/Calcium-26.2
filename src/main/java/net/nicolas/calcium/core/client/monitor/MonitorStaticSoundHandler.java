@@ -26,7 +26,10 @@ public class MonitorStaticSoundHandler {
         if (shouldPlay && existing == null) {
             MonitorStaticSound sound = new MonitorStaticSound(pos);
             ACTIVE.put(pos, sound);
-            Minecraft.getInstance().getSoundManager().play(sound);
+            var result = Minecraft.getInstance().getSoundManager().play(sound);
+            System.out.println("[monitor-static-debug] shouldPlay=true, creating sound at " + pos + " -> play() result=" + result + " isActive=" + Minecraft.getInstance().getSoundManager().isActive(sound));
+        } else if (!shouldPlay && existing != null) {
+            System.out.println("[monitor-static-debug] shouldPlay=false but existing sound still tracked at " + pos + " (should self-stop via tick())");
         }
 
     }

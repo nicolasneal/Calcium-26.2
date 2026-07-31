@@ -907,6 +907,7 @@ public class ModOrder {
             Items.SCULK_VEIN,
             Items.GLOW_BERRIES,
             Items.PALE_HANGING_MOSS,
+            ModBlocks.AZUREBERRY_VINES,
 
             Items.SUGAR_CANE,
             Items.BAMBOO,
@@ -1418,6 +1419,7 @@ public class ModOrder {
             Items.PITCHER_POD,
             ModItems.GUZMANIA_SEEDS,
             ModItems.MANEDROP_SEEDS,
+            ModItems.AZUREBERRY_SEEDS,
 
             Items.APPLE,
             Items.GOLDEN_APPLE,
@@ -1425,6 +1427,7 @@ public class ModOrder {
             Items.MELON_SLICE,
             Items.SWEET_BERRIES,
             Items.GLOW_BERRIES,
+            ModItems.AZUREBERRIES,
             Items.CHORUS_FRUIT,
             Items.POTATO,
             Items.BAKED_POTATO,

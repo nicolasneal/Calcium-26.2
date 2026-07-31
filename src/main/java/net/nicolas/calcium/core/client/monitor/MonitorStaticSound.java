@@ -31,6 +31,7 @@ public class MonitorStaticSound extends AbstractTickableSoundInstance {
         }
         boolean powered = monitor.getBlockState().getValue(BlockStateProperties.POWERED);
         if (!powered || !monitor.getDisplayedItem().isEmpty()) {
+            System.out.println("[monitor-static-debug] tick() stopping sound at " + pos + " powered=" + powered + " displayedItem=" + monitor.getDisplayedItem());
             this.stop();
         }
     }

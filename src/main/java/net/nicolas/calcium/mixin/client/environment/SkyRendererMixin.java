@@ -33,6 +33,15 @@ public abstract class SkyRendererMixin {
         return STAR_SIZE_RANGE;
     }
 
+    @ModifyConstant(method = "renderSun", constant = @Constant(floatValue = 100.0F))
+    private float calcium$pushSunFarther(float original) { return 120.0F; }
+
+    @ModifyConstant(method = "renderMoon", constant = @Constant(floatValue = 100.0F))
+    private float calcium$pushMoonFarther(float original) { return 120.0F; }
+
+    @ModifyConstant(method = "buildStars", constant = @Constant(floatValue = 100.0F))
+    private float calcium$pushStarsFarther(float original) { return 120.0F; }
+
     @Inject(method = "extractRenderState", at = @At("TAIL"))
     private void calcium$applyHighAltitudeSkyEffects(ClientLevel level, float partialTicks, Camera camera, SkyRenderState state, CallbackInfo ci) {
         if (state.skybox == DimensionType.Skybox.NONE || state.skybox == DimensionType.Skybox.END) {

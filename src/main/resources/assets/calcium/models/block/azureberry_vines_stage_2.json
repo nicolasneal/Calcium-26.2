@@ -1,0 +1,16 @@
+{
+	"textures": {
+		"vines": "calcium:block/azureberry_vines_stage_2",
+		"particle": "calcium:block/azureberry_vines_stage_2"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0.1],
+			"to": [16, 16, 0.1],
+			"faces": {
+				"north": {"uv": [16, 0, 0, 16], "texture": "#vines"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#vines"}
+			}
+		}
+	]
+}

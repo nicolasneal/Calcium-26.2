@@ -82,13 +82,13 @@ public class ModItems {
     public static final Item CHOCOLATE_CAKE = register("chocolate_cake", settings -> new BlockItem(ModBlocks.CHOCOLATE_CAKE, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
     public static final Item PUMPKIN_CAKE_ROLL = register("pumpkin_cake_roll", settings -> new BlockItem(ModBlocks.PUMPKIN_CAKE_ROLL, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
     public static final Item CHORUS_CAKE_ROLL = register("chorus_cake_roll", settings -> new BlockItem(ModBlocks.CHORUS_CAKE_ROLL, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
+    public static final Item AZUREBERRIES = register("azureberries", Item::new, new Item.Properties().stacksTo(64).food(ModFoods.AZUREBERRIES));
 
-    // SEEDS (1)
+    // SEEDS (3)
 
-    public static final Item MANEDROP = register("manedrop", settings -> new BlockItem(ModBlocks.MANEDROP, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
     public static final Item MANEDROP_SEEDS = register("manedrop_seeds", settings -> new BlockItem(ModBlocks.MANEDROP_CROP, settings), new Item.Properties().stacksTo(64));
-    public static final Item GUZMANIA = register("guzmania", settings -> new BlockItem(ModBlocks.GUZMANIA, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
     public static final Item GUZMANIA_SEEDS = register("guzmania_seeds", settings -> new BlockItem(ModBlocks.GUZMANIA_CROP, settings), new Item.Properties().stacksTo(64));
+    public static final Item AZUREBERRY_SEEDS = register("azureberry_seeds", settings -> new BlockItem(ModBlocks.AZUREBERRY_VINES, settings), new Item.Properties().stacksTo(64));
 
     // TOOLS & UTILITY (10)
 
