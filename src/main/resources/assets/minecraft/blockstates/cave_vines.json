@@ -1,0 +1,16 @@
+﻿{
+    "variants":  {
+                     "berries=false,waxed=false":  {
+                                                       "model":  "minecraft:block/cave_vines"
+                                                   },
+                     "berries=false,waxed=true":  {
+                                                      "model":  "minecraft:block/cave_vines"
+                                                  },
+                     "berries=true,waxed=false":  {
+                                                      "model":  "minecraft:block/cave_vines_lit"
+                                                  },
+                     "berries=true,waxed=true":  {
+                                                     "model":  "minecraft:block/cave_vines_lit"
+                                                 }
+                 }
+}

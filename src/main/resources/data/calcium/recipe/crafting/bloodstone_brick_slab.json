@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "calcium:bloodstone_bricks"
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "id": "calcium:bloodstone_brick_slab",
+    "count": 4
+  }
+}

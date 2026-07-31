@@ -1,5 +1,21 @@
 {
 
+  "block.silt.break": {
+    "sounds": [
+      "calcium:block/silt/break1",
+      "calcium:block/silt/break2",
+      "calcium:block/silt/break3",
+      "calcium:block/silt/break4"
+    ]
+  },
+  "block.silt.step": {
+    "sounds": [
+      "calcium:block/silt/step1",
+      "calcium:block/silt/step2",
+      "calcium:block/silt/step3",
+      "calcium:block/silt/step4"
+    ]
+  },
   "block.tnt.break": {
     "sounds": [
       "calcium:block/tnt/break1",
@@ -218,6 +234,30 @@
       "calcium:block/kurodite_bricks/step2",
       "calcium:block/kurodite_bricks/step3",
       "calcium:block/kurodite_bricks/step4"
+    ]
+  },
+  "block.bloodstone.break": {
+    "sounds": [
+      "calcium:block/bloodstone/break1",
+      "calcium:block/bloodstone/break2",
+      "calcium:block/bloodstone/break3",
+      "calcium:block/bloodstone/break4"
+    ]
+  },
+  "block.bloodstone.step": {
+    "sounds": [
+      "calcium:block/bloodstone/step1",
+      "calcium:block/bloodstone/step2",
+      "calcium:block/bloodstone/step3",
+      "calcium:block/bloodstone/step4"
+    ]
+  },
+  "block.bloodstone_bricks.break": {
+    "sounds": [
+      "calcium:block/bloodstone_bricks/break1",
+      "calcium:block/bloodstone_bricks/break2",
+      "calcium:block/bloodstone_bricks/break3",
+      "calcium:block/bloodstone_bricks/break4"
     ]
   },
   "block.purpur.break": {

@@ -7,6 +7,7 @@
     "calcium:mirestone_shadoline_ore",
     "calcium:veradite",
     "calcium:kurodite",
+    "calcium:bloodstone",
     "calcium:pallid_magnia",
     "calcium:umbral_magnia",
     "calcium:polished_stone",
@@ -54,6 +55,10 @@
     "calcium:kurodite_bricks",
     "calcium:cracked_kurodite_bricks",
     "calcium:chiseled_kurodite",
+    "calcium:polished_bloodstone",
+    "calcium:bloodstone_bricks",
+    "calcium:cracked_bloodstone_bricks",
+    "calcium:chiseled_bloodstone",
     "calcium:cracked_purpur",
     "calcium:chiseled_purpur"
   ]

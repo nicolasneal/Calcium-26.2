@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "calcium:soulslate"
+  },
+  "pattern": [
+    "#"
+  ],
+  "result": {
+    "id": "calcium:polished_soulslate",
+    "count": 1
+  }
+}

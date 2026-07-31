@@ -30,6 +30,7 @@ import net.nicolas.calcium.entity.ModAttributes;
 import net.nicolas.calcium.entity.ModEntities;
 import net.nicolas.calcium.core.particle.ModParticleTypes;
 import net.nicolas.calcium.event.Cracking;
+import net.nicolas.calcium.event.CropWaxing;
 import net.nicolas.calcium.item.ModCompostables;
 import net.nicolas.calcium.item.ModFuels;
 import net.nicolas.calcium.item.ModItems;
@@ -85,6 +86,7 @@ public class Calcium implements ModInitializer {
         ModNetworking.initialize();
         ModOrder.initialize();
         Cracking.registerEvents();
+        CropWaxing.registerEvents();
 
         // World Generation Density Function Types
 

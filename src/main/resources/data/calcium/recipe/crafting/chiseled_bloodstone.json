@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "calcium:polished_bloodstone"
+  },
+  "pattern": [
+    "#"
+  ],
+  "result": {
+    "id": "calcium:chiseled_bloodstone",
+    "count": 1
+  }
+}

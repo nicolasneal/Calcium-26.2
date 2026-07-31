@@ -1,0 +1,52 @@
+﻿{
+    "variants":  {
+                     "age=0,waxed=false":  {
+                                               "model":  "minecraft:block/wheat_stage0"
+                                           },
+                     "age=0,waxed=true":  {
+                                              "model":  "minecraft:block/wheat_stage0"
+                                          },
+                     "age=1,waxed=false":  {
+                                               "model":  "minecraft:block/wheat_stage1"
+                                           },
+                     "age=1,waxed=true":  {
+                                              "model":  "minecraft:block/wheat_stage1"
+                                          },
+                     "age=2,waxed=false":  {
+                                               "model":  "minecraft:block/wheat_stage2"
+                                           },
+                     "age=2,waxed=true":  {
+                                              "model":  "minecraft:block/wheat_stage2"
+                                          },
+                     "age=3,waxed=false":  {
+                                               "model":  "minecraft:block/wheat_stage3"
+                                           },
+                     "age=3,waxed=true":  {
+                                              "model":  "minecraft:block/wheat_stage3"
+                                          },
+                     "age=4,waxed=false":  {
+                                               "model":  "minecraft:block/wheat_stage4"
+                                           },
+                     "age=4,waxed=true":  {
+                                              "model":  "minecraft:block/wheat_stage4"
+                                          },
+                     "age=5,waxed=false":  {
+                                               "model":  "minecraft:block/wheat_stage5"
+                                           },
+                     "age=5,waxed=true":  {
+                                              "model":  "minecraft:block/wheat_stage5"
+                                          },
+                     "age=6,waxed=false":  {
+                                               "model":  "minecraft:block/wheat_stage6"
+                                           },
+                     "age=6,waxed=true":  {
+                                              "model":  "minecraft:block/wheat_stage6"
+                                          },
+                     "age=7,waxed=false":  {
+                                               "model":  "minecraft:block/wheat_stage7"
+                                           },
+                     "age=7,waxed=true":  {
+                                              "model":  "minecraft:block/wheat_stage7"
+                                          }
+                 }
+}

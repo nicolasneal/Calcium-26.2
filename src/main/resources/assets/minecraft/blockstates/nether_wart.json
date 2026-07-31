@@ -1,0 +1,28 @@
+﻿{
+    "variants":  {
+                     "age=0,waxed=false":  {
+                                               "model":  "minecraft:block/nether_wart_stage0"
+                                           },
+                     "age=0,waxed=true":  {
+                                              "model":  "minecraft:block/nether_wart_stage0"
+                                          },
+                     "age=1,waxed=false":  {
+                                               "model":  "minecraft:block/nether_wart_stage1"
+                                           },
+                     "age=1,waxed=true":  {
+                                              "model":  "minecraft:block/nether_wart_stage1"
+                                          },
+                     "age=2,waxed=false":  {
+                                               "model":  "minecraft:block/nether_wart_stage1"
+                                           },
+                     "age=2,waxed=true":  {
+                                              "model":  "minecraft:block/nether_wart_stage1"
+                                          },
+                     "age=3,waxed=false":  {
+                                               "model":  "minecraft:block/nether_wart_stage2"
+                                           },
+                     "age=3,waxed=true":  {
+                                              "model":  "minecraft:block/nether_wart_stage2"
+                                          }
+                 }
+}

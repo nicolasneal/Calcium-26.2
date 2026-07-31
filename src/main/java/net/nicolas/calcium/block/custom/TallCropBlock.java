@@ -24,10 +24,11 @@ import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.nicolas.calcium.event.CropWaxing;
 import net.nicolas.calcium.mixin.accessors.CropBlockInvoker;
 import org.jspecify.annotations.Nullable;
 
-public class TallCropBlock extends DoublePlantBlock implements BonemealableBlock {
+public class TallCropBlock extends DoublePlantBlock implements BonemealableBlock, CropWaxing.Waxable {
 
     public static final MapCodec<TallCropBlock> CODEC = RecordCodecBuilder.mapCodec(
         instance -> instance.group(
@@ -48,6 +49,7 @@ public class TallCropBlock extends DoublePlantBlock implements BonemealableBlock
     public TallCropBlock(Block grownPlant, BlockBehaviour.Properties properties) {
         super(properties);
         this.grownPlant = grownPlant;
+        this.registerDefaultState(this.defaultBlockState().setValue(WAXED, false));
     }
 
     public Block grownPlant() {
@@ -99,15 +101,18 @@ public class TallCropBlock extends DoublePlantBlock implements BonemealableBlock
     }
 
     @Override protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(AGE);
+        builder.add(AGE, WAXED);
         super.createBlockStateDefinition(builder);
     }
 
     @Override public boolean isRandomlyTicking(BlockState state) {
-        return state.getValue(HALF) == DoubleBlockHalf.LOWER;
+        return state.getValue(HALF) == DoubleBlockHalf.LOWER && !state.getValue(WAXED);
     }
 
     @Override public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        if (state.getValue(WAXED)) {
+            return;
+        }
         float growthSpeed = CropBlockInvoker.calcium$getGrowthSpeed(this, level, pos);
         if (random.nextInt((int) (25.0F / growthSpeed) + 1) == 0) {
             if (this.isMaxAge(state)) {
@@ -115,6 +120,15 @@ public class TallCropBlock extends DoublePlantBlock implements BonemealableBlock
             } else {
                 this.grow(level, state, pos);
             }
+        }
+    }
+
+    @Override public void onWaxed(ServerLevel level, BlockPos pos, BlockState waxedState) {
+        DoubleBlockHalf half = waxedState.getValue(HALF);
+        BlockPos otherPos = half == DoubleBlockHalf.LOWER ? pos.above() : pos.below();
+        BlockState otherState = level.getBlockState(otherPos);
+        if (otherState.is(this) && otherState.getValue(HALF) != half && !otherState.getValue(WAXED)) {
+            level.setBlock(otherPos, otherState.setValue(WAXED, true), 11);
         }
     }
 
@@ -170,7 +184,7 @@ public class TallCropBlock extends DoublePlantBlock implements BonemealableBlock
 
     @Override public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
         TallCropBlock.PosAndState lowerHalf = this.getLowerHalf(level, pos, state);
-        if (lowerHalf == null) {
+        if (lowerHalf == null || lowerHalf.state.getValue(WAXED)) {
             return false;
         }
         return this.isMaxAge(lowerHalf.state) || this.canGrow(level, lowerHalf.pos, lowerHalf.state, lowerHalf.state.getValue(AGE) + 1);

@@ -1,0 +1,16 @@
+﻿{
+    "variants":  {
+                     "age=0,waxed=false":  {
+                                               "model":  "minecraft:block/torchflower_crop_stage0"
+                                           },
+                     "age=0,waxed=true":  {
+                                              "model":  "minecraft:block/torchflower_crop_stage0"
+                                          },
+                     "age=1,waxed=false":  {
+                                               "model":  "minecraft:block/torchflower_crop_stage1"
+                                           },
+                     "age=1,waxed=true":  {
+                                              "model":  "minecraft:block/torchflower_crop_stage1"
+                                          }
+                 }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "calcium:block/bloodstone_bricks",
+    "particle": "calcium:block/bloodstone_bricks"
+  },
+  "render_type": "solid"
+}

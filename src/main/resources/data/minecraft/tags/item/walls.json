@@ -50,9 +50,13 @@
     "calcium:polished_veradite_wall",
     "calcium:veradite_brick_wall",
     "calcium:cracked_veradite_brick_wall",
+    "calcium:polished_soulslate_wall",
     "calcium:polished_kurodite_wall",
     "calcium:kurodite_brick_wall",
     "calcium:cracked_kurodite_brick_wall",
+    "calcium:polished_bloodstone_wall",
+    "calcium:bloodstone_brick_wall",
+    "calcium:cracked_bloodstone_brick_wall",
     "calcium:purpur_wall",
     "calcium:cracked_purpur_wall"
   ]

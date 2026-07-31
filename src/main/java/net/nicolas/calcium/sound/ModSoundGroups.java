@@ -31,6 +31,10 @@ public class ModSoundGroups {
     public static final SoundEvent ALGAL_SAND_PLACE = register("block.algal_sand.place");
     public static final SoundType ALGAL_SAND = new SoundType(1.0F, 1.0F, ALGAL_SAND_BREAK, ALGAL_SAND_PLACE, ALGAL_SAND_PLACE, ALGAL_SAND_BREAK, ALGAL_SAND_BREAK);
 
+    public static final SoundEvent SILT_BREAK = register("block.silt.break");
+    public static final SoundEvent SILT_STEP = register("block.silt.step");
+    public static final SoundType SILT = new SoundType(1.0F, 1.0F, SILT_BREAK, SILT_STEP, SILT_BREAK, SILT_STEP, SILT_STEP);
+
     public static final SoundEvent BLACKSTONE_BREAK = register("block.blackstone.break");
     public static final SoundEvent BLACKSTONE_STEP = register("block.blackstone.step");
     public static final SoundType BLACKSTONE = new SoundType(0.8F, 1.0F, BLACKSTONE_BREAK, BLACKSTONE_STEP, BLACKSTONE_BREAK, BLACKSTONE_STEP, BLACKSTONE_STEP);
@@ -67,6 +71,13 @@ public class ModSoundGroups {
     public static final SoundEvent KURODITE_BRICKS_BREAK = register("block.kurodite_bricks.break");
     public static final SoundEvent KURODITE_BRICKS_STEP = register("block.kurodite_bricks.step");
     public static final SoundType KURODITE_BRICKS = new SoundType(0.6F, 1.0F, KURODITE_BRICKS_BREAK, KURODITE_BRICKS_STEP, KURODITE_BRICKS_BREAK, KURODITE_BRICKS_STEP, KURODITE_BRICKS_STEP);
+
+    public static final SoundEvent BLOODSTONE_BREAK = register("block.bloodstone.break");
+    public static final SoundEvent BLOODSTONE_STEP = register("block.bloodstone.step");
+    public static final SoundType BLOODSTONE = new SoundType(0.6F, 1.0F, BLOODSTONE_BREAK, BLOODSTONE_STEP, BLOODSTONE_BREAK, BLOODSTONE_STEP, BLOODSTONE_STEP);
+
+    public static final SoundEvent BLOODSTONE_BRICKS_BREAK = register("block.bloodstone_bricks.break");
+    public static final SoundType BLOODSTONE_BRICKS = new SoundType(0.6F, 1.0F, BLOODSTONE_BRICKS_BREAK, BLOODSTONE_BRICKS_BREAK, BLOODSTONE_BRICKS_BREAK, BLOODSTONE_BRICKS_BREAK, BLOODSTONE_BRICKS_BREAK);
 
     public static final SoundEvent PURPUR_BREAK = register("block.purpur.break");
     public static final SoundEvent PURPUR_STEP = register("block.purpur.step");

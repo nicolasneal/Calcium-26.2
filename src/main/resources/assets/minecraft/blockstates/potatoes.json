@@ -1,0 +1,52 @@
+﻿{
+    "variants":  {
+                     "age=0,waxed=false":  {
+                                               "model":  "minecraft:block/potatoes_stage0"
+                                           },
+                     "age=0,waxed=true":  {
+                                              "model":  "minecraft:block/potatoes_stage0"
+                                          },
+                     "age=1,waxed=false":  {
+                                               "model":  "minecraft:block/potatoes_stage0"
+                                           },
+                     "age=1,waxed=true":  {
+                                              "model":  "minecraft:block/potatoes_stage0"
+                                          },
+                     "age=2,waxed=false":  {
+                                               "model":  "minecraft:block/potatoes_stage1"
+                                           },
+                     "age=2,waxed=true":  {
+                                              "model":  "minecraft:block/potatoes_stage1"
+                                          },
+                     "age=3,waxed=false":  {
+                                               "model":  "minecraft:block/potatoes_stage1"
+                                           },
+                     "age=3,waxed=true":  {
+                                              "model":  "minecraft:block/potatoes_stage1"
+                                          },
+                     "age=4,waxed=false":  {
+                                               "model":  "minecraft:block/potatoes_stage2"
+                                           },
+                     "age=4,waxed=true":  {
+                                              "model":  "minecraft:block/potatoes_stage2"
+                                          },
+                     "age=5,waxed=false":  {
+                                               "model":  "minecraft:block/potatoes_stage2"
+                                           },
+                     "age=5,waxed=true":  {
+                                              "model":  "minecraft:block/potatoes_stage2"
+                                          },
+                     "age=6,waxed=false":  {
+                                               "model":  "minecraft:block/potatoes_stage2"
+                                           },
+                     "age=6,waxed=true":  {
+                                              "model":  "minecraft:block/potatoes_stage2"
+                                          },
+                     "age=7,waxed=false":  {
+                                               "model":  "minecraft:block/potatoes_stage3"
+                                           },
+                     "age=7,waxed=true":  {
+                                              "model":  "minecraft:block/potatoes_stage3"
+                                          }
+                 }
+}
