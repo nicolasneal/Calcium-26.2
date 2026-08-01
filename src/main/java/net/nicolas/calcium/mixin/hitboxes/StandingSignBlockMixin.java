@@ -17,12 +17,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(SignBlock.class)
 public abstract class StandingSignBlockMixin {
 
-    @Unique private static final VoxelShape SHAPE = Block.column(8.0, 0.0, 17.0);
+    @Unique private static final VoxelShape CALCIUM_SHAPE = Block.column(8.0, 0.0, 17.0);
 
     @Inject(method = "getShape", at = @At("HEAD"), cancellable = true)
     private void calcium$increaseStandingSignHeight(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context, CallbackInfoReturnable<VoxelShape> cir) {
         if ((Object) this instanceof StandingSignBlock) {
-            cir.setReturnValue(SHAPE);
+            cir.setReturnValue(CALCIUM_SHAPE);
         }
     }
 

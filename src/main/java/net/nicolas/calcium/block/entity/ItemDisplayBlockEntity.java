@@ -60,11 +60,9 @@ public abstract class ItemDisplayBlockEntity extends RandomizableContainerBlockE
         return true;
     }
 
-    public void clientSideUpdateWhenChanged(HolderLookup.Provider registries) {
-    }
+    public void clientSideUpdateWhenChanged(HolderLookup.Provider registries) {}
 
-    public void serverSideUpdateWhenChanged(HolderLookup.Provider registries) {
-    }
+    public void serverSideUpdateWhenChanged(HolderLookup.Provider registries) {}
 
     public ItemStack getDisplayedItem() {
         return this.getItem(0);

@@ -18,6 +18,11 @@ public abstract class BlockStateBaseMixin {
         return strength != null ? strength.hardness() : original;
     }
 
+    @ModifyReturnValue(method = "requiresCorrectToolForDrops", at = @At("RETURN"))
+    private boolean calcium$requireTool(boolean original) {
+        return original || ModStrengths.requiresTool(((BlockState) (Object) this).getBlock());
+    }
+
     @ModifyReturnValue(method = "getLightEmission", at = @At("RETURN"))
     private int calcium$brightenMagma(int original) {
         return ((BlockState) (Object) this).getBlock() instanceof MagmaBlock ? 6 : original;

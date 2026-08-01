@@ -104,13 +104,11 @@ public class ViewfinderBlockEntity extends BlockEntity {
         }
     }
 
-    @Override
-    public Packet<ClientGamePacketListener> getUpdatePacket() {
+    @Override public Packet<ClientGamePacketListener> getUpdatePacket() {
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
-    @Override
-    public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
+    @Override public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
         return this.saveWithoutMetadata(registries);
     }
 

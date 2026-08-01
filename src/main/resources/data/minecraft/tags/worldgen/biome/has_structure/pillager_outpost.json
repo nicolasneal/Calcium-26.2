@@ -1,8 +1,8 @@
 {
+  "replace": true,
   "values": [
     "minecraft:savanna",
     "minecraft:snowy_plains",
-    "#minecraft:is_mountain",
     "minecraft:grove"
   ]
 }

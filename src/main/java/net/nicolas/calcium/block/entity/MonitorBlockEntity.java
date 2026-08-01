@@ -50,7 +50,8 @@ public class MonitorBlockEntity extends ItemDisplayBlockEntity {
     public static void tick(Level level, BlockPos pos, BlockState state, MonitorBlockEntity monitor) {
         if (level.isClientSide()) {
             MonitorStaticSoundHandler.tick(monitor);
-        } else {
+        }
+        else {
             boolean connected = monitor.getLinkedViewfinder() != null;
             if (connected != state.getValue(MonitorBlock.CONNECTED)) {
                 level.setBlock(pos, state.setValue(MonitorBlock.CONNECTED, connected), Block.UPDATE_CLIENTS);

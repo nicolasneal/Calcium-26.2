@@ -3,16 +3,19 @@ package net.nicolas.calcium.block;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
+import java.util.Collections;
 import java.util.IdentityHashMap;
 import java.util.Map;
+import java.util.Set;
 
-    // This class stores overrides for Vanilla block strength values.
+    // This class stores overrides for Vanilla block strength values and adds tool requirements to Vanilla blocks.
 
 public final class ModStrengths {
 
     public record Strength(float hardness, float resistance) {}
 
     private static final Map<Block, Strength> BLOCK_STRENGTH = new IdentityHashMap<>();
+    private static final Set<Block> REQUIRES_TOOL = Collections.newSetFromMap(new IdentityHashMap<>());
 
     static {
 
@@ -122,6 +125,7 @@ public final class ModStrengths {
 
         // INSTA-MINEABLE BLOCKS
 
+        BLOCK_STRENGTH.put(Blocks.RESIN_BLOCK, new Strength(1.5F, 6.0F));
         BLOCK_STRENGTH.put(Blocks.TNT, new Strength(0.5F, 0.5F));
         BLOCK_STRENGTH.put(Blocks.SLIME_BLOCK, new Strength(0.5F, 0.5F));
         BLOCK_STRENGTH.put(Blocks.HONEY_BLOCK, new Strength(0.5F, 0.5F));
@@ -134,12 +138,21 @@ public final class ModStrengths {
         BLOCK_STRENGTH.put(Blocks.COBWEB, new Strength(0.5F, 0.2F));
         Blocks.BED.forEach(bed -> BLOCK_STRENGTH.put(bed, new Strength(0.5F, 0.5F)));
         BLOCK_STRENGTH.put(Blocks.DAYLIGHT_DETECTOR, new Strength(0.5F, 0.5F));
+
+        // TOOL REQUIREMENTS
+
+        REQUIRES_TOOL.add(Blocks.RESIN_BLOCK);
+
     }
 
     private ModStrengths() {}
 
     public static Strength of(Block block) {
         return BLOCK_STRENGTH.get(block);
+    }
+
+    public static boolean requiresTool(Block block) {
+        return REQUIRES_TOOL.contains(block);
     }
 
 }

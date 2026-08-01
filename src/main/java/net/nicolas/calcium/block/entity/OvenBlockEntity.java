@@ -77,6 +77,7 @@ public class OvenBlockEntity extends BaseContainerBlockEntity implements Worldly
     private final RecipeManager.CachedCheck<OvenRecipeInput, OvenRecipe> quickCheck = RecipeManager.createCheck(ModRecipes.COOKING_TYPE);
 
     protected final ContainerData dataAccess = new ContainerData() {
+
         @Override public int get(int dataId) {
             return switch (dataId) {
                 case DATA_LIT_TIME -> OvenBlockEntity.this.litTimeRemaining;
@@ -146,7 +147,8 @@ public class OvenBlockEntity extends BaseContainerBlockEntity implements Worldly
             wasLit = true;
             entity.litTimeRemaining--;
             isLit = entity.litTimeRemaining > 0;
-        } else {
+        }
+        else {
             wasLit = false;
             isLit = false;
         }
@@ -173,7 +175,6 @@ public class OvenBlockEntity extends BaseContainerBlockEntity implements Worldly
                                 changed = true;
                             }
                         }
-
                         if (isLit) {
                             entity.cookingTimer++;
                             if (entity.cookingTimer == entity.cookingTotalTime) {
@@ -183,19 +184,24 @@ public class OvenBlockEntity extends BaseContainerBlockEntity implements Worldly
                                 entity.setRecipeUsed(recipe);
                                 changed = true;
                             }
-                        } else {
+                        }
+                        else {
                             entity.cookingTimer = 0;
                         }
-                    } else {
+                    }
+                    else {
                         entity.cookingTimer = 0;
                     }
-                } else {
+                }
+                else {
                     entity.cookingTimer = 0;
                 }
-            } else {
+            }
+            else {
                 entity.cookingTimer = 0;
             }
-        } else if (entity.cookingTimer > 0) {
+        }
+        else if (entity.cookingTimer > 0) {
             entity.cookingTimer = Mth.clamp(entity.cookingTimer - 2, 0, entity.cookingTotalTime);
         }
 
@@ -231,6 +237,7 @@ public class OvenBlockEntity extends BaseContainerBlockEntity implements Worldly
     }
 
     private static boolean canBake(NonNullList<ItemStack> items, int maxStackSize, ItemStack bakeResult) {
+
         ItemStack resultStack = items.get(SLOT_RESULT);
         if (resultStack.isEmpty()) {
             return true;
@@ -243,6 +250,7 @@ public class OvenBlockEntity extends BaseContainerBlockEntity implements Worldly
         int resultCount = resultStack.getCount() + bakeResult.getCount();
         int maxResultCount = Math.min(maxStackSize, bakeResult.getMaxStackSize());
         return resultCount <= maxResultCount;
+
     }
 
     private static void bake(NonNullList<ItemStack> items, OvenRecipe recipe, ItemStack result) {
@@ -278,7 +286,7 @@ public class OvenBlockEntity extends BaseContainerBlockEntity implements Worldly
     }
 
     @Override public boolean canTakeItemThroughFace(int slot, ItemStack itemStack, Direction direction) {
-        return direction == Direction.DOWN ? slot == SLOT_RESULT : true;
+        return direction != Direction.DOWN || slot == SLOT_RESULT;
     }
 
     @Override public int getContainerSize() {
@@ -325,30 +333,25 @@ public class OvenBlockEntity extends BaseContainerBlockEntity implements Worldly
         return null;
     }
 
-    @Override public void awardUsedRecipes(Player player, List<ItemStack> itemStacks) {
-    }
+    @Override public void awardUsedRecipes(Player player, List<ItemStack> itemStacks) {}
 
     public void awardUsedRecipesAndPopExperience(ServerPlayer player) {
         List<RecipeHolder<?>> recipesToAward = this.getRecipesToAwardAndPopExperience(player.level(), player.position());
         player.awardRecipes(recipesToAward);
-
         for (RecipeHolder<?> recipe : recipesToAward) {
             player.triggerRecipeCrafted(recipe, this.items);
         }
-
         this.recipesUsed.clear();
     }
 
     public List<RecipeHolder<?>> getRecipesToAwardAndPopExperience(ServerLevel level, Vec3 position) {
         List<RecipeHolder<?>> recipesToAward = Lists.newArrayList();
-
         for (Entry<ResourceKey<Recipe<?>>> entry : this.recipesUsed.reference2IntEntrySet()) {
             level.recipeAccess().byKey(entry.getKey()).ifPresent(recipe -> {
                 recipesToAward.add((RecipeHolder<?>) recipe);
                 createExperience(level, position, entry.getIntValue(), ((OvenRecipe) recipe.value()).experience());
             });
         }
-
         return recipesToAward;
     }
 
@@ -358,7 +361,6 @@ public class OvenBlockEntity extends BaseContainerBlockEntity implements Worldly
         if (xpFraction != 0.0F && level.getRandom().nextFloat() < xpFraction) {
             xpReward++;
         }
-
         ExperienceOrb.award(level, position, xpReward);
     }
 

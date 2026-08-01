@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "calcium:silt"
+    "calcium:silt",
+    "calcium:algal_sand"
   ]
 }

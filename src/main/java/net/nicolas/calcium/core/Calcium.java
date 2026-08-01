@@ -13,11 +13,13 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.ai.village.poi.PoiType;
 import net.minecraft.world.entity.ai.village.poi.PoiTypes;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LayeredCauldronBlock;
@@ -112,7 +114,7 @@ public class Calcium implements ModInitializer {
 
         // Cauldron Behavior
 
-        ((CauldronDispatcherAccessor) (Object) CauldronInteractions.EMPTY).calcium$put(ModItems.ECTOPLASM_BUCKET, (state, world, pos, player, hand, stack) -> CauldronInteractionsAccessor.calcium$emptyBucket(world, pos, player, hand, stack, ModBlocks.ECTOPLASM_CAULDRON.defaultBlockState().setValue(LayeredCauldronBlock.LEVEL, 3), ModSoundGroups.ECTOPLASM_BUCKET_EMPTY));
+        ((CauldronDispatcherAccessor) (Object) CauldronInteractions.EMPTY).calcium$put(ModItems.ECTOPLASM_BUCKET, (state, world, pos, player, hand, stack) -> world.dimension() == Level.OVERWORLD ? InteractionResult.PASS : CauldronInteractionsAccessor.calcium$emptyBucket(world, pos, player, hand, stack, ModBlocks.ECTOPLASM_CAULDRON.defaultBlockState().setValue(LayeredCauldronBlock.LEVEL, 3), ModSoundGroups.ECTOPLASM_BUCKET_EMPTY));
         ((CauldronDispatcherAccessor) (Object) ModBlocks.ECTOPLASM_CAULDRON_BEHAVIOR).calcium$put(Items.BUCKET, (state, world, pos, player, hand, stack) -> CauldronInteractionsAccessor.calcium$fillBucket(state, world, pos, player, hand, stack, new ItemStack(ModItems.ECTOPLASM_BUCKET), (statex) -> true, ModSoundGroups.ECTOPLASM_BUCKET_FILL));
 
         // Villager POI Overwrites

@@ -221,5 +221,4 @@ public class ModSoundGroups {
     }
 
     public static void initialize() {}
-
 }

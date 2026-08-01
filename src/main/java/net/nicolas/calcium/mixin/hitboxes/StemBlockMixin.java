@@ -13,14 +13,14 @@ import org.spongepowered.asm.mixin.Unique;
 @Mixin(StemBlock.class)
 public abstract class StemBlockMixin extends Block {
 
-    @Unique private static final VoxelShape[] SHAPES = Block.boxes(7, age -> Block.column(6.0, 0.0, 2 + age * 2));
+    @Unique private static final VoxelShape[] CALCIUM_SHAPES = Block.boxes(7, age -> Block.column(6.0, 0.0, 2 + age * 2));
 
     public StemBlockMixin(Properties settings) {
         super(settings);
     }
 
     @Override public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return SHAPES[state.getValue(StemBlock.AGE)];
+        return CALCIUM_SHAPES[state.getValue(StemBlock.AGE)];
     }
 
 }

@@ -13,14 +13,14 @@ import org.spongepowered.asm.mixin.Unique;
 @Mixin(MushroomBlock.class)
 public abstract class MushroomBlockMixin extends Block {
 
-    @Unique private static final VoxelShape SHAPE = Block.column(9.0, 0.0, 8.0);
+    @Unique private static final VoxelShape CALCIUM_SHAPE = Block.column(9.0, 0.0, 8.0);
 
     public MushroomBlockMixin(Properties settings) {
         super(settings);
     }
 
     @Override public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return SHAPE;
+        return CALCIUM_SHAPE;
     }
 
 }
