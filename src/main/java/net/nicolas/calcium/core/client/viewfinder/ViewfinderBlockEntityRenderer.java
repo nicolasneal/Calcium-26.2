@@ -2,6 +2,7 @@ package net.nicolas.calcium.core.client.viewfinder;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
@@ -31,6 +32,10 @@ public class ViewfinderBlockEntityRenderer implements BlockEntityRenderer<Viewfi
 
     @Override public ViewfinderRenderState createRenderState() {
         return new ViewfinderRenderState();
+    }
+
+    @Override public int getViewDistance() {
+        return Minecraft.getInstance().options.getEffectiveRenderDistance() * 16;
     }
 
     @Override public void extractRenderState(ViewfinderBlockEntity blockEntity, ViewfinderRenderState state, float partialTicks, Vec3 cameraPosition, ModelFeatureRenderer.@Nullable CrumblingOverlay breakProgress) {

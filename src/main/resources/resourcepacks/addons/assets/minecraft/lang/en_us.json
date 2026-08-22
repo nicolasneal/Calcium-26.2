@@ -104,6 +104,7 @@
   "merchant.title": "",
   "merchant.trades": "",
   "entity.minecraft.wandering_trader": "",
+  "merchant.deprecated": "Villagers can restock twice per day.",
 
   // SCREENS (INTERFACES)
 
@@ -114,6 +115,7 @@
 
   "block.minecraft.amethyst_block": "Amethyst",
   "block.minecraft.bamboo_block": "Bamboo Block",
+  "block.minecraft.bone_block": "Bone Pillar",
   "block.minecraft.chiseled_polished_blackstone": "Chiseled Blackstone",
   "block.minecraft.chiseled_stone_bricks": "Chiseled Stone",
   "block.minecraft.infested_chiseled_stone_bricks": "Infested Chiseled Stone",

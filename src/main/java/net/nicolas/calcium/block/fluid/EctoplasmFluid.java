@@ -25,6 +25,7 @@ import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.nicolas.calcium.block.ModBlocks;
+import net.nicolas.calcium.block.ModFluids;
 import net.nicolas.calcium.core.particle.ModParticleTypes;
 import net.nicolas.calcium.item.ModItems;
 import net.nicolas.calcium.sound.ModSoundGroups;
@@ -34,11 +35,11 @@ import java.util.Optional;
 public abstract class EctoplasmFluid extends FlowingFluid {
 
     @Override public Fluid getSource() {
-        return ModBlocks.ECTOPLASM_STILL;
+        return ModFluids.ECTOPLASM_STILL;
     }
 
     @Override public Fluid getFlowing() {
-        return ModBlocks.ECTOPLASM_FLOWING;
+        return ModFluids.ECTOPLASM_FLOWING;
     }
 
     @Override public Item getBucket() {

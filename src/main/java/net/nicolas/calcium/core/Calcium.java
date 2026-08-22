@@ -105,7 +105,7 @@ public class Calcium implements ModInitializer {
         });
 
         FabricLoader.getInstance().getModContainer("calcium").ifPresent(container -> {
-            ResourceManagerHelper.registerBuiltinResourcePack(Identifier.fromNamespaceAndPath("calcium", "overlays"), container, net.minecraft.network.chat.Component.nullToEmpty("§lGrass Overlays §r§7[1.0.1]"), ResourcePackActivationType.DEFAULT_ENABLED);
+            ResourceManagerHelper.registerBuiltinResourcePack(Identifier.fromNamespaceAndPath("calcium", "overlays"), container, net.minecraft.network.chat.Component.nullToEmpty("§lBlock Overlays §r§7[1.0.1]"), ResourcePackActivationType.DEFAULT_ENABLED);
         });
 
         FabricLoader.getInstance().getModContainer("calcium").ifPresent(container -> {

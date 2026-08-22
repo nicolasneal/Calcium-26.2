@@ -40,6 +40,35 @@ public class ModStacks {
             context.modify(Items.CRIMSON_HANGING_SIGN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
             context.modify(Items.WARPED_HANGING_SIGN, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
 
+            context.modify(Items.OAK_BOAT, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.SPRUCE_BOAT, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.BIRCH_BOAT, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.JUNGLE_BOAT, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.ACACIA_BOAT, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.DARK_OAK_BOAT, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.MANGROVE_BOAT, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.CHERRY_BOAT, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.PALE_OAK_BOAT, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.BAMBOO_RAFT, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+
+            context.modify(Items.OAK_CHEST_BOAT, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.SPRUCE_CHEST_BOAT, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.BIRCH_CHEST_BOAT, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.JUNGLE_CHEST_BOAT, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.ACACIA_CHEST_BOAT, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.DARK_OAK_CHEST_BOAT, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.MANGROVE_CHEST_BOAT, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.CHERRY_CHEST_BOAT, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.PALE_OAK_CHEST_BOAT, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.BAMBOO_CHEST_RAFT, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+
+            context.modify(Items.MINECART, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.CHEST_MINECART, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.FURNACE_MINECART, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.HOPPER_MINECART, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.TNT_MINECART, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+            context.modify(Items.COMMAND_BLOCK_MINECART, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
+
             Items.BED.forEach(bed -> context.modify(bed, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64)));
             Items.BANNER.forEach(banner -> context.modify(banner, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64)));
 

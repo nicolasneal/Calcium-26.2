@@ -5,10 +5,11 @@
     "#": "minecraft:smooth_quartz"
   },
   "pattern": [
+    "#",
     "#"
   ],
   "result": {
     "id": "minecraft:quartz_pillar",
-    "count": 1
+    "count": 2
   }
 }

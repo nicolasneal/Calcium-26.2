@@ -62,8 +62,8 @@ public class ModBlocks {
     public static final Block MIRESTONE_SHADOLINE_ORE = register("mirestone_shadoline_ore", settings -> new DropExperienceBlock(ConstantInt.of(0), settings), BlockBehaviour.Properties.of().sound(ModSoundGroups.MIRESTONE_SHADOLINE_ORE).mapColor(MapColor.GLOW_LICHEN).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 9.0F), true);
     public static final Block RAW_SHADOLINE_BLOCK = register("raw_shadoline_block", Block::new, BlockBehaviour.Properties.of().sound(SoundType.STONE).mapColor(MapColor.WARPED_NYLIUM).requiresCorrectToolForDrops().strength(5.0F, 6.0F), true);
 
-    public static final FlowingFluid ECTOPLASM_STILL = registerFluid("ectoplasm_still", new EctoplasmFluid.Still());
-    public static final FlowingFluid ECTOPLASM_FLOWING = registerFluid("ectoplasm_flowing", new EctoplasmFluid.Flowing());
+    public static final FlowingFluid ECTOPLASM_STILL = registerFluid("ectoplasm_still", ModFluids.ECTOPLASM_STILL);
+    public static final FlowingFluid ECTOPLASM_FLOWING = registerFluid("ectoplasm_flowing", ModFluids.ECTOPLASM_FLOWING);
     public static final Block ECTOPLASM = register("ectoplasm", settings -> new LiquidBlock(ECTOPLASM_STILL, settings), BlockBehaviour.Properties.of().mapColor(MapColor.DIAMOND).replaceable().noCollision().strength(100.0F).pushReaction(PushReaction.DESTROY).noLootTable().liquid().lightLevel(state -> 12), false);
     public static final Block ECTOPLASM_CAULDRON = register("ectoplasm_cauldron", settings -> new LayeredCauldronBlock(Biome.Precipitation.NONE, ECTOPLASM_CAULDRON_BEHAVIOR, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.CAULDRON).mapColor(MapColor.METAL).lightLevel(state -> 12), false);
 
@@ -401,8 +401,9 @@ public class ModBlocks {
     public static final Block SHADOLINE_CHAIN = register("shadoline_chain", ChainBlock::new, BlockBehaviour.Properties.of().sound(ModSoundGroups.SHADOLINE_CHAIN).noOcclusion().forceSolidOn().requiresCorrectToolForDrops().strength(5.0F, 6.0F), true);
     public static final Block SHADOLINE_LANTERN = register("shadoline_lantern", LanternBlock::new, BlockBehaviour.Properties.of().lightLevel(state -> 15).sound(SoundType.LANTERN).mapColor(MapColor.WARPED_NYLIUM).instrument(NoteBlockInstrument.DIDGERIDOO).pushReaction(PushReaction.DESTROY).requiresCorrectToolForDrops().noOcclusion().strength(3.5f, 3.5f), true);
 
-    // DECORATIVE BLOCKS (1)
+    // DECORATIVE BLOCKS (2)
 
+    public static final Block STACKED_BONES = register("stacked_bones", Block::new, BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.XYLOPHONE).requiresCorrectToolForDrops().strength(2.0F).sound(SoundType.BONE_BLOCK), true);
     public static final Block SOUL_GLASS = register("soul_glass", TransparentBlock::new, BlockBehaviour.Properties.of().sound(SoundType.GLASS).instrument(NoteBlockInstrument.HAT).strength(0.6F, 0.6F).noOcclusion().isValidSpawn(Blocks::never).isRedstoneConductor(Blocks::never).isSuffocating(Blocks::never).isViewBlocking(Blocks::never), true);
 
     // FUNCTIONAL BLOCKS (3, 20)

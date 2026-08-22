@@ -2,14 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "#": "minecraft:bone"
+    "#": "calcium:stacked_bones"
   },
   "pattern": [
-    "##",
-    "##"
+    "#",
+    "#"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:bone_block"
+    "id": "minecraft:bone_block",
+    "count": 2
   }
 }

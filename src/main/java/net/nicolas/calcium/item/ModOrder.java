@@ -682,6 +682,7 @@ public class ModOrder {
 
             Items.HAY_BLOCK,
             Items.DRIED_KELP_BLOCK,
+            ModBlocks.STACKED_BONES,
             Items.BONE_BLOCK,
             Items.AMETHYST_BLOCK,
             Items.HONEYCOMB_BLOCK,
