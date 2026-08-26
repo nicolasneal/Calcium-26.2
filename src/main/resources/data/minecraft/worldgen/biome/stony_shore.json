@@ -61,7 +61,8 @@
     [
       "calcium:short_grass_medium",
       "calcium:bushes",
-      "minecraft:glow_lichen"
+      "minecraft:glow_lichen",
+      "minecraft:seagrass_river"
     ],
     [
       "minecraft:freeze_top_layer"

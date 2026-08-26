@@ -14,14 +14,16 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "calcium:tall_icy_iris",
-          "condition": "minecraft:block_state_property",
-          "properties": {
-            "half": "lower"
-          }
+          "name": "calcium:short_icy_iris",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 2
+            }
+          ]
         }
       ]
     }
   ],
-  "random_sequence": "calcium:blocks/tall_icy_iris"
+  "random_sequence": "minecraft:blocks/tall_icy_iris"
 }

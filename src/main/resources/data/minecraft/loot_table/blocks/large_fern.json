@@ -14,7 +14,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:fern"
+          "name": "minecraft:fern",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 2
+            }
+          ]
         }
       ]
     }

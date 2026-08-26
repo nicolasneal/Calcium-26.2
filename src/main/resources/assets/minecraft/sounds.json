@@ -12,5 +12,251 @@
       "calcium:item/ender_pearl/teleport1",
       "calcium:item/ender_pearl/teleport2"
     ]
+  },
+  "block.blackstone.break": {
+    "replace": true,
+    "sounds": [
+      "block/blackstone/break1",
+      "block/blackstone/break2",
+      "block/blackstone/break3",
+      "block/blackstone/break4"
+    ]
+  },
+  "block.blackstone.step": {
+    "replace": true,
+    "sounds": [
+      "block/blackstone/step1",
+      "block/blackstone/step2",
+      "block/blackstone/step3",
+      "block/blackstone/step4",
+      "block/blackstone/step5",
+      "block/blackstone/step6"
+    ]
+  },
+  "block.quartz.break": {
+    "replace": true,
+    "sounds": [
+      "block/quartz/break1",
+      "block/quartz/break2",
+      "block/quartz/break3",
+      "block/quartz/break4"
+    ]
+  },
+  "block.end_stone.break": {
+    "replace": true,
+    "sounds": [
+      "block/end_stone/break1",
+      "block/end_stone/break2",
+      "block/end_stone/break3",
+      "block/end_stone/break4"
+    ]
+  },
+  "block.end_stone.step": {
+    "replace": true,
+    "sounds": [
+      "block/end_stone/step1",
+      "block/end_stone/step2",
+      "block/end_stone/step3",
+      "block/end_stone/step4"
+    ]
+  },
+  "block.purpur.break": {
+    "replace": true,
+    "sounds": [
+      "block/purpur/break1",
+      "block/purpur/break2",
+      "block/purpur/break3",
+      "block/purpur/break4"
+    ]
+  },
+  "block.purpur.step": {
+    "replace": true,
+    "sounds": [
+      "block/purpur/step1",
+      "block/purpur/step2",
+      "block/purpur/step3",
+      "block/purpur/step4",
+      "block/purpur/step5",
+      "block/purpur/step6"
+    ]
+  },
+  "block.obsidian.break": {
+    "replace": true,
+    "sounds": [
+      "block/obsidian/break1",
+      "block/obsidian/break2",
+      "block/obsidian/break3"
+    ]
+  },
+  "block.obsidian.place": {
+    "replace": true,
+    "sounds": [
+      "block/obsidian/place1",
+      "block/obsidian/place2",
+      "block/obsidian/place3",
+      "block/obsidian/place4"
+    ]
+  },
+  "block.obsidian.step": {
+    "replace": true,
+    "sounds": [
+      "block/obsidian/step1",
+      "block/obsidian/step2",
+      "block/obsidian/step3",
+      "block/obsidian/step4",
+      "block/obsidian/step5",
+      "block/obsidian/step6"
+    ]
+  },
+  "block.magma.break": {
+    "replace": true,
+    "sounds": [
+      "block/magma/break1",
+      "block/magma/break2",
+      "block/magma/break3",
+      "block/magma/break4",
+      "block/magma/break5"
+    ]
+  },
+  "block.magma.step": {
+    "replace": true,
+    "sounds": [
+      "block/magma/step1",
+      "block/magma/step2",
+      "block/magma/step3",
+      "block/magma/step4"
+    ]
+  },
+  "block.glowstone.break": {
+    "replace": true,
+    "sounds": [
+      "block/glowstone/break1",
+      "block/glowstone/break2",
+      "block/glowstone/break3"
+    ]
+  },
+  "block.glowstone.place": {
+    "replace": true,
+    "sounds": [
+      "block/glowstone/place1",
+      "block/glowstone/place2",
+      "block/glowstone/place3",
+      "block/glowstone/place4"
+    ]
+  },
+  "block.chorus_flower.break": {
+    "replace": true,
+    "sounds": [
+      "block/chorus_flower/break1",
+      "block/chorus_flower/break2",
+      "block/chorus_flower/break3",
+      "block/chorus_flower/break4"
+    ]
+  },
+  "block.chorus_flower.idle": {
+    "replace": true,
+    "sounds": [
+      "block/chorus_flower/idle1",
+      "block/chorus_flower/idle2",
+      "block/chorus_flower/idle3",
+      "block/chorus_flower/idle4",
+      "block/chorus_flower/idle5",
+      "block/chorus_flower/idle6"
+    ]
+  },
+  "block.chorus_stalk.break": {
+    "replace": true,
+    "sounds": [
+      "block/chorus_stalk/break1",
+      "block/chorus_stalk/break2",
+      "block/chorus_stalk/break3",
+      "block/chorus_stalk/break4"
+    ]
+  },
+  "block.chorus_stalk.step": {
+    "replace": true,
+    "sounds": [
+      "block/chorus_stalk/step1",
+      "block/chorus_stalk/step2",
+      "block/chorus_stalk/step3",
+      "block/chorus_stalk/step4",
+      "block/chorus_stalk/step5",
+      "block/chorus_stalk/step6"
+    ]
+  },
+  "block.end_rod.place": {
+    "replace": true,
+    "sounds": [
+      "block/end_rod/place1",
+      "block/end_rod/place2",
+      "block/end_rod/place3",
+      "block/end_rod/place4"
+    ]
+  },
+  "block.end_gateway.break": {
+    "replace": true,
+    "sounds": [
+      "block/end_gateway/portal_break",
+      "block/end_gateway/portal_break2",
+      "block/end_gateway/portal_break3"
+    ]
+  },
+  "block.tnt.break": {
+    "replace": true,
+    "sounds": [
+      "block/tnt/break1",
+      "block/tnt/break2",
+      "block/tnt/break3",
+      "block/tnt/break4"
+    ]
+  },
+  "block.tnt.step": {
+    "replace": true,
+    "sounds": [
+      "block/tnt/step1",
+      "block/tnt/step2",
+      "block/tnt/step3",
+      "block/tnt/step4"
+    ]
+  },
+  "entity.shulker_bullet.loop": {
+    "replace": true,
+    "sounds": [
+      "entity/shulker_bullet/loop"
+    ]
+  },
+  "block.lamp.break": {
+    "replace": true,
+    "sounds": [
+      "block/lamp/break1",
+      "block/lamp/break2",
+      "block/lamp/break3",
+      "block/lamp/break4"
+    ]
+  },
+  "block.lamp.place": {
+    "replace": true,
+    "sounds": [
+      "block/lamp/place1",
+      "block/lamp/place2",
+      "block/lamp/place3",
+      "block/lamp/place4"
+    ]
+  },
+  "block.lamp.on": {
+    "replace": true,
+    "sounds": [
+      "block/lamp/on1",
+      "block/lamp/on2",
+      "block/lamp/on3"
+    ]
+  },
+  "block.lamp.off": {
+    "replace": true,
+    "sounds": [
+      "block/lamp/off1",
+      "block/lamp/off2",
+      "block/lamp/off3"
+    ]
   }
 }

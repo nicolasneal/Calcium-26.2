@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "calcium:item/tall_icy_iris"
+    "model": "calcium:block/stacked_bones"
   }
 }

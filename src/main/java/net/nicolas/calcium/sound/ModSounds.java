@@ -149,5 +149,7 @@ public class ModSounds {
 
         ((AbstractBlockAccessor) Blocks.TNT).setSoundGroup(ModSoundGroups.TNT);
         ((AbstractBlockAccessor) Blocks.TRIPWIRE).setSoundGroup(SoundType.WOOL);
+
+        ((AbstractBlockAccessor) Blocks.REDSTONE_LAMP).setSoundGroup(ModSoundGroups.LAMP);
     }
 }

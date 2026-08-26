@@ -66,4 +66,14 @@ public abstract class PitcherCropBlockMixin extends DoublePlantBlock implements 
         }
     }
 
+    @Override
+    public void onUnwaxed(ServerLevel level, BlockPos pos, BlockState unwaxedState) {
+        DoubleBlockHalf half = unwaxedState.getValue(HALF);
+        BlockPos otherPos = half == DoubleBlockHalf.LOWER ? pos.above() : pos.below();
+        BlockState otherState = level.getBlockState(otherPos);
+        if (otherState.is(this) && otherState.getValue(HALF) != half && otherState.getValue(WAXED)) {
+            level.setBlock(otherPos, otherState.setValue(WAXED, false), 11);
+        }
+    }
+
 }

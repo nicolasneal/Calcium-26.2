@@ -1,0 +1,8 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "bottom": "calcium:block/soulslate_bricks",
+    "side": "calcium:block/soulslate_bricks",
+    "top": "calcium:block/soulslate_bricks"
+  }
+}

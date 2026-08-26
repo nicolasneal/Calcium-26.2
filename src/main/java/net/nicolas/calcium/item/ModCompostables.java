@@ -14,7 +14,6 @@ public class ModCompostables {
         ComposterBlock.COMPOSTABLES.put(ModBlocks.BARLEY.asItem(), 0.50f);
         ComposterBlock.COMPOSTABLES.put(ModBlocks.SEA_OATS.asItem(), 0.50f);
         ComposterBlock.COMPOSTABLES.put(ModBlocks.SHORT_ICY_IRIS.asItem(), 0.30f);
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.TALL_ICY_IRIS.asItem(), 0.50f);
         ComposterBlock.COMPOSTABLES.put(ModBlocks.PAMPAS.asItem(), 0.65f);
         ComposterBlock.COMPOSTABLES.put(ModBlocks.BUSY_LIZZIE.asItem(), 0.65f);
         ComposterBlock.COMPOSTABLES.put(ModBlocks.PONTEDERIA.asItem(), 0.65f);

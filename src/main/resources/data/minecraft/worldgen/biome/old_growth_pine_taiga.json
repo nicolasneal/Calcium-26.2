@@ -76,7 +76,8 @@
       "minecraft:trees_old_growth_pine_taiga",
       "minecraft:patch_dead_bush",
       "minecraft:patch_firefly_bush_near_water",
-      "minecraft:patch_berry_common"
+      "minecraft:patch_berry_common",
+      "minecraft:seagrass_river"
     ],
     [
       "minecraft:freeze_top_layer"

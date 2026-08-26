@@ -6,6 +6,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.JukeboxSong;
 import net.minecraft.world.level.block.SoundType;
 
@@ -35,8 +36,8 @@ public class ModSoundGroups {
     public static final SoundEvent SILT_STEP = register("block.silt.step");
     public static final SoundType SILT = new SoundType(1.0F, 1.0F, SILT_BREAK, SILT_STEP, SILT_BREAK, SILT_STEP, SILT_STEP);
 
-    public static final SoundEvent BLACKSTONE_BREAK = register("block.blackstone.break");
-    public static final SoundEvent BLACKSTONE_STEP = register("block.blackstone.step");
+    public static final SoundEvent BLACKSTONE_BREAK = registerVanilla("block.blackstone.break");
+    public static final SoundEvent BLACKSTONE_STEP = registerVanilla("block.blackstone.step");
     public static final SoundType BLACKSTONE = new SoundType(0.8F, 1.0F, BLACKSTONE_BREAK, BLACKSTONE_STEP, BLACKSTONE_BREAK, BLACKSTONE_STEP, BLACKSTONE_STEP);
 
     public static final SoundEvent SOULSLATE_PLACE = register("block.soulslate.place");
@@ -44,11 +45,11 @@ public class ModSoundGroups {
     public static final SoundEvent SOULSLATE_STEP = register("block.soulslate.step");
     public static final SoundType SOULSLATE = new SoundType(1.0F, 1.0F, SOULSLATE_BREAK, SOULSLATE_STEP, SOULSLATE_PLACE, SOULSLATE_STEP, SOULSLATE_STEP);
 
-    public static final SoundEvent QUARTZ_BREAK = register("block.quartz.break");
+    public static final SoundEvent QUARTZ_BREAK = registerVanilla("block.quartz.break");
     public static final SoundType QUARTZ = new SoundType(1.0F, 1.0F, QUARTZ_BREAK, QUARTZ_BREAK, QUARTZ_BREAK, QUARTZ_BREAK, QUARTZ_BREAK);
 
-    public static final SoundEvent END_STONE_BREAK = register("block.end_stone.break");
-    public static final SoundEvent END_STONE_STEP = register("block.end_stone.step");
+    public static final SoundEvent END_STONE_BREAK = registerVanilla("block.end_stone.break");
+    public static final SoundEvent END_STONE_STEP = registerVanilla("block.end_stone.step");
     public static final SoundType END_STONE = new SoundType(1.0F, 1.0F, END_STONE_BREAK, END_STONE_STEP, END_STONE_BREAK, END_STONE_STEP, END_STONE_STEP);
 
     public static final SoundEvent MIRESTONE_PLACE = register("block.mirestone.place");
@@ -79,8 +80,8 @@ public class ModSoundGroups {
     public static final SoundEvent BLOODSTONE_BRICKS_BREAK = register("block.bloodstone_bricks.break");
     public static final SoundType BLOODSTONE_BRICKS = new SoundType(0.6F, 1.0F, BLOODSTONE_BRICKS_BREAK, BLOODSTONE_BRICKS_BREAK, BLOODSTONE_BRICKS_BREAK, BLOODSTONE_BRICKS_BREAK, BLOODSTONE_BRICKS_BREAK);
 
-    public static final SoundEvent PURPUR_BREAK = register("block.purpur.break");
-    public static final SoundEvent PURPUR_STEP = register("block.purpur.step");
+    public static final SoundEvent PURPUR_BREAK = registerVanilla("block.purpur.break");
+    public static final SoundEvent PURPUR_STEP = registerVanilla("block.purpur.step");
     public static final SoundType PURPUR = new SoundType(1.0F, 1.0F, PURPUR_BREAK, PURPUR_STEP, PURPUR_BREAK, PURPUR_STEP, PURPUR_STEP);
 
     public static final SoundEvent GOLD_CHAIN_BREAK = register("block.gold_chain.break");
@@ -96,17 +97,17 @@ public class ModSoundGroups {
     public static final SoundEvent SHADOLINE_CHAIN_STEP = register("block.shadoline_chain.step");
     public static final SoundType SHADOLINE_CHAIN = new SoundType(0.5F, 1.0F, SHADOLINE_CHAIN_BREAK, SHADOLINE_CHAIN_STEP, SHADOLINE_CHAIN_BREAK, SHADOLINE_CHAIN_STEP, SHADOLINE_CHAIN_STEP);
 
-    public static final SoundEvent OBSIDIAN_BREAK = register("block.obsidian.break");
-    public static final SoundEvent OBSIDIAN_PLACE = register("block.obsidian.place");
-    public static final SoundEvent OBSIDIAN_STEP = register("block.obsidian.step");
+    public static final SoundEvent OBSIDIAN_BREAK = registerVanilla("block.obsidian.break");
+    public static final SoundEvent OBSIDIAN_PLACE = registerVanilla("block.obsidian.place");
+    public static final SoundEvent OBSIDIAN_STEP = registerVanilla("block.obsidian.step");
     public static final SoundType OBSIDIAN = new SoundType(1.0F, 1.0F, OBSIDIAN_BREAK, OBSIDIAN_STEP, OBSIDIAN_PLACE, OBSIDIAN_STEP, OBSIDIAN_STEP);
 
-    public static final SoundEvent MAGMA_BREAK = register("block.magma.break");
-    public static final SoundEvent MAGMA_STEP = register("block.magma.step");
+    public static final SoundEvent MAGMA_BREAK = registerVanilla("block.magma.break");
+    public static final SoundEvent MAGMA_STEP = registerVanilla("block.magma.step");
     public static final SoundType MAGMA = new SoundType(1.0F, 1.0F, MAGMA_BREAK, MAGMA_STEP, MAGMA_BREAK, MAGMA_STEP, MAGMA_STEP);
 
-    public static final SoundEvent GLOWSTONE_BREAK = register("block.glowstone.break");
-    public static final SoundEvent GLOWSTONE_PLACE = register("block.glowstone.place");
+    public static final SoundEvent GLOWSTONE_BREAK = registerVanilla("block.glowstone.break");
+    public static final SoundEvent GLOWSTONE_PLACE = registerVanilla("block.glowstone.place");
     public static final SoundType GLOWSTONE = new SoundType(1.0F, 1.0F, GLOWSTONE_BREAK, GLOWSTONE_PLACE, GLOWSTONE_PLACE, GLOWSTONE_PLACE, GLOWSTONE_PLACE);
 
     public static final SoundEvent END_STONE_SHADOLINE_ORE_BREAK = register("block.end_stone_shadoline_ore.break");
@@ -140,18 +141,18 @@ public class ModSoundGroups {
     public static final SoundEvent BLINKVINE_PLACE = register("block.blinkvine.place");
     public static final SoundType BLINKVINE = new SoundType(1.0F, 1.0F, BLINKVINE_PLACE, BLINKVINE_PLACE, BLINKVINE_PLACE, BLINKVINE_PLACE, BLINKVINE_PLACE);
 
-    public static final SoundEvent CHORUS_FLOWER_BREAK = register("block.chorus_flower.break");
-    public static final SoundEvent CHORUS_FLOWER_IDLE = register("block.chorus_flower.idle");
+    public static final SoundEvent CHORUS_FLOWER_BREAK = registerVanilla("block.chorus_flower.break");
+    public static final SoundEvent CHORUS_FLOWER_IDLE = registerVanilla("block.chorus_flower.idle");
     public static final SoundType CHORUS_FLOWER = new SoundType(1.0F, 1.0F, CHORUS_FLOWER_BREAK, CHORUS_FLOWER_BREAK, CHORUS_FLOWER_BREAK, CHORUS_FLOWER_BREAK, CHORUS_FLOWER_BREAK);
 
-    public static final SoundEvent CHORUS_STALK_BREAK = register("block.chorus_stalk.break");
-    public static final SoundEvent CHORUS_STALK_STEP = register("block.chorus_stalk.step");
+    public static final SoundEvent CHORUS_STALK_BREAK = registerVanilla("block.chorus_stalk.break");
+    public static final SoundEvent CHORUS_STALK_STEP = registerVanilla("block.chorus_stalk.step");
     public static final SoundType CHORUS_STALK = new SoundType(1.0F, 1.0F, CHORUS_STALK_BREAK, CHORUS_STALK_STEP, CHORUS_STALK_BREAK, CHORUS_STALK_STEP, CHORUS_STALK_STEP);
 
-    public static final SoundEvent END_ROD_PLACE = register("block.end_rod.place");
+    public static final SoundEvent END_ROD_PLACE = registerVanilla("block.end_rod.place");
     public static final SoundType END_ROD = new SoundType(1.0F, 1.0F, END_ROD_PLACE, END_ROD_PLACE, END_ROD_PLACE, END_ROD_PLACE, END_ROD_PLACE);
 
-    public static final SoundEvent END_GATEWAY_BREAK = register("block.end_gateway.break");
+    public static final SoundEvent END_GATEWAY_BREAK = registerVanilla("block.end_gateway.break");
     public static final SoundType END_GATEWAY = new SoundType(1.0F, 1.0F, END_GATEWAY_BREAK, END_GATEWAY_BREAK, END_GATEWAY_BREAK, END_GATEWAY_BREAK, END_GATEWAY_BREAK);
 
     public static final SoundEvent CHORUS_HANGING_SIGN_BREAK = register("block.chorus_hanging_sign.break");
@@ -165,9 +166,16 @@ public class ModSoundGroups {
 
     public static final SoundEvent MONITOR_STATIC = register("block.monitor.static");
 
-    public static final SoundEvent TNT_BREAK = register("block.tnt.break");
-    public static final SoundEvent TNT_STEP = register("block.tnt.step");
+    public static final SoundEvent TNT_BREAK = registerVanilla("block.tnt.break");
+    public static final SoundEvent TNT_STEP = registerVanilla("block.tnt.step");
     public static final SoundType TNT = new SoundType(1.0F, 1.0F, TNT_BREAK, TNT_STEP, TNT_BREAK, TNT_STEP, TNT_STEP);
+
+    public static final SoundEvent LAMP_BREAK = registerVanilla("block.lamp.break");
+    public static final SoundEvent LAMP_PLACE = registerVanilla("block.lamp.place");
+    public static final SoundType LAMP = new SoundType(1.0F, 1.0F, LAMP_BREAK, SoundEvents.GLASS_STEP, LAMP_PLACE, SoundEvents.GLASS_HIT, SoundEvents.GLASS_FALL);
+
+    public static final SoundEvent LAMP_ON = registerVanilla("block.lamp.on");
+    public static final SoundEvent LAMP_OFF = registerVanilla("block.lamp.off");
 
     // ITEMS
 
@@ -201,7 +209,7 @@ public class ModSoundGroups {
     public static final SoundEvent GIANT_CLAM_DEATH_LAND = register("entity.giant_clam.death_land");
     public static final SoundEvent GIANT_CLAM_BUBBLES = register("entity.giant_clam.bubbles");
 
-    public static final SoundEvent SHULKER_BULLET_LOOP = register("entity.shulker_bullet.loop");
+    public static final SoundEvent SHULKER_BULLET_LOOP = registerVanilla("entity.shulker_bullet.loop");
 
     // MUSIC DISCS
 
@@ -220,5 +228,11 @@ public class ModSoundGroups {
         return Registry.register(BuiltInRegistries.SOUND_EVENT, id, SoundEvent.createVariableRangeEvent(id));
     }
 
+    private static SoundEvent registerVanilla(String name) {
+        Identifier id = Identifier.withDefaultNamespace(name);
+        return Registry.register(BuiltInRegistries.SOUND_EVENT, id, SoundEvent.createVariableRangeEvent(id));
+    }
+
     public static void initialize() {}
+
 }

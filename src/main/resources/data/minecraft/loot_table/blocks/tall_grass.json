@@ -14,7 +14,13 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:short_grass"
+          "name": "minecraft:short_grass",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 2
+            }
+          ]
         }
       ]
     }
