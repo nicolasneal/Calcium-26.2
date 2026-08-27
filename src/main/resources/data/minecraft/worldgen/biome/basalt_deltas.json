@@ -33,7 +33,10 @@
   },
   "effects": {
     "water_color": "#3F76E4",
-    "grass_color": "#B28E88"
+    "grass_color": "#B28E88",
+    "dirt_color": "#BE885E",
+    "foliage_color": "#AEA42A",
+    "dry_foliage_color": "#A38046"
   },
   "carvers": "minecraft:nether_cave",
   "features": [

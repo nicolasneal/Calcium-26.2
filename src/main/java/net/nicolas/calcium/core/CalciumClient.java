@@ -21,11 +21,16 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.client.model.animal.sniffer.SnifferModel;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.block.entity.MonitorBlockEntity;
 import net.nicolas.calcium.block.entity.ViewfinderBlockEntity;
+import net.nicolas.calcium.core.client.color.ModBlockTintSources;
 import net.nicolas.calcium.core.client.giantclam.GiantClamModel;
 import net.nicolas.calcium.core.client.giantclam.GiantClamRenderer;
 import net.nicolas.calcium.core.client.seacow.SeaCowModel;
@@ -142,8 +147,24 @@ public class CalciumClient implements ClientModInitializer {
             ModBlocks.WILD_POTATO,
             ModBlocks.WILD_BEETROOT,
             ModBlocks.BARLEY,
-            ModBlocks.CLOVERS,
-            ModBlocks.POTTED_BUSH
+            ModBlocks.CLOVERS
+        );
+
+        BlockColorRegistry.register(
+            List.of(ModBlockTintSources.dirt()),
+            Blocks.DIRT
+        );
+
+        BlockColorRegistry.register(
+            List.of(BlockTintSources.grass(), ModBlockTintSources.dirt()),
+            Blocks.GRASS_BLOCK
+        );
+
+        BlockColorRegistry.register(
+            List.of(BlockTintSources.grass(), ModBlockTintSources.dirt()),
+            BuiltInRegistries.BLOCK.stream()
+                .filter(block -> block instanceof FlowerPotBlock)
+                .toArray(Block[]::new)
         );
 
     }

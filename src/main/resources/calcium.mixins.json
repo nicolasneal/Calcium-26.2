@@ -18,6 +18,7 @@
     "gameplay.AnchoringEnchantmentMixin",
     "gameplay.AxeItemMixin",
     "gameplay.BeaconBlockEntityMixin",
+    "gameplay.BiomeSpecialEffectsMixin",
     "gameplay.BlockItemMixin",
     "gameplay.BlockMixin",
     "gameplay.BlockStateBaseMixin",

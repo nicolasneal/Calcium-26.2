@@ -2,10 +2,10 @@
     	"ambientocclusion": false,
 	"textures": {
 		"stage_2": "block/pitcher_crop_bottom_stage_2",
-		"particle": "block/pitcher_crop_top",
 		"pitcher_top": "block/pitcher_crop_top",
 		"pitcher_side": "block/pitcher_crop_side",
-		"pitcher_bottom": "block/pitcher_crop_bottom"
+		"pitcher_bottom": "block/pitcher_crop_bottom",
+		"particle": "block/pitcher_crop_bottom_stage_2"
 	},
 	"elements": [
 		{
@@ -13,6 +13,7 @@
 			"from": [0.8, 5, 8],
 			"to": [15.2, 21, 8],
 			"rotation": {"angle": 45, "axis": "y", "origin": [8, 6, 8], "rescale": true},
+			"shade": false,
            		"shade_direction_override": "up",
 			"faces": {
 				"north": {"uv": [0, 0, 16, 16], "texture": "#stage_2"},
@@ -24,6 +25,7 @@
 			"from": [8, 5, 0.8],
 			"to": [8, 21, 15.2],
 			"rotation": {"angle": 45, "axis": "y", "origin": [8, 6, 8], "rescale": true},
+			"shade": false,
            		"shade_direction_override": "up",
 			"faces": {
 				"east": {"uv": [0, 0, 16, 16], "texture": "#stage_2"},

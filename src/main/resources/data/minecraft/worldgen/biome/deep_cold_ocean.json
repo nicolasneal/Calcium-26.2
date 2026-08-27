@@ -8,6 +8,7 @@
   "effects": {
     "water_color": "#2C6699",
     "grass_color": "#96AB6F",
+    "dirt_color": "#BE885E",
     "foliage_color": "#89A457",
     "dry_foliage_color": "#957B4A"
   },

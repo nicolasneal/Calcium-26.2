@@ -15,7 +15,11 @@
     "minecraft:visual/water_fog_color": "#4B6368"
   },
   "effects": {
-    "water_color": "#809EA3"
+    "water_color": "#809EA3",
+    "grass_color": "#91BD59",
+    "dirt_color": "#BE885E",
+    "foliage_color": "#77AB2F",
+    "dry_foliage_color": "#A37546"
   },
   "carvers": [
     "minecraft:cave",
