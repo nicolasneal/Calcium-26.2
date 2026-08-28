@@ -14,11 +14,10 @@
   },
   "effects": {
     "water_color": "#4B95BC",
-    "grass_color": "#79C05B",
-    "dirt_color": "#BE885E",
+    "grass_color": "#557A39",
+    "dirt_color": "#89644D",
     "foliage_color": "#709937",
-    "dry_foliage_color": "#A36D46",
-    "grass_color_modifier": "dark_forest"
+    "dry_foliage_color": "#A36D46"
   },
   "carvers": [
     "minecraft:cave",

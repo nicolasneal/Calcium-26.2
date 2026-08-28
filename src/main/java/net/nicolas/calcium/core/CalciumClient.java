@@ -13,6 +13,7 @@ import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderingRegistry;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.client.KeyMapping;
+import net.minecraft.client.color.block.BlockTintSource;
 import net.minecraft.client.color.block.BlockTintSources;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.block.FluidModel;
@@ -150,18 +151,29 @@ public class CalciumClient implements ClientModInitializer {
             ModBlocks.CLOVERS
         );
 
+        BlockTintSource dirtTint = ModBlockTintSources.dirt();
+
         BlockColorRegistry.register(
-            List.of(ModBlockTintSources.dirt()),
-            Blocks.DIRT
+            List.of(dirtTint),
+            Blocks.DIRT,
+            Blocks.COARSE_DIRT,
+            Blocks.DIRT_PATH,
+            Blocks.FARMLAND
         );
 
         BlockColorRegistry.register(
-            List.of(BlockTintSources.grass(), ModBlockTintSources.dirt()),
+            List.of(ModBlockTintSources.grassDirtParticle(), dirtTint),
             Blocks.GRASS_BLOCK
         );
 
         BlockColorRegistry.register(
-            List.of(BlockTintSources.grass(), ModBlockTintSources.dirt()),
+            List.of(dirtTint, dirtTint),
+            Blocks.PODZOL,
+            Blocks.MYCELIUM
+        );
+
+        BlockColorRegistry.register(
+            List.of(ModBlockTintSources.grassUntintedParticle(), dirtTint),
             BuiltInRegistries.BLOCK.stream()
                 .filter(block -> block instanceof FlowerPotBlock)
                 .toArray(Block[]::new)
