@@ -8,7 +8,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.animal.sniffer.Sniffer;
 import net.minecraft.world.entity.player.Inventory;
-import org.jspecify.annotations.Nullable;
 
 public class SnifferInventoryScreen extends AbstractContainerScreen<SnifferInventoryScreenHandler> {
 

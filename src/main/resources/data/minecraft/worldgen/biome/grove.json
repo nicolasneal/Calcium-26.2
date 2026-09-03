@@ -79,7 +79,8 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:trees_grove"
+      "minecraft:trees_grove",
+      "minecraft:seagrass_river"
     ],
     [
       "minecraft:freeze_top_layer"

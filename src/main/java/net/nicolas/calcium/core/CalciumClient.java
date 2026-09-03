@@ -158,7 +158,8 @@ public class CalciumClient implements ClientModInitializer {
             Blocks.DIRT,
             Blocks.COARSE_DIRT,
             Blocks.DIRT_PATH,
-            Blocks.FARMLAND
+            Blocks.FARMLAND,
+            Blocks.ROOTED_DIRT
         );
 
         BlockColorRegistry.register(

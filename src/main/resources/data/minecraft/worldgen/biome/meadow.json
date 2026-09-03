@@ -78,7 +78,8 @@
       "minecraft:glow_lichen",
       "minecraft:flower_meadow",
       "minecraft:trees_meadow",
-      "minecraft:wildflowers_meadow"
+      "minecraft:wildflowers_meadow",
+      "minecraft:seagrass_river"
     ],
     [
       "minecraft:freeze_top_layer"

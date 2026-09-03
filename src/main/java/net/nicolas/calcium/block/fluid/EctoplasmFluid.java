@@ -5,7 +5,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.InsideBlockEffectApplier;
@@ -16,7 +15,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -68,7 +66,7 @@ public abstract class EctoplasmFluid extends FlowingFluid {
     }
 
     @Override protected boolean canBeReplacedWith(FluidState state, BlockGetter world, BlockPos pos, Fluid fluid, Direction direction) {
-        return direction == Direction.DOWN && !this.isSource(state) || fluid.is(FluidTags.LAVA) || fluid.is(FluidTags.WATER);
+        return direction == Direction.DOWN && !this.isSource(state);
     }
 
     @Override protected float getExplosionResistance() {
@@ -78,15 +76,6 @@ public abstract class EctoplasmFluid extends FlowingFluid {
     @Override protected void entityInside(Level level, BlockPos pos, Entity entity, InsideBlockEffectApplier effectApplier) {
         effectApplier.apply(InsideBlockEffectType.FREEZE);
         effectApplier.apply(InsideBlockEffectType.EXTINGUISH);
-    }
-
-    @Override protected void spreadTo(LevelAccessor world, BlockPos pos, BlockState state, Direction direction, FluidState fluidState) {
-        if (direction == Direction.DOWN && state.getFluidState().is(FluidTags.WATER)) {
-            world.setBlock(pos, Blocks.ICE.defaultBlockState(), 3);
-            world.levelEvent(1501, pos, 0);
-            return;
-        }
-        super.spreadTo(world, pos, state, direction, fluidState);
     }
 
     public static class Flowing extends EctoplasmFluid {

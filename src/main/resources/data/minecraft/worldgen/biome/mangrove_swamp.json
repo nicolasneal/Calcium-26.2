@@ -90,7 +90,8 @@
       "minecraft:patch_dead_bush",
       "minecraft:patch_waterlily",
       "minecraft:seagrass_swamp",
-      "minecraft:patch_firefly_bush_near_water"
+      "minecraft:patch_firefly_bush_near_water",
+      "minecraft:seagrass_river"
     ],
     [
       "minecraft:freeze_top_layer"

@@ -18,8 +18,8 @@
   },
   "effects": {
     "water_color": "#759EA5",
-    "grass_color": "#BFB755",
-    "dirt_color": "#B48A5C",
+    "grass_color": "#E9D7AA",
+    "dirt_color": "#CFA87C",
     "foliage_color": "#AEA42A",
     "dry_foliage_color": "#A38046"
   },
@@ -77,6 +77,7 @@
     ],
     [
       "calcium:short_grass_sparse",
+      "calcium:bushes",
       "minecraft:glow_lichen",
       "minecraft:patch_dry_grass_desert",
       "minecraft:patch_dead_bush_2",

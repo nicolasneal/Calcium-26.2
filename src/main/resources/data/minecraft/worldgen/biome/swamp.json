@@ -97,7 +97,8 @@
       "minecraft:patch_pumpkin",
       "minecraft:patch_firefly_bush_swamp",
       "minecraft:patch_firefly_bush_near_water_swamp",
-      "minecraft:seagrass_swamp"
+      "minecraft:seagrass_swamp",
+      "minecraft:seagrass_river"
     ],
     [
       "minecraft:freeze_top_layer"

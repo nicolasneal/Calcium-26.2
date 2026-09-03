@@ -7,8 +7,8 @@
   },
   "effects": {
     "water_color": "#4B95BC",
-    "grass_color": "#91BD59",
-    "dirt_color": "#BE885E",
+    "grass_color": "#E4CE9F",
+    "dirt_color": "#CFA87C",
     "foliage_color": "#77AB2F",
     "dry_foliage_color": "#A37546"
   },
@@ -63,13 +63,14 @@
       "minecraft:spring_lava"
     ],
     [
-      "calcium:short_grass_medium",
+      "calcium:short_grass_sparse",
       "calcium:bushes",
       "calcium:sea_oats",
       "minecraft:glow_lichen",
       "minecraft:patch_dry_grass_desert",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_firefly_bush_near_water"
+      "minecraft:patch_firefly_bush_near_water",
+      "minecraft:seagrass_river"
     ],
     [
       "minecraft:freeze_top_layer"

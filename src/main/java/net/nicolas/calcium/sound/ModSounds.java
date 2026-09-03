@@ -1,6 +1,5 @@
 package net.nicolas.calcium.sound;
 
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.nicolas.calcium.mixin.accessors.AbstractBlockAccessor;
@@ -149,6 +148,7 @@ public class ModSounds {
 
         ((AbstractBlockAccessor) Blocks.TNT).setSoundGroup(ModSoundGroups.TNT);
         ((AbstractBlockAccessor) Blocks.TRIPWIRE).setSoundGroup(SoundType.WOOL);
+        ((AbstractBlockAccessor) Blocks.END_PORTAL_FRAME).setSoundGroup(ModSoundGroups.END_STONE);
 
         ((AbstractBlockAccessor) Blocks.REDSTONE_LAMP).setSoundGroup(ModSoundGroups.LAMP);
     }

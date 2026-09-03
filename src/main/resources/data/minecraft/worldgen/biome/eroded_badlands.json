@@ -77,7 +77,8 @@
       "minecraft:patch_dead_bush_badlands",
       "minecraft:patch_sugar_cane_badlands",
       "minecraft:patch_cactus_decorated",
-      "minecraft:patch_firefly_bush_near_water"
+      "minecraft:patch_firefly_bush_near_water",
+      "minecraft:seagrass_river"
     ],
     [
       "minecraft:freeze_top_layer"

@@ -25,17 +25,8 @@ public class GiantClamPatternLayer extends RenderLayer<GiantClamRenderState, Gia
 
         Identifier texture = Identifier.fromNamespaceAndPath("calcium", "textures/entity/clam/giant_clam_" + state.pattern.patternName() + ".png");
         int fireworkColor = state.dyeColor.getFireworkColor();
-        float r = (fireworkColor >> 16 & 0xFF) / 255.0F;
-        float g = (fireworkColor >> 8 & 0xFF) / 255.0F;
-        float b = (fireworkColor & 0xFF) / 255.0F;
-        float gray = 0.3F * r + 0.59F * g + 0.11F * b;
-        float saturation = 1.0F;
-        r = gray + (r - gray) * saturation;
-        g = gray + (g - gray) * saturation;
-        b = gray + (b - gray) * saturation;
-
         this.model.setupAnim(state);
-        coloredCutoutModelCopyLayerRender(this.model, texture, poseStack, submitNodeCollector, lightCoords, state, ARGB.colorFromFloat(1.0F, r, g, b), 1);
+        coloredCutoutModelCopyLayerRender(this.model, texture, poseStack, submitNodeCollector, lightCoords, state, ARGB.opaque(fireworkColor), 1);
     }
 
 }

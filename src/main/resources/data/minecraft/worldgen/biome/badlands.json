@@ -12,13 +12,13 @@
     "minecraft:visual/fog_color": "#BFE0F2",
     "minecraft:visual/water_fog_color": "#42646B"
   },
-    "effects": {
-      "water_color": "#759EA5",
-      "grass_color": "#9B7C4D",
-      "dirt_color": "#BE885E",
-      "foliage_color": "#B88645",
-      "dry_foliage_color": "#A38046"
-    },
+  "effects": {
+    "water_color": "#759EA5",
+    "grass_color": "#9E925E",
+    "dirt_color": "#BE885E",
+    "foliage_color": "#B88645",
+    "dry_foliage_color": "#A38046"
+  },
   "carvers": [
     "minecraft:cave",
     "minecraft:cave_extra_underground",
@@ -72,12 +72,14 @@
     ],
     [
       "calcium:short_grass_sparse",
+      "calcium:bushes",
       "minecraft:glow_lichen",
       "minecraft:patch_dry_grass_badlands",
       "minecraft:patch_dead_bush_badlands",
       "minecraft:patch_sugar_cane_badlands",
       "minecraft:patch_cactus_decorated",
-      "minecraft:patch_firefly_bush_near_water"
+      "minecraft:patch_firefly_bush_near_water",
+      "minecraft:seagrass_river"
     ],
     [
       "minecraft:freeze_top_layer"

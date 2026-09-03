@@ -88,7 +88,8 @@
       "minecraft:patch_sugar_cane",
       "minecraft:patch_firefly_bush_near_water",
       "minecraft:vines",
-      "minecraft:patch_melon_sparse"
+      "minecraft:patch_melon_sparse",
+      "minecraft:seagrass_river"
     ],
     [
       "minecraft:freeze_top_layer"

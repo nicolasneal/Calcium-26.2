@@ -82,7 +82,8 @@
       "minecraft:trees_plains",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_firefly_bush_near_water",
-      "calcium:pumpkins_dense"
+      "calcium:pumpkins_dense",
+      "minecraft:seagrass_river"
     ],
     [
       "minecraft:freeze_top_layer"

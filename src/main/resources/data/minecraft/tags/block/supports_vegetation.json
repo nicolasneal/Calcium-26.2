@@ -1,0 +1,8 @@
+{
+  "values": [
+    "#minecraft:substrate_overworld",
+    "minecraft:farmland",
+    "#minecraft:sand",
+    "calcium:silt"
+  ]
+}

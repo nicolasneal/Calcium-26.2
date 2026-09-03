@@ -1,6 +1,5 @@
 package net.nicolas.calcium.core.client.giantclam;
 
-import net.minecraft.client.animation.AnimationDefinition;
 import net.minecraft.client.animation.KeyframeAnimation;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
