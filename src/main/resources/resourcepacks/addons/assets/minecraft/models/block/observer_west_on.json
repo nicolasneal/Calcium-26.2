@@ -1,0 +1,6 @@
+{
+    "parent": "block/observer_west",
+    "textures": {
+        "back": "block/observer_back_on"
+    }
+}

@@ -1,0 +1,42 @@
+{
+  "variants": {
+    "facing=north,powered=false": {
+      "model": "minecraft:block/observer"
+    },
+    "facing=north,powered=true": {
+      "model": "minecraft:block/observer_on"
+    },
+    "facing=east,powered=false": {
+      "model": "minecraft:block/observer_east"
+    },
+    "facing=east,powered=true": {
+      "model": "minecraft:block/observer_east_on"
+    },
+    "facing=south,powered=false": {
+      "model": "minecraft:block/observer_south"
+    },
+    "facing=south,powered=true": {
+      "model": "minecraft:block/observer_south_on"
+    },
+    "facing=west,powered=false": {
+      "model": "minecraft:block/observer_west"
+    },
+    "facing=west,powered=true": {
+      "model": "minecraft:block/observer_west_on"
+    },
+    "facing=up,powered=false": {
+      "model": "minecraft:block/observer_vertical"
+    },
+    "facing=up,powered=true": {
+      "model": "minecraft:block/observer_vertical_on"
+    },
+    "facing=down,powered=false": {
+      "model": "minecraft:block/observer_vertical",
+      "x": 180
+    },
+    "facing=down,powered=true": {
+      "model": "minecraft:block/observer_vertical_on",
+      "x": 180
+    }
+  }
+}

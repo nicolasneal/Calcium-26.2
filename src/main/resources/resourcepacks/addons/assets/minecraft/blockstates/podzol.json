@@ -1,0 +1,23 @@
+{
+  "variants": {
+    "snowy=false": [
+      { "model": "minecraft:block/podzol" },
+      { "model": "minecraft:block/podzol", "y": 90 },
+      { "model": "minecraft:block/podzol", "y": 180 },
+      { "model": "minecraft:block/podzol", "y": 270 },
+      { "model": "minecraft:block/podzol_pebbles_1" },
+      { "model": "minecraft:block/podzol_pebbles_1", "y": 90 },
+      { "model": "minecraft:block/podzol_pebbles_1", "y": 180 },
+      { "model": "minecraft:block/podzol_pebbles_1", "y": 270 },
+      { "model": "minecraft:block/podzol_pebbles_2" },
+      { "model": "minecraft:block/podzol_pebbles_2", "y": 90 },
+      { "model": "minecraft:block/podzol_pebbles_2", "y": 180 },
+      { "model": "minecraft:block/podzol_pebbles_2", "y": 270 }
+    ],
+    "snowy=true": [
+      { "model": "minecraft:block/grass_block_snow" },
+      { "model": "minecraft:block/grass_block_snow_pebbles_1" },
+      { "model": "minecraft:block/grass_block_snow_pebbles_2" }
+    ]
+  }
+}

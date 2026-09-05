@@ -812,14 +812,14 @@
                                 "then_run": {
                                   "type": "minecraft:block",
                                   "result_state": {
-                                    "Name": "minecraft:red_sandstone"
+                                    "Name": "minecraft:sandstone"
                                   }
                                 }
                               },
                               {
                                 "type": "minecraft:block",
                                 "result_state": {
-                                  "Name": "minecraft:red_sand"
+                                  "Name": "minecraft:sand"
                                 }
                               }
                             ]

@@ -1,0 +1,6 @@
+{
+    "parent": "block/observer_vertical",
+    "textures": {
+        "back": "block/observer_vertical_back_on"
+    }
+}

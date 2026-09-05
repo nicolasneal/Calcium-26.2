@@ -125,7 +125,7 @@ public class SnifferChestModel extends EntityModel<SnifferRenderState> {
         PartDefinition bone = root.addOrReplaceChild("bone", CubeListBuilder.create(), PartPose.offset(0.0F, 5.0F, 0.0F));
         PartDefinition body = bone.addOrReplaceChild("body", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
         PartDefinition rightChest = body.addOrReplaceChild("right_chest", CubeListBuilder.create().texOffs(0, 141).addBox(-6.0F, -6.0F, -6.0F, 12.0F, 12.0F, 12.0F, CubeDeformation.NONE), PartPose.offsetAndRotation(-11F, 0.0F, 11.5F, 0.0F, (float) (Math.PI / 2), 0.0F));
-        PartDefinition leftChest = body.addOrReplaceChild("left_chest", CubeListBuilder.create().texOffs(0, 141).addBox(-6.0F, -6.0F, -6.0F, 12.0F, 12.0F, 12.0F, CubeDeformation.NONE), PartPose.offsetAndRotation(11F, 0.0F, 11.5F, 0.0F, (float) (Math.PI / 2), 0.0F));
+        PartDefinition leftChest = body.addOrReplaceChild("left_chest", CubeListBuilder.create().texOffs(0, 165).addBox(-6.0F, -6.0F, -6.0F, 12.0F, 12.0F, 12.0F, CubeDeformation.NONE), PartPose.offsetAndRotation(11F, 0.0F, 11.5F, 0.0F, (float) (Math.PI / 2), 0.0F));
         rightChest.addOrReplaceChild("right_latch", CubeListBuilder.create().texOffs(0, 141).addBox(-1.0F, -2.0F, -1.0F, 2.0F, 4.0F, 1.0F, CubeDeformation.NONE), PartPose.offset(0.0F, -1.0F, -6.0F));
         leftChest.addOrReplaceChild("left_latch", CubeListBuilder.create().texOffs(0, 141).addBox(-1.0F, -2.0F, -1.0F, 2.0F, 4.0F, 1.0F, CubeDeformation.NONE), PartPose.offset(0.0F, -1.0F, 7.0F));
         return LayerDefinition.create(mesh, 192, 192);

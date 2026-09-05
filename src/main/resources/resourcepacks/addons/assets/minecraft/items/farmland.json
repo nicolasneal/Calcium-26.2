@@ -1,0 +1,9 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "minecraft:block/farmland",
+    "tints": [
+      { "type": "minecraft:constant", "value": 12486750 }
+    ]
+  }
+}

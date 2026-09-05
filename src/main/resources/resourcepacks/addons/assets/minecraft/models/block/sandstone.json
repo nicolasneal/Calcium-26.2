@@ -1,6 +1,21 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "block/block",
   "textures": {
-    "all": "minecraft:block/sandstone"
+    "end": "minecraft:block/sandstone_end",
+    "side": "minecraft:block/sandstone_side",
+    "particle": "minecraft:block/sandstone_side"
+  },
+  "elements": [
+    {   "from": [ 0, 0, 0 ],
+        "to": [ 16, 16, 16 ],
+        "faces": {
+            "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#end",  "cullface": "down",  "tintindex": 0 },
+            "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#end",  "cullface": "up",    "tintindex": 0 },
+            "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#side", "cullface": "north", "tintindex": 0 },
+            "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#side", "cullface": "south", "tintindex": 0 },
+            "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#side", "cullface": "west",  "tintindex": 0 },
+            "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#side", "cullface": "east",  "tintindex": 0 }
+        }
     }
+  ]
 }

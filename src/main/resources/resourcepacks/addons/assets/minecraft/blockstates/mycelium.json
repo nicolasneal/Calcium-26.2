@@ -1,0 +1,23 @@
+{
+  "variants": {
+    "snowy=false": [
+      { "model": "minecraft:block/mycelium" },
+      { "model": "minecraft:block/mycelium", "y": 90 },
+      { "model": "minecraft:block/mycelium", "y": 180 },
+      { "model": "minecraft:block/mycelium", "y": 270 },
+      { "model": "minecraft:block/mycelium_pebbles_1" },
+      { "model": "minecraft:block/mycelium_pebbles_1", "y": 90 },
+      { "model": "minecraft:block/mycelium_pebbles_1", "y": 180 },
+      { "model": "minecraft:block/mycelium_pebbles_1", "y": 270 },
+      { "model": "minecraft:block/mycelium_pebbles_2" },
+      { "model": "minecraft:block/mycelium_pebbles_2", "y": 90 },
+      { "model": "minecraft:block/mycelium_pebbles_2", "y": 180 },
+      { "model": "minecraft:block/mycelium_pebbles_2", "y": 270 }
+    ],
+    "snowy=true": [
+      { "model": "minecraft:block/grass_block_snow" },
+      { "model": "minecraft:block/grass_block_snow_pebbles_1" },
+      { "model": "minecraft:block/grass_block_snow_pebbles_2" }
+    ]
+  }
+}

@@ -180,6 +180,13 @@ public class CalciumClient implements ClientModInitializer {
                 .toArray(Block[]::new)
         );
 
+        BlockColorRegistry.register(
+            List.of(ModBlockTintSources.sand()),
+            Blocks.SAND,
+            Blocks.SANDSTONE,
+            Blocks.SUSPICIOUS_SAND
+        );
+
     }
 
 }

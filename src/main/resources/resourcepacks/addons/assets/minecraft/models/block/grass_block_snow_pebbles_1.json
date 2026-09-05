@@ -1,0 +1,42 @@
+{
+  "textures": {
+    "top": "minecraft:block/dirts/grass_block_top",
+    "bottom": "minecraft:block/dirts/dirt",
+    "side": "minecraft:block/dirts/grass_block_snow",
+    "overlay": "minecraft:block/dirts/grass_block_snow_overlay",
+    "pebbles": "minecraft:block/dirts/dirt_pebbles_overlay_1",
+    "particle": "minecraft:block/dirts/dirt"
+  },
+  "elements": [
+    {   "from": [ 0, 0, 0 ],
+        "to": [ 16, 16, 16 ],
+        "faces": {
+            "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#top",    "cullface": "up" },
+            "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#bottom", "cullface": "down", "tintindex": 1 },
+            "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#side",   "cullface": "north", "tintindex": 1 },
+            "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#side",   "cullface": "south", "tintindex": 1 },
+            "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#side",   "cullface": "west",  "tintindex": 1 },
+            "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#side",   "cullface": "east",  "tintindex": 1 }
+        }
+    },
+    {   "from": [ 0, 0, 0 ],
+        "to": [ 16, 16, 16 ],
+        "faces": {
+            "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "cullface": "north" },
+            "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "cullface": "south" },
+            "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "cullface": "west" },
+            "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "cullface": "east" }
+        }
+    },
+    {   "from": [ 0, 0, 0 ],
+        "to": [ 16, 16, 16 ],
+        "faces": {
+            "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#pebbles", "cullface": "down" },
+            "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#pebbles", "cullface": "north" },
+            "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#pebbles", "cullface": "south" },
+            "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#pebbles", "cullface": "west" },
+            "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#pebbles", "cullface": "east" }
+        }
+    }
+  ]
+}

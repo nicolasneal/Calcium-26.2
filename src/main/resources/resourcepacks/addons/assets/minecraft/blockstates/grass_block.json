@@ -5,21 +5,43 @@
       { "model": "minecraft:block/grass_block_1", "y": 90 },
       { "model": "minecraft:block/grass_block_1", "y": 180 },
       { "model": "minecraft:block/grass_block_1", "y": 270 },
+      { "model": "minecraft:block/grass_block_1_pebbles_1", "y": 0 },
+      { "model": "minecraft:block/grass_block_1_pebbles_1", "y": 90 },
+      { "model": "minecraft:block/grass_block_1_pebbles_1", "y": 180 },
+      { "model": "minecraft:block/grass_block_1_pebbles_1", "y": 270 },
+      { "model": "minecraft:block/grass_block_1_pebbles_2", "y": 0 },
+      { "model": "minecraft:block/grass_block_1_pebbles_2", "y": 90 },
+      { "model": "minecraft:block/grass_block_1_pebbles_2", "y": 180 },
+      { "model": "minecraft:block/grass_block_1_pebbles_2", "y": 270 },
       { "model": "minecraft:block/grass_block_2", "y": 0 },
       { "model": "minecraft:block/grass_block_2", "y": 90 },
       { "model": "minecraft:block/grass_block_2", "y": 180 },
       { "model": "minecraft:block/grass_block_2", "y": 270 },
+      { "model": "minecraft:block/grass_block_2_pebbles_1", "y": 0 },
+      { "model": "minecraft:block/grass_block_2_pebbles_1", "y": 90 },
+      { "model": "minecraft:block/grass_block_2_pebbles_1", "y": 180 },
+      { "model": "minecraft:block/grass_block_2_pebbles_1", "y": 270 },
+      { "model": "minecraft:block/grass_block_2_pebbles_2", "y": 0 },
+      { "model": "minecraft:block/grass_block_2_pebbles_2", "y": 90 },
+      { "model": "minecraft:block/grass_block_2_pebbles_2", "y": 180 },
+      { "model": "minecraft:block/grass_block_2_pebbles_2", "y": 270 },
       { "model": "minecraft:block/grass_block_3", "y": 0 },
       { "model": "minecraft:block/grass_block_3", "y": 90 },
       { "model": "minecraft:block/grass_block_3", "y": 180 },
       { "model": "minecraft:block/grass_block_3", "y": 270 },
-      { "model": "minecraft:block/grass_block_4", "y": 0 },
-      { "model": "minecraft:block/grass_block_4", "y": 90 },
-      { "model": "minecraft:block/grass_block_4", "y": 180 },
-      { "model": "minecraft:block/grass_block_4", "y": 270 }
+      { "model": "minecraft:block/grass_block_3_pebbles_1", "y": 0 },
+      { "model": "minecraft:block/grass_block_3_pebbles_1", "y": 90 },
+      { "model": "minecraft:block/grass_block_3_pebbles_1", "y": 180 },
+      { "model": "minecraft:block/grass_block_3_pebbles_1", "y": 270 },
+      { "model": "minecraft:block/grass_block_3_pebbles_2", "y": 0 },
+      { "model": "minecraft:block/grass_block_3_pebbles_2", "y": 90 },
+      { "model": "minecraft:block/grass_block_3_pebbles_2", "y": 180 },
+      { "model": "minecraft:block/grass_block_3_pebbles_2", "y": 270 }
     ],
-    "snowy=true": {
-      "model": "minecraft:block/grass_block_snow"
-    }
+    "snowy=true": [
+      { "model": "minecraft:block/grass_block_snow" },
+      { "model": "minecraft:block/grass_block_snow_pebbles_1" },
+      { "model": "minecraft:block/grass_block_snow_pebbles_2" }
+    ]
   }
 }
