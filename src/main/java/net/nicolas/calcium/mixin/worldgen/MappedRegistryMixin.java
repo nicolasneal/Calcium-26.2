@@ -24,16 +24,21 @@ import java.util.Map;
 @Mixin(MappedRegistry.class)
 public abstract class MappedRegistryMixin<T> {
 
+    private static final Map<ResourceKey<Biome>, Holder<Biome>> BIOME_HOLDERS = new HashMap<>();
+
+    @Inject(method = "register", at = @At("RETURN"))
+    private void calcium$captureBiomeHolder(ResourceKey<T> key, T value, RegistrationInfo registrationInfo, CallbackInfoReturnable<Holder.Reference<T>> cir) {
+        if (value instanceof Biome) {
+            BIOME_HOLDERS.put((ResourceKey<Biome>) (ResourceKey<?>) key, (Holder<Biome>) (Holder<?>) cir.getReturnValue());
+        }
+    }
+
     @Inject(method = "register", at = @At("HEAD"))
     private void calcium$patchOverworldBiomeTable(ResourceKey<T> key, T value, RegistrationInfo registrationInfo, CallbackInfoReturnable<Holder.Reference<T>> cir) {
         if (value instanceof MultiNoiseBiomeSourceParameterList list && key.identifier().equals(Identifier.withDefaultNamespace("overworld"))) {
             MultiNoiseBiomeSourceParameterListAccessor accessor = (MultiNoiseBiomeSourceParameterListAccessor) list;
-            Map<ResourceKey<Biome>, Holder<Biome>> biomeLookup = new HashMap<>();
-            for (Pair<Climate.ParameterPoint, Holder<Biome>> pair : accessor.calcium$getParameters().values()) {
-                pair.getSecond().unwrapKey().ifPresent(biomeKey -> biomeLookup.put(biomeKey, pair.getSecond()));
-            }
             List<Pair<Climate.ParameterPoint, Holder<Biome>>> entries = new ArrayList<>();
-            new CalciumOverworldBiomeBuilder().addBiomes(point -> entries.add(point.mapSecond(biomeLookup::get)));
+            new CalciumOverworldBiomeBuilder().addBiomes(point -> entries.add(point.mapSecond(BIOME_HOLDERS::get)));
             accessor.calcium$setParameters(new Climate.ParameterList<>(entries));
         }
     }

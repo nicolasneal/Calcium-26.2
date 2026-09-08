@@ -1,0 +1,215 @@
+{
+  "downfall": 0.9,
+  "attributes": {
+    "minecraft:audio/background_music": {
+      "default": {
+        "max_delay": 24000,
+        "min_delay": 12000,
+        "sound": "minecraft:music.overworld.swamp"
+      }
+    },
+    "minecraft:visual/fog_start_distance": -32,
+    "minecraft:visual/fog_end_distance": 384,
+    "minecraft:visual/sky_color": "#5E8E8C",
+    "minecraft:visual/fog_color": "#99B8B6",
+    "minecraft:visual/sky_light_color": "#ECFFED",
+    "minecraft:visual/cloud_color": "#DBC8DCD2",
+    "minecraft:visual/water_fog_color": "#2C4C3D",
+    "minecraft:visual/water_fog_end_distance": {
+      "argument": 0.5,
+      "modifier": "multiply"
+    }
+  },
+  "effects": {
+    "water_color": "#517766",
+    "grass_color": "#6A7039",
+    "dirt_color": "#936144",
+    "sand_color": "#FAF4CB",
+    "foliage_color": "#677D3B",
+    "dry_foliage_color": "#7B5334"
+  },
+  "carvers": [
+    "minecraft:cave",
+    "minecraft:cave_extra_underground",
+    "minecraft:canyon"
+  ],
+  "features": [
+    [],
+    [
+      "minecraft:lake_lava_underground",
+      "minecraft:lake_lava_surface"
+    ],
+    [
+      "minecraft:amethyst_geode"
+    ],
+    [
+      "minecraft:fossil_upper",
+      "minecraft:fossil_lower",
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep"
+    ],
+    [],
+    [],
+    [
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_lower",
+      "minecraft:ore_tuff",
+      "minecraft:ore_coal_lower",
+      "minecraft:ore_iron_middle",
+      "minecraft:ore_iron_small",
+      "minecraft:ore_gold",
+      "minecraft:ore_gold_lower",
+      "minecraft:ore_redstone",
+      "minecraft:ore_redstone_lower",
+      "minecraft:ore_diamond",
+      "minecraft:ore_diamond_medium",
+      "minecraft:ore_diamond_large",
+      "minecraft:ore_diamond_buried",
+      "minecraft:ore_lapis",
+      "minecraft:ore_lapis_buried",
+      "minecraft:ore_copper",
+      "minecraft:underwater_magma",
+      "calcium:disk_silt",
+      "minecraft:disk_clay"
+    ],
+    [],
+    [
+      "minecraft:spring_water",
+      "minecraft:spring_lava"
+    ],
+    [
+      "calcium:short_grass_dense",
+      "calcium:barleys",
+      "calcium:tall_grass",
+      "calcium:bushes",
+      "calcium:blue_orchids",
+      "calcium:pontederias",
+      "calcium:toadstools_sparse",
+      "calcium:portobellos_sparse",
+      "calcium:black_stinkhorns",
+      "calcium:white_stinkhorns",
+      "minecraft:glow_lichen",
+      "minecraft:trees_swamp",
+      "minecraft:patch_dead_bush",
+      "minecraft:patch_waterlily",
+      "minecraft:patch_sugar_cane_swamp",
+      "minecraft:patch_pumpkin",
+      "minecraft:patch_firefly_bush_swamp",
+      "minecraft:patch_firefly_bush_near_water_swamp",
+      "minecraft:seagrass_swamp",
+      "minecraft:seagrass_river"
+    ],
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ],
+  "has_precipitation": true,
+  "spawn_costs": {},
+  "spawners": {
+    "ambient": [
+      {
+        "type": "minecraft:bat",
+        "maxCount": 8,
+        "minCount": 8,
+        "weight": 10
+      }
+    ],
+    "axolotls": [],
+    "creature": [
+      {
+        "type": "minecraft:sheep",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 12
+      },
+      {
+        "type": "minecraft:pig",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 10
+      },
+      {
+        "type": "minecraft:chicken",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 10
+      },
+      {
+        "type": "minecraft:cow",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 8
+      },
+      {
+        "type": "minecraft:frog",
+        "maxCount": 5,
+        "minCount": 2,
+        "weight": 10
+      }
+    ],
+    "misc": [],
+    "monster": [
+      {
+        "type": "minecraft:zombie",
+        "minCount": 3,
+        "maxCount": 4,
+        "weight": 27
+      },
+      {
+        "type": "minecraft:zombie_villager",
+        "minCount": 3,
+        "maxCount": 4,
+        "weight": 3
+      },
+      {
+        "type": "minecraft:bogged",
+        "minCount": 3,
+        "maxCount": 4,
+        "weight": 30
+      },
+      {
+        "type": "minecraft:creeper",
+        "minCount": 3,
+        "maxCount": 4,
+        "weight": 15
+      },
+      {
+        "type": "minecraft:spider",
+        "minCount": 3,
+        "maxCount": 4,
+        "weight": 15
+      },
+      {
+        "type": "minecraft:slime",
+        "minCount": 3,
+        "maxCount": 4,
+        "weight": 5
+      },
+      {
+        "type": "minecraft:enderman",
+        "minCount": 1,
+        "maxCount": 1,
+        "weight": 1
+      },
+      {
+        "type": "minecraft:witch",
+        "minCount": 1,
+        "maxCount": 2,
+        "weight": 4
+      }
+    ],
+    "underground_water_creature": [
+      {
+        "type": "minecraft:glow_squid",
+        "maxCount": 6,
+        "minCount": 4,
+        "weight": 10
+      }
+    ],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 0.8
+}

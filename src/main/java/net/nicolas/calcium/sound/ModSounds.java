@@ -116,6 +116,7 @@ public class ModSounds {
         ((AbstractBlockAccessor) Blocks.CHORUS_FLOWER).setSoundGroup(ModSoundGroups.CHORUS_FLOWER);
         ((AbstractBlockAccessor) Blocks.CHORUS_PLANT).setSoundGroup(ModSoundGroups.CHORUS_STALK);
 
+        ((AbstractBlockAccessor) Blocks.END_PORTAL).setSoundGroup(ModSoundGroups.END_GATEWAY);
         ((AbstractBlockAccessor) Blocks.END_GATEWAY).setSoundGroup(ModSoundGroups.END_GATEWAY);
         ((AbstractBlockAccessor) Blocks.END_ROD).setSoundGroup(ModSoundGroups.END_ROD);
 

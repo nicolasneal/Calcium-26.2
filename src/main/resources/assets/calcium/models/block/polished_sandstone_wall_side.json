@@ -1,6 +1,18 @@
 {
-  "parent": "minecraft:block/template_wall_side",
-  "textures": {
-    "wall": "minecraft:block/polished_sandstone"
-  }
+    "textures": {
+        "wall": "minecraft:block/polished_sandstone",
+        "particle": "minecraft:block/polished_sandstone"
+    },
+    "elements": [
+        {   "from": [ 5, 0, 0 ],
+            "to": [ 11, 14, 8 ],
+            "faces": {
+                "down":  { "texture": "#wall", "cullface": "down", "tintindex": 0 },
+                "up":    { "texture": "#wall", "tintindex": 0 },
+                "north": { "texture": "#wall", "cullface": "north", "tintindex": 0 },
+                "west":  { "texture": "#wall", "tintindex": 0 },
+                "east":  { "texture": "#wall", "tintindex": 0 }
+            }
+        }
+    ]
 }

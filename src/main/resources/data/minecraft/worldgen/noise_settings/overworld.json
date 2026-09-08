@@ -584,7 +584,10 @@
                     "type": "minecraft:condition",
                     "if_true": {
                       "type": "minecraft:biome",
-                      "biome_is": "minecraft:swamp"
+                      "biome_is": [
+                        "minecraft:swamp",
+                        "calcium:bog"
+                      ]
                     },
                     "then_run": {
                       "type": "minecraft:condition",
@@ -690,7 +693,8 @@
                 "biome_is": [
                   "minecraft:badlands",
                   "minecraft:eroded_badlands",
-                  "minecraft:wooded_badlands"
+                  "minecraft:wooded_badlands",
+                  "calcium:mesa"
                 ]
               },
               "then_run": {
@@ -1419,7 +1423,13 @@
                               "type": "minecraft:condition",
                               "if_true": {
                                 "type": "minecraft:biome",
-                                "biome_is": "minecraft:desert"
+                                "biome_is": [
+                                  "minecraft:desert",
+                                  "calcium:dunes",
+                                  "calcium:oasis",
+                                  "calcium:desert_mountains",
+                                  "calcium:blasted_dunes"
+                                ]
                               },
                               "then_run": {
                                 "type": "minecraft:condition",
@@ -1441,7 +1451,13 @@
                               "type": "minecraft:condition",
                               "if_true": {
                                 "type": "minecraft:biome",
-                                "biome_is": "minecraft:desert"
+                                "biome_is": [
+                                  "minecraft:desert",
+                                  "calcium:dunes",
+                                  "calcium:oasis",
+                                  "calcium:desert_mountains",
+                                  "calcium:blasted_dunes"
+                                ]
                               },
                               "then_run": {
                                 "type": "minecraft:sequence",
@@ -2260,7 +2276,13 @@
                               "type": "minecraft:condition",
                               "if_true": {
                                 "type": "minecraft:biome",
-                                "biome_is": "minecraft:desert"
+                                "biome_is": [
+                                  "minecraft:desert",
+                                  "calcium:dunes",
+                                  "calcium:oasis",
+                                  "calcium:desert_mountains",
+                                  "calcium:blasted_dunes"
+                                ]
                               },
                               "then_run": {
                                 "type": "minecraft:condition",
@@ -2282,7 +2304,13 @@
                               "type": "minecraft:condition",
                               "if_true": {
                                 "type": "minecraft:biome",
-                                "biome_is": "minecraft:desert"
+                                "biome_is": [
+                                  "minecraft:desert",
+                                  "calcium:dunes",
+                                  "calcium:oasis",
+                                  "calcium:desert_mountains",
+                                  "calcium:blasted_dunes"
+                                ]
                               },
                               "then_run": {
                                 "type": "minecraft:sequence",
@@ -2578,7 +2606,13 @@
                     "type": "minecraft:condition",
                     "if_true": {
                       "type": "minecraft:biome",
-                      "biome_is": "minecraft:desert"
+                      "biome_is": [
+                        "minecraft:desert",
+                        "calcium:dunes",
+                        "calcium:oasis",
+                        "calcium:desert_mountains",
+                        "calcium:blasted_dunes"
+                      ]
                     },
                     "then_run": {
                       "type": "minecraft:condition",

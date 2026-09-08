@@ -8,16 +8,16 @@
         "sound": "minecraft:music.overworld.desert"
       }
     },
-    "minecraft:visual/fog_start_distance": -32,
+    "minecraft:visual/fog_start_distance": -24,
     "minecraft:visual/fog_end_distance": 384,
-    "minecraft:visual/sky_color": "#A4D3ED",
-    "minecraft:visual/fog_color": "#F2EFE1",
+    "minecraft:visual/sky_color": "#BCD8DE",
+    "minecraft:visual/fog_color": "#EAE3C5",
     "minecraft:visual/sky_light_color": "#FFFBEC",
     "minecraft:visual/cloud_color": "#DBE6E2D5",
-    "minecraft:visual/water_fog_color": "#42646B"
+    "minecraft:visual/water_fog_color": "#466167"
   },
   "effects": {
-    "water_color": "#759EA5",
+    "water_color": "#7A9BA0",
     "grass_color": "#E9D7AA",
     "dirt_color": "#CFA87C",
     "sand_color": "#FAF4CB",
@@ -77,13 +77,9 @@
       "minecraft:spring_lava"
     ],
     [
-      "calcium:short_grass_sparse",
-      "calcium:bushes",
       "minecraft:glow_lichen",
       "minecraft:patch_dry_grass_desert",
       "minecraft:patch_dead_bush_2",
-      "minecraft:patch_sugar_cane_desert",
-      "minecraft:patch_cactus_desert",
       "minecraft:seagrass_river"
     ],
     [

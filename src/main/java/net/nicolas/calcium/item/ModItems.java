@@ -31,10 +31,19 @@ public class ModItems {
 
     public static final String MOD_ID = "calcium";
 
-    // BLOCKS (2)
+    // BLOCKS (4)
 
+    public static final Item WILLOW_SIGN = register("willow_sign", settings -> new SignItem(ModBlocks.WILLOW_SIGN, ModBlocks.WILLOW_WALL_SIGN, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
+    public static final Item WILLOW_HANGING_SIGN = register("willow_hanging_sign", settings -> new HangingSignItem(ModBlocks.WILLOW_HANGING_SIGN, ModBlocks.WILLOW_WALL_HANGING_SIGN, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
     public static final Item CHORUS_SIGN = register("chorus_sign", settings -> new SignItem(ModBlocks.CHORUS_SIGN, ModBlocks.CHORUS_WALL_SIGN, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
     public static final Item CHORUS_HANGING_SIGN = register("chorus_hanging_sign", settings -> new HangingSignItem(ModBlocks.CHORUS_HANGING_SIGN, ModBlocks.CHORUS_WALL_HANGING_SIGN, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
+
+    // TRANSPORTATION (4)
+
+    public static final Item WILLOW_BOAT = register("willow_boat", settings -> new BoatItem(ModEntities.WILLOW_BOAT, settings), new Item.Properties().stacksTo(1));
+    public static final Item WILLOW_CHEST_BOAT = register("willow_chest_boat", settings -> new BoatItem(ModEntities.WILLOW_CHEST_BOAT, settings), new Item.Properties().stacksTo(1));
+    public static final Item CHORUS_BOAT = register("chorus_boat", settings -> new BoatItem(ModEntities.CHORUS_BOAT, settings), new Item.Properties().stacksTo(1));
+    public static final Item CHORUS_CHEST_BOAT = register("chorus_chest_boat", settings -> new BoatItem(ModEntities.CHORUS_CHEST_BOAT, settings), new Item.Properties().stacksTo(1));
 
     // INGREDIENTS (19)
 

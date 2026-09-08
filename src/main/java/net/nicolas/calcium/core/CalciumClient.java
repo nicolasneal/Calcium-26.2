@@ -22,6 +22,9 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.client.model.animal.sniffer.SnifferModel;
+import net.minecraft.client.model.geom.ModelLayerLocation;
+import net.minecraft.client.model.object.boat.BoatModel;
+import net.minecraft.client.renderer.entity.BoatRenderer;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -64,6 +67,11 @@ public class CalciumClient implements ClientModInitializer {
 
     public static final KeyMapping ROTATE_EXTRA_SLOTS_KEY = new KeyMapping("key.calcium.rotate_extra_slots", InputConstants.Type.KEYSYM, InputConstants.KEY_LCONTROL, KeyMapping.Category.INVENTORY, 1);
     public static final KeyMapping TOGGLE_RECIPE_BOOK_KEY = new KeyMapping("key.calcium.toggle_recipe_book", InputConstants.Type.KEYSYM, InputConstants.KEY_R, KeyMapping.Category.INVENTORY, 2);
+
+    public static final ModelLayerLocation WILLOW_BOAT_LAYER = new ModelLayerLocation(Identifier.fromNamespaceAndPath("calcium", "boat/willow"), "main");
+    public static final ModelLayerLocation WILLOW_CHEST_BOAT_LAYER = new ModelLayerLocation(Identifier.fromNamespaceAndPath("calcium", "chest_boat/willow"), "main");
+    public static final ModelLayerLocation CHORUS_BOAT_LAYER = new ModelLayerLocation(Identifier.fromNamespaceAndPath("calcium", "boat/chorus"), "main");
+    public static final ModelLayerLocation CHORUS_CHEST_BOAT_LAYER = new ModelLayerLocation(Identifier.fromNamespaceAndPath("calcium", "chest_boat/chorus"), "main");
 
     @Override public void onInitializeClient() {
 
@@ -109,6 +117,16 @@ public class CalciumClient implements ClientModInitializer {
         ModelLayerRegistry.registerModelLayer(SunfishRenderer.BABY_LAYER, SunfishModel::createBabyBodyLayer);
         ModelLayerRegistry.registerModelLayer(SunfishRenderer.NEWBORN_LAYER, SunfishModel::createNewbornBodyLayer);
         EntityRendererRegistry.register(ModEntities.SUNFISH, SunfishRenderer::new);
+
+        ModelLayerRegistry.registerModelLayer(WILLOW_BOAT_LAYER, BoatModel::createBoatModel);
+        ModelLayerRegistry.registerModelLayer(WILLOW_CHEST_BOAT_LAYER, BoatModel::createChestBoatModel);
+        EntityRendererRegistry.register(ModEntities.WILLOW_BOAT, context -> new BoatRenderer(context, WILLOW_BOAT_LAYER));
+        EntityRendererRegistry.register(ModEntities.WILLOW_CHEST_BOAT, context -> new BoatRenderer(context, WILLOW_CHEST_BOAT_LAYER));
+
+        ModelLayerRegistry.registerModelLayer(CHORUS_BOAT_LAYER, BoatModel::createBoatModel);
+        ModelLayerRegistry.registerModelLayer(CHORUS_CHEST_BOAT_LAYER, BoatModel::createChestBoatModel);
+        EntityRendererRegistry.register(ModEntities.CHORUS_BOAT, context -> new BoatRenderer(context, CHORUS_BOAT_LAYER));
+        EntityRendererRegistry.register(ModEntities.CHORUS_CHEST_BOAT, context -> new BoatRenderer(context, CHORUS_CHEST_BOAT_LAYER));
 
         ParticleProviderRegistry.getInstance().register(ModParticleTypes.ECTOPLASM_RAYS, EctoplasmRayParticle.Provider::new);
         ParticleProviderRegistry.getInstance().register(ModParticleTypes.ECTOPLASM_SPLASH, SplashParticle.Provider::new);
@@ -183,8 +201,29 @@ public class CalciumClient implements ClientModInitializer {
         BlockColorRegistry.register(
             List.of(ModBlockTintSources.sand()),
             Blocks.SAND,
+            Blocks.SUSPICIOUS_SAND,
             Blocks.SANDSTONE,
-            Blocks.SUSPICIOUS_SAND
+            Blocks.SMOOTH_SANDSTONE,
+            Blocks.SMOOTH_SANDSTONE_STAIRS,
+            Blocks.SMOOTH_SANDSTONE_SLAB,
+            ModBlocks.POLISHED_SANDSTONE_WALL,
+            Blocks.CUT_SANDSTONE,
+            ModBlocks.SANDSTONE_BRICK_STAIRS,
+            Blocks.CUT_SANDSTONE_SLAB,
+            ModBlocks.SANDSTONE_BRICK_WALL,
+            ModBlocks.CRACKED_SANDSTONE_BRICKS,
+            ModBlocks.CRACKED_SANDSTONE_BRICK_STAIRS,
+            ModBlocks.CRACKED_SANDSTONE_BRICK_SLAB,
+            ModBlocks.CRACKED_SANDSTONE_BRICK_WALL,
+            Blocks.CHISELED_SANDSTONE
+        );
+
+        BlockColorRegistry.register(
+            List.of(BlockTintSources.foliage()),
+            Blocks.SPRUCE_LEAVES,
+            ModBlocks.WILLOW_LEAVES,
+            Blocks.VINE,
+            Blocks.LILY_PAD
         );
 
     }

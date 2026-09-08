@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/boat",
+    "textures": {
+        "texture": "calcium:entity/boat/willow"
+    }
+}

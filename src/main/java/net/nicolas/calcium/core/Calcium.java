@@ -42,6 +42,7 @@ import net.nicolas.calcium.mixin.accessors.AxeItemAccessor;
 import net.nicolas.calcium.mixin.accessors.BlockStateBaseAccessor;
 import net.nicolas.calcium.mixin.accessors.CauldronDispatcherAccessor;
 import net.nicolas.calcium.mixin.accessors.CauldronInteractionsAccessor;
+import net.nicolas.calcium.mixin.accessors.FireBlockInvoker;
 import net.nicolas.calcium.mixin.accessors.PoiTypesAccessor;
 import net.nicolas.calcium.core.network.ModNetworking;
 import net.nicolas.calcium.core.recipe.ModRecipes;
@@ -153,17 +154,45 @@ public class Calcium implements ModInitializer {
 
         Map<Block, Block> strippables = new HashMap<>(AxeItemAccessor.calcium$getStrippables());
         strippables.put(ModBlocks.CHORUS_BLOCK, ModBlocks.STRIPPED_CHORUS_BLOCK);
+        strippables.put(ModBlocks.WILLOW_LOG, ModBlocks.STRIPPED_WILLOW_LOG);
+        strippables.put(ModBlocks.WILLOW_WOOD, ModBlocks.STRIPPED_WILLOW_WOOD);
         AxeItemAccessor.calcium$setStrippables(strippables);
 
+        FireBlockInvoker fireBlock = (FireBlockInvoker) (Object) Blocks.FIRE;
+        fireBlock.calcium$setFlammable(ModBlocks.CHORUS_BLOCK, 5, 5);
+        fireBlock.calcium$setFlammable(ModBlocks.STRIPPED_CHORUS_BLOCK, 5, 5);
+        fireBlock.calcium$setFlammable(ModBlocks.CHORUS_PLANKS, 5, 20);
+        fireBlock.calcium$setFlammable(ModBlocks.CHORUS_STAIRS, 5, 20);
+        fireBlock.calcium$setFlammable(ModBlocks.CHORUS_SLAB, 5, 20);
+        fireBlock.calcium$setFlammable(ModBlocks.CHORUS_FENCE, 5, 20);
+        fireBlock.calcium$setFlammable(ModBlocks.CHORUS_FENCE_GATE, 5, 20);
+        fireBlock.calcium$setFlammable(ModBlocks.CHORUS_SHELF, 30, 20);
+        fireBlock.calcium$setFlammable(ModBlocks.WILLOW_LOG, 5, 5);
+        fireBlock.calcium$setFlammable(ModBlocks.WILLOW_WOOD, 5, 5);
+        fireBlock.calcium$setFlammable(ModBlocks.STRIPPED_WILLOW_LOG, 5, 5);
+        fireBlock.calcium$setFlammable(ModBlocks.STRIPPED_WILLOW_WOOD, 5, 5);
+        fireBlock.calcium$setFlammable(ModBlocks.WILLOW_PLANKS, 5, 20);
+        fireBlock.calcium$setFlammable(ModBlocks.WILLOW_STAIRS, 5, 20);
+        fireBlock.calcium$setFlammable(ModBlocks.WILLOW_SLAB, 5, 20);
+        fireBlock.calcium$setFlammable(ModBlocks.WILLOW_FENCE, 5, 20);
+        fireBlock.calcium$setFlammable(ModBlocks.WILLOW_FENCE_GATE, 5, 20);
+        fireBlock.calcium$setFlammable(ModBlocks.WILLOW_LEAVES, 30, 60);
+        fireBlock.calcium$setFlammable(ModBlocks.WILLOW_SHELF, 30, 20);
+
         ((FabricBlockEntityType) BlockEntityTypes.SHELF).addValidBlock(ModBlocks.CHORUS_SHELF);
+        ((FabricBlockEntityType) BlockEntityTypes.SHELF).addValidBlock(ModBlocks.WILLOW_SHELF);
 
         FabricBlockEntityType signType = (FabricBlockEntityType) BlockEntityTypes.SIGN;
         signType.addValidBlock(ModBlocks.CHORUS_SIGN);
         signType.addValidBlock(ModBlocks.CHORUS_WALL_SIGN);
+        signType.addValidBlock(ModBlocks.WILLOW_SIGN);
+        signType.addValidBlock(ModBlocks.WILLOW_WALL_SIGN);
 
         FabricBlockEntityType hangingSignType = (FabricBlockEntityType) BlockEntityTypes.HANGING_SIGN;
         hangingSignType.addValidBlock(ModBlocks.CHORUS_HANGING_SIGN);
         hangingSignType.addValidBlock(ModBlocks.CHORUS_WALL_HANGING_SIGN);
+        hangingSignType.addValidBlock(ModBlocks.WILLOW_HANGING_SIGN);
+        hangingSignType.addValidBlock(ModBlocks.WILLOW_WALL_HANGING_SIGN);
 
     }
 

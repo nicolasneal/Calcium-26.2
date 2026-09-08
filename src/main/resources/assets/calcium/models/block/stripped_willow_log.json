@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "calcium:block/stripped_willow_log",
+    "end": "calcium:block/stripped_willow_log_top"
+  }
+}

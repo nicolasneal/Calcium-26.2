@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "calcium:block/willow_leaves",
+    "particle": "calcium:block/willow_leaves"
+  }
+}

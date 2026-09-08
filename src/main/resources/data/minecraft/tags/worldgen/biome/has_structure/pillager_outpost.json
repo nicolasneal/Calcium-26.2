@@ -3,6 +3,7 @@
   "values": [
     "minecraft:savanna",
     "minecraft:snowy_plains",
-    "minecraft:grove"
+    "minecraft:grove",
+    "calcium:tundra"
   ]
 }

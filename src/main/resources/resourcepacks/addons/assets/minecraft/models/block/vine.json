@@ -1,15 +1,14 @@
 {
 	"format_version": "1.21.11",
 	"credit": "Made with Blockbench",
-	"ambientocclusion": true,
 	"textures": {
 		"particle": "block/vine",
 		"vine": "block/vine"
 	},
 	"elements": [
 		{
-			"from": [0, 0, 0.1],
-			"to": [16, 16, 0.1],
+			"from": [0, 0, 0.5],
+			"to": [16, 16, 0.5],
 			"shade": false,
 			"faces": {
 				"north": {"uv": [16, 0, 0, 16], "texture": "#vine", "tintindex": 0},

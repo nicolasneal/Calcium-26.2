@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "calcium:chorus_shelf"
+    "calcium:chorus_shelf",
+    "calcium:willow_shelf"
   ]
 }

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "calcium:chorus_slab"
+    "calcium:chorus_slab",
+    "calcium:willow_slab"
   ]
 }

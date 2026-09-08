@@ -113,6 +113,8 @@
 
   // BLOCK NAMES
 
+  "block.minecraft.oak_button": "Wooden Button",
+  "block.minecraft.oak_pressure_plate": "Wooden Pressure Plate",
   "block.minecraft.amethyst_block": "Amethyst",
   "block.minecraft.bamboo_block": "Bamboo Block",
   "block.minecraft.bone_block": "Bone Pillar",

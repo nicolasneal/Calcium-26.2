@@ -6,24 +6,24 @@
 			"from": [5, 0, 0],
 			"to": [11, 14, 16],
 			"faces": {
-				"north": {"uv": [4, 5.5, 5.5, 9], "texture": "#wall", "cullface": "north"},
-				"east": {"uv": [0, 5.5, 4, 9], "texture": "#wall"},
-				"south": {"uv": [4, 5.5, 5.5, 9], "texture": "#wall", "cullface": "south"},
-				"west": {"uv": [0, 5.5, 4, 9], "texture": "#wall"},
-				"up": {"uv": [5.25, 0, 6.75, 4], "texture": "#wall"},
-				"down": {"uv": [4, 1.25, 8, 2.75], "rotation": 270, "texture": "#wall", "cullface": "down"}
+				"north": {"uv": [4, 5.5, 5.5, 9], "texture": "#wall", "cullface": "north", "tintindex": 0},
+				"east": {"uv": [0, 5.5, 4, 9], "texture": "#wall", "tintindex": 0},
+				"south": {"uv": [4, 5.5, 5.5, 9], "texture": "#wall", "cullface": "south", "tintindex": 0},
+				"west": {"uv": [0, 5.5, 4, 9], "texture": "#wall", "tintindex": 0},
+				"up": {"uv": [5.25, 0, 6.75, 4], "texture": "#wall", "tintindex": 0},
+				"down": {"uv": [4, 1.25, 8, 2.75], "rotation": 270, "texture": "#wall", "cullface": "down", "tintindex": 0}
 			}
 		},
 		{
 			"from": [0, 0, 5],
 			"to": [16, 14, 11],
 			"faces": {
-				"north": {"uv": [0, 5.5, 4, 9], "texture": "#wall"},
-				"east": {"uv": [4, 5.5, 5.5, 9], "texture": "#wall", "cullface": "east"},
-				"south": {"uv": [0, 5.5, 4, 9], "texture": "#wall"},
-				"west": {"uv": [4, 5.5, 5.5, 9], "texture": "#wall", "cullface": "west"},
-				"up": {"uv": [4, 1.25, 8, 2.75], "texture": "#wall"},
-				"down": {"uv": [5.25, 0, 6.75, 4], "rotation": 270, "texture": "#wall", "cullface": "down"}
+				"north": {"uv": [0, 5.5, 4, 9], "texture": "#wall", "tintindex": 0},
+				"east": {"uv": [4, 5.5, 5.5, 9], "texture": "#wall", "cullface": "east", "tintindex": 0},
+				"south": {"uv": [0, 5.5, 4, 9], "texture": "#wall", "tintindex": 0},
+				"west": {"uv": [4, 5.5, 5.5, 9], "texture": "#wall", "cullface": "west", "tintindex": 0},
+				"up": {"uv": [4, 1.25, 8, 2.75], "texture": "#wall", "tintindex": 0},
+				"down": {"uv": [5.25, 0, 6.75, 4], "rotation": 270, "texture": "#wall", "cullface": "down", "tintindex": 0}
 			}
 		}
 	]

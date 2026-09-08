@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "#calcium:willow_logs"
+  },
+  "pattern": [
+    "#"
+  ],
+  "result": {
+    "id": "calcium:willow_planks",
+    "count": 4
+  }
+}

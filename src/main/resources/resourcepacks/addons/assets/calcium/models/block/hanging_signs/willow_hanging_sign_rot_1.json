@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/hanging_signs/template_hanging_sign_rot_1",
+  "textures": {
+    "all": "calcium:block/hanging_signs/willow",
+    "particle": "calcium:block/stripped_willow_log"
+  }
+}

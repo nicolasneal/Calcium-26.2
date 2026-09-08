@@ -1,5 +1,5 @@
 {
-	"parent": "item/chest_boat",
+    "parent": "item/chest_boat",
     "textures": {
         "boat": "entity/boat/pale_oak"
     }

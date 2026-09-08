@@ -11,11 +11,15 @@ public class ModBiomes {
 
     public static final String MOD_ID = "calcium";
 
-    // OCEAN BIOMES
-
-    // Seagrass Meadow
-    // Kelp Forest
-    // Hadal Trench
+    public static final ResourceKey<Biome> TUNDRA = register("tundra");
+    public static final ResourceKey<Biome> BOG = register("bog");
+    public static final ResourceKey<Biome> WOODLAND = register("woodland");
+    public static final ResourceKey<Biome> PRAIRIE = register("prairie");
+    public static final ResourceKey<Biome> MESA = register("mesa");
+    public static final ResourceKey<Biome> OASIS = register("oasis");
+    public static final ResourceKey<Biome> DUNES = register("dunes");
+    public static final ResourceKey<Biome> BLASTED_DUNES = register("blasted_dunes");
+    public static final ResourceKey<Biome> DESERT_MOUNTAINS = register("desert_mountains");
 
     private static ResourceKey<Biome> register(final String name) {
         return ResourceKey.create(Registries.BIOME, Identifier.fromNamespaceAndPath(MOD_ID, name));

@@ -33,6 +33,8 @@ public class ModCompostables {
         ComposterBlock.COMPOSTABLES.put(ModBlocks.WISP.asItem(), 0.30f);
         ComposterBlock.COMPOSTABLES.put(ModBlocks.FLOWERING_WISP.asItem(), 0.50f);
         ComposterBlock.COMPOSTABLES.put(ModBlocks.CELESTIAL_VINES_HEAD.asItem(), 0.50f);
+        ComposterBlock.COMPOSTABLES.put(ModBlocks.WILLOW_SAPLING.asItem(), 0.30f);
+        ComposterBlock.COMPOSTABLES.put(ModBlocks.WILLOW_LEAVES.asItem(), 0.30f);
 
         // RESOURCES
 

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "calcium:chorus_trapdoor"
+    "calcium:chorus_trapdoor",
+    "calcium:willow_trapdoor"
   ]
 }

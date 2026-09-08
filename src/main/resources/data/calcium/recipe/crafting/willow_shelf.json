@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "calcium:stripped_willow_log"
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "id": "calcium:willow_shelf",
+    "count": 1
+  }
+}

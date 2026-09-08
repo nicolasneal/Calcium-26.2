@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "group": "chest_boat",
+  "ingredients": [
+    "minecraft:chest",
+    "calcium:chorus_boat"
+  ],
+  "result": {
+    "id": "calcium:chorus_chest_boat",
+    "count": 1
+  }
+}

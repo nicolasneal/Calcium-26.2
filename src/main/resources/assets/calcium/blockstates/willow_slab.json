@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "calcium:block/willow_slab"
+    },
+    "type=double": {
+      "model": "calcium:block/willow_planks"
+    },
+    "type=top": {
+      "model": "calcium:block/willow_slab_top"
+    }
+  }
+}

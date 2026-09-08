@@ -3,6 +3,7 @@ package net.nicolas.calcium.block;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Registry;
 import net.minecraft.core.cauldron.CauldronInteraction;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -18,6 +19,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -32,6 +34,7 @@ import net.nicolas.calcium.block.entity.OvenBlockEntity;
 import net.nicolas.calcium.block.entity.ViewfinderBlockEntity;
 import net.nicolas.calcium.sound.ModSoundGroups;
 
+import java.util.Optional;
 import java.util.function.Function;
 
     // This class stores the mod's block registrations.
@@ -44,6 +47,9 @@ public class ModBlocks {
 
     public static final BlockSetType CHORUS_BLOCK_SET_TYPE = BlockSetTypeBuilder.copyOf(BlockSetType.OAK).soundType(ModSoundGroups.CHORUS_PLANKS).doorOpenSound(ModSoundGroups.CHORUS_DOOR_OPEN).doorCloseSound(ModSoundGroups.CHORUS_DOOR_CLOSE).trapdoorOpenSound(ModSoundGroups.CHORUS_TRAPDOOR_OPEN).trapdoorCloseSound(ModSoundGroups.CHORUS_TRAPDOOR_CLOSE).register(Identifier.fromNamespaceAndPath(MOD_ID, "chorus"));
     public static final WoodType CHORUS_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.OAK).soundType(ModSoundGroups.CHORUS_PLANKS).hangingSignSoundType(ModSoundGroups.CHORUS_HANGING_SIGN).fenceGateOpenSound(ModSoundGroups.CHORUS_FENCE_GATE_OPEN).fenceGateCloseSound(ModSoundGroups.CHORUS_FENCE_GATE_OPEN).register(Identifier.fromNamespaceAndPath(MOD_ID, "chorus"), CHORUS_BLOCK_SET_TYPE);
+    public static final BlockSetType WILLOW_BLOCK_SET_TYPE = BlockSetTypeBuilder.copyOf(BlockSetType.OAK).register(Identifier.fromNamespaceAndPath(MOD_ID, "willow"));
+    public static final WoodType WILLOW_WOOD_TYPE = WoodTypeBuilder.copyOf(WoodType.OAK).register(Identifier.fromNamespaceAndPath(MOD_ID, "willow"), WILLOW_BLOCK_SET_TYPE);
+    public static final TreeGrower WILLOW_TREE_GROWER = new TreeGrower("willow", Optional.empty(), Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, Identifier.fromNamespaceAndPath(MOD_ID, "willow"))), Optional.empty());
     public static final CauldronInteraction.Dispatcher ECTOPLASM_CAULDRON_BEHAVIOR = new CauldronInteraction.Dispatcher();
 
     // NATURAL BLOCKS (12, 4)
@@ -68,6 +74,7 @@ public class ModBlocks {
 
     // PLANT BLOCKS (29, 15)
 
+    public static final Block WILLOW_SAPLING = register("willow_sapling", settings -> new SaplingBlock(WILLOW_TREE_GROWER, settings), BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).noCollision().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY), true);
     public static final Block CLOVERS = register("clovers", FlowerBedBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollision().instabreak().sound(SoundType.PINK_PETALS).pushReaction(PushReaction.DESTROY).ignitedByLava(), true);
     public static final Block BARLEY = register("barley", DoublePlantBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollision().instabreak().sound(SoundType.CROP).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY).ignitedByLava(), true);
     public static final Block SEA_OATS = register("sea_oats", TallDryPlantBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.SAND).replaceable().noCollision().instabreak().sound(SoundType.CROP).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY).ignitedByLava(), true);
@@ -108,6 +115,7 @@ public class ModBlocks {
     public static final Block PALLID_MAGNIA_SPROUT = register("pallid_magnia_sprout", MagniaSproutBlock::new, BlockBehaviour.Properties.of().sound(ModSoundGroups.PALLID_MAGNIA).mapColor(MapColor.WOOL).requiresCorrectToolForDrops().pushReaction(PushReaction.DESTROY).strength(2.0F, 6.0F), true);
     public static final Block UMBRAL_MAGNIA_SPROUT = register("umbral_magnia_sprout", MagniaSproutBlock::new, BlockBehaviour.Properties.of().sound(ModSoundGroups.UMBRAL_MAGNIA).mapColor(MapColor.COLOR_GRAY).requiresCorrectToolForDrops().pushReaction(PushReaction.DESTROY).strength(2.0F, 6.0F),  true);
 
+    public static final Block POTTED_WILLOW_SAPLING = register("potted_willow_sapling", settings -> new FlowerPotBlock(WILLOW_SAPLING, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT), false);
     public static final Block POTTED_PONTEDERIA = register("potted_pontederia", settings -> new FlowerPotBlock(PONTEDERIA, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT), false);
     public static final Block POTTED_HIBISCUS = register("potted_hibiscus", settings -> new FlowerPotBlock(HIBISCUS, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT), false);
     public static final Block POTTED_POKER = register("potted_poker", settings -> new FlowerPotBlock(POKER, settings), BlockBehaviour.Properties.ofFullCopy(Blocks.FLOWER_POT), false);
@@ -123,6 +131,24 @@ public class ModBlocks {
     // Potted Wisp
 
     // WOOD BLOCKS (12, 2)
+
+    public static final Block WILLOW_PLANKS = register("willow_planks", Block::new, BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava(), true);
+    public static final Block WILLOW_STAIRS = register("willow_stairs", settings -> new StairBlock(ModBlocks.WILLOW_PLANKS.defaultBlockState(), settings), BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava(), true);
+    public static final Block WILLOW_SLAB = register("willow_slab", SlabBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava(), true);
+    public static final Block WILLOW_FENCE = register("willow_fence", FenceBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava().noOcclusion(), true);
+    public static final Block WILLOW_FENCE_GATE = register("willow_fence_gate", settings -> new FenceGateBlock(WILLOW_WOOD_TYPE, settings), BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava().noOcclusion(), true);
+    public static final Block WILLOW_DOOR = register("willow_door", settings -> new DoorBlock(WILLOW_BLOCK_SET_TYPE, settings), BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(3.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava().noOcclusion(), true);
+    public static final Block WILLOW_TRAPDOOR = register("willow_trapdoor", settings -> new TrapDoorBlock(WILLOW_BLOCK_SET_TYPE, settings), BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(3.0F, 3.0F).sound(SoundType.WOOD).ignitedByLava().noOcclusion(), true);
+    public static final Block WILLOW_LEAVES = register("willow_leaves", settings -> new TintedParticleLeavesBlock(0.01F, settings), BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().ignitedByLava().pushReaction(PushReaction.DESTROY), true);
+    public static final Block WILLOW_LOG = register("willow_log", RotatedPillarBlock::new, BlockBehaviour.Properties.of().mapColor(state -> state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? MapColor.WOOD : MapColor.PODZOL).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava(), true);
+    public static final Block WILLOW_WOOD = register("willow_wood", RotatedPillarBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava(), true);
+    public static final Block STRIPPED_WILLOW_LOG = register("stripped_willow_log", RotatedPillarBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava(), true);
+    public static final Block STRIPPED_WILLOW_WOOD = register("stripped_willow_wood", RotatedPillarBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava(), true);
+    public static final Block WILLOW_SHELF = register("willow_shelf", ShelfBlock::new, BlockBehaviour.Properties.of().sound(SoundType.SHELF).mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).noOcclusion(), true);
+    public static final Block WILLOW_SIGN = register("willow_sign", settings -> new StandingSignBlock(WILLOW_WOOD_TYPE, settings), BlockBehaviour.Properties.of().sound(SoundType.WOOD).mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).noCollision().strength(1.0F, 1.0F).pushReaction(PushReaction.DESTROY), false);
+    public static final Block WILLOW_WALL_SIGN = register("willow_wall_sign", settings -> new WallSignBlock(WILLOW_WOOD_TYPE, settings), BlockBehaviour.Properties.of().sound(SoundType.WOOD).mapColor(MapColor.WOOD).instrument(NoteBlockInstrument.BASS).noCollision().strength(1.0F, 1.0F).pushReaction(PushReaction.DESTROY), false);
+    public static final Block WILLOW_HANGING_SIGN = register("willow_hanging_sign", settings -> new CeilingHangingSignBlock(WILLOW_WOOD_TYPE, settings), BlockBehaviour.Properties.of().sound(SoundType.WOOD).mapColor(MapColor.WOOD).noCollision().strength(1.0F, 1.0F).forceSolidOn().pushReaction(PushReaction.DESTROY), false);
+    public static final Block WILLOW_WALL_HANGING_SIGN = register("willow_wall_hanging_sign", settings -> new WallHangingSignBlock(WILLOW_WOOD_TYPE, settings), BlockBehaviour.Properties.of().sound(SoundType.WOOD).mapColor(MapColor.WOOD).noCollision().strength(1.0F, 1.0F).forceSolidOn().pushReaction(PushReaction.DESTROY), false);
 
     public static final Block CHORUS_BLOCK = register("chorus_block", RotatedPillarBlock::new, BlockBehaviour.Properties.of().sound(ModSoundGroups.CHORUS_PLANKS).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).strength(2.0F, 2.0F), true);
     public static final Block STRIPPED_CHORUS_BLOCK = register("stripped_chorus_block", RotatedPillarBlock::new, BlockBehaviour.Properties.of().sound(ModSoundGroups.CHORUS_PLANKS).mapColor(MapColor.COLOR_MAGENTA).instrument(NoteBlockInstrument.BASS).strength(2.0F, 2.0F), true);
