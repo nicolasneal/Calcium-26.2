@@ -19,9 +19,9 @@
   "effects": {
     "water_color": "#759EA5",
     "grass_color": "#E9D7AA",
-    "dirt_color": "#CFA87C",
+    "dirt_color": "#D7B68B",
     "sand_color": "#FAF4CB",
-    "foliage_color": "#AEA42A",
+    "foliage_color": "#A39A5E",
     "dry_foliage_color": "#A38046"
   },
   "carvers": [

@@ -15,12 +15,12 @@ import java.util.function.Consumer;
 
 public final class CalciumOverworldBiomeBuilder {
 
-   private static final float LOW_START = 0.26666668F;
+   private static final float LOW_START = 0.2667F;
    public static final float HIGH_START = 0.4F;
-   private static final float HIGH_END = 0.93333334F;
+   private static final float HIGH_END = 0.9333F;
    private static final float PEAK_SIZE = 0.1F;
-   public static final float PEAK_START = 0.56666666F;
-   private static final float PEAK_END = 0.7666667F;
+   public static final float PEAK_START = 0.5667F;
+   private static final float PEAK_END = 0.7667F;
    public static final float NEAR_INLAND_START = -0.11F;
    public static final float MID_INLAND_START = 0.03F;
    public static final float FAR_INLAND_START = 0.3F;
@@ -81,8 +81,7 @@ public final class CalciumOverworldBiomeBuilder {
 
    private final Climate.Parameter[] oceanTemperatures = new Climate.Parameter[]{
       Climate.Parameter.span(this.temperatures[FRIGID], this.temperatures[BITTER]),
-      Climate.Parameter.span(this.temperatures[COLD], this.temperatures[COOL]),
-      this.temperatures[CLEMENT],
+      Climate.Parameter.span(this.temperatures[COLD], this.temperatures[COOL]), this.temperatures[CLEMENT],
       Climate.Parameter.span(this.temperatures[WARM], this.temperatures[HOT]),
       Climate.Parameter.span(this.temperatures[ARID], this.temperatures[TORRID])
    };
@@ -94,31 +93,31 @@ public final class CalciumOverworldBiomeBuilder {
    private final ResourceKey<Biome>[][] MIDDLE_BIOMES = new ResourceKey[][]{
       {ModBiomes.TUNDRA, ModBiomes.TUNDRA, ModBiomes.TUNDRA, ModBiomes.TUNDRA, ModBiomes.TUNDRA},
       {Biomes.SNOWY_PLAINS, Biomes.SNOWY_PLAINS, Biomes.SNOWY_PLAINS, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA},
-      {Biomes.WINDSWEPT_FOREST, Biomes.WINDSWEPT_FOREST, Biomes.TAIGA, Biomes.TAIGA, ModBiomes.BOG},
-      {Biomes.PLAINS, Biomes.PLAINS, Biomes.FOREST, Biomes.DARK_FOREST, Biomes.SWAMP},
-      {Biomes.BIRCH_FOREST, Biomes.PLAINS, Biomes.PLAINS, Biomes.FOREST, Biomes.SWAMP},
-      {ModBiomes.PRAIRIE, ModBiomes.PRAIRIE, ModBiomes.WOODLAND, ModBiomes.WOODLAND, Biomes.SWAMP},
-      {Biomes.SAVANNA, Biomes.SAVANNA, Biomes.SAVANNA, Biomes.JUNGLE, Biomes.MANGROVE_SWAMP},
+      {Biomes.TAIGA, Biomes.TAIGA, Biomes.TAIGA, Biomes.TAIGA, Biomes.TAIGA},
+      {ModBiomes.AUTUMNAL_FOREST, Biomes.PLAINS, Biomes.WINDSWEPT_FOREST, Biomes.TAIGA, Biomes.TAIGA},
+      {Biomes.BIRCH_FOREST, Biomes.PLAINS, Biomes.PLAINS, Biomes.FOREST, Biomes.DARK_FOREST},
+      {ModBiomes.PRAIRIE, ModBiomes.PRAIRIE, ModBiomes.WOODLAND, ModBiomes.WOODLAND, ModBiomes.WOODLAND},
+      {Biomes.SAVANNA, Biomes.SAVANNA, Biomes.SAVANNA, Biomes.SPARSE_JUNGLE, Biomes.JUNGLE},
       {Biomes.DESERT, Biomes.DESERT, Biomes.DESERT, ModBiomes.OASIS, ModBiomes.OASIS},
       {ModBiomes.BLASTED_DUNES, ModBiomes.BLASTED_DUNES, ModBiomes.DUNES, ModBiomes.DUNES, ModBiomes.DUNES}
    };
    private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
       {null, null, null, null, null},
       {null, null, null, null, null},
-      {Biomes.OLD_GROWTH_PINE_TAIGA, Biomes.OLD_GROWTH_PINE_TAIGA, Biomes.OLD_GROWTH_PINE_TAIGA, Biomes.OLD_GROWTH_PINE_TAIGA, null},
-      {null, null, null, Biomes.PALE_GARDEN, null},
-      {Biomes.OLD_GROWTH_BIRCH_FOREST, Biomes.SUNFLOWER_PLAINS, Biomes.SUNFLOWER_PLAINS, null, null},
       {null, null, null, null, null},
-      {null, null, Biomes.SPARSE_JUNGLE, Biomes.BAMBOO_JUNGLE, null},
+      {null, null, null, Biomes.OLD_GROWTH_SPRUCE_TAIGA, Biomes.OLD_GROWTH_SPRUCE_TAIGA},
+      {Biomes.OLD_GROWTH_BIRCH_FOREST, Biomes.SUNFLOWER_PLAINS, null, null, Biomes.PALE_GARDEN},
+      {null, null, null, null, null},
+      {null, null, null, null, Biomes.BAMBOO_JUNGLE},
       {null, null, null, null, null},
       {null, null, null, null, null}
    };
    private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{
       {ModBiomes.TUNDRA, ModBiomes.TUNDRA, ModBiomes.TUNDRA, ModBiomes.TUNDRA, ModBiomes.TUNDRA},
       {Biomes.SNOWY_PLAINS, Biomes.SNOWY_PLAINS, Biomes.SNOWY_PLAINS, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA},
-      {Biomes.WINDSWEPT_HILLS, Biomes.WINDSWEPT_HILLS, Biomes.TAIGA, Biomes.TAIGA, Biomes.OLD_GROWTH_SPRUCE_TAIGA},
+      {Biomes.WINDSWEPT_HILLS, Biomes.WINDSWEPT_HILLS, Biomes.WINDSWEPT_HILLS, Biomes.WINDSWEPT_HILLS, Biomes.WINDSWEPT_HILLS},
+      {Biomes.WINDSWEPT_HILLS, Biomes.WINDSWEPT_HILLS, Biomes.WINDSWEPT_HILLS, Biomes.WINDSWEPT_HILLS, Biomes.WINDSWEPT_HILLS},
       {Biomes.MEADOW, Biomes.MEADOW, Biomes.MEADOW, Biomes.MEADOW, Biomes.MEADOW},
-      {Biomes.MEADOW, Biomes.MEADOW, Biomes.FOREST, Biomes.FOREST, Biomes.FOREST},
       {ModBiomes.PRAIRIE, ModBiomes.PRAIRIE, ModBiomes.WOODLAND, ModBiomes.WOODLAND, ModBiomes.WOODLAND},
       {Biomes.WINDSWEPT_SAVANNA, Biomes.WINDSWEPT_SAVANNA, Biomes.WINDSWEPT_SAVANNA, Biomes.SAVANNA_PLATEAU, Biomes.SAVANNA_PLATEAU},
       {ModBiomes.MESA, ModBiomes.MESA, Biomes.BADLANDS, Biomes.BADLANDS, Biomes.WOODED_BADLANDS},
@@ -127,24 +126,13 @@ public final class CalciumOverworldBiomeBuilder {
    private final ResourceKey<Biome>[][] PLATEAU_BIOMES_VARIANT = new ResourceKey[][]{
       {null, null, null, null, null},
       {Biomes.ICE_SPIKES, null, null, null, null},
-      {Biomes.WINDSWEPT_GRAVELLY_HILLS, null, null, null, null},
-      {null, null, null, null, null},
+      {Biomes.WINDSWEPT_GRAVELLY_HILLS, Biomes.WINDSWEPT_GRAVELLY_HILLS, Biomes.GROVE, Biomes.GROVE, Biomes.GROVE},
+      {null, null, null, Biomes.GROVE, Biomes.GROVE},
       {Biomes.CHERRY_GROVE, Biomes.CHERRY_GROVE, Biomes.CHERRY_GROVE, Biomes.CHERRY_GROVE, Biomes.CHERRY_GROVE},
       {null, null, null, null, null},
       {null, null, null, null, null},
       {null, null, Biomes.ERODED_BADLANDS, Biomes.ERODED_BADLANDS, Biomes.ERODED_BADLANDS},
       {ModBiomes.BLASTED_DUNES, ModBiomes.BLASTED_DUNES, null, null, null}
-   };
-   private final ResourceKey<Biome>[][] SHATTERED_BIOMES = new ResourceKey[][]{
-      {null, null, null, null, null},
-      {null, null, null, null, null},
-      {null, null, null, null, null},
-      {null, null, null, null, null},
-      {null, null, null, null, null},
-      {null, null, null, null, null},
-      {null, null, null, null, null},
-      {null, null, null, null, null},
-      {null, null, null, null, null}
    };
    private final ResourceKey<Biome>[] PEAK_BIOMES = new ResourceKey[]{
       Biomes.FROZEN_PEAKS,
@@ -188,19 +176,19 @@ public final class CalciumOverworldBiomeBuilder {
 
    private void addInlandBiomes(final Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> biomes) {
 
-      this.addMidSlice(biomes, Climate.Parameter.span(-1.0F, -0.93333334F));
-      this.addHighSlice(biomes, Climate.Parameter.span(-0.93333334F, -0.7666667F));
-      this.addPeaks(biomes, Climate.Parameter.span(-0.7666667F, -0.56666666F));
-      this.addHighSlice(biomes, Climate.Parameter.span(-0.56666666F, -0.4F));
-      this.addMidSlice(biomes, Climate.Parameter.span(-0.4F, -0.26666668F));
-      this.addLowSlice(biomes, Climate.Parameter.span(-0.26666668F, -0.05F));
+      this.addMidSlice(biomes, Climate.Parameter.span(-1.0F, -0.9333F));
+      this.addHighSlice(biomes, Climate.Parameter.span(-0.9333F, -0.7667F));
+      this.addPeaks(biomes, Climate.Parameter.span(-0.7667F, -0.5667F));
+      this.addHighSlice(biomes, Climate.Parameter.span(-0.5667F, -0.4F));
+      this.addMidSlice(biomes, Climate.Parameter.span(-0.4F, -0.2667F));
+      this.addLowSlice(biomes, Climate.Parameter.span(-0.2667F, -0.05F));
       this.addLowSlice(biomes, Climate.Parameter.span(-0.05F, 0.05F));
-      this.addLowSlice(biomes, Climate.Parameter.span(0.05F, 0.26666668F));
-      this.addMidSlice(biomes, Climate.Parameter.span(0.26666668F, 0.4F));
-      this.addHighSlice(biomes, Climate.Parameter.span(0.4F, 0.56666666F));
-      this.addPeaks(biomes, Climate.Parameter.span(0.56666666F, 0.7666667F));
-      this.addHighSlice(biomes, Climate.Parameter.span(0.7666667F, 0.93333334F));
-      this.addMidSlice(biomes, Climate.Parameter.span(0.93333334F, 1.0F));
+      this.addLowSlice(biomes, Climate.Parameter.span(0.05F, 0.2667F));
+      this.addMidSlice(biomes, Climate.Parameter.span(0.2667F, 0.4F));
+      this.addHighSlice(biomes, Climate.Parameter.span(0.4F, 0.5667F));
+      this.addPeaks(biomes, Climate.Parameter.span(0.5667F, 0.7667F));
+      this.addHighSlice(biomes, Climate.Parameter.span(0.7667F, 0.9333F));
+      this.addMidSlice(biomes, Climate.Parameter.span(0.9333F, 1.0F));
 
    }
 
@@ -218,7 +206,6 @@ public final class CalciumOverworldBiomeBuilder {
             ResourceKey<Biome> middleBiomeOrBadlandsIfHot = this.pickMiddleBiomeOrBadlandsIfHot(temperatureIndex, humidityIndex, weirdness);
             ResourceKey<Biome> middleBiomeOrBadlandsIfHotOrSlopeIfCold = this.pickMiddleBiomeOrBadlandsIfHotOrSlopeIfCold(temperatureIndex, humidityIndex, weirdness);
             ResourceKey<Biome> plateauBiome = this.pickPlateauBiome(temperatureIndex, humidityIndex, weirdness);
-            ResourceKey<Biome> shatteredBiome = this.pickShatteredBiome(temperatureIndex, humidityIndex, weirdness);
             ResourceKey<Biome> peakBiome = this.pickPeakBiome(temperatureIndex, humidityIndex, weirdness);
 
             this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.coastContinentalness, this.farInlandContinentalness), this.erosions[0], weirdness, 0.0F, peakBiome);
@@ -229,8 +216,7 @@ public final class CalciumOverworldBiomeBuilder {
             this.addSurfaceBiome(biomes, temperature, humidity, this.midInlandContinentalness, this.erosions[3], weirdness, 0.0F, middleBiomeOrBadlandsIfHot);
             this.addSurfaceBiome(biomes, temperature, humidity, this.farInlandContinentalness, this.erosions[3], weirdness, 0.0F, plateauBiome);
             this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.coastContinentalness, this.farInlandContinentalness), this.erosions[4], weirdness, 0.0F, middleBiome);
-            this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.coastContinentalness, this.nearInlandContinentalness), this.erosions[5], weirdness, 0.0F, shatteredBiome);
-            this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.midInlandContinentalness, this.farInlandContinentalness), this.erosions[5], weirdness, 0.0F, shatteredBiome);
+            this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.coastContinentalness, this.farInlandContinentalness), this.erosions[5], weirdness, 0.0F, middleBiome);
             this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.coastContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, middleBiome);
 
          }
@@ -253,7 +239,6 @@ public final class CalciumOverworldBiomeBuilder {
             ResourceKey<Biome> middleBiomeOrBadlandsIfHot = this.pickMiddleBiomeOrBadlandsIfHot(temperatureIndex, humidityIndex, weirdness);
             ResourceKey<Biome> middleBiomeOrBadlandsIfHotOrSlopeIfCold = this.pickMiddleBiomeOrBadlandsIfHotOrSlopeIfCold(temperatureIndex, humidityIndex, weirdness);
             ResourceKey<Biome> plateauBiome = this.pickPlateauBiome(temperatureIndex, humidityIndex, weirdness);
-            ResourceKey<Biome> shatteredBiome = this.pickShatteredBiome(temperatureIndex, humidityIndex, weirdness);
             ResourceKey<Biome> slopeBiome = this.pickSlopeBiome(temperatureIndex, humidityIndex, weirdness);
             ResourceKey<Biome> peakBiome = this.pickPeakBiome(temperatureIndex, humidityIndex, weirdness);
 
@@ -267,8 +252,7 @@ public final class CalciumOverworldBiomeBuilder {
             this.addSurfaceBiome(biomes, temperature, humidity, this.midInlandContinentalness, this.erosions[3], weirdness, 0.0F, middleBiomeOrBadlandsIfHot);
             this.addSurfaceBiome(biomes, temperature, humidity, this.farInlandContinentalness, this.erosions[3], weirdness, 0.0F, plateauBiome);
             this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.coastContinentalness, this.farInlandContinentalness), this.erosions[4], weirdness, 0.0F, middleBiome);
-            this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.coastContinentalness, this.nearInlandContinentalness), this.erosions[5], weirdness, 0.0F, middleBiome);
-            this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.midInlandContinentalness, this.farInlandContinentalness), this.erosions[5], weirdness, 0.0F, shatteredBiome);
+            this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.coastContinentalness, this.farInlandContinentalness), this.erosions[5], weirdness, 0.0F, middleBiome);
             this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.coastContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, middleBiome);
 
          }
@@ -291,10 +275,8 @@ public final class CalciumOverworldBiomeBuilder {
             ResourceKey<Biome> middleBiome = this.pickMiddleBiome(temperatureIndex, humidityIndex, weirdness);
             ResourceKey<Biome> middleBiomeOrBadlandsIfHot = this.pickMiddleBiomeOrBadlandsIfHot(temperatureIndex, humidityIndex, weirdness);
             ResourceKey<Biome> middleBiomeOrBadlandsIfHotOrSlopeIfCold = this.pickMiddleBiomeOrBadlandsIfHotOrSlopeIfCold(temperatureIndex, humidityIndex, weirdness);
-            ResourceKey<Biome> shatteredBiome = this.pickShatteredBiome(temperatureIndex, humidityIndex, weirdness);
             ResourceKey<Biome> plateauBiome = this.pickPlateauBiome(temperatureIndex, humidityIndex, weirdness);
             ResourceKey<Biome> beachBiome = this.pickBeachBiome(temperatureIndex, humidityIndex);
-            ResourceKey<Biome> shatteredCoastBiome = this.pickShatteredCoastBiome(temperatureIndex, humidityIndex, weirdness);
             ResourceKey<Biome> slopeBiome = this.pickSlopeBiome(temperatureIndex, humidityIndex, weirdness);
 
             this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[0], weirdness, 0.0F, slopeBiome);
@@ -307,15 +289,11 @@ public final class CalciumOverworldBiomeBuilder {
             this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.midInlandContinentalness, this.farInlandContinentalness), this.erosions[3], weirdness, 0.0F, middleBiomeOrBadlandsIfHot);
 
             if (weirdness.max() < 0L) {
-               this.addSurfaceBiome(biomes, temperature, humidity, this.coastContinentalness, this.erosions[4], weirdness, 0.0F, beachBiome);
-               this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[4], weirdness, 0.0F, middleBiome);
+               this.addSurfaceBiome(biomes, temperature, humidity, this.coastContinentalness, Climate.Parameter.span(this.erosions[4], this.erosions[5]), weirdness, 0.0F, beachBiome);
+               this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), Climate.Parameter.span(this.erosions[4], this.erosions[5]), weirdness, 0.0F, middleBiome);
             } else {
-               this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.coastContinentalness, this.farInlandContinentalness), this.erosions[4], weirdness, 0.0F, middleBiome);
+               this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.coastContinentalness, this.farInlandContinentalness), Climate.Parameter.span(this.erosions[4], this.erosions[5]), weirdness, 0.0F, middleBiome);
             }
-
-            this.addSurfaceBiome(biomes, temperature, humidity, this.coastContinentalness, this.erosions[5], weirdness, 0.0F, shatteredCoastBiome);
-            this.addSurfaceBiome(biomes, temperature, humidity, this.nearInlandContinentalness, this.erosions[5], weirdness, 0.0F, middleBiome);
-            this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.midInlandContinentalness, this.farInlandContinentalness), this.erosions[5], weirdness, 0.0F, shatteredBiome);
 
             if (weirdness.max() < 0L) {
                this.addSurfaceBiome(biomes, temperature, humidity, this.coastContinentalness, this.erosions[6], weirdness, 0.0F, beachBiome);
@@ -349,18 +327,14 @@ public final class CalciumOverworldBiomeBuilder {
             ResourceKey<Biome> middleBiomeOrBadlandsIfHot = this.pickMiddleBiomeOrBadlandsIfHot(temperatureIndex, humidityIndex, weirdness);
             ResourceKey<Biome> middleBiomeOrBadlandsIfHotOrSlopeIfCold = this.pickMiddleBiomeOrBadlandsIfHotOrSlopeIfCold(temperatureIndex, humidityIndex, weirdness);
             ResourceKey<Biome> beachBiome = this.pickBeachBiome(temperatureIndex, humidityIndex);
-            ResourceKey<Biome> shatteredCoastBiome = this.pickShatteredCoastBiome(temperatureIndex, humidityIndex, weirdness);
 
             this.addSurfaceBiome(biomes, temperature, humidity, this.nearInlandContinentalness, Climate.Parameter.span(this.erosions[0], this.erosions[1]), weirdness, 0.0F, middleBiomeOrBadlandsIfHot);
             this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.midInlandContinentalness, this.farInlandContinentalness), Climate.Parameter.span(this.erosions[0], this.erosions[1]), weirdness, 0.0F, middleBiomeOrBadlandsIfHotOrSlopeIfCold);
             this.addSurfaceBiome(biomes, temperature, humidity, this.nearInlandContinentalness, Climate.Parameter.span(this.erosions[2], this.erosions[3]), weirdness, 0.0F, middleBiome);
             this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.midInlandContinentalness, this.farInlandContinentalness), Climate.Parameter.span(this.erosions[2], this.erosions[3]), weirdness, 0.0F, middleBiomeOrBadlandsIfHot);
-            this.addSurfaceBiome(biomes, temperature, humidity, this.coastContinentalness, Climate.Parameter.span(this.erosions[3], this.erosions[4]), weirdness, 0.0F, beachBiome);
+            this.addSurfaceBiome(biomes, temperature, humidity, this.coastContinentalness, Climate.Parameter.span(this.erosions[3], this.erosions[6]), weirdness, 0.0F, beachBiome);
             this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[4], weirdness, 0.0F, middleBiome);
-            this.addSurfaceBiome(biomes, temperature, humidity, this.coastContinentalness, this.erosions[5], weirdness, 0.0F, shatteredCoastBiome);
-            this.addSurfaceBiome(biomes, temperature, humidity, this.nearInlandContinentalness, this.erosions[5], weirdness, 0.0F, middleBiome);
-            this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.midInlandContinentalness, this.farInlandContinentalness), this.erosions[5], weirdness, 0.0F, middleBiome);
-            this.addSurfaceBiome(biomes, temperature, humidity, this.coastContinentalness, this.erosions[6], weirdness, 0.0F, beachBiome);
+            this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[5], weirdness, 0.0F, middleBiome);
 
             if (temperatureIndex == FRIGID) {
                this.addSurfaceBiome(biomes, temperature, humidity, Climate.Parameter.span(this.nearInlandContinentalness, this.farInlandContinentalness), this.erosions[6], weirdness, 0.0F, middleBiome);
@@ -403,12 +377,6 @@ public final class CalciumOverworldBiomeBuilder {
          : this.pickMiddleBiomeOrBadlandsIfHot(temperatureIndex, humidityIndex, weirdness);
    }
 
-   private ResourceKey<Biome> pickShatteredCoastBiome(final int temperatureIndex, final int humidityIndex, final Climate.Parameter weirdness) {
-      return weirdness.max() >= 0L
-         ? this.pickMiddleBiome(temperatureIndex, humidityIndex, weirdness)
-         : this.pickBeachBiome(temperatureIndex, humidityIndex);
-   }
-
    private ResourceKey<Biome> pickBeachBiome(final int temperatureIndex, final int humidityIndex) {
       if (temperatureIndex == FRIGID || temperatureIndex == BITTER) {
          return Biomes.SNOWY_BEACH;
@@ -439,11 +407,6 @@ public final class CalciumOverworldBiomeBuilder {
 
    private ResourceKey<Biome> pickSlopeBiome(final int temperatureIndex, final int humidityIndex, final Climate.Parameter weirdness) {
       return this.pickPlateauBiome(temperatureIndex, humidityIndex, weirdness);
-   }
-
-   private ResourceKey<Biome> pickShatteredBiome(final int temperatureIndex, final int humidityIndex, final Climate.Parameter weirdness) {
-      ResourceKey<Biome> biome = this.SHATTERED_BIOMES[temperatureIndex][humidityIndex];
-      return biome == null ? this.pickMiddleBiome(temperatureIndex, humidityIndex, weirdness) : biome;
    }
 
    private void addSurfaceBiome(
@@ -494,14 +457,14 @@ public final class CalciumOverworldBiomeBuilder {
       if (peaksAndValleys < NoiseRouterData.peaksAndValleys(0.05F)) {
          return "Valley";
       }
-      else if (peaksAndValleys < NoiseRouterData.peaksAndValleys(0.26666668F)) {
+      else if (peaksAndValleys < NoiseRouterData.peaksAndValleys(0.2667F)) {
          return "Low";
       }
       else if (peaksAndValleys < NoiseRouterData.peaksAndValleys(0.4F)) {
          return "Mid";
       }
       else {
-         return peaksAndValleys < NoiseRouterData.peaksAndValleys(0.56666666F) ? "High" : "Peak";
+         return peaksAndValleys < NoiseRouterData.peaksAndValleys(0.5667F) ? "High" : "Peak";
       }
    }
 
@@ -562,7 +525,6 @@ public final class CalciumOverworldBiomeBuilder {
    }
 
    @VisibleForDebug public Climate.Parameter[] getContinentalnessThresholds() {
-
       return new Climate.Parameter[] {
          this.deepOceanContinentalness,
          this.oceanContinentalness,
@@ -571,16 +533,15 @@ public final class CalciumOverworldBiomeBuilder {
          this.midInlandContinentalness,
          this.farInlandContinentalness
       };
-
    }
 
    @VisibleForDebug public Climate.Parameter[] getPeaksAndValleysThresholds() {
       return new Climate.Parameter[]{
          Climate.Parameter.span(-2.0F, NoiseRouterData.peaksAndValleys(0.05F)),
-         Climate.Parameter.span(NoiseRouterData.peaksAndValleys(0.05F), NoiseRouterData.peaksAndValleys(0.26666668F)),
-         Climate.Parameter.span(NoiseRouterData.peaksAndValleys(0.26666668F), NoiseRouterData.peaksAndValleys(0.4F)),
-         Climate.Parameter.span(NoiseRouterData.peaksAndValleys(0.4F), NoiseRouterData.peaksAndValleys(0.56666666F)),
-         Climate.Parameter.span(NoiseRouterData.peaksAndValleys(0.56666666F), 2.0F)
+         Climate.Parameter.span(NoiseRouterData.peaksAndValleys(0.05F), NoiseRouterData.peaksAndValleys(0.2667F)),
+         Climate.Parameter.span(NoiseRouterData.peaksAndValleys(0.2667F), NoiseRouterData.peaksAndValleys(0.4F)),
+         Climate.Parameter.span(NoiseRouterData.peaksAndValleys(0.4F), NoiseRouterData.peaksAndValleys(0.5667F)),
+         Climate.Parameter.span(NoiseRouterData.peaksAndValleys(0.5667F), 2.0F)
       };
    }
 

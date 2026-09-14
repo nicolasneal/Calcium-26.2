@@ -18,10 +18,10 @@
   },
   "effects": {
     "water_color": "#91D4FF",
-    "grass_color": "#9EB2A8",
-    "dirt_color": "#B49488",
-    "sand_color": "#FAF4CB",
-    "foliage_color": "#60A17B",
+    "grass_color": "#9DC1A1",
+    "dirt_color": "#A88775",
+    "sand_color": "#E2C9A0",
+    "foliage_color": "#9AC197",
     "dry_foliage_color": "#8F7A5A"
   },
   "carvers": [

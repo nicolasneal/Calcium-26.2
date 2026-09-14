@@ -18,16 +18,7 @@ import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 
-@Mixin({
-    ShortDryGrassBlock.class,
-    TallDryGrassBlock.class,
-    TallGrassBlock.class,
-    NetherSproutsBlock.class,
-    NetherRootsBlock.class,
-    HangingRootsBlock.class,
-    SeagrassBlock.class,
-    TallSeagrassBlock.class
-})
+@Mixin({ShortDryGrassBlock.class, TallDryGrassBlock.class, TallGrassBlock.class, NetherSproutsBlock.class, NetherRootsBlock.class, HangingRootsBlock.class, SeagrassBlock.class, TallSeagrassBlock.class})
 public abstract class DynamicHitboxesMixin extends Block {
 
     @Shadow(remap = false) @Final private static VoxelShape SHAPE;

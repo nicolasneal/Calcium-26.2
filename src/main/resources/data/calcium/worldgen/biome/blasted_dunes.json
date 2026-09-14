@@ -10,14 +10,14 @@
     },
     "minecraft:visual/fog_start_distance": -24,
     "minecraft:visual/fog_end_distance": 384,
-    "minecraft:visual/sky_color": "#BCD8DE",
-    "minecraft:visual/fog_color": "#EAE3C5",
+    "minecraft:visual/sky_color": "#8B9B9E",
+    "minecraft:visual/fog_color": "#7E7F77",
     "minecraft:visual/sky_light_color": "#FFFBEC",
     "minecraft:visual/cloud_color": "#DBE6E2D5",
-    "minecraft:visual/water_fog_color": "#466167"
+    "minecraft:visual/water_fog_color": "#45575B"
   },
   "effects": {
-    "water_color": "#7A9BA0",
+    "water_color": "#6E7F82",
     "grass_color": "#9B947F",
     "dirt_color": "#8E7D68",
     "sand_color": "#5C5F5F",

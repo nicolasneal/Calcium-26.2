@@ -21,7 +21,6 @@ public abstract class AnchoringEnchantmentMixin extends Entity {
 
     @Unique private static final double SPEED_FACTOR = 0.85;
     @Unique private static final double THICK_FLUID_SPEED_FACTOR = 0.6;
-    @Unique private static final int THICK_FLUID_LEVEL = 2;
     @Unique private static final double FALL_GRAVITY_MULTIPLIER = 0.4;
     @Unique private static final double JUMP_SPEED_MULTIPLIER = 0.8;
     @Unique private static final double JUMP_GRAVITY_MULTIPLIER = JUMP_SPEED_MULTIPLIER * JUMP_SPEED_MULTIPLIER;
@@ -40,7 +39,7 @@ public abstract class AnchoringEnchantmentMixin extends Entity {
         if (this.calcium$anchoringCheckTick != this.tickCount) {
             LivingEntity entity = (LivingEntity) (Object) this;
             int level = ModEnchantments.getAnchoringLevel(entity);
-            this.calcium$anchoringCached = level > 0 && (entity.isInWater() || (level >= THICK_FLUID_LEVEL && entity.isInLava()));
+            this.calcium$anchoringCached = level > 0 && (entity.isInWater() || entity.isInLava());
             this.calcium$anchoringCheckTick = this.tickCount;
         }
         return this.calcium$anchoringCached;

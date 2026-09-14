@@ -12,9 +12,10 @@ public class ModBiomes {
     public static final String MOD_ID = "calcium";
 
     public static final ResourceKey<Biome> TUNDRA = register("tundra");
+    public static final ResourceKey<Biome> AUTUMNAL_FOREST = register("autumnal_forest");
     public static final ResourceKey<Biome> BOG = register("bog");
-    public static final ResourceKey<Biome> WOODLAND = register("woodland");
     public static final ResourceKey<Biome> PRAIRIE = register("prairie");
+    public static final ResourceKey<Biome> WOODLAND = register("woodland");
     public static final ResourceKey<Biome> MESA = register("mesa");
     public static final ResourceKey<Biome> OASIS = register("oasis");
     public static final ResourceKey<Biome> DUNES = register("dunes");

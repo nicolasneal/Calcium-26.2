@@ -81,7 +81,7 @@ public class SnifferInventoryScreenHandler extends AbstractContainerMenu {
         if (slot != null && slot.hasItem()) {
             ItemStack stack = slot.getItem();
             clicked = stack.copy();
-            if (slotIndex < SLOT_CHEST_START) {
+            if (slotIndex < this.playerInventoryStart) {
                 if (!this.moveItemStackTo(stack, this.playerInventoryStart, this.slots.size(), true)) {
                     return ItemStack.EMPTY;
                 }

@@ -3,7 +3,7 @@
   "category": "redstone",
   "group": "wooden_button",
   "key": {
-    "#": "minecraft:stone",
+    "#": "minecraft:smooth_stone",
     "@": "minecraft:redstone"
   },
   "pattern": [
