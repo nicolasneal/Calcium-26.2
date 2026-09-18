@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "ingredient": "calcium:cut_gold",
   "result": {
-    "count": 1,
-    "id": "calcium:chiseled_gold"
+    "id": "calcium:chiseled_gold",
+    "count": 1
   }
 }

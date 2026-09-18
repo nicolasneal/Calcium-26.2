@@ -6,7 +6,7 @@
     "minecraft:magma_cream"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:magma_block"
+    "id": "minecraft:magma_block",
+    "count": 1
   }
 }

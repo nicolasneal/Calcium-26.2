@@ -10,7 +10,7 @@
     "@"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:soul_lantern"
+    "id": "minecraft:soul_lantern",
+    "count": 1
   }
 }

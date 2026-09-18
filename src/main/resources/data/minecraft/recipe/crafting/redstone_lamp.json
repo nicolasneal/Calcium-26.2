@@ -11,7 +11,7 @@
     " @ "
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:redstone_lamp"
+    "id": "minecraft:redstone_lamp",
+    "count": 1
   }
 }

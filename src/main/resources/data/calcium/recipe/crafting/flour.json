@@ -5,7 +5,7 @@
     "minecraft:wheat"
   ],
   "result": {
-    "count": 1,
-    "id": "calcium:flour"
+    "id": "calcium:flour",
+    "count": 1
   }
 }

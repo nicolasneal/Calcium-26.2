@@ -6,7 +6,7 @@
     "minecraft:wither_skeleton_skull"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:skull_banner_pattern"
+    "id": "minecraft:skull_banner_pattern",
+    "count": 1
   }
 }

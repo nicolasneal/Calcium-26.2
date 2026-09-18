@@ -31,4 +31,8 @@ public class MonitorStaticSoundHandler {
 
     }
 
+    public static void reset() {
+        ACTIVE.clear();
+    }
+
 }

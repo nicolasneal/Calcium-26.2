@@ -5,7 +5,7 @@
     "minecraft:lapis_block"
   ],
   "result": {
-    "count": 4,
-    "id": "minecraft:lapis_lazuli"
+    "id": "minecraft:lapis_lazuli",
+    "count": 4
   }
 }

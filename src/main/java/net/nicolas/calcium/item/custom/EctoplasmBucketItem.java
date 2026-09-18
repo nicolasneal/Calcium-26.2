@@ -10,7 +10,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluid;
 import net.nicolas.calcium.sound.ModSoundGroups;
-import org.jetbrains.annotations.Nullable;
+import org.jspecify.annotations.Nullable;
 
 public class EctoplasmBucketItem extends BucketItem {
 

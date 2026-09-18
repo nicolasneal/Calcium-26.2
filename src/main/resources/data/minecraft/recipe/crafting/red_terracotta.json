@@ -7,7 +7,7 @@
     "minecraft:red_dye"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:red_terracotta"
+    "id": "minecraft:red_terracotta",
+    "count": 1
   }
 }

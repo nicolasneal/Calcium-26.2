@@ -7,7 +7,7 @@
     "minecraft:spruce_boat"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:spruce_chest_boat"
+    "id": "minecraft:spruce_chest_boat",
+    "count": 1
   }
 }

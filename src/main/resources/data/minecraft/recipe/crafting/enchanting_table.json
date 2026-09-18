@@ -12,7 +12,7 @@
     "###"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:enchanting_table"
+    "id": "minecraft:enchanting_table",
+    "count": 1
   }
 }

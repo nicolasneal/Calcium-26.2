@@ -6,7 +6,7 @@
     "minecraft:copper_block"
   ],
   "result": {
-    "count": 4,
-    "id": "minecraft:copper_ingot"
+    "id": "minecraft:copper_ingot",
+    "count": 4
   }
 }

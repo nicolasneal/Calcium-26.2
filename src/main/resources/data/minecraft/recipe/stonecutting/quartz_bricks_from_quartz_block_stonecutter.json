@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:quartz_block",
   "result": {
-    "count": 1,
-    "id": "minecraft:quartz_bricks"
+    "id": "minecraft:quartz_bricks",
+    "count": 1
   }
 }

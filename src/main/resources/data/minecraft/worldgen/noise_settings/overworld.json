@@ -1427,8 +1427,7 @@
                                   "minecraft:desert",
                                   "calcium:dunes",
                                   "calcium:oasis",
-                                  "calcium:desert_mountains",
-                                  "calcium:blasted_dunes"
+                                  "calcium:desert_mountains"
                                 ]
                               },
                               "then_run": {
@@ -1455,8 +1454,7 @@
                                   "minecraft:desert",
                                   "calcium:dunes",
                                   "calcium:oasis",
-                                  "calcium:desert_mountains",
-                                  "calcium:blasted_dunes"
+                                  "calcium:desert_mountains"
                                 ]
                               },
                               "then_run": {
@@ -2280,8 +2278,7 @@
                                   "minecraft:desert",
                                   "calcium:dunes",
                                   "calcium:oasis",
-                                  "calcium:desert_mountains",
-                                  "calcium:blasted_dunes"
+                                  "calcium:desert_mountains"
                                 ]
                               },
                               "then_run": {
@@ -2308,8 +2305,7 @@
                                   "minecraft:desert",
                                   "calcium:dunes",
                                   "calcium:oasis",
-                                  "calcium:desert_mountains",
-                                  "calcium:blasted_dunes"
+                                  "calcium:desert_mountains"
                                 ]
                               },
                               "then_run": {
@@ -2610,8 +2606,7 @@
                         "minecraft:desert",
                         "calcium:dunes",
                         "calcium:oasis",
-                        "calcium:desert_mountains",
-                        "calcium:blasted_dunes"
+                        "calcium:desert_mountains"
                       ]
                     },
                     "then_run": {

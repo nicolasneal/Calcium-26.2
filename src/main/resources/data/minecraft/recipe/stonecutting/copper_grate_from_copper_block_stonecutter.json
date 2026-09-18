@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:copper_block",
   "result": {
-    "count": 1,
-    "id": "minecraft:copper_grate"
+    "id": "minecraft:copper_grate",
+    "count": 1
   }
 }

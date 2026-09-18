@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:iron_block",
   "result": {
-    "count": 1,
-    "id": "calcium:iron_grate"
+    "id": "calcium:iron_grate",
+    "count": 1
   }
 }

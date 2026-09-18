@@ -5,7 +5,7 @@
     "minecraft:redstone_block"
   ],
   "result": {
-    "count": 4,
-    "id": "minecraft:redstone"
+    "id": "minecraft:redstone",
+    "count": 4
   }
 }

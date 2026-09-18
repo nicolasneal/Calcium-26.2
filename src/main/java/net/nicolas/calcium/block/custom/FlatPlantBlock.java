@@ -13,7 +13,7 @@ import net.nicolas.calcium.item.ModTags;
 public class FlatPlantBlock extends GenericPlantBlock {
 
     public static final MapCodec<FlatPlantBlock> CODEC = simpleCodec(FlatPlantBlock::new);
-    private static final VoxelShape SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 3.0, 15.0);
+    private static final VoxelShape SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 5.0, 15.0);
 
     public FlatPlantBlock(Properties settings) {
         super(settings);

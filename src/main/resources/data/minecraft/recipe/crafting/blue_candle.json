@@ -7,7 +7,7 @@
     "minecraft:blue_dye"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:blue_candle"
+    "id": "minecraft:blue_candle",
+    "count": 1
   }
 }

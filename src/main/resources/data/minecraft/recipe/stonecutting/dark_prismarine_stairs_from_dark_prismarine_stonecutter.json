@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:dark_prismarine",
   "result": {
-    "count": 1,
-    "id": "minecraft:dark_prismarine_stairs"
+    "id": "minecraft:dark_prismarine_stairs",
+    "count": 1
   }
 }

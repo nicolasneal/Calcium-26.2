@@ -7,7 +7,7 @@
     "minecraft:dark_oak_boat"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:dark_oak_chest_boat"
+    "id": "minecraft:dark_oak_chest_boat",
+    "count": 1
   }
 }

@@ -101,6 +101,10 @@ public class ViewfinderController {
 
     public static void stopLooking() {
         sendOrientationUpdate();
+        reset();
+    }
+
+    public static void reset() {
         activePos = null;
         activeLevel = null;
         controllingMonitorPos = null;

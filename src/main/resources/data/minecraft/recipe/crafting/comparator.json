@@ -12,7 +12,7 @@
     "###"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:comparator"
+    "id": "minecraft:comparator",
+    "count": 1
   }
 }

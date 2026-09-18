@@ -34,4 +34,8 @@ public final class UnderwaterDepth {
         return Mth.clamp(progress, 0.0F, 1.0F);
     }
 
+    public static void reset() {
+        cachedPos = null;
+    }
+
 }

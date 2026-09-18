@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:sulfur",
   "result": {
-    "count": 1,
-    "id": "minecraft:polished_sulfur"
+    "id": "minecraft:polished_sulfur",
+    "count": 1
   }
 }

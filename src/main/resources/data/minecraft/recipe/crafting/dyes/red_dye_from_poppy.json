@@ -6,7 +6,7 @@
     "minecraft:poppy"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:red_dye"
+    "id": "minecraft:red_dye",
+    "count": 1
   }
 }

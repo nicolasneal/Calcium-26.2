@@ -7,7 +7,7 @@
     "minecraft:feather"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:writable_book"
+    "id": "minecraft:writable_book",
+    "count": 1
   }
 }

@@ -7,7 +7,7 @@
     "calcium:flour"
   ],
   "result": {
-    "count": 1,
-    "id": "calcium:dough"
+    "id": "calcium:dough",
+    "count": 1
   }
 }

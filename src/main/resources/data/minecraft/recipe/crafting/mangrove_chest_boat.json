@@ -7,7 +7,7 @@
     "minecraft:mangrove_boat"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:mangrove_chest_boat"
+    "id": "minecraft:mangrove_chest_boat",
+    "count": 1
   }
 }

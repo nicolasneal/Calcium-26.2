@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:iron_block",
   "result": {
-    "count": 2,
-    "id": "calcium:cut_iron_slab"
+    "id": "calcium:cut_iron_slab",
+    "count": 2
   }
 }

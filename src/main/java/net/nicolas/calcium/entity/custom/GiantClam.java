@@ -226,10 +226,6 @@ public class GiantClam extends Mob {
         return DyeColor.byId(packed & 15);
     }
 
-    @Override protected void pushEntities() {
-        super.pushEntities();
-    }
-
     @Override public boolean isPushedByFluid() {
         return false;
     }

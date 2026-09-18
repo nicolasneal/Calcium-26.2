@@ -6,7 +6,7 @@
     "minecraft:netherite_block"
   ],
   "result": {
-    "count": 4,
-    "id": "minecraft:netherite_ingot"
+    "id": "minecraft:netherite_ingot",
+    "count": 4
   }
 }

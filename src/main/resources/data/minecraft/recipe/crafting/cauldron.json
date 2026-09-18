@@ -10,7 +10,7 @@
     "###"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:cauldron"
+    "id": "minecraft:cauldron",
+    "count": 1
   }
 }

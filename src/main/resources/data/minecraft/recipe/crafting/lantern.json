@@ -12,7 +12,7 @@
     "#"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:lantern"
+    "id": "minecraft:lantern",
+    "count": 1
   }
 }

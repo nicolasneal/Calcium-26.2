@@ -5,7 +5,7 @@
     "minecraft:diamond_block"
   ],
   "result": {
-    "count": 4,
-    "id": "minecraft:diamond"
+    "id": "minecraft:diamond",
+    "count": 4
   }
 }

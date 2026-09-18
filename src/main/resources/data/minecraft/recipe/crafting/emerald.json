@@ -5,7 +5,7 @@
     "minecraft:emerald_block"
   ],
   "result": {
-    "count": 4,
-    "id": "minecraft:emerald"
+    "id": "minecraft:emerald",
+    "count": 4
   }
 }

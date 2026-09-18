@@ -5,7 +5,7 @@
     "minecraft:raw_copper_block"
   ],
   "result": {
-    "count": 4,
-    "id": "minecraft:raw_copper"
+    "id": "minecraft:raw_copper",
+    "count": 4
   }
 }

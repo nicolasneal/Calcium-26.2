@@ -10,7 +10,7 @@
     "###"
   ],
   "result": {
-    "count": 12,
-    "id": "minecraft:cyan_stained_glass_pane"
+    "id": "minecraft:cyan_stained_glass_pane",
+    "count": 12
   }
 }

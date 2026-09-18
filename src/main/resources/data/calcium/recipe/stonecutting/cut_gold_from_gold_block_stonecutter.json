@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:gold_block",
   "result": {
-    "count": 1,
-    "id": "calcium:cut_gold"
+    "id": "calcium:cut_gold",
+    "count": 1
   }
 }

@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:resin_bricks",
   "result": {
-    "count": 1,
-    "id": "minecraft:resin_brick_stairs"
+    "id": "minecraft:resin_brick_stairs",
+    "count": 1
   }
 }

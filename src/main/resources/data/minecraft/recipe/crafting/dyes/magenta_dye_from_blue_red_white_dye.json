@@ -9,7 +9,7 @@
     "minecraft:white_dye"
   ],
   "result": {
-    "count": 4,
-    "id": "minecraft:magenta_dye"
+    "id": "minecraft:magenta_dye",
+    "count": 4
   }
 }

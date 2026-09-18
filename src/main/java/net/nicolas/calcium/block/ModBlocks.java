@@ -468,7 +468,10 @@ public class ModBlocks {
         ResourceKey<Block> blockKey = keyOfBlock(name);
         Block block = blockFactory.apply(settings.setId(blockKey));
 
-        if (registerItem) {ResourceKey<Item> itemKey = keyOfItem(name);BlockItem blockItem = new BlockItem(block, new Item.Properties().setId(itemKey).useBlockDescriptionPrefix());Registry.register(BuiltInRegistries.ITEM, itemKey, blockItem);
+        if (registerItem) {
+            ResourceKey<Item> itemKey = keyOfItem(name);
+            BlockItem blockItem = new BlockItem(block, new Item.Properties().setId(itemKey).useBlockDescriptionPrefix());
+            Registry.register(BuiltInRegistries.ITEM, itemKey, blockItem);
         }
 
         return Registry.register(BuiltInRegistries.BLOCK, blockKey, block);

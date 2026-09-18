@@ -10,7 +10,7 @@
     "#"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:redstone_torch"
+    "id": "minecraft:redstone_torch",
+    "count": 1
   }
 }

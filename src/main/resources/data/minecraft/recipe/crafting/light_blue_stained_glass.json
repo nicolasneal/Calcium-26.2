@@ -7,7 +7,7 @@
     "minecraft:light_blue_dye"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:light_blue_stained_glass"
+    "id": "minecraft:light_blue_stained_glass",
+    "count": 1
   }
 }

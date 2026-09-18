@@ -3,8 +3,8 @@
   "category": "misc",
   "material": "minecraft:arrow",
   "result": {
-    "count": 8,
-    "id": "minecraft:tipped_arrow"
+    "id": "minecraft:tipped_arrow",
+    "count": 8
   },
   "source": "minecraft:lingering_potion"
 }

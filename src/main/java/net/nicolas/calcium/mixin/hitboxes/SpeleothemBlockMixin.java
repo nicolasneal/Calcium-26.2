@@ -5,21 +5,20 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SpeleothemBlock;
-import net.minecraft.world.level.block.SulfurSpikeBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 
-@Mixin(SulfurSpikeBlock.class)
-public abstract class SulfurSpikeBlockMixin extends Block {
+@Mixin(SpeleothemBlock.class)
+public abstract class SpeleothemBlockMixin extends Block {
 
     @Unique private static final VoxelShape CALCIUM_SHAPE_FULL = Block.column(10.0, 0.0, 16.0);
     @Unique private static final VoxelShape CALCIUM_SHAPE_TIP_UP = Block.column(10.0, 0.0, 12.0);
     @Unique private static final VoxelShape CALCIUM_SHAPE_TIP_DOWN = Block.column(10.0, 4.0, 16.0);
 
-    public SulfurSpikeBlockMixin(Properties settings) {
+    public SpeleothemBlockMixin(Properties settings) {
         super(settings);
     }
 

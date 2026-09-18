@@ -9,7 +9,7 @@
     "###"
   ],
   "result": {
-    "count": 12,
-    "id": "minecraft:glass_pane"
+    "id": "minecraft:glass_pane",
+    "count": 12
   }
 }

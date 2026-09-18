@@ -5,7 +5,7 @@
     "calcium:stacked_bones"
   ],
   "result": {
-    "count": 4,
-    "id": "minecraft:bone"
+    "id": "minecraft:bone",
+    "count": 4
   }
 }

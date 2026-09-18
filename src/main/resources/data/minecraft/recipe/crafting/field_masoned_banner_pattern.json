@@ -6,7 +6,7 @@
     "minecraft:bricks"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:field_masoned_banner_pattern"
+    "id": "minecraft:field_masoned_banner_pattern",
+    "count": 1
   }
 }

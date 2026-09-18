@@ -7,7 +7,7 @@
     "minecraft:black_dye"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:black_stained_glass"
+    "id": "minecraft:black_stained_glass",
+    "count": 1
   }
 }

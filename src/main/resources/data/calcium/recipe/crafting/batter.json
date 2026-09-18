@@ -11,7 +11,7 @@
     "minecraft:milk_bucket"
   ],
   "result": {
-    "count": 1,
-    "id": "calcium:batter"
+    "id": "calcium:batter",
+    "count": 1
   }
 }

@@ -6,7 +6,7 @@
     "minecraft:blaze_powder"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:potent_sulfur"
+    "id": "minecraft:potent_sulfur",
+    "count": 1
   }
 }

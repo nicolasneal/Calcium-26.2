@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:blackstone",
   "result": {
-    "count": 1,
-    "id": "minecraft:chiseled_polished_blackstone"
+    "id": "minecraft:chiseled_polished_blackstone",
+    "count": 1
   }
 }

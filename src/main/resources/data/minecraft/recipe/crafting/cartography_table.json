@@ -10,7 +10,7 @@
     "#"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:cartography_table"
+    "id": "minecraft:cartography_table",
+    "count": 1
   }
 }

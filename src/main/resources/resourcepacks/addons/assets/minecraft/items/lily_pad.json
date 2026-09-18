@@ -3,10 +3,7 @@
     "type": "minecraft:model",
     "model": "minecraft:item/lily_pad",
     "tints": [
-      {
-        "type": "minecraft:constant",
-        "value": -10244799
-      }
+      { "type": "minecraft:constant", "value": -10244799 }
     ]
   }
 }

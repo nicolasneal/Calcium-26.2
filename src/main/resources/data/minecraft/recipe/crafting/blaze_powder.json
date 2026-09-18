@@ -5,7 +5,7 @@
     "minecraft:blaze_rod"
   ],
   "result": {
-    "count": 4,
-    "id": "minecraft:blaze_powder"
+    "id": "minecraft:blaze_powder",
+    "count": 4
   }
 }

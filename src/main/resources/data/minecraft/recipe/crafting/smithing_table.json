@@ -10,7 +10,7 @@
     "#"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:smithing_table"
+    "id": "minecraft:smithing_table",
+    "count": 1
   }
 }

@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:tuff_bricks",
   "result": {
-    "count": 1,
-    "id": "minecraft:tuff_brick_wall"
+    "id": "minecraft:tuff_brick_wall",
+    "count": 1
   }
 }

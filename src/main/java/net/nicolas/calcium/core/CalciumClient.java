@@ -4,6 +4,7 @@ import com.mojang.blaze3d.platform.InputConstants;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
@@ -35,8 +36,10 @@ import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.block.entity.MonitorBlockEntity;
 import net.nicolas.calcium.block.entity.ViewfinderBlockEntity;
 import net.nicolas.calcium.core.client.color.ModBlockTintSources;
+import net.nicolas.calcium.core.client.environment.UnderwaterDepth;
 import net.nicolas.calcium.core.client.giantclam.GiantClamModel;
 import net.nicolas.calcium.core.client.giantclam.GiantClamRenderer;
+import net.nicolas.calcium.core.client.monitor.MonitorStaticSoundHandler;
 import net.nicolas.calcium.core.client.seacow.SeaCowModel;
 import net.nicolas.calcium.core.client.seacow.SeaCowRenderer;
 import net.nicolas.calcium.core.client.sunfish.SunfishModel;
@@ -77,6 +80,12 @@ public class CalciumClient implements ClientModInitializer {
 
         KeyMappingHelper.registerKeyMapping(TOGGLE_RECIPE_BOOK_KEY);
         KeyMappingHelper.registerKeyMapping(ROTATE_EXTRA_SLOTS_KEY);
+
+        ClientPlayConnectionEvents.DISCONNECT.register((handler, client) -> {
+            ViewfinderController.reset();
+            MonitorStaticSoundHandler.reset();
+            UnderwaterDepth.reset();
+        });
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (ROTATE_EXTRA_SLOTS_KEY.consumeClick()) {

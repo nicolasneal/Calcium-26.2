@@ -5,7 +5,7 @@
     "minecraft:coal_block"
   ],
   "result": {
-    "count": 4,
-    "id": "minecraft:coal"
+    "id": "minecraft:coal",
+    "count": 4
   }
 }

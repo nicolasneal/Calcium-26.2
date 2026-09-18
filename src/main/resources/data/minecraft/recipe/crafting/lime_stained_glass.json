@@ -7,7 +7,7 @@
     "minecraft:lime_dye"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:lime_stained_glass"
+    "id": "minecraft:lime_stained_glass",
+    "count": 1
   }
 }

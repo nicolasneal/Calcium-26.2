@@ -14,7 +14,7 @@
     "minecraft:gravel"
   ],
   "result": {
-    "count": 8,
-    "id": "minecraft:white_concrete_powder"
+    "id": "minecraft:white_concrete_powder",
+    "count": 8
   }
 }

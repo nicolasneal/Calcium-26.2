@@ -6,7 +6,7 @@
     "#minecraft:soul_fire_base_blocks"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:soul_torch"
+    "id": "minecraft:soul_torch",
+    "count": 1
   }
 }

@@ -6,12 +6,12 @@
     "@": "calcium:wooden_rod"
   },
   "pattern": [
-    "# #",
     "#@#",
-    "# #"
+    "#@#",
+    "#@#"
   ],
   "result": {
-    "count": 6,
-    "id": "minecraft:rail"
+    "id": "minecraft:rail",
+    "count": 6
   }
 }

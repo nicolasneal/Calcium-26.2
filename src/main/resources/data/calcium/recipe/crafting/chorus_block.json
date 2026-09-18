@@ -13,7 +13,7 @@
     "minecraft:popped_chorus_fruit"
   ],
   "result": {
-    "count": 1,
-    "id": "calcium:chorus_block"
+    "id": "calcium:chorus_block",
+    "count": 1
   }
 }

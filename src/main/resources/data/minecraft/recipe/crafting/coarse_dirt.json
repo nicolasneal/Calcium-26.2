@@ -10,7 +10,7 @@
     "@#"
   ],
   "result": {
-    "count": 4,
-    "id": "minecraft:coarse_dirt"
+    "id": "minecraft:coarse_dirt",
+    "count": 4
   }
 }

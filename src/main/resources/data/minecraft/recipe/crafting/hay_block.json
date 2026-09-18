@@ -8,7 +8,7 @@
     "minecraft:wheat"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:hay_block"
+    "id": "minecraft:hay_block",
+    "count": 1
   }
 }

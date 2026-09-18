@@ -2,17 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": "minecraft:iron_ingot",
-    "@": "calcium:wooden_rod",
-    "$": "minecraft:redstone"
+    "#": "minecraft:rail",
+    "@": "minecraft:redstone"
   },
   "pattern": [
-    "#$#",
-    "#@#",
-    "#$#"
+    "@",
+    "#",
+    "@"
   ],
   "result": {
-    "count": 6,
-    "id": "minecraft:activator_rail"
+    "id": "minecraft:activator_rail",
+    "count": 1
   }
 }

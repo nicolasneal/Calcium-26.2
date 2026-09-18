@@ -7,7 +7,7 @@
     "minecraft:purple_dye"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:purple_stained_glass"
+    "id": "minecraft:purple_stained_glass",
+    "count": 1
   }
 }

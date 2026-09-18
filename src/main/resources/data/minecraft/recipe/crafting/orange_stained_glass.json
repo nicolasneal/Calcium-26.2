@@ -7,7 +7,7 @@
     "minecraft:orange_dye"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:orange_stained_glass"
+    "id": "minecraft:orange_stained_glass",
+    "count": 1
   }
 }

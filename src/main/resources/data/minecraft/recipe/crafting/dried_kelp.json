@@ -5,7 +5,7 @@
     "minecraft:dried_kelp_block"
   ],
   "result": {
-    "count": 4,
-    "id": "minecraft:dried_kelp"
+    "id": "minecraft:dried_kelp",
+    "count": 4
   }
 }

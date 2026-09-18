@@ -5,7 +5,7 @@
     "minecraft:hay_block"
   ],
   "result": {
-    "count": 4,
-    "id": "minecraft:wheat"
+    "id": "minecraft:wheat",
+    "count": 4
   }
 }

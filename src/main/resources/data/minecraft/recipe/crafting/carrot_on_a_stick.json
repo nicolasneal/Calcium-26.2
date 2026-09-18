@@ -6,7 +6,7 @@
     "minecraft:carrot"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:carrot_on_a_stick"
+    "id": "minecraft:carrot_on_a_stick",
+    "count": 1
   }
 }

@@ -15,19 +15,13 @@ import java.util.function.Consumer;
 
 public final class CalciumOverworldBiomeBuilder {
 
-   private static final float LOW_START = 0.2667F;
    public static final float HIGH_START = 0.4F;
-   private static final float HIGH_END = 0.9333F;
-   private static final float PEAK_SIZE = 0.1F;
    public static final float PEAK_START = 0.5667F;
-   private static final float PEAK_END = 0.7667F;
    public static final float NEAR_INLAND_START = -0.11F;
    public static final float MID_INLAND_START = 0.03F;
    public static final float FAR_INLAND_START = 0.3F;
    public static final float EROSION_INDEX_1_START = -0.78F;
    public static final float EROSION_INDEX_2_START = -0.375F;
-   private static final float EROSION_DEEP_DARK_DRYNESS_THRESHOLD = -0.225F;
-   private static final float DEPTH_DEEP_DARK_DRYNESS_THRESHOLD = 0.9F;
    private final Climate.Parameter FULL_RANGE = Climate.Parameter.span(-1.0F, 1.0F);
 
    private static final int FRIGID = 0;
@@ -68,9 +62,6 @@ public final class CalciumOverworldBiomeBuilder {
       Climate.Parameter.span(0.55F, 1.0F)
    };
 
-   private final Climate.Parameter FROZEN_RANGE = this.temperatures[FRIGID];
-   private final Climate.Parameter UNFROZEN_RANGE = Climate.Parameter.span(this.temperatures[BITTER], this.temperatures[TORRID]);
-
    private final Climate.Parameter deepOceanContinentalness = Climate.Parameter.span(-1.2F, -0.455F);
    private final Climate.Parameter oceanContinentalness = Climate.Parameter.span(-0.455F, -0.19F);
    private final Climate.Parameter coastContinentalness = Climate.Parameter.span(-0.19F, -0.11F);
@@ -94,12 +85,12 @@ public final class CalciumOverworldBiomeBuilder {
       {ModBiomes.TUNDRA, ModBiomes.TUNDRA, ModBiomes.TUNDRA, ModBiomes.TUNDRA, ModBiomes.TUNDRA},
       {Biomes.SNOWY_PLAINS, Biomes.SNOWY_PLAINS, Biomes.SNOWY_PLAINS, Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA},
       {Biomes.TAIGA, Biomes.TAIGA, Biomes.TAIGA, Biomes.TAIGA, Biomes.TAIGA},
-      {ModBiomes.AUTUMNAL_FOREST, Biomes.PLAINS, Biomes.WINDSWEPT_FOREST, Biomes.TAIGA, Biomes.TAIGA},
+      {Biomes.PLAINS, Biomes.PLAINS, Biomes.WINDSWEPT_FOREST, Biomes.TAIGA, Biomes.TAIGA},
       {Biomes.BIRCH_FOREST, Biomes.PLAINS, Biomes.PLAINS, Biomes.FOREST, Biomes.DARK_FOREST},
       {ModBiomes.PRAIRIE, ModBiomes.PRAIRIE, ModBiomes.WOODLAND, ModBiomes.WOODLAND, ModBiomes.WOODLAND},
       {Biomes.SAVANNA, Biomes.SAVANNA, Biomes.SAVANNA, Biomes.SPARSE_JUNGLE, Biomes.JUNGLE},
       {Biomes.DESERT, Biomes.DESERT, Biomes.DESERT, ModBiomes.OASIS, ModBiomes.OASIS},
-      {ModBiomes.BLASTED_DUNES, ModBiomes.BLASTED_DUNES, ModBiomes.DUNES, ModBiomes.DUNES, ModBiomes.DUNES}
+      {ModBiomes.DUNES, ModBiomes.DUNES, ModBiomes.DUNES, ModBiomes.DUNES, ModBiomes.DUNES}
    };
    private final ResourceKey<Biome>[][] MIDDLE_BIOMES_VARIANT = new ResourceKey[][]{
       {null, null, null, null, null},
@@ -132,7 +123,7 @@ public final class CalciumOverworldBiomeBuilder {
       {null, null, null, null, null},
       {null, null, null, null, null},
       {null, null, Biomes.ERODED_BADLANDS, Biomes.ERODED_BADLANDS, Biomes.ERODED_BADLANDS},
-      {ModBiomes.BLASTED_DUNES, ModBiomes.BLASTED_DUNES, null, null, null}
+      {null, null, null, null, null}
    };
    private final ResourceKey<Biome>[] PEAK_BIOMES = new ResourceKey[]{
       Biomes.FROZEN_PEAKS,
@@ -143,7 +134,7 @@ public final class CalciumOverworldBiomeBuilder {
       Biomes.STONY_PEAKS,
       Biomes.STONY_PEAKS,
       Biomes.STONY_PEAKS,
-      ModBiomes.DESERT_MOUNTAINS
+      Biomes.STONY_PEAKS
    };
 
    public List<Climate.ParameterPoint> spawnTarget() {

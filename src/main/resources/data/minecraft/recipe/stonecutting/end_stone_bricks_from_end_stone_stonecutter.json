@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:end_stone",
   "result": {
-    "count": 1,
-    "id": "minecraft:end_stone_bricks"
+    "id": "minecraft:end_stone_bricks",
+    "count": 1
   }
 }

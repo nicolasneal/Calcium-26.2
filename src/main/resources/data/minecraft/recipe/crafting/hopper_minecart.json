@@ -6,7 +6,7 @@
     "minecraft:hopper"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:hopper_minecart"
+    "id": "minecraft:hopper_minecart",
+    "count": 1
   }
 }

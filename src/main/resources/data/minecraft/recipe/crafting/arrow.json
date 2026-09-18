@@ -12,7 +12,7 @@
     "$"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:arrow"
+    "id": "minecraft:arrow",
+    "count": 1
   }
 }

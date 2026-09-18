@@ -12,7 +12,7 @@
     "$$$"
   ],
   "result": {
-    "count": 6,
-    "id": "minecraft:daylight_detector"
+    "id": "minecraft:daylight_detector",
+    "count": 6
   }
 }

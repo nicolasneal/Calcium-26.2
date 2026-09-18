@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:polished_tuff",
   "result": {
-    "count": 1,
-    "id": "minecraft:tuff_brick_stairs"
+    "id": "minecraft:tuff_brick_stairs",
+    "count": 1
   }
 }

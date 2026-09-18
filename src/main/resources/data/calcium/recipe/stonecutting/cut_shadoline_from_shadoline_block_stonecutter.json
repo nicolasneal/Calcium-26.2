@@ -2,8 +2,7 @@
   "type": "minecraft:stonecutting",
   "ingredient": "calcium:shadoline_block",
   "result": {
-    "count": 1,
-    "id": "calcium:cut_shadoline"
+    "id": "calcium:cut_shadoline",
+    "count": 1
   }
 }
-

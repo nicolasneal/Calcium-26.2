@@ -9,7 +9,7 @@
     "minecraft:redstone"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:ender_eye"
+    "id": "minecraft:ender_eye",
+    "count": 1
   }
 }

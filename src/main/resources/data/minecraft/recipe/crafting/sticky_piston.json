@@ -6,7 +6,7 @@
     "minecraft:slime_ball"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:sticky_piston"
+    "id": "minecraft:sticky_piston",
+    "count": 1
   }
 }

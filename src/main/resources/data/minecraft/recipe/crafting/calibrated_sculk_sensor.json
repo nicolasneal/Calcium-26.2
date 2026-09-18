@@ -10,7 +10,7 @@
     "#"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:calibrated_sculk_sensor"
+    "id": "minecraft:calibrated_sculk_sensor",
+    "count": 1
   }
 }

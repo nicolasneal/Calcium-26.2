@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "ingredient": "minecraft:iron_block",
   "result": {
-    "count": 1,
-    "id": "calcium:chiseled_iron"
+    "id": "calcium:chiseled_iron",
+    "count": 1
   }
 }

@@ -11,7 +11,7 @@
     "#@#"
   ],
   "result": {
-    "count": 2,
-    "id": "minecraft:dropper"
+    "id": "minecraft:dropper",
+    "count": 2
   }
 }

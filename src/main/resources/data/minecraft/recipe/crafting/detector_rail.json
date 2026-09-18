@@ -2,17 +2,17 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "#": "minecraft:iron_ingot",
-    "@": "calcium:wooden_rod",
-    "$": "minecraft:iron_ingot"
+    "#": "minecraft:rail",
+    "@": "minecraft:stone_pressure_plate",
+    "$": "minecraft:redstone"
   },
   "pattern": [
-    "#$#",
-    "#@#",
-    "#$#"
+    "@",
+    "#",
+    "$"
   ],
   "result": {
-    "count": 6,
-    "id": "minecraft:detector_rail"
+    "id": "minecraft:detector_rail",
+    "count": 1
   }
 }

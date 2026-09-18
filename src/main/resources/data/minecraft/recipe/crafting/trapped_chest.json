@@ -7,7 +7,7 @@
     "minecraft:redstone"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:trapped_chest"
+    "id": "minecraft:trapped_chest",
+    "count": 1
   }
 }

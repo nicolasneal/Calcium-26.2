@@ -11,7 +11,7 @@
     "###"
   ],
   "result": {
-    "count": 1,
-    "id": "calcium:oven"
+    "id": "calcium:oven",
+    "count": 1
   }
 }

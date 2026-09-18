@@ -14,7 +14,7 @@
     "minecraft:gravel"
   ],
   "result": {
-    "count": 8,
-    "id": "minecraft:yellow_concrete_powder"
+    "id": "minecraft:yellow_concrete_powder",
+    "count": 8
   }
 }

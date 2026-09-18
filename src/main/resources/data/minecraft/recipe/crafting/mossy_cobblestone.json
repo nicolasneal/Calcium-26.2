@@ -6,7 +6,7 @@
     "minecraft:moss_carpet"
   ],
   "result": {
-    "count": 1,
-    "id": "minecraft:mossy_cobblestone"
+    "id": "minecraft:mossy_cobblestone",
+    "count": 1
   }
 }
