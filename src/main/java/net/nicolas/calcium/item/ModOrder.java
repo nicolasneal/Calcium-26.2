@@ -910,7 +910,6 @@ public class ModOrder {
             ModBlocks.HIBISCUS,
             ModBlocks.POKER,
             Items.CLOSED_EYEBLOSSOM,
-            Items.OPEN_EYEBLOSSOM,
             Items.TORCHFLOWER,
             Items.WITHER_ROSE,
 

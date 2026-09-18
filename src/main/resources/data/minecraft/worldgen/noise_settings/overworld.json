@@ -1426,8 +1426,7 @@
                                 "biome_is": [
                                   "minecraft:desert",
                                   "calcium:dunes",
-                                  "calcium:oasis",
-                                  "calcium:desert_mountains"
+                                  "calcium:oasis"
                                 ]
                               },
                               "then_run": {
@@ -1453,8 +1452,7 @@
                                 "biome_is": [
                                   "minecraft:desert",
                                   "calcium:dunes",
-                                  "calcium:oasis",
-                                  "calcium:desert_mountains"
+                                  "calcium:oasis"
                                 ]
                               },
                               "then_run": {
@@ -2277,8 +2275,7 @@
                                 "biome_is": [
                                   "minecraft:desert",
                                   "calcium:dunes",
-                                  "calcium:oasis",
-                                  "calcium:desert_mountains"
+                                  "calcium:oasis"
                                 ]
                               },
                               "then_run": {
@@ -2304,8 +2301,7 @@
                                 "biome_is": [
                                   "minecraft:desert",
                                   "calcium:dunes",
-                                  "calcium:oasis",
-                                  "calcium:desert_mountains"
+                                  "calcium:oasis"
                                 ]
                               },
                               "then_run": {
@@ -2605,8 +2601,7 @@
                       "biome_is": [
                         "minecraft:desert",
                         "calcium:dunes",
-                        "calcium:oasis",
-                        "calcium:desert_mountains"
+                        "calcium:oasis"
                       ]
                     },
                     "then_run": {

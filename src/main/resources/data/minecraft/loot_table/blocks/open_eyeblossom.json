@@ -14,7 +14,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:open_eyeblossom"
+          "name": "minecraft:closed_eyeblossom"
         }
       ]
     }

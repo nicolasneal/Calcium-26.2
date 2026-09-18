@@ -63,10 +63,10 @@
       "minecraft:ore_quartz_nether",
       "minecraft:ore_ancient_debris_large",
       "minecraft:ore_debris_small",
-      "calcium:netherrack_glowstone_ore_veins",
-      "calcium:ectoplasm_lake",
-      "calcium:ectoplasm_spring",
-      "calcium:wither_roses"
+      "calcium:ores/netherrack_glowstone_ore",
+      "calcium:liquids/ectoplasm_lake",
+      "calcium:liquids/ectoplasm_spring",
+      "calcium:patches/wither_rose"
     ],
     [],
     [

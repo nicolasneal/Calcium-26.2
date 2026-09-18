@@ -58,7 +58,7 @@
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
       "minecraft:underwater_magma",
-      "calcium:disk_silt",
+      "calcium:disks/silt",
       "minecraft:disk_clay",
       "minecraft:disk_gravel"
     ],
@@ -68,14 +68,14 @@
       "minecraft:spring_lava"
     ],
     [
-      "calcium:short_grass_dense",
-      "calcium:tall_grass",
+      "calcium:carpets/grass_dense",
+      "calcium:patches/tall_grass",
       "minecraft:glow_lichen",
       "minecraft:pale_garden_vegetation",
       "minecraft:pale_moss_patch",
       "minecraft:pale_garden_flowers",
       "minecraft:flower_pale_garden",
-      "calcium:pumpkins_scarce",
+      "calcium:patches/pumpkin_scarce",
       "minecraft:seagrass_river"
     ],
     [

@@ -61,7 +61,7 @@
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
       "minecraft:underwater_magma",
-      "calcium:disk_silt",
+      "calcium:disks/silt",
       "minecraft:disk_clay",
       "minecraft:disk_gravel"
     ],
@@ -71,10 +71,10 @@
       "minecraft:spring_lava"
     ],
     [
-      "calcium:short_grass_dense",
-      "calcium:bushes_dense",
-      "calcium:toadstools_sparse",
-      "calcium:portobellos_sparse",
+      "calcium:carpets/grass_dense",
+      "calcium:patches/bush_dense",
+      "calcium:patches/toadstool_sparse",
+      "calcium:patches/portobello_sparse",
       "minecraft:glow_lichen",
       "minecraft:dark_forest_vegetation",
       "minecraft:forest_flowers",

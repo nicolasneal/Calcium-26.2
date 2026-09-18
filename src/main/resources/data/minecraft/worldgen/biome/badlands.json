@@ -62,7 +62,7 @@
       "minecraft:ore_copper",
       "minecraft:underwater_magma",
       "minecraft:ore_gold_extra",
-      "calcium:disk_silt",
+      "calcium:disks/silt",
       "minecraft:disk_clay",
       "minecraft:disk_gravel"
     ],
@@ -72,8 +72,8 @@
       "minecraft:spring_lava"
     ],
     [
-      "calcium:short_grass_sparse",
-      "calcium:bushes",
+      "calcium:carpets/grass_sparse",
+      "calcium:patches/bush_sparse",
       "minecraft:glow_lichen",
       "minecraft:patch_dry_grass_badlands",
       "minecraft:patch_dead_bush_badlands",

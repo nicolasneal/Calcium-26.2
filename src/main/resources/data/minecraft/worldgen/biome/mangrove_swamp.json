@@ -80,12 +80,12 @@
       "minecraft:spring_lava"
     ],
     [
-      "calcium:short_grass_medium",
-      "calcium:tall_grass",
-      "calcium:bushes",
-      "calcium:pontederias",
-      "calcium:toadstools_sparse",
-      "calcium:portobellos_sparse",
+      "calcium:carpets/grass_scarce",
+      "calcium:patches/tall_grass",
+      "calcium:patches/bush_sparse",
+      "calcium:patches/pontederia",
+      "calcium:patches/toadstool_sparse",
+      "calcium:patches/portobello_sparse",
       "minecraft:glow_lichen",
       "minecraft:trees_mangrove",
       "minecraft:patch_dead_bush",

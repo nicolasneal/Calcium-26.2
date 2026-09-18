@@ -52,12 +52,12 @@
       "minecraft:ore_quartz_nether",
       "minecraft:ore_ancient_debris_large",
       "minecraft:ore_debris_small",
-      "calcium:netherrack_glowstone_ore_veins"
+      "calcium:ores/netherrack_glowstone_ore"
     ],
     [],
     [
       "minecraft:spring_lava",
-      "calcium:ember_sprouts"
+      "calcium:carpets/ember_sprouts"
     ]
   ],
   "has_precipitation": false,

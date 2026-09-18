@@ -66,7 +66,7 @@
       "minecraft:ore_quartz_deltas",
       "minecraft:ore_ancient_debris_large",
       "minecraft:ore_debris_small",
-      "calcium:netherrack_glowstone_ore_veins"
+      "calcium:ores/netherrack_glowstone_ore"
     ]
   ],
   "has_precipitation": false,

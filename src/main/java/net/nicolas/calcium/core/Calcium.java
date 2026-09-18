@@ -52,6 +52,7 @@ import net.nicolas.calcium.screen.oven.OvenScreenHandler;
 import net.nicolas.calcium.screen.sniffer.SnifferInventoryScreenHandler;
 import net.nicolas.calcium.sound.ModSoundGroups;
 import net.nicolas.calcium.sound.ModSounds;
+import net.nicolas.calcium.worldgen.ModFoliagePlacers;
 import net.nicolas.calcium.worldgen.ZPositionDensityFunction;
 
 import java.util.HashMap;
@@ -94,6 +95,10 @@ public class Calcium implements ModInitializer {
         // World Generation Density Function Types
 
         Registry.register(BuiltInRegistries.DENSITY_FUNCTION_TYPE, Identifier.fromNamespaceAndPath("calcium", "z_position"), ZPositionDensityFunction.CODEC.codec());
+
+        // World Generation Foliage Placer Types
+
+        ModFoliagePlacers.initialize();
 
         // Resource Pack Initialization
 

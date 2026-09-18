@@ -65,7 +65,7 @@
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
       "minecraft:underwater_magma",
-      "calcium:disk_silt",
+      "calcium:disks/silt",
       "minecraft:disk_clay",
       "minecraft:disk_gravel"
     ],
@@ -75,8 +75,8 @@
       "minecraft:spring_lava"
     ],
     [
-      "calcium:short_grass_sparse",
-      "calcium:icy_irises",
+      "calcium:carpets/grass_sparse",
+      "calcium:patches/icy_iris",
       "minecraft:glow_lichen",
       "minecraft:trees_snowy"
     ],

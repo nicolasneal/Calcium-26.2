@@ -1,0 +1,10 @@
+{
+  "gives": {
+    "count": 3,
+    "id": "calcium:black_stinkhorn"
+  },
+  "reputation_discount": 0.05,
+  "wants": {
+    "id": "minecraft:emerald"
+  }
+}
