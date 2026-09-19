@@ -35,6 +35,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.block.entity.MonitorBlockEntity;
 import net.nicolas.calcium.block.entity.ViewfinderBlockEntity;
+import net.nicolas.calcium.core.client.color.BiomeItemTintSource;
 import net.nicolas.calcium.core.client.color.ModBlockTintSources;
 import net.nicolas.calcium.core.client.environment.UnderwaterDepth;
 import net.nicolas.calcium.core.client.giantclam.GiantClamModel;
@@ -50,6 +51,7 @@ import net.minecraft.client.particle.SplashParticle;
 import net.nicolas.calcium.core.client.sniffer.SnifferChestModel;
 import net.nicolas.calcium.core.client.sniffer.SnifferSaddleLayer;
 import net.nicolas.calcium.entity.ModEntities;
+import net.nicolas.calcium.mixin.accessors.ItemTintSourcesAccessor;
 import net.nicolas.calcium.core.client.viewfinder.ViewfinderBlockEntityRenderer;
 import net.nicolas.calcium.core.client.viewfinder.ViewfinderController;
 import net.nicolas.calcium.core.client.viewfinder.ViewfinderModel;
@@ -168,6 +170,8 @@ public class CalciumClient implements ClientModInitializer {
             ViewfinderController.tick();
         });
 
+        ItemTintSourcesAccessor.calcium$getIdMapper().put(Identifier.fromNamespaceAndPath("calcium", "biome"), BiomeItemTintSource.MAP_CODEC);
+
         BlockColorRegistry.register(
             List.of(BlockTintSources.grass()),
             ModBlocks.WILD_WHEAT,
@@ -205,26 +209,6 @@ public class CalciumClient implements ClientModInitializer {
             BuiltInRegistries.BLOCK.stream()
                 .filter(block -> block instanceof FlowerPotBlock)
                 .toArray(Block[]::new)
-        );
-
-        BlockColorRegistry.register(
-            List.of(ModBlockTintSources.sand()),
-            Blocks.SAND,
-            Blocks.SUSPICIOUS_SAND,
-            Blocks.SANDSTONE,
-            Blocks.SMOOTH_SANDSTONE,
-            Blocks.SMOOTH_SANDSTONE_STAIRS,
-            Blocks.SMOOTH_SANDSTONE_SLAB,
-            ModBlocks.POLISHED_SANDSTONE_WALL,
-            Blocks.CUT_SANDSTONE,
-            ModBlocks.SANDSTONE_BRICK_STAIRS,
-            Blocks.CUT_SANDSTONE_SLAB,
-            ModBlocks.SANDSTONE_BRICK_WALL,
-            ModBlocks.CRACKED_SANDSTONE_BRICKS,
-            ModBlocks.CRACKED_SANDSTONE_BRICK_STAIRS,
-            ModBlocks.CRACKED_SANDSTONE_BRICK_SLAB,
-            ModBlocks.CRACKED_SANDSTONE_BRICK_WALL,
-            Blocks.CHISELED_SANDSTONE
         );
 
         BlockColorRegistry.register(

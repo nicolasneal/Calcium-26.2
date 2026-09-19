@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "calcium:polished_mirestone"
+  },
+  "pattern": [
+    "#"
+  ],
+  "result": {
+    "id": "calcium:chiseled_mirestone",
+    "count": 1
+  }
+}

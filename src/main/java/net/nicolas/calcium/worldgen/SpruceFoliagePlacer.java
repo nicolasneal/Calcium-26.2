@@ -58,7 +58,7 @@ public class SpruceFoliagePlacer extends FoliagePlacer {
         int extraRadius = random.nextInt(2);
         int rowWidth = 1;
         int flag = 0;
-        int minJ = Math.max(-leafRadius, -2);
+        int minJ = Math.max(-foliageHeight, -2);
 
         for (int j = bottomOfTable - 1; j >= minJ; j--) {
             this.placeLeavesRow(level, foliageSetter, random, config, pos, extraRadius, j, foliageAttachment.doubleTrunk());

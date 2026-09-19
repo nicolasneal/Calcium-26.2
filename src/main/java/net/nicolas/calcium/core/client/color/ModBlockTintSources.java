@@ -7,7 +7,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.ColorResolver;
 import net.minecraft.world.level.block.state.BlockState;
 import net.nicolas.calcium.core.util.CalciumDirtColors;
-import net.nicolas.calcium.core.util.CalciumSandColors;
 
 public final class ModBlockTintSources {
 
@@ -31,12 +30,6 @@ public final class ModBlockTintSources {
 
     public static BlockTintSource dirt() {
         return DIRT;
-    }
-
-    private static final BlockTintSource SAND = biomeColorTint(CalciumSandColors.DEFAULT_SAND_COLOR, (biome, x, z) -> CalciumSandColors.get(biome.getSpecialEffects()));
-
-    public static BlockTintSource sand() {
-        return SAND;
     }
 
     private static final BlockTintSource GRASS = BlockTintSources.grass();

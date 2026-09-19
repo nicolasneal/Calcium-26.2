@@ -1,9 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "calcium:block/cracked_sandstone_brick_wall_inventory",
-    "tints": [
-      { "type": "minecraft:constant", "value": 16446667 }
-    ]
+    "model": "calcium:block/cracked_sandstone_brick_wall_inventory"
   }
 }

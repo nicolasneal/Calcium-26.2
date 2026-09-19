@@ -26,6 +26,7 @@ import net.minecraft.world.level.block.LayeredCauldronBlock;
 import net.minecraft.world.level.block.entity.BlockEntityTypes;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.Vec3;
 import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.entity.ModAttributes;
@@ -153,6 +154,14 @@ public class Calcium implements ModInitializer {
         };
         for (BlockState state : Blocks.SHORT_GRASS.getStateDefinition().getPossibleStates()) {
             ((BlockStateBaseAccessor) state).setOffsetFunction(xyzOffset);
+        }
+
+        // Packed Mud Set Map Color
+
+        for (Block block : new Block[]{Blocks.MUD_BRICKS, Blocks.MUD_BRICK_STAIRS, Blocks.MUD_BRICK_SLAB, Blocks.MUD_BRICK_WALL}) {
+            for (BlockState state : block.getStateDefinition().getPossibleStates()) {
+                ((BlockStateBaseAccessor) state).setMapColor(MapColor.DIRT);
+            }
         }
 
         // Chorus Wood Registration

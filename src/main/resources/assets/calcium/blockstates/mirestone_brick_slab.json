@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "calcium:block/mirestone_brick_slab"
+    },
+    "type=top": {
+      "model": "calcium:block/mirestone_brick_slab_top"
+    },
+    "type=double": {
+      "model": "calcium:block/mirestone_bricks"
+    }
+  }
+}
