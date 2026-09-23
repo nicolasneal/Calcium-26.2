@@ -1,0 +1,12 @@
+﻿{
+  "parent": "minecraft:block/custom_fence_post",
+  "textures": {
+    "texture": "minecraft:block/fences/poplar",
+    "particle": "minecraft:block/particles/poplar"
+  }
+}
+
+
+
+
+

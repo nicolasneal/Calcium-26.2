@@ -1,6 +1,9 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "calcium:item/four_leaf_clover"
+    "model": "calcium:item/four_leaf_clover",
+    "tints": [
+      { "type": "calcium:biome", "kind": "grass" }
+    ]
   }
 }

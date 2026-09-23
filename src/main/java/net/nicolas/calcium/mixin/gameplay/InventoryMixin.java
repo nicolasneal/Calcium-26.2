@@ -20,8 +20,7 @@ public abstract class InventoryMixin {
     @Shadow @Final public Player player;
 
     @ModifyReturnValue(method = "clearOrCountMatchingItems", at = @At("RETURN"))
-    private int calcium$clearExtraSlots(int original, Predicate<ItemStack> predicate, int amountToRemove, Container craftSlots) {
-        boolean countingOnly = amountToRemove == 0;
+    private int calcium$clearExtraSlots(int original, Predicate<ItemStack> predicate, boolean countingOnly, int amountToRemove, Container craftSlots) {
         Container extraSlots = ((ExtraSlotsAccess) this.player).calcium$getExtraSlots();
         int cleared = ContainerHelper.clearOrCountMatchingItems(extraSlots, predicate, amountToRemove - original, countingOnly);
         if (cleared > 0 && !countingOnly && this.player.containerMenu != this.player.inventoryMenu) {

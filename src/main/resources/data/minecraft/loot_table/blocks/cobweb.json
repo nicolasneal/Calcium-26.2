@@ -10,22 +10,21 @@
             {
               "type": "minecraft:item",
               "name": "minecraft:cobweb",
-              "conditions": [
-                {
-                  "condition": "minecraft:match_tool",
-                  "predicate": {
-                    "items": "minecraft:shears"
-                  }
+              "condition": {
+                "type": "minecraft:match_tool",
+                "predicate": {
+                  "items": "minecraft:shears"
                 }
-              ]
+              }
             },
             {
               "type": "minecraft:item",
               "name": "minecraft:string",
-              "functions": [
+              "modifier": [
                 {
-                  "function": "minecraft:set_count",
+                  "type": "minecraft:set_count",
                   "count": {
+                    "type": "minecraft:uniform",
                     "min": 1,
                     "max": 2
                   }

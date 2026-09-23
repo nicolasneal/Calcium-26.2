@@ -1,10 +1,7 @@
 package net.nicolas.calcium.block.custom;
 
-import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -40,7 +37,6 @@ import java.util.Map;
 
 public class CandleChocolateCakeBlock extends AbstractCandleBlock {
 
-    public static final MapCodec<CandleChocolateCakeBlock> CODEC = RecordCodecBuilder.mapCodec(i -> i.group(BuiltInRegistries.BLOCK.byNameCodec().fieldOf("candle").forGetter(b -> b.candleBlock), propertiesCodec()).apply(i, CandleChocolateCakeBlock::new));
     public static final BooleanProperty LIT = AbstractCandleBlock.LIT;
     private static final VoxelShape SHAPE = Shapes.or(Block.column(2.0, 8.0, 14.0), Block.column(14.0, 0.0, 8.0));
     private static final Map<CandleBlock, CandleChocolateCakeBlock> BY_CANDLE = new HashMap<>();
@@ -56,10 +52,6 @@ public class CandleChocolateCakeBlock extends AbstractCandleBlock {
         } else {
             throw new IllegalArgumentException("Expected block to be of " + CandleBlock.class + " was " + block.getClass());
         }
-    }
-
-    @Override protected MapCodec<? extends AbstractCandleBlock> codec() {
-        return CODEC;
     }
 
     @Override protected Iterable<Vec3> getParticleOffsets(BlockState state) {

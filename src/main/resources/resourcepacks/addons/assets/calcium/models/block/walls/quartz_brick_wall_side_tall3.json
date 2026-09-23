@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/walls/wall_side_tall3",
+	"textures": {
+		"wall": "calcium:block/walls/quartz_bricks",
+		"particle": "minecraft:block/quartz_bricks"
+	}
+}

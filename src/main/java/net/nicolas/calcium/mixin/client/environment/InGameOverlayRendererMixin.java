@@ -6,14 +6,14 @@ import net.minecraft.client.renderer.Lightmap;
 import net.minecraft.client.renderer.ScreenEffectRenderer;
 import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.rendertype.RenderTypes;
+import net.minecraft.client.renderer.state.level.CameraRenderState;
+import net.minecraft.client.renderer.state.level.PlayerRenderState;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.ARGB;
 import net.minecraft.world.level.material.FluidState;
 import net.nicolas.calcium.block.ModBlocks;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -22,22 +22,23 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ScreenEffectRenderer.class)
 public abstract class InGameOverlayRendererMixin {
 
-    @Shadow @Final private Minecraft minecraft;
     @Unique private static final Identifier ECTOPLASM_TEXTURE = Identifier.fromNamespaceAndPath("calcium", "textures/misc/ectoplasm_overlay.png");
 
     @Inject(method = "submit", at = @At("HEAD"))
-    private void calcium$renderEctoplasmOverlay(boolean isFirstPerson, boolean isSleeping, float partialTicks, SubmitNodeCollector submitNodeCollector, boolean hideGui, CallbackInfo ci) {
+    private void calcium$renderEctoplasmOverlay(float partialTicks, SubmitNodeCollector submitNodeCollector, PlayerRenderState playerState, CameraRenderState cameraState, boolean hideGui, CallbackInfo ci) {
 
-        if (this.minecraft.player == null || isSleeping) {
+        Minecraft minecraft = Minecraft.getInstance();
+
+        if (minecraft.player == null || cameraState.entityRenderState.isSleeping) {
             return;
         }
 
-        BlockPos pos = this.minecraft.gameRenderer.mainCamera().blockPosition();
-        FluidState fluidState = this.minecraft.player.level().getFluidState(pos);
+        BlockPos pos = minecraft.gameRenderer.mainCamera().blockPosition();
+        FluidState fluidState = minecraft.player.level().getFluidState(pos);
 
         if (fluidState.getType() == ModBlocks.ECTOPLASM_STILL || fluidState.getType() == ModBlocks.ECTOPLASM_FLOWING) {
             PoseStack matrices = new PoseStack();
-            calcium$submitOverlay(this.minecraft, matrices, submitNodeCollector, pos);
+            calcium$submitOverlay(minecraft, matrices, submitNodeCollector, pos);
         }
 
     }

@@ -3,7 +3,7 @@
     "type": "minecraft:model",
     "model": "calcium:block/willow_leaves",
     "tints": [
-      { "type": "minecraft:constant", "value": 6782267 }
+      { "type": "calcium:biome", "kind": "foliage" }
     ]
   }
 }

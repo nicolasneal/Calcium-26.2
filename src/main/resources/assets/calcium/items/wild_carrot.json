@@ -1,6 +1,10 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "calcium:item/wild_carrot"
+    "model": "calcium:item/wild_carrot",
+    "tints": [
+      { "type": "minecraft:constant", "value": 16777215 },
+      { "type": "calcium:biome", "kind": "grass" }
+    ]
   }
 }

@@ -1,0 +1,7 @@
+{
+	"parent": "block/walls/wall_cross_tall",
+	"textures": {
+		"wall": "block/walls/mud_bricks",
+		"particle": "block/mud_bricks"
+	}
+}

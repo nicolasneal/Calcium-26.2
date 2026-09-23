@@ -1,7 +1,12 @@
 #version 330
+#extension GL_ARB_separate_shader_objects : require
 
-#moj_import <minecraft:fog.glsl>
-#moj_import <minecraft:dynamictransforms.glsl>
+#ifdef GLINT
+#include <minecraft:globals.glsl>
+#endif
+#include <minecraft:fog.glsl>
+#include <minecraft:dynamictransforms.glsl>
+#include <minecraft:oit.glsl>
 
 uniform sampler2D Sampler0;
 
@@ -9,68 +14,109 @@ uniform sampler2D Sampler0;
 uniform sampler2D DissolveMaskSampler;
 #endif
 
-in float sphericalVertexDistance;
-in float cylindricalVertexDistance;
-#ifdef PER_FACE_LIGHTING
-in vec4 vertexPerFaceColorBack;
-in vec4 vertexPerFaceColorFront;
-#else
-in vec4 vertexColor;
+#ifdef GLINT
+uniform sampler2D GlintSampler;
 #endif
 
-in vec4 rawColor;
+layout(location = 0) in float sphericalVertexDistance;
+layout(location = 1) in float cylindricalVertexDistance;
+#ifdef PER_FACE_LIGHTING
+layout(location = 2) in vec4 vertexPerFaceColorBack;
+layout(location = 3) in vec4 vertexPerFaceColorFront;
+#else
+layout(location = 2) in vec4 vertexColor;
+#endif
 
 #ifndef EMISSIVE
-in vec4 lightMapColor;
+layout(location = 4) in vec4 lightMapColor;
 #endif
 
 #ifndef NO_OVERLAY
-in vec4 overlayColor;
+layout(location = 5) in vec4 overlayColor;
 #endif
 
-in vec2 texCoord0;
+layout(location = 6) in vec2 texCoord0;
+#ifdef GLINT
+layout(location = 7) in vec2 texCoordGlint;
+#endif
 
-out vec4 fragColor;
+layout(location = 8) in vec4 rawColor;
+
+#ifndef OIT_ALPHA_ONLY
+layout(location = 0) out vec4 fragColor;
+#endif
+
+vec4 calculateFinalColor(vec4 color, bool unshaded) {
+    #ifndef NO_OVERLAY
+    color.rgb = mix(overlayColor.rgb, color.rgb, overlayColor.a);
+    #endif
+
+    #ifndef EMISSIVE
+    if (!unshaded) {
+        color *= lightMapColor;
+    }
+    #endif
+
+    #ifdef GLINT
+    vec4 glintColor = GlintAlpha * texture(GlintSampler, texCoordGlint);
+    // Matches BlendFuntion.GLINT
+    color.rgb += glintColor.rgb * glintColor.rgb;
+    #endif
+
+    #ifdef OIT_ACCUMULATE
+    color = sampleColorForAccumulation(color);
+    vec4 fogColor = vec4(FogColor.rgb * color.a, FogColor.a);
+    #else
+    vec4 fogColor = FogColor;
+    #endif
+
+    return apply_fog(color, sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, fogColor);
+}
 
 void main() {
     vec4 color = texture(Sampler0, texCoord0);
     int texelAlpha = int(round(color.a * 255.0));
-#ifdef ALPHA_CUTOUT
-    if (color.a < ALPHA_CUTOUT) {
-        discard;
-    }
-#endif
-
-#ifdef PER_FACE_LIGHTING
-    vec4 faceVertexColor = gl_FrontFacing ? vertexPerFaceColorFront : vertexPerFaceColorBack;
-#else
-    vec4 faceVertexColor = vertexColor;
-#endif
-
     // Calcium: alpha == 252 marks a fully emissive/unshaded texel (torch flames, etc.),
     // skipping both cardinal (directional) lighting and the block/sky lightmap.
     bool calciumUnshaded = texelAlpha == 252;
+
+    #ifdef OIT_ADDITIVE
+    color.a = min(0.99, color.a);
+    #endif
+
+    #ifdef ALPHA_CUTOUT
+    if (color.a < ALPHA_CUTOUT) {
+        discard;
+    }
+    #endif
+
+    #ifdef PER_FACE_LIGHTING
+    vec4 faceVertexColor = gl_FrontFacing ? vertexPerFaceColorFront : vertexPerFaceColorBack;
+    #else
+    vec4 faceVertexColor = vertexColor;
+    #endif
+
     if (calciumUnshaded) {
         faceVertexColor = rawColor;
     }
 
-#ifdef DISSOLVE
+    #ifdef DISSOLVE
     if (faceVertexColor.a < texture(DissolveMaskSampler, texCoord0).a) {
         discard;
     }
     // The dissolve effect entirely replaces translucency
     faceVertexColor.a = 1.0;
-#endif
+    #endif
 
     color *= faceVertexColor * ColorModulator;
-#ifndef NO_OVERLAY
-    color.rgb = mix(overlayColor.rgb, color.rgb, overlayColor.a);
-#endif
-#ifndef EMISSIVE
-    if (!calciumUnshaded) {
-        color *= lightMapColor;
-    }
-#endif
 
-    fragColor = apply_fog(color, sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd, FogColor);
+    #ifdef GLINT
+    color.a = max(color.a, GlintAlpha);
+    #endif
+
+    #ifdef OIT_ALPHA_ONLY
+    executeAlphaOnlyPhase(gl_FragCoord.z, color.a);
+    #else
+    fragColor = calculateFinalColor(color, calciumUnshaded);
+    #endif
 }

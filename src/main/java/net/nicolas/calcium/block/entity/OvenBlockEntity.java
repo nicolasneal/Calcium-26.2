@@ -7,6 +7,7 @@ import it.unimi.dsi.fastutil.objects.Reference2IntOpenHashMap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
@@ -25,6 +26,7 @@ import net.minecraft.world.inventory.StackedContentsCompatible;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemStackTemplate;
+import net.minecraft.world.item.component.CookingFuel;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
@@ -34,6 +36,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ResolvableInt;
 import net.minecraft.world.phys.Vec3;
 import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.core.recipe.ModRecipes;
@@ -165,7 +168,7 @@ public class OvenBlockEntity extends BaseContainerBlockEntity implements Worldly
                     ItemStack bakeResult = recipe.value().assemble(input);
                     if (!bakeResult.isEmpty() && canBake(entity.items, maxStackSize, bakeResult)) {
                         if (!isLit) {
-                            int newLitTime = level.fuelValues().burnDuration(fuel);
+                            int newLitTime = ResolvableInt.getFromItem(fuel, DataComponents.COOKING_FUEL, CookingFuel::burnTime, entity.getLootContext(level), 0);
                             entity.litTimeRemaining = newLitTime;
                             entity.litTotalTime = newLitTime;
                             if (newLitTime > 0) {
@@ -319,7 +322,7 @@ public class OvenBlockEntity extends BaseContainerBlockEntity implements Worldly
     @Override public boolean canPlaceItem(int slot, ItemStack itemStack) {
         if (slot == SLOT_RESULT) return false;
         if (slot != SLOT_FUEL) return true;
-        return this.level.fuelValues().isFuel(itemStack);
+        return itemStack.has(DataComponents.COOKING_FUEL);
     }
 
     @Override public void setRecipeUsed(@Nullable RecipeHolder<?> recipeUsed) {

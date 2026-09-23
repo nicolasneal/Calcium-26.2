@@ -6,8 +6,6 @@ import net.minecraft.util.VisibleForDebug;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.biome.Climate;
-import net.minecraft.world.level.levelgen.DensityFunction;
-import net.minecraft.world.level.levelgen.DensityFunction.FunctionContext;
 import net.minecraft.world.level.levelgen.NoiseRouterData;
 
 import java.util.List;
@@ -438,10 +436,6 @@ public final class CalciumOverworldBiomeBuilder {
       final ResourceKey<Biome> biome
    ) {
       biomes.accept(Pair.of(Climate.parameters(temperature, humidity, continentalness, erosion, Climate.Parameter.point(1.1F), weirdness, offset), biome));
-   }
-
-   public static boolean isDeepDarkRegion(final DensityFunction erosion, final DensityFunction depth, final FunctionContext context) {
-      return erosion.compute(context) < -0.225F && depth.compute(context) > 0.9F;
    }
 
    public static String getDebugStringForPeaksAndValleys(final double peaksAndValleys) {

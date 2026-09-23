@@ -1,0 +1,7 @@
+{
+	"parent": "block/walls/wall_post",
+	"textures": {
+		"wall": "block/walls/deepslate_bricks",
+		"particle": "block/deepslate_bricks"
+	}
+}

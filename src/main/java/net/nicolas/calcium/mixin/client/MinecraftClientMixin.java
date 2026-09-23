@@ -42,7 +42,7 @@ public class MinecraftClientMixin {
 
         if (player != null && player.isSleeping()) {
 
-            boolean sneakPressed = InputConstants.isKeyDown(client.getWindow(), InputConstants.getKey(client.options.keyShift.saveString()).getValue());
+            boolean sneakPressed = InputConstants.isKeyDown(InputConstants.getKey(client.options.keyShift.saveString()).getValue());
             boolean perspectivePressed = client.options.keyTogglePerspective.isDown();
 
             for (KeyMapping key : client.options.keyMappings) {

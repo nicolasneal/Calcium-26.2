@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:simple_block",
+  "to_place": {
+    "type": "minecraft:weighted",
+    "entries": [
+      {
+        "weight": 60,
+        "data": {
+          "id": "minecraft:sunflower",
+          "properties": {
+            "half": "lower"
+          }
+        }
+      },
+      {
+        "weight": 20,
+        "data": {
+          "id": "minecraft:dandelion"
+        }
+      },
+      {
+        "weight": 20,
+        "data": {
+          "id": "minecraft:short_grass"
+        }
+      }
+    ]
+  }
+}

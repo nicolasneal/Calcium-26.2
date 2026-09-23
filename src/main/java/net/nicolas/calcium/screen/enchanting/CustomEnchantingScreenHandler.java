@@ -20,6 +20,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
+import net.minecraft.util.Prediction;
 import net.nicolas.calcium.core.Calcium;
 import net.nicolas.calcium.core.recipe.enchanting.EnchantingRecipe;
 import net.nicolas.calcium.core.recipe.enchanting.EnchantingRecipeInput;
@@ -385,7 +386,7 @@ public class CustomEnchantingScreenHandler extends RecipeBookMenu {
                             CustomEnchantingScreenHandler.this.inventory.setItem(i, remainder);
                         } else {
                             if (!player.getInventory().add(remainder)) {
-                                player.drop(remainder, false);
+                                player.drop(remainder, false, Prediction.PREDICTED);
                             }
                         }
                     }

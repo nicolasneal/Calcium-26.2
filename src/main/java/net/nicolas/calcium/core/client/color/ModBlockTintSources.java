@@ -26,7 +26,9 @@ public final class ModBlockTintSources {
         };
     }
 
-    private static final BlockTintSource DIRT = biomeColorTint(CalciumDirtColors.DEFAULT_DIRT_COLOR, (biome, x, z) -> CalciumDirtColors.get(biome.getSpecialEffects()));
+    public static final ColorResolver DIRT_RESOLVER = (biome, x, z) -> CalciumDirtColors.get(biome.getSpecialEffects());
+
+    private static final BlockTintSource DIRT = biomeColorTint(CalciumDirtColors.DEFAULT_DIRT_COLOR, DIRT_RESOLVER);
 
     public static BlockTintSource dirt() {
         return DIRT;

@@ -6,6 +6,7 @@ import net.minecraft.client.gui.screens.inventory.SignEditScreen;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.entity.SignBlockEntity;
+import net.minecraft.world.level.block.entity.SignTextSlot;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -18,8 +19,8 @@ public abstract class SignEditScreenMixin extends AbstractSignEditScreen {
 
     @Shadow @Final private Identifier texture;
 
-    public SignEditScreenMixin(SignBlockEntity blockEntity, boolean front, boolean filtered) {
-        super(blockEntity, front, filtered);
+    public SignEditScreenMixin(SignBlockEntity blockEntity, SignTextSlot slot, boolean filtered) {
+        super(blockEntity, slot, filtered);
     }
 
     @Inject(method = "extractSignBackground", at = @At("HEAD"), cancellable = true)

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/doors/door_bottom_right_open",
+  "textures": {
+    "texture": "minecraft:block/doors/poplar",
+    "particle": "minecraft:block/particles/poplar_door"
+  }
+}

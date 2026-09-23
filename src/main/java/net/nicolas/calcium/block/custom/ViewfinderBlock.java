@@ -1,6 +1,5 @@
 package net.nicolas.calcium.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
@@ -33,7 +32,6 @@ import org.jspecify.annotations.Nullable;
 
 public class ViewfinderBlock extends DirectionalBlock implements EntityBlock, SimpleWaterloggedBlock {
 
-    public static final MapCodec<ViewfinderBlock> CODEC = simpleCodec(ViewfinderBlock::new);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     private static final VoxelShape SHAPE_Y = Block.box(1, 0, 1, 15, 16, 15);
@@ -43,10 +41,6 @@ public class ViewfinderBlock extends DirectionalBlock implements EntityBlock, Si
     public ViewfinderBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false));
-    }
-
-    @Override protected MapCodec<? extends DirectionalBlock> codec() {
-        return CODEC;
     }
 
     @Override protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

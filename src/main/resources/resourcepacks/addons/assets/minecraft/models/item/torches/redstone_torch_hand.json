@@ -10,7 +10,7 @@
 		{
 			"from": [7, 0, 7],
 			"to": [9, 10, 9],
-			"shade": false,
+			"shade_direction_override": "up",
 			"light_emission": 13,
 			"faces": {
 				"north": {"uv": [6, 6, 8, 16], "texture": "#torch"},
@@ -24,7 +24,7 @@
 		{
 			"from": [6.5, 7.5, 6.5],
 			"to": [9.5, 7.5, 9.5],
-			"shade": false,
+			"shade_direction_override": "up",
 			"light_emission": 7,
 			"faces": {
 				"up": {"uv": [2, 5, 3, 6], "texture": "#torch"}
@@ -33,7 +33,7 @@
 		{
 			"from": [6.5, 10.5, 6.5],
 			"to": [9.5, 10.5, 9.5],
-			"shade": false,
+			"shade_direction_override": "up",
 			"light_emission": 7,
 			"faces": {
 				"down": {"uv": [1, 5, 2, 6], "texture": "#torch", "cullface": "up"}
@@ -42,7 +42,7 @@
 		{
 			"from": [6.5, 7.5, 6.5],
 			"to": [9.5, 10.5, 6.5],
-			"shade": false,
+			"shade_direction_override": "up",
 			"light_emission": 7,
 			"faces": {
 				"south": {"uv": [3, 6, 4, 7], "texture": "#torch"}
@@ -51,7 +51,7 @@
 		{
 			"from": [9.5, 7.5, 6.5],
 			"to": [9.5, 10.5, 9.5],
-			"shade": false,
+			"shade_direction_override": "up",
 			"light_emission": 7,
 			"faces": {
 				"west": {"uv": [0, 7, 1, 8], "texture": "#torch"}
@@ -60,7 +60,7 @@
 		{
 			"from": [6.5, 7.5, 9.5],
 			"to": [9.5, 10.5, 9.5],
-			"shade": false,
+			"shade_direction_override": "up",
 			"light_emission": 7,
 			"faces": {
 				"north": {"uv": [0, 6, 1, 7], "texture": "#torch"}
@@ -69,7 +69,7 @@
 		{
 			"from": [6.5, 7.5, 6.5],
 			"to": [6.5, 10.5, 9.5],
-			"shade": false,
+			"shade_direction_override": "up",
 			"light_emission": 7,
 			"faces": {
 				"east": {"uv": [3, 7, 4, 8], "texture": "#torch"}

@@ -1,6 +1,5 @@
 package net.nicolas.calcium.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -12,6 +11,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.BonemealSource;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
@@ -31,7 +31,6 @@ import org.jspecify.annotations.Nullable;
 
 public class LargeSeaPickleBlock extends VegetationBlock implements BonemealableBlock, SimpleWaterloggedBlock {
 
-    public static final MapCodec<LargeSeaPickleBlock> CODEC = simpleCodec(LargeSeaPickleBlock::new);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     public static final BooleanProperty TIP = BooleanProperty.create("tip");
     public static final EnumProperty<LargeSeaPickleType> TYPE = EnumProperty.create("type", LargeSeaPickleType.class);
@@ -42,10 +41,6 @@ public class LargeSeaPickleBlock extends VegetationBlock implements Bonemealable
     public LargeSeaPickleBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, false).setValue(TIP, false).setValue(TYPE, LargeSeaPickleType.SINGLE));
-    }
-
-    @Override protected MapCodec<LargeSeaPickleBlock> codec() {
-        return CODEC;
     }
 
     @Override public @Nullable BlockState getStateForPlacement(BlockPlaceContext context) {
@@ -119,15 +114,15 @@ public class LargeSeaPickleBlock extends VegetationBlock implements Bonemealable
         builder.add(WATERLOGGED, TIP, TYPE);
     }
 
-    @Override public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
+    @Override public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, BonemealSource source) {
         return true;
     }
 
-    @Override public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state) {
+    @Override public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state, BonemealSource source) {
         return true;
     }
 
-    @Override public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
+    @Override public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state, BonemealSource source) {
         if (!level.getBlockState(pos.below()).is(BlockTags.CORAL_BLOCKS)) {
             return;
         }

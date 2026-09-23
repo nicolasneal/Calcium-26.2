@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "calcium:item/wild_potato"
+    "layer0": "calcium:item/wild_potato",
+    "layer1": "calcium:item/wild_potato_tint"
   }
 }

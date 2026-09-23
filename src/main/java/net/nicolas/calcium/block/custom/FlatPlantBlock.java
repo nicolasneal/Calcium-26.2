@@ -1,6 +1,5 @@
 package net.nicolas.calcium.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
@@ -12,15 +11,10 @@ import net.nicolas.calcium.item.ModTags;
 
 public class FlatPlantBlock extends GenericPlantBlock {
 
-    public static final MapCodec<FlatPlantBlock> CODEC = simpleCodec(FlatPlantBlock::new);
     private static final VoxelShape SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 5.0, 15.0);
 
     public FlatPlantBlock(Properties settings) {
         super(settings);
-    }
-
-    @Override protected MapCodec<? extends Block> codec() {
-        return CODEC;
     }
 
     @Override protected VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {

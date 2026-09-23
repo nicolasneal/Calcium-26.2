@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/walls/wall_side2",
+	"textures": {
+		"wall": "calcium:block/walls/andesite_bricks",
+		"particle": "calcium:block/andesite_bricks"
+	}
+}

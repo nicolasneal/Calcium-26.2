@@ -8,8 +8,91 @@
         "sound": "minecraft:music.overworld.badlands"
       }
     },
-    "minecraft:visual/sky_color": "#A4D3ED",
+    "minecraft:gameplay/creature_world_gen_spawn_probability": 0.03,
+    "minecraft:gameplay/natural_mob_spawns": {
+      "argument": {
+        "spawn_costs": {},
+        "spawns_by_category": {
+          "ambient": [
+            {
+              "type": "minecraft:bat",
+              "count": 8,
+              "weight": 10
+            }
+          ],
+          "creature": [
+            {
+              "type": "minecraft:sheep",
+              "count": 4,
+              "weight": 12
+            },
+            {
+              "type": "minecraft:pig",
+              "count": 4,
+              "weight": 10
+            },
+            {
+              "type": "minecraft:chicken",
+              "count": 4,
+              "weight": 10
+            },
+            {
+              "type": "minecraft:cow",
+              "count": 4,
+              "weight": 8
+            },
+            {
+              "type": "minecraft:armadillo",
+              "count": {
+                "type": "minecraft:uniform",
+                "min_inclusive": 1,
+                "max_inclusive": 2
+              },
+              "weight": 6
+            }
+          ],
+          "monster": [
+            {
+              "type": "minecraft:husk",
+              "count": {
+                "type": "minecraft:uniform",
+                "min_inclusive": 3,
+                "max_inclusive": 4
+              },
+              "weight": 99
+            },
+            {
+              "type": "minecraft:parched",
+              "count": {
+                "type": "minecraft:uniform",
+                "min_inclusive": 3,
+                "max_inclusive": 4
+              },
+              "weight": 99
+            },
+            {
+              "type": "minecraft:enderman",
+              "count": 1,
+              "weight": 2
+            }
+          ],
+          "underground_water_creature": [
+            {
+              "type": "minecraft:glow_squid",
+              "count": {
+                "type": "minecraft:uniform",
+                "min_inclusive": 4,
+                "max_inclusive": 6
+              },
+              "weight": 10
+            }
+          ]
+        }
+      },
+      "modifier": "overlay"
+    },
     "minecraft:visual/fog_color": "#BFE0F2",
+    "minecraft:visual/sky_color": "#A4D3ED",
     "minecraft:visual/water_fog_color": "#42646B"
   },
   "effects": {
@@ -86,81 +169,5 @@
     ]
   ],
   "has_precipitation": false,
-  "creature_spawn_probability": 0.03,
-  "spawn_costs": {},
-  "spawners": {
-    "ambient": [
-      {
-        "type": "minecraft:bat",
-        "maxCount": 8,
-        "minCount": 8,
-        "weight": 10
-      }
-    ],
-    "axolotls": [],
-    "creature": [
-      {
-        "type": "minecraft:sheep",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 12
-      },
-      {
-        "type": "minecraft:pig",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 10
-      },
-      {
-        "type": "minecraft:chicken",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 10
-      },
-      {
-        "type": "minecraft:cow",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 8
-      },
-      {
-        "type": "minecraft:armadillo",
-        "maxCount": 2,
-        "minCount": 1,
-        "weight": 6
-      }
-    ],
-    "misc": [],
-    "monster": [
-      {
-        "type": "minecraft:husk",
-        "minCount": 3,
-        "maxCount": 4,
-        "weight": 99
-      },
-      {
-        "type": "minecraft:parched",
-        "minCount": 3,
-        "maxCount": 4,
-        "weight": 99
-      },
-      {
-        "type": "minecraft:enderman",
-        "minCount": 1,
-        "maxCount": 1,
-        "weight": 2
-      }
-    ],
-    "underground_water_creature": [
-      {
-        "type": "minecraft:glow_squid",
-        "maxCount": 6,
-        "minCount": 4,
-        "weight": 10
-      }
-    ],
-    "water_ambient": [],
-    "water_creature": []
-  },
   "temperature": 2.0
 }

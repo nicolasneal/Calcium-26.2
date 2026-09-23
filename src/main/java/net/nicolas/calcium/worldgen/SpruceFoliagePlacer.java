@@ -8,7 +8,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.IntProviders;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
 
@@ -31,7 +31,7 @@ public class SpruceFoliagePlacer extends FoliagePlacer {
         return ModFoliagePlacers.SPRUCE_FOLIAGE_PLACER;
     }
 
-    @Override protected void createFoliage(WorldGenLevel level, FoliageSetter foliageSetter, RandomSource random, TreeConfiguration config, int treeHeight, FoliageAttachment foliageAttachment, int foliageHeight, int leafRadius, int offset) {
+    @Override protected void createFoliage(WorldGenLevel level, FoliageSetter foliageSetter, RandomSource random, TreeFeature config, int treeHeight, FoliageAttachment foliageAttachment, int foliageHeight, int leafRadius, int offset) {
 
         BlockPos pos = foliageAttachment.pos();
         BlockPos.MutableBlockPos mutablePos = pos.mutable();
@@ -65,7 +65,7 @@ public class SpruceFoliagePlacer extends FoliagePlacer {
             if (extraRadius >= rowWidth) {
                 extraRadius = flag;
                 flag = 1;
-                rowWidth = Math.min(rowWidth + 1, leafRadius + foliageAttachment.radiusOffset());
+                rowWidth = Math.min(rowWidth + 1, leafRadius + foliageAttachment.radiusOffsetXZ());
             } else {
                 extraRadius++;
             }
@@ -73,7 +73,7 @@ public class SpruceFoliagePlacer extends FoliagePlacer {
 
     }
 
-    private void placeRing(WorldGenLevel level, FoliageSetter foliageSetter, RandomSource random, TreeConfiguration config, BlockPos pos, int radius, int y, boolean doubleTrunk, int distanceFromTop, RandomSource ringRandom) {
+    private void placeRing(WorldGenLevel level, FoliageSetter foliageSetter, RandomSource random, TreeFeature config, BlockPos pos, int radius, int y, boolean doubleTrunk, int distanceFromTop, RandomSource ringRandom) {
 
         int extra = doubleTrunk ? 1 : 0;
         BlockPos.MutableBlockPos mutablePos = new BlockPos.MutableBlockPos();
@@ -124,7 +124,7 @@ public class SpruceFoliagePlacer extends FoliagePlacer {
 
     }
 
-    @Override public int foliageHeight(RandomSource random, int height, TreeConfiguration config) {
+    @Override public int foliageHeight(RandomSource random, int height, TreeFeature config) {
         return Math.max(4, (height - this.trunkHeight.sample(random)) - 2);
     }
 

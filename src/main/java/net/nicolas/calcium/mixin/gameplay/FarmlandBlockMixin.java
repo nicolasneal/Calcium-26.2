@@ -3,11 +3,14 @@ package net.nicolas.calcium.mixin.gameplay;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.FarmlandBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.gen.Invoker;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -15,6 +18,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(FarmlandBlock.class)
 public abstract class FarmlandBlockMixin {
+
+    @Shadow public abstract void turnToBaseBlock(Entity entity, BlockState state, Level level, BlockPos pos);
 
     @Invoker("isNearWater") private static boolean invokeIsWaterNearby(LevelReader world, BlockPos pos) {
         throw new AssertionError();
@@ -33,7 +38,7 @@ public abstract class FarmlandBlockMixin {
             if (i > 0) {
                 level.setBlock(pos, state.setValue(FarmlandBlock.MOISTURE, i - 1), 2);
             } else if (!invokeHasCrop(level, pos)) {
-                FarmlandBlock.turnToDirt(null, state, level, pos);
+                this.turnToBaseBlock(null, state, level, pos);
             }
         } else if (i < 7) {
             level.setBlock(pos, state.setValue(FarmlandBlock.MOISTURE, i + 1), 2);

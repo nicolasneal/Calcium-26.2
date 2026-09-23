@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/walls/wall_side2",
+	"textures": {
+		"wall": "calcium:block/walls/cracked_packed_mud_bricks",
+		"particle": "calcium:block/cracked_packed_mud_bricks"
+	}
+}

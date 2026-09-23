@@ -22,8 +22,8 @@ public abstract class AdvancementsScreenMixin {
         Identifier.withDefaultNamespace("end/root")
     );
 
-    @ModifyArg(method = "onAddAdvancementRoot", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screens/advancements/AdvancementTab;create(Lnet/minecraft/client/Minecraft;Lnet/minecraft/client/gui/screens/advancements/AdvancementsScreen;ILnet/minecraft/advancements/AdvancementNode;)Lnet/minecraft/client/gui/screens/advancements/AdvancementTab;"), index = 2)
-    private int calcium$orderTabs(int index, @Local(argsOnly = true, name = "root") AdvancementNode root) {
+    @ModifyArg(method = "onAdvancementsUpdated", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screens/advancements/AdvancementTab;create(Lnet/minecraft/client/Minecraft;Lnet/minecraft/client/gui/screens/advancements/AdvancementsScreen;ILnet/minecraft/advancements/AdvancementNode;)Lnet/minecraft/client/gui/screens/advancements/AdvancementTab;"), index = 2)
+    private int calcium$orderTabs(int index, @Local(name = "root") AdvancementNode root) {
         int position = TAB_ORDER.indexOf(root.holder().id());
         return position >= 0 ? position : TAB_ORDER.size() + index;
     }

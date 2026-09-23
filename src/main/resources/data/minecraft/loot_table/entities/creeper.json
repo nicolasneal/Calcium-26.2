@@ -7,9 +7,9 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:gunpowder",
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_count",
+              "type": "minecraft:set_count",
               "add": false,
               "count": {
                 "type": "minecraft:uniform",
@@ -18,7 +18,7 @@
               }
             },
             {
-              "function": "minecraft:enchanted_count_increase",
+              "type": "minecraft:enchanted_count_increase",
               "enchantment": "minecraft:looting",
               "count": {
                 "type": "minecraft:uniform",
@@ -32,20 +32,18 @@
     },
     {
       "rolls": 1.0,
-      "conditions": [
-        {
-          "condition": "minecraft:entity_properties",
-          "entity": "attacker",
-          "predicate": {
-            "minecraft:entity_type": "#minecraft:skeletons"
-          }
+      "condition": {
+        "type": "minecraft:entity_properties",
+        "entity": "attacker",
+        "predicate": {
+          "minecraft:entity_type": "#minecraft:skeletons"
         }
-      ],
+      },
       "entries": [
         {
           "type": "minecraft:tag",
           "expand": true,
-          "name": "minecraft:creeper_drop_music_discs"
+          "items": "#minecraft:creeper_drop_music_discs"
         }
       ]
     }

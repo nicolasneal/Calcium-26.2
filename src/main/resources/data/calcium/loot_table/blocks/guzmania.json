@@ -3,21 +3,22 @@
   "pools": [
     {
       "rolls": 1.0,
-      "conditions": [
-        {
-          "condition": "minecraft:match_tool",
-          "predicate": {
-            "items": "minecraft:shears"
-          }
+      "condition": {
+        "type": "minecraft:match_tool",
+        "predicate": {
+          "items": "minecraft:shears"
         }
-      ],
+      },
       "entries": [
         {
           "type": "minecraft:item",
           "name": "calcium:guzmania",
-          "condition": "minecraft:block_state_property",
-          "properties": {
-            "half": "lower"
+          "condition": {
+            "type": "minecraft:match_block",
+            "blocks": "calcium:guzmania",
+            "state": {
+              "half": "lower"
+            }
           }
         }
       ]

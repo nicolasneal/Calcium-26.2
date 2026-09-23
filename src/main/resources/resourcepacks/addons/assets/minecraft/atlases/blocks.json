@@ -35,22 +35,24 @@
                 "trims/items/helmet_trim",
                 "trims/items/boots_trim"
             ],
-            "palette_key": "trims/color_palettes/trim_palette",
+            "palette_key": "trim_base",
             "permutations": {
-                "quartz": "trims/color_palettes/quartz",
-                "iron": "trims/color_palettes/iron",
-                "gold": "trims/color_palettes/gold",
-                "diamond": "trims/color_palettes/diamond",
-                "netherite": "trims/color_palettes/netherite",
-                "redstone": "trims/color_palettes/redstone",
-                "copper": "trims/color_palettes/copper",
-                "emerald": "trims/color_palettes/emerald",
-                "lapis": "trims/color_palettes/lapis",
-                "amethyst": "trims/color_palettes/amethyst",
-                "iron_darker": "trims/color_palettes/iron_darker",
-                "gold_darker": "trims/color_palettes/gold_darker",
-                "diamond_darker": "trims/color_palettes/diamond_darker",
-                "netherite_darker": "trims/color_palettes/netherite_darker"
+                "quartz": "trim/quartz",
+                "iron": "trim/iron",
+                "gold": "trim/gold",
+                "diamond": "trim/diamond",
+                "netherite": "trim/netherite",
+                "redstone": "trim/redstone",
+                "copper": "trim/copper",
+                "emerald": "trim/emerald",
+                "lapis": "trim/lapis",
+                "amethyst": "trim/amethyst",
+                "resin": "trim/resin",
+                "iron_darker": "trim/iron_darker",
+                "gold_darker": "trim/gold_darker",
+                "diamond_darker": "trim/diamond_darker",
+                "netherite_darker": "trim/netherite_darker",
+                "copper_darker": "trim/copper_darker"
             }
         },
 	{
@@ -80,7 +82,7 @@
         },
         {
             "type": "single",
-            "resource": "entity/minecart"
+            "resource": "entity/minecart/minecart"
         }
     ]
 }

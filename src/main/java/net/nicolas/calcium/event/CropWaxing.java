@@ -7,10 +7,10 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.LevelEvent;
@@ -27,9 +27,7 @@ public class CropWaxing {
     public interface Waxable {
 
         BooleanProperty WAXED = BooleanProperty.create("waxed");
-
         default void onWaxed(ServerLevel level, BlockPos pos, BlockState waxedState) {}
-
         default void onUnwaxed(ServerLevel level, BlockPos pos, BlockState unwaxedState) {}
 
     }
@@ -50,11 +48,12 @@ public class CropWaxing {
                 if (!world.isClientSide() && world instanceof ServerLevel serverLevel) {
                     waxBlock(serverLevel, player, pos, state, itemStack);
                 }
-                world.levelEvent(player, LevelEvent.PARTICLES_AND_SOUND_WAX_ON, pos, 0);
+                world.playSound(player, pos, SoundEvents.HONEYCOMB_WAX_ON, SoundSource.BLOCKS, 1.0F, 1.0F);
+                world.levelEvent(player, LevelEvent.PARTICLES_WAX_ON, pos, 0);
                 return InteractionResult.SUCCESS;
             }
 
-            if (state.getValue(Waxable.WAXED) && itemStack.getItem() instanceof AxeItem) {
+            if (state.getValue(Waxable.WAXED) && itemStack.is(ItemTags.AXES)) {
                 if (!world.isClientSide() && world instanceof ServerLevel serverLevel) {
                     unwaxBlock(serverLevel, player, hand, pos, state, itemStack);
                 }

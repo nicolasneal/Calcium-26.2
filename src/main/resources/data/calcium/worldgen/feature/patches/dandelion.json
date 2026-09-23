@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:simple_block",
+  "to_place": {
+    "type": "minecraft:weighted",
+    "entries": [
+      {
+        "weight": 85,
+        "data": {
+          "id": "minecraft:dandelion"
+        }
+      },
+      {
+        "weight": 15,
+        "data": {
+          "id": "minecraft:azure_bluet"
+        }
+      }
+    ]
+  }
+}

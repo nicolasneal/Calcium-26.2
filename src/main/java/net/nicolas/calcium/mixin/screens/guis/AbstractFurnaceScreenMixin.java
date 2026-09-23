@@ -1,6 +1,6 @@
 package net.nicolas.calcium.mixin.screens.guis;
 
-import com.mojang.blaze3d.pipeline.RenderPipeline;
+import com.mojang.renderpearl.api.pipeline.RenderPipeline;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.inventory.AbstractFurnaceScreen;
 import net.minecraft.client.gui.screens.inventory.AbstractRecipeBookScreen;
@@ -23,7 +23,7 @@ public abstract class AbstractFurnaceScreenMixin extends AbstractRecipeBookScree
         TooltipSlot.extractTooltip(this.hoveredSlot, graphics, this.font, mouseX, mouseY);
     }
 
-    @Redirect(method = "extractBackground", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;blitSprite(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIIIIIII)V"))
+    @Redirect(method = "extractBackground", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;blitSprite(Lcom/mojang/renderpearl/api/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIIIIIII)V"))
     private void calcium$redirectFurnaceOverlays(GuiGraphicsExtractor instance, RenderPipeline renderPipeline, Identifier location, int spriteWidth, int spriteHeight, int u, int v, int x, int y, int width, int height) {
 
         if (spriteWidth == 14 && spriteHeight == 14) {

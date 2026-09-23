@@ -1,6 +1,5 @@
 package net.nicolas.calcium.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.redstone.Orientation;
@@ -27,16 +26,11 @@ import org.jspecify.annotations.Nullable;
 
 public class MonitorBlock extends HorizontalDirectionalBlock implements EntityBlock {
 
-    public static final MapCodec<MonitorBlock> CODEC = simpleCodec(MonitorBlock::new);
     public static final BooleanProperty CONNECTED = BooleanProperty.create("connected");
 
     public MonitorBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(BlockStateProperties.POWERED, false).setValue(CONNECTED, false));
-    }
-
-    @Override protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
-        return CODEC;
     }
 
     @Override protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

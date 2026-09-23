@@ -8,10 +8,104 @@
         "sound": "minecraft:music.overworld.sulfur_caves"
       }
     },
-    "minecraft:visual/fog_start_distance": -16,
-    "minecraft:visual/fog_end_distance": 128,
-    "minecraft:visual/sky_color": "#82A1A5",
+    "minecraft:gameplay/natural_mob_spawns": {
+      "argument": {
+        "spawn_costs": {},
+        "spawns_by_category": {
+          "ambient": [
+            {
+              "type": "minecraft:bat",
+              "count": 8,
+              "weight": 10
+            }
+          ],
+          "monster": [
+            {
+              "type": "minecraft:sulfur_cube",
+              "count": {
+                "type": "minecraft:uniform",
+                "min_inclusive": 3,
+                "max_inclusive": 4
+              },
+              "weight": 30
+            },
+            {
+              "type": "minecraft:zombie",
+              "count": {
+                "type": "minecraft:uniform",
+                "min_inclusive": 3,
+                "max_inclusive": 4
+              },
+              "weight": 18
+            },
+            {
+              "type": "minecraft:zombie_villager",
+              "count": {
+                "type": "minecraft:uniform",
+                "min_inclusive": 3,
+                "max_inclusive": 4
+              },
+              "weight": 2
+            },
+            {
+              "type": "minecraft:skeleton",
+              "count": {
+                "type": "minecraft:uniform",
+                "min_inclusive": 3,
+                "max_inclusive": 4
+              },
+              "weight": 20
+            },
+            {
+              "type": "minecraft:creeper",
+              "count": {
+                "type": "minecraft:uniform",
+                "min_inclusive": 3,
+                "max_inclusive": 4
+              },
+              "weight": 10
+            },
+            {
+              "type": "minecraft:spider",
+              "count": {
+                "type": "minecraft:uniform",
+                "min_inclusive": 3,
+                "max_inclusive": 4
+              },
+              "weight": 10
+            },
+            {
+              "type": "minecraft:slime",
+              "count": {
+                "type": "minecraft:uniform",
+                "min_inclusive": 3,
+                "max_inclusive": 4
+              },
+              "weight": 5
+            },
+            {
+              "type": "minecraft:enderman",
+              "count": 1,
+              "weight": 1
+            },
+            {
+              "type": "minecraft:witch",
+              "count": {
+                "type": "minecraft:uniform",
+                "min_inclusive": 1,
+                "max_inclusive": 2
+              },
+              "weight": 4
+            }
+          ]
+        }
+      },
+      "modifier": "overlay"
+    },
     "minecraft:visual/fog_color": "#B0C3C6",
+    "minecraft:visual/fog_end_distance": 128,
+    "minecraft:visual/fog_start_distance": -16,
+    "minecraft:visual/sky_color": "#82A1A5",
     "minecraft:visual/water_fog_color": "#4B6368"
   },
   "effects": {
@@ -87,78 +181,5 @@
     ]
   ],
   "has_precipitation": true,
-  "spawn_costs": {},
-  "spawners": {
-    "ambient": [
-      {
-        "type": "minecraft:bat",
-        "maxCount": 8,
-        "minCount": 8,
-        "weight": 10
-      }
-    ],
-    "axolotls": [],
-    "creature": [],
-    "misc": [],
-    "monster": [
-      {
-        "type": "minecraft:sulfur_cube",
-        "minCount": 3,
-        "maxCount": 4,
-        "weight": 30
-      },
-      {
-        "type": "minecraft:zombie",
-        "minCount": 3,
-        "maxCount": 4,
-        "weight": 18
-      },
-      {
-        "type": "minecraft:zombie_villager",
-        "minCount": 3,
-        "maxCount": 4,
-        "weight": 2
-      },
-      {
-        "type": "minecraft:skeleton",
-        "minCount": 3,
-        "maxCount": 4,
-        "weight": 20
-      },
-      {
-        "type": "minecraft:creeper",
-        "minCount": 3,
-        "maxCount": 4,
-        "weight": 10
-      },
-      {
-        "type": "minecraft:spider",
-        "minCount": 3,
-        "maxCount": 4,
-        "weight": 10
-      },
-      {
-        "type": "minecraft:slime",
-        "minCount": 3,
-        "maxCount": 4,
-        "weight": 5
-      },
-      {
-        "type": "minecraft:enderman",
-        "minCount": 1,
-        "maxCount": 1,
-        "weight": 1
-      },
-      {
-        "type": "minecraft:witch",
-        "minCount": 1,
-        "maxCount": 2,
-        "weight": 4
-      }
-    ],
-    "underground_water_creature": [],
-    "water_ambient": [],
-    "water_creature": []
-  },
   "temperature": 0.8
 }

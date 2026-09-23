@@ -5,9 +5,10 @@ import net.minecraft.client.Camera;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.fog.FogData;
-import net.minecraft.util.ARGB;
 import net.minecraft.util.Mth;
 import net.nicolas.calcium.core.client.environment.HighAltitude;
+import org.joml.Vector3f;
+import org.joml.Vector3fc;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -27,13 +28,13 @@ public abstract class AtmosphericFogEnvironmentMixin {
     }
 
     @ModifyReturnValue(method = "getBaseColor", at = @At("RETURN"))
-    private int calcium$darkenSkyFogByAltitude(int color, ClientLevel level, Camera camera, int renderDistance, float partialTicks) {
+    private Vector3fc calcium$darkenSkyFogByAltitude(Vector3fc color, ClientLevel level, Camera camera, int renderDistance, float partialTicks) {
         float altitudeFactor = HighAltitude.computeFactor(camera.position().y);
         if (altitudeFactor <= 0.0F) {
             return color;
         }
         float colorMultiplier = Mth.lerp(altitudeFactor, 1.0F, MIN_SKY_FOG_COLOR_MULTIPLIER);
-        return ARGB.scaleRGB(color, colorMultiplier);
+        return color.mul(colorMultiplier, new Vector3f());
     }
 
 }

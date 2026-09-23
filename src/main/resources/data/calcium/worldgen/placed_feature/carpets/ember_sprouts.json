@@ -13,17 +13,23 @@
       "count": 96
     },
     {
-      "type": "minecraft:random_offset",
-      "xz_spread": {
+      "type": "minecraft:offset",
+      "x": {
         "type": "minecraft:trapezoid",
         "max": 9,
         "min": -9,
         "plateau": 0
       },
-      "y_spread": {
+      "y": {
         "type": "minecraft:trapezoid",
         "max": 3,
         "min": -3,
+        "plateau": 0
+      },
+      "z": {
+        "type": "minecraft:trapezoid",
+        "max": 9,
+        "min": -9,
         "plateau": 0
       }
     },
@@ -36,4 +42,3 @@
     }
   ]
 }
-

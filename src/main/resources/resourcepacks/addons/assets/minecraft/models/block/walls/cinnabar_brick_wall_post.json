@@ -1,0 +1,7 @@
+{
+	"parent": "block/walls/wall_post",
+	"textures": {
+		"wall": "block/walls/cinnabar_bricks",
+		"particle": "block/cinnabar_bricks"
+	}
+}

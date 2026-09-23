@@ -1,61 +1,44 @@
 package net.nicolas.calcium.item;
 
-import net.minecraft.world.level.block.ComposterBlock;
+import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.component.Compostable;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProvider;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 import net.nicolas.calcium.block.ModBlocks;
 
-    // This class stores the mod's composting efficiency values.
+import java.util.Map;
+
+    // This class applies the mod's composting efficiency values. The items in each efficiency tier are listed in
+    // data/calcium/tags/item/compostable, and each tier uses the matching vanilla context int provider.
 
 public class ModCompostables {
 
+    private static final Map<String, ResourceKey<ContextIntProvider>> TIERS = Map.of(
+        "low", ContextIntProviders.COMPOSTABLE_LOW,
+        "low_medium", ContextIntProviders.COMPOSTABLE_LOW_MEDIUM,
+        "medium", ContextIntProviders.COMPOSTABLE_MEDIUM,
+        "medium_high", ContextIntProviders.COMPOSTABLE_MEDIUM_HIGH,
+        "always_add_one", ContextIntProviders.COMPOSTABLE_ALWAYS_ADD_ONE
+    );
+
     public static void initialize() {
 
-        // PLANT BLOCKS
-
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.BARLEY.asItem(), 0.50f);
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.SEA_OATS.asItem(), 0.50f);
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.SHORT_ICY_IRIS.asItem(), 0.30f);
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.PAMPAS.asItem(), 0.65f);
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.BUSY_LIZZIE.asItem(), 0.65f);
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.PONTEDERIA.asItem(), 0.65f);
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.HIBISCUS.asItem(), 0.65f);
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.POKER.asItem(), 0.65f);
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.GOLDENROD.asItem(), 0.65f);
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.MANEDROP.asItem(), 0.85f);
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.GUZMANIA.asItem(), 0.85f);
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.CLOVERS.asItem(), 0.30f);
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.BLACK_STINKHORN.asItem(), 0.65f);
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.WHITE_STINKHORN.asItem(), 0.65f);
-
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.EMBER_SPROUTS.asItem(), 0.30f);
-
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.END_GROWTH.asItem(), 0.30f);
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.WISP_SPROUTS.asItem(), 0.30f);
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.WISP.asItem(), 0.30f);
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.FLOWERING_WISP.asItem(), 0.50f);
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.CELESTIAL_VINES_HEAD.asItem(), 0.50f);
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.WILLOW_SAPLING.asItem(), 0.30f);
-        ComposterBlock.COMPOSTABLES.put(ModBlocks.WILLOW_LEAVES.asItem(), 0.30f);
-
-        // RESOURCES
-
-        ComposterBlock.COMPOSTABLES.put(ModItems.PUMPKIN_SLICE, 0.50f);
-        ComposterBlock.COMPOSTABLES.put(ModItems.FLOUR, 0.65f);
-        ComposterBlock.COMPOSTABLES.put(ModItems.DOUGH, 0.85f);
-        ComposterBlock.COMPOSTABLES.put(ModItems.BATTER, 1.00f);
-
-        // FOODS
-
-        ComposterBlock.COMPOSTABLES.put(ModItems.AZUREBERRIES, 0.30f);
-        ComposterBlock.COMPOSTABLES.put(ModItems.CHOCOLATE_CAKE, 1.00f);
-        ComposterBlock.COMPOSTABLES.put(ModItems.PUMPKIN_CAKE_ROLL, 1.00f);
-        ComposterBlock.COMPOSTABLES.put(ModItems.CHORUS_CAKE_ROLL, 1.00f);
-
-        // SEEDS
-
-        ComposterBlock.COMPOSTABLES.put(ModItems.MANEDROP_SEEDS, 0.30f);
-        ComposterBlock.COMPOSTABLES.put(ModItems.GUZMANIA_SEEDS, 0.30f);
-        ComposterBlock.COMPOSTABLES.put(ModItems.AZUREBERRY_SEEDS, 0.30f);
-
+        DefaultItemComponentEvents.MODIFY.register(context -> context.modify(item -> true, (builder, lookup, item) -> {
+            HolderLookup.RegistryLookup<Item> items = lookup.lookupOrThrow(Registries.ITEM);
+            TIERS.forEach((tier, provider) -> {
+                TagKey<Item> tag = TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(ModBlocks.MOD_ID, "compostable/" + tier));
+                if (items.get(tag).map(set -> set.contains(item.builtInRegistryHolder())).orElse(false)) {
+                    builder.set(DataComponents.COMPOSTABLE, new Compostable(provider));
+                }
+            });
+        }));
 
     }
 

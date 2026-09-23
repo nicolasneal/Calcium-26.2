@@ -1,14 +1,16 @@
 package net.nicolas.calcium.mixin.gameplay;
 
 import com.google.common.collect.ImmutableMap;
-import net.minecraft.advancements.AdvancementNode;
-import net.minecraft.advancements.DisplayInfo;
+import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.advancements.AdvancementTab;
 import net.minecraft.client.gui.screens.advancements.AdvancementTabType;
+import net.minecraft.client.gui.screens.advancements.AdvancementWidget;
 import net.minecraft.client.gui.screens.advancements.AdvancementsScreen;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import org.spongepowered.asm.mixin.*;
@@ -33,13 +35,13 @@ public abstract class AdvancementTabIconMixin {
 
     @Mutable @Shadow @Final private ItemStack icon;
 
-    @Shadow @Final private AdvancementNode rootNode;
+    @Shadow public abstract AdvancementHolder getRootAdvancement();
 
     @Inject(method = "<init>", at = @At("TAIL"))
-    private void calcium$overrideTabIcon(Minecraft minecraft, AdvancementsScreen screen, AdvancementTabType type, int index, AdvancementNode rootNode, DisplayInfo display, CallbackInfo ci) {
-        ItemLike icon = TAB_ICONS.get(this.rootNode.holder().id());
-        if (icon != null) {
-            this.icon = new ItemStack(icon);
+    private void calcium$overrideTabIcon(Minecraft minecraft, AdvancementsScreen screen, AdvancementTabType type, int index, AdvancementWidget root, ItemStackTemplate iconTemplate, Component title, Identifier background, CallbackInfo ci) {
+        ItemLike replacement = TAB_ICONS.get(this.getRootAdvancement().id());
+        if (replacement != null) {
+            this.icon = new ItemStack(replacement);
         }
     }
 

@@ -65,9 +65,12 @@ public class ViewfinderBlockEntityRenderer implements BlockEntityRenderer<Viewfi
 
         poseStack.pushPose();
         poseStack.translate(0.5, 0.5, 0.5);
-        poseStack.mulPose(base);
+        poseStack.rotate(base);
         poseStack.scale(-1.0F, -1.0F, 1.0F);
-        submitNodeCollector.submitModel(this.model, aim, poseStack, TEXTURE, state.lightCoords, OverlayTexture.NO_OVERLAY, 0, state.breakProgress);
+        submitNodeCollector.submitModel(this.model, aim, poseStack, TEXTURE, state.lightCoords, OverlayTexture.NO_OVERLAY, 0);
+        if (state.breakProgress != null) {
+            submitNodeCollector.submitCrumblingOverlay(this.model, aim, poseStack, this.model.renderType(TEXTURE), state.lightCoords, OverlayTexture.NO_OVERLAY, 0, state.breakProgress);
+        }
         poseStack.popPose();
 
     }

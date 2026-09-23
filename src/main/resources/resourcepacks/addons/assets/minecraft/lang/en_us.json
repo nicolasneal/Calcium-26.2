@@ -113,6 +113,7 @@
 
   // BLOCK NAMES
 
+  "block.minecraft.closed_eyeblossom": "Eyeblossom",
   "block.minecraft.oak_button": "Wooden Button",
   "block.minecraft.oak_pressure_plate": "Wooden Pressure Plate",
   "block.minecraft.amethyst_block": "Amethyst",

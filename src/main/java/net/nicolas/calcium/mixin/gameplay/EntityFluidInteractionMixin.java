@@ -1,5 +1,7 @@
 package net.nicolas.calcium.mixin.gameplay;
 
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityFluidInteraction;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
@@ -11,12 +13,12 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
 @Mixin(EntityFluidInteraction.class)
 public abstract class EntityFluidInteractionMixin {
 
-    @ModifyArg(method = "update", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/EntityFluidInteraction;getTrackerFor(Lnet/minecraft/world/level/material/Fluid;)Lnet/minecraft/world/entity/EntityFluidInteraction$Tracker;"))
-    private Fluid calcium$treatEctoplasmAsLava(Fluid fluidType) {
-        if (fluidType == ModBlocks.ECTOPLASM_STILL || fluidType == ModBlocks.ECTOPLASM_FLOWING) {
-            return Fluids.LAVA;
+    @ModifyArg(method = "update", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/EntityFluidInteraction;getOrCreateTrackerFor(Lnet/minecraft/core/Holder;)Lnet/minecraft/world/entity/EntityFluidInteraction$Tracker;"))
+    private Holder<Fluid> calcium$treatEctoplasmAsLava(Holder<Fluid> fluid) {
+        if (fluid.value() == ModBlocks.ECTOPLASM_STILL || fluid.value() == ModBlocks.ECTOPLASM_FLOWING) {
+            return BuiltInRegistries.FLUID.wrapAsHolder(Fluids.LAVA);
         }
-        return fluidType;
+        return fluid;
     }
 
 }

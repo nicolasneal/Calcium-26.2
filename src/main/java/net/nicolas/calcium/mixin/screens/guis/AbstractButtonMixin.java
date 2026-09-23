@@ -15,7 +15,7 @@ public abstract class AbstractButtonMixin {
     @Unique private static final Identifier TRADING_SLOT_HIGHLIGHTED = Identifier.fromNamespaceAndPath("calcium", "container/villager/trading_slot_highlighted");
     @Unique private static final Identifier TRADING_SLOT_SELECTED = Identifier.fromNamespaceAndPath("calcium", "container/villager/trading_slot_selected");
 
-    @ModifyArg(method = "extractDefaultSprite", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;blitSprite(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIIII)V"), index = 1)
+    @ModifyArg(method = "extractDefaultSprite", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;blitSprite(Lcom/mojang/renderpearl/api/pipeline/RenderPipeline;Lnet/minecraft/resources/Identifier;IIIII)V"), index = 1)
     private Identifier calcium$redirectTradeButtonSprite(Identifier sprite) {
         if (!(this instanceof TradeButtonAccess tradeButton)) {
             return sprite;

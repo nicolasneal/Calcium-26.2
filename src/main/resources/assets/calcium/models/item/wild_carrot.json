@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "calcium:item/wild_carrot"
+    "layer0": "calcium:item/wild_carrot",
+    "layer1": "calcium:item/wild_carrot_tint"
   }
 }

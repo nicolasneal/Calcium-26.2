@@ -1,9 +1,6 @@
 package net.nicolas.calcium.block.custom;
 
-import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
@@ -14,6 +11,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.BonemealSource;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -30,12 +28,6 @@ import org.jspecify.annotations.Nullable;
 
 public class TallCropBlock extends DoublePlantBlock implements BonemealableBlock, CropWaxing.Waxable {
 
-    public static final MapCodec<TallCropBlock> CODEC = RecordCodecBuilder.mapCodec(
-        instance -> instance.group(
-            BuiltInRegistries.BLOCK.byNameCodec().fieldOf("grown_plant").forGetter(TallCropBlock::grownPlant),
-            propertiesCodec()
-        ).apply(instance, TallCropBlock::new)
-    );
     public static final int MAX_AGE = 2;
     public static final IntegerProperty AGE = BlockStateProperties.AGE_2;
 
@@ -54,10 +46,6 @@ public class TallCropBlock extends DoublePlantBlock implements BonemealableBlock
 
     public Block grownPlant() {
         return this.grownPlant;
-    }
-
-    @Override public MapCodec<? extends DoublePlantBlock> codec() {
-        return CODEC;
     }
 
     @Override public @Nullable BlockState getStateForPlacement(BlockPlaceContext context) {
@@ -182,7 +170,7 @@ public class TallCropBlock extends DoublePlantBlock implements BonemealableBlock
         return isLower(lowerState) ? new TallCropBlock.PosAndState(lowerPos, lowerState) : null;
     }
 
-    @Override public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
+    @Override public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, BonemealSource source) {
         TallCropBlock.PosAndState lowerHalf = this.getLowerHalf(level, pos, state);
         if (lowerHalf == null || lowerHalf.state.getValue(WAXED)) {
             return false;
@@ -190,11 +178,11 @@ public class TallCropBlock extends DoublePlantBlock implements BonemealableBlock
         return this.isMaxAge(lowerHalf.state) || this.canGrow(level, lowerHalf.pos, lowerHalf.state, lowerHalf.state.getValue(AGE) + 1);
     }
 
-    @Override public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state) {
+    @Override public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state, BonemealSource source) {
         return true;
     }
 
-    @Override public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
+    @Override public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state, BonemealSource source) {
         TallCropBlock.PosAndState lowerHalf = this.getLowerHalf(level, pos, state);
         if (lowerHalf != null) {
             if (this.isMaxAge(lowerHalf.state)) {

@@ -6,7 +6,6 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.SingleQuadParticle;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.util.ARGB;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.attribute.EnvironmentAttributes;
@@ -17,6 +16,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.joml.Vector3fc;
 
 @Mixin(targets = "net.minecraft.client.particle.SuspendedParticle$UnderwaterProvider")
 public abstract class UnderwaterParticleMixin {
@@ -33,10 +33,10 @@ public abstract class UnderwaterParticleMixin {
         if (particle instanceof SingleQuadParticle quadParticle) {
             Camera camera = Minecraft.getInstance().gameRenderer.mainCamera();
             float partialTicks = Minecraft.getInstance().getDeltaTracker().getGameTimeDeltaPartialTick(false);
-            int fogColor = camera.attributeProbe().getValue(EnvironmentAttributes.WATER_FOG_COLOR, partialTicks);
+            Vector3fc fogColor = camera.attributeProbe().getValue(EnvironmentAttributes.WATER_FOG_COLOR, partialTicks);
             float depthFactor = UnderwaterDepth.computeFactor(camera, level);
             float colorMultiplier = Mth.lerp(depthFactor, 1.0F, MIN_COLOR_MULTIPLIER);
-            quadParticle.setColor(ARGB.redFloat(fogColor) * colorMultiplier, ARGB.greenFloat(fogColor) * colorMultiplier, ARGB.blueFloat(fogColor) * colorMultiplier);
+            quadParticle.setColor(fogColor.x() * colorMultiplier, fogColor.y() * colorMultiplier, fogColor.z() * colorMultiplier);
             ((SingleQuadParticleAccessor) quadParticle).setParticleAlpha(UNDERWATER_PARTICLE_ALPHA);
             ((TranslucentParticle) quadParticle).calcium$setTranslucent(true);
         }

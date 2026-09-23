@@ -5,6 +5,7 @@ import net.minecraft.recipebook.ServerPlaceRecipe;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.Container;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
@@ -146,7 +147,7 @@ public class OvenScreenHandler extends RecipeBookMenu {
     }
 
     protected boolean isFuel(ItemStack itemStack) {
-        return this.level.fuelValues().isFuel(itemStack);
+        return itemStack.has(DataComponents.COOKING_FUEL);
     }
 
     public float getBurnProgress() {

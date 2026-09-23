@@ -1,0 +1,16 @@
+{
+  "values": [
+    "minecraft:bamboo",
+    "#minecraft:wooden_slabs",
+    "#minecraft:wool",
+    "minecraft:ladder",
+    "minecraft:scaffolding",
+    "#minecraft:wooden_buttons",
+    "#minecraft:wooden_pressure_plates",
+    "minecraft:daylight_detector",
+    "minecraft:bamboo_mosaic_slab",
+    "minecraft:stick",
+    "minecraft:bowl",
+    "calcium:wooden_rod"
+  ]
+}

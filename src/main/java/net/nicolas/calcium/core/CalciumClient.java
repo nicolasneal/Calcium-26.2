@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockColorRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.ColorResolverRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ModelLayerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderingRegistry;
@@ -70,8 +71,8 @@ import java.util.List;
 
 public class CalciumClient implements ClientModInitializer {
 
-    public static final KeyMapping ROTATE_EXTRA_SLOTS_KEY = new KeyMapping("key.calcium.rotate_extra_slots", InputConstants.Type.KEYSYM, InputConstants.KEY_LCONTROL, KeyMapping.Category.INVENTORY, 1);
-    public static final KeyMapping TOGGLE_RECIPE_BOOK_KEY = new KeyMapping("key.calcium.toggle_recipe_book", InputConstants.Type.KEYSYM, InputConstants.KEY_R, KeyMapping.Category.INVENTORY, 2);
+    public static final KeyMapping ROTATE_EXTRA_SLOTS_KEY = new KeyMapping("key.calcium.rotate_extra_slots", InputConstants.Type.KEYBOARD, InputConstants.KEY_LCONTROL, KeyMapping.Category.INVENTORY, 1);
+    public static final KeyMapping TOGGLE_RECIPE_BOOK_KEY = new KeyMapping("key.calcium.toggle_recipe_book", InputConstants.Type.KEYBOARD, InputConstants.KEY_R, KeyMapping.Category.INVENTORY, 2);
 
     public static final ModelLayerLocation WILLOW_BOAT_LAYER = new ModelLayerLocation(Identifier.fromNamespaceAndPath("calcium", "boat/willow"), "main");
     public static final ModelLayerLocation WILLOW_CHEST_BOAT_LAYER = new ModelLayerLocation(Identifier.fromNamespaceAndPath("calcium", "chest_boat/willow"), "main");
@@ -170,6 +171,7 @@ public class CalciumClient implements ClientModInitializer {
             ViewfinderController.tick();
         });
 
+        ColorResolverRegistry.register(ModBlockTintSources.DIRT_RESOLVER);
         ItemTintSourcesAccessor.calcium$getIdMapper().put(Identifier.fromNamespaceAndPath("calcium", "biome"), BiomeItemTintSource.MAP_CODEC);
 
         BlockColorRegistry.register(

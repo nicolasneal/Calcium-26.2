@@ -9,10 +9,17 @@
       }
     },
     "minecraft:gameplay/increased_fire_burnout": true,
-    "minecraft:visual/fog_start_distance": -16,
-    "minecraft:visual/fog_end_distance": 128,
-    "minecraft:visual/sky_color": "#1E2326",
+    "minecraft:gameplay/natural_mob_spawns": {
+      "argument": {
+        "spawn_costs": {},
+        "spawns_by_category": {}
+      },
+      "modifier": "overlay"
+    },
     "minecraft:visual/fog_color": "#2A3033",
+    "minecraft:visual/fog_end_distance": 128,
+    "minecraft:visual/fog_start_distance": -16,
+    "minecraft:visual/sky_color": "#1E2326",
     "minecraft:visual/water_fog_color": "#253740"
   },
   "effects": {
@@ -79,16 +86,5 @@
     ]
   ],
   "has_precipitation": true,
-  "spawn_costs": {},
-  "spawners": {
-    "ambient": [],
-    "axolotls": [],
-    "creature": [],
-    "misc": [],
-    "monster": [],
-    "underground_water_creature": [],
-    "water_ambient": [],
-    "water_creature": []
-  },
   "temperature": 0.8
 }

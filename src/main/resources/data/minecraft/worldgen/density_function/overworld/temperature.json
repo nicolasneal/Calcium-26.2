@@ -3,13 +3,18 @@
   "spline": {
     "coordinate": {
       "type": "minecraft:add",
-      "argument1": {
-        "type": "calcium:z_position"
+      "left": {
+        "type": "minecraft:gradient",
+        "axis": "z",
+        "from_coordinate": -16000,
+        "from_value": -16000,
+        "to_coordinate": 16000,
+        "to_value": 16000
       },
-      "argument2": {
+      "right": {
         "type": "minecraft:mul",
-        "argument1": 100.0,
-        "argument2": {
+        "left": 100.0,
+        "right": {
           "type": "minecraft:noise",
           "noise": "calcium:temperature_warp",
           "xz_scale": 1.0,

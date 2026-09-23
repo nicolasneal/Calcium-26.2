@@ -1,6 +1,7 @@
 package net.nicolas.calcium.core;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.item.v1.BlockTransformerHelper;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityType;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
@@ -20,6 +21,7 @@ import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LayeredCauldronBlock;
@@ -39,7 +41,6 @@ import net.nicolas.calcium.item.ModFuels;
 import net.nicolas.calcium.item.ModItems;
 import net.nicolas.calcium.item.ModOrder;
 import net.nicolas.calcium.item.ModStacks;
-import net.nicolas.calcium.mixin.accessors.AxeItemAccessor;
 import net.nicolas.calcium.mixin.accessors.BlockStateBaseAccessor;
 import net.nicolas.calcium.mixin.accessors.CauldronDispatcherAccessor;
 import net.nicolas.calcium.mixin.accessors.CauldronInteractionsAccessor;
@@ -54,9 +55,7 @@ import net.nicolas.calcium.screen.sniffer.SnifferInventoryScreenHandler;
 import net.nicolas.calcium.sound.ModSoundGroups;
 import net.nicolas.calcium.sound.ModSounds;
 import net.nicolas.calcium.worldgen.ModFoliagePlacers;
-import net.nicolas.calcium.worldgen.ZPositionDensityFunction;
 
-import java.util.HashMap;
 import java.util.Map;
 
     // This class, as I understand it, it the mod's main class that initializes all other classes. It's content can be
@@ -95,7 +94,6 @@ public class Calcium implements ModInitializer {
 
         // World Generation Density Function Types
 
-        Registry.register(BuiltInRegistries.DENSITY_FUNCTION_TYPE, Identifier.fromNamespaceAndPath("calcium", "z_position"), ZPositionDensityFunction.CODEC.codec());
 
         // World Generation Foliage Placer Types
 
@@ -116,7 +114,7 @@ public class Calcium implements ModInitializer {
         });
 
         FabricLoader.getInstance().getModContainer("calcium").ifPresent(container -> {
-            ResourceManagerHelper.registerBuiltinResourcePack(Identifier.fromNamespaceAndPath("calcium", "addons"), container, net.minecraft.network.chat.Component.nullToEmpty("§lNicolas's Add-Ons §r§7[1.2.0]"), ResourcePackActivationType.ALWAYS_ENABLED);
+            ResourceManagerHelper.registerBuiltinResourcePack(Identifier.fromNamespaceAndPath("calcium", "addons"), container, net.minecraft.network.chat.Component.nullToEmpty("§lNicolas's Add-Ons §r§7[1.2.1]"), ResourcePackActivationType.ALWAYS_ENABLED);
         });
 
         // Cauldron Behavior
@@ -166,11 +164,9 @@ public class Calcium implements ModInitializer {
 
         // Chorus Wood Registration
 
-        Map<Block, Block> strippables = new HashMap<>(AxeItemAccessor.calcium$getStrippables());
-        strippables.put(ModBlocks.CHORUS_BLOCK, ModBlocks.STRIPPED_CHORUS_BLOCK);
-        strippables.put(ModBlocks.WILLOW_LOG, ModBlocks.STRIPPED_WILLOW_LOG);
-        strippables.put(ModBlocks.WILLOW_WOOD, ModBlocks.STRIPPED_WILLOW_WOOD);
-        AxeItemAccessor.calcium$setStrippables(strippables);
+        BlockTransformerHelper.registerStripping(ModBlocks.CHORUS_BLOCK, BlockStateProvider.of(ModBlocks.STRIPPED_CHORUS_BLOCK));
+        BlockTransformerHelper.registerStripping(ModBlocks.WILLOW_LOG, BlockStateProvider.of(ModBlocks.STRIPPED_WILLOW_LOG));
+        BlockTransformerHelper.registerStripping(ModBlocks.WILLOW_WOOD, BlockStateProvider.of(ModBlocks.STRIPPED_WILLOW_WOOD));
 
         FireBlockInvoker fireBlock = (FireBlockInvoker) (Object) Blocks.FIRE;
         fireBlock.calcium$setFlammable(ModBlocks.CHORUS_BLOCK, 5, 5);

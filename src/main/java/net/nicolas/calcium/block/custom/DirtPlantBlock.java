@@ -1,6 +1,5 @@
 package net.nicolas.calcium.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.BlockGetter;
@@ -14,11 +13,6 @@ public class DirtPlantBlock extends GenericPlantBlock {
 
     public DirtPlantBlock(Properties settings) {
         super(settings);
-    }
-
-    public static final MapCodec<DirtPlantBlock> CODEC = simpleCodec(DirtPlantBlock::new);
-    @Override protected MapCodec<? extends Block> codec() {
-        return CODEC;
     }
 
     private static final VoxelShape SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 14.0, 15.0);

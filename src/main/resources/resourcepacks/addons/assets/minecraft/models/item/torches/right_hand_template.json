@@ -4,7 +4,7 @@
 		{
 			"from": [7, 0, 7],
 			"to": [9, 10, 9],
-			"shade": false,
+			"shade_direction_override": "up",
 			"light_emission": 13,
 			"rotation": {"angle": 0, "axis": "y", "origin": [7.99994, 6.40225, 7.45772]},
 			"faces": {

@@ -3,7 +3,7 @@
     "type": "minecraft:model",
     "model": "minecraft:block/coarse_dirt",
     "tints": [
-      { "type": "minecraft:constant", "value": 12486750 }
+      { "type": "calcium:biome", "kind": "dirt" }
     ]
   }
 }

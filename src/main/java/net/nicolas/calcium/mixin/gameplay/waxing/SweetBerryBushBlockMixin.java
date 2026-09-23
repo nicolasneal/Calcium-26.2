@@ -7,6 +7,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.block.BonemealSource;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraft.world.level.block.VegetationBlock;
@@ -53,7 +54,7 @@ public abstract class SweetBerryBushBlockMixin extends VegetationBlock implement
     }
 
     @Inject(method = "isValidBonemealTarget", at = @At("HEAD"), cancellable = true)
-    private void calcium$blockBonemeal(LevelReader level, BlockPos pos, BlockState state, CallbackInfoReturnable<Boolean> cir) {
+    private void calcium$blockBonemeal(LevelReader level, BlockPos pos, BlockState state, BonemealSource source, CallbackInfoReturnable<Boolean> cir) {
         if (state.getValue(WAXED)) {
             cir.setReturnValue(false);
         }

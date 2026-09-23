@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:simple_block",
+  "to_place": {
+    "type": "minecraft:weighted",
+    "entries": [
+      {
+        "weight": 70,
+        "data": {
+          "id": "minecraft:short_grass"
+        }
+      },
+      {
+        "weight": 15,
+        "data": {
+          "id": "calcium:goldenrod",
+          "properties": {
+            "half": "lower"
+          }
+        }
+      },
+      {
+        "weight": 15,
+        "data": {
+          "id": "minecraft:dandelion",
+          "properties": {
+            "half": "lower"
+          }
+        }
+      }
+    ]
+  }
+}

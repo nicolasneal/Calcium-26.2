@@ -49,7 +49,7 @@ public abstract class FlowerPotBlockMixin extends Block implements SimpleWaterlo
         return WaterloggingHelper.withWaterlogged(this.defaultBlockState(), context.getLevel(), context.getClickedPos());
     }
 
-    @Inject(method = "useItemOn", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;setBlock(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;I)Z"), cancellable = true)
+    @Inject(method = "useItemOn", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;setBlockAndUpdate(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)Z"), cancellable = true)
     private void calcium$restrictUnderwaterPlanting(ItemStack itemStack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult, CallbackInfoReturnable<InteractionResult> cir) {
         if (state.getValue(BlockStateProperties.WATERLOGGED) && !itemStack.is(ModTags.UNDERWATER_PLANTABLE)) {
             cir.setReturnValue(InteractionResult.TRY_WITH_EMPTY_HAND);

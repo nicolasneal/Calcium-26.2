@@ -4,6 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -31,7 +32,7 @@ public class ChorusCakeRollBlock extends CakeRollBlock {
                 player.stopRiding();
             }
             Vec3 oldPos = player.position();
-            if (player.randomTeleport(xx, yy, zz, true)) {
+            if (player.randomTeleport(xx, yy, zz, true, BlockTags.CONSUMABLE_DOES_NOT_TELEPORT_TO)) {
                 serverLevel.gameEvent(GameEvent.TELEPORT, oldPos, GameEvent.Context.of(player));
                 serverLevel.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.CHORUS_FRUIT_TELEPORT, SoundSource.PLAYERS);
                 player.resetFallDistance();

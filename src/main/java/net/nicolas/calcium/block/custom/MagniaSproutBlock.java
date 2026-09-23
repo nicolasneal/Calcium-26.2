@@ -1,6 +1,5 @@
 package net.nicolas.calcium.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
@@ -29,7 +28,6 @@ import java.util.Map;
 
 public class MagniaSproutBlock extends Block implements SimpleWaterloggedBlock {
 
-    public static final MapCodec<MagniaSproutBlock> CODEC = simpleCodec(MagniaSproutBlock::new);
     public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
 
     private static final Map<Direction, VoxelShape> SHAPES = new EnumMap<>(Direction.class);
@@ -45,10 +43,6 @@ public class MagniaSproutBlock extends Block implements SimpleWaterloggedBlock {
     public MagniaSproutBlock(Properties settings) {
         super(settings);
         this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.UP).setValue(BlockStateProperties.WATERLOGGED, false));
-    }
-
-    @Override protected MapCodec<? extends Block> codec() {
-        return CODEC;
     }
 
     @Override protected VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {

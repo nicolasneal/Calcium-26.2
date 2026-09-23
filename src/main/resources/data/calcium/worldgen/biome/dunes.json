@@ -8,12 +8,79 @@
         "sound": "minecraft:music.overworld.desert"
       }
     },
-    "minecraft:visual/fog_start_distance": -24,
-    "minecraft:visual/fog_end_distance": 384,
-    "minecraft:visual/sky_color": "#BCD8DE",
-    "minecraft:visual/fog_color": "#EAE3C5",
-    "minecraft:visual/sky_light_color": "#FFFBEC",
+    "minecraft:gameplay/natural_mob_spawns": {
+      "argument": {
+        "spawn_costs": {},
+        "spawns_by_category": {
+          "ambient": [
+            {
+              "type": "minecraft:bat",
+              "count": 8,
+              "weight": 10
+            }
+          ],
+          "creature": [
+            {
+              "type": "minecraft:rabbit",
+              "count": {
+                "type": "minecraft:uniform",
+                "min_inclusive": 2,
+                "max_inclusive": 3
+              },
+              "weight": 12
+            },
+            {
+              "type": "minecraft:camel",
+              "count": 1,
+              "weight": 1
+            }
+          ],
+          "monster": [
+            {
+              "type": "minecraft:husk",
+              "count": {
+                "type": "minecraft:uniform",
+                "min_inclusive": 3,
+                "max_inclusive": 4
+              },
+              "weight": 99
+            },
+            {
+              "type": "minecraft:parched",
+              "count": {
+                "type": "minecraft:uniform",
+                "min_inclusive": 3,
+                "max_inclusive": 4
+              },
+              "weight": 99
+            },
+            {
+              "type": "minecraft:enderman",
+              "count": 1,
+              "weight": 2
+            }
+          ],
+          "underground_water_creature": [
+            {
+              "type": "minecraft:glow_squid",
+              "count": {
+                "type": "minecraft:uniform",
+                "min_inclusive": 4,
+                "max_inclusive": 6
+              },
+              "weight": 10
+            }
+          ]
+        }
+      },
+      "modifier": "overlay"
+    },
     "minecraft:visual/cloud_color": "#DBE6E2D5",
+    "minecraft:visual/fog_color": "#EAE3C5",
+    "minecraft:visual/fog_end_distance": 384,
+    "minecraft:visual/fog_start_distance": -24,
+    "minecraft:visual/sky_color": "#BCD8DE",
+    "minecraft:visual/sky_light_color": "#FFFBEC",
     "minecraft:visual/water_fog_color": "#466167"
   },
   "effects": {
@@ -86,62 +153,5 @@
     ]
   ],
   "has_precipitation": false,
-  "spawn_costs": {},
-  "spawners": {
-    "ambient": [
-      {
-        "type": "minecraft:bat",
-        "maxCount": 8,
-        "minCount": 8,
-        "weight": 10
-      }
-    ],
-    "axolotls": [],
-    "creature": [
-      {
-        "type": "minecraft:rabbit",
-        "maxCount": 3,
-        "minCount": 2,
-        "weight": 12
-      },
-      {
-        "type": "minecraft:camel",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 1
-      }
-    ],
-    "misc": [],
-    "monster": [
-      {
-        "type": "minecraft:husk",
-        "minCount": 3,
-        "maxCount": 4,
-        "weight": 99
-      },
-      {
-        "type": "minecraft:parched",
-        "minCount": 3,
-        "maxCount": 4,
-        "weight": 99
-      },
-      {
-        "type": "minecraft:enderman",
-        "minCount": 1,
-        "maxCount": 1,
-        "weight": 2
-      }
-    ],
-    "underground_water_creature": [
-      {
-        "type": "minecraft:glow_squid",
-        "maxCount": 6,
-        "minCount": 4,
-        "weight": 10
-      }
-    ],
-    "water_ambient": [],
-    "water_creature": []
-  },
   "temperature": 2.0
 }

@@ -1,6 +1,9 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "calcium:item/barley"
+    "model": "calcium:item/barley",
+    "tints": [
+      { "type": "calcium:biome", "kind": "grass" }
+    ]
   }
 }

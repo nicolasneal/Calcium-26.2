@@ -30,6 +30,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.util.Prediction;
 import org.jspecify.annotations.Nullable;
 
 import java.util.stream.IntStream;
@@ -84,7 +85,7 @@ public abstract class ItemDisplayBlockEntity extends RandomizableContainerBlockE
                     onItemRemoved(player, it, slot);
                     if (!this.level.isClientSide()) {
                         if (!player.addItem(it)) {
-                            player.drop(it, false);
+                            player.drop(it, false, Prediction.SERVER_ONLY);
                         }
                         SoundEvent removeSound = this.getRemoveItemSound();
                         if (removeSound != null) {

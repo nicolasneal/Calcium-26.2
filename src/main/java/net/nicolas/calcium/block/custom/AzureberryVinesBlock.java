@@ -1,6 +1,5 @@
 package net.nicolas.calcium.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -20,6 +19,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.BonemealSource;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -42,7 +42,6 @@ import java.util.Map;
 
 public class AzureberryVinesBlock extends Block implements BonemealableBlock, CropWaxing.Waxable {
 
-    public static final MapCodec<AzureberryVinesBlock> CODEC = simpleCodec(AzureberryVinesBlock::new);
     public static final int MAX_AGE = 2;
     public static final IntegerProperty AGE = BlockStateProperties.AGE_2;
     public static final EnumProperty<Direction> FACING = BlockStateProperties.FACING;
@@ -52,10 +51,6 @@ public class AzureberryVinesBlock extends Block implements BonemealableBlock, Cr
     public AzureberryVinesBlock(BlockBehaviour.Properties properties) {
         super(properties);
         this.registerDefaultState(this.defaultBlockState().setValue(AGE, 0).setValue(FACING, Direction.UP).setValue(WAXED, false));
-    }
-
-    @Override public MapCodec<AzureberryVinesBlock> codec() {
-        return CODEC;
     }
 
     @Override protected VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
@@ -121,15 +116,15 @@ public class AzureberryVinesBlock extends Block implements BonemealableBlock, Cr
         return super.useWithoutItem(state, level, pos, player, hitResult);
     }
 
-    @Override public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
+    @Override public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, BonemealSource source) {
         return state.getValue(AGE) < MAX_AGE && !state.getValue(WAXED);
     }
 
-    @Override public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state) {
+    @Override public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state, BonemealSource source) {
         return true;
     }
 
-    @Override public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
+    @Override public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state, BonemealSource source) {
         int newAge = Math.min(MAX_AGE, state.getValue(AGE) + 1);
         level.setBlock(pos, state.setValue(AGE, newAge), 2);
     }

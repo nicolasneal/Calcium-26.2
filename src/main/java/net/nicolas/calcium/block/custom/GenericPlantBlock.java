@@ -1,6 +1,5 @@
 package net.nicolas.calcium.block.custom;
 
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
@@ -17,11 +16,6 @@ public class GenericPlantBlock extends Block {
 
     public GenericPlantBlock(Properties settings) {
         super(settings);
-    }
-
-    public static final MapCodec<GenericPlantBlock> CODEC = simpleCodec(GenericPlantBlock::new);
-    @Override protected MapCodec<? extends Block> codec() {
-        return CODEC;
     }
 
     private static final VoxelShape SHAPE = Block.box(4.0, 0.0, 4.0, 12.0, 10.0, 12.0);

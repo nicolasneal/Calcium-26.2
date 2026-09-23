@@ -6,10 +6,11 @@ import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.fog.FogData;
 import net.minecraft.client.renderer.fog.environment.WaterFogEnvironment;
-import net.minecraft.util.ARGB;
 import net.minecraft.util.Mth;
 import net.minecraft.world.attribute.EnvironmentAttributes;
 import net.nicolas.calcium.core.client.environment.UnderwaterDepth;
+import org.joml.Vector3f;
+import org.joml.Vector3fc;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -34,12 +35,12 @@ public abstract class WaterFogEnvironmentMixin {
     }
 
     @ModifyReturnValue(method = "getBaseColor", at = @At("RETURN"))
-    private int calcium$scaleColorByDaylight(int color, ClientLevel level, Camera camera, int renderDistance, float partialTicks) {
+    private Vector3fc calcium$scaleColorByDaylight(Vector3fc color, ClientLevel level, Camera camera, int renderDistance, float partialTicks) {
         float daylightFactor = camera.attributeProbe().getValue(EnvironmentAttributes.SKY_LIGHT_FACTOR, partialTicks);
         float multiplier = Mth.lerp(1.0F, 1.0F, daylightFactor);
         float blueMultiplier = 1.0F - (1.0F - multiplier) * (1.0F - BLUE_STRENGTH);
         float overallBrightness = Mth.lerp(daylightFactor, BRIGHTNESS, 1.0F);
-        return ARGB.colorFromFloat(ARGB.alphaFloat(color), ARGB.redFloat(color) * multiplier * overallBrightness, ARGB.greenFloat(color) * multiplier * overallBrightness, ARGB.blueFloat(color) * blueMultiplier * overallBrightness);
+        return new Vector3f(Mth.clamp(color.x() * multiplier * overallBrightness, 0.0F, 1.0F), Mth.clamp(color.y() * multiplier * overallBrightness, 0.0F, 1.0F), Mth.clamp(color.z() * blueMultiplier * overallBrightness, 0.0F, 1.0F));
     }
 
 }
