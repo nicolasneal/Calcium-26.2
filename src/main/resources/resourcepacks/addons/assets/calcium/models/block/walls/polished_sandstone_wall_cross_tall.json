@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:block/walls/wall_cross_tall",
-	"textures": {
-		"wall": "calcium:block/walls/polished_sandstone",
-		"particle": "minecraft:block/polished_sandstone"
-	}
+  "parent": "minecraft:block/walls/wall_cross_tall",
+  "textures": {
+    "wall": "calcium:block/walls/polished_sandstone",
+    "particle": "minecraft:block/polished_sandstone"
+  }
 }

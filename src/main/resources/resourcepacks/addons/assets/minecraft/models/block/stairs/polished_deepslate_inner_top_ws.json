@@ -1,13 +1,10 @@
 {
-    "parent": "minecraft:block/stairs/stairs_inner",
-        "textures": {
-            "1": "block/stairs/polished_deepslate_4",
-	    "2": "block/stairs/polished_deepslate_3",
-	    "3": "block/stairs/polished_deepslate_3",
-	    "4": "block/polished_deepslate",
-	    "particle": "block/polished_deepslate"
-        }
+  "parent": "minecraft:block/stairs/stairs_inner",
+  "textures": {
+    "1": "block/stairs/polished_deepslate_4",
+    "2": "block/stairs/polished_deepslate_3",
+    "3": "block/stairs/polished_deepslate_3",
+    "4": "block/polished_deepslate",
+    "particle": "block/polished_deepslate"
+  }
 }
-
-
-

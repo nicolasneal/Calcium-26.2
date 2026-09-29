@@ -1,19 +1,10 @@
 {
-    "parent": "minecraft:block/stairs/stairs_inner",
-        "textures": {
-            "1": "calcium:block/stairs/polished_kurodite_1",
-	    "2": "calcium:block/stairs/polished_kurodite_2",
-	    "3": "calcium:block/stairs/polished_kurodite_3",
-	    "4": "calcium:block/polished_kurodite",
-	    "particle": "calcium:block/polished_kurodite"
-        }
+  "parent": "minecraft:block/stairs/stairs_inner",
+  "textures": {
+    "1": "calcium:block/stairs/polished_kurodite_1",
+    "2": "calcium:block/stairs/polished_kurodite_2",
+    "3": "calcium:block/stairs/polished_kurodite_3",
+    "4": "calcium:block/polished_kurodite",
+    "particle": "calcium:block/polished_kurodite"
+  }
 }
-
-
-
-
-
-
-
-
-

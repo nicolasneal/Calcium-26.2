@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:block/walls/wall_post",
-	"textures": {
-		"wall": "calcium:block/walls/polished_stone",
-		"particle": "calcium:block/polished_stone"
-	}
+  "parent": "minecraft:block/walls/wall_post",
+  "textures": {
+    "wall": "calcium:block/walls/polished_stone",
+    "particle": "calcium:block/polished_stone"
+  }
 }

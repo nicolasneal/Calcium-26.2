@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "condition": {
+        "type": "minecraft:match_tool",
+        "predicate": {
+          "items": "minecraft:shears"
+        }
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:red_shrub"
+        }
+      ]
+    }
+  ],
+  "random_sequence": "minecraft:blocks/red_shrub"
+}

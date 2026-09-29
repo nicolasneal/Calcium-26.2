@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:block/walls/wall_side_tall3",
-	"textures": {
-		"wall": "minecraft:block/walls/polished_tuff",
-		"particle": "minecraft:block/polished_tuff"
-	}
+  "parent": "minecraft:block/walls/wall_side_tall3",
+  "textures": {
+    "wall": "minecraft:block/walls/polished_tuff",
+    "particle": "minecraft:block/polished_tuff"
+  }
 }

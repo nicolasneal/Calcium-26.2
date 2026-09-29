@@ -1,12 +1,12 @@
 {
-	"format_version": "1.21.6",
-	"credit": "Made with Blockbench",
-	"parent": "minecraft:block/stairs/stairs_inventory",
-	"textures": {
-		"1": "block/stairs/polished_granite_1",
-		"2": "block/stairs/polished_granite_2",
-		"3": "block/stairs/polished_granite_5",
-		"4": "block/stairs/polished_granite_5",
-		"5": "block/polished_granite"
-	}
+  "format_version": "1.21.6",
+  "credit": "Made with Blockbench",
+  "parent": "minecraft:block/stairs/stairs_inventory",
+  "textures": {
+    "1": "block/stairs/polished_granite_1",
+    "2": "block/stairs/polished_granite_2",
+    "3": "block/stairs/polished_granite_5",
+    "4": "block/stairs/polished_granite_5",
+    "5": "block/polished_granite"
+  }
 }

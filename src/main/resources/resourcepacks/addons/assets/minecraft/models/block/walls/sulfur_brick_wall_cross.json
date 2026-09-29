@@ -1,7 +1,7 @@
 {
-	"parent": "block/walls/wall_cross",
-	"textures": {
-		"wall": "block/walls/sulfur_bricks",
-		"particle": "block/sulfur_bricks"
-	}
+  "parent": "block/walls/wall_cross",
+  "textures": {
+    "wall": "block/walls/sulfur_bricks",
+    "particle": "block/sulfur_bricks"
+  }
 }

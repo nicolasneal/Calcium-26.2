@@ -1,18 +1,18 @@
 {
-    "textures": {
-        "wall": "minecraft:block/cut_sandstone",
-        "particle": "minecraft:block/cut_sandstone"
-    },
-    "elements": [
-        {   "from": [ 5, 0, 0 ],
-            "to": [ 11, 16, 8 ],
-            "faces": {
-                "down":  { "texture": "#wall", "cullface": "down" },
-                "up":    { "texture": "#wall", "cullface": "up" },
-                "north": { "texture": "#wall", "cullface": "north" },
-                "west":  { "texture": "#wall" },
-                "east":  { "texture": "#wall" }
-            }
-        }
-    ]
+  "textures": {
+    "wall": "minecraft:block/cut_sandstone",
+    "particle": "minecraft:block/cut_sandstone"
+  },
+  "elements": [
+    {   "from": [ 5, 0, 0 ],
+      "to": [ 11, 16, 8 ],
+      "faces": {
+        "down":  { "texture": "#wall", "cullface": "down" },
+        "up":    { "texture": "#wall", "cullface": "up" },
+        "north": { "texture": "#wall", "cullface": "north" },
+        "west":  { "texture": "#wall" },
+        "east":  { "texture": "#wall" }
+      }
+    }
+  ]
 }

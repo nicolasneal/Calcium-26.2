@@ -1,20 +1,12 @@
 {
-	"format_version": "1.21.6",
-	"credit": "Made with Blockbench",
-	"parent": "minecraft:block/stairs/stairs_inventory",
-	"textures": {
-		"1": "block/stairs/polished_blackstone_1",
-		"2": "block/stairs/polished_blackstone_2",
-		"3": "block/stairs/polished_blackstone_5",
-		"4": "block/stairs/polished_blackstone_5",
-		"5": "block/polished_blackstone"
-	}
+  "format_version": "1.21.6",
+  "credit": "Made with Blockbench",
+  "parent": "minecraft:block/stairs/stairs_inventory",
+  "textures": {
+    "1": "block/stairs/polished_blackstone_1",
+    "2": "block/stairs/polished_blackstone_2",
+    "3": "block/stairs/polished_blackstone_5",
+    "4": "block/stairs/polished_blackstone_5",
+    "5": "block/polished_blackstone"
+  }
 }
-
-
-
-
-
-
-
-

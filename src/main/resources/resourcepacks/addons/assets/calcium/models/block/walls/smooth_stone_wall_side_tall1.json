@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:block/walls/wall_side_tall1",
-	"textures": {
-		"wall": "calcium:block/walls/smooth_stone",
-		"particle": "minecraft:block/smooth_stone"
-	}
+  "parent": "minecraft:block/walls/wall_side_tall1",
+  "textures": {
+    "wall": "calcium:block/walls/smooth_stone",
+    "particle": "minecraft:block/smooth_stone"
+  }
 }

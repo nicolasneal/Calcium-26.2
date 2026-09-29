@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:block/walls/wall_side1",
-	"textures": {
-		"wall": "minecraft:block/walls/polished_blackstone",
-		"particle": "minecraft:block/polished_blackstone"
-	}
+  "parent": "minecraft:block/walls/wall_side1",
+  "textures": {
+    "wall": "minecraft:block/walls/polished_blackstone",
+    "particle": "minecraft:block/polished_blackstone"
+  }
 }

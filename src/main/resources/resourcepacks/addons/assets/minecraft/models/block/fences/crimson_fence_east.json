@@ -1,19 +1,7 @@
-﻿{
+{
   "parent": "minecraft:block/custom_fence_side_east",
   "textures": {
     "texture": "minecraft:block/fences/crimson",
     "particle": "minecraft:block/particles/crimson"
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-

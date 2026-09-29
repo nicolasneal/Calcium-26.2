@@ -1,88 +1,88 @@
 {
-    "sources": [
-        {
-            "type": "directory",
-            "source": "block",
-            "prefix": "block/"
-        },
-        {
-            "type": "directory",
-            "source": "item",
-            "prefix": "item/"
-        },
-        {
-            "type": "directory",
-            "source": "entity/conduit",
-            "prefix": "entity/conduit/"
-        },
-        {
-            "type": "single",
-            "resource": "entity/bell/bell_body"
-        },
-        {
-            "type": "single",
-            "resource": "entity/decorated_pot/decorated_pot_side"
-        },
-        {
-            "type": "single",
-            "resource": "entity/enchantment/enchanting_table_book"
-        },
-        {
-            "type": "paletted_permutations",
-            "textures": [
-                "trims/items/leggings_trim",
-                "trims/items/chestplate_trim",
-                "trims/items/helmet_trim",
-                "trims/items/boots_trim"
-            ],
-            "palette_key": "trim_base",
-            "permutations": {
-                "quartz": "trim/quartz",
-                "iron": "trim/iron",
-                "gold": "trim/gold",
-                "diamond": "trim/diamond",
-                "netherite": "trim/netherite",
-                "redstone": "trim/redstone",
-                "copper": "trim/copper",
-                "emerald": "trim/emerald",
-                "lapis": "trim/lapis",
-                "amethyst": "trim/amethyst",
-                "resin": "trim/resin",
-                "iron_darker": "trim/iron_darker",
-                "gold_darker": "trim/gold_darker",
-                "diamond_darker": "trim/diamond_darker",
-                "netherite_darker": "trim/netherite_darker",
-                "copper_darker": "trim/copper_darker"
-            }
-        },
-	{
-            "type": "directory",
-            "source": "entity/boat",
-            "prefix": "entity/boat/"
-        },
-        {
-            "type": "directory",
-            "source": "entity/signs",
-            "prefix": "entity/signs/"
-        },
-        {
-            "type": "directory",
-            "source": "entity/chest",
-            "prefix": "entity/chest/"
-        },
-        {
-            "type": "directory",
-            "source": "entity/chest_boat",
-            "prefix": "entity/chest_boat/"
-        },
-        {
-            "type": "directory",
-            "source": "entity/end_crystal",
-            "prefix": "entity/end_crystal/"
-        },
-        {
-            "type": "single",
-            "resource": "entity/minecart/minecart"
-        }
-    ]
+  "sources": [
+    {
+      "type": "directory",
+      "source": "block",
+      "prefix": "block/"
+    },
+    {
+      "type": "directory",
+      "source": "item",
+      "prefix": "item/"
+    },
+    {
+      "type": "directory",
+      "source": "entity/conduit",
+      "prefix": "entity/conduit/"
+    },
+    {
+      "type": "single",
+      "resource": "entity/bell/bell_body"
+    },
+    {
+      "type": "single",
+      "resource": "entity/decorated_pot/decorated_pot_side"
+    },
+    {
+      "type": "single",
+      "resource": "entity/enchantment/enchanting_table_book"
+    },
+    {
+      "type": "paletted_permutations",
+      "textures": [
+        "trims/items/leggings_trim",
+        "trims/items/chestplate_trim",
+        "trims/items/helmet_trim",
+        "trims/items/boots_trim"
+      ],
+      "palette_key": "trim_base",
+      "permutations": {
+        "quartz": "trim/quartz",
+        "iron": "trim/iron",
+        "gold": "trim/gold",
+        "diamond": "trim/diamond",
+        "netherite": "trim/netherite",
+        "redstone": "trim/redstone",
+        "copper": "trim/copper",
+        "emerald": "trim/emerald",
+        "lapis": "trim/lapis",
+        "amethyst": "trim/amethyst",
+        "resin": "trim/resin",
+        "iron_darker": "trim/iron_darker",
+        "gold_darker": "trim/gold_darker",
+        "diamond_darker": "trim/diamond_darker",
+        "netherite_darker": "trim/netherite_darker",
+        "copper_darker": "trim/copper_darker"
+      }
+    },
+    {
+      "type": "directory",
+      "source": "entity/boat",
+      "prefix": "entity/boat/"
+    },
+    {
+      "type": "directory",
+      "source": "entity/signs",
+      "prefix": "entity/signs/"
+    },
+    {
+      "type": "directory",
+      "source": "entity/chest",
+      "prefix": "entity/chest/"
+    },
+    {
+      "type": "directory",
+      "source": "entity/chest_boat",
+      "prefix": "entity/chest_boat/"
+    },
+    {
+      "type": "directory",
+      "source": "entity/end_crystal",
+      "prefix": "entity/end_crystal/"
+    },
+    {
+      "type": "single",
+      "resource": "entity/minecart/minecart"
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:block/walls/wall_side_tall1",
-	"textures": {
-		"wall": "calcium:block/walls/polished_diorite",
-		"particle": "minecraft:block/polished_diorite"
-	}
+  "parent": "minecraft:block/walls/wall_side_tall1",
+  "textures": {
+    "wall": "calcium:block/walls/polished_diorite",
+    "particle": "minecraft:block/polished_diorite"
+  }
 }

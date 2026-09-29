@@ -1,7 +1,7 @@
 {
-	"parent": "block/walls/wall_post",
-	"textures": {
-		"wall": "block/walls/stone_bricks",
-		"particle": "block/stone_bricks"
-	}
+  "parent": "block/walls/wall_post",
+  "textures": {
+    "wall": "block/walls/stone_bricks",
+    "particle": "block/stone_bricks"
+  }
 }

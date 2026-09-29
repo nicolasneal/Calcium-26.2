@@ -1,37 +1,37 @@
 {
-	"schemaVersion": 1,
-	"id": "calcium",
-	"version": "1.1.4",
-	"name": "Calcium",
-	"description": "Calcium is a better vanilla mod with a diverse range of features!",
-	"authors": [
-		"Nicolas"
-	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/nicolasneal/Calcium-1.21.7"
-	},
-	"license": "CC0-1.0",
-	"icon": "assets/calcium/icon.png",
-	"environment": "*",
-	"mixins": [
-		"calcium.mixins.json"
-	],
-	"entrypoints": {
-		"main": [
-			"net.nicolas.calcium.core.Calcium"
-		],
-		"client": [
-			"net.nicolas.calcium.core.CalciumClient"
-		]
-	},
-	"depends": {
-		"fabricloader": ">=0.19.3",
-		"minecraft": "~26.3",
-		"java": ">=25",
-		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
-	}
+  "schemaVersion": 1,
+  "id": "calcium",
+  "version": "1.1.4",
+  "name": "Calcium",
+  "description": "Calcium is a better vanilla mod with a diverse range of features!",
+  "authors": [
+    "Nicolas"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/nicolasneal/Calcium-1.21.7"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/calcium/icon.png",
+  "environment": "*",
+  "mixins": [
+    "calcium.mixins.json"
+  ],
+  "entrypoints": {
+    "main": [
+      "net.nicolas.calcium.core.Calcium"
+    ],
+    "client": [
+      "net.nicolas.calcium.core.CalciumClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
 }

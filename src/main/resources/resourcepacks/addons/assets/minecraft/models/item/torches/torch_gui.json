@@ -1,7 +1,7 @@
 {
-	"parent": "item/torches/gui_template",
-	"textures": {
-		"1": "block/torches/torches/torch_hand",
-		"2": "block/torches/torches/torch_gradient_flame"
-	}
+  "parent": "item/torches/gui_template",
+  "textures": {
+    "1": "block/torches/torches/torch_hand",
+    "2": "block/torches/torches/torch_gradient_flame"
+  }
 }

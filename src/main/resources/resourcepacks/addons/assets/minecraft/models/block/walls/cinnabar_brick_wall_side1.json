@@ -1,7 +1,7 @@
 {
-	"parent": "block/walls/wall_side1",
-	"textures": {
-		"wall": "block/walls/cinnabar_bricks",
-		"particle": "block/cinnabar_bricks"
-	}
+  "parent": "block/walls/wall_side1",
+  "textures": {
+    "wall": "block/walls/cinnabar_bricks",
+    "particle": "block/cinnabar_bricks"
+  }
 }

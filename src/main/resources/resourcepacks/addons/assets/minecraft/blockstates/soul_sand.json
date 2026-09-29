@@ -1,10 +1,10 @@
 {
-    "variants": {
-        "": [
-            { "model": "block/soul_sand", "x": 0, "y": 0 },
-            { "model": "block/soul_sand", "x": 0, "y": 90 },
-            { "model": "block/soul_sand", "x": 0, "y": 180 },
-            { "model": "block/soul_sand", "x": 0, "y": 270 }
-        ]
-    }
+  "variants": {
+    "": [
+      { "model": "block/soul_sand", "x": 0, "y": 0 },
+      { "model": "block/soul_sand", "x": 0, "y": 90 },
+      { "model": "block/soul_sand", "x": 0, "y": 180 },
+      { "model": "block/soul_sand", "x": 0, "y": 270 }
+    ]
+  }
 }

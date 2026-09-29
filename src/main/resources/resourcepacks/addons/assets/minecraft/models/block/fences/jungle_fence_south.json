@@ -1,14 +1,7 @@
-﻿{
+{
   "parent": "minecraft:block/custom_fence_side_south",
   "textures": {
     "texture": "minecraft:block/fences/jungle",
     "particle": "minecraft:block/particles/jungle"
   }
 }
-
-
-
-
-
-
-

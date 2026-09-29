@@ -92,9 +92,6 @@ public class Calcium implements ModInitializer {
         Cracking.registerEvents();
         CropWaxing.registerEvents();
 
-        // World Generation Density Function Types
-
-
         // World Generation Foliage Placer Types
 
         ModFoliagePlacers.initialize();

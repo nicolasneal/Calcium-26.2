@@ -20,6 +20,7 @@
     "gameplay.BeaconBlockEntityMixin",
     "gameplay.BiomeSpecialEffectsMixin",
     "gameplay.BlockItemMixin",
+    "gameplay.BlockTransformerMixin",
     "gameplay.BlockMixin",
     "gameplay.BlockStateBaseMixin",
     "gameplay.BoneMealItemMixin",
@@ -50,7 +51,6 @@
     "gameplay.RedstoneLampBlockMixin",
     "gameplay.ServerGamePacketListenerImplMixin",
     "gameplay.ServerPlayerMixin",
-    "gameplay.BlockTransformerMixin",
     "gameplay.SignBlockMixin",
     "gameplay.SkyLightEngineMixin",
     "gameplay.SlimeMixin",
@@ -67,10 +67,10 @@
     "gameplay.logging.WallBlockMixin",
     "gameplay.logging.WaterloggedTransparentBlockMixin",
     "gameplay.logging.waterlogging.AbstractSkullBlockMixin",
+    "gameplay.logging.waterlogging.AbstractBedBlockMixin",
     "gameplay.logging.waterlogging.AnvilBlockMixin",
     "gameplay.logging.waterlogging.BannerBlockMixin",
     "gameplay.logging.waterlogging.BeaconBlockMixin",
-    "gameplay.logging.waterlogging.AbstractBedBlockMixin",
     "gameplay.logging.waterlogging.BellBlockMixin",
     "gameplay.logging.waterlogging.BrewingStandBlockMixin",
     "gameplay.logging.waterlogging.ButtonBlockMixin",
@@ -164,7 +164,6 @@
   "injectors": {
     "defaultRequire": 1
   },
-  "refmap": "calcium.refmap.json",
   "client": [
     "accessors.ClientInputAccessor",
     "accessors.ItemTintSourcesAccessor",

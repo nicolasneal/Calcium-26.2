@@ -1,14 +1,11 @@
 {
-    "parent": "minecraft:block/stairs/stairs_straight",
-        "textures": {
-            "1": "block/stairs/polished_deepslate_1",
-	    "2": "block/stairs/polished_deepslate_2",
-	    "3": "block/stairs/polished_deepslate_5",
-	    "4": "block/stairs/polished_deepslate_5",
-	    "5": "block/polished_deepslate",
-	    "particle": "block/polished_deepslate"
-        }
+  "parent": "minecraft:block/stairs/stairs_straight",
+  "textures": {
+    "1": "block/stairs/polished_deepslate_1",
+    "2": "block/stairs/polished_deepslate_2",
+    "3": "block/stairs/polished_deepslate_5",
+    "4": "block/stairs/polished_deepslate_5",
+    "5": "block/polished_deepslate",
+    "particle": "block/polished_deepslate"
+  }
 }
-
-
-

@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:block/walls/wall_side2",
-	"textures": {
-		"wall": "calcium:block/walls/cracked_calcite_bricks",
-		"particle": "calcium:block/cracked_calcite_bricks"
-	}
+  "parent": "minecraft:block/walls/wall_side2",
+  "textures": {
+    "wall": "calcium:block/walls/cracked_calcite_bricks",
+    "particle": "calcium:block/cracked_calcite_bricks"
+  }
 }

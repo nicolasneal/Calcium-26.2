@@ -1,7 +1,6 @@
 package net.nicolas.calcium.block.custom;
 
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.phys.shapes.VoxelShape;
 

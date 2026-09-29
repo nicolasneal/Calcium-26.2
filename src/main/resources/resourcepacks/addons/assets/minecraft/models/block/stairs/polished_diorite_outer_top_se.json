@@ -1,13 +1,11 @@
 {
-    "parent": "minecraft:block/stairs/stairs_outer",
-        "textures": {
-            "1": "block/stairs/polished_diorite_4",
-	    "2": "block/stairs/polished_diorite_3",
-	    "3": "block/stairs/polished_diorite_1",
-	    "4": "block/stairs/polished_diorite_5",
-	    "5": "block/polished_diorite",
-	    "particle": "block/polished_diorite"
-        }
+  "parent": "minecraft:block/stairs/stairs_outer",
+  "textures": {
+    "1": "block/stairs/polished_diorite_4",
+    "2": "block/stairs/polished_diorite_3",
+    "3": "block/stairs/polished_diorite_1",
+    "4": "block/stairs/polished_diorite_5",
+    "5": "block/polished_diorite",
+    "particle": "block/polished_diorite"
+  }
 }
-
-

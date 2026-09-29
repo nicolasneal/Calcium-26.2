@@ -34,10 +34,10 @@ public class ModItems {
 
     // BLOCKS (4)
 
-    public static final Item WILLOW_SIGN = register("willow_sign", settings -> new StandingAndWallBlockItem(ModBlocks.WILLOW_SIGN, ModBlocks.WILLOW_WALL_SIGN, Direction.DOWN, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
-    public static final Item WILLOW_HANGING_SIGN = register("willow_hanging_sign", settings -> new HangingSignItem(ModBlocks.WILLOW_HANGING_SIGN, ModBlocks.WILLOW_WALL_HANGING_SIGN, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
-    public static final Item CHORUS_SIGN = register("chorus_sign", settings -> new StandingAndWallBlockItem(ModBlocks.CHORUS_SIGN, ModBlocks.CHORUS_WALL_SIGN, Direction.DOWN, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
-    public static final Item CHORUS_HANGING_SIGN = register("chorus_hanging_sign", settings -> new HangingSignItem(ModBlocks.CHORUS_HANGING_SIGN, ModBlocks.CHORUS_WALL_HANGING_SIGN, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64));
+    public static final Item WILLOW_SIGN = register("willow_sign", settings -> new StandingAndWallBlockItem(ModBlocks.WILLOW_SIGN, ModBlocks.WILLOW_WALL_SIGN, Direction.DOWN, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64).signText());
+    public static final Item WILLOW_HANGING_SIGN = register("willow_hanging_sign", settings -> new HangingSignItem(ModBlocks.WILLOW_HANGING_SIGN, ModBlocks.WILLOW_WALL_HANGING_SIGN, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64).signText());
+    public static final Item CHORUS_SIGN = register("chorus_sign", settings -> new StandingAndWallBlockItem(ModBlocks.CHORUS_SIGN, ModBlocks.CHORUS_WALL_SIGN, Direction.DOWN, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64).signText());
+    public static final Item CHORUS_HANGING_SIGN = register("chorus_hanging_sign", settings -> new HangingSignItem(ModBlocks.CHORUS_HANGING_SIGN, ModBlocks.CHORUS_WALL_HANGING_SIGN, settings), new Item.Properties().useBlockDescriptionPrefix().stacksTo(64).signText());
 
     // TRANSPORTATION (4)
 

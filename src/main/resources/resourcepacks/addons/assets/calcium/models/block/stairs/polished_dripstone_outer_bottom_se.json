@@ -1,20 +1,11 @@
 {
-    "parent": "minecraft:block/stairs/stairs_outer",
-        "textures": {
-            "1": "calcium:block/stairs/polished_dripstone_1",
-	    "2": "calcium:block/stairs/polished_dripstone_2",
-	    "3": "calcium:block/stairs/polished_dripstone_3",
-	    "4": "calcium:block/stairs/polished_dripstone_5",
-	    "5": "calcium:block/polished_dripstone",
-	    "particle": "calcium:block/polished_dripstone"
-        }
+  "parent": "minecraft:block/stairs/stairs_outer",
+  "textures": {
+    "1": "calcium:block/stairs/polished_dripstone_1",
+    "2": "calcium:block/stairs/polished_dripstone_2",
+    "3": "calcium:block/stairs/polished_dripstone_3",
+    "4": "calcium:block/stairs/polished_dripstone_5",
+    "5": "calcium:block/polished_dripstone",
+    "particle": "calcium:block/polished_dripstone"
+  }
 }
-
-
-
-
-
-
-
-
-

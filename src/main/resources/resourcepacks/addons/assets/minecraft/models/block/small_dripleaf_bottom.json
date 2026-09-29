@@ -1,38 +1,38 @@
 {
-	"credit": "Made with Blockbench",
-	"parent": "block/block",
-	"textures": {
-		"particle": "block/small_dripleaf_stem_bottom",
-		"stem": "block/small_dripleaf_stem_bottom"
-	},
-	"elements": [
-		{
-			"from": [1.5, 0, 8],
-			"to": [13.5, 16, 8],
-			"shade_direction_override": "up",
-			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
-			"faces": {
-				"north": {"uv": [3, 0, 15, 16], "texture": "#stem"},
-				"east": {"uv": [0, 0, 0, 0], "texture": "#stem"},
-				"south": {"uv": [3, 0, 15, 16], "texture": "#stem"},
-				"west": {"uv": [0, 0, 0, 0], "texture": "#stem"},
-				"up": {"uv": [0, 0, 0, 0], "texture": "#stem"},
-				"down": {"uv": [0, 0, 0, 0], "texture": "#stem"}
-			}
-		},
-		{
-			"from": [2.5, 0, 8],
-			"to": [13.5, 16, 8],
-			"shade_direction_override": "up",
-			"rotation": {"angle": -45, "axis": "y", "origin": [8, 8, 8]},
-			"faces": {
-				"north": {"uv": [3, 0, 15, 16], "texture": "#stem"},
-				"east": {"uv": [0, 0, 0, 0], "texture": "#stem"},
-				"south": {"uv": [3, 0, 15, 16], "texture": "#stem"},
-				"west": {"uv": [0, 0, 0, 0], "texture": "#stem"},
-				"up": {"uv": [0, 0, 0, 0], "texture": "#stem"},
-				"down": {"uv": [0, 0, 0, 0], "texture": "#stem"}
-			}
-		}
-	]
+  "credit": "Made with Blockbench",
+  "parent": "block/block",
+  "textures": {
+    "particle": "block/small_dripleaf_stem_bottom",
+    "stem": "block/small_dripleaf_stem_bottom"
+  },
+  "elements": [
+    {
+      "from": [1.5, 0, 8],
+      "to": [13.5, 16, 8],
+      "shade_direction_override": "up",
+      "rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+      "faces": {
+        "north": {"uv": [3, 0, 15, 16], "texture": "#stem"},
+        "east": {"uv": [0, 0, 0, 0], "texture": "#stem"},
+        "south": {"uv": [3, 0, 15, 16], "texture": "#stem"},
+        "west": {"uv": [0, 0, 0, 0], "texture": "#stem"},
+        "up": {"uv": [0, 0, 0, 0], "texture": "#stem"},
+        "down": {"uv": [0, 0, 0, 0], "texture": "#stem"}
+      }
+    },
+    {
+      "from": [2.5, 0, 8],
+      "to": [13.5, 16, 8],
+      "shade_direction_override": "up",
+      "rotation": {"angle": -45, "axis": "y", "origin": [8, 8, 8]},
+      "faces": {
+        "north": {"uv": [3, 0, 15, 16], "texture": "#stem"},
+        "east": {"uv": [0, 0, 0, 0], "texture": "#stem"},
+        "south": {"uv": [3, 0, 15, 16], "texture": "#stem"},
+        "west": {"uv": [0, 0, 0, 0], "texture": "#stem"},
+        "up": {"uv": [0, 0, 0, 0], "texture": "#stem"},
+        "down": {"uv": [0, 0, 0, 0], "texture": "#stem"}
+      }
+    }
+  ]
 }

@@ -1,61 +1,61 @@
 {
-	"credit": "Made with Blockbench",
-	"textures": {
-		"hook": "block/tripwire_hook",
-		"string": "block/string",
-		"particle": "block/particles/wood"
-	},
-	"elements": [
-		{
-			"from": [7.5, 0.5, 0],
-			"to": [8.5, 0.5, 8],
-			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 0, 0], "rescale": true},
-			"faces": {
-				"up": {"uv": [0, 0, 9, 1], "rotation": 90, "texture": "#string"},
-				"down": {"uv": [9, 0, 0, 1], "rotation": 90, "texture": "#string"}
-			}
-		},
-		{
-			"name": "arm",
-			"from": [7, 4.22925, 10.11674],
-			"to": [9, 6.22925, 15.11674],
-			"rotation": {"angle": -10, "axis": "x", "origin": [8, 5.2, 15.2]},
-			"faces": {
-				"north": {"uv": [6, 0, 8, 2], "texture": "#hook"},
-				"east": {"uv": [8, 0, 14, 2], "texture": "#hook"},
-				"south": {"uv": [6, 0, 8, 2], "texture": "#hook"},
-				"west": {"uv": [14, 0, 8, 2], "texture": "#hook"},
-				"up": {"uv": [6, 0, 8, 6], "texture": "#hook"},
-				"down": {"uv": [6, 6, 8, 0], "texture": "#hook"}
-			}
-		},
-		{
-			"name": "body",
-			"from": [6, 2, 14],
-			"to": [10, 10, 16],
-			"rotation": {"angle": 0, "axis": "y", "origin": [0, 1, 0]},
-			"faces": {
-				"north": {"uv": [0, 0, 4, 8], "texture": "#hook"},
-				"east": {"uv": [6, 0, 4, 8], "texture": "#hook"},
-				"south": {"uv": [0, 0, 4, 8], "texture": "#hook", "cullface": "south"},
-				"west": {"uv": [4, 0, 6, 8], "texture": "#hook"},
-				"up": {"uv": [0, 8, 4, 10], "texture": "#hook"},
-				"down": {"uv": [0, 10, 4, 8], "texture": "#hook"}
-			}
-		},
-		{
-			"name": "hook",
-			"from": [6.5, 3.7, 7.15],
-			"to": [9.5, 4.7, 10.15],
-			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 4.14061, 8.46684]},
-			"faces": {
-				"north": {"uv": [0, 13, 3, 14], "texture": "#hook"},
-				"east": {"uv": [0, 13, 3, 14], "texture": "#hook"},
-				"south": {"uv": [0, 13, 3, 14], "texture": "#hook"},
-				"west": {"uv": [0, 13, 3, 14], "texture": "#hook"},
-				"up": {"uv": [0, 10, 3, 13], "texture": "#hook"},
-				"down": {"uv": [0, 10, 3, 13], "texture": "#hook"}
-			}
-		}
-	]
+  "credit": "Made with Blockbench",
+  "textures": {
+    "hook": "block/tripwire_hook",
+    "string": "block/string",
+    "particle": "block/particles/wood"
+  },
+  "elements": [
+    {
+      "from": [7.5, 0.5, 0],
+      "to": [8.5, 0.5, 8],
+      "rotation": {"angle": -22.5, "axis": "x", "origin": [8, 0, 0], "rescale": true},
+      "faces": {
+        "up": {"uv": [0, 0, 9, 1], "rotation": 90, "texture": "#string"},
+        "down": {"uv": [9, 0, 0, 1], "rotation": 90, "texture": "#string"}
+      }
+    },
+    {
+      "name": "arm",
+      "from": [7, 4.22925, 10.11674],
+      "to": [9, 6.22925, 15.11674],
+      "rotation": {"angle": -10, "axis": "x", "origin": [8, 5.2, 15.2]},
+      "faces": {
+        "north": {"uv": [6, 0, 8, 2], "texture": "#hook"},
+        "east": {"uv": [8, 0, 14, 2], "texture": "#hook"},
+        "south": {"uv": [6, 0, 8, 2], "texture": "#hook"},
+        "west": {"uv": [14, 0, 8, 2], "texture": "#hook"},
+        "up": {"uv": [6, 0, 8, 6], "texture": "#hook"},
+        "down": {"uv": [6, 6, 8, 0], "texture": "#hook"}
+      }
+    },
+    {
+      "name": "body",
+      "from": [6, 2, 14],
+      "to": [10, 10, 16],
+      "rotation": {"angle": 0, "axis": "y", "origin": [0, 1, 0]},
+      "faces": {
+        "north": {"uv": [0, 0, 4, 8], "texture": "#hook"},
+        "east": {"uv": [6, 0, 4, 8], "texture": "#hook"},
+        "south": {"uv": [0, 0, 4, 8], "texture": "#hook", "cullface": "south"},
+        "west": {"uv": [4, 0, 6, 8], "texture": "#hook"},
+        "up": {"uv": [0, 8, 4, 10], "texture": "#hook"},
+        "down": {"uv": [0, 10, 4, 8], "texture": "#hook"}
+      }
+    },
+    {
+      "name": "hook",
+      "from": [6.5, 3.7, 7.15],
+      "to": [9.5, 4.7, 10.15],
+      "rotation": {"angle": -22.5, "axis": "x", "origin": [8, 4.14061, 8.46684]},
+      "faces": {
+        "north": {"uv": [0, 13, 3, 14], "texture": "#hook"},
+        "east": {"uv": [0, 13, 3, 14], "texture": "#hook"},
+        "south": {"uv": [0, 13, 3, 14], "texture": "#hook"},
+        "west": {"uv": [0, 13, 3, 14], "texture": "#hook"},
+        "up": {"uv": [0, 10, 3, 13], "texture": "#hook"},
+        "down": {"uv": [0, 10, 3, 13], "texture": "#hook"}
+      }
+    }
+  ]
 }

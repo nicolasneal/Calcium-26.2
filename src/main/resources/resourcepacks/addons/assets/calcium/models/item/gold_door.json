@@ -1,6 +1,6 @@
 {
-	"parent": "minecraft:item/door",
-	"textures": {
-		"texture": "calcium:block/doors/gold"
-	}
+  "parent": "minecraft:item/door",
+  "textures": {
+    "texture": "calcium:block/doors/gold"
+  }
 }

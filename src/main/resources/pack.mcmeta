@@ -1,16 +1,17 @@
 {
-    "pack": {
-        "pack_format": 81,
-	"min_format": [16, 0],
-        "max_format": [256, 0],
-        "description": [{"text":"Calcium's Vanilla Overwrite","color":"#8DBCE3"},{"text":"\n✿ ɴɪᴄᴏʟᴀꜱ ✿","color":"#cca3ff"}]
-    },
-        "filter": {
-            "block": [
-                {
-                    "namespace": "minecraft",
-                    "path": "recipe/*"
-                }
-            ]
-        }
+  "pack": {
+    "pack_format": 81,
+    "min_format": [16, 0],
+    "max_format": [256, 0],
+    "supported_formats": [16, 256],
+    "description": [{"text":"Calcium's Vanilla Overwrite","color":"#8DBCE3"},{"text":"\n✿ ɴɪᴄᴏʟᴀꜱ ✿","color":"#cca3ff"}]
+  },
+  "filter": {
+    "block": [
+      {
+        "namespace": "minecraft",
+        "path": "recipe/*"
+      }
+    ]
+  }
 }

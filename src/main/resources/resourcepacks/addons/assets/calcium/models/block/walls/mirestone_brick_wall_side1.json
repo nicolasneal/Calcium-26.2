@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:block/walls/wall_side1",
-	"textures": {
-		"wall": "calcium:block/walls/mirestone_bricks",
-		"particle": "calcium:block/mirestone_bricks"
-	}
+  "parent": "minecraft:block/walls/wall_side1",
+  "textures": {
+    "wall": "calcium:block/walls/mirestone_bricks",
+    "particle": "calcium:block/mirestone_bricks"
+  }
 }

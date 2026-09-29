@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:block/walls/wall_side3",
-	"textures": {
-		"wall": "minecraft:block/walls/polished_deepslate",
-		"particle": "minecraft:block/polished_deepslate"
-	}
+  "parent": "minecraft:block/walls/wall_side3",
+  "textures": {
+    "wall": "minecraft:block/walls/polished_deepslate",
+    "particle": "minecraft:block/polished_deepslate"
+  }
 }

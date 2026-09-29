@@ -1,13 +1,11 @@
 {
-    "parent": "minecraft:block/stairs/stairs_straight",
-        "textures": {
-            "1": "block/stairs/polished_diorite_4",
-	    "2": "block/stairs/polished_diorite_3",
-	    "3": "block/stairs/polished_diorite_5",
-	    "4": "block/stairs/polished_diorite_6",
-	    "5": "block/polished_diorite",
-	    "particle": "block/polished_diorite"
-        }
+  "parent": "minecraft:block/stairs/stairs_straight",
+  "textures": {
+    "1": "block/stairs/polished_diorite_4",
+    "2": "block/stairs/polished_diorite_3",
+    "3": "block/stairs/polished_diorite_5",
+    "4": "block/stairs/polished_diorite_6",
+    "5": "block/polished_diorite",
+    "particle": "block/polished_diorite"
+  }
 }
-
-

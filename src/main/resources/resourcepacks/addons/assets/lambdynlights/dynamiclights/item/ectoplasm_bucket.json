@@ -1,6 +1,6 @@
 {
-	"match": {
-		"items": "calcium:ectoplasm_bucket"
-	},
-	"luminance": 5
+  "match": {
+    "items": "calcium:ectoplasm_bucket"
+  },
+  "luminance": 5
 }

@@ -1,18 +1,12 @@
 {
-	"format_version": "1.21.6",
-	"credit": "Made with Blockbench",
-	"parent": "minecraft:block/stairs/stairs_inventory",
-	"textures": {
-		"1": "block/stairs/polished_red_sandstone_1",
-		"2": "block/stairs/polished_red_sandstone_2",
-		"3": "block/stairs/polished_red_sandstone_5",
-		"4": "block/stairs/polished_red_sandstone_5",
-		"5": "block/polished_red_sandstone"
-	}
+  "format_version": "1.21.6",
+  "credit": "Made with Blockbench",
+  "parent": "minecraft:block/stairs/stairs_inventory",
+  "textures": {
+    "1": "block/stairs/polished_red_sandstone_1",
+    "2": "block/stairs/polished_red_sandstone_2",
+    "3": "block/stairs/polished_red_sandstone_5",
+    "4": "block/stairs/polished_red_sandstone_5",
+    "5": "block/polished_red_sandstone"
+  }
 }
-
-
-
-
-
-

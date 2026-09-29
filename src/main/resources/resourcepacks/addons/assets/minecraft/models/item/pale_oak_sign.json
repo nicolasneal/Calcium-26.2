@@ -1,6 +1,6 @@
 {
-	"parent": "item/sign",
-	"textures": {
-		"texture": "block/signs/pale_oak"
-	}
+  "parent": "item/sign",
+  "textures": {
+    "texture": "block/signs/pale_oak"
+  }
 }

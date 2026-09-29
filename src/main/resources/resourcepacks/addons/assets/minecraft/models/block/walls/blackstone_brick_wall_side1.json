@@ -1,7 +1,7 @@
 {
-	"parent": "block/walls/wall_side1",
-	"textures": {
-		"wall": "block/walls/blackstone_bricks",
-		"particle": "block/polished_blackstone_bricks"
-	}
+  "parent": "block/walls/wall_side1",
+  "textures": {
+    "wall": "block/walls/blackstone_bricks",
+    "particle": "block/polished_blackstone_bricks"
+  }
 }

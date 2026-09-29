@@ -1,8 +1,8 @@
 {
-	"parent": "item/torches/right_hand_template",
-	"textures": {
-		"1": "item/torches/torch_hand",
-		"2": "item/torches/torch_gradient_flame",
-		"3": "item/torches/torch_flame"
-	}
+  "parent": "item/torches/right_hand_template",
+  "textures": {
+    "1": "item/torches/torch_hand",
+    "2": "item/torches/torch_gradient_flame",
+    "3": "item/torches/torch_flame"
+  }
 }

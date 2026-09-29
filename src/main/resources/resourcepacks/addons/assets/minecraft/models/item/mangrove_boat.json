@@ -1,6 +1,6 @@
 {
-	"parent": "item/boat",
-    "textures": {
-        "texture": "entity/boat/mangrove"
-    }
+  "parent": "item/boat",
+  "textures": {
+    "texture": "entity/boat/mangrove"
+  }
 }

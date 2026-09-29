@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:block/walls/wall_cross",
-	"textures": {
-		"wall": "calcium:block/walls/polished_end_stone",
-		"particle": "calcium:block/polished_end_stone"
-	}
+  "parent": "minecraft:block/walls/wall_cross",
+  "textures": {
+    "wall": "calcium:block/walls/polished_end_stone",
+    "particle": "calcium:block/polished_end_stone"
+  }
 }

@@ -1,11 +1,11 @@
 {
-    "parent": "minecraft:block/stairs/stairs_outer",
-        "textures": {
-            "1": "block/stairs/polished_granite_4",
-	    "2": "block/stairs/polished_granite_3",
-	    "3": "block/stairs/polished_granite_3",
-	    "4": "block/stairs/polished_granite_5",
-	    "5": "block/polished_granite",
-	    "particle": "block/polished_granite"
-        }
+  "parent": "minecraft:block/stairs/stairs_outer",
+  "textures": {
+    "1": "block/stairs/polished_granite_4",
+    "2": "block/stairs/polished_granite_3",
+    "3": "block/stairs/polished_granite_3",
+    "4": "block/stairs/polished_granite_5",
+    "5": "block/polished_granite",
+    "particle": "block/polished_granite"
+  }
 }

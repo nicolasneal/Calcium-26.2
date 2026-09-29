@@ -1,7 +1,7 @@
 {
-	"parent": "block/walls/wall_side_tall1",
-	"textures": {
-		"wall": "block/walls/mud_bricks",
-		"particle": "block/mud_bricks"
-	}
+  "parent": "block/walls/wall_side_tall1",
+  "textures": {
+    "wall": "block/walls/mud_bricks",
+    "particle": "block/mud_bricks"
+  }
 }

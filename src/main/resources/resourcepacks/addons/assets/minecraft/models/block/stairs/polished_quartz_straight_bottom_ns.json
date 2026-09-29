@@ -1,18 +1,11 @@
 {
-    "parent": "minecraft:block/stairs/stairs_straight",
-        "textures": {
-            "1": "block/stairs/polished_quartz_1",
-	    "2": "block/stairs/polished_quartz_2",
-	    "3": "block/stairs/polished_quartz_5",
-	    "4": "block/stairs/polished_quartz_5",
-	    "5": "block/polished_quartz",
-	    "particle": "block/polished_quartz"
-        }
+  "parent": "minecraft:block/stairs/stairs_straight",
+  "textures": {
+    "1": "block/stairs/polished_quartz_1",
+    "2": "block/stairs/polished_quartz_2",
+    "3": "block/stairs/polished_quartz_5",
+    "4": "block/stairs/polished_quartz_5",
+    "5": "block/polished_quartz",
+    "particle": "block/polished_quartz"
+  }
 }
-
-
-
-
-
-
-

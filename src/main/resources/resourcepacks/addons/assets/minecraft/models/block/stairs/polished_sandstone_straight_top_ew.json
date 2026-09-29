@@ -1,16 +1,11 @@
 {
-    "parent": "minecraft:block/stairs/stairs_straight",
-        "textures": {
-            "1": "block/stairs/polished_sandstone_4",
-	    "2": "block/stairs/polished_sandstone_3",
-	    "3": "block/stairs/polished_sandstone_5",
-	    "4": "block/stairs/polished_sandstone_6",
-	    "5": "block/polished_sandstone",
-	    "particle": "block/polished_sandstone"
-        }
+  "parent": "minecraft:block/stairs/stairs_straight",
+  "textures": {
+    "1": "block/stairs/polished_sandstone_4",
+    "2": "block/stairs/polished_sandstone_3",
+    "3": "block/stairs/polished_sandstone_5",
+    "4": "block/stairs/polished_sandstone_6",
+    "5": "block/polished_sandstone",
+    "particle": "block/polished_sandstone"
+  }
 }
-
-
-
-
-

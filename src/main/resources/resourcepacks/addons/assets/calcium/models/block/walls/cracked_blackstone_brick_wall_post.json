@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:block/walls/wall_post",
-	"textures": {
-		"wall": "calcium:block/walls/cracked_blackstone_bricks",
-		"particle": "minecraft:block/cracked_polished_blackstone_bricks"
-	}
+  "parent": "minecraft:block/walls/wall_post",
+  "textures": {
+    "wall": "calcium:block/walls/cracked_blackstone_bricks",
+    "particle": "minecraft:block/cracked_polished_blackstone_bricks"
+  }
 }

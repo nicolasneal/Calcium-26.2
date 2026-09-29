@@ -1,20 +1,7 @@
-﻿{
+{
   "parent": "minecraft:block/custom_fence_post",
   "textures": {
     "texture": "minecraft:block/fences/warped",
     "particle": "minecraft:block/particles/warped"
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

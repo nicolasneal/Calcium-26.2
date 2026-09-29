@@ -1,20 +1,11 @@
 {
-    "parent": "minecraft:block/stairs/stairs_outer",
-        "textures": {
-            "1": "calcium:block/stairs/polished_basalt_4",
-	    "2": "calcium:block/stairs/polished_basalt_3",
-	    "3": "calcium:block/stairs/polished_basalt_3",
-	    "4": "calcium:block/stairs/polished_basalt_5",
-	    "5": "calcium:block/polished_basalt",
-	    "particle": "calcium:block/polished_basalt"
-        }
+  "parent": "minecraft:block/stairs/stairs_outer",
+  "textures": {
+    "1": "calcium:block/stairs/polished_basalt_4",
+    "2": "calcium:block/stairs/polished_basalt_3",
+    "3": "calcium:block/stairs/polished_basalt_3",
+    "4": "calcium:block/stairs/polished_basalt_5",
+    "5": "calcium:block/polished_basalt",
+    "particle": "calcium:block/polished_basalt"
+  }
 }
-
-
-
-
-
-
-
-
-

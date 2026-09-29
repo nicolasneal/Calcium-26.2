@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:block/walls/wall_cross_tall",
-	"textures": {
-		"wall": "calcium:block/walls/basalt_bricks",
-		"particle": "calcium:block/basalt_bricks"
-	}
+  "parent": "minecraft:block/walls/wall_cross_tall",
+  "textures": {
+    "wall": "calcium:block/walls/basalt_bricks",
+    "particle": "calcium:block/basalt_bricks"
+  }
 }

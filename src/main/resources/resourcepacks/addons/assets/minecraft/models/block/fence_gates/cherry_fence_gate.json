@@ -1,19 +1,7 @@
-﻿{
+{
   "parent": "minecraft:block/template_custom_fence_gate",
   "textures": {
     "texture": "minecraft:block/fence_gates/cherry",
     "particle": "minecraft:block/particles/cherry"
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,8 +1,8 @@
 {
-	"parent": "block/torches/ground_torch_template",
-	"textures": {
-		"1": "block/torches/soul_torch_hand",
-		"2": "block/torches/soul_torch_gradient_flame",
-		"particle": "block/particles/torch"
-	}
+  "parent": "block/torches/ground_torch_template",
+  "textures": {
+    "1": "block/torches/soul_torch_hand",
+    "2": "block/torches/soul_torch_gradient_flame",
+    "particle": "block/particles/torch"
+  }
 }

@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:block/walls/wall_side2",
-	"textures": {
-		"wall": "calcium:block/walls/polished_quartz",
-		"particle": "minecraft:block/polished_quartz"
-	}
+  "parent": "minecraft:block/walls/wall_side2",
+  "textures": {
+    "wall": "calcium:block/walls/polished_quartz",
+    "particle": "minecraft:block/polished_quartz"
+  }
 }

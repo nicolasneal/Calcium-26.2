@@ -1,11 +1,11 @@
 {
-  	"cursor": {
-    		"scale": 1,
-    		"xhot": 6,
-    		"yhot": 6
-  	},    
-	"animation": {
-		"mode": "loop",
-		"frametime": 2
-	}
+  "cursor": {
+    "scale": 1,
+    "xhot": 6,
+    "yhot": 6
+  },
+  "animation": {
+    "mode": "loop",
+    "frametime": 2
+  }
 }

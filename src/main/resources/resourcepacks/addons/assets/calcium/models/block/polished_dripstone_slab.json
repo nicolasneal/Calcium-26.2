@@ -1,8 +1,8 @@
 {
-    "parent": "minecraft:block/slab",
-    "textures": {
-        "bottom": "calcium:block/polished_dripstone",
-        "top": "calcium:block/polished_dripstone",
-        "side": "calcium:block/slabs/polished_dripstone"
-    }
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "calcium:block/polished_dripstone",
+    "top": "calcium:block/polished_dripstone",
+    "side": "calcium:block/slabs/polished_dripstone"
+  }
 }

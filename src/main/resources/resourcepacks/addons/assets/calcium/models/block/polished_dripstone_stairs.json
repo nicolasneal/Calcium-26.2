@@ -1,22 +1,13 @@
 {
-	"format_version": "1.21.6",
-	"credit": "Made with Blockbench",
-	"parent": "minecraft:block/stairs/stairs_inventory",
-	"textures": {
-		"1": "calcium:block/stairs/polished_dripstone_1",
-		"2": "calcium:block/stairs/polished_dripstone_2",
-		"3": "calcium:block/stairs/polished_dripstone_5",
-		"4": "calcium:block/stairs/polished_dripstone_5",
-		"5": "calcium:block/polished_dripstone",
-		"particle": "calcium:block/polished_dripstone"
-	}
+  "format_version": "1.21.6",
+  "credit": "Made with Blockbench",
+  "parent": "minecraft:block/stairs/stairs_inventory",
+  "textures": {
+    "1": "calcium:block/stairs/polished_dripstone_1",
+    "2": "calcium:block/stairs/polished_dripstone_2",
+    "3": "calcium:block/stairs/polished_dripstone_5",
+    "4": "calcium:block/stairs/polished_dripstone_5",
+    "5": "calcium:block/polished_dripstone",
+    "particle": "calcium:block/polished_dripstone"
+  }
 }
-
-
-
-
-
-
-
-
-

@@ -1,13 +1,7 @@
-﻿{
+{
   "parent": "minecraft:block/template_custom_fence_gate_open",
   "textures": {
     "texture": "minecraft:block/fence_gates/poplar",
     "particle": "minecraft:block/particles/poplar"
   }
 }
-
-
-
-
-
-

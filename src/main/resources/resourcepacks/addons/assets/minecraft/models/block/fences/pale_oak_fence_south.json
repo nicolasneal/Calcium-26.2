@@ -1,18 +1,7 @@
-﻿{
+{
   "parent": "minecraft:block/custom_fence_side_south",
   "textures": {
     "texture": "minecraft:block/fences/pale_oak",
     "particle": "minecraft:block/particles/pale_oak"
   }
 }
-
-
-
-
-
-
-
-
-
-
-

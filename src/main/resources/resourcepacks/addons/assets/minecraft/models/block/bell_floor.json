@@ -1,53 +1,53 @@
 {
-	"format_version": "1.21.6",
-	"credit": "Made with Blockbench",
-	"texture_size": [32, 32],
-	"textures": {
-		"bell": "block/bell",
-		"particle": "block/particles/bell"
-	},
-	"elements": [
-		{
-			"name": "bar",
-			"from": [3, 13, 7],
-			"to": [13, 15, 9],
-			"rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 0]},
-			"faces": {
-				"north": {"uv": [1, 12.5, 6, 13.5], "texture": "#bell"},
-				"east": {"uv": [0, 12.5, 1, 13.5], "texture": "#bell"},
-				"south": {"uv": [7, 12.5, 12, 13.5], "texture": "#bell"},
-				"west": {"uv": [6, 12.5, 7, 13.5], "texture": "#bell"},
-				"up": {"uv": [6, 12.5, 1, 11.5], "texture": "#bell"},
-				"down": {"uv": [11, 11.5, 6, 12.5], "texture": "#bell"}
-			}
-		},
-		{
-			"name": "post2",
-			"from": [13, 0, 6.5],
-			"to": [16, 16, 9.5],
-			"rotation": {"angle": 0, "axis": "y", "origin": [-1, 0, 0.5]},
-			"faces": {
-				"north": {"uv": [9.5, 1.5, 11, 9.5], "texture": "#bell"},
-				"east": {"uv": [8, 1.5, 9.5, 9.5], "texture": "#bell"},
-				"south": {"uv": [12.5, 1.5, 14, 9.5], "texture": "#bell"},
-				"west": {"uv": [11, 1.5, 12.5, 9.5], "texture": "#bell"},
-				"up": {"uv": [11, 1.5, 9.5, 0], "texture": "#bell", "cullface": "up"},
-				"down": {"uv": [12.5, 0, 11, 1.5], "texture": "#bell", "cullface": "down"}
-			}
-		},
-		{
-			"name": "post1",
-			"from": [0, 0, 6.5],
-			"to": [3, 16, 9.5],
-			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 0.5]},
-			"faces": {
-				"north": {"uv": [9.5, 1.5, 11, 9.5], "texture": "#bell"},
-				"east": {"uv": [8, 1.5, 9.5, 9.5], "texture": "#bell"},
-				"south": {"uv": [12.5, 1.5, 14, 9.5], "texture": "#bell"},
-				"west": {"uv": [11, 1.5, 12.5, 9.5], "texture": "#bell"},
-				"up": {"uv": [11, 1.5, 9.5, 0], "texture": "#bell", "cullface": "up"},
-				"down": {"uv": [12.5, 0, 11, 1.5], "texture": "#bell", "cullface": "down"}
-			}
-		}
-	]
+  "format_version": "1.21.6",
+  "credit": "Made with Blockbench",
+  "texture_size": [32, 32],
+  "textures": {
+    "bell": "block/bell",
+    "particle": "block/particles/bell"
+  },
+  "elements": [
+    {
+      "name": "bar",
+      "from": [3, 13, 7],
+      "to": [13, 15, 9],
+      "rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 0]},
+      "faces": {
+        "north": {"uv": [1, 12.5, 6, 13.5], "texture": "#bell"},
+        "east": {"uv": [0, 12.5, 1, 13.5], "texture": "#bell"},
+        "south": {"uv": [7, 12.5, 12, 13.5], "texture": "#bell"},
+        "west": {"uv": [6, 12.5, 7, 13.5], "texture": "#bell"},
+        "up": {"uv": [6, 12.5, 1, 11.5], "texture": "#bell"},
+        "down": {"uv": [11, 11.5, 6, 12.5], "texture": "#bell"}
+      }
+    },
+    {
+      "name": "post2",
+      "from": [13, 0, 6.5],
+      "to": [16, 16, 9.5],
+      "rotation": {"angle": 0, "axis": "y", "origin": [-1, 0, 0.5]},
+      "faces": {
+        "north": {"uv": [9.5, 1.5, 11, 9.5], "texture": "#bell"},
+        "east": {"uv": [8, 1.5, 9.5, 9.5], "texture": "#bell"},
+        "south": {"uv": [12.5, 1.5, 14, 9.5], "texture": "#bell"},
+        "west": {"uv": [11, 1.5, 12.5, 9.5], "texture": "#bell"},
+        "up": {"uv": [11, 1.5, 9.5, 0], "texture": "#bell", "cullface": "up"},
+        "down": {"uv": [12.5, 0, 11, 1.5], "texture": "#bell", "cullface": "down"}
+      }
+    },
+    {
+      "name": "post1",
+      "from": [0, 0, 6.5],
+      "to": [3, 16, 9.5],
+      "rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 0.5]},
+      "faces": {
+        "north": {"uv": [9.5, 1.5, 11, 9.5], "texture": "#bell"},
+        "east": {"uv": [8, 1.5, 9.5, 9.5], "texture": "#bell"},
+        "south": {"uv": [12.5, 1.5, 14, 9.5], "texture": "#bell"},
+        "west": {"uv": [11, 1.5, 12.5, 9.5], "texture": "#bell"},
+        "up": {"uv": [11, 1.5, 9.5, 0], "texture": "#bell", "cullface": "up"},
+        "down": {"uv": [12.5, 0, 11, 1.5], "texture": "#bell", "cullface": "down"}
+      }
+    }
+  ]
 }

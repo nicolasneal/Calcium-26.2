@@ -1,6 +1,6 @@
 {
-	"parent": "item/sign",
-	"textures": {
-		"texture": "block/signs/warped"
-	}
+  "parent": "item/sign",
+  "textures": {
+    "texture": "block/signs/warped"
+  }
 }

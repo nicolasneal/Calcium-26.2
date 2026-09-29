@@ -1,9 +1,0 @@
-{
-  "replace": true,
-  "values": [
-    "minecraft:savanna",
-    "minecraft:snowy_plains",
-    "minecraft:grove",
-    "calcium:tundra"
-  ]
-}

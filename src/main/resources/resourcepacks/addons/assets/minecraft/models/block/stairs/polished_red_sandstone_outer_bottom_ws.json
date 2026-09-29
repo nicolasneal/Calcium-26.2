@@ -1,17 +1,11 @@
 {
-    "parent": "minecraft:block/stairs/stairs_outer",
-        "textures": {
-            "1": "block/stairs/polished_red_sandstone_1",
-	    "2": "block/stairs/polished_red_sandstone_2",
-	    "3": "block/stairs/polished_red_sandstone_4",
-	    "4": "block/stairs/polished_red_sandstone_5",
-	    "5": "block/polished_red_sandstone",
-	    "particle": "block/polished_red_sandstone"
-        }
+  "parent": "minecraft:block/stairs/stairs_outer",
+  "textures": {
+    "1": "block/stairs/polished_red_sandstone_1",
+    "2": "block/stairs/polished_red_sandstone_2",
+    "3": "block/stairs/polished_red_sandstone_4",
+    "4": "block/stairs/polished_red_sandstone_5",
+    "5": "block/polished_red_sandstone",
+    "particle": "block/polished_red_sandstone"
+  }
 }
-
-
-
-
-
-

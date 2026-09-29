@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:block/walls/wall_side_tall1",
-	"textures": {
-		"wall": "calcium:block/walls/cracked_end_stone_bricks",
-		"particle": "calcium:block/cracked_end_stone_bricks"
-	}
+  "parent": "minecraft:block/walls/wall_side_tall1",
+  "textures": {
+    "wall": "calcium:block/walls/cracked_end_stone_bricks",
+    "particle": "calcium:block/cracked_end_stone_bricks"
+  }
 }

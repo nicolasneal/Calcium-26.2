@@ -1,6 +1,6 @@
 {
-	"parent": "item/door",
-	"textures": {
-		"texture": "block/doors/oak"
-	}
+  "parent": "item/door",
+  "textures": {
+    "texture": "block/doors/oak"
+  }
 }

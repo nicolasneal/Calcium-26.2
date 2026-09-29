@@ -1,7 +1,7 @@
 {
-	"parent": "minecraft:block/walls/wall_cross",
-	"textures": {
-		"wall": "calcium:block/walls/cracked_tuff_bricks",
-		"particle": "calcium:block/cracked_tuff_bricks"
-	}
+  "parent": "minecraft:block/walls/wall_cross",
+  "textures": {
+    "wall": "calcium:block/walls/cracked_tuff_bricks",
+    "particle": "calcium:block/cracked_tuff_bricks"
+  }
 }

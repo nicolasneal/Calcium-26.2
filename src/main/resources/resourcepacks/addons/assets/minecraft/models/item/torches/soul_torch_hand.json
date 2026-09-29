@@ -1,8 +1,8 @@
 {
-	"parent": "item/torches/third_person_template",
-	"textures": {
-		"1": "item/torches/soul_torch_hand",
-		"2": "item/torches/soul_torch_gradient_flame",
-		"3": "item/torches/soul_torch_flame"
-	}
+  "parent": "item/torches/third_person_template",
+  "textures": {
+    "1": "item/torches/soul_torch_hand",
+    "2": "item/torches/soul_torch_gradient_flame",
+    "3": "item/torches/soul_torch_flame"
+  }
 }

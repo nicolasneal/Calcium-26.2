@@ -1,6 +1,6 @@
 {
-	"parent": "minecraft:item/lantern",
-	"textures": {
-		"texture": "calcium:block/gold_lantern"
-	}
+  "parent": "minecraft:item/lantern",
+  "textures": {
+    "texture": "calcium:block/gold_lantern"
+  }
 }

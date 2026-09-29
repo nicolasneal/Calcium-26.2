@@ -204,7 +204,7 @@
   "block.minecraft.potted_red_mushroom": "Potted Toadstool",
   "block.minecraft.red_mushroom": "Toadstool",
   "block.minecraft.red_mushroom_block": "Toadstool Block",
-  
+
   // ITEM NAMES
 
   "item.minecraft.axolotl_bucket": "Axolotl Bucket",
@@ -376,7 +376,7 @@
   "item.minecraft.porkchop": "Pork",
 
   // ENCHANTMENT ICONS
-  
+
   "enchantment.minecraft.aqua_affinity": "§f\uE863 §dAqua Affinity",
   "enchantment.minecraft.bane_of_arthropods": "§f\uE853 §dBane of Arthropods",
   "enchantment.minecraft.blast_protection": "§f\uE860 §dBlast Protection",
