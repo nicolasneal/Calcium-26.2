@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:smooth_sandstone",
+  "result": {
+    "id": "calcium:polished_sandstone_wall",
+    "count": 1
+  }
+}

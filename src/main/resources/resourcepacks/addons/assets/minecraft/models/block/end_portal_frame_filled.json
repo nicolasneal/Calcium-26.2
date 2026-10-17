@@ -1,6 +1,4 @@
 {
-  "format_version": "1.21.6",
-  "credit": "Made with Blockbench",
   "ambientocclusion": false,
   "textures": {
     "0": "block/end_portal_frame_top",

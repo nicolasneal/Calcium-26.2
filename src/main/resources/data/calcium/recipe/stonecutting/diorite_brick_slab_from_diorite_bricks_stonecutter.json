@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "calcium:diorite_bricks",
+  "result": {
+    "id": "calcium:diorite_brick_slab",
+    "count": 2
+  }
+}

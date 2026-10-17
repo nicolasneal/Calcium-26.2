@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/walls/wall",
+  "textures": {
+    "wall": "minecraft:block/walls/polished_cinnabar"
+  }
+}

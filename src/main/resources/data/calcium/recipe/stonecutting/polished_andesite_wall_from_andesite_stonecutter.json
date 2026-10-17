@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:andesite",
+  "result": {
+    "id": "calcium:polished_andesite_wall",
+    "count": 1
+  }
+}

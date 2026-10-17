@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/trapdoors/trapdoor",
+  "textures": {
+    "texture": "minecraft:block/trapdoors/acacia"
+  }
+}

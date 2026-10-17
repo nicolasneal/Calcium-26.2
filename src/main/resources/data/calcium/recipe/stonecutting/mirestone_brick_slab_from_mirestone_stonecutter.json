@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "calcium:mirestone",
+  "result": {
+    "id": "calcium:mirestone_brick_slab",
+    "count": 2
+  }
+}

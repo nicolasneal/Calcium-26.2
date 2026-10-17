@@ -13,6 +13,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.LevelEvent;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
@@ -27,6 +28,8 @@ public class CropWaxing {
     public interface Waxable {
 
         BooleanProperty WAXED = BooleanProperty.create("waxed");
+        default boolean canBeWaxed(BlockState state) { return true; }
+        default boolean canBeWaxed(BlockGetter level, BlockPos pos, BlockState state) { return this.canBeWaxed(state); }
         default void onWaxed(ServerLevel level, BlockPos pos, BlockState waxedState) {}
         default void onUnwaxed(ServerLevel level, BlockPos pos, BlockState unwaxedState) {}
 
@@ -44,7 +47,7 @@ public class CropWaxing {
                 return InteractionResult.PASS;
             }
 
-            if (!state.getValue(Waxable.WAXED) && itemStack.is(Items.HONEYCOMB)) {
+            if (!state.getValue(Waxable.WAXED) && itemStack.is(Items.HONEYCOMB) && ((Waxable) state.getBlock()).canBeWaxed(world, pos, state)) {
                 if (!world.isClientSide() && world instanceof ServerLevel serverLevel) {
                     waxBlock(serverLevel, player, pos, state, itemStack);
                 }

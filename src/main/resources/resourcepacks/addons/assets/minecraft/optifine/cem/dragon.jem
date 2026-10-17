@@ -89,7 +89,7 @@
 			"part": "body",
 			"id": "body",
 			"invertAxis": "xy",
-			"translate": [0, -78, 16],
+			"translate": [0, -61, 16],
 			"boxes": [
 				{"coordinates": [-12, 54, -32, 24, 24, 64], "textureOffset": [0, 0]},
 				{"coordinates": [-1, 78, -26, 2, 6, 12], "textureOffset": [220, 53]},

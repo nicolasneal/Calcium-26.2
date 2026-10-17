@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/walls/wall",
+  "textures": {
+    "wall": "calcium:block/walls/cracked_calcite_bricks"
+  }
+}

@@ -1,7 +1,7 @@
 {
-  "parent": "minecraft:block/hanging_signs/template_hanging_sign_rot_3",
+  "parent": "minecraft:block/hanging_signs/hanging_sign_rot_3",
   "textures": {
     "all": "minecraft:block/hanging_signs/birch",
-    "particle": "minecraft:block/stripped_birch_log"
+    "particle": "minecraft:block/birch_planks"
   }
 }

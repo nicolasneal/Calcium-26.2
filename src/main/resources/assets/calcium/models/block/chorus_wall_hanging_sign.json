@@ -2,6 +2,6 @@
   "parent": "block/template_wall_hanging_sign",
   "textures": {
     "all": "calcium:block/chorus_hanging_sign",
-    "particle": "calcium:block/stripped_chorus_block"
+    "particle": "calcium:block/chorus_planks"
   }
 }

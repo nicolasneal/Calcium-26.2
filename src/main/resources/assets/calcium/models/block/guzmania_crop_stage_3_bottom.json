@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop_cross",
+  "textures": {
+    "cross": "calcium:block/guzmania_bottom"
+  }
+}

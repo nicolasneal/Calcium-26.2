@@ -19,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class GrowingPlantBlockMixin {
 
     @Unique private static final VoxelShape KELP_HEAD_SHAPE = Block.column(14.0, 0.0, 9.0);
-    @Unique private static final VoxelShape KELP_BODY_SHAPE = Block.box(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
+    @Unique private static final VoxelShape KELP_BODY_SHAPE = Block.column(14.0, 0.0, 16.0);
 
     @Inject(method = "getShape", at = @At("RETURN"), cancellable = true)
     private void calcium$offsetShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context, CallbackInfoReturnable<VoxelShape> cir) {

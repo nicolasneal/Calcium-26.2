@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:smooth_basalt",
+  "result": {
+    "id": "calcium:basalt_brick_stairs",
+    "count": 1
+  }
+}

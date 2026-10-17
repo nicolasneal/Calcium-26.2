@@ -1,0 +1,13 @@
+{
+  "parent": "minecraft:block/glass_panes/glass_pane_post",
+  "textures": {
+    "bars": {
+      "force_translucent": true,
+      "sprite": "minecraft:block/lime_stained_glass"
+    },
+    "edge": {
+      "force_translucent": true,
+      "sprite": "minecraft:block/glass_panes/lime_stained_glass_pane_top"
+    }
+  }
+}

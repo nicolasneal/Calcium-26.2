@@ -41,6 +41,7 @@ import net.nicolas.calcium.item.ModFuels;
 import net.nicolas.calcium.item.ModItems;
 import net.nicolas.calcium.item.ModOrder;
 import net.nicolas.calcium.item.ModStacks;
+import net.nicolas.calcium.item.custom.WrenchItem;
 import net.nicolas.calcium.mixin.accessors.BlockStateBaseAccessor;
 import net.nicolas.calcium.mixin.accessors.CauldronDispatcherAccessor;
 import net.nicolas.calcium.mixin.accessors.CauldronInteractionsAccessor;
@@ -91,6 +92,7 @@ public class Calcium implements ModInitializer {
         ModOrder.initialize();
         Cracking.registerEvents();
         CropWaxing.registerEvents();
+        WrenchItem.registerEvents();
 
         // World Generation Foliage Placer Types
 
@@ -134,7 +136,7 @@ public class Calcium implements ModInitializer {
             double z = Mth.clamp(((float) (seed >> 8 & 15L) / 15.0F - 0.5) * 0.5, -0.25, 0.25);
             return new Vec3(x, 0.0, z);
         };
-        for (Block block : new Block[]{Blocks.KELP, Blocks.KELP_PLANT, Blocks.SEAGRASS}) {
+        for (Block block : new Block[]{Blocks.KELP, Blocks.KELP_PLANT, Blocks.SEAGRASS, Blocks.FERN}) {
             for (BlockState state : block.getStateDefinition().getPossibleStates()) {
                 ((BlockStateBaseAccessor) state).setOffsetFunction(xzOffset);
             }

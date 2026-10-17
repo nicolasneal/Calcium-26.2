@@ -13,6 +13,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ModelLayerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderingRegistry;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
+import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.color.block.BlockTintSource;
@@ -57,6 +58,7 @@ import net.nicolas.calcium.core.client.viewfinder.ViewfinderBlockEntityRenderer;
 import net.nicolas.calcium.core.client.viewfinder.ViewfinderController;
 import net.nicolas.calcium.core.client.viewfinder.ViewfinderModel;
 import net.minecraft.world.entity.animal.sniffer.Sniffer;
+import net.nicolas.calcium.item.custom.WrenchItem;
 import net.nicolas.calcium.core.network.OpenSnifferInventoryPayload;
 import net.nicolas.calcium.core.network.RotateExtraSlotsPayload;
 import net.nicolas.calcium.screen.beacon.CustomBeaconScreen;
@@ -70,6 +72,8 @@ import java.util.List;
     // This class stores miscellaneous client-side functions.
 
 public class CalciumClient implements ClientModInitializer {
+
+    private static boolean wrenchClickConsumed;
 
     public static final KeyMapping ROTATE_EXTRA_SLOTS_KEY = new KeyMapping("key.calcium.rotate_extra_slots", InputConstants.Type.KEYBOARD, InputConstants.KEY_LCONTROL, KeyMapping.Category.INVENTORY, 1);
     public static final KeyMapping TOGGLE_RECIPE_BOOK_KEY = new KeyMapping("key.calcium.toggle_recipe_book", InputConstants.Type.KEYBOARD, InputConstants.KEY_R, KeyMapping.Category.INVENTORY, 2);
@@ -91,6 +95,9 @@ public class CalciumClient implements ClientModInitializer {
         });
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            if (!client.options.keyAttack.isDown()) {
+                wrenchClickConsumed = false;
+            }
             while (ROTATE_EXTRA_SLOTS_KEY.consumeClick()) {
                 if (client.player != null) {
                     ClientPlayNetworking.send(new RotateExtraSlotsPayload());
@@ -169,6 +176,17 @@ public class CalciumClient implements ClientModInitializer {
                 return;
             }
             ViewfinderController.tick();
+        });
+
+        AttackBlockCallback.EVENT.register((player, world, hand, pos, direction) -> {
+            if (!world.isClientSide() || !(player.getMainHandItem().getItem() instanceof WrenchItem)) {
+                return InteractionResult.PASS;
+            }
+            if (wrenchClickConsumed || !WrenchItem.canSelect(world.getBlockState(pos))) {
+                return InteractionResult.FAIL;
+            }
+            wrenchClickConsumed = true;
+            return InteractionResult.SUCCESS;
         });
 
         ColorResolverRegistry.register(ModBlockTintSources.DIRT_RESOLVER);

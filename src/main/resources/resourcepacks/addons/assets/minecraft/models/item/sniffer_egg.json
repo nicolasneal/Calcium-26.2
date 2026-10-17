@@ -1,8 +1,6 @@
 {
-  "credit": "Created by Stridey",
   "parent": "block/block",
   "textures": {
-    "particle": "block/sniffer_egg_not_cracked_north",
     "north": "block/sniffer_egg_not_cracked_north",
     "east": "block/sniffer_egg_not_cracked_east",
     "south": "block/sniffer_egg_not_cracked_south",

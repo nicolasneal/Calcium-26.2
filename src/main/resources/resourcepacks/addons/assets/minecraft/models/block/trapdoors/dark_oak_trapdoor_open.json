@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/trapdoors/template_trapdoor_open",
-  "textures": {
-    "texture": "minecraft:block/trapdoors/dark_oak",
-    "particle": "minecraft:block/particles/dark_oak_door"
-  }
-}

@@ -1,6 +1,4 @@
 {
-  "format_version": "1.21.6",
-  "credit": "Made with Blockbench",
   "parent": "minecraft:block/stairs/stairs_inventory",
   "textures": {
     "1": "block/stairs/polished_diorite_1",

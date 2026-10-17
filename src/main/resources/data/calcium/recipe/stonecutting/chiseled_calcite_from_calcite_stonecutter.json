@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:calcite",
+  "result": {
+    "id": "calcium:chiseled_calcite",
+    "count": 1
+  }
+}

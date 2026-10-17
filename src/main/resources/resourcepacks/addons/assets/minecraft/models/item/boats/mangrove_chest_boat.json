@@ -1,0 +1,6 @@
+{
+  "parent": "item/boats/chest_boat",
+  "textures": {
+    "boat": "entity/boat/mangrove"
+  }
+}

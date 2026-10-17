@@ -20,6 +20,15 @@ fabricApi {
 	}
 }
 
+loom {
+	runs {
+		client {
+			vmArg "-Xss1M"
+			vmArg "-XX:StackShadowPages=32"
+		}
+	}
+}
+
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	implementation "net.fabricmc:fabric-loader:${project.loader_version}"

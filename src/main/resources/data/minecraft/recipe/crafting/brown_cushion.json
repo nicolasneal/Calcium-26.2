@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "cushion",
+  "ingredients": [
+    "minecraft:brown_wool"
+  ],
+  "result": {
+    "id": "minecraft:brown_cushion",
+    "count": 1
+  }
+}

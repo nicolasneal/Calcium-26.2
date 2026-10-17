@@ -1,0 +1,6 @@
+{
+  "parent": "item/hanging_signs/hanging_sign",
+  "textures": {
+    "texture": "block/hanging_signs/birch"
+  }
+}

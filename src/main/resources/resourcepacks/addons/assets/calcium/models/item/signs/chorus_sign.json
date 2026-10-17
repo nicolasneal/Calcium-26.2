@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/signs/sign",
+  "textures": {
+    "texture": "calcium:block/signs/chorus"
+  }
+}

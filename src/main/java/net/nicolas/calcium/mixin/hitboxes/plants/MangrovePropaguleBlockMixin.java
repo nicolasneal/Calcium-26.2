@@ -16,12 +16,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(MangrovePropaguleBlock.class)
 public abstract class MangrovePropaguleBlockMixin {
 
-    @Unique private static final VoxelShape STANDING_SHAPE = Block.box(4.0, 0.0, 4.0, 12.0, 15.0, 12.0);
-    @Unique private static final VoxelShape AGE_0_SHAPE = Block.box(6.0, 12.0, 6.0, 10.0, 16.0, 10.0);
-    @Unique private static final VoxelShape AGE_1_SHAPE = Block.box(6.0, 9.0, 6.0, 10.0, 16.0, 10.0);
-    @Unique private static final VoxelShape AGE_2_SHAPE = Block.box(6.0, 6.0, 6.0, 10.0, 16.0, 10.0);
-    @Unique private static final VoxelShape AGE_3_SHAPE = Block.box(6.0, 2.0, 6.0, 10.0, 16.0, 10.0);
-    @Unique private static final VoxelShape AGE_4_SHAPE = Block.box(6.0, 0.0, 6.0, 10.0, 16.0, 10.0);
+    @Unique private static final VoxelShape STANDING_SHAPE = Block.column(8.0, 0.0, 15.0);
+    @Unique private static final VoxelShape AGE_0_SHAPE = Block.column(4.0, 12.0, 16.0);
+    @Unique private static final VoxelShape AGE_1_SHAPE = Block.column(4.0, 9.0, 16.0);
+    @Unique private static final VoxelShape AGE_2_SHAPE = Block.column(4.0, 6.0, 16.0);
+    @Unique private static final VoxelShape AGE_3_SHAPE = Block.column(4.0, 2.0, 16.0);
+    @Unique private static final VoxelShape AGE_4_SHAPE = Block.column(4.0, 0.0, 16.0);
     @Unique private static final VoxelShape[] AGE_SHAPES = {AGE_0_SHAPE, AGE_1_SHAPE, AGE_2_SHAPE, AGE_3_SHAPE, AGE_4_SHAPE};
 
     @Inject(method = "getShape", at = @At("HEAD"), cancellable = true)

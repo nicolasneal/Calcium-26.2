@@ -11,6 +11,12 @@
     },
     "age=1,waxed=true":  {
       "model":  "minecraft:block/torchflower_crop_stage1"
+    },
+    "age=2,waxed=false":  {
+      "model":  "calcium:block/torchflower_crop_stage2"
+    },
+    "age=2,waxed=true":  {
+      "model":  "calcium:block/torchflower_crop_stage2"
     }
   }
 }

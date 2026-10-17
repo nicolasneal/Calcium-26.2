@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/doors/door_cap_top_w",
+  "textures": {
+    "texture": "minecraft:block/doors/oxidized_copper"
+  }
+}

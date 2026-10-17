@@ -2,6 +2,6 @@
   "parent": "item/template_glass_pane",
   "textures": {
     "front": "block/magenta_stained_glass",
-    "top": "block/magenta_stained_glass_pane_top"
+    "top": "block/glass_panes/magenta_stained_glass_pane_top"
   }
 }

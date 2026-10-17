@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/walls/wall_inventory",
-  "textures": {
-    "wall": "calcium:block/walls/cracked_dripstone_bricks"
-  }
-}

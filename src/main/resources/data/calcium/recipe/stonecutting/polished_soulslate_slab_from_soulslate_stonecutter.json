@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "calcium:soulslate",
+  "result": {
+    "id": "calcium:polished_soulslate_slab",
+    "count": 2
+  }
+}

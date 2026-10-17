@@ -1,7 +1,7 @@
 {
-  "parent": "minecraft:block/hanging_signs/template_wall_hanging_sign",
+  "parent": "minecraft:block/hanging_signs/wall_hanging_sign",
   "textures": {
     "all": "minecraft:block/hanging_signs/crimson",
-    "particle": "minecraft:block/stripped_crimson_stem"
+    "particle": "minecraft:block/crimson_planks"
   }
 }

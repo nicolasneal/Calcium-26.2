@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/doors/door_cap_top_n",
+  "textures": {
+    "texture": "minecraft:block/doors/cherry"
+  }
+}

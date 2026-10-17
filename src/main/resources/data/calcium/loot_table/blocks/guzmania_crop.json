@@ -102,7 +102,42 @@
         }
       ],
       "rolls": 1.0
+    },
+    {
+      "condition": {
+        "type": "minecraft:all_of",
+        "terms": [
+          {
+            "type": "minecraft:match_tool",
+            "predicate": {
+              "items": "minecraft:shears"
+            }
+          },
+          {
+            "type": "minecraft:match_block",
+            "blocks": "calcium:guzmania_crop",
+            "state": {
+              "age": "3"
+            }
+          },
+          {
+            "type": "minecraft:match_block",
+            "blocks": "calcium:guzmania_crop",
+            "state": {
+              "half": "lower"
+            }
+          }
+        ]
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "calcium:guzmania"
+        }
+      ],
+      "rolls": 1.0
     }
   ],
   "random_sequence": "calcium:blocks/guzmania_crop"
+
 }

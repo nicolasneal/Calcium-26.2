@@ -1,0 +1,17 @@
+{
+  "parent": "minecraft:block/glass_panes/glass_pane_cross",
+  "textures": {
+    "pane_1": {
+      "force_translucent": true,
+      "sprite": "minecraft:block/glass_panes/green_stained_glass_pane_1"
+    },
+    "pane_2": {
+      "force_translucent": true,
+      "sprite": "minecraft:block/glass_panes/green_stained_glass_pane_2"
+    },
+    "edge": {
+      "force_translucent": true,
+      "sprite": "minecraft:block/glass_panes/green_stained_glass_pane_top"
+    }
+  }
+}

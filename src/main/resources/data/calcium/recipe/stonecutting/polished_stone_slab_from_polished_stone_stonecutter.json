@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "calcium:polished_stone",
+  "result": {
+    "id": "calcium:polished_stone_slab",
+    "count": 2
+  }
+}

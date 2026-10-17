@@ -1,0 +1,6 @@
+{
+  "parent": "item/doors/door",
+  "textures": {
+    "texture": "block/doors/oxidized_copper"
+  }
+}

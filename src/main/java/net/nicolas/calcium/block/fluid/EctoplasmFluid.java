@@ -5,16 +5,20 @@ import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.InsideBlockEffectApplier;
 import net.minecraft.world.entity.InsideBlockEffectType;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LevelEvent;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -28,9 +32,13 @@ import net.nicolas.calcium.core.particle.ModParticleTypes;
 import net.nicolas.calcium.item.ModItems;
 import net.nicolas.calcium.sound.ModSoundGroups;
 
+import org.jspecify.annotations.Nullable;
+
 import java.util.Optional;
 
 public abstract class EctoplasmFluid extends FlowingFluid {
+
+    private static final Direction[] SOLIDIFIED_DIRECTIONS = {Direction.DOWN, Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST};
 
     @Override public Fluid getSource() {
         return ModFluids.ECTOPLASM_STILL;
@@ -66,7 +74,46 @@ public abstract class EctoplasmFluid extends FlowingFluid {
     }
 
     @Override protected boolean canBeReplacedWith(FluidState state, BlockGetter world, BlockPos pos, Fluid fluid, Direction direction) {
-        return direction == Direction.DOWN && !this.isSource(state);
+        return false;
+    }
+
+    @Override public void tick(ServerLevel world, BlockPos pos, BlockState state, FluidState fluidState) {
+        if (!(state.getBlock() instanceof LiquidBlock) || !this.reactWithNeighbors(world, pos, fluidState)) {
+            super.tick(world, pos, state, fluidState);
+        }
+    }
+
+    private boolean reactWithNeighbors(ServerLevel world, BlockPos pos, FluidState fluidState) {
+        Block fromAbove = solidFor(world.getBlockState(pos.above()));
+        if (fromAbove != null) {
+            solidify(world, pos, fluidState.isSource() ? Blocks.BLACKSTONE : fromAbove);
+            return true;
+        }
+
+        for (Direction direction : SOLIDIFIED_DIRECTIONS) {
+            BlockPos neighborPos = pos.relative(direction);
+            Block result = solidFor(world.getBlockState(neighborPos));
+            if (result != null) {
+                solidify(world, neighborPos, result);
+            }
+        }
+        return false;
+    }
+
+    private static @Nullable Block solidFor(BlockState state) {
+        if (!(state.getBlock() instanceof LiquidBlock)) {
+            return null;
+        }
+        FluidState fluidState = state.getFluidState();
+        if (fluidState.is(FluidTags.WATER)) {
+            return Blocks.ICE;
+        }
+        return fluidState.is(FluidTags.LAVA) ? ModBlocks.SOULSLATE : null;
+    }
+
+    private static void solidify(ServerLevel world, BlockPos pos, Block result) {
+        world.setBlock(pos, result.defaultBlockState(), Block.UPDATE_ALL);
+        world.levelEvent(LevelEvent.LAVA_FIZZ, pos, 0);
     }
 
     @Override protected float getExplosionResistance() {

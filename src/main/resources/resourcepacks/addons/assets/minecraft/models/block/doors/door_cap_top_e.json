@@ -1,0 +1,15 @@
+{
+  "texture_size": [48, 32],
+  "textures": {
+    "particle": "#texture"
+  },
+  "elements": [
+    {
+      "from": [13, 16, 0],
+      "to": [16, 16, 16],
+      "faces": {
+        "up": {"uv": [7.33333, 1.5, 12.66667, 0], "rotation": 90, "texture": "#texture", "cullface": "up"}
+      }
+    }
+  ]
+}

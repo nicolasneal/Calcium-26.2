@@ -1,6 +1,5 @@
 {
-  "credit": "Created by Stridey",
-  "parent": "item/boat",
+  "parent": "item/boats/boat",
   "texture_size": [128, 128],
   "textures": {
     "texture": "entity/chest_boat/bamboo"

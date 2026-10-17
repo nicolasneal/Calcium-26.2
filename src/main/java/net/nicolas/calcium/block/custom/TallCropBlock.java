@@ -28,24 +28,18 @@ import org.jspecify.annotations.Nullable;
 
 public class TallCropBlock extends DoublePlantBlock implements BonemealableBlock, CropWaxing.Waxable {
 
-    public static final int MAX_AGE = 2;
-    public static final IntegerProperty AGE = BlockStateProperties.AGE_2;
+    public static final int MAX_AGE = 3;
+    private static final int DOUBLE_AGE = 2;
+    public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
 
     private static final VoxelShape SHAPE_STAGE_0 = Block.column(6.0, 0.0, 6.0);
     private static final VoxelShape SHAPE_STAGE_1 = Block.column(10.0, 0.0, 12.0);
     private static final VoxelShape SHAPE_STAGE_2_LOWER = Block.column(12.0, 0.0, 16.0);
     private static final VoxelShape SHAPE_STAGE_2_UPPER = Block.column(12.0, 0.0, 12.0);
 
-    private final Block grownPlant;
-
-    public TallCropBlock(Block grownPlant, BlockBehaviour.Properties properties) {
+    public TallCropBlock(BlockBehaviour.Properties properties) {
         super(properties);
-        this.grownPlant = grownPlant;
         this.registerDefaultState(this.defaultBlockState().setValue(WAXED, false));
-    }
-
-    public Block grownPlant() {
-        return this.grownPlant;
     }
 
     @Override public @Nullable BlockState getStateForPlacement(BlockPlaceContext context) {
@@ -65,7 +59,11 @@ public class TallCropBlock extends DoublePlantBlock implements BonemealableBlock
         if (state.getValue(AGE) == 1) {
             return this.shapeStage1();
         }
-        return state.getValue(HALF) == DoubleBlockHalf.UPPER ? this.shapeStage2Upper() : this.shapeStage2Lower();
+        boolean upper = state.getValue(HALF) == DoubleBlockHalf.UPPER;
+        if (state.getValue(AGE) == 2) {
+            return upper ? this.shapeStage2Upper() : this.shapeStage2Lower();
+        }
+        return upper ? this.shapeStage3Upper() : this.shapeStage3Lower();
     }
 
     protected VoxelShape shapeStage0() {
@@ -84,6 +82,14 @@ public class TallCropBlock extends DoublePlantBlock implements BonemealableBlock
         return SHAPE_STAGE_2_UPPER;
     }
 
+    protected VoxelShape shapeStage3Lower() {
+        return this.shapeStage2Lower();
+    }
+
+    protected VoxelShape shapeStage3Upper() {
+        return this.shapeStage2Upper();
+    }
+
     @Override protected boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
         return state.is(BlockTags.SUPPORTS_CROPS);
     }
@@ -94,7 +100,7 @@ public class TallCropBlock extends DoublePlantBlock implements BonemealableBlock
     }
 
     @Override public boolean isRandomlyTicking(BlockState state) {
-        return state.getValue(HALF) == DoubleBlockHalf.LOWER && !state.getValue(WAXED);
+        return state.getValue(HALF) == DoubleBlockHalf.LOWER && !state.getValue(WAXED) && !this.isMaxAge(state);
     }
 
     @Override public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
@@ -103,11 +109,7 @@ public class TallCropBlock extends DoublePlantBlock implements BonemealableBlock
         }
         float growthSpeed = CropBlockInvoker.calcium$getGrowthSpeed(this, level, pos);
         if (random.nextInt((int) (25.0F / growthSpeed) + 1) == 0) {
-            if (this.isMaxAge(state)) {
-                this.convertToPlant(level, pos);
-            } else {
-                this.grow(level, state, pos);
-            }
+            this.grow(level, state, pos);
         }
     }
 
@@ -131,12 +133,6 @@ public class TallCropBlock extends DoublePlantBlock implements BonemealableBlock
         }
     }
 
-    private void convertToPlant(ServerLevel level, BlockPos lowerPos) {
-        if (CropBlockInvoker.calcium$hasSufficientLight(level, lowerPos)) {
-            DoublePlantBlock.placeAt(level, this.grownPlant.defaultBlockState(), lowerPos, Block.UPDATE_CLIENTS | Block.UPDATE_KNOWN_SHAPE);
-        }
-    }
-
     private boolean canGrowInto(LevelReader level, BlockPos pos) {
         BlockState state = level.getBlockState(pos);
         return state.isAir() || state.is(this);
@@ -147,7 +143,7 @@ public class TallCropBlock extends DoublePlantBlock implements BonemealableBlock
     }
 
     private static boolean isDouble(int age) {
-        return age >= MAX_AGE;
+        return age >= DOUBLE_AGE;
     }
 
     private boolean canGrow(LevelReader level, BlockPos lowerPos, BlockState lowerState, int newAge) {
@@ -175,7 +171,7 @@ public class TallCropBlock extends DoublePlantBlock implements BonemealableBlock
         if (lowerHalf == null || lowerHalf.state.getValue(WAXED)) {
             return false;
         }
-        return this.isMaxAge(lowerHalf.state) || this.canGrow(level, lowerHalf.pos, lowerHalf.state, lowerHalf.state.getValue(AGE) + 1);
+        return this.canGrow(level, lowerHalf.pos, lowerHalf.state, lowerHalf.state.getValue(AGE) + 1);
     }
 
     @Override public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state, BonemealSource source) {
@@ -185,11 +181,7 @@ public class TallCropBlock extends DoublePlantBlock implements BonemealableBlock
     @Override public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state, BonemealSource source) {
         TallCropBlock.PosAndState lowerHalf = this.getLowerHalf(level, pos, state);
         if (lowerHalf != null) {
-            if (this.isMaxAge(lowerHalf.state)) {
-                this.convertToPlant(level, lowerHalf.pos);
-            } else {
-                this.grow(level, lowerHalf.state, lowerHalf.pos);
-            }
+            this.grow(level, lowerHalf.state, lowerHalf.pos);
         }
     }
 

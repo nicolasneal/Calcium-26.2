@@ -7,10 +7,13 @@ import net.minecraft.client.color.block.BlockTintSource;
 import net.minecraft.client.color.block.BlockTintSources;
 import net.minecraft.client.color.item.ItemTintSource;
 import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.client.renderer.BiomeColors;
+import net.minecraft.core.BlockPos;
 import net.minecraft.util.ARGB;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ColorResolver;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jspecify.annotations.Nullable;
@@ -27,7 +30,12 @@ public record BiomeItemTintSource(Kind kind) implements ItemTintSource {
         if (minecraft.player == null || minecraft.level == null) {
             return ARGB.opaque(source.color(state));
         }
-        return ARGB.opaque(source.colorInWorld(state, minecraft.level, minecraft.player.blockPosition()));
+        BlockPos pos = minecraft.player.blockPosition();
+        ColorResolver resolver = this.kind.resolver;
+        if (resolver != null) {
+            return ARGB.opaque(minecraft.level.getBlockTint(pos, resolver));
+        }
+        return ARGB.opaque(source.colorInWorld(state, minecraft.level, pos));
     }
 
     @Override
@@ -37,15 +45,17 @@ public record BiomeItemTintSource(Kind kind) implements ItemTintSource {
 
     public enum Kind implements StringRepresentable {
 
-        DIRT("dirt"),
-        GRASS("grass"),
-        FOLIAGE("foliage");
+        DIRT("dirt", null),
+        GRASS("grass", BiomeColors.GRASS_COLOR_RESOLVER),
+        FOLIAGE("foliage", BiomeColors.FOLIAGE_COLOR_RESOLVER);
 
         private final String name;
+        private final @Nullable ColorResolver resolver;
         private @Nullable BlockTintSource source;
 
-        Kind(String name) {
+        Kind(String name, @Nullable ColorResolver resolver) {
             this.name = name;
+            this.resolver = resolver;
         }
 
         private BlockTintSource source() {

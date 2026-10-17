@@ -1,9 +1,6 @@
 {
-  "format_version": "1.21.6",
-  "credit": "Made with Blockbench",
   "textures": {
-    "lever": "block/lever",
-    "particle": "block/particles/lever"
+    "lever": "block/lever"
   },
   "elements": [
     {

@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/signs/template_sign_rot_3",
+  "parent": "minecraft:block/signs/sign_rot_3",
   "textures": {
     "all": "minecraft:block/signs/spruce",
     "particle": "minecraft:block/spruce_planks"

@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "calcium:item/walls/smooth_stone_wall"
+  }
+}

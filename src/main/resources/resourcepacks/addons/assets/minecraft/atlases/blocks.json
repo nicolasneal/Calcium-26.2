@@ -77,6 +77,11 @@
     },
     {
       "type": "directory",
+      "source": "entity/cushion",
+      "prefix": "entity/cushion/"
+    },
+    {
+      "type": "directory",
       "source": "entity/end_crystal",
       "prefix": "entity/end_crystal/"
     },

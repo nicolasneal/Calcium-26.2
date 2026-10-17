@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/fence_gate_inventory",
-  "textures": {
-    "texture": "calcium:block/fence_gates/chorus"
-  }
-}

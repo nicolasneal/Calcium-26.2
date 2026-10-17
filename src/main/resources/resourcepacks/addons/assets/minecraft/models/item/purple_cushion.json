@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/cushion",
+  "textures": {
+    "texture": "minecraft:entity/cushion/purple_cushion"
+  }
+}

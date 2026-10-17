@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/fences/fence",
+  "textures": {
+    "texture": "minecraft:block/fences/jungle"
+  }
+}

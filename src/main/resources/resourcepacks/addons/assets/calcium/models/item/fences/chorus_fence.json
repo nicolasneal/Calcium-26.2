@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/fences/fence",
+  "textures": {
+    "texture": "calcium:block/fences/chorus"
+  }
+}

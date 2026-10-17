@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:dark_prismarine",
+  "result": {
+    "id": "calcium:dark_prismarine_wall",
+    "count": 1
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/doors/door",
+  "textures": {
+    "texture": "calcium:block/doors/chorus"
+  }
+}

@@ -1,8 +1,5 @@
 {
-  "format_version": "1.21.6",
-  "credit": "Designed by MinecraftSpace with Cubik Studio - https://cubik.studio",
   "textures": {
-    "particle": "block/brewing_stand",
     "stand": "block/brewing_stand",
     "base": "block/brewing_stand_base"
   },

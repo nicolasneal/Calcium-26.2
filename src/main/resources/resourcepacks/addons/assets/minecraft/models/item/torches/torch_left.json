@@ -1,5 +1,5 @@
 {
-  "parent": "item/torches/left_hand_template",
+  "parent": "item/torches/left_hand",
   "textures": {
     "1": "item/torches/torch_hand",
     "2": "item/torches/torch_gradient_flame",

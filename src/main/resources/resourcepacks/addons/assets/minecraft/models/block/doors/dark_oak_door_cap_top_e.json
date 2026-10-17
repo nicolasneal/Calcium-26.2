@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/doors/door_cap_top_e",
+  "textures": {
+    "texture": "minecraft:block/doors/dark_oak"
+  }
+}

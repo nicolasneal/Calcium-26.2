@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/trapdoors/template_trapdoor_top",
+  "parent": "minecraft:block/trapdoors/trapdoor_top",
   "textures": {
     "texture": "minecraft:block/trapdoors/iron",
     "particle": "minecraft:block/particles/iron_door"

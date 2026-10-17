@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/hanging_signs/template_hanging_sign_rot_3",
+  "parent": "minecraft:block/hanging_signs/hanging_sign_rot_3",
   "textures": {
     "all": "minecraft:block/hanging_signs/bamboo",
     "particle": "minecraft:block/bamboo_planks"

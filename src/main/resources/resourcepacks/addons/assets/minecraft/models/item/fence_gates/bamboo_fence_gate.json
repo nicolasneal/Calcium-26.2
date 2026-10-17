@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/fence_gates/fence_gate",
+  "textures": {
+    "texture": "minecraft:block/fence_gates/bamboo"
+  }
+}

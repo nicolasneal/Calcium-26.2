@@ -479,6 +479,16 @@
       "calcium:item/signal_card/eject"
     ]
   },
+  "item.wrench.select": {
+    "sounds": [
+      "calcium:item/wrench/select"
+    ]
+  },
+  "item.wrench.use": {
+    "sounds": [
+      "calcium:item/wrench/use"
+    ]
+  },
 
   "entity.sea_cow.ambient": {
     "sounds": [

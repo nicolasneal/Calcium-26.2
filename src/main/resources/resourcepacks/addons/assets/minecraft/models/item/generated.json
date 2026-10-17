@@ -1,6 +1,4 @@
 {
-  "format_version": "1.21.11",
-  "credit": "Made with Blockbench",
   "parent": "builtin/generated",
   "gui_light": "front",
   "display": {

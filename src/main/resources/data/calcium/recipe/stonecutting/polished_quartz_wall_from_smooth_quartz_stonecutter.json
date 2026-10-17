@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:smooth_quartz",
+  "result": {
+    "id": "calcium:polished_quartz_wall",
+    "count": 1
+  }
+}

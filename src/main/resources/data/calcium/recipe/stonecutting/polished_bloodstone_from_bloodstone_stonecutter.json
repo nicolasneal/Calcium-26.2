@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "calcium:bloodstone",
+  "result": {
+    "id": "calcium:polished_bloodstone",
+    "count": 1
+  }
+}

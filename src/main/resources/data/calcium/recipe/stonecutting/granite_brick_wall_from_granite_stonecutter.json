@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "minecraft:granite",
+  "result": {
+    "id": "calcium:granite_brick_wall",
+    "count": 1
+  }
+}

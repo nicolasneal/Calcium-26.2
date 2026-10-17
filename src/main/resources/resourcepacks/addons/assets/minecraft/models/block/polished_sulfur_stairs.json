@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/stairs/stairs_inventory",
+  "textures": {
+    "1": "block/stairs/polished_sulfur_1",
+    "2": "block/stairs/polished_sulfur_2",
+    "3": "block/stairs/polished_sulfur_5",
+    "4": "block/stairs/polished_sulfur_5",
+    "5": "block/polished_sulfur"
+  }
+}

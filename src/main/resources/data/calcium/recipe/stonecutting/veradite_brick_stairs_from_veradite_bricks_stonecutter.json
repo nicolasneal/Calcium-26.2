@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "calcium:veradite_bricks",
+  "result": {
+    "id": "calcium:veradite_brick_stairs",
+    "count": 1
+  }
+}

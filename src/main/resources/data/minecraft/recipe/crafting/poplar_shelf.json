@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "minecraft:stripped_poplar_log"
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "id": "minecraft:poplar_shelf",
+    "count": 1
+  }
+}

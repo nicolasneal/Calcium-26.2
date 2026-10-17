@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": "#minecraft:poplar_logs"
+  },
+  "pattern": [
+    "#"
+  ],
+  "result": {
+    "id": "minecraft:poplar_planks",
+    "count": 4
+  }
+}

@@ -1,9 +1,6 @@
 {
-  "format_version": "1.21.6",
-  "credit": "Made with Blockbench",
   "textures": {
-    "hook": "block/tripwire_hook",
-    "particle": "block/particles/wood"
+    "hook": "block/tripwire_hook"
   },
   "elements": [
     {

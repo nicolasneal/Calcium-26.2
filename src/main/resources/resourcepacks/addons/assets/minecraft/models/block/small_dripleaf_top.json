@@ -1,5 +1,4 @@
 {
-  "credit": "Made with Blockbench",
   "parent": "block/block",
   "textures": {
     "3": "block/small_dripleaf_stem_top2",

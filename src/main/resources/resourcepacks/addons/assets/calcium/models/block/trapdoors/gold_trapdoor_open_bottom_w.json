@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/trapdoors/trapdoor_open_bottom_w",
+  "textures": {
+    "texture": "calcium:block/trapdoors/gold",
+    "particle": "calcium:block/particles/gold_door"
+  }
+}

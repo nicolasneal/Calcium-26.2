@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/doors/door_cap_top_s",
+  "textures": {
+    "texture": "minecraft:block/doors/acacia"
+  }
+}

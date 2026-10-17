@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/signs/template_sign_rot_0",
+  "parent": "minecraft:block/signs/sign_rot_0",
   "textures": {
     "all": "calcium:block/signs/willow",
     "particle": "calcium:block/willow_planks"

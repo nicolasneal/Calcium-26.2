@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/trapdoors/trapdoor_open_top_n",
+  "textures": {
+    "texture": "minecraft:block/trapdoors/copper",
+    "particle": "minecraft:block/particles/copper_door"
+  }
+}

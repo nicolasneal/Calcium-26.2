@@ -49,8 +49,8 @@ public abstract class MenuTabsMixin {
         static final Map<ResourceKey<CreativeModeTab>, Slot> TAB_SLOTS = new ImmutableMap.Builder<ResourceKey<CreativeModeTab>, Slot>()
 
             .put(CreativeModeTabs.NATURAL_BLOCKS, new Slot(CreativeModeTab.Row.TOP, 0))
-            .put(CreativeModeTabs.BUILDING_BLOCKS, new Slot(CreativeModeTab.Row.TOP, 2))
-            .put(CreativeModeTabs.COLORED_BLOCKS, new Slot(CreativeModeTab.Row.TOP, 1))
+            .put(CreativeModeTabs.BUILDING_BLOCKS, new Slot(CreativeModeTab.Row.TOP, 1))
+            .put(CreativeModeTabs.COLORED_BLOCKS, new Slot(CreativeModeTab.Row.TOP, 2))
             .put(CreativeModeTabs.FUNCTIONAL_BLOCKS, new Slot(CreativeModeTab.Row.TOP, 3))
             .put(CreativeModeTabs.REDSTONE_BLOCKS, new Slot(CreativeModeTab.Row.TOP, 4))
             .put(CreativeModeTabs.HOTBAR, new Slot(CreativeModeTab.Row.TOP, 5))
@@ -58,8 +58,8 @@ public abstract class MenuTabsMixin {
 
             .put(CreativeModeTabs.TOOLS_AND_UTILITIES, new Slot(CreativeModeTab.Row.BOTTOM, 0))
             .put(CreativeModeTabs.COMBAT, new Slot(CreativeModeTab.Row.BOTTOM, 1))
-            .put(CreativeModeTabs.FOOD_AND_DRINKS, new Slot(CreativeModeTab.Row.BOTTOM, 2))
-            .put(CreativeModeTabs.INGREDIENTS, new Slot(CreativeModeTab.Row.BOTTOM, 3))
+            .put(CreativeModeTabs.INGREDIENTS, new Slot(CreativeModeTab.Row.BOTTOM, 2))
+            .put(CreativeModeTabs.FOOD_AND_DRINKS, new Slot(CreativeModeTab.Row.BOTTOM, 3))
             .put(CreativeModeTabs.SPAWN_EGGS, new Slot(CreativeModeTab.Row.BOTTOM, 4))
             .put(CreativeModeTabs.OP_BLOCKS, new Slot(CreativeModeTab.Row.BOTTOM, 5))
             .put(CreativeModeTabs.INVENTORY, new Slot(CreativeModeTab.Row.BOTTOM, 6))

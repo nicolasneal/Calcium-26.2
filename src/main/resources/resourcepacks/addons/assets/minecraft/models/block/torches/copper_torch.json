@@ -1,5 +1,5 @@
 {
-  "parent": "block/torches/ground_torch_template",
+  "parent": "block/torches/ground_torch",
   "textures": {
     "1": "block/torches/copper_torch_hand",
     "2": "block/torches/copper_torch_gradient_flame",

@@ -179,6 +179,9 @@ public class ModSoundGroups {
 
     // ITEMS
 
+    public static final SoundEvent WRENCH_SELECT = register("item.wrench.select");
+    public static final SoundEvent WRENCH_USE = register("item.wrench.use");
+
     public static final SoundEvent ECTOPLASM_BUCKET_EMPTY = register("item.bucket.empty_ectoplasm");
     public static final SoundEvent ECTOPLASM_BUCKET_FILL = register("item.bucket.fill_ectoplasm");
     public static final SoundEvent ECTOPLASM_AMBIENT = register("block.ectoplasm.whispering");

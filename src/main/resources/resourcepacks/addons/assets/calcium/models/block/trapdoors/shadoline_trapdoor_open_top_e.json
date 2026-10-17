@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/trapdoors/trapdoor_open_top_e",
+  "textures": {
+    "texture": "calcium:block/trapdoors/shadoline",
+    "particle": "calcium:block/particles/shadoline_door"
+  }
+}

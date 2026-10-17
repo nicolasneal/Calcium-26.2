@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:block/glass_panes/glass_pane_tee",
+  "textures": {
+    "bars": {
+      "force_translucent": true,
+      "sprite": "minecraft:block/green_stained_glass"
+    },
+    "pane_1": {
+      "force_translucent": true,
+      "sprite": "minecraft:block/glass_panes/green_stained_glass_pane_1"
+    },
+    "pane_2": {
+      "force_translucent": true,
+      "sprite": "minecraft:block/glass_panes/green_stained_glass_pane_2"
+    },
+    "edge": {
+      "force_translucent": true,
+      "sprite": "minecraft:block/glass_panes/green_stained_glass_pane_top"
+    }
+  }
+}

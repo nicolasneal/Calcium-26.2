@@ -1,5 +1,4 @@
 {
-  "credit": "Made with Blockbench",
   "parent": "block/block",
   "textures": {
     "1": "block/spore_blossom_base",

@@ -1,7 +1,7 @@
 {
-  "parent": "minecraft:block/hanging_signs/template_hanging_sign_rot_2",
+  "parent": "minecraft:block/hanging_signs/hanging_sign_rot_2",
   "textures": {
     "all": "minecraft:block/hanging_signs/poplar",
-    "particle": "minecraft:block/stripped_poplar_log"
+    "particle": "minecraft:block/poplar_planks"
   }
 }

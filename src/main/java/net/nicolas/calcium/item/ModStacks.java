@@ -70,6 +70,7 @@ public class ModStacks {
             context.modify(Items.COMMAND_BLOCK_MINECART, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));
 
             Items.BED.forEach(bed -> context.modify(bed, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64)));
+            Items.CUSHION.forEach(cushion -> context.modify(cushion, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64)));
             Items.BANNER.forEach(banner -> context.modify(banner, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64)));
 
             context.modify(Items.MUSIC_DISC_13, builder -> builder.set(DataComponents.MAX_STACK_SIZE, 64));

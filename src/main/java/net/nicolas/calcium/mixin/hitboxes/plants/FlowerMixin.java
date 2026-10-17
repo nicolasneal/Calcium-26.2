@@ -18,20 +18,20 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(FlowerBlock.class)
 public abstract class FlowerMixin {
 
-    @Unique private static final VoxelShape SHAPE_1 = Block.box(1.0, 0.0, 1.0, 15.0, 13.0, 15.0);
-    @Unique private static final VoxelShape SHAPE_2 = Block.box(2.0, 0.0, 2.0, 14.0, 13.0, 14.0);
-    @Unique private static final VoxelShape SHAPE_3 = Block.box(3.0, 0.0, 3.0, 13.0, 12.0, 13.0);
-    @Unique private static final VoxelShape SHAPE_4 = Block.box(4.0, 0.0, 4.0, 12.0, 14.0, 12.0);
-    @Unique private static final VoxelShape SHAPE_5 = Block.box(3.0, 0.0, 3.0, 13.0, 11.0, 13.0);
-    @Unique private static final VoxelShape SHAPE_6 = Block.box(4.0, 0.0, 4.0, 12.0, 15.0, 12.0);
-    @Unique private static final VoxelShape SHAPE_7 = Block.box(2.0, 0.0, 2.0, 14.0, 12.0, 14.0);
-    @Unique private static final VoxelShape SHAPE_8 = Block.box(3.0, 0.0, 3.0, 13.0, 13.0, 13.0);
-    @Unique private static final VoxelShape SHAPE_9 = Block.box(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
-    @Unique private static final VoxelShape SHAPE_10 = Block.box(3.0, 0.0, 3.0, 13.0, 16.0, 13.0);
-    @Unique private static final VoxelShape SHAPE_11 = Block.box(4.0, 0.0, 4.0, 12.0, 13.0, 12.0);
-    @Unique private static final VoxelShape SHAPE_12 = Block.box(5.0, 0.0, 5.0, 11.0, 10.0, 11.0);
-    @Unique private static final VoxelShape SHAPE_13 = Block.box(1.0, 0.0, 1.0, 15.0, 16.0, 15.0);
-    @Unique private static final VoxelShape SHAPE_14 = Block.box(4.0, 0.0, 4.0, 12.0, 12.0, 12.0);
+    @Unique private static final VoxelShape SHAPE_1 = Block.column(14.0, 0.0, 13.0);
+    @Unique private static final VoxelShape SHAPE_2 = Block.column(12.0, 0.0, 13.0);
+    @Unique private static final VoxelShape SHAPE_3 = Block.column(10.0, 0.0, 12.0);
+    @Unique private static final VoxelShape SHAPE_4 = Block.column(8.0, 0.0, 14.0);
+    @Unique private static final VoxelShape SHAPE_5 = Block.column(10.0, 0.0, 11.0);
+    @Unique private static final VoxelShape SHAPE_6 = Block.column(8.0, 0.0, 15.0);
+    @Unique private static final VoxelShape SHAPE_7 = Block.column(12.0, 0.0, 12.0);
+    @Unique private static final VoxelShape SHAPE_8 = Block.column(10.0, 0.0, 13.0);
+    @Unique private static final VoxelShape SHAPE_9 = Block.column(8.0, 0.0, 16.0);
+    @Unique private static final VoxelShape SHAPE_10 = Block.column(10.0, 0.0, 16.0);
+    @Unique private static final VoxelShape SHAPE_11 = Block.column(8.0, 0.0, 13.0);
+    @Unique private static final VoxelShape SHAPE_12 = Block.column(6.0, 0.0, 10.0);
+    @Unique private static final VoxelShape SHAPE_13 = Block.column(14.0, 0.0, 16.0);
+    @Unique private static final VoxelShape SHAPE_14 = Block.column(8.0, 0.0, 12.0);
 
     @Inject(method = "getShape", at = @At("HEAD"), cancellable = true)
     private void calcium$flowerShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context, CallbackInfoReturnable<VoxelShape> cir) {

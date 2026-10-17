@@ -14,12 +14,14 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.component.Consumables;
+import net.minecraft.world.item.component.DebugStickState;
 import net.minecraft.world.item.component.TypedEntityData;
 import net.minecraft.world.level.material.Fluids;
 import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.entity.ModEntities;
 import net.nicolas.calcium.item.custom.EctoplasmBucketItem;
 import net.nicolas.calcium.item.custom.SignalCardItem;
+import net.nicolas.calcium.item.custom.WrenchItem;
 import net.nicolas.calcium.sound.ModSoundGroups;
 
 import java.util.function.Function;
@@ -100,8 +102,9 @@ public class ModItems {
     public static final Item GUZMANIA_SEEDS = register("guzmania_seeds", settings -> new BlockItem(ModBlocks.GUZMANIA_CROP, settings), new Item.Properties().stacksTo(64));
     public static final Item AZUREBERRY_SEEDS = register("azureberry_seeds", settings -> new BlockItem(ModBlocks.AZUREBERRY_VINES, settings), new Item.Properties().stacksTo(64));
 
-    // TOOLS & UTILITY (10)
+    // TOOLS & UTILITY (11)
 
+    public static final Item WRENCH = register("wrench", WrenchItem::new, new Item.Properties().durability(238).enchantable(14).component(DataComponents.DEBUG_STICK_STATE, DebugStickState.EMPTY));
     public static final Item COPPER_COIN = register("copper_coin", Item::new, new Item.Properties().stacksTo(64));
     public static final Item IRON_COIN = register("iron_coin", Item::new, new Item.Properties().stacksTo(64));
     public static final Item GOLD_COIN = register("gold_coin", Item::new, new Item.Properties().stacksTo(64));

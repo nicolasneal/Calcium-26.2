@@ -35,6 +35,18 @@
     },
     "age=2,half=upper,waxed=true": {
       "model": "calcium:block/manedrop_crop_stage_2_top"
+    },
+    "age=3,half=lower,waxed=false": {
+      "model": "calcium:block/manedrop_crop_stage_3_bottom"
+    },
+    "age=3,half=lower,waxed=true": {
+      "model": "calcium:block/manedrop_crop_stage_3_bottom"
+    },
+    "age=3,half=upper,waxed=false": {
+      "model": "calcium:block/manedrop_crop_stage_3_top"
+    },
+    "age=3,half=upper,waxed=true": {
+      "model": "calcium:block/manedrop_crop_stage_3_top"
     }
   }
 }

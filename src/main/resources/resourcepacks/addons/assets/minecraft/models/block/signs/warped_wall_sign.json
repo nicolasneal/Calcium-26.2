@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/signs/template_wall_sign",
+  "parent": "minecraft:block/signs/wall_sign",
   "textures": {
     "all": "minecraft:block/signs/warped",
     "particle": "minecraft:block/warped_planks"

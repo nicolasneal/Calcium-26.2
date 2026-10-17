@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/doors/door_cap_bottom_n",
+  "textures": {
+    "texture": "minecraft:block/doors/mangrove"
+  }
+}

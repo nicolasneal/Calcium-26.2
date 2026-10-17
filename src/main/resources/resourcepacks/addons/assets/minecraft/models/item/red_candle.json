@@ -1,7 +1,6 @@
 {
   "parent": "minecraft:item/template_candle",
   "textures": {
-    "all": "minecraft:block/red_candle",
-    "particle": "minecraft:block/red_candle"
+    "all": "minecraft:block/red_candle"
   }
 }

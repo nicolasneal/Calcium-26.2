@@ -1,6 +1,4 @@
 {
-  "format_version": "1.21.11",
-  "credit": "Created by Stridey",
   "texture_size": [64, 32],
   "textures": {
     "0": "item/minecart/minecart"

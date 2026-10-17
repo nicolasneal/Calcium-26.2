@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "calcium:dripstone_bricks",
+  "result": {
+    "id": "calcium:dripstone_brick_stairs",
+    "count": 1
+  }
+}

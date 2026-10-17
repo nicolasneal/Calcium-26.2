@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/trapdoors/trapdoor_open_top_w",
+  "textures": {
+    "texture": "minecraft:block/trapdoors/poplar",
+    "particle": "minecraft:block/particles/poplar_door"
+  }
+}

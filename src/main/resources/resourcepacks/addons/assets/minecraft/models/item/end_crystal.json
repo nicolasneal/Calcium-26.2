@@ -1,9 +1,7 @@
 {
-  "credit": "Created by Stridey",
   "texture_size": [128, 64],
   "textures": {
-    "0": "entity/end_crystal/end_crystal",
-    "particle": "entity/end_crystal/end_crystal"
+    "0": "entity/end_crystal/end_crystal"
   },
   "elements": [
     {
