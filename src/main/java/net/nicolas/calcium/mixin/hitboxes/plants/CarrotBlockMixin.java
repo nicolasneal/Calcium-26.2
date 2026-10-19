@@ -17,10 +17,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(CarrotBlock.class)
 public abstract class CarrotBlockMixin {
 
-    @Unique private static final VoxelShape STAGE_1 = Block.column(13.0, 0.0, 3.0);
-    @Unique private static final VoxelShape STAGE_2 = Block.column(13.0, 0.0, 5.0);
-    @Unique private static final VoxelShape STAGE_3 = Block.column(14.0, 0.0, 10.0);
-    @Unique private static final VoxelShape STAGE_4 = Block.column(14.0, 0.0, 13.0);
+    @Unique private static final VoxelShape STAGE_1 = Block.column(13.0, -1.0, 3.0);
+    @Unique private static final VoxelShape STAGE_2 = Block.column(13.0, -1.0, 5.0);
+    @Unique private static final VoxelShape STAGE_3 = Block.column(14.0, -1.0, 10.0);
+    @Unique private static final VoxelShape STAGE_4 = Block.column(14.0, -1.0, 13.0);
 
     @Inject(method = "getShape", at = @At("HEAD"), cancellable = true)
     private void calcium$carrotShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context, CallbackInfoReturnable<VoxelShape> cir) {

@@ -6,13 +6,17 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.BonemealSource;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.VegetationBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.nicolas.calcium.event.CropWaxing;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -53,6 +57,28 @@ public abstract class CropBlockMixin extends VegetationBlock implements CropWaxi
     private void calcium$blockBonemeal(LevelReader level, BlockPos pos, BlockState state, BonemealSource source, CallbackInfoReturnable<Boolean> cir) {
         if (state.getValue(WAXED)) {
             cir.setReturnValue(false);
+        }
+    }
+
+    @Override
+    public void onWaxed(ServerLevel level, BlockPos pos, BlockState waxedState) {
+        this.calcium$setOtherHalfWaxed(level, pos, waxedState, true);
+    }
+
+    @Override
+    public void onUnwaxed(ServerLevel level, BlockPos pos, BlockState unwaxedState) {
+        this.calcium$setOtherHalfWaxed(level, pos, unwaxedState, false);
+    }
+
+    @Unique
+    private void calcium$setOtherHalfWaxed(ServerLevel level, BlockPos pos, BlockState state, boolean waxed) {
+        if (!state.is(Blocks.WHEAT)) {
+            return;
+        }
+        BlockPos otherPos = state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF) == DoubleBlockHalf.LOWER ? pos.above() : pos.below();
+        BlockState other = level.getBlockState(otherPos);
+        if (other.is(Blocks.WHEAT) && other.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF) != state.getValue(BlockStateProperties.DOUBLE_BLOCK_HALF) && other.getValue(WAXED) != waxed) {
+            level.setBlock(otherPos, other.setValue(WAXED, waxed), 11);
         }
     }
 

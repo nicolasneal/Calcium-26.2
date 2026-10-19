@@ -1,4 +1,4 @@
-package net.nicolas.calcium.mixin.hitboxes;
+package net.nicolas.calcium.mixin.hitboxes.plants;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;

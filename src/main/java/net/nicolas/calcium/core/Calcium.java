@@ -34,6 +34,9 @@ import net.nicolas.calcium.block.ModBlocks;
 import net.nicolas.calcium.entity.ModAttributes;
 import net.nicolas.calcium.entity.ModEntities;
 import net.nicolas.calcium.core.particle.ModParticleTypes;
+import net.nicolas.calcium.event.BoatChestConversion;
+import net.nicolas.calcium.event.WheatHalves;
+import net.nicolas.calcium.event.MinecartBlockConversion;
 import net.nicolas.calcium.event.Cracking;
 import net.nicolas.calcium.event.CropWaxing;
 import net.nicolas.calcium.item.ModCompostables;
@@ -93,6 +96,9 @@ public class Calcium implements ModInitializer {
         Cracking.registerEvents();
         CropWaxing.registerEvents();
         WrenchItem.registerEvents();
+        BoatChestConversion.registerEvents();
+        MinecartBlockConversion.registerEvents();
+        WheatHalves.registerEvents();
 
         // World Generation Foliage Placer Types
 

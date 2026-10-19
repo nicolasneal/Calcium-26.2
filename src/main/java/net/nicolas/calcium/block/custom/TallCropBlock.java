@@ -32,9 +32,9 @@ public class TallCropBlock extends DoublePlantBlock implements BonemealableBlock
     private static final int DOUBLE_AGE = 2;
     public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
 
-    private static final VoxelShape SHAPE_STAGE_0 = Block.column(6.0, 0.0, 6.0);
-    private static final VoxelShape SHAPE_STAGE_1 = Block.column(10.0, 0.0, 12.0);
-    private static final VoxelShape SHAPE_STAGE_2_LOWER = Block.column(12.0, 0.0, 16.0);
+    private static final VoxelShape SHAPE_STAGE_0 = Block.column(6.0, -1.0, 6.0);
+    private static final VoxelShape SHAPE_STAGE_1 = Block.column(10.0, -1.0, 12.0);
+    private static final VoxelShape SHAPE_STAGE_2_LOWER = Block.column(12.0, -1.0, 16.0);
     private static final VoxelShape SHAPE_STAGE_2_UPPER = Block.column(12.0, 0.0, 12.0);
 
     public TallCropBlock(BlockBehaviour.Properties properties) {

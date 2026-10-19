@@ -8,6 +8,7 @@ import net.minecraft.client.renderer.state.level.LevelRenderState;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.ChestBlock;
+import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BedPart;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -44,6 +45,9 @@ public abstract class LevelExtractorMixin {
     private VoxelShape calcium$unifyMultiPartOutline(VoxelShape shape, @Local(name = "pos") BlockPos pos, @Local(name = "state") BlockState state, @Local(name = "context") CollisionContext context) {
         BlockPos otherHalfPos = calcium$otherHalfPos(pos, state);
         if (otherHalfPos == null) {
+            return shape;
+        }
+        if (state.getBlock() instanceof CropBlock && !this.level.getBlockState(otherHalfPos).is(state.getBlock())) {
             return shape;
         }
         VoxelShape otherHalfShape = this.level.getBlockState(otherHalfPos).getShape(this.level, otherHalfPos, context);

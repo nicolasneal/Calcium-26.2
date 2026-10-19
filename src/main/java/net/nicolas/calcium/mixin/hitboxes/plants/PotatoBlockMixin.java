@@ -17,10 +17,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(PotatoBlock.class)
 public abstract class PotatoBlockMixin {
 
-    @Unique private static final VoxelShape STAGE_1 = Block.column(12.0, 0.0, 5.0);
-    @Unique private static final VoxelShape STAGE_2 = Block.column(12.0, 0.0, 8.0);
-    @Unique private static final VoxelShape STAGE_3 = Block.column(14.0, 0.0, 11.0);
-    @Unique private static final VoxelShape STAGE_4 = Block.column(14.0, 0.0, 16.0);
+    @Unique private static final VoxelShape STAGE_1 = Block.column(12.0, -1.0, 5.0);
+    @Unique private static final VoxelShape STAGE_2 = Block.column(12.0, -1.0, 8.0);
+    @Unique private static final VoxelShape STAGE_3 = Block.column(14.0, -1.0, 11.0);
+    @Unique private static final VoxelShape STAGE_4 = Block.column(14.0, -1.0, 16.0);
 
     @Inject(method = "getShape", at = @At("HEAD"), cancellable = true)
     private void calcium$potatoShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context, CallbackInfoReturnable<VoxelShape> cir) {

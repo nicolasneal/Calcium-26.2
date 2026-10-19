@@ -1,4 +1,4 @@
-package net.nicolas.calcium.mixin.hitboxes;
+package net.nicolas.calcium.mixin.hitboxes.plants;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.core.BlockPos;
@@ -9,12 +9,13 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(BlockBehaviour.BlockStateBase.class)
 public abstract class TallSeagrassOffsetMixin {
 
-    private static final float MAX_VERTICAL_OFFSET = 0.2F;
+    @Unique private static final float MAX_VERTICAL_OFFSET = 0.2F;
 
     @Shadow public abstract Block getBlock();
 

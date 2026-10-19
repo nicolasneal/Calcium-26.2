@@ -28,6 +28,10 @@
 
   "entity.calcium.sea_cow": "Sea Cow",
   "entity.calcium.sunfish": "Sunfish",
+  "entity.calcium.willow_boat": "Willow Boat",
+  "entity.calcium.willow_chest_boat": "Willow Boat with Chest",
+  "entity.calcium.chorus_boat": "Chorus Boat",
+  "entity.calcium.chorus_chest_boat": "Chorus Boat with Chest",
 
   "block.calcium.ectoplasm": "Ectoplasm",
   "block.calcium.ectoplasm_cauldron": "Ectoplasm Cauldron",

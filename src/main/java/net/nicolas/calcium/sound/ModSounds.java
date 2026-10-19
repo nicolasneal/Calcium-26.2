@@ -87,6 +87,8 @@ public class ModSounds {
         ((AbstractBlockAccessor) Blocks.ROSE_BUSH).setSoundGroup(SoundType.AZALEA);
         ((AbstractBlockAccessor) Blocks.PEONY).setSoundGroup(SoundType.AZALEA);
         ((AbstractBlockAccessor) Blocks.GOLDEN_DANDELION).setSoundGroup(SoundType.AZALEA);
+        ((AbstractBlockAccessor) Blocks.PUMPKIN_STEM).setSoundGroup(SoundType.AZALEA);
+        ((AbstractBlockAccessor) Blocks.MELON_STEM).setSoundGroup(SoundType.AZALEA);
         ((AbstractBlockAccessor) Blocks.CACTUS).setSoundGroup(SoundType.SWEET_BERRY_BUSH);
         ((AbstractBlockAccessor) Blocks.GLOW_LICHEN).setSoundGroup(SoundType.VINE);
         ((AbstractBlockAccessor) Blocks.RED_MUSHROOM).setSoundGroup(SoundType.FUNGUS);

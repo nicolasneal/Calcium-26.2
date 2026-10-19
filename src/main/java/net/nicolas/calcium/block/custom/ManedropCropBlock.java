@@ -6,9 +6,9 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class ManedropCropBlock extends TallCropBlock {
 
-    private static final VoxelShape SHAPE_STAGE_2_LOWER = Block.column(12.0, 0.0, 16.0);
+    private static final VoxelShape SHAPE_STAGE_2_LOWER = Block.column(12.0, -1.0, 16.0);
     private static final VoxelShape SHAPE_STAGE_2_UPPER = Block.column(12.0, 0.0, 10.0);
-    private static final VoxelShape SHAPE_STAGE_3_LOWER = Block.column(14.0, 0.0, 16.0);
+    private static final VoxelShape SHAPE_STAGE_3_LOWER = Block.column(14.0, -1.0, 16.0);
     private static final VoxelShape SHAPE_STAGE_3_UPPER = Block.column(14.0, 0.0, 15.0);
 
     public ManedropCropBlock(BlockBehaviour.Properties properties) {
